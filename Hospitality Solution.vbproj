@@ -1,0 +1,2015 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1432CB6-15E3-42F6-9D6B-E38A5AF88C40}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Resources\Hospitality.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>Hospitality Solution 3</AssemblyName>
+    <AssemblyOriginatorKeyFile>HsKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Hospitality_Solution</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>it-IT</TargetCulture>
+    <ProductName>Hospitality Solution 3</ProductName>
+    <PublisherName>Montana Software</PublisherName>
+    <SuiteName>Hospitality Solution Suite 3</SuiteName>
+    <MinimumRequiredVersion>3.1.0.0</MinimumRequiredVersion>
+    <WebPage>shop.montanasoftware.it</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Hospitality Solution 3.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Hospitality Solution 3.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>App.config</ConfigurationOverrideFile>
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>none</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3936E89439E9A6E8472A56772CD13FE4945766EF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <COMReference Include="JRO">
+      <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <Reference Include="AppConfig">
+      <Name>AppConfig</Name>
+      <HintPath>..\..\Risorse\Classi\AppConfig\MyAssembly\AppConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elegant.Ui.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0" />
+    <Reference Include="Elegant.Ui.Common.Theme.Office2010Black, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FOSS Software Inc\Elegant Ribbon\Bin\Themes\Elegant.Ui.Common.Theme.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Elegant.Ui.Grid, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL" />
+    <Reference Include="Elegant.Ui.Grid.Theme.Office2010Black, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FOSS Software Inc\Elegant Ribbon\Bin\Themes\Elegant.Ui.Grid.Theme.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Elegant.Ui.NavigationBar, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL" />
+    <Reference Include="Elegant.Ui.NavigationBar.Theme.Office2010Black, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FOSS Software Inc\Elegant Ribbon\Bin\Themes\Elegant.Ui.NavigationBar.Theme.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Elegant.Ui.Ribbon, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL" />
+    <Reference Include="Elegant.Ui.Ribbon.Theme.Office2010Black, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FOSS Software Inc\Elegant Ribbon\Bin\Themes\Elegant.Ui.Ribbon.Theme.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="FatturaElettronica, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FatturaElettronica.0.9.0\lib\netstandard1.1\FatturaElettronica.dll</HintPath>
+    </Reference>
+    <Reference Include="FatturaElettronica.Core, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FatturaElettronica.Core.0.4.0\lib\netstandard1.1\FatturaElettronica.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FatturaElettronica.IndicePA, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FatturaElettronica.IndicePA.0.1.0\lib\netstandard1.1\FatturaElettronica.IndicePA.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.OposPOSPrinter_1_9_Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.OposPOSPrinter_1_9_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <Name>Interop.SHDocVw</Name>
+      <HintPath>..\Risorse\Classi\MSolution\bin\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\bin\Debug_woDrawing\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VSDesigner, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\common7\ide\Microsoft.VSDesigner.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Softgroup.NetButton, Version=2.0.3083.17509, Culture=neutral, PublicKeyToken=414472004535f54e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Softgroup.NetButton.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="CrystalDecisions.CrystalReports" />
+    <Import Include="CrystalDecisions.CrystalReports.Engine" />
+    <Import Include="CrystalDecisions.ReportSource" />
+    <Import Include="CrystalDecisions.Shared" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.ComponentModel.Design" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.OleDb" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationCommands.vb" />
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Codice\Classi\Acquisti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Allegati.vb" />
+    <Compile Include="Codice\Classi\AnagTab.vb" />
+    <Compile Include="Codice\Classi\Articoli.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Buoni.vb" />
+    <Compile Include="Codice\Classi\BuoniFatt.vb" />
+    <Compile Include="Codice\Classi\CalcolaIBAN.vb" />
+    <Compile Include="Codice\Classi\Camera.vb" />
+    <Compile Include="Codice\Classi\Camerieri.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\CategoriePiatti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\CellaColorata.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\ClsFormatta.vb" />
+    <Compile Include="Codice\Classi\CmdTavoliSQLite.vb" />
+    <Compile Include="Codice\Classi\CodeBar.vb" />
+    <Compile Include="Codice\Classi\ColonnaColorata.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Comande.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\CategoriePiattiSQLite.vb" />
+    <Compile Include="Codice\Classi\CamerieriSQLite.vb" />
+    <Compile Include="Codice\Classi\ConvalidaKeyPress.vb" />
+    <Compile Include="Codice\Classi\DettagliDocumenti.vb" />
+    <Compile Include="Codice\Classi\ImpostazioniSQLite.vb" />
+    <Compile Include="Codice\Classi\ImpostazioniPiattiPOS.vb" />
+    <Compile Include="Codice\Classi\MessaggiSQLite.vb" />
+    <Compile Include="Codice\Classi\CmdComandeSQLite.vb" />
+    <Compile Include="Codice\Classi\ImpostazioniTavoliPOS.vb" />
+    <Compile Include="Codice\Classi\MSolution.vb" />
+    <Compile Include="Codice\Classi\AccessoriServizi.vb" />
+    <Compile Include="Codice\Classi\Email.vb" />
+    <Compile Include="Codice\Classi\SchedinaPS.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeCamere.vb" />
+    <Compile Include="Codice\Classi\StatoPiattiSQLite.vb" />
+    <Compile Include="Codice\Classi\StatoComandeSQLite.vb" />
+    <Compile Include="Codice\Classi\StatoTavoliSQLite.vb" />
+    <Compile Include="Codice\Classi\StatoVariantiSQLite.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeIstat.vb" />
+    <Compile Include="Codice\Classi\StoricoPresenzeIstatC59.vb" />
+    <Compile Include="Codice\Classi\VariantiSQLite.vb" />
+    <Compile Include="Codice\Classi\PiattiSQLite.vb" />
+    <Compile Include="Codice\Classi\TavoliSQLite.vb" />
+    <Compile Include="Codice\Classi\ContiTavoli.vb" />
+    <Compile Include="Codice\Classi\CaratteristicheRisorse.vb" />
+    <Compile Include="Codice\Classi\Stagioni.vb" />
+    <Compile Include="Codice\Classi\ListinoCamera.vb" />
+    <Compile Include="Codice\Classi\PrenCamereAddebiti.vb" />
+    <Compile Include="Codice\Classi\PrenCamereOccupanti.vb" />
+    <Compile Include="Codice\Classi\StatoPren.vb" />
+    <Compile Include="Codice\Classi\PrenSale.vb" />
+    <Compile Include="Codice\Classi\PrenCamere.vb" />
+    <Compile Include="Codice\Classi\PrenRisorseConto.vb" />
+    <Compile Include="Codice\Classi\Planning.vb" />
+    <Compile Include="Codice\Classi\PrenRisorse.vb" />
+    <Compile Include="Codice\Classi\Risorsa.vb" />
+    <Compile Include="Codice\Classi\StatGioco.vb" />
+    <Compile Include="Codice\Classi\StatVendita.vb" />
+    <Compile Include="Codice\Classi\WebCommunication.vb" />
+    <Compile Include="Codice\Classi\Documenti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\EtichetteArt.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\EtichetteInd.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Gruppi.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\IngredientiPiatti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Operatori.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Operazioni.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Piatti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\PiattiEsauriti.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Prenotazione.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Sale.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\SelAziende.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Statistiche.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Classi\Tavoli.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\AccessoriServizi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\CaratteristicheRisorse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\ElencoDatiSport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\ListaAccessoriServizi.Designer.vb">
+      <DependentUpon>ListaAccessoriServizi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\ListaAccessoriServizi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\PlanningP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\PrenRisorse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\Risorse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Centro sportivo\StatisticheRisorse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Accesso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Acquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\App.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Azienda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Cap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Caricamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Documento.Designer.vb">
+      <DependentUpon>Documento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Documento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ElencoEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\FatturaElettronica.Designer.vb">
+      <DependentUpon>FatturaElettronica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\FatturaElettronica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\InvioEmail.Designer.vb">
+      <DependentUpon>InvioEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\InvioEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\DataModIstatC59.Designer.vb">
+      <DependentUpon>DataModIstatC59.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\DataModIstatC59.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HospitalityDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalityDataSet.vb">
+      <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalityDataSet1.Designer.vb">
+      <DependentUpon>HospitalityDataSet1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalityDataSet1.vb">
+      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IstatDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.Designer.vb">
+      <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\SelezionaPrenotazione.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ListaDocumenti.Designer.vb">
+      <DependentUpon>ListaDocumenti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ListaDocumenti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ListaPiatti.Designer.vb">
+      <DependentUpon>ListaPiatti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ListaPiatti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\GiudizioDemo.Designer.vb">
+      <DependentUpon>GiudizioDemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\GiudizioDemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCamere.Designer.vb">
+      <DependentUpon>RepCamere.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCap.Designer.vb">
+      <DependentUpon>RepCap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepDocumenti.Designer.vb">
+      <DependentUpon>RepDocumenti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepDocumenti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\ElencoSchedinePS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\SchedinaPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\StoricoPresenze.Designer.vb">
+      <DependentUpon>StoricoPresenze.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\StoricoPresenze.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\AddebitaContoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Moduli\GeneraPdf.vb" />
+    <Compile Include="Codice\ReportsViewer\RepEmail.Designer.vb">
+      <DependentUpon>RepEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepIstat.Designer.vb">
+      <DependentUpon>RepIstat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepIstat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepListiniCamere.Designer.vb">
+      <DependentUpon>RepListiniCamere.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepListiniCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenCamere.Designer.vb">
+      <DependentUpon>RepPrenCamere.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinaPS.Designer.vb">
+      <DependentUpon>RepSchedinaPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinaPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinePS.Designer.vb">
+      <DependentUpon>RepSchedinePS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepSchedinePS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.Designer.vb">
+      <DependentUpon>RepStoricoPresenzeCamere.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="Codice\Form\Ristorante\NoteContiPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\VisteContiPeriodoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoVisteContiPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoContiPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\StatoPrenotazioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\CodAccesso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\DatiUtenteReg.Designer.vb">
+      <DependentUpon>DatiUtenteReg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\DatiUtenteReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ElencoAcquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ElencoDati.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ElencoEtichette.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\EtichetteArticoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\EtichetteIndirizzi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Gruppi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\IndirizziEtichette.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\InsPrimaNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\ModuloReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Operatori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Opzioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Postazione.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\PrimaNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\PuliziaDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\RegOperazioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\Tabelle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\Camere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\FiltroPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\Stagioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\ListiniCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\ElencoListiniCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\InsClienti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\ElencoPrenCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\PlanningCamere.Designer.vb">
+      <DependentUpon>PlanningCamere.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\PlanningCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Hotel\PrenCamera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Articoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Aziende.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Camerieri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\CaricoScarico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\CategoriePiatti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Chiusura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Clienti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Contanti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ContoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\AsportoPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\CopertiPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ClientiPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoMessaggiPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoIngredientiPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ImpostazioniPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoClientiPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\DivisioneContoPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\VCPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\TipoAliquotaIvaPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\TipoListinoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\TipoElencoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Corrispettivi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\DisponiTavoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoBuoni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoBuoniPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoCorrispettivi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoMessaggi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoMovMag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoPiatti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoPren.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ElencoScorte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Fornitori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\IncassaSospeso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Ingredienti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\MenuBuilder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Pagamenti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Piatti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Prenotazioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\PrenSale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Sale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Statistiche.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\Tavoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\TipoContoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\VCEsauriti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ModificaPiattoPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\VCPren.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\VCTavoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Moduli\Crittografia.vb" />
+    <Compile Include="Codice\Moduli\Dichiarazioni.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Moduli\Licenza.vb" />
+    <Compile Include="Codice\Moduli\MMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codice\Moduli\Procedure.vb" />
+    <Compile Include="Dataset1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset1.vb">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <None Include="bin\Archivi\Hospitality.mdb" />
+    <None Include="IstatDataSet.xsc">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IstatDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IstatDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IstatDataSet.xss">
+      <DependentUpon>IstatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HospitalityDataSet.xsc">
+      <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HospitalityDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HospitalityDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HospitalityDataSet.xss">
+      <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HospitalityDataSet1.xsc">
+      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HospitalityDataSet1.xsd">
+      <LastGenOutput>HospitalityDataSet11.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HospitalityDataSet1.xss">
+      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HsKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Resources\LogoAmica.ico" />
+    <None Include="bin\Android\CHS_ANAG.DB" />
+    <None Include="bin\Android\CHS_CMD.DB" />
+    <None Include="bin\Android\CHS_TAVOLI.DB" />
+    <None Include="Codice\Code Snippets\CicloForNext.snippet" />
+    <None Include="Codice\Code Snippets\MessageBox.snippet" />
+    <None Include="Resources\Windows Notify Messaging.wav" />
+    <None Include="Resources\button-50.wav" />
+    <None Include="Resources\button-49.wav" />
+    <None Include="Resources\button-48.wav" />
+    <None Include="Resources\button-47.wav" />
+    <None Include="Resources\button-46.wav" />
+    <None Include="Resources\button-45.wav" />
+    <None Include="Resources\button-44.wav" />
+    <None Include="Resources\button-43.wav" />
+    <None Include="Resources\button-42.wav" />
+    <None Include="Resources\button-41.wav" />
+    <None Include="Resources\button-40.wav" />
+    <None Include="Resources\button-39.wav" />
+    <None Include="Resources\button-38.wav" />
+    <None Include="Resources\button-37.wav" />
+    <None Include="Resources\button-36.wav" />
+    <None Include="Resources\button-35.wav" />
+    <None Include="Resources\button-34.wav" />
+    <None Include="Resources\button-30.wav" />
+    <None Include="Resources\button-29.wav" />
+    <None Include="Resources\button-28.wav" />
+    <None Include="Resources\button-27.wav" />
+    <None Include="Resources\button-24.wav" />
+    <None Include="Resources\button-23.wav" />
+    <None Include="Resources\button-22.wav" />
+    <None Include="Resources\button-21.wav" />
+    <None Include="Resources\button-19.wav" />
+    <None Include="Resources\button-17.wav" />
+    <None Include="Resources\button-16.wav" />
+    <None Include="Resources\button-15.wav" />
+    <None Include="Resources\button-11.wav" />
+    <None Include="Resources\button-10.wav" />
+    <None Include="Resources\button-4.wav" />
+    <None Include="Resources\button-3.wav" />
+    <None Include="Resources\beep-30.wav" />
+    <None Include="Resources\beep-28.wav" />
+    <None Include="Resources\beep-27.wav" />
+    <None Include="Resources\beep-25.wav" />
+    <None Include="Resources\beep-21.wav" />
+    <None Include="Resources\beep-10.wav" />
+    <None Include="Resources\beep-9.wav" />
+    <None Include="Resources\beep-6.wav" />
+    <None Include="Resources\beep-3.wav" />
+    <None Include="Resources\beep-2.wav" />
+    <None Include="Resources\beep-1.wav" />
+    <None Include="Resources\beep-4.wav" />
+    <None Include="Resources\button-32.wav" />
+    <None Include="Resources\button-31.wav" />
+    <None Include="Resources\button-33.wav" />
+    <None Include="Resources\button-20.wav" />
+    <None Include="Resources\beep-26.wav" />
+    <None Include="Resources\beep-24.wav" />
+    <None Include="Resources\beep-23.wav" />
+    <None Include="Resources\beep-22.wav" />
+    <None Include="Resources\beep-8.wav" />
+    <None Include="Resources\beep-7.wav" />
+    <None Include="Resources\chef-small.ico" />
+    <None Include="Resources\bar-small.ico" />
+    <None Include="Resources\sport-small.ico" />
+    <None Include="Resources\Splash-screen-ombra-sporting.png" />
+    <None Include="Resources\Splash-screen-ombra-chef.png" />
+    <None Include="Resources\Splash-screen-ombra-bar.png" />
+    <None Include="Resources\Splash-screen-ombra.png" />
+    <None Include="Resources\About1.ico" />
+    <None Include="Resources\About.ico" />
+    <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
+    <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
+    <EmbeddedResource Include="bin\Reports\SchedinePS.rdlc" />
+    <EmbeddedResource Include="bin\Reports\PrenCamere.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Email.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Cap.rdlc" />
+    <EmbeddedResource Include="bin\Reports\AccessoriServizi.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Camere.rdlc" />
+    <EmbeddedResource Include="Codice\Classi\CellaColorata.resx">
+      <DependentUpon>CellaColorata.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\AccessoriServizi.resx">
+      <DependentUpon>AccessoriServizi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\CaratteristicheRisorse.resx">
+      <DependentUpon>CaratteristicheRisorse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\ElencoDatiSport.resx">
+      <DependentUpon>ElencoDatiSport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\ListaAccessoriServizi.resx">
+      <DependentUpon>ListaAccessoriServizi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\PlanningP.resx">
+      <DependentUpon>PlanningP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\PrenRisorse.resx">
+      <DependentUpon>PrenRisorse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\Risorse.resx">
+      <DependentUpon>Risorse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Centro sportivo\StatisticheRisorse.resx">
+      <DependentUpon>StatisticheRisorse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\About.resX">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Accesso.resx">
+      <DependentUpon>Accesso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Acquisti.resx">
+      <DependentUpon>Acquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\App.resx">
+      <DependentUpon>App.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Azienda.resX">
+      <DependentUpon>Azienda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Cap.resx">
+      <DependentUpon>Cap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Caricamento.resx">
+      <DependentUpon>Caricamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Documento.resx">
+      <DependentUpon>Documento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ElencoEmail.resx">
+      <DependentUpon>ElencoEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\FatturaElettronica.resx">
+      <DependentUpon>FatturaElettronica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\InvioEmail.resx">
+      <DependentUpon>InvioEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\DataModIstatC59.resx">
+      <DependentUpon>DataModIstatC59.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepAccessoriServizi.resx">
+      <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\SelezionaPrenotazione.resx">
+      <DependentUpon>SelezionaPrenotazione.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ListaDocumenti.resx">
+      <DependentUpon>ListaDocumenti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ListaPiatti.resx">
+      <DependentUpon>ListaPiatti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\GiudizioDemo.resx">
+      <DependentUpon>GiudizioDemo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Main.it-IT.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCamere.resx">
+      <DependentUpon>RepCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCap.resx">
+      <DependentUpon>RepCap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepDocumenti.resx">
+      <DependentUpon>RepDocumenti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\StatoPrenotazioni.resx">
+      <DependentUpon>StatoPrenotazioni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\CodAccesso.resx">
+      <DependentUpon>CodAccesso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\DatiUtenteReg.resx">
+      <DependentUpon>DatiUtenteReg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ElencoAcquisti.resx">
+      <DependentUpon>ElencoAcquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ElencoDati.resx">
+      <DependentUpon>ElencoDati.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ElencoEtichette.resx">
+      <DependentUpon>ElencoEtichette.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\EtichetteArticoli.resx">
+      <DependentUpon>EtichetteArticoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\EtichetteIndirizzi.resx">
+      <DependentUpon>EtichetteIndirizzi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Gruppi.resx">
+      <DependentUpon>Gruppi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\IndirizziEtichette.resx">
+      <DependentUpon>IndirizziEtichette.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\InsPrimaNota.resx">
+      <DependentUpon>InsPrimaNota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Main.af.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Main.fr.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Main.resX">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\ModuloReg.resx">
+      <DependentUpon>ModuloReg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Operatori.resx">
+      <DependentUpon>Operatori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Opzioni.resx">
+      <DependentUpon>Opzioni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Postazione.resx">
+      <DependentUpon>Postazione.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\PrimaNota.resx">
+      <DependentUpon>PrimaNota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\PuliziaDB.resx">
+      <DependentUpon>PuliziaDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\RegOperazioni.resx">
+      <DependentUpon>RegOperazioni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Reports.resx">
+      <DependentUpon>Reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Splash.resX">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\Tabelle.resx">
+      <DependentUpon>Tabelle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\Camere.resx">
+      <DependentUpon>Camere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\ElencoSchedinePS.resx">
+      <DependentUpon>ElencoSchedinePS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\FiltroPeriodo.resx">
+      <DependentUpon>FiltroPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\SchedinaPS.resx">
+      <DependentUpon>SchedinaPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\Stagioni.resx">
+      <DependentUpon>Stagioni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\ListiniCamere.resx">
+      <DependentUpon>ListiniCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\ElencoListiniCamere.resx">
+      <DependentUpon>ElencoListiniCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\InsClienti.resx">
+      <DependentUpon>InsClienti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\ElencoPrenCamere.resx">
+      <DependentUpon>ElencoPrenCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\PlanningCamere.resx">
+      <DependentUpon>PlanningCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\PrenCamera.resx">
+      <DependentUpon>PrenCamera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hotel\StoricoPresenze.resx">
+      <DependentUpon>StoricoPresenze.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Articoli.resx">
+      <DependentUpon>Articoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\NoteContiPos.resx">
+      <DependentUpon>NoteContiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\AddebitaContoPos.resx">
+      <DependentUpon>AddebitaContoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\VisteContiPeriodoPos.resx">
+      <DependentUpon>VisteContiPeriodoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Aziende.resx">
+      <DependentUpon>Aziende.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Camerieri.resx">
+      <DependentUpon>Camerieri.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\CaricoScarico.resx">
+      <DependentUpon>CaricoScarico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\CategoriePiatti.resx">
+      <DependentUpon>CategoriePiatti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Chiusura.resx">
+      <DependentUpon>Chiusura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Clienti.resx">
+      <DependentUpon>Clienti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Contanti.resx">
+      <DependentUpon>Contanti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ContoPos.resx">
+      <DependentUpon>ContoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\AsportoPOS.resx">
+      <DependentUpon>AsportoPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoVisteContiPos.resx">
+      <DependentUpon>ElencoVisteContiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\CopertiPOS.resx">
+      <DependentUpon>CopertiPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ClientiPos.resx">
+      <DependentUpon>ClientiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoContiPos.resx">
+      <DependentUpon>ElencoContiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoMessaggiPOS.resx">
+      <DependentUpon>ElencoMessaggiPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoIngredientiPOS.resx">
+      <DependentUpon>ElencoIngredientiPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ImpostazioniPos.resx">
+      <DependentUpon>ImpostazioniPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoClientiPos.resx">
+      <DependentUpon>ElencoClientiPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\DivisioneContoPOS.resx">
+      <DependentUpon>DivisioneContoPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\VCPos.resx">
+      <DependentUpon>VCPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\TipoAliquotaIvaPos.resx">
+      <DependentUpon>TipoAliquotaIvaPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\TipoListinoPos.resx">
+      <DependentUpon>TipoListinoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\TipoElencoPos.resx">
+      <DependentUpon>TipoElencoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Corrispettivi.resx">
+      <DependentUpon>Corrispettivi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\DisponiTavoli.resx">
+      <DependentUpon>DisponiTavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoBuoni.resx">
+      <DependentUpon>ElencoBuoni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoBuoniPos.resx">
+      <DependentUpon>ElencoBuoniPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoCorrispettivi.resx">
+      <DependentUpon>ElencoCorrispettivi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoDoc.resx">
+      <DependentUpon>ElencoDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoInventario.resx">
+      <DependentUpon>ElencoInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoMessaggi.resx">
+      <DependentUpon>ElencoMessaggi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoMovMag.resx">
+      <DependentUpon>ElencoMovMag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoPiatti.resx">
+      <DependentUpon>ElencoPiatti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoPren.resx">
+      <DependentUpon>ElencoPren.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ElencoScorte.resx">
+      <DependentUpon>ElencoScorte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Fornitori.resx">
+      <DependentUpon>Fornitori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\IncassaSospeso.resx">
+      <DependentUpon>IncassaSospeso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Ingredienti.resx">
+      <DependentUpon>Ingredienti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\MenuBuilder.resx">
+      <DependentUpon>MenuBuilder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Pagamenti.resx">
+      <DependentUpon>Pagamenti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Piatti.resx">
+      <DependentUpon>Piatti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Prenotazioni.resx">
+      <DependentUpon>Prenotazioni.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\PrenSale.resx">
+      <DependentUpon>PrenSale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Sale.resx">
+      <DependentUpon>Sale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Statistiche.resx">
+      <DependentUpon>Statistiche.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\Tavoli.resx">
+      <DependentUpon>Tavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\TipoContoPos.resx">
+      <DependentUpon>TipoContoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\VCEsauriti.resx">
+      <DependentUpon>VCEsauriti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ModificaPiattoPOS.resx">
+      <DependentUpon>ModificaPiattoPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\VCPren.resx">
+      <DependentUpon>VCPren.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\VCTavoli.resx">
+      <DependentUpon>VCTavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepEmail.resx">
+      <DependentUpon>RepEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepIstat.resx">
+      <DependentUpon>RepIstat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepListiniCamere.resx">
+      <DependentUpon>RepListiniCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
+      <DependentUpon>RepPrenCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinaPS.resx">
+      <DependentUpon>RepSchedinaPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinePS.resx">
+      <DependentUpon>RepSchedinePS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.resx">
+      <DependentUpon>RepStoricoPresenzeCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="bin\Immagini\Hospitality.ico" />
+    <None Include="Dataset1.xsc">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset1.xss">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="bin\Dati\Registro degli errori.log" />
+    <None Include="Dataset1.xsx">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Interop.HSS.dll" />
+    <None Include="Resources\DiscardChanges.png" />
+    <None Include="Resources\CancelApproval_32x32.png" />
+    <None Include="Resources\Delete-PermissionHH.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\attach_file.png" />
+    <None Include="Resources\NewContentPage_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Common.Theme.Office2010Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Common.Theme.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Common.Theme.Office2010TP">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Common.Theme.Windows7">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Common.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2007Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2007Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2007Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2010Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2010Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Office2010TP">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.System">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Grid.Theme.Windows7">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2007Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2007Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2007Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2010Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Office2010TP">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.Theme.Windows7">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.NavigationBar.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2007Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2007Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2007Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2010Blue">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Office2010TP">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.Theme.Windows7">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Elegant.Ui.Ribbon.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="FlashControlV71">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Hospitality Solution 3.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
