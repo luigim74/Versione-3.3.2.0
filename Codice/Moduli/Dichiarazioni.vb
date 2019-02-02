@@ -155,7 +155,7 @@ Module Dichiarazioni
    Public Const CARTELLA_FATTURE_ELETTRONICHE As String = "Fatture elettroniche"
 
    ' Percorso reports.
-   Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rpt"
+   Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rdlc"
    Public Const PERCORSO_REP_AZIENDE As String = "\Reports\Aziende.rpt"
    Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rpt"
    Public Const PERCORSO_REP_PIATTI As String = "\Reports\Piatti.rpt"

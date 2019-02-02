@@ -1,0 +1,54 @@
+DeviceName;Custom POS Printer
+ClaimDevice;100
+DeviceEnabled;True
+PrintBitmap;2;-2;ei.bmp
+PrintNormal;2;;Spazio
+PrintNormal;2;|bC;Azienda
+PrintNormal;2;;Spazio
+PrintNormal;2;|2C;Proforma
+PrintNormal;2;;Spazio
+PrintNormal;2;|bC;DataOra
+PrintNormal;2;;Spazio
+PrintNormal;2;;Tavolo
+PrintNormal;2;;Cameriere
+PrintNormal;2;;Spazio
+PrintNormal;2;;RigheRicevuta
+PrintNormal;2;|bC;Linea
+PrintNormal;2;|bC;TotDocumento
+PrintNormal;2;;Spazio
+PrintNormal;2;|cA;Ritirare lo scontrino alla cassa
+PrintNormal;2;|cA;Grazie!
+PrintNormal;2;;Spazio
+PrintNormal;2;|cA;NON FISCALE
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+CutPaper;50
+PrintBitmap;2;-2;ei.bmp
+PrintNormal;2;;Spazio
+PrintNormal;2;|bC;Azienda
+PrintNormal;2;;Spazio
+PrintNormal;2;|2C;Proforma
+PrintNormal;2;;Spazio
+PrintNormal;2;|bC;DataOra
+PrintNormal;2;;Spazio
+PrintNormal;2;;Tavolo
+PrintNormal;2;;Cameriere
+PrintNormal;2;;Spazio
+PrintNormal;2;;RigheRicevuta
+PrintNormal;2;|bC;Linea
+PrintNormal;2;|bC;TotDocumento
+PrintNormal;2;;Spazio
+PrintNormal;2;|cA;Ritirare lo scontrino alla cassa
+PrintNormal;2;|cA;Grazie!
+PrintNormal;2;;Spazio
+PrintNormal;2;|cA;NON FISCALE
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+CutPaper;100
+Close

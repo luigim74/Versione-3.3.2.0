@@ -57,7 +57,7 @@ Partial Class RepAccessoriServizi
       Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.AccessoriServizi.rdlc"
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
-      Me.ReportViewer1.Size = New System.Drawing.Size(781, 283)
+      Me.ReportViewer1.Size = New System.Drawing.Size(797, 299)
       Me.ReportViewer1.TabIndex = 1
       '
       'AccessoriServiziTableAdapter
@@ -68,7 +68,7 @@ Partial Class RepAccessoriServizi
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(781, 283)
+      Me.ClientSize = New System.Drawing.Size(797, 299)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepAccessoriServizi"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

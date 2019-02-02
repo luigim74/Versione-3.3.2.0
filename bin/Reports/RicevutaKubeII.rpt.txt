@@ -1,0 +1,8 @@
+DeviceName;Custom POS Printer
+ClaimDevice;100
+DeviceEnabled;True
+PrintNormal;2;RicevutaKubeII.rpt;Report
+CutPaper;50
+PrintNormal;2;RicevutaKubeII.rpt;Report
+CutPaper;100
+Close

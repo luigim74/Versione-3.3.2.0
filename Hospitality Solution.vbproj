@@ -434,6 +434,11 @@
     <Compile Include="Codice\Classi\Tavoli.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Codice\DataSet\AnagraficheDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\Form\Centro sportivo\AccessoriServizi.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -509,21 +514,21 @@
     <Compile Include="Codice\Form\Hotel\DataModIstatC59.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HospitalityDataSet.Designer.vb">
+    <Compile Include="Codice\DataSet\HospitalityDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HospitalityDataSet.vb">
+    <Compile Include="Codice\DataSet\HospitalityDataSet.vb">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HospitalityDataSet1.Designer.vb">
+    <Compile Include="Codice\DataSet\HospitalityDataSet1.Designer.vb">
       <DependentUpon>HospitalityDataSet1.vb</DependentUpon>
     </Compile>
-    <Compile Include="HospitalityDataSet1.vb">
+    <Compile Include="Codice\DataSet\HospitalityDataSet1.vb">
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="IstatDataSet.Designer.vb">
+    <Compile Include="Codice\DataSet\IstatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
@@ -565,6 +570,12 @@
       <DependentUpon>RepCap.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepCap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepClienti.Designer.vb">
+      <DependentUpon>RepClienti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepClienti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepDocumenti.Designer.vb">
@@ -899,12 +910,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Codice\Moduli\Procedure.vb" />
-    <Compile Include="Dataset1.Designer.vb">
+    <Compile Include="Codice\DataSet\Dataset1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dataset1.vb">
+    <Compile Include="Codice\DataSet\Dataset1.vb">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\Application.Designer.vb">
@@ -924,39 +935,56 @@
     </Compile>
     <Compile Include="Settings.vb" />
     <None Include="bin\Archivi\Hospitality.mdb" />
-    <None Include="IstatDataSet.xsc">
+    <None Include="bin\Dati\Richiesta chiave attivazione.eml" />
+    <None Include="bin\Documenti\Email.eml" />
+    <None Include="bin\Documenti\Licenza.doc" />
+    <None Include="bin\Documenti\Licenza.rtf" />
+    <None Include="bin\Documenti\Richiesta assistenza.eml" />
+    <None Include="bin\Documenti\Temp.eml" />
+    <None Include="Codice\DataSet\AnagraficheDataSet.xsc">
+      <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\AnagraficheDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnagraficheDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\AnagraficheDataSet.xss">
+      <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\IstatDataSet.xsc">
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </None>
-    <None Include="IstatDataSet.xsd">
+    <None Include="Codice\DataSet\IstatDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>IstatDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="IstatDataSet.xss">
+    <None Include="Codice\DataSet\IstatDataSet.xss">
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </None>
-    <None Include="HospitalityDataSet.xsc">
+    <None Include="Codice\DataSet\HospitalityDataSet.xsc">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </None>
-    <None Include="HospitalityDataSet.xsd">
+    <None Include="Codice\DataSet\HospitalityDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HospitalityDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="HospitalityDataSet.xss">
+    <None Include="Codice\DataSet\HospitalityDataSet.xss">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Dataset1.xsd">
+    <None Include="Codice\DataSet\Dataset1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
     </None>
-    <None Include="HospitalityDataSet1.xsc">
+    <None Include="Codice\DataSet\HospitalityDataSet1.xsc">
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="HospitalityDataSet1.xsd">
+    <None Include="Codice\DataSet\HospitalityDataSet1.xsd">
       <LastGenOutput>HospitalityDataSet11.Designer.vb</LastGenOutput>
     </None>
-    <None Include="HospitalityDataSet1.xss">
+    <None Include="Codice\DataSet\HospitalityDataSet1.xss">
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </None>
     <None Include="HsKey.pfx" />
@@ -1033,8 +1061,21 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RFiscale A6.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinePS.rdlc" />
@@ -1129,6 +1170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCap.resx">
       <DependentUpon>RepCap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepClienti.resx">
+      <DependentUpon>RepClienti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepDocumenti.resx">
       <DependentUpon>RepDocumenti.vb</DependentUpon>
@@ -1412,6 +1456,7 @@
     <EmbeddedResource Include="Codice\ReportsViewer\RepListiniCamere.resx">
       <DependentUpon>RepListiniCamere.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Reports\Clienti.rdlc" />
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
     </EmbeddedResource>
@@ -1430,11 +1475,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="bin\Immagini\Hospitality.ico" />
-    <None Include="Dataset1.xsc">
+    <None Include="Codice\DataSet\Dataset1.xsc">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
-    <None Include="Dataset1.xss">
+    <None Include="Codice\DataSet\Dataset1.xss">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest">
@@ -1446,7 +1490,7 @@
     </None>
     <None Include="App.config" />
     <None Include="bin\Dati\Registro degli errori.log" />
-    <None Include="Dataset1.xsx">
+    <None Include="Codice\DataSet\Dataset1.xsx">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Settings.settings">
@@ -1481,7 +1525,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Documenti\Licenza.txt" />
     <Content Include="bin\Interop.HSS.dll" />
+    <Content Include="bin\Reports\ComandaClientiKubeII.rpt.txt" />
+    <Content Include="bin\Reports\ComandaRepartiKubeII.rpt.txt" />
+    <Content Include="bin\Reports\ProformaKubeII.rpt.txt" />
+    <Content Include="bin\Reports\RicevutaKubeII.rpt.txt" />
     <None Include="Resources\DiscardChanges.png" />
     <None Include="Resources\CancelApproval_32x32.png" />
     <None Include="Resources\Delete-PermissionHH.png" />

@@ -3926,6 +3926,33 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   Private Sub AnteprimaDiStampaClienti(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New AnagraficheDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepClienti(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       Dim cn As OleDbConnection
 
@@ -4409,7 +4436,11 @@ Public Class frmElencoDati
 
             Select Case TipoElenco
                Case Elenco.Clienti
-                  StampaDocumento(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql, "Clienti")
+                  'StampaDocumento(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql, "Clienti")
+
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql)
+                  End If
 
                Case Elenco.Aziende
                   StampaDocumento(PERCORSO_REP_AZIENDE, TAB_AZIENDE, repSql, "Aziende")
@@ -4465,7 +4496,8 @@ Public Class frmElencoDati
 
             Select Case TipoElenco
                Case Elenco.Clienti
-                  g_frmMain.ApriReports(repSql, TAB_CLIENTI, PERCORSO_REP_CLIENTI, "Clienti")
+                  'g_frmMain.ApriReports(repSql, TAB_CLIENTI, PERCORSO_REP_CLIENTI, "Clienti")
+                  AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql)
 
                Case Elenco.Aziende
                   g_frmMain.ApriReports(repSql, TAB_AZIENDE, PERCORSO_REP_AZIENDE, "Aziende")

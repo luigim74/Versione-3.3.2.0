@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Questo file viene generato automaticamente dalla Progettazione schema XML. Contiene informazioni sul layout dei componenti nell'area di progettazione.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="110749" viewPortTop="0" zoom="100">
+    <Clienti_XmlElement left="1317" top="1000" width="5292" height="21378" selected="0" zOrder="1" index="0" expanded="1" />
+    <Piatti_XmlElement left="7243" top="1000" width="5291" height="8996" selected="0" zOrder="2" index="1" expanded="1" />
+    <Acquisti_XmlElement left="13168" top="1000" width="5292" height="21378" selected="0" zOrder="4" index="2" expanded="1" />
+    <Fornitori_XmlElement left="19094" top="1000" width="5292" height="18997" selected="0" zOrder="6" index="3" expanded="1" />
+    <PrimaNota_XmlElement left="25020" top="1000" width="5292" height="5662" selected="0" zOrder="8" index="4" expanded="1" />
+    <CategoriePiatti_XmlElement left="30946" top="1000" width="5291" height="5186" selected="0" zOrder="10" index="5" expanded="1" />
+    <Statistiche_XmlElement left="36871" top="1000" width="5292" height="7091" selected="0" zOrder="12" index="6" expanded="1" />
+    <Articoli_XmlElement left="42797" top="1000" width="5292" height="14711" selected="0" zOrder="13" index="7" expanded="1" />
+    <MovMagazzino_XmlElement left="48723" top="1000" width="5291" height="6138" selected="0" zOrder="14" index="8" expanded="1" />
+    <Corrispettivi_XmlElement left="54648" top="1000" width="5292" height="5662" selected="0" zOrder="15" index="9" expanded="1" />
+    <Azienda_XmlElement left="60574" top="1000" width="5292" height="13758" selected="0" zOrder="16" index="10" expanded="1" />
+    <DettagliDoc_XmlElement left="66500" top="1000" width="5292" height="4233" selected="0" zOrder="17" index="11" expanded="1" />
+    <Aziende_XmlElement left="72426" top="1000" width="5265" height="21378" selected="0" zOrder="18" index="12" expanded="1" />
+    <Documenti_XmlElement left="78325" top="1000" width="5292" height="13282" selected="0" zOrder="19" index="13" expanded="1" />
+    <Comande2_XmlElement left="84251" top="1000" width="5821" height="6138" selected="0" zOrder="20" index="14" expanded="1" />
+    <Messaggi_XmlElement left="90706" top="1000" width="5291" height="4710" selected="0" zOrder="21" index="15" expanded="1" />
+    <Comande_XmlElement left="96631" top="1000" width="5292" height="7567" selected="0" zOrder="22" index="16" expanded="1" />
+    <Sale_XmlElement left="102557" top="1000" width="5292" height="3281" selected="0" zOrder="23" index="17" expanded="1" />
+    <Tavoli_XmlElement left="108483" top="1000" width="5291" height="7567" selected="0" zOrder="24" index="18" expanded="1" />
+    <PrenSale_XmlElement left="114408" top="1000" width="5292" height="6138" selected="0" zOrder="25" index="19" expanded="1" />
+    <Prenotazioni_XmlElement left="120334" top="1000" width="5292" height="6138" selected="0" zOrder="26" index="20" expanded="1" />
+    <Gruppi_XmlElement left="126259" top="1005" width="5292" height="17092" selected="0" zOrder="41" index="21" expanded="1" />
+    <Operatori_XmlElement left="132186" top="1005" width="5292" height="4234" selected="0" zOrder="42" index="22" expanded="1" />
+    <Operazioni_XmlElement left="138113" top="1005" width="5291" height="4234" selected="0" zOrder="43" index="23" expanded="1" />
+</XSDDesignerLayout>

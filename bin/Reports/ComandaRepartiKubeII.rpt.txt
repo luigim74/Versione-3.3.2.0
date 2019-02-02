@@ -1,0 +1,23 @@
+DeviceName;Custom POS Printer
+ClaimDevice;100
+DeviceEnabled;True
+PrintNormal;2;|2C;Reparto
+PrintNormal;2;|bC;Linea
+PrintNormal;2;|bC;DataOra
+PrintNormal;2;;Spazio
+PrintNormal;2;|2C;Tavolo
+PrintNormal;2;;Spazio
+PrintNormal;2;;Cameriere
+PrintNormal;2;;Coperti
+PrintNormal;2;;Spazio
+PrintNormal;2;;RigheComanda
+PrintNormal;2;;Spazio
+PrintNormal;2;|bC;TotComande
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+PrintNormal;2;;Spazio
+CutPaper;50
+Close
