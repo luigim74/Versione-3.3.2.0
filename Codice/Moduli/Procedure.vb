@@ -4700,7 +4700,36 @@ Module Procedure
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return False
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function LeggiNumeroRepartoIva(ByVal valIva As String) As String
+      Try
+         Select Case valIva
+            Case LeggiAliquotaIva("Reparto 1")
+               Return "1"
+
+            Case LeggiAliquotaIva("Reparto 2")
+               Return "2"
+
+            Case LeggiAliquotaIva("Reparto 3")
+               Return "3"
+
+            Case LeggiAliquotaIva("Reparto 4")
+               Return "4"
+
+            Case Else
+               Return "1"
+
+         End Select
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return "1"
 
       End Try
    End Function

@@ -2140,15 +2140,18 @@ Public Class ContoPos
          sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_DATI)
 
          ' Righe di vendita articoli.
+         Dim numRep As String
          Dim j As Integer
          For j = 0 To lstvDettagli.Items.Count - 1
-            Dim rigaScontrino As String = "PLUD,C1,N1,P" & RimuoviVirgola(lstvDettagli.Items(j).SubItems(4).Text) & ",Q" & lstvDettagli.Items(j).SubItems(1).Text & ",:" & lstvDettagli.Items(j).SubItems(2).Text.ToUpper & ";"
+            ' Leggo il numero di reparto iva per l'articolo.
+            numRep = LeggiNumeroRepartoIva(lstvDettagli.Items(j).SubItems(5).Text)
+            Dim rigaScontrino As String = "PLUD,C1,N" & numRep & ",P" & RimuoviVirgola(lstvDettagli.Items(j).SubItems(4).Text) & ",Q" & lstvDettagli.Items(j).SubItems(1).Text & ",:" & lstvDettagli.Items(j).SubItems(2).Text.ToUpper & ";"
             sw.WriteLine(rigaScontrino)
          Next
 
          ' Servizio %.
          If txtServizio.Text <> "0,00" And txtServizio.Text <> "" Then
-            sw.WriteLine("PRNT,N1,:;")
+            sw.WriteLine("PRNT,N" & numRep & ",:;")
 
             If txtServizio.Text.Substring(txtServizio.Text.Length - 1, 1) = "%" Then
                ' Maggiorazione percentuale.
@@ -2163,7 +2166,7 @@ Public Class ContoPos
 
          ' Sconto %.
          If txtValSconto.Text <> "0,00" And txtValSconto.Text <> "" Then
-            sw.WriteLine("PRNT,N1,:;")
+            sw.WriteLine("PRNT,N" & numRep & ",:;")
             If txtValSconto.Text.Substring(txtValSconto.Text.Length - 1, 1) = "%" Then
                ' Sconto percentuale.
                sw.WriteLine("DOST,%" & SostituisciVirgola(txtValSconto.Text) & ";")

@@ -458,8 +458,10 @@ Public Class frmFatturaElettronica
 #End Region
 
 #Region "CESSIONARIO COMMITTENTE - OBBLIGATORIO "
+         ' NOTA: IdPaese e IdCodice possono essere vuoti se si specifica solo il codice fiscale nel caso il cliente sia un privato.
+
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         If eui_cmbCcIdPaese.Text <> String.Empty Then
+         If eui_cmbCcIdPaese.Text <> String.Empty And eui_cmbCcIdPaese.Text <> " " Then
             fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbCcIdPaese.Text.Substring(0, 2)
          End If
 
@@ -1904,7 +1906,7 @@ Public Class frmFatturaElettronica
       Try
          ' Larghezza minima.
          If Me.Width <= 985 Then
-            Me.Width = 985
+            Me.Width= 985
          End If
 
          ' Altezza minima.

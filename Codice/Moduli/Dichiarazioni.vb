@@ -853,6 +853,7 @@ Module Dichiarazioni
 
    ' Dati Ristorante.
    Public AliquotaIvaRistorante As String
+   Public NumRepartoIvaRistorante As String
    Public NumCopertiRistorante As String
    Public CopertoRistorante As String
    Public ServizioRistorante As String
@@ -860,10 +861,12 @@ Module Dichiarazioni
 
    ' Dati Hotel.
    Public AliquotaIvaHotel As String
+   Public NumRepartoIvaHotel As String
    Public ServizioHotel As String
 
    ' Dati Centro Sportivo.
    Public AliquotaIvaCentroSportivo As String
+   Public NumRepartoIvaCentroSportivo As String
 
    ' Dati Modulo prenotazioni on-line.
    Public PercorsoCartellaTavAgent As String

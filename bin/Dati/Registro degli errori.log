@@ -16,3 +16,23 @@
    in Hospitality_Solution.RepClienti.RepClienti_Load(Object sender, EventArgs e)"
 "
 "
+"*** 28/04/2019 - 14:55:44 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile)"
+"
+"
+"*** 04/05/2019 - 14:14:22 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile)"
+"
+"
+"*** 22/08/2019 - 09:46:39 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.ContoPos.LeggiNumeroDocFiscaleConfig(String tabella, String tipoDoc)"
+"
+"
