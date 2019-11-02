@@ -4799,7 +4799,30 @@ Public Class frmPos
 
    Public Function InserisciImporto(ByVal importo As String) As Boolean
       Const QTA As String = "1"
+      Const ART_GENERICO = "Art. Generico"
+      Const SCONTO = "Sconto"
+      Dim descrizioneArt As String
       Dim strDescrizione As String
+
+      ' Verifico se l'importo è normale oppure uno sconto.
+      If IsNumeric(importo) = True Then
+         importo = CFormatta.FormattaEuro(Convert.ToDouble(importo))
+
+         If Convert.ToDouble(importo) < 0 Then
+            ' Sconto a valore
+            descrizioneArt = SCONTO
+         Else
+            ' Articolo generico.
+            descrizioneArt = ART_GENERICO
+         End If
+      Else
+         ' Sconto percentuale.
+         importo = importo.Replace("%", String.Empty)
+         Dim importoArticolo As Double = Convert.ToDouble(lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems(3).Text)
+         Dim importoPercentuale As Double = CalcolaPercentuale(importoArticolo, Convert.ToDouble(importo))
+         descrizioneArt = SCONTO & " " & CFormatta.FormattaEuro(Convert.ToDouble(importo)) & "%"
+         importo = "-" & CFormatta.FormattaEuro(importoPercentuale)
+      End If
 
       Try
          ' Indice
@@ -4809,7 +4832,7 @@ Public Class frmPos
          lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems.Add(QTA)
 
          ' Descrizione.
-         lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems.Add("Art. Generico")
+         lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems.Add(descrizioneArt)
 
          ' Importo.
          lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems.Add(importo)
@@ -4842,7 +4865,7 @@ Public Class frmPos
          lstvDettagli.Items(lstvDettagli.Items.Count - 1).SubItems.Add(AliquotaIvaRistorante)
 
          ' Stringa per registrare l'operazione effettuata dall'operatore identificato.
-         strDescrizione = "(Art. Generico)"
+         strDescrizione = descrizioneArt
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.SelezionaPiatto, strDescrizione, MODULO_GESTIONE_POS)
@@ -4988,12 +5011,12 @@ Public Class frmPos
 
          ' Inserisce l'importo per un Articolo generico.
          If txt.Text <> String.Empty Then
-            If IsNumeric(txt.Text) = True Then
-               Dim importo As Double = Convert.ToDouble(txt.Text)
-               SelezionaImporto(CFormatta.FormattaEuro(importo))
-            Else
-               MessageBox.Show("Inserire un valore numerico valido per l'importo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
+            'If IsNumeric(txt.Text) = True Then
+            'Dim importo As Double = Convert.ToDouble(txt.Text)
+            SelezionaImporto(txt.Text)
+            'Else
+            '   MessageBox.Show("Inserire un valore numerico valido per l'importo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'End If
          End If
 
       Catch ex As Exception

@@ -2180,6 +2180,58 @@ Module Procedure
       End Try
    End Function
 
+   Public Function InserisciZero1(ByVal val As String) As String
+      Try
+         If val <> Nothing Then
+            Select Case val.Length
+               Case 1
+                  val = val.Insert(0, "0")
+            End Select
+
+            Return val
+
+         ElseIf val = String.Empty Then
+            Return String.Empty
+
+         Else
+            Return Nothing
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Function
+
+   Public Function InserisciZero123(ByVal val As String) As String
+      Try
+         If val <> Nothing Then
+            Select Case val.Length
+               Case 1
+                  val = val.Insert(0, "000")
+               Case 2
+                  val = val.Insert(0, "00")
+               Case 3
+                  val = val.Insert(0, "0")
+               Case Is > 3
+                  Exit Function
+            End Select
+
+            Return val
+
+         ElseIf val = String.Empty Then
+            Return String.Empty
+
+         Else
+            Return Nothing
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Function
+
    Public Function InserisciZero(ByVal val As String) As String
       Try
          If val <> Nothing Then

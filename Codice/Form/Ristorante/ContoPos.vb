@@ -2141,12 +2141,32 @@ Public Class ContoPos
 
          ' Righe di vendita articoli.
          Dim numRep As String
+         Dim valImporto As Double
          Dim j As Integer
          For j = 0 To lstvDettagli.Items.Count - 1
-            ' Leggo il numero di reparto iva per l'articolo.
-            numRep = LeggiNumeroRepartoIva(lstvDettagli.Items(j).SubItems(5).Text)
-            Dim rigaScontrino As String = "PLUD,C1,N" & numRep & ",P" & RimuoviVirgola(lstvDettagli.Items(j).SubItems(4).Text) & ",Q" & lstvDettagli.Items(j).SubItems(1).Text & ",:" & lstvDettagli.Items(j).SubItems(2).Text.ToUpper & ";"
-            sw.WriteLine(rigaScontrino)
+
+            If IsNumeric(lstvDettagli.Items(j).SubItems(4).Text) = True Then
+               valImporto = Convert.ToDouble(lstvDettagli.Items(j).SubItems(4).Text)
+            End If
+
+            If valImporto < 0 Then
+               ' Viene considerato uno sconto.
+               If lstvDettagli.Items(j).SubItems(2).Text.Contains("%") = True Then
+                  Dim sconto As String = lstvDettagli.Items(j).SubItems(2).Text.Substring(7)
+                  sconto = sconto.Replace("%", String.Empty)
+
+                  ' Sconto percentuale.
+                  sw.WriteLine("DISC,%" & sconto & ";")
+               Else
+                  ' Sconto a valore.
+                  sw.WriteLine("COUP,V" & RimuoviVirgola(lstvDettagli.Items(j).SubItems(4).Text) & ";")
+               End If
+            Else
+               ' Leggo il numero di reparto iva per l'articolo.
+               numRep = LeggiNumeroRepartoIva(lstvDettagli.Items(j).SubItems(5).Text)
+               Dim rigaScontrino As String = "PLUD,C1,N" & numRep & ",P" & RimuoviVirgola(lstvDettagli.Items(j).SubItems(4).Text) & ",Q" & lstvDettagli.Items(j).SubItems(1).Text & ",:" & lstvDettagli.Items(j).SubItems(2).Text.ToUpper & ";"
+               sw.WriteLine(rigaScontrino)
+            End If
          Next
 
          ' Servizio %.

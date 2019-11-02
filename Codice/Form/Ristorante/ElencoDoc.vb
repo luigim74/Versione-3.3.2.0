@@ -3,7 +3,7 @@
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 15/08/2018
+' Data ultima modifica: 02/11/2019
 ' Descrizione:          Elenco documenti emessi..
 ' Note:
 
@@ -13,8 +13,9 @@
 #End Region
 
 Option Strict Off
-Option Explicit On 
+Option Explicit On
 
+Imports System.IO
 Imports System.Data.OleDb
 
 Public Class ElencoDoc
@@ -1906,6 +1907,12 @@ Public Class ElencoDoc
                   EliminaBuoniPasto()
                End If
             End If
+
+            ' Se il documento da annullare è uno scontrino.
+            If Documento = TIPO_DOC_SF Then
+               CreaFileScontrinoWPOS1(Numero, Convert.ToDateTime(Data))
+            End If
+
          Else
             Exit Sub
          End If
@@ -2925,5 +2932,50 @@ Public Class ElencoDoc
 
       End Try
    End Sub
+
+   Public Function CreaFileScontrinoWPOS1(ByVal numeroDoc As String, ByVal dataDoc As Date) As Boolean
+      Try
+         Dim SR_DATI As String = "SR_DATI."
+         Dim SR_START As String = "SR_START."
+         Dim sw As StreamWriter
+
+         If PercorsoLavoroWpos1 = String.Empty Then
+            Return False
+         End If
+
+         If EstensioneFileWpos1 = String.Empty Then
+            Return False
+         Else
+            SR_DATI = SR_DATI & EstensioneFileWpos1
+            SR_START = SR_START & EstensioneFileWpos1
+         End If
+
+         ' Crea il file Start con la password.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_START)
+         sw.WriteLine(PwdDriverWpos1)
+         sw.Close()
+
+         ' Crea il file Dati con le righe di vendita.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_DATI)
+
+         ' Righe di annullo scontrino
+         Dim numeroSF As String = InserisciZero123(numeroDoc)
+         Dim dataSF As String = InserisciZero1(dataDoc.Day.ToString) & InserisciZero1(dataDoc.Month.ToString) & dataDoc.Year.ToString.Substring(2, 2)
+
+         Dim rigaScontrino As String = "DELD,N0001" & numeroSF & ",D" & dataSF & ",>96MEY012345;"
+         sw.WriteLine(rigaScontrino)
+
+         sw.Close()
+
+         Return True
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+      End Try
+   End Function
+
 
 End Class
