@@ -42,3 +42,42 @@ Nome parametro: length"
    in Hospitality_Solution.ContoPos.LeggiNumeroDocFiscaleConfig(String tabella, String tipoDoc)"
 "
 "
+"*** 23/11/2019 - 17:23:06 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.Procedure.StampaComndaRtsWpos1(String sql, String nomeTavolo, String nomeCameriereDoc)"
+"
+"
+"*** 14/12/2019 - 18:07:00 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3269
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6341"
+"
+"
+"*** 14/12/2019 - 18:09:01 ***"
+"- DESCRIZIONE ERRORE: Il file 'C:\ProgramData\RTSWPOS1\SR_OUT.001' non è stato trovato."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
+   in Hospitality_Solution.Procedure.LeggiNumScontrino() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Moduli\Procedure.vb:riga 3160"
+"
+"
+"*** 14/12/2019 - 18:09:38 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3269
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6341"
+"
+"
+"*** 14/12/2019 - 18:25:44 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3272
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6344"
+"
+"

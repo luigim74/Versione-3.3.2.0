@@ -3140,6 +3140,187 @@ Module Procedure
 
 #End Region
 
+#Region "Driver RTS Wpos1"
+   ' TODO_A: Terminare e testare il funzionamento.
+   Public Function LeggiNumScontrino() As String
+      Dim SR_OUT As String = "SR_OUT."
+      Dim numScontrino As String
+      Dim rigaFile As String
+      Dim fileReader As System.IO.StreamReader
+
+      Try
+         If PercorsoLavoroWpos1 = String.Empty Then
+            Return String.Empty
+         End If
+
+         If EstensioneFileWpos1 = String.Empty Then
+            Return String.Empty
+         Else
+            SR_OUT = SR_OUT & EstensioneFileWpos1
+         End If
+
+         If File.Exists(PercorsoLavoroWpos1 & "\" & SR_OUT) = True Then
+            'FileOpen(1, PercorsoLavoroWpos1 & "\" & SR_OUT, OpenMode.Input)
+            fileReader = My.Computer.FileSystem.OpenTextFileReader(PercorsoLavoroWpos1 & "\" & SR_OUT)
+         Else
+            ' Leggere il file errori.
+            Return String.Empty
+         End If
+
+         Do While fileReader.EndOfStream 'Not EOF(1)
+            'FileGet(1, rigaFile)
+            rigaFile = fileReader.ReadLine()
+
+            Dim campiRigaFile As String() = rigaFile.Split(",")
+
+            If campiRigaFile(1) = "DATE" Then
+               Dim rigaNumScontrino As String = campiRigaFile(3)
+
+               numScontrino = rigaNumScontrino.Remove(0, 13)
+
+               Return numScontrino
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         FileClose(1)
+
+      End Try
+
+   End Function
+
+   ' TODO_A: Terminare e testare il funzionamento.
+   Public Function LeggiNumeroCassa() As String
+      Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Function
+
+   ' TODO_A: Terminare e testare il funzionamento.
+   Public Function LeggiMatricolaRT() As String
+      Dim SR_OUT As String = "SR_OUT."
+      Dim matricola As String
+      Dim sr As StreamReader
+
+      Try
+         If PercorsoLavoroWpos1 = String.Empty Then
+            Return String.Empty
+         End If
+
+         If EstensioneFileWpos1 = String.Empty Then
+            Return String.Empty
+         Else
+            SR_OUT = SR_OUT & EstensioneFileWpos1
+         End If
+
+         File.OpenRead(PercorsoLavoroWpos1 & "\" & SR_OUT)
+         matricola = sr.ReadLine()
+
+         sr.Close()
+
+         Return matricola
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+      End Try
+
+   End Function
+#End Region
+
+
+#Region "Driver RTS EscWpos1"
+   Public Function StampaComndaRtsWpos1(ByVal sql As String, ByVal nomeTavolo As String, ByVal nomeCameriereDoc As String) As Boolean
+
+      ' TODO_A: Da terminare con filtro Reparti!
+      Dim rigaScontrino As String
+      Dim totComande As Integer
+
+      Dim sql1 As String = "SELECT * FROM Comande WHERE Inviata = 'No'"
+
+      Try
+         Dim SR_DATI As String = "SR_DATI."
+         Dim SR_START As String = "SR_START."
+         Dim sw As StreamWriter
+
+         If PercorsoLavoroWpos1 = String.Empty Then
+            Return False
+         End If
+
+         If EstensioneFileWpos1 = String.Empty Then
+            Return False
+         Else
+            SR_DATI = SR_DATI & EstensioneFileWpos1
+            SR_START = SR_START & EstensioneFileWpos1
+         End If
+
+         ' Crea il file Start con la password.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_START)
+         sw.WriteLine(PwdDriverWpos1)
+         sw.Close()
+
+         ' Crea il file Dati con le righe di vendita.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_DATI)
+
+         ' TAVOLO
+         rigaScontrino = "PRNT,:Tavolo: " & nomeTavolo & ";"
+         sw.WriteLine(rigaScontrino)
+
+         ' CAMERIERE
+         rigaScontrino = "PRNT,:Cameriere: " & nomeCameriereDoc & ";"
+         sw.WriteLine(rigaScontrino)
+
+         ' COPERTI
+         rigaScontrino = "PRNT,:Coperti: " & NumCopertiRistorante & ";"
+         sw.WriteLine(rigaScontrino)
+
+         ' RIGHE COMANDA
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         cn.Open()
+         Dim cmd As New OleDbCommand(sql1, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Do While dr.Read()
+            rigaScontrino = "PRNT,:" & Strings.StrDup(1, " ") & dr.Item("Quantità").ToString & " " & dr.Item("Descrizione").ToString.ToUpper & ";"
+            sw.WriteLine(rigaScontrino)
+
+            Dim quantità As Integer = Convert.ToInt32(dr.Item("Quantità"))
+            totComande = totComande + quantità
+         Loop
+
+         rigaScontrino = "PRNT,:Totale comande: " & totComande.ToString & ";"
+         sw.WriteLine(rigaScontrino)
+
+         cn.Close()
+         sw.Close()
+
+         Return True
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+      End Try
+
+
+   End Function
+
+#End Region
+
 #Region "Pen Drive Recovery"
 
    Public Sub PenDriveRecovery(ByVal cartellaDestinazione As String, ByVal percorsoRecoveryConfig As String, ByVal dataRecoveryConfig As String,
@@ -4014,7 +4195,6 @@ Module Procedure
 
 #End Region
 
-
 #Region "Varie"
 
    Public Function InserisciChiaveAccesso() As Boolean
@@ -4785,6 +4965,85 @@ Module Procedure
 
       End Try
    End Function
+
+#End Region
+
+#Region "Provvisorie"
+   Public Sub StampaComande()
+      '' Dichiara un oggetto connessione.
+      'Dim cn As New OleDbConnection(ConnString)
+      'Dim sql As String
+
+      'Try
+      '   cn.Open()
+
+      '   ' Stampa della comanda aggiuntiva con tutti i piatti.
+      '   sql = "SELECT * FROM Comande WHERE Inviata = 'No'"
+
+      '   If LeggiPercorsiComanda(10, percorsiStampa.Report) <> String.Empty Then
+      '      percorsoRep = "\Reports\" & LeggiPercorsiComanda(10, percorsiStampa.Report)
+      '   Else
+      '      percorsoRep = PERCORSO_REP_COMANDA_CLIENTI
+      '   End If
+
+      '   If LeggiPercorsiComanda(10, percorsiStampa.Stampante) <> String.Empty And
+      '      LeggiPercorsiComanda(10, percorsiStampa.Stampante) <> "<Nessuna>" Then
+
+      '      Select Case percorsoRep
+      '         Case PERCORSO_REP_COMANDA_CLIENTI
+      '            ' Esegue la stampa.
+      '            StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(10, percorsiStampa.Stampante))
+
+      '         Case PERCORSO_REP_COMANDA_CLIENTI_KUBEII
+      '            StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(10, percorsiStampa.Stampante))
+      '      End Select
+      '   End If
+
+      '   ' Stampa delle comande suddivise per reparti.
+      '   Dim cmd As New OleDbCommand("SELECT * FROM Reparti", cn)
+      '   Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+      '   Do While dr.Read()
+      '      If IsDBNull(dr.Item("Descrizione")) = False Then
+      '         sql = "SELECT * FROM Comande WHERE Reparto = '" & dr.Item("Descrizione").ToString & "' AND Inviata = 'No'"
+
+      '         ' Controlla se ci sono comande da inviare per il reparto specificato.
+      '         If VerificaNumRecord(sql) <> 0 Then
+      '            Dim i As Integer
+      '            For i = 0 To 9
+      '               If LeggiPercorsiComanda(i, percorsiStampa.Reparto) = dr.Item("Descrizione") Then
+      '                  ' Invio stampa per le comande.
+      '                  If LeggiPercorsiComanda(i, percorsiStampa.Report) <> String.Empty Then
+      '                     percorsoRep = "\Reports\" & LeggiPercorsiComanda(i, percorsiStampa.Report)
+      '                  Else
+      '                     percorsoRep = PERCORSO_REP_COMANDA_REPARTI
+      '                  End If
+
+      '                  Select Case percorsoRep
+      '                     Case PERCORSO_REP_COMANDA_REPARTI
+      '                        ' Esegue la stampa.
+      '                        StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+
+      '                     Case PERCORSO_REP_COMANDA_REPARTI_KUBEII
+      '                        StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+
+      '                  End Select
+
+      '               End If
+      '            Next
+      '         End If
+      '      End If
+      '   Loop
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'Finally
+      '   cn.Close()
+
+      'End Try
+   End Sub
 
 #End Region
 

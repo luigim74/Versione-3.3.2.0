@@ -3700,6 +3700,11 @@ Public Class frmPos
 
                            Case PERCORSO_REP_COMANDA_REPARTI_KUBEII
                               StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+
+                           Case PERCORSO_REP_COMANDA_REPARTI_WPOS1
+                              ' TODO_A: RIVEDERE!
+                              StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
+
                         End Select
 
                      End If
@@ -5408,7 +5413,8 @@ Public Class frmPos
                g_frmVCTavoli.lblInvioComande.Text = "Invio dati ai reparti in corso..."
 
                ' Invia comande ai reparti.
-               StampaComande()
+               'StampaComande()
+               StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
                RegistraMsgComanda()
                RegistraTuttiMsgComanda()
                StampaMessaggi()

@@ -2321,6 +2321,9 @@ Public Class ContoPos
             Case TIPO_DOC_PF
                chiaveConfig = "NumeroProforma"
 
+            Case TIPO_DOC_SF
+               Return 0
+
          End Select
 
          If IsNumeric(DatiConfig.GetValue(chiaveConfig)) = False Then
@@ -3151,6 +3154,11 @@ Public Class ContoPos
                   If CreaFileScontrinoWPOS1() = False Then
                      g_frmPos.InfoScontrino()
                      Exit Sub
+                  Else
+                     Dim numScontrino As String = LeggiNumScontrino()
+                     If numScontrino <> String.Empty Then
+                        ModificaNumScontrino(TAB_DOC, numScontrino)
+                     End If
                   End If
                End If
 
@@ -4398,6 +4406,48 @@ Public Class ContoPos
                              tabella,
                              totConto,
                              idPren)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Function
+
+   Public Function ModificaNumScontrino(ByVal tabella As String, ByVal numScontrino As Integer) As Boolean
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} " &
+                             "SET NumDoc = '{1}' " &
+                             "WHERE TipoDoc = 'Scontrino' AND NumDoc = 0",
+                             tabella,
+                             numScontrino)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)

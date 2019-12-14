@@ -287,6 +287,10 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_COMANDA_CLIENTI As String = "\Reports\ComandaClienti.rpt"
    Public Const PERCORSO_REP_COMANDA_REPARTI_KUBEII As String = "\Reports\ComandaRepartiKubeII.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_KUBEII As String = "\Reports\ComandaClientiKubeII.rpt.txt"
+
+   Public Const PERCORSO_REP_COMANDA_REPARTI_WPOS1 As String = "\Reports\ComandaRepartiWPOS1.rpt.txt"
+   Public Const PERCORSO_REP_COMANDA_CLIENTI_WPOS1 As String = "\Reports\ComandaClientiWPOS1.rpt.txt"
+
    Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\Messaggi.rpt"
 
    ' Percorso reports Etichette.
