@@ -3158,6 +3158,8 @@ Public Class ContoPos
                      Dim numScontrino As String = LeggiNumScontrino()
                      If numScontrino <> String.Empty Then
                         ModificaNumScontrino(TAB_DOC, numScontrino)
+                     Else
+                        EliminaScontrinoTemp(TAB_DOC, 0)
                      End If
                   End If
                End If
@@ -4472,6 +4474,46 @@ Public Class ContoPos
          ' Chiude la connessione.
          cn.Close()
       End Try
+   End Function
+
+   Public Function EliminaScontrinoTemp(ByVal tabella As String, ByVal numDoc As Integer) As Boolean
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+
+         sql = String.Format("DELETE FROM {0} WHERE NumDoc = {1}", tabella, numDoc)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
    End Function
 
    Private Sub SalvaDatiBuoni()

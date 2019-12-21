@@ -81,3 +81,17 @@ Nome parametro: length"
    in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6344"
 "
 "
+"*** 21/12/2019 - 15:25:41 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante)
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"
+"
+"*** 21/12/2019 - 15:27:36 ***"
+"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
+   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante)
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"
+"

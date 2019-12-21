@@ -3141,12 +3141,16 @@ Module Procedure
 #End Region
 
 #Region "Driver RTS Wpos1"
-   ' TODO_A: Terminare e testare il funzionamento.
    Public Function LeggiNumScontrino() As String
       Dim SR_OUT As String = "SR_OUT."
       Dim numScontrino As String
       Dim rigaFile As String
       Dim fileReader As System.IO.StreamReader
+
+      Cursor.Current = Cursors.AppStarting
+
+      ' Ritardo la lettura dello scontrino per permettere al driver di creare il file.
+      Threading.Thread.Sleep(5000)
 
       Try
          If PercorsoLavoroWpos1 = String.Empty Then
@@ -3160,22 +3164,20 @@ Module Procedure
          End If
 
          If File.Exists(PercorsoLavoroWpos1 & "\" & SR_OUT) = True Then
-            'FileOpen(1, PercorsoLavoroWpos1 & "\" & SR_OUT, OpenMode.Input)
-            fileReader = My.Computer.FileSystem.OpenTextFileReader(PercorsoLavoroWpos1 & "\" & SR_OUT)
+            fileReader = File.OpenText(PercorsoLavoroWpos1 & "\" & SR_OUT)
          Else
-            ' Leggere il file errori.
+            MessageBox.Show("Non è stato possibile leggere il numero dello scontrino dal file " & PercorsoLavoroWpos1 & "\" & SR_OUT, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
             Return String.Empty
          End If
 
-         Do While fileReader.EndOfStream 'Not EOF(1)
-            'FileGet(1, rigaFile)
+         Do While fileReader.Peek >= 0
             rigaFile = fileReader.ReadLine()
 
             Dim campiRigaFile As String() = rigaFile.Split(",")
 
-            If campiRigaFile(1) = "DATE" Then
-               Dim rigaNumScontrino As String = campiRigaFile(3)
-
+            If campiRigaFile(0) = "DATE" Then
+               Dim rigaNumScontrino As String = campiRigaFile(2)
                numScontrino = rigaNumScontrino.Remove(0, 13)
 
                Return numScontrino
@@ -3189,7 +3191,9 @@ Module Procedure
          Return String.Empty
 
       Finally
-         FileClose(1)
+         fileReader.Close()
+
+         Cursor.Current = Cursors.Default
 
       End Try
 
