@@ -429,7 +429,7 @@ Public Class frmAcquisti
 
 #End Region
 
-   Private CAcquisti As New Acquisti
+   Private CAcquisti As New AcquistiDataSet
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
 

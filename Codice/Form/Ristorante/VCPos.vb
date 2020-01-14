@@ -1,8 +1,17 @@
-' Nome form:            POS
+#Region " DATI FILE.VB "
+
+' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       10/04/2006
-' Data ultima modifica: 07/12/2015
+' Data ultima modifica: 12/01/2020
 ' Descrizione:          Interfaccia Punto cassa - conto immediato.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+
+#End Region
 
 Imports System.IO
 Imports System.Data.OleDb
@@ -2734,11 +2743,18 @@ Public Class frmPos
             Application.DoEvents()
          Loop
 
-         Return True
+         ' Se i è uguale a zero significa che non ci sono varianti.
+         If i = 0 Then
+            Return False
+         Else
+            Return True
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
 
       Finally
          cn.Close()
@@ -4502,6 +4518,8 @@ Public Class frmPos
 
    Private Sub Categorie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       Try
+         Dim visualizzaVarianti As Boolean
+
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
@@ -4513,7 +4531,11 @@ Public Class frmPos
          pnlVariazioni.Controls.Clear()
          NumVariazioni = 0
 
-         LeggiDatiVariazioni(TAB_PIATTI, CType(sender, NetButton).TextButton)
+         visualizzaVarianti = LeggiDatiVariazioni(TAB_PIATTI, CType(sender, NetButton).TextButton)
+
+         ' Se non ci sono varianti rende invisibili i tasti + e -.
+         netBtn_VariantePiù.Visible = visualizzaVarianti
+         netBtn_VarianteMeno.Visible = visualizzaVarianti
 
          ' Reset del segno +/- per le varianti.
          segnoVariante = String.Empty

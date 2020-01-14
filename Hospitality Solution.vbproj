@@ -124,6 +124,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <COMReference Include="JRO">
       <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
@@ -193,10 +196,24 @@
     <Reference Include="itextsharp">
       <HintPath>C:\Users\Luigi Montana\Downloads\itextsharp-develop\itextsharp-develop\src\core\bin\Debug_woDrawing\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
-      <Private>True</Private>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1400.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VSDesigner, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\common7\ide\Microsoft.VSDesigner.DLL</HintPath>
@@ -434,6 +451,14 @@
     <Compile Include="Codice\Classi\Tavoli.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Codice\DataSet\AcquistiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\AcquistiDataSet.vb">
+      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\AnagraficheDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -560,6 +585,12 @@
     <Compile Include="Codice\Form\Hospitality\GiudizioDemo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepAcquisti.Designer.vb">
+      <DependentUpon>RepAcquisti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepAcquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepCamere.Designer.vb">
       <DependentUpon>RepCamere.vb</DependentUpon>
     </Compile>
@@ -606,6 +637,12 @@
     <Compile Include="Codice\ReportsViewer\RepEmail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepFornitori.Designer.vb">
+      <DependentUpon>RepFornitori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepFornitori.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepIstat.Designer.vb">
       <DependentUpon>RepIstat.vb</DependentUpon>
     </Compile>
@@ -641,6 +678,11 @@
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\DataSet\FornitoriDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="Codice\Form\Ristorante\NoteContiPos.vb">
@@ -941,6 +983,17 @@
     <None Include="bin\Documenti\Licenza.rtf" />
     <None Include="bin\Documenti\Richiesta assistenza.eml" />
     <None Include="bin\Documenti\Temp.eml" />
+    <None Include="Codice\DataSet\AcquistiDataSet.xsc">
+      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\AcquistiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcquistiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\AcquistiDataSet.xss">
+      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\AnagraficheDataSet.xsc">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </None>
@@ -986,6 +1039,17 @@
     </None>
     <None Include="Codice\DataSet\HospitalityDataSet1.xss">
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\FornitoriDataSet.xsc">
+      <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\FornitoriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FornitoriDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\FornitoriDataSet.xss">
+      <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
     </None>
     <None Include="HsKey.pfx" />
     <None Include="packages.config" />
@@ -1061,10 +1125,12 @@
     <None Include="Resources\About1.ico" />
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
+    <EmbeddedResource Include="bin\Reports\Acquisti.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
@@ -1164,6 +1230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\Main.it-IT.resx">
       <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepAcquisti.resx">
+      <DependentUpon>RepAcquisti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCamere.resx">
       <DependentUpon>RepCamere.vb</DependentUpon>
@@ -1450,6 +1519,9 @@
     <EmbeddedResource Include="Codice\ReportsViewer\RepEmail.resx">
       <DependentUpon>RepEmail.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepFornitori.resx">
+      <DependentUpon>RepFornitori.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepIstat.resx">
       <DependentUpon>RepIstat.vb</DependentUpon>
     </EmbeddedResource>
@@ -1531,6 +1603,21 @@
     <Content Include="bin\Reports\ComandaRepartiKubeII.rpt.txt" />
     <Content Include="bin\Reports\ProformaKubeII.rpt.txt" />
     <Content Include="bin\Reports\RicevutaKubeII.rpt.txt" />
+    <Content Include="Codice\ReportsViewer\Istruzioni per creare un Report.txt" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\DiscardChanges.png" />
     <None Include="Resources\CancelApproval_32x32.png" />
     <None Include="Resources\Delete-PermissionHH.png" />

@@ -1,4 +1,4 @@
-"*** 02/02/2019 - 18:47:32 ***"
+"*** 14/01/2020 - 15:42:31 ***"
 "- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
    in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
@@ -12,86 +12,173 @@
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
-   in Hospitality_Solution.AnagraficheDataSetTableAdapters.ClientiTableAdapter.Fill(ClientiDataTable dataTable)
-   in Hospitality_Solution.RepClienti.RepClienti_Load(Object sender, EventArgs e)"
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 28/04/2019 - 14:55:44 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile)"
+"*** 14/01/2020 - 15:46:15 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 04/05/2019 - 14:14:22 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile)"
+"*** 14/01/2020 - 15:47:06 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 22/08/2019 - 09:46:39 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.ContoPos.LeggiNumeroDocFiscaleConfig(String tabella, String tipoDoc)"
-"
-"
-"*** 01/11/2019 - 15:15:37 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.ContoPos.LeggiNumeroDocFiscaleConfig(String tabella, String tipoDoc)"
-"
-"
-"*** 23/11/2019 - 17:23:06 ***"
-"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"*** 14/01/2020 - 15:50:20 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
    in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.StampaComndaRtsWpos1(String sql, String nomeTavolo, String nomeCameriereDoc)"
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 14/12/2019 - 18:07:00 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3269
-   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6341"
+"*** 14/01/2020 - 15:50:41 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 14/12/2019 - 18:09:01 ***"
-"- DESCRIZIONE ERRORE: Il file 'C:\ProgramData\RTSWPOS1\SR_OUT.001' non è stato trovato."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.FileSystem.FileOpen(Int32 FileNumber, String FileName, OpenMode Mode, OpenAccess Access, OpenShare Share, Int32 RecordLength)
-   in Hospitality_Solution.Procedure.LeggiNumScontrino() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Moduli\Procedure.vb:riga 3160"
+"*** 14/01/2020 - 15:55:24 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 14/12/2019 - 18:09:38 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3269
-   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6341"
+"*** 14/01/2020 - 15:56:16 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 14/12/2019 - 18:25:44 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 3272
-   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 6344"
+"*** 14/01/2020 - 15:58:42 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable)
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e)"
 "
 "
-"*** 21/12/2019 - 15:25:41 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante)
-   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"*** 14/01/2020 - 16:16:52 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\AcquistiDataSet.Designer.vb:riga 3863
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\ReportsViewer\RepAcquisti.vb:riga 52"
 "
 "
-"*** 21/12/2019 - 15:27:36 ***"
-"- DESCRIZIONE ERRORE: La OleDbTransaction è completata e non può più essere utilizzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbTransaction.Rollback()
-   in Hospitality_Solution.ContoPos.StampaConto(String nomeStampante)
-   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"*** 14/01/2020 - 16:25:00 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.AcquistiDataSetTableAdapters.AcquistiTableAdapter.Fill(AcquistiDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\AcquistiDataSet.Designer.vb:riga 3863
+   in Hospitality_Solution.RepAcquisti.RepAcquisti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\ReportsViewer\RepAcquisti.vb:riga 52"
+"
+"
+"*** 14/01/2020 - 17:21:34 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.FornitoriDataSetTableAdapters.FornitoriTableAdapter.Fill(FornitoriDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\FornitoriDataSet.Designer.vb:riga 3163
+   in Hospitality_Solution.RepFornitori.RepFornitori_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\ReportsViewer\RepFornitori.vb:riga 52"
 "
 "

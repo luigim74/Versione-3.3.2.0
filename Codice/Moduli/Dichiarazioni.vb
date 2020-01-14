@@ -157,7 +157,7 @@ Module Dichiarazioni
    ' Percorso reports.
    Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rdlc"
    Public Const PERCORSO_REP_AZIENDE As String = "\Reports\Aziende.rpt"
-   Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rpt"
+   Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rdlc"
    Public Const PERCORSO_REP_PIATTI As String = "\Reports\Piatti.rpt"
    Public Const PERCORSO_REP_ARTICOLI As String = "\Reports\Articoli.rpt"
    Public Const PERCORSO_REP_MOV_MAG As String = "\Reports\MovMag.rpt"
@@ -188,6 +188,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_OPERAZIONI As String = "\Reports\Operazioni.rpt"
 
    ' Nomi per i reports dei documenti in formato .rdlc
+   Public Const PERCORSO_REP_ACQUISTI_A4 As String = "\Reports\Acquisti.rdlc"
    Public Const PERCORSO_REP_ACCESSORI_SERVIZI_A4 As String = "\Reports\AccessoriServizi.rdlc"
    Public Const PERCORSO_REP_CAP_A4 As String = "\Reports\Cap.rdlc"
    Public Const PERCORSO_REP_EMAIL_A4 As String = "\Reports\Email.rdlc"
@@ -845,7 +846,7 @@ Module Dichiarazioni
    ' Testo che compare nel titolo del programma.
    Public Const VER_DEMO As String = "VERSIONE DIMOSTRATIVA"
    ' Numero di serie del prodotto. (VERSIONE_FILE - VERSIONE_PRODOTTO - DATA_RILASCIO - ORA_RILASCIO)
-   Public Const NUMERO_SERIE As String = "03310-003-3112018-01529"
+   Public Const NUMERO_SERIE As String = "03320-003-0401020-01630"
    ' Numero di elementi inseribili per la versione demo.
    Public Const NUM_ELEMENTI_DEMO As Integer = 16
    ' File per la data di installazione.

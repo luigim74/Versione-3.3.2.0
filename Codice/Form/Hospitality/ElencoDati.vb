@@ -3899,7 +3899,7 @@ Public Class frmElencoDati
       End Try
    End Function
 
-   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub AnteprimaDiStampaCamere(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -3952,6 +3952,34 @@ Public Class frmElencoDati
 
       End Try
    End Sub
+
+   Private Sub AnteprimaDiStampaFornitori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New FornitoriDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepFornitori(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       Dim cn As OleDbConnection
@@ -4446,7 +4474,11 @@ Public Class frmElencoDati
                   StampaDocumento(PERCORSO_REP_AZIENDE, TAB_AZIENDE, repSql, "Aziende")
 
                Case Elenco.Fornitori
-                  StampaDocumento(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
+                  'StampaDocumento(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
+
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
+                  End If
 
                Case Elenco.CatPiatti
                   StampaDocumento(PERCORSO_REP_CAT_PIATTI, TAB_CAT_PIATTI, repSql)
@@ -4465,7 +4497,7 @@ Public Class frmElencoDati
 
                Case Elenco.Camere
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampa(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                     AnteprimaDiStampacamere(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
                   End If
 
                Case Elenco.StatoPren
@@ -4503,7 +4535,8 @@ Public Class frmElencoDati
                   g_frmMain.ApriReports(repSql, TAB_AZIENDE, PERCORSO_REP_AZIENDE, "Aziende")
 
                Case Elenco.Fornitori
-                  g_frmMain.ApriReports(repSql, TAB_FORNITORI, PERCORSO_REP_FORNITORI)
+                  'g_frmMain.ApriReports(repSql, TAB_FORNITORI, PERCORSO_REP_FORNITORI)
+                  AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
 
                Case Elenco.CatPiatti
                   g_frmMain.ApriReports(repSql, TAB_CAT_PIATTI, PERCORSO_REP_CAT_PIATTI)
@@ -4521,7 +4554,7 @@ Public Class frmElencoDati
                   g_frmMain.ApriReports(repSql, TAB_TAVOLI, PERCORSO_REP_TAVOLI)
 
                Case Elenco.Camere
-                  AnteprimaDiStampa(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                  AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
 
                Case Elenco.StatoPren
                   'g_frmMain.ApriReports(repSql, TAB_STATO_PREN, PERCORSO_REP_STATO_PREN)

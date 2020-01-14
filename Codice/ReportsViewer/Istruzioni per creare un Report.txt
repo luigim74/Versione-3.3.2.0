@@ -1,0 +1,8 @@
+﻿1. Creare il file .rdlc, associare sorgente dati selezionando direttamente il fie archivio.
+1. Creare DataSet contenente le tabelle dati necessarie.
+3. Creare un form con controllo Report Viewer e associare il file .rdlc. Eseguire l'anteprima dei dati.
+4. Modificare codice del form Report Viewer.
+5. Creare procedura Anteprima di stampa per l'elenco dati.
+
+ATTENZIONE! Quando si apre il form Report Viewer viene duplicato il nome HospitalitySolution nel designer del form generando un errore. 
+Chiudere il form e cancellare i riferimenti duplicati.

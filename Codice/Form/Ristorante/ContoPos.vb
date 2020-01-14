@@ -1,3 +1,16 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/01/2005
+' Data ultima modifica: 05/09/2019
+' Descrizione:          Interfaccia Punto cassa - Conto.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
+
 Imports System.IO
 Imports System.Data.OleDb
 Imports System.Drawing.Printing

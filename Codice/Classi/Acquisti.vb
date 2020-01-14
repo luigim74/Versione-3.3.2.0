@@ -1,6 +1,6 @@
 Imports System.Data.OleDb
 
-Public Class Acquisti
+Public Class AcquistiDataSet
 
    Public Codice As String
    Public Fornitore As String

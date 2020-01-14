@@ -24,14 +24,24 @@ Partial Class RepCap
    Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+      Me.CAPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+      Me.HospitalityDataSet = New HospitalityDataSet()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-      Me.HospitalityDataSet = New HospitalityDataSet()
-      Me.CAPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
       Me.CAPTableAdapter = New HospitalityDataSetTableAdapters.CAPTableAdapter()
-      CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.CAPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
+      '
+      'CAPBindingSource
+      '
+      Me.CAPBindingSource.DataMember = "CAP"
+      Me.CAPBindingSource.DataSource = Me.HospitalityDataSet
+      '
+      'HospitalityDataSet
+      '
+      Me.HospitalityDataSet.DataSetName = "HospitalityDataSet"
+      Me.HospitalityDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
       '
       'formFrameSkinner
       '
@@ -47,18 +57,9 @@ Partial Class RepCap
       Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.Cap.rdlc"
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
-      Me.ReportViewer1.Size = New System.Drawing.Size(816, 466)
+      Me.ReportViewer1.ServerReport.BearerToken = Nothing
+      Me.ReportViewer1.Size = New System.Drawing.Size(840, 490)
       Me.ReportViewer1.TabIndex = 1
-      '
-      'HospitalityDataSet
-      '
-      Me.HospitalityDataSet.DataSetName = "HospitalityDataSet"
-      Me.HospitalityDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-      '
-      'CAPBindingSource
-      '
-      Me.CAPBindingSource.DataMember = "CAP"
-      Me.CAPBindingSource.DataSource = Me.HospitalityDataSet
       '
       'CAPTableAdapter
       '
@@ -68,13 +69,13 @@ Partial Class RepCap
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(816, 466)
+      Me.ClientSize = New System.Drawing.Size(840, 490)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepCap"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "RepCap"
-      CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.CAPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.HospitalityDataSet, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
    End Sub

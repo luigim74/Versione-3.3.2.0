@@ -1,0 +1,37 @@
+CONTRATTO DI LICENZA CON L'UTENTE FINALE PER IL 
+PRODOTTO SOFTWARE HOSPITALITY SOLUTION
+
+
+IMPORTANTE - LEGGERE CON ATTENZIONE: il prodotto include il software per computer ed è composto dai supporti di memorizzazione ad esso associati, dal materiale stampato e una documentazione elettronica. Installando, copiando e utilizzando il prodotto software, l'utente accetta di essere vincolato dalle condizioni del presente contratto. Qualora l'utente non accetti le condizioni del presente contratto di licenza, dovrà restituire prontamente all'autore il contratto stesso e il prodotto con i relativi documenti e materiali. In tale ipotesi, l'utente potrà ottenere il rimborso del prezzo.
+
+Il prodotto software viene concesso in licenza, non viene venduto.
+l’UTILIZZO DEI PRODOTTI SENZA PREVIA ACCETTAZIONE DEL CONTRATTO E’ ILLEGALE E RICADE SOTTO LE SANZIONI DI LEGGE.
+
+COPYRIGHT: I marchi dei prodotti e il software fornito sono di proprietà della Montana Software e sono tutelati dalle leggi sul copyright vigenti, dalle disposizioni dei trattati internazionali e dalle altre leggi nazionali applicabili. L'utilizzatore può effettuare una copia di archivio del software in dotazione. Operazioni di manipolazione, alterazione, conversione, decodifica, decompilazione, disassemblaggio e simili sono illegali.
+
+LICENZA DEL SOFTWARE: Il software fornito‚ di proprietà della Montana Software, viene concesso in Licenza d'uso. Ogni licenza è valida per l'installazione e l'uso del programma su un solo computer alla volta, è cioè possibile dopo la prima installazione, disinstallare il programma da un computer e reinstallarlo su un altro ma non installarlo con la stessa licenza su più di un computer contemporaneamente. E' vietato dare in locazione, in leasing o in prestito il software, ma si possono trasferire in via definitiva i diritti concessi a condizione che vengano trasferite tutte le copie del software e tutto il materiale scritto e che il cessionario accetti le condizioni del presente contratto. 
+La concessione della Licenza d'uso ‚ subordinata alla condizione che la Montana Software sia tenuta indenne e mallevata dall'utente nei confronti di qualsivoglia rivendicazione o azione giudiziale, comprese le spese legali, derivanti dall'uso o dalla distribuzione dei prodotti dell'utilizzatore.
+
+DURATA DELLA LICENZA D'USO: La concessione della licenza d'uso è di durata illimitata, e relativa alla sola versione fornita al momento dell'acquisto. 
+
+RISOLUZIONE DEL CONTRATTO DI LICENZA D'USO: Questo contratto rimarrà valido fino alla risoluzione, scadenza o recesso di una delle parti. L'utente può recedere dal contratto in qualsiasi momento distruggendo tutte le copie del software installato. La Montana Software può rescindere il contratto con effetto immediato senza preavviso solo se l'utente non osserverà una qualsiasi clausola del contratto. Al momento della cessazione della validità del contratto, l'utente dovrà distruggere tutte le copie del software in suo possesso.
+
+DOCUMENTAZIONE: La documentazione fornita ‚ è stata attentamente verificata; tuttavia la Montana Software non assume alcuna responsabilità per le conseguenze di possibili errori od omissioni nelle informazioni riportate o di eventuali caratteristiche o variazioni non documentate dei propri prodotti.
+
+VARIAZlONI: La Montana Software si riserva il diritto di modificare le caratteristiche dei propri prodotti, di cambiarne le specifiche senza preventivo avviso.
+
+LIMITI DI GARANZIA: Eventuali difetti dei programmi o loro malfunzionamenti devono essere comunicati  alla Montana Software, che si  impegna a  fare  il possibile  per  rimuovere le cause di tali malfunzionamenti nel più breve tempo possibile. La presente garanzia viene meno qualora il vizio del software derivi da malfunzionamenti hardware, incidente, uso inidoneo o erronea applicazione.
+
+ESCLUSIONE DI ALTRE GARANZIE: 	La Montana Software non riconosce alcuna altro tipo di garanzia, espressa o implicita. Non viene fornita alcuna garanzia che le funzioni contenute nei programmi soddisfino le esigenze degli utenti o funzionino in tutte le combinazioni che possono essere scelte per l'uso da parte  degli acquirenti. Gli acquirenti devono controllare sotto la loro personale  responsabilità che i programmi  corrispondano alle loro esigenze e  che eseguono le funzioni richieste. La Montana Software si riserva  il diritto di apportare ai programmi qualunque modifica necessaria, e non garantisce che eventuali nuove versioni  del programma contengano tutte le funzioni presenti nella versione precedente o che funzionino allo stesso modo.
+
+ESCLUSIONE DI RESPONSABILITA' : In nessun caso la Montana Software sarà ritenuta responsabile di eventuali danni, inclusi senza limitazioni il danno per perdita o mancato guadagno, interruzione dell'attività, perdita di informazioni o altre perdite economiche, danni diretti od indiretti, incidentali o consequenziali, derivante dall'uso o nell'impossibilità di uso dei prodotti forniti per qualunque ragione, compresi guasti o anomalie di funzionamento del software fornito ed anche nel caso in cui la Montana Software sia stata avvertita della possibilità di tali danni. Analogamente la Montana Software non sarà ritenuta responsabile dei danni causati da chi utilizzi illegalmente i prodotto o illegalmente diffonda copie di programmi o codici di calcolo o dati riservati, superando, mediante manipolazioni hardware e/o software, le protezioni introdotte. La Montana Software non è responsabile per un uso improprio dei propri prodotti e non garantisce né autorizza l'utilizzo degli stessi nelle applicazioni ove possono causare danni a persone o cose, sia in funzionamento normale che durante situazioni di guasto o di anomalia.
+
+FORNITURE ADDIZIONALl: Le clausole del presente Contratto si applicano anche al software delle forniture successive, come nel caso in cui l'utilizzatore riceva o acquisti aggiornamenti, ulteriori licenze o utilities software o altri prodotti successivi al primo. 
+
+SEPARAZIONE DI COMPONENTI: Il prodotto software è concesso in licenza quale prodotto singolo. Le sue singole parti componenti non possono essere separate per l'utilizzo su più di un computer.
+
+RESTRIZIONI ALL'ESPORTAZIONE: L'utente si impegna a non esportare o trasmettere direttamente o indirettamente, il presente software in alcun Paese nei cui confronti tale esportazione o trasmissione sia limitata dalle disposizioni in vigore degli Stati Uniti d'America.
+
+UTILIZZO DI INTERNET: Il prodotto software in presenza di un collegamento ad Internet tramite una qualsiasi rete (cavo o wireless) può trasmettere dati ad un server remoto a soli fini statistici. Tali dati comprendono gli stessi che l'utente ha fornito al momento della registrazione del programma. I dati verranno trattati in sicurezza secondo le normative in vigore.
+
+

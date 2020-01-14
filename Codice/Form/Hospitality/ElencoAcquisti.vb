@@ -1,8 +1,15 @@
-' Nome form:            frmElencoDati
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 15/04/2006
-' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
+' Data ultima modifica: 14/01/2020
+' Descrizione:          Elenco documenti di acquisto.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -965,44 +972,72 @@ Public Class frmElencoAcquisti
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New AcquistiDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepAcquisti(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         cn.Close()
+
       End Try
+   End Sub
+
+   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Try
+
+      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
+
+      '      'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '      Dim cn As New OleDbConnection(ConnString)
+
+      '      cn.Open()
+
+      '      Dim oleAdapter As New OleDbDataAdapter
+
+      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '      Dim ds As New Dataset1
+
+      '      ds.Clear()
+
+      '      oleAdapter.Fill(ds, tabella)
+
+      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '      rep.Load(Application.StartupPath & nomeDoc)
+
+      '      rep.SetDataSource(ds)
+
+      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
+      '                         PrintDialog1.PrinterSettings.FromPage, _
+      '                         PrintDialog1.PrinterSettings.ToPage)
+
+      '      cn.Close()
+      '   End If
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'End Try
    End Sub
 
    Private Sub frmElencoAcquisti_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
@@ -1111,13 +1146,15 @@ Public Class frmElencoAcquisti
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_ELENCO_ACQUISTI, MODULO_GESTIONE_ACQUISTI)
 
-            StampaDocumento(PERCORSO_REP_ACQUISTI, TAB_ACQUISTI, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampa(PERCORSO_REP_ACQUISTI_A4, TAB_ACQUISTI, repSql)
+            End If
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_ELENCO_ACQUISTI, MODULO_GESTIONE_ACQUISTI)
 
-            g_frmMain.ApriReports(repSql, TAB_ACQUISTI, PERCORSO_REP_ACQUISTI)
+            AnteprimaDiStampa(PERCORSO_REP_ACQUISTI_A4, TAB_ACQUISTI, repSql)
 
          Case "Primo"
             '' Crea la stringa sql.
