@@ -981,7 +981,7 @@ Public Class frmElencoAcquisti
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-         Dim ds As New AcquistiDataSet
+         Dim ds As New DocAcquistoDataSet
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 

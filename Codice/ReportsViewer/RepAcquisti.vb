@@ -15,7 +15,7 @@ Public Class RepAcquisti
    Dim nomeStampante As String
    Dim nomeReport As String
 
-   Public Sub New(ByVal ds As AcquistiDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
+   Public Sub New(ByVal ds As DocAcquistoDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
          ' La chiamata è richiesta dalla finestra di progettazione.
          InitializeComponent()
@@ -49,7 +49,7 @@ Public Class RepAcquisti
          ImpostaIcona(Me)
 
          ' Carica i dati delle rispettive tabelle.
-         Me.AcquistiTableAdapter.Fill(Me.AcquistiDataSet.Acquisti)
+         Me.AcquistiTableAdapter.Fill(Me.DocAcquistoDataSet.Acquisti)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -72,6 +72,7 @@ Public Class RepAcquisti
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
+      Me.ReportViewer1.RefreshReport
    End Sub
 
    Private Sub FormResize(ByVal larghezza As Short, ByVal altezza As Short)

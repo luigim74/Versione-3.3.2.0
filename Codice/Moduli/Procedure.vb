@@ -1,8 +1,8 @@
 #Region " DATI FILE.VB "
-' ******************************************************************
+' ******************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/01/2005
-' Data ultima modifica: 05/09/2018
+' Data ultima modifica: 15/01/2020
 ' Descrizione:          File contenente procedure varie.
 ' Note:
 ' ATTENZIONENE! QUESTO FILE CONTIENE PROCEDURE VARIE CONDIVISE DA TUTTI I PROGETTI.
@@ -10,7 +10,7 @@
 '
 ' Elenco Attivita:
 '
-' ******************************************************************
+' ******************************************************************************************
 #End Region
 
 #Region "Importazioni"
@@ -3143,7 +3143,7 @@ Module Procedure
 #Region "Driver RTS Wpos1"
    Public Function LeggiNumScontrino() As String
       Dim SR_OUT As String = "SR_OUT."
-      Dim numScontrino As String
+      Dim numScontrino As String = String.Empty
       Dim rigaFile As String
       Dim fileReader As System.IO.StreamReader
 
@@ -3177,8 +3177,13 @@ Module Procedure
             Dim campiRigaFile As String() = rigaFile.Split(",")
 
             If campiRigaFile(0) = "DATE" Then
-               Dim rigaNumScontrino As String = campiRigaFile(2)
-               numScontrino = rigaNumScontrino.Remove(0, 13)
+               Dim rigaNumScontrino As String = campiRigaFile(2).Replace(" ", String.Empty)
+
+               Dim i As Integer = 4
+               Do While IsNumeric(numScontrino) = False
+                  numScontrino = rigaNumScontrino.Remove(0, rigaNumScontrino.Length - i)
+                  i -= 1
+               Loop
 
                Return numScontrino
             End If

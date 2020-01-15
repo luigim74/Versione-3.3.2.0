@@ -164,7 +164,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_SCORTE As String = "\Reports\Scorte.rpt"
    Public Const PERCORSO_REP_INVENTARIO As String = "\Reports\Inventario.rpt"
    Public Const PERCORSO_REP_CAT_PIATTI As String = "\Reports\CatPiatti.rpt"
-   Public Const PERCORSO_REP_CAMERIERI As String = "\Reports\Camerieri.rpt"
+   Public Const PERCORSO_REP_CAMERIERI As String = "\Reports\Camerieri.rdlc"
    Public Const PERCORSO_REP_SALE As String = "\Reports\Sale.rpt"
    Public Const PERCORSO_REP_TAVOLI As String = "\Reports\Tavoli.rpt"
    Public Const PERCORSO_REP_CAMERE As String = "\Reports\Camere.rdlc"

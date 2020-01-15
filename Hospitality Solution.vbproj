@@ -340,6 +340,11 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.vb" />
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Codice\DataSet\CamerieriDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CamerieriDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\Classi\Acquisti.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -450,14 +455,6 @@
     </Compile>
     <Compile Include="Codice\Classi\Tavoli.vb">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Codice\DataSet\AcquistiDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Codice\DataSet\AcquistiDataSet.vb">
-      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Codice\DataSet\AnagraficheDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -597,6 +594,12 @@
     <Compile Include="Codice\ReportsViewer\RepCamere.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCamerieri.Designer.vb">
+      <DependentUpon>RepCamerieri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCamerieri.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepCap.Designer.vb">
       <DependentUpon>RepCap.vb</DependentUpon>
     </Compile>
@@ -683,6 +686,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\DocAcquistoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocAcquistoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="Codice\Form\Ristorante\NoteContiPos.vb">
@@ -983,16 +991,16 @@
     <None Include="bin\Documenti\Licenza.rtf" />
     <None Include="bin\Documenti\Richiesta assistenza.eml" />
     <None Include="bin\Documenti\Temp.eml" />
-    <None Include="Codice\DataSet\AcquistiDataSet.xsc">
-      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    <None Include="Codice\DataSet\CamerieriDataSet.xsc">
+      <DependentUpon>CamerieriDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Codice\DataSet\AcquistiDataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Codice\DataSet\CamerieriDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AcquistiDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>CamerieriDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Codice\DataSet\AcquistiDataSet.xss">
-      <DependentUpon>AcquistiDataSet.xsd</DependentUpon>
+    <None Include="Codice\DataSet\CamerieriDataSet.xss">
+      <DependentUpon>CamerieriDataSet.xsd</DependentUpon>
     </None>
     <None Include="Codice\DataSet\AnagraficheDataSet.xsc">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
@@ -1050,6 +1058,17 @@
     </None>
     <None Include="Codice\DataSet\FornitoriDataSet.xss">
       <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\DocAcquistoDataSet.xsc">
+      <DependentUpon>DocAcquistoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\DocAcquistoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocAcquistoDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\DocAcquistoDataSet.xss">
+      <DependentUpon>DocAcquistoDataSet.xsd</DependentUpon>
     </None>
     <None Include="HsKey.pfx" />
     <None Include="packages.config" />
@@ -1126,6 +1145,7 @@
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
     <EmbeddedResource Include="bin\Reports\Acquisti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
@@ -1236,6 +1256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCamere.resx">
       <DependentUpon>RepCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCamerieri.resx">
+      <DependentUpon>RepCamerieri.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCap.resx">
       <DependentUpon>RepCap.vb</DependentUpon>
