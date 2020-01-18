@@ -340,6 +340,11 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.vb" />
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Codice\DataSet\ArticoliDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticoliDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\CategoriePiattiDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -442,9 +447,7 @@
     <Compile Include="Codice\Classi\Operatori.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Codice\Classi\Operazioni.vb">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Codice\Classi\Operazioni.vb" />
     <Compile Include="Codice\Classi\Piatti.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -565,6 +568,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\GruppiOp.Designer.vb">
+      <DependentUpon>GruppiOp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\GruppiOp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepOperazioni.Designer.vb">
+      <DependentUpon>RepOperazioni.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepOperazioni.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepAccessoriServizi.Designer.vb">
       <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
     </Compile>
@@ -596,6 +611,12 @@
       <DependentUpon>RepAcquisti.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepAcquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepArticoli.Designer.vb">
+      <DependentUpon>RepArticoli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepArticoli.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepAziende.Designer.vb">
@@ -680,10 +701,22 @@
     <Compile Include="Codice\ReportsViewer\RepListiniCamere.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepOperatori.Designer.vb">
+      <DependentUpon>RepOperatori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepOperatori.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenCamere.Designer.vb">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenCamere.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenSale.Designer.vb">
+      <DependentUpon>RepPrenSale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenSale.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenTavoli.Designer.vb">
@@ -1008,6 +1041,11 @@
     <Compile Include="Codice\DataSet\Dataset1.vb">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\GruppiOpDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -1033,12 +1071,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrenTavoliDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\PrenSaleDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrenSaleDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\OperatoriDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperatoriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\OperazioniDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperazioniDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="Codice\DataSet\TavoliDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TavoliDataSet.xsd</DependentUpon>
     </Compile>
+    <None Include="Codice\DataSet\ArticoliDataSet.xsc">
+      <DependentUpon>ArticoliDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ArticoliDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ArticoliDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\ArticoliDataSet.xss">
+      <DependentUpon>ArticoliDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\CategoriePiattiDataSet.xsc">
       <DependentUpon>CategoriePiattiDataSet.xsd</DependentUpon>
     </None>
@@ -1147,7 +1211,40 @@
     <None Include="Codice\DataSet\DocAcquistoDataSet.xss">
       <DependentUpon>DocAcquistoDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\GruppiOpDataSet.xsc">
+      <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\GruppiOpDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GruppiOpDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\GruppiOpDataSet.xss">
+      <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
+    </None>
     <None Include="HsKey.pfx" />
+    <None Include="Codice\DataSet\OperatoriDataSet.xsc">
+      <DependentUpon>OperatoriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\OperatoriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperatoriDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\OperatoriDataSet.xss">
+      <DependentUpon>OperatoriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\OperazioniDataSet.xsc">
+      <DependentUpon>OperazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\OperazioniDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperazioniDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\OperazioniDataSet.xss">
+      <DependentUpon>OperazioniDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Codice\DataSet\PrenTavoliDataSet.xsc">
       <DependentUpon>PrenTavoliDataSet.xsd</DependentUpon>
@@ -1159,6 +1256,17 @@
     </None>
     <None Include="Codice\DataSet\PrenTavoliDataSet.xss">
       <DependentUpon>PrenTavoliDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PrenSaleDataSet.xsc">
+      <DependentUpon>PrenSaleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PrenSaleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrenSaleDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\PrenSaleDataSet.xss">
+      <DependentUpon>PrenSaleDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\LogoAmica.ico" />
     <None Include="bin\Android\CHS_ANAG.DB" />
@@ -1233,6 +1341,7 @@
     <None Include="Resources\About.ico" />
     <None Include="Resources\Hospitality.ico" />
     <EmbeddedResource Include="bin\Reports\Acquisti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Articoli.rdlc" />
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
@@ -1241,12 +1350,16 @@
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
+    <EmbeddedResource Include="bin\Reports\GruppiOp.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Operazioni.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenTavoli.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
+    <EmbeddedResource Include="bin\Reports\PrenSale.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />
@@ -1326,6 +1439,12 @@
     <EmbeddedResource Include="Codice\Form\Hotel\DataModIstatC59.resx">
       <DependentUpon>DataModIstatC59.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\GruppiOp.resx">
+      <DependentUpon>GruppiOp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepOperazioni.resx">
+      <DependentUpon>RepOperazioni.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepAccessoriServizi.resx">
       <DependentUpon>RepAccessoriServizi.vb</DependentUpon>
     </EmbeddedResource>
@@ -1346,6 +1465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepAcquisti.resx">
       <DependentUpon>RepAcquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepArticoli.resx">
+      <DependentUpon>RepArticoli.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepAziende.resx">
       <DependentUpon>RepAziende.vb</DependentUpon>
@@ -1651,8 +1773,14 @@
       <DependentUpon>RepListiniCamere.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Reports\Clienti.rdlc" />
+    <EmbeddedResource Include="Codice\ReportsViewer\RepOperatori.resx">
+      <DependentUpon>RepOperatori.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepPrenSale.resx">
+      <DependentUpon>RepPrenSale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenTavoli.resx">
       <DependentUpon>RepPrenTavoli.vb</DependentUpon>

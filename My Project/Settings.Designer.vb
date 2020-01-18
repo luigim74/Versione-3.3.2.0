@@ -317,6 +317,61 @@ Namespace My
                 Return CType(Me("HospitalityConnectionString23"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString24() As String
+            Get
+                Return CType(Me("HospitalityConnectionString24"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString25() As String
+            Get
+                Return CType(Me("HospitalityConnectionString25"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString26() As String
+            Get
+                Return CType(Me("HospitalityConnectionString26"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString27() As String
+            Get
+                Return CType(Me("HospitalityConnectionString27"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString28() As String
+            Get
+                Return CType(Me("HospitalityConnectionString28"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

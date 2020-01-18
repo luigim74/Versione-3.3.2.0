@@ -879,44 +879,73 @@ Public Class RegOperazioni
    End Function
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Try
+
+      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
+
+      '      'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '      Dim cn As New OleDbConnection(ConnString)
+
+      '      cn.Open()
+
+      '      Dim oleAdapter As New OleDbDataAdapter
+
+      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '      Dim ds As New Dataset1
+
+      '      ds.Clear()
+
+      '      oleAdapter.Fill(ds, tabella)
+
+      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '      rep.Load(Application.StartupPath & nomeDoc)
+
+      '      rep.SetDataSource(ds)
+
+      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                         PrintDialog1.PrinterSettings.FromPage,
+      '                         PrintDialog1.PrinterSettings.ToPage)
+
+      '      cn.Close()
+      '   End If
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaOperazioni(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New OperazioniDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepOperazioni(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         cn.Close()
+
       End Try
    End Sub
+
 
    Private Sub RegOperazioni_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
       ' Visualizza i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
@@ -1011,13 +1040,17 @@ Public Class RegOperazioni
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_REGISTRO_OPERAZIONI, MODULO_REG_OPERAZIONI)
 
-            StampaDocumento(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
+            'StampaDocumento(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampaOperazioni(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
+            End If
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_REGISTRO_OPERAZIONI, MODULO_REG_OPERAZIONI)
 
-            g_frmMain.ApriReports(repSql, TAB_OPERAZIONI, PERCORSO_REP_OPERAZIONI)
+            'g_frmMain.ApriReports(repSql, TAB_OPERAZIONI, PERCORSO_REP_OPERAZIONI)
+            AnteprimaDiStampaOperazioni(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
 
          Case "Primo"
             '' Crea la stringa sql.

@@ -159,7 +159,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_AZIENDE As String = "\Reports\Aziende.rdlc"
    Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rdlc"
    Public Const PERCORSO_REP_PIATTI As String = "\Reports\Piatti.rpt"
-   Public Const PERCORSO_REP_ARTICOLI As String = "\Reports\Articoli.rpt"
+   Public Const PERCORSO_REP_ARTICOLI As String = "\Reports\Articoli.rdlc"
    Public Const PERCORSO_REP_MOV_MAG As String = "\Reports\MovMag.rpt"
    Public Const PERCORSO_REP_SCORTE As String = "\Reports\Scorte.rpt"
    Public Const PERCORSO_REP_INVENTARIO As String = "\Reports\Inventario.rpt"
@@ -170,7 +170,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_CAMERE As String = "\Reports\Camere.rdlc"
 
    Public Const PERCORSO_REP_PREN As String = "\Reports\PrenTavoli.rdlc"
-   Public Const PERCORSO_REP_PREN_SALE As String = "\Reports\PSale.rpt"
+   Public Const PERCORSO_REP_PREN_SALE As String = "\Reports\PrenSale.rdlc"
    Public Const PERCORSO_REP_MENU_ARIAL As String = "\Reports\Arial\Menu.rpt"
    Public Const PERCORSO_REP_MENU_TIMES As String = "\Reports\Times\Menu.rpt"
    Public Const PERCORSO_REP_MENU_COMIC As String = "\Reports\Comic\Menu.rpt"
@@ -183,9 +183,9 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_RISORSE As String = "\Reports\Risorse.rpt"
    Public Const PERCORSO_REP_PREN_RISORSE As String = "\Reports\PrenRisorse.rpt"
    Public Const PERCORSO_REP_STAT_RISORSE As String = "\Reports\StatRisorse.rpt"
-   Public Const PERCORSO_REP_GRUPPI As String = "\Reports\Gruppi.rpt"
-   Public Const PERCORSO_REP_OPERATORI As String = "\Reports\Operatori.rpt"
-   Public Const PERCORSO_REP_OPERAZIONI As String = "\Reports\Operazioni.rpt"
+   Public Const PERCORSO_REP_GRUPPI As String = "\Reports\GruppiOp.rdlc"
+   Public Const PERCORSO_REP_OPERATORI As String = "\Reports\Operatori.rdlc"
+   Public Const PERCORSO_REP_OPERAZIONI As String = "\Reports\Operazioni.rdlc"
 
    ' Nomi per i reports dei documenti in formato .rdlc
    Public Const PERCORSO_REP_ACQUISTI_A4 As String = "\Reports\Acquisti.rdlc"

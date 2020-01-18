@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GruppiOpDataSet" targetNamespace="http://tempuri.org/GruppiOpDataSet.xsd" xmlns:mstns="http://tempuri.org/GruppiOpDataSet.xsd" xmlns="http://tempuri.org/GruppiOpDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString25" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString25 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString24" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GruppiTableAdapter" GeneratorDataComponentClassName="GruppiTableAdapter" Name="Gruppi" UserDataComponentName="GruppiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalityConnectionString25 (MySettings)" DbObjectName="Gruppi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Gruppi` WHERE ((`Id` = ?) AND ((? = 1 AND `NomeGruppo` IS NULL) OR (`NomeGruppo` = ?)) AND ((? = 1 AND `Amministratore` IS NULL) OR (`Amministratore` = ?)) AND ((? = 1 AND `AnagAziende` IS NULL) OR (`AnagAziende` = ?)) AND ((? = 1 AND `AnagCamerieri` IS NULL) OR (`AnagCamerieri` = ?)) AND ((? = 1 AND `AnagCatPiatti` IS NULL) OR (`AnagCatPiatti` = ?)) AND ((? = 1 AND `AnagClienti` IS NULL) OR (`AnagClienti` = ?)) AND ((? = 1 AND `AnagDatiAzienda` IS NULL) OR (`AnagDatiAzienda` = ?)) AND ((? = 1 AND `AnagFornitori` IS NULL) OR (`AnagFornitori` = ?)) AND ((? = 1 AND `AnagPiatti` IS NULL) OR (`AnagPiatti` = ?)) AND ((? = 1 AND `AnagSale` IS NULL) OR (`AnagSale` = ?)) AND ((? = 1 AND `AnagTavoli` IS NULL) OR (`AnagTavoli` = ?)) AND ((? = 1 AND `AnagRisorse` IS NULL) OR (`AnagRisorse` = ?)) AND ((? = 1 AND `AnagAccessoriServizi` IS NULL) OR (`AnagAccessoriServizi` = ?)) AND ((? = 1 AND `ArchiviBackup` IS NULL) OR (`ArchiviBackup` = ?)) AND ((? = 1 AND `ArchiviCompatta` IS NULL) OR (`ArchiviCompatta` = ?)) AND ((? = 1 AND `ArchiviPulizia` IS NULL) OR (`ArchiviPulizia` = ?)) AND ((? = 1 AND `TabAttività` IS NULL) OR (`TabAttività` = ?)) AND ((? = 1 AND `TabCatClienti` IS NULL) OR (`TabCatClienti` = ?)) AND ((? = 1 AND `TabCatMerce` IS NULL) OR (`TabCatMerce` = ?)) AND ((? = 1 AND `TabFormeCortesia` IS NULL) OR (`TabFormeCortesia` = ?)) AND ((? = 1 AND `TabMagazzini` IS NULL) OR (`TabMagazzini` = ?)) AND ((? = 1 AND `TabMsg` IS NULL) OR (`TabMsg` = ?)) AND ((? = 1 AND `TabNazioni` IS NULL) OR (`TabNazioni` = ?)) AND ((? = 1 AND `TabPagamenti` IS NULL) OR (`TabPagamenti` = ?)) AND ((? = 1 AND `TabPiani` IS NULL) OR (`TabPiani` = ?)) AND ((? = 1 AND `TabReparti` IS NULL) OR (`TabReparti` = ?)) AND ((? = 1 AND `TabScaffali` IS NULL) OR (`TabScaffali` = ?)) AND ((? = 1 AND `TabTipoDoc` IS NULL) OR (`TabTipoDoc` = ?)) AND ((? = 1 AND `TabUbicazioni` IS NULL) OR (`TabUbicazioni` = ?)) AND ((? = 1 AND `TabUM` IS NULL) OR (`TabUM` = ?)) AND ((? = 1 AND `TabTipoRisorse` IS NULL) OR (`TabTipoRisorse` = ?)) AND ((? = 1 AND `ContChiusura` IS NULL) OR (`ContChiusura` = ?)) AND ((? = 1 AND `ContCorrispettivi` IS NULL) OR (`ContCorrispettivi` = ?)) AND ((? = 1 AND `ContDoc` IS NULL) OR (`ContDoc` = ?)) AND ((? = 1 AND `ContPrimaNota` IS NULL) OR (`ContPrimaNota` = ?)) AND ((? = 1 AND `GestAcquisti` IS NULL) OR (`GestAcquisti` = ?)) AND ((? = 1 AND `GestGruppi` IS NULL) OR (`GestGruppi` = ?)) AND ((? = 1 AND `GestOperatori` IS NULL) OR (`GestOperatori` = ?)) AND ((? = 1 AND `GestPrenSale` IS NULL) OR (`GestPrenSale` = ?)) AND ((? = 1 AND `GestPrenTavoli` IS NULL) OR (`GestPrenTavoli` = ?)) AND ((? = 1 AND `GestPrenRisorse` IS NULL) OR (`GestPrenRisorse` = ?)) AND ((? = 1 AND `GestPlanningRisorse` IS NULL) OR (`GestPlanningRisorse` = ?)) AND ((? = 1 AND `GestStatRisorse` IS NULL) OR (`GestStatRisorse` = ?)) AND ((? = 1 AND `GestPuntoCassa` IS NULL) OR (`GestPuntoCassa` = ?)) AND ((? = 1 AND `GestStatistiche` IS NULL) OR (`GestStatistiche` = ?)) AND ((? = 1 AND `GestTavoli` IS NULL) OR (`GestTavoli` = ?)) AND ((? = 1 AND `MagArticoli` IS NULL) OR (`MagArticoli` = ?)) AND ((? = 1 AND `MagInventario` IS NULL) OR (`MagInventario` = ?)) AND ((? = 1 AND `MagScorte` IS NULL) OR (`MagScorte` = ?)) AND ((? = 1 AND `MagMov` IS NULL) OR (`MagMov` = ?)) AND ((? = 1 AND `StruDispTavoli` IS NULL) OR (`StruDispTavoli` = ?)) AND ((? = 1 AND `StruCap` IS NULL) OR (`StruCap` = ?)) AND ((? = 1 AND `StruMsg` IS NULL) OR (`StruMsg` = ?)) AND ((? = 1 AND `StruCodiciBarre` IS NULL) OR (`StruCodiciBarre` = ?)) AND ((? = 1 AND `StruMenù` IS NULL) OR (`StruMenù` = ?)) AND ((? = 1 AND `VisOpzioni` IS NULL) OR (`VisOpzioni` = ?)) AND ((? = 1 AND `VisErrori` IS NULL) OR (`VisErrori` = ?)) AND ((? = 1 AND `VisOperazioni` IS NULL) OR (`VisOperazioni` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NomeGruppo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_NomeGruppo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Amministratore" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Amministratore" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagAziende" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagAziende" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagCamerieri" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagCamerieri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagCatPiatti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagCatPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagClienti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagDatiAzienda" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagDatiAzienda" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagFornitori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagFornitori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagPiatti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagSale" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagAccessoriServizi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagAccessoriServizi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviBackup" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviBackup" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviCompatta" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviCompatta" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviPulizia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviPulizia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabAttività" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabAttività" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabCatClienti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabCatClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabCatMerce" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabCatMerce" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabFormeCortesia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabFormeCortesia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabMagazzini" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabMagazzini" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabMsg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabNazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabNazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabPagamenti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabPagamenti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabPiani" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabPiani" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabReparti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabReparti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabScaffali" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabScaffali" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabTipoDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabTipoDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabUbicazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabUbicazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabUM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabUM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabTipoRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabTipoRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContChiusura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContChiusura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContCorrispettivi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContCorrispettivi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContPrimaNota" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContPrimaNota" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestAcquisti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestAcquisti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestGruppi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestGruppi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestOperatori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestOperatori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenSale" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPlanningRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPlanningRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestStatRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestStatRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPuntoCassa" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPuntoCassa" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestStatistiche" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestStatistiche" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagArticoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagArticoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagInventario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagInventario" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagScorte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagScorte" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagMov" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagMov" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruDispTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruDispTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruCap" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruCap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruMsg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruCodiciBarre" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruCodiciBarre" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruMenù" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruMenù" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisOpzioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisOpzioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisErrori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisErrori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisOperazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisOperazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Gruppi` (`NomeGruppo`, `Amministratore`, `AnagAziende`, `AnagCamerieri`, `AnagCatPiatti`, `AnagClienti`, `AnagDatiAzienda`, `AnagFornitori`, `AnagPiatti`, `AnagSale`, `AnagTavoli`, `AnagRisorse`, `AnagAccessoriServizi`, `ArchiviBackup`, `ArchiviCompatta`, `ArchiviPulizia`, `TabAttività`, `TabCatClienti`, `TabCatMerce`, `TabFormeCortesia`, `TabMagazzini`, `TabMsg`, `TabNazioni`, `TabPagamenti`, `TabPiani`, `TabReparti`, `TabScaffali`, `TabTipoDoc`, `TabUbicazioni`, `TabUM`, `TabTipoRisorse`, `ContChiusura`, `ContCorrispettivi`, `ContDoc`, `ContPrimaNota`, `GestAcquisti`, `GestGruppi`, `GestOperatori`, `GestPrenSale`, `GestPrenTavoli`, `GestPrenRisorse`, `GestPlanningRisorse`, `GestStatRisorse`, `GestPuntoCassa`, `GestStatistiche`, `GestTavoli`, `MagArticoli`, `MagInventario`, `MagScorte`, `MagMov`, `StruDispTavoli`, `StruCap`, `StruMsg`, `StruCodiciBarre`, `StruMenù`, `VisOpzioni`, `VisErrori`, `VisOperazioni`, `Note`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NomeGruppo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Amministratore" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagAziende" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagCamerieri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagCatPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagDatiAzienda" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagFornitori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagAccessoriServizi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviBackup" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviCompatta" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviPulizia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabAttività" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabCatClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabCatMerce" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabFormeCortesia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabMagazzini" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabNazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabPagamenti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabPiani" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabReparti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabScaffali" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabTipoDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabUbicazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabUM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabTipoRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContChiusura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContCorrispettivi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContPrimaNota" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestAcquisti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestGruppi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestOperatori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPlanningRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestStatRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPuntoCassa" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestStatistiche" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagArticoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagInventario" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagScorte" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagMov" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruDispTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruCap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruCodiciBarre" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruMenù" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisOpzioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisErrori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisOperazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Note" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, NomeGruppo, Amministratore, AnagAziende, AnagCamerieri, AnagCatPiatti, AnagClienti, AnagDatiAzienda, AnagFornitori, AnagPiatti, AnagSale, AnagTavoli, AnagRisorse, AnagAccessoriServizi, ArchiviBackup, ArchiviCompatta, ArchiviPulizia, TabAttività, TabCatClienti, TabCatMerce, TabFormeCortesia, TabMagazzini, TabMsg, TabNazioni, TabPagamenti, TabPiani, TabReparti, TabScaffali, TabTipoDoc, TabUbicazioni, TabUM, TabTipoRisorse, ContChiusura, ContCorrispettivi, ContDoc, ContPrimaNota, GestAcquisti, GestGruppi, GestOperatori, GestPrenSale, GestPrenTavoli, GestPrenRisorse, GestPlanningRisorse, GestStatRisorse, GestPuntoCassa, GestStatistiche, GestTavoli, MagArticoli, MagInventario, MagScorte, MagMov, StruDispTavoli, StruCap, StruMsg, StruCodiciBarre, StruMenù, VisOpzioni, VisErrori, VisOperazioni, [Note] FROM Gruppi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Gruppi` SET `NomeGruppo` = ?, `Amministratore` = ?, `AnagAziende` = ?, `AnagCamerieri` = ?, `AnagCatPiatti` = ?, `AnagClienti` = ?, `AnagDatiAzienda` = ?, `AnagFornitori` = ?, `AnagPiatti` = ?, `AnagSale` = ?, `AnagTavoli` = ?, `AnagRisorse` = ?, `AnagAccessoriServizi` = ?, `ArchiviBackup` = ?, `ArchiviCompatta` = ?, `ArchiviPulizia` = ?, `TabAttività` = ?, `TabCatClienti` = ?, `TabCatMerce` = ?, `TabFormeCortesia` = ?, `TabMagazzini` = ?, `TabMsg` = ?, `TabNazioni` = ?, `TabPagamenti` = ?, `TabPiani` = ?, `TabReparti` = ?, `TabScaffali` = ?, `TabTipoDoc` = ?, `TabUbicazioni` = ?, `TabUM` = ?, `TabTipoRisorse` = ?, `ContChiusura` = ?, `ContCorrispettivi` = ?, `ContDoc` = ?, `ContPrimaNota` = ?, `GestAcquisti` = ?, `GestGruppi` = ?, `GestOperatori` = ?, `GestPrenSale` = ?, `GestPrenTavoli` = ?, `GestPrenRisorse` = ?, `GestPlanningRisorse` = ?, `GestStatRisorse` = ?, `GestPuntoCassa` = ?, `GestStatistiche` = ?, `GestTavoli` = ?, `MagArticoli` = ?, `MagInventario` = ?, `MagScorte` = ?, `MagMov` = ?, `StruDispTavoli` = ?, `StruCap` = ?, `StruMsg` = ?, `StruCodiciBarre` = ?, `StruMenù` = ?, `VisOpzioni` = ?, `VisErrori` = ?, `VisOperazioni` = ?, `Note` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `NomeGruppo` IS NULL) OR (`NomeGruppo` = ?)) AND ((? = 1 AND `Amministratore` IS NULL) OR (`Amministratore` = ?)) AND ((? = 1 AND `AnagAziende` IS NULL) OR (`AnagAziende` = ?)) AND ((? = 1 AND `AnagCamerieri` IS NULL) OR (`AnagCamerieri` = ?)) AND ((? = 1 AND `AnagCatPiatti` IS NULL) OR (`AnagCatPiatti` = ?)) AND ((? = 1 AND `AnagClienti` IS NULL) OR (`AnagClienti` = ?)) AND ((? = 1 AND `AnagDatiAzienda` IS NULL) OR (`AnagDatiAzienda` = ?)) AND ((? = 1 AND `AnagFornitori` IS NULL) OR (`AnagFornitori` = ?)) AND ((? = 1 AND `AnagPiatti` IS NULL) OR (`AnagPiatti` = ?)) AND ((? = 1 AND `AnagSale` IS NULL) OR (`AnagSale` = ?)) AND ((? = 1 AND `AnagTavoli` IS NULL) OR (`AnagTavoli` = ?)) AND ((? = 1 AND `AnagRisorse` IS NULL) OR (`AnagRisorse` = ?)) AND ((? = 1 AND `AnagAccessoriServizi` IS NULL) OR (`AnagAccessoriServizi` = ?)) AND ((? = 1 AND `ArchiviBackup` IS NULL) OR (`ArchiviBackup` = ?)) AND ((? = 1 AND `ArchiviCompatta` IS NULL) OR (`ArchiviCompatta` = ?)) AND ((? = 1 AND `ArchiviPulizia` IS NULL) OR (`ArchiviPulizia` = ?)) AND ((? = 1 AND `TabAttività` IS NULL) OR (`TabAttività` = ?)) AND ((? = 1 AND `TabCatClienti` IS NULL) OR (`TabCatClienti` = ?)) AND ((? = 1 AND `TabCatMerce` IS NULL) OR (`TabCatMerce` = ?)) AND ((? = 1 AND `TabFormeCortesia` IS NULL) OR (`TabFormeCortesia` = ?)) AND ((? = 1 AND `TabMagazzini` IS NULL) OR (`TabMagazzini` = ?)) AND ((? = 1 AND `TabMsg` IS NULL) OR (`TabMsg` = ?)) AND ((? = 1 AND `TabNazioni` IS NULL) OR (`TabNazioni` = ?)) AND ((? = 1 AND `TabPagamenti` IS NULL) OR (`TabPagamenti` = ?)) AND ((? = 1 AND `TabPiani` IS NULL) OR (`TabPiani` = ?)) AND ((? = 1 AND `TabReparti` IS NULL) OR (`TabReparti` = ?)) AND ((? = 1 AND `TabScaffali` IS NULL) OR (`TabScaffali` = ?)) AND ((? = 1 AND `TabTipoDoc` IS NULL) OR (`TabTipoDoc` = ?)) AND ((? = 1 AND `TabUbicazioni` IS NULL) OR (`TabUbicazioni` = ?)) AND ((? = 1 AND `TabUM` IS NULL) OR (`TabUM` = ?)) AND ((? = 1 AND `TabTipoRisorse` IS NULL) OR (`TabTipoRisorse` = ?)) AND ((? = 1 AND `ContChiusura` IS NULL) OR (`ContChiusura` = ?)) AND ((? = 1 AND `ContCorrispettivi` IS NULL) OR (`ContCorrispettivi` = ?)) AND ((? = 1 AND `ContDoc` IS NULL) OR (`ContDoc` = ?)) AND ((? = 1 AND `ContPrimaNota` IS NULL) OR (`ContPrimaNota` = ?)) AND ((? = 1 AND `GestAcquisti` IS NULL) OR (`GestAcquisti` = ?)) AND ((? = 1 AND `GestGruppi` IS NULL) OR (`GestGruppi` = ?)) AND ((? = 1 AND `GestOperatori` IS NULL) OR (`GestOperatori` = ?)) AND ((? = 1 AND `GestPrenSale` IS NULL) OR (`GestPrenSale` = ?)) AND ((? = 1 AND `GestPrenTavoli` IS NULL) OR (`GestPrenTavoli` = ?)) AND ((? = 1 AND `GestPrenRisorse` IS NULL) OR (`GestPrenRisorse` = ?)) AND ((? = 1 AND `GestPlanningRisorse` IS NULL) OR (`GestPlanningRisorse` = ?)) AND ((? = 1 AND `GestStatRisorse` IS NULL) OR (`GestStatRisorse` = ?)) AND ((? = 1 AND `GestPuntoCassa` IS NULL) OR (`GestPuntoCassa` = ?)) AND ((? = 1 AND `GestStatistiche` IS NULL) OR (`GestStatistiche` = ?)) AND ((? = 1 AND `GestTavoli` IS NULL) OR (`GestTavoli` = ?)) AND ((? = 1 AND `MagArticoli` IS NULL) OR (`MagArticoli` = ?)) AND ((? = 1 AND `MagInventario` IS NULL) OR (`MagInventario` = ?)) AND ((? = 1 AND `MagScorte` IS NULL) OR (`MagScorte` = ?)) AND ((? = 1 AND `MagMov` IS NULL) OR (`MagMov` = ?)) AND ((? = 1 AND `StruDispTavoli` IS NULL) OR (`StruDispTavoli` = ?)) AND ((? = 1 AND `StruCap` IS NULL) OR (`StruCap` = ?)) AND ((? = 1 AND `StruMsg` IS NULL) OR (`StruMsg` = ?)) AND ((? = 1 AND `StruCodiciBarre` IS NULL) OR (`StruCodiciBarre` = ?)) AND ((? = 1 AND `StruMenù` IS NULL) OR (`StruMenù` = ?)) AND ((? = 1 AND `VisOpzioni` IS NULL) OR (`VisOpzioni` = ?)) AND ((? = 1 AND `VisErrori` IS NULL) OR (`VisErrori` = ?)) AND ((? = 1 AND `VisOperazioni` IS NULL) OR (`VisOperazioni` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NomeGruppo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Amministratore" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagAziende" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagCamerieri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagCatPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagDatiAzienda" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagFornitori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="AnagAccessoriServizi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviBackup" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviCompatta" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ArchiviPulizia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabAttività" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabCatClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabCatMerce" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabFormeCortesia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabMagazzini" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabNazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabPagamenti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabPiani" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabReparti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabScaffali" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabTipoDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabUbicazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabUM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TabTipoRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContChiusura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContCorrispettivi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ContPrimaNota" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestAcquisti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestGruppi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestOperatori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPrenRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPlanningRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestStatRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestPuntoCassa" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestStatistiche" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GestTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagArticoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagInventario" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagScorte" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MagMov" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruDispTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruCap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruCodiciBarre" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="StruMenù" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisOpzioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisErrori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="VisOperazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Note" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NomeGruppo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_NomeGruppo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomeGruppo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Amministratore" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Amministratore" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Amministratore" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagAziende" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagAziende" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAziende" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagCamerieri" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagCamerieri" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCamerieri" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagCatPiatti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagCatPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagCatPiatti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagClienti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagClienti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagDatiAzienda" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagDatiAzienda" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagDatiAzienda" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagFornitori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagFornitori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagFornitori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagPiatti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagPiatti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagPiatti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagSale" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagSale" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AnagAccessoriServizi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_AnagAccessoriServizi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="AnagAccessoriServizi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviBackup" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviBackup" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviBackup" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviCompatta" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviCompatta" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviCompatta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArchiviPulizia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ArchiviPulizia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ArchiviPulizia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabAttività" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabAttività" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabAttività" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabCatClienti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabCatClienti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatClienti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabCatMerce" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabCatMerce" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabCatMerce" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabFormeCortesia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabFormeCortesia" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabFormeCortesia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabMagazzini" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabMagazzini" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMagazzini" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabMsg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabMsg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabNazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabNazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabNazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabPagamenti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabPagamenti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPagamenti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabPiani" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabPiani" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabPiani" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabReparti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabReparti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabReparti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabScaffali" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabScaffali" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabScaffali" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabTipoDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabTipoDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabUbicazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabUbicazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUbicazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabUM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabUM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TabTipoRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TabTipoRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TabTipoRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContChiusura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContChiusura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContChiusura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContCorrispettivi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContCorrispettivi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContCorrispettivi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContDoc" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ContPrimaNota" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ContPrimaNota" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ContPrimaNota" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestAcquisti" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestAcquisti" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestAcquisti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestGruppi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestGruppi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestGruppi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestOperatori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestOperatori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestOperatori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenSale" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenSale" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenSale" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPrenRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPrenRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPrenRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPlanningRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPlanningRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPlanningRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestStatRisorse" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestStatRisorse" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatRisorse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestPuntoCassa" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestPuntoCassa" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestPuntoCassa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestStatistiche" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestStatistiche" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestStatistiche" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GestTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GestTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GestTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagArticoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagArticoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagArticoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagInventario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagInventario" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagScorte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagScorte" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagScorte" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MagMov" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MagMov" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MagMov" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruDispTavoli" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruDispTavoli" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruDispTavoli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruCap" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruCap" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruMsg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruMsg" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMsg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruCodiciBarre" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruCodiciBarre" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruCodiciBarre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_StruMenù" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_StruMenù" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="StruMenù" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisOpzioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisOpzioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOpzioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisErrori" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisErrori" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisErrori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_VisOperazioni" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_VisOperazioni" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="VisOperazioni" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="NomeGruppo" DataSetColumn="NomeGruppo" />
+              <Mapping SourceColumn="Amministratore" DataSetColumn="Amministratore" />
+              <Mapping SourceColumn="AnagAziende" DataSetColumn="AnagAziende" />
+              <Mapping SourceColumn="AnagCamerieri" DataSetColumn="AnagCamerieri" />
+              <Mapping SourceColumn="AnagCatPiatti" DataSetColumn="AnagCatPiatti" />
+              <Mapping SourceColumn="AnagClienti" DataSetColumn="AnagClienti" />
+              <Mapping SourceColumn="AnagDatiAzienda" DataSetColumn="AnagDatiAzienda" />
+              <Mapping SourceColumn="AnagFornitori" DataSetColumn="AnagFornitori" />
+              <Mapping SourceColumn="AnagPiatti" DataSetColumn="AnagPiatti" />
+              <Mapping SourceColumn="AnagSale" DataSetColumn="AnagSale" />
+              <Mapping SourceColumn="AnagTavoli" DataSetColumn="AnagTavoli" />
+              <Mapping SourceColumn="AnagRisorse" DataSetColumn="AnagRisorse" />
+              <Mapping SourceColumn="AnagAccessoriServizi" DataSetColumn="AnagAccessoriServizi" />
+              <Mapping SourceColumn="ArchiviBackup" DataSetColumn="ArchiviBackup" />
+              <Mapping SourceColumn="ArchiviCompatta" DataSetColumn="ArchiviCompatta" />
+              <Mapping SourceColumn="ArchiviPulizia" DataSetColumn="ArchiviPulizia" />
+              <Mapping SourceColumn="TabAttività" DataSetColumn="TabAttività" />
+              <Mapping SourceColumn="TabCatClienti" DataSetColumn="TabCatClienti" />
+              <Mapping SourceColumn="TabCatMerce" DataSetColumn="TabCatMerce" />
+              <Mapping SourceColumn="TabFormeCortesia" DataSetColumn="TabFormeCortesia" />
+              <Mapping SourceColumn="TabMagazzini" DataSetColumn="TabMagazzini" />
+              <Mapping SourceColumn="TabMsg" DataSetColumn="TabMsg" />
+              <Mapping SourceColumn="TabNazioni" DataSetColumn="TabNazioni" />
+              <Mapping SourceColumn="TabPagamenti" DataSetColumn="TabPagamenti" />
+              <Mapping SourceColumn="TabPiani" DataSetColumn="TabPiani" />
+              <Mapping SourceColumn="TabReparti" DataSetColumn="TabReparti" />
+              <Mapping SourceColumn="TabScaffali" DataSetColumn="TabScaffali" />
+              <Mapping SourceColumn="TabTipoDoc" DataSetColumn="TabTipoDoc" />
+              <Mapping SourceColumn="TabUbicazioni" DataSetColumn="TabUbicazioni" />
+              <Mapping SourceColumn="TabUM" DataSetColumn="TabUM" />
+              <Mapping SourceColumn="TabTipoRisorse" DataSetColumn="TabTipoRisorse" />
+              <Mapping SourceColumn="ContChiusura" DataSetColumn="ContChiusura" />
+              <Mapping SourceColumn="ContCorrispettivi" DataSetColumn="ContCorrispettivi" />
+              <Mapping SourceColumn="ContDoc" DataSetColumn="ContDoc" />
+              <Mapping SourceColumn="ContPrimaNota" DataSetColumn="ContPrimaNota" />
+              <Mapping SourceColumn="GestAcquisti" DataSetColumn="GestAcquisti" />
+              <Mapping SourceColumn="GestGruppi" DataSetColumn="GestGruppi" />
+              <Mapping SourceColumn="GestOperatori" DataSetColumn="GestOperatori" />
+              <Mapping SourceColumn="GestPrenSale" DataSetColumn="GestPrenSale" />
+              <Mapping SourceColumn="GestPrenTavoli" DataSetColumn="GestPrenTavoli" />
+              <Mapping SourceColumn="GestPrenRisorse" DataSetColumn="GestPrenRisorse" />
+              <Mapping SourceColumn="GestPlanningRisorse" DataSetColumn="GestPlanningRisorse" />
+              <Mapping SourceColumn="GestStatRisorse" DataSetColumn="GestStatRisorse" />
+              <Mapping SourceColumn="GestPuntoCassa" DataSetColumn="GestPuntoCassa" />
+              <Mapping SourceColumn="GestStatistiche" DataSetColumn="GestStatistiche" />
+              <Mapping SourceColumn="GestTavoli" DataSetColumn="GestTavoli" />
+              <Mapping SourceColumn="MagArticoli" DataSetColumn="MagArticoli" />
+              <Mapping SourceColumn="MagInventario" DataSetColumn="MagInventario" />
+              <Mapping SourceColumn="MagScorte" DataSetColumn="MagScorte" />
+              <Mapping SourceColumn="MagMov" DataSetColumn="MagMov" />
+              <Mapping SourceColumn="StruDispTavoli" DataSetColumn="StruDispTavoli" />
+              <Mapping SourceColumn="StruCap" DataSetColumn="StruCap" />
+              <Mapping SourceColumn="StruMsg" DataSetColumn="StruMsg" />
+              <Mapping SourceColumn="StruCodiciBarre" DataSetColumn="StruCodiciBarre" />
+              <Mapping SourceColumn="StruMenù" DataSetColumn="StruMenù" />
+              <Mapping SourceColumn="VisOpzioni" DataSetColumn="VisOpzioni" />
+              <Mapping SourceColumn="VisErrori" DataSetColumn="VisErrori" />
+              <Mapping SourceColumn="VisOperazioni" DataSetColumn="VisOperazioni" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GruppiOpDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GruppiOpDataSet" msprop:Generator_UserDSName="GruppiOpDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Gruppi" msprop:Generator_TableClassName="GruppiDataTable" msprop:Generator_TableVarName="tableGruppi" msprop:Generator_TablePropName="Gruppi" msprop:Generator_RowDeletingName="GruppiRowDeleting" msprop:Generator_RowChangingName="GruppiRowChanging" msprop:Generator_RowEvHandlerName="GruppiRowChangeEventHandler" msprop:Generator_RowDeletedName="GruppiRowDeleted" msprop:Generator_UserTableName="Gruppi" msprop:Generator_RowChangedName="GruppiRowChanged" msprop:Generator_RowEvArgName="GruppiRowChangeEvent" msprop:Generator_RowClassName="GruppiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="NomeGruppo" msprop:Generator_ColumnVarNameInTable="columnNomeGruppo" msprop:Generator_ColumnPropNameInRow="NomeGruppo" msprop:Generator_ColumnPropNameInTable="NomeGruppoColumn" msprop:Generator_UserColumnName="NomeGruppo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amministratore" msprop:Generator_ColumnVarNameInTable="columnAmministratore" msprop:Generator_ColumnPropNameInRow="Amministratore" msprop:Generator_ColumnPropNameInTable="AmministratoreColumn" msprop:Generator_UserColumnName="Amministratore" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagAziende" msprop:Generator_ColumnVarNameInTable="columnAnagAziende" msprop:Generator_ColumnPropNameInRow="AnagAziende" msprop:Generator_ColumnPropNameInTable="AnagAziendeColumn" msprop:Generator_UserColumnName="AnagAziende" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagCamerieri" msprop:Generator_ColumnVarNameInTable="columnAnagCamerieri" msprop:Generator_ColumnPropNameInRow="AnagCamerieri" msprop:Generator_ColumnPropNameInTable="AnagCamerieriColumn" msprop:Generator_UserColumnName="AnagCamerieri" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagCatPiatti" msprop:Generator_ColumnVarNameInTable="columnAnagCatPiatti" msprop:Generator_ColumnPropNameInRow="AnagCatPiatti" msprop:Generator_ColumnPropNameInTable="AnagCatPiattiColumn" msprop:Generator_UserColumnName="AnagCatPiatti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagClienti" msprop:Generator_ColumnVarNameInTable="columnAnagClienti" msprop:Generator_ColumnPropNameInRow="AnagClienti" msprop:Generator_ColumnPropNameInTable="AnagClientiColumn" msprop:Generator_UserColumnName="AnagClienti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagDatiAzienda" msprop:Generator_ColumnVarNameInTable="columnAnagDatiAzienda" msprop:Generator_ColumnPropNameInRow="AnagDatiAzienda" msprop:Generator_ColumnPropNameInTable="AnagDatiAziendaColumn" msprop:Generator_UserColumnName="AnagDatiAzienda" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagFornitori" msprop:Generator_ColumnVarNameInTable="columnAnagFornitori" msprop:Generator_ColumnPropNameInRow="AnagFornitori" msprop:Generator_ColumnPropNameInTable="AnagFornitoriColumn" msprop:Generator_UserColumnName="AnagFornitori" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagPiatti" msprop:Generator_ColumnVarNameInTable="columnAnagPiatti" msprop:Generator_ColumnPropNameInRow="AnagPiatti" msprop:Generator_ColumnPropNameInTable="AnagPiattiColumn" msprop:Generator_UserColumnName="AnagPiatti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagSale" msprop:Generator_ColumnVarNameInTable="columnAnagSale" msprop:Generator_ColumnPropNameInRow="AnagSale" msprop:Generator_ColumnPropNameInTable="AnagSaleColumn" msprop:Generator_UserColumnName="AnagSale" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagTavoli" msprop:Generator_ColumnVarNameInTable="columnAnagTavoli" msprop:Generator_ColumnPropNameInRow="AnagTavoli" msprop:Generator_ColumnPropNameInTable="AnagTavoliColumn" msprop:Generator_UserColumnName="AnagTavoli" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagRisorse" msprop:Generator_ColumnVarNameInTable="columnAnagRisorse" msprop:Generator_ColumnPropNameInRow="AnagRisorse" msprop:Generator_ColumnPropNameInTable="AnagRisorseColumn" msprop:Generator_UserColumnName="AnagRisorse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnagAccessoriServizi" msprop:Generator_ColumnVarNameInTable="columnAnagAccessoriServizi" msprop:Generator_ColumnPropNameInRow="AnagAccessoriServizi" msprop:Generator_ColumnPropNameInTable="AnagAccessoriServiziColumn" msprop:Generator_UserColumnName="AnagAccessoriServizi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArchiviBackup" msprop:Generator_ColumnVarNameInTable="columnArchiviBackup" msprop:Generator_ColumnPropNameInRow="ArchiviBackup" msprop:Generator_ColumnPropNameInTable="ArchiviBackupColumn" msprop:Generator_UserColumnName="ArchiviBackup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArchiviCompatta" msprop:Generator_ColumnVarNameInTable="columnArchiviCompatta" msprop:Generator_ColumnPropNameInRow="ArchiviCompatta" msprop:Generator_ColumnPropNameInTable="ArchiviCompattaColumn" msprop:Generator_UserColumnName="ArchiviCompatta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArchiviPulizia" msprop:Generator_ColumnVarNameInTable="columnArchiviPulizia" msprop:Generator_ColumnPropNameInRow="ArchiviPulizia" msprop:Generator_ColumnPropNameInTable="ArchiviPuliziaColumn" msprop:Generator_UserColumnName="ArchiviPulizia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabAttività" msprop:Generator_ColumnVarNameInTable="columnTabAttività" msprop:Generator_ColumnPropNameInRow="TabAttività" msprop:Generator_ColumnPropNameInTable="TabAttivitàColumn" msprop:Generator_UserColumnName="TabAttività" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabCatClienti" msprop:Generator_ColumnVarNameInTable="columnTabCatClienti" msprop:Generator_ColumnPropNameInRow="TabCatClienti" msprop:Generator_ColumnPropNameInTable="TabCatClientiColumn" msprop:Generator_UserColumnName="TabCatClienti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabCatMerce" msprop:Generator_ColumnVarNameInTable="columnTabCatMerce" msprop:Generator_ColumnPropNameInRow="TabCatMerce" msprop:Generator_ColumnPropNameInTable="TabCatMerceColumn" msprop:Generator_UserColumnName="TabCatMerce" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabFormeCortesia" msprop:Generator_ColumnVarNameInTable="columnTabFormeCortesia" msprop:Generator_ColumnPropNameInRow="TabFormeCortesia" msprop:Generator_ColumnPropNameInTable="TabFormeCortesiaColumn" msprop:Generator_UserColumnName="TabFormeCortesia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabMagazzini" msprop:Generator_ColumnVarNameInTable="columnTabMagazzini" msprop:Generator_ColumnPropNameInRow="TabMagazzini" msprop:Generator_ColumnPropNameInTable="TabMagazziniColumn" msprop:Generator_UserColumnName="TabMagazzini" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabMsg" msprop:Generator_ColumnVarNameInTable="columnTabMsg" msprop:Generator_ColumnPropNameInRow="TabMsg" msprop:Generator_ColumnPropNameInTable="TabMsgColumn" msprop:Generator_UserColumnName="TabMsg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabNazioni" msprop:Generator_ColumnVarNameInTable="columnTabNazioni" msprop:Generator_ColumnPropNameInRow="TabNazioni" msprop:Generator_ColumnPropNameInTable="TabNazioniColumn" msprop:Generator_UserColumnName="TabNazioni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabPagamenti" msprop:Generator_ColumnVarNameInTable="columnTabPagamenti" msprop:Generator_ColumnPropNameInRow="TabPagamenti" msprop:Generator_ColumnPropNameInTable="TabPagamentiColumn" msprop:Generator_UserColumnName="TabPagamenti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabPiani" msprop:Generator_ColumnVarNameInTable="columnTabPiani" msprop:Generator_ColumnPropNameInRow="TabPiani" msprop:Generator_ColumnPropNameInTable="TabPianiColumn" msprop:Generator_UserColumnName="TabPiani" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabReparti" msprop:Generator_ColumnVarNameInTable="columnTabReparti" msprop:Generator_ColumnPropNameInRow="TabReparti" msprop:Generator_ColumnPropNameInTable="TabRepartiColumn" msprop:Generator_UserColumnName="TabReparti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabScaffali" msprop:Generator_ColumnVarNameInTable="columnTabScaffali" msprop:Generator_ColumnPropNameInRow="TabScaffali" msprop:Generator_ColumnPropNameInTable="TabScaffaliColumn" msprop:Generator_UserColumnName="TabScaffali" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabTipoDoc" msprop:Generator_ColumnVarNameInTable="columnTabTipoDoc" msprop:Generator_ColumnPropNameInRow="TabTipoDoc" msprop:Generator_ColumnPropNameInTable="TabTipoDocColumn" msprop:Generator_UserColumnName="TabTipoDoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabUbicazioni" msprop:Generator_ColumnVarNameInTable="columnTabUbicazioni" msprop:Generator_ColumnPropNameInRow="TabUbicazioni" msprop:Generator_ColumnPropNameInTable="TabUbicazioniColumn" msprop:Generator_UserColumnName="TabUbicazioni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabUM" msprop:Generator_ColumnVarNameInTable="columnTabUM" msprop:Generator_ColumnPropNameInRow="TabUM" msprop:Generator_ColumnPropNameInTable="TabUMColumn" msprop:Generator_UserColumnName="TabUM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TabTipoRisorse" msprop:Generator_ColumnVarNameInTable="columnTabTipoRisorse" msprop:Generator_ColumnPropNameInRow="TabTipoRisorse" msprop:Generator_ColumnPropNameInTable="TabTipoRisorseColumn" msprop:Generator_UserColumnName="TabTipoRisorse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContChiusura" msprop:Generator_ColumnVarNameInTable="columnContChiusura" msprop:Generator_ColumnPropNameInRow="ContChiusura" msprop:Generator_ColumnPropNameInTable="ContChiusuraColumn" msprop:Generator_UserColumnName="ContChiusura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContCorrispettivi" msprop:Generator_ColumnVarNameInTable="columnContCorrispettivi" msprop:Generator_ColumnPropNameInRow="ContCorrispettivi" msprop:Generator_ColumnPropNameInTable="ContCorrispettiviColumn" msprop:Generator_UserColumnName="ContCorrispettivi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContDoc" msprop:Generator_ColumnVarNameInTable="columnContDoc" msprop:Generator_ColumnPropNameInRow="ContDoc" msprop:Generator_ColumnPropNameInTable="ContDocColumn" msprop:Generator_UserColumnName="ContDoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContPrimaNota" msprop:Generator_ColumnVarNameInTable="columnContPrimaNota" msprop:Generator_ColumnPropNameInRow="ContPrimaNota" msprop:Generator_ColumnPropNameInTable="ContPrimaNotaColumn" msprop:Generator_UserColumnName="ContPrimaNota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestAcquisti" msprop:Generator_ColumnVarNameInTable="columnGestAcquisti" msprop:Generator_ColumnPropNameInRow="GestAcquisti" msprop:Generator_ColumnPropNameInTable="GestAcquistiColumn" msprop:Generator_UserColumnName="GestAcquisti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestGruppi" msprop:Generator_ColumnVarNameInTable="columnGestGruppi" msprop:Generator_ColumnPropNameInRow="GestGruppi" msprop:Generator_ColumnPropNameInTable="GestGruppiColumn" msprop:Generator_UserColumnName="GestGruppi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestOperatori" msprop:Generator_ColumnVarNameInTable="columnGestOperatori" msprop:Generator_ColumnPropNameInRow="GestOperatori" msprop:Generator_ColumnPropNameInTable="GestOperatoriColumn" msprop:Generator_UserColumnName="GestOperatori" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestPrenSale" msprop:Generator_ColumnVarNameInTable="columnGestPrenSale" msprop:Generator_ColumnPropNameInRow="GestPrenSale" msprop:Generator_ColumnPropNameInTable="GestPrenSaleColumn" msprop:Generator_UserColumnName="GestPrenSale" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestPrenTavoli" msprop:Generator_ColumnVarNameInTable="columnGestPrenTavoli" msprop:Generator_ColumnPropNameInRow="GestPrenTavoli" msprop:Generator_ColumnPropNameInTable="GestPrenTavoliColumn" msprop:Generator_UserColumnName="GestPrenTavoli" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestPrenRisorse" msprop:Generator_ColumnVarNameInTable="columnGestPrenRisorse" msprop:Generator_ColumnPropNameInRow="GestPrenRisorse" msprop:Generator_ColumnPropNameInTable="GestPrenRisorseColumn" msprop:Generator_UserColumnName="GestPrenRisorse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestPlanningRisorse" msprop:Generator_ColumnVarNameInTable="columnGestPlanningRisorse" msprop:Generator_ColumnPropNameInRow="GestPlanningRisorse" msprop:Generator_ColumnPropNameInTable="GestPlanningRisorseColumn" msprop:Generator_UserColumnName="GestPlanningRisorse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestStatRisorse" msprop:Generator_ColumnVarNameInTable="columnGestStatRisorse" msprop:Generator_ColumnPropNameInRow="GestStatRisorse" msprop:Generator_ColumnPropNameInTable="GestStatRisorseColumn" msprop:Generator_UserColumnName="GestStatRisorse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestPuntoCassa" msprop:Generator_ColumnVarNameInTable="columnGestPuntoCassa" msprop:Generator_ColumnPropNameInRow="GestPuntoCassa" msprop:Generator_ColumnPropNameInTable="GestPuntoCassaColumn" msprop:Generator_UserColumnName="GestPuntoCassa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestStatistiche" msprop:Generator_ColumnVarNameInTable="columnGestStatistiche" msprop:Generator_ColumnPropNameInRow="GestStatistiche" msprop:Generator_ColumnPropNameInTable="GestStatisticheColumn" msprop:Generator_UserColumnName="GestStatistiche" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GestTavoli" msprop:Generator_ColumnVarNameInTable="columnGestTavoli" msprop:Generator_ColumnPropNameInRow="GestTavoli" msprop:Generator_ColumnPropNameInTable="GestTavoliColumn" msprop:Generator_UserColumnName="GestTavoli" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MagArticoli" msprop:Generator_ColumnVarNameInTable="columnMagArticoli" msprop:Generator_ColumnPropNameInRow="MagArticoli" msprop:Generator_ColumnPropNameInTable="MagArticoliColumn" msprop:Generator_UserColumnName="MagArticoli" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MagInventario" msprop:Generator_ColumnVarNameInTable="columnMagInventario" msprop:Generator_ColumnPropNameInRow="MagInventario" msprop:Generator_ColumnPropNameInTable="MagInventarioColumn" msprop:Generator_UserColumnName="MagInventario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MagScorte" msprop:Generator_ColumnVarNameInTable="columnMagScorte" msprop:Generator_ColumnPropNameInRow="MagScorte" msprop:Generator_ColumnPropNameInTable="MagScorteColumn" msprop:Generator_UserColumnName="MagScorte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MagMov" msprop:Generator_ColumnVarNameInTable="columnMagMov" msprop:Generator_ColumnPropNameInRow="MagMov" msprop:Generator_ColumnPropNameInTable="MagMovColumn" msprop:Generator_UserColumnName="MagMov" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StruDispTavoli" msprop:Generator_ColumnVarNameInTable="columnStruDispTavoli" msprop:Generator_ColumnPropNameInRow="StruDispTavoli" msprop:Generator_ColumnPropNameInTable="StruDispTavoliColumn" msprop:Generator_UserColumnName="StruDispTavoli" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StruCap" msprop:Generator_ColumnVarNameInTable="columnStruCap" msprop:Generator_ColumnPropNameInRow="StruCap" msprop:Generator_ColumnPropNameInTable="StruCapColumn" msprop:Generator_UserColumnName="StruCap" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StruMsg" msprop:Generator_ColumnVarNameInTable="columnStruMsg" msprop:Generator_ColumnPropNameInRow="StruMsg" msprop:Generator_ColumnPropNameInTable="StruMsgColumn" msprop:Generator_UserColumnName="StruMsg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StruCodiciBarre" msprop:Generator_ColumnVarNameInTable="columnStruCodiciBarre" msprop:Generator_ColumnPropNameInRow="StruCodiciBarre" msprop:Generator_ColumnPropNameInTable="StruCodiciBarreColumn" msprop:Generator_UserColumnName="StruCodiciBarre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StruMenù" msprop:Generator_ColumnVarNameInTable="columnStruMenù" msprop:Generator_ColumnPropNameInRow="StruMenù" msprop:Generator_ColumnPropNameInTable="StruMenùColumn" msprop:Generator_UserColumnName="StruMenù" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VisOpzioni" msprop:Generator_ColumnVarNameInTable="columnVisOpzioni" msprop:Generator_ColumnPropNameInRow="VisOpzioni" msprop:Generator_ColumnPropNameInTable="VisOpzioniColumn" msprop:Generator_UserColumnName="VisOpzioni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VisErrori" msprop:Generator_ColumnVarNameInTable="columnVisErrori" msprop:Generator_ColumnPropNameInRow="VisErrori" msprop:Generator_ColumnPropNameInTable="VisErroriColumn" msprop:Generator_UserColumnName="VisErrori" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VisOperazioni" msprop:Generator_ColumnVarNameInTable="columnVisOperazioni" msprop:Generator_ColumnPropNameInRow="VisOperazioni" msprop:Generator_ColumnPropNameInTable="VisOperazioniColumn" msprop:Generator_UserColumnName="VisOperazioni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Gruppi" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

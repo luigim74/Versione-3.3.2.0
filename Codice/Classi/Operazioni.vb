@@ -129,13 +129,13 @@ Public Class Operazioni
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET Data = @Data, " & _
-                             "Operatore = @Operatore, " & _
-                             "Modulo = @Modulo, " & _
-                             "[Descrizione] = @Descrizione " & _
-                             "WHERE Id = {1}", _
-                              tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET Data = @Data, " &
+                             "Operatore = @Operatore, " &
+                             "Modulo = @Modulo, " &
+                             "[Descrizione] = @Descrizione " &
+                             "WHERE Id = {1}",
+                              tabella,
                               codice)
 
          ' Crea il comando per la connessione corrente.

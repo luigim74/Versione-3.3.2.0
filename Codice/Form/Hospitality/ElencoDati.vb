@@ -4142,6 +4142,114 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   Private Sub AnteprimaDiStampaPrenSale(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New PrenSaleDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepPrenSale(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaGruppiOp(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New GruppiOpDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepGruppiOp(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaOperatori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New OperatoriDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepOperatori(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaArticoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New ArticoliDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepArticoli(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       Dim cn As OleDbConnection
 
@@ -4649,7 +4757,10 @@ Public Class frmElencoDati
                   End If
 
                Case Elenco.Articoli
-                  StampaDocumento(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
+                  'StampaDocumento(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
+                  End If
 
                Case Elenco.Camerieri
                   'StampaDocumento(PERCORSO_REP_CAMERIERI, TAB_CAMERIERI, repSql)
@@ -4685,13 +4796,22 @@ Public Class frmElencoDati
                   End If
 
                Case Elenco.PrenSale
-                  StampaDocumento(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
+                  'StampaDocumento(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
+                  End If
 
                Case Elenco.Gruppi
-                  StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                  'StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                  End If
 
                Case Elenco.Operatori
-                  StampaDocumento(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
+                  'StampaDocumento(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
+                  End If
 
                Case Elenco.CaratteristicheRisorse
                   'StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
@@ -4721,7 +4841,8 @@ Public Class frmElencoDati
                   AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI, TAB_CAT_PIATTI, repSql)
 
                Case Elenco.Articoli
-                  g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_ARTICOLI)
+                  'g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_ARTICOLI)
+                  AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
 
                Case Elenco.Camerieri
                   'g_frmMain.ApriReports(repSql, TAB_CAMERIERI, PERCORSO_REP_CAMERIERI)
@@ -4747,13 +4868,16 @@ Public Class frmElencoDati
                   AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN, TAB_PREN, repSql)
 
                Case Elenco.PrenSale
-                  g_frmMain.ApriReports(repSql, TAB_PREN_SALE, PERCORSO_REP_PREN_SALE)
+                  'g_frmMain.ApriReports(repSql, TAB_PREN_SALE, PERCORSO_REP_PREN_SALE)
+                  AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
 
                Case Elenco.Gruppi
-                  g_frmMain.ApriReports(repSql, TAB_GRUPPI, PERCORSO_REP_GRUPPI)
+                  'g_frmMain.ApriReports(repSql, TAB_GRUPPI, PERCORSO_REP_GRUPPI)
+                  AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
 
                Case Elenco.Operatori
-                  g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
+                  'g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
+                  AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
 
                Case Elenco.CaratteristicheRisorse
                   'g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
