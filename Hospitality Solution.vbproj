@@ -713,6 +713,12 @@
     <Compile Include="Codice\ReportsViewer\RepPrenCamere.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenRisorseSportive.Designer.vb">
+      <DependentUpon>RepPrenRisorseSportive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrenRisorseSportive.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenSale.Designer.vb">
       <DependentUpon>RepPrenSale.vb</DependentUpon>
     </Compile>
@@ -723,6 +729,12 @@
       <DependentUpon>RepPrenTavoli.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenTavoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepRisorseSportive.Designer.vb">
+      <DependentUpon>RepRisorseSportive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepRisorseSportive.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepSale.Designer.vb">
@@ -1086,6 +1098,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OperazioniDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\RisorseSportiveDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RisorseSportiveDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\PrenRisorseSportiveDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrenRisorseSportiveDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="Codice\DataSet\TavoliDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1268,6 +1290,17 @@
     <None Include="Codice\DataSet\PrenSaleDataSet.xss">
       <DependentUpon>PrenSaleDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\PrenRisorseSportiveDataSet.xsc">
+      <DependentUpon>PrenRisorseSportiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PrenRisorseSportiveDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrenRisorseSportiveDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\PrenRisorseSportiveDataSet.xss">
+      <DependentUpon>PrenRisorseSportiveDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\LogoAmica.ico" />
     <None Include="bin\Android\CHS_ANAG.DB" />
     <None Include="bin\Android\CHS_CMD.DB" />
@@ -1354,6 +1387,7 @@
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operazioni.rdlc" />
+    <EmbeddedResource Include="bin\Reports\PrenRisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenTavoli.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
@@ -1364,6 +1398,7 @@
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A6.rdlc" />
+    <EmbeddedResource Include="bin\Reports\RisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\Sale.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
@@ -1779,11 +1814,17 @@
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepPrenRisorseSportive.resx">
+      <DependentUpon>RepPrenRisorseSportive.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenSale.resx">
       <DependentUpon>RepPrenSale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenTavoli.resx">
       <DependentUpon>RepPrenTavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepRisorseSportive.resx">
+      <DependentUpon>RepRisorseSportive.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepSale.resx">
       <DependentUpon>RepSale.vb</DependentUpon>
@@ -1850,6 +1891,17 @@
     </None>
     <None Include="Codice\DataSet\TavoliDataSet.xss">
       <DependentUpon>TavoliDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\RisorseSportiveDataSet.xsc">
+      <DependentUpon>RisorseSportiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\RisorseSportiveDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RisorseSportiveDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\RisorseSportiveDataSet.xss">
+      <DependentUpon>RisorseSportiveDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

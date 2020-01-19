@@ -372,6 +372,28 @@ Namespace My
                 Return CType(Me("HospitalityConnectionString28"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString29() As String
+            Get
+                Return CType(Me("HospitalityConnectionString29"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HospitalityConnectionString30() As String
+            Get
+                Return CType(Me("HospitalityConnectionString30"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

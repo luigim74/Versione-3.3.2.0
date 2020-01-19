@@ -1454,7 +1454,42 @@ Public Class frmElencoDatiSport
       End Try
    End Function
 
-   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Try
+      '   Dim cn As New OleDbConnection(ConnString)
+
+      '   cn.Open()
+
+      '   Dim oleAdapter As New OleDbDataAdapter
+
+      '   oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '   Dim ds As New HospitalityDataSet
+      '   ds.Clear()
+      '   oleAdapter.Fill(ds, tabella)
+
+      '   Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '   rep.Load(Application.StartupPath & nomeDoc)
+
+      '   rep.SetDataSource(ds)
+
+      '   rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                      PrintDialog1.PrinterSettings.FromPage,
+      '                      PrintDialog1.PrinterSettings.ToPage)
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'Finally
+      '   cn.Close()
+
+      'End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaAccessoriServizi(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -1481,29 +1516,49 @@ Public Class frmElencoDatiSport
       End Try
    End Sub
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+   Private Sub AnteprimaDiStampaRisorse(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
          cn.Open()
 
          Dim oleAdapter As New OleDbDataAdapter
-
          oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-         Dim ds As New HospitalityDataSet
+         Dim ds As New RisorseSportiveDataSet
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
-         Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepRisorseSportive(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
-         rep.Load(Application.StartupPath & nomeDoc)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         rep.SetDataSource(ds)
+      Finally
+         cn.Close()
 
-         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                            PrintDialog1.PrinterSettings.FromPage,
-                            PrintDialog1.PrinterSettings.ToPage)
+      End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaPrenRisorse(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New PrenRisorseSportiveDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepPrenRisorseSportive(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1687,14 +1742,20 @@ Public Class frmElencoDatiSport
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampa(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                     AnteprimaDiStampaAccessoriServizi(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
                   End If
 
                Case Elenco.Risorse
-                  StampaDocumento(PERCORSO_REP_RISORSE, TAB_RISORSE, repSql)
+                  'StampaDocumento(PERCORSO_REP_RISORSE, TAB_RISORSE, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaRisorse(PERCORSO_REP_RISORSE, TAB_RISORSE, repSql)
+                  End If
 
                Case Elenco.Prenotazioni
-                  StampaDocumento(PERCORSO_REP_PREN_RISORSE, TAB_PREN, repSql)
+                  'StampaDocumento(PERCORSO_REP_PREN_RISORSE, TAB_PREN, repSql)
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     AnteprimaDiStampaPrenRisorse(PERCORSO_REP_PREN_RISORSE, TAB_PREN, repSql)
+                  End If
 
             End Select
 
@@ -1704,13 +1765,15 @@ Public Class frmElencoDatiSport
 
             Select Case TipoElenco
                Case Elenco.AccessoriServizi
-                  AnteprimaDiStampa(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
+                  AnteprimaDiStampaAccessoriServizi(PERCORSO_REP_ACCESSORI_SERVIZI_A4, TAB_ACCESSORI_SERVIZI, repSql)
 
                Case Elenco.Risorse
-                  g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)
+                  'g_frmMain.ApriReports(repSql, TAB_RISORSE, PERCORSO_REP_RISORSE)
+                  AnteprimaDiStampaRisorse(PERCORSO_REP_RISORSE, TAB_RISORSE, repSql)
 
                Case Elenco.Prenotazioni
-                  g_frmMain.ApriReports(repSql, TAB_PREN, PERCORSO_REP_PREN_RISORSE)
+                  'g_frmMain.ApriReports(repSql, TAB_PREN, PERCORSO_REP_PREN_RISORSE)
+                  AnteprimaDiStampaPrenRisorse(PERCORSO_REP_PREN_RISORSE, TAB_PREN, repSql)
 
             End Select
 
