@@ -160,7 +160,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rdlc"
    Public Const PERCORSO_REP_PIATTI As String = "\Reports\Piatti.rpt"
    Public Const PERCORSO_REP_ARTICOLI As String = "\Reports\Articoli.rdlc"
-   Public Const PERCORSO_REP_MOV_MAG As String = "\Reports\MovMag.rpt"
+   Public Const PERCORSO_REP_MOV_MAG As String = "\Reports\MovMagazzino.rdlc"
    Public Const PERCORSO_REP_SCORTE As String = "\Reports\Scorte.rpt"
    Public Const PERCORSO_REP_INVENTARIO As String = "\Reports\Inventario.rpt"
    Public Const PERCORSO_REP_CAT_PIATTI As String = "\Reports\CategoriePiatti.rdlc"
