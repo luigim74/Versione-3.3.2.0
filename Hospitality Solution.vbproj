@@ -761,6 +761,12 @@
     <Compile Include="Codice\ReportsViewer\RepSchedinePS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepScorteMagazzino.Designer.vb">
+      <DependentUpon>RepScorteMagazzino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepScorteMagazzino.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.Designer.vb">
       <DependentUpon>RepStoricoPresenzeCamere.vb</DependentUpon>
     </Compile>
@@ -1119,6 +1125,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrenRisorseSportiveDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\ScorteMagazzinoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScorteMagazzinoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="Codice\DataSet\TavoliDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1425,6 +1436,7 @@
     <EmbeddedResource Include="bin\Reports\Sale.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
+    <EmbeddedResource Include="bin\Reports\ScorteMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinePS.rdlc" />
@@ -1861,6 +1873,9 @@
     <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinePS.resx">
       <DependentUpon>RepSchedinePS.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepScorteMagazzino.resx">
+      <DependentUpon>RepScorteMagazzino.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.resx">
       <DependentUpon>RepStoricoPresenzeCamere.vb</DependentUpon>
     </EmbeddedResource>
@@ -1928,6 +1943,17 @@
     </None>
     <None Include="Codice\DataSet\RisorseSportiveDataSet.xss">
       <DependentUpon>RisorseSportiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ScorteMagazzinoDataSet.xsc">
+      <DependentUpon>ScorteMagazzinoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ScorteMagazzinoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ScorteMagazzinoDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\ScorteMagazzinoDataSet.xss">
+      <DependentUpon>ScorteMagazzinoDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -509,6 +509,7 @@ Public Class ElencoScorte
       End Try
    End Sub
 
+   ' TODO_A: RISOLVERE!!! Non vengono attivati i pulsanti sulla barra degli strumenti.
    Public Sub AggiornaDati()
       Try
          If TestoRicerca.Text <> "" Then
@@ -824,49 +825,77 @@ Public Class ElencoScorte
    End Function
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      Dim cn As OleDbConnection
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Dim cn As OleDbConnection
 
+      'Try
+      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
+
+      '      If frmId = "Clienti" Then
+      '         ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
+
+      '         ' Dichiara un oggetto connessione.
+      '         cn = New OleDbConnection(ConnStringAnagrafiche)
+      '      Else
+      '         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '         cn = New OleDbConnection(ConnString)
+      '      End If
+
+      '      cn.Open()
+
+      '      Dim oleAdapter As New OleDbDataAdapter
+
+      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '      Dim ds As New Dataset1
+
+      '      ds.Clear()
+
+      '      oleAdapter.Fill(ds, tabella)
+
+      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '      rep.Load(Application.StartupPath & nomeDoc)
+
+      '      rep.SetDataSource(ds)
+
+      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                         PrintDialog1.PrinterSettings.FromPage,
+      '                         PrintDialog1.PrinterSettings.ToPage)
+
+      '      cn.Close()
+      '   End If
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'End Try
+   End Sub
+
+   Private Sub AnteprimaDiStampaScorte(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         Dim cn As New OleDbConnection(ConnString)
 
-            If frmId = "Clienti" Then
-               ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
+         cn.Open()
 
-               ' Dichiara un oggetto connessione.
-               cn = New OleDbConnection(ConnStringAnagrafiche)
-            Else
-               'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-               cn = New OleDbConnection(ConnString)
-            End If
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-            cn.Open()
+         Dim ds As New ScorteMagazzinoDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepScorteMagazzino(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub
@@ -987,13 +1016,17 @@ Public Class ElencoScorte
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_MAGAZZINO_SCORTE, MODULO_MAGAZZINO_SCORTE)
 
-            StampaDocumento(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
+            'StampaDocumento(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampaScorte(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
+            End If
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_MAGAZZINO_SCORTE, MODULO_MAGAZZINO_SCORTE)
 
-            g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_SCORTE)
+            'g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_SCORTE)
+            AnteprimaDiStampaScorte(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.
