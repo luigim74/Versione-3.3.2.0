@@ -1,8 +1,17 @@
-' Nome form:            frmElencoDati
+#Region " DATI FILE.VB "
+
+' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 10/08/2006
-' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
+' Data ultima modifica: 25/01/2020
+' Descrizione:           Elenco dati riutilizzabile per tutte le anagrafiche.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -509,7 +518,6 @@ Public Class ElencoScorte
       End Try
    End Sub
 
-   ' TODO_A: RISOLVERE!!! Non vengono attivati i pulsanti sulla barra degli strumenti.
    Public Sub AggiornaDati()
       Try
          If TestoRicerca.Text <> "" Then
@@ -526,6 +534,9 @@ Public Class ElencoScorte
 
             ' Visualizza la prima pagina di dati.
             VisualizzaPagina(pagCorrente, sql)
+
+            ' Se nella tabella non ci sono record disattiva i pulsanti.
+            ConvalidaDati()
 
             ' Aggiorna l'intestazione della griglia dati.
             AggIntGriglia()

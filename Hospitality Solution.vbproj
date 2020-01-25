@@ -574,6 +574,12 @@
     <Compile Include="Codice\ReportsViewer\GruppiOp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\ReportsViewer\RepInventario.Designer.vb">
+      <DependentUpon>RepInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\ReportsViewer\RepMovMagazzino.Designer.vb">
       <DependentUpon>RepMovMagazzino.vb</DependentUpon>
     </Compile>
@@ -1075,6 +1081,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovMagazzinoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\InventarioDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -1300,6 +1311,17 @@
     <None Include="Codice\DataSet\MovMagazzinoDataSet.xss">
       <DependentUpon>MovMagazzinoDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\InventarioDataSet.xsc">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\InventarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Codice\DataSet\InventarioDataSet.xss">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Codice\DataSet\PrenTavoliDataSet.xsc">
       <DependentUpon>PrenTavoliDataSet.xsd</DependentUpon>
@@ -1417,6 +1439,7 @@
     <EmbeddedResource Include="bin\Reports\Fattura A4_Iva_Multipla.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
     <EmbeddedResource Include="bin\Reports\GruppiOp.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Inventario.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
@@ -1511,6 +1534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\GruppiOp.resx">
       <DependentUpon>GruppiOp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepInventario.resx">
+      <DependentUpon>RepInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepMovMagazzino.resx">
       <DependentUpon>RepMovMagazzino.vb</DependentUpon>

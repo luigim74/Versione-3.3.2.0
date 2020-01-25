@@ -135,7 +135,7 @@
                             <TextRun>
                               <Value>=Fields!Giacenza.Value</Value>
                               <Style>
-                                <Format>'€' #,0.00;'€' -#,0.00</Format>
+                                <Format>#,0.00</Format>
                                 <Color>Maroon</Color>
                               </Style>
                             </TextRun>
@@ -154,9 +154,9 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -171,7 +171,7 @@
                             <TextRun>
                               <Value>=Fields!Carico.Value</Value>
                               <Style>
-                                <Format>'€' #,0.00;'€' -#,0.00</Format>
+                                <Format>#,0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -189,7 +189,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -206,7 +205,7 @@
                             <TextRun>
                               <Value>=Fields!Scarico.Value</Value>
                               <Style>
-                                <Format>'€' #,0.00;'€' -#,0.00</Format>
+                                <Format>#,0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -224,7 +223,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
