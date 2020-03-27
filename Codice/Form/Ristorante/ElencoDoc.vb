@@ -2406,6 +2406,33 @@ Public Class ElencoDoc
       End Try
    End Function
 
+   Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New DocumentiDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepElencoDocumenti(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Public Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
 

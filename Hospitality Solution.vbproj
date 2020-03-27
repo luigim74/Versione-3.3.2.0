@@ -474,6 +474,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\DocumentiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\PrimaNotaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\Form\Centro sportivo\AccessoriServizi.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -572,6 +582,12 @@
       <DependentUpon>GruppiOp.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\GruppiOp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepElencoDocumenti.Designer.vb">
+      <DependentUpon>RepElencoDocumenti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepElencoDocumenti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepInventario.Designer.vb">
@@ -741,6 +757,12 @@
       <DependentUpon>RepPrenTavoli.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenTavoli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrimaNota.Designer.vb">
+      <DependentUpon>RepPrimaNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPrimaNota.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepRisorseSportive.Designer.vb">
@@ -1209,6 +1231,17 @@
     <None Include="Codice\DataSet\AnagraficheDataSet.xss">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\DocumentiDataSet.xsc">
+      <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\DocumentiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\DocumentiDataSet.xss">
+      <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\IstatDataSet.xsc">
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </None>
@@ -1276,6 +1309,17 @@
     </None>
     <None Include="Codice\DataSet\GruppiOpDataSet.xss">
       <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PrimaNotaDataSet.xsc">
+      <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PrimaNotaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrimaNotaDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\PrimaNotaDataSet.xss">
+      <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
     </None>
     <None Include="HsKey.pfx" />
     <None Include="Codice\DataSet\OperatoriDataSet.xsc">
@@ -1433,6 +1477,7 @@
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Documenti.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia.rdlc" />
@@ -1446,6 +1491,7 @@
     <EmbeddedResource Include="bin\Reports\Operazioni.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenRisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenTavoli.rdlc" />
+    <EmbeddedResource Include="bin\Reports\PrimaNota.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
@@ -1534,6 +1580,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\GruppiOp.resx">
       <DependentUpon>GruppiOp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepElencoDocumenti.resx">
+      <DependentUpon>RepElencoDocumenti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepInventario.resx">
       <DependentUpon>RepInventario.vb</DependentUpon>
@@ -1886,6 +1935,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenTavoli.resx">
       <DependentUpon>RepPrenTavoli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepPrimaNota.resx">
+      <DependentUpon>RepPrimaNota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepRisorseSportive.resx">
       <DependentUpon>RepRisorseSportive.vb</DependentUpon>

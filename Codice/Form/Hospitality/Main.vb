@@ -12344,7 +12344,8 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
-               ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
+               'ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
+               g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
@@ -12387,7 +12388,10 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Stampa il documento selezionato nell'elenco.
-               g_frmDocumenti.StampaDocumento(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+               'g_frmDocumenti.StampaDocumento(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+               If g_frmDocumenti.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+               End If
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                If g_frmEmail.PrintDialog1.ShowDialog() = DialogResult.OK Then

@@ -951,6 +951,32 @@ Public Class PrimaNota
       End If
 
    End Sub
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New PrimaNotaDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepPrimaNota(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
@@ -1594,13 +1620,17 @@ Public Class PrimaNota
                ' Registra loperazione effettuata dall'operatore identificato.
                g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_PRIMA_NOTA, MODULO_CONTABILITA_PRIMA_NOTA)
 
-               StampaDocumento(PERCORSO_REP_PRIMANOTA, TAB_PRIMA_NOTA, repSql)
+               'StampaDocumento(PERCORSO_REP_PRIMANOTA, TAB_PRIMA_NOTA, repSql)
+               If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  AnteprimaDiStampa(PERCORSO_REP_PRIMANOTA, TAB_PRIMA_NOTA, repSql)
+               End If
 
             Case "Anteprima"
                ' Registra loperazione effettuata dall'operatore identificato.
                g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_PRIMA_NOTA, MODULO_CONTABILITA_PRIMA_NOTA)
 
-               g_frmMain.ApriReports(repSql, TAB_PRIMA_NOTA, PERCORSO_REP_PRIMANOTA)
+               'g_frmMain.ApriReports(repSql, TAB_PRIMA_NOTA, PERCORSO_REP_PRIMANOTA)
+               AnteprimaDiStampa(PERCORSO_REP_PRIMANOTA, TAB_PRIMA_NOTA, repSql)
 
          End Select
 
