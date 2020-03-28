@@ -1443,7 +1443,35 @@ Public Class frmElencoPiatti
       End Try
    End Function
 
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New PiattiDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepPiatti(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       Try
 
          If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -1469,8 +1497,8 @@ Public Class frmElencoPiatti
 
             rep.SetDataSource(ds)
 
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
+            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+                               PrintDialog1.PrinterSettings.FromPage,
                                PrintDialog1.PrinterSettings.ToPage)
 
             cn.Close()
@@ -1599,13 +1627,17 @@ Public Class frmElencoPiatti
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_ANAGRAFICA_PIATTI, MODULO_ANAGRAFICA_PIATTI)
 
-            StampaDocumento(PERCORSO_REP_PIATTI, TAB_PIATTI, repSql)
+            'StampaDocumento(PERCORSO_REP_PIATTI, TAB_PIATTI, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampa(PERCORSO_REP_PIATTI, TAB_PIATTI, repSql)
+            End If
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_ANAGRAFICA_PIATTI, MODULO_ANAGRAFICA_PIATTI)
 
-            g_frmMain.ApriReports(repSql, TAB_PIATTI, PERCORSO_REP_PIATTI)
+            'g_frmMain.ApriReports(repSql, TAB_PIATTI, PERCORSO_REP_PIATTI)
+            AnteprimaDiStampa(PERCORSO_REP_PIATTI, TAB_PIATTI, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.

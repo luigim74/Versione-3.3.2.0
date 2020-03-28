@@ -73,6 +73,7 @@ Public Class RepPrimaNota
 
       End Try
    End Sub
+
    Private Sub FormResize(ByVal larghezza As Short, ByVal altezza As Short)
       Try
          ' Imposta le dimensioni standard del form.

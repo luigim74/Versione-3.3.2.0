@@ -474,10 +474,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\CorrispettiviDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorrispettiviDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\DocumentiDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\PiattiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiattiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Codice\DataSet\PrimaNotaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -582,6 +592,12 @@
       <DependentUpon>GruppiOp.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\GruppiOp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCorrispettivi.Designer.vb">
+      <DependentUpon>RepCorrispettivi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCorrispettivi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepElencoDocumenti.Designer.vb">
@@ -733,6 +749,12 @@
       <DependentUpon>RepOperatori.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepOperatori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPiatti.Designer.vb">
+      <DependentUpon>RepPiatti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepPiatti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepPrenCamere.Designer.vb">
@@ -1231,6 +1253,17 @@
     <None Include="Codice\DataSet\AnagraficheDataSet.xss">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\CorrispettiviDataSet.xsc">
+      <DependentUpon>CorrispettiviDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\CorrispettiviDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CorrispettiviDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\CorrispettiviDataSet.xss">
+      <DependentUpon>CorrispettiviDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\DocumentiDataSet.xsc">
       <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
     </None>
@@ -1309,6 +1342,17 @@
     </None>
     <None Include="Codice\DataSet\GruppiOpDataSet.xss">
       <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PiattiDataSet.xsc">
+      <DependentUpon>PiattiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\PiattiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PiattiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\PiattiDataSet.xss">
+      <DependentUpon>PiattiDataSet.xsd</DependentUpon>
     </None>
     <None Include="Codice\DataSet\PrimaNotaDataSet.xsc">
       <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
@@ -1477,6 +1521,7 @@
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Corrispettivi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Documenti.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4_Doppia - Centro sportivo.rdlc" />
@@ -1489,6 +1534,7 @@
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operazioni.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Piatti.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenRisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenTavoli.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrimaNota.rdlc" />
@@ -1580,6 +1626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\GruppiOp.resx">
       <DependentUpon>GruppiOp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCorrispettivi.resx">
+      <DependentUpon>RepCorrispettivi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepElencoDocumenti.resx">
       <DependentUpon>RepElencoDocumenti.vb</DependentUpon>
@@ -1923,6 +1972,9 @@
     <EmbeddedResource Include="bin\Reports\Clienti.rdlc" />
     <EmbeddedResource Include="Codice\ReportsViewer\RepOperatori.resx">
       <DependentUpon>RepOperatori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepPiatti.resx">
+      <DependentUpon>RepPiatti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepPrenCamere.resx">
       <DependentUpon>RepPrenCamere.vb</DependentUpon>
