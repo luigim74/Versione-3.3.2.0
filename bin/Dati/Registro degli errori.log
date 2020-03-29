@@ -251,3 +251,27 @@
    in Hospitality_Solution.RepPrimaNota.RepPrimaNota_Load(Object sender, EventArgs e)"
 "
 "
+"*** 29/03/2020 - 16:52:13 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.frmPrenRisorse.SalvaDocumento()"
+"
+"
+"*** 29/03/2020 - 16:52:18 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante)"
+"
+"

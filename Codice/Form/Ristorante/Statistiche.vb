@@ -1052,7 +1052,35 @@ Public Class frmStatistiche
       End Try
    End Function
 
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New StatisticheBarRistoranteDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepStatisticheBarRistorante(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       Try
 
          If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -1078,8 +1106,8 @@ Public Class frmStatistiche
 
             rep.SetDataSource(ds)
 
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                               PrintDialog1.PrinterSettings.FromPage, _
+            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+                               PrintDialog1.PrinterSettings.FromPage,
                                PrintDialog1.PrinterSettings.ToPage)
 
             cn.Close()
@@ -1201,13 +1229,17 @@ Public Class frmStatistiche
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_GESTIONE_STATISTICHE, MODULO_GESTIONE_STATISTICHE)
 
-            StampaDocumento(PERCORSO_REP_STAT, TAB_STATISTICHE, repSql)
+            'StampaDocumento(PERCORSO_REP_STAT, TAB_STATISTICHE, repSql)
+            If PrintDialog1.ShowDialog() = DialogResult.OK Then
+               AnteprimaDiStampa(PERCORSO_REP_STAT, TAB_STATISTICHE, repSql)
+            End If
 
          Case "Anteprima"
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_GESTIONE_STATISTICHE, MODULO_GESTIONE_STATISTICHE)
 
-            g_frmMain.ApriReports(repSql, TAB_STATISTICHE, PERCORSO_REP_STAT)
+            'g_frmMain.ApriReports(repSql, TAB_STATISTICHE, PERCORSO_REP_STAT)
+            AnteprimaDiStampa(PERCORSO_REP_STAT, TAB_STATISTICHE, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.

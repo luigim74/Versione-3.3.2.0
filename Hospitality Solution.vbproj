@@ -494,6 +494,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\StatisticheBarRistoranteDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatisticheBarRistoranteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\StatisticheCentroSportivoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatisticheCentroSportivoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\Form\Centro sportivo\AccessoriServizi.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -815,6 +825,18 @@
       <DependentUpon>RepScorteMagazzino.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepScorteMagazzino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStatisticheBarRistorante.Designer.vb">
+      <DependentUpon>RepStatisticheBarRistorante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStatisticheBarRistorante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStatisticheCentroSportivo.Designer.vb">
+      <DependentUpon>RepStatisticheCentroSportivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepStatisticheCentroSportivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.Designer.vb">
@@ -1365,6 +1387,28 @@
     <None Include="Codice\DataSet\PrimaNotaDataSet.xss">
       <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\StatisticheBarRistoranteDataSet.xsc">
+      <DependentUpon>StatisticheBarRistoranteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\StatisticheBarRistoranteDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StatisticheBarRistoranteDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\StatisticheBarRistoranteDataSet.xss">
+      <DependentUpon>StatisticheBarRistoranteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\StatisticheCentroSportivoDataSet.xsc">
+      <DependentUpon>StatisticheCentroSportivoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\StatisticheCentroSportivoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StatisticheCentroSportivoDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\StatisticheCentroSportivoDataSet.xss">
+      <DependentUpon>StatisticheCentroSportivoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="HsKey.pfx" />
     <None Include="Codice\DataSet\OperatoriDataSet.xsc">
       <DependentUpon>OperatoriDataSet.xsd</DependentUpon>
@@ -1552,6 +1596,8 @@
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
     <EmbeddedResource Include="bin\Reports\ScorteMagazzino.rdlc" />
+    <EmbeddedResource Include="bin\Reports\StatisticheBarRistorante.rdlc" />
+    <EmbeddedResource Include="bin\Reports\StatisticheCentroSportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\StoricoPresenzeCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\ListiniCamere.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinePS.rdlc" />
@@ -2005,6 +2051,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepScorteMagazzino.resx">
       <DependentUpon>RepScorteMagazzino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepStatisticheBarRistorante.resx">
+      <DependentUpon>RepStatisticheBarRistorante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepStatisticheCentroSportivo.resx">
+      <DependentUpon>RepStatisticheCentroSportivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepStoricoPresenzeCamere.resx">
       <DependentUpon>RepStoricoPresenzeCamere.vb</DependentUpon>

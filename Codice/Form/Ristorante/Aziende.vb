@@ -2735,6 +2735,7 @@ Public Class frmAziende
       End Try
    End Sub
 
+   ' TODO_A: MODIFICARE - URGENTE!
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal numDoc As Integer)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
