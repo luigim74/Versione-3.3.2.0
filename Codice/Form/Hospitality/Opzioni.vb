@@ -3603,10 +3603,10 @@ Public Class frmOpzioni
 
 #Region "SCHEDA GENERALI "
 
-         If DatiConfig.GetValue("FormatoFattAziende").Length = 0 Then
-            cmbFormatoFatt.SelectedIndex = 0
+         If DatiConfig.GetValue("FormatoFattAziende") <> String.Empty Then
+            cmbFormatoFatt.SelectedIndex = DatiConfig.GetValue("FormatoFattAziende")
          Else
-            cmbFormatoFatt.SelectedIndex = 1
+            cmbFormatoFatt.SelectedIndex = 0
          End If
 
          If DatiConfig.GetValue(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG) = String.Empty Then

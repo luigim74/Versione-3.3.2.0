@@ -9,8 +9,6 @@ Public Class ElencoMessaggi
    Const TAB_MESSAGGI As String = "Messaggi"
    Const TAB_MSG_REPARTI As String = "MessaggiReparti"
 
-   Dim percorsoRep As String = PERCORSO_REP_COMANDA_REPARTI
-
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
    ' Dichiara un oggetto transazione.
@@ -798,6 +796,33 @@ Public Class ElencoMessaggi
       End If
    End Function
 
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idMsg, cn)
+
+         Dim ds As New MessaggiRepartiDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepMessaggiReparti(ds, nomeDoc, nomeStampante)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
       Try
          'If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -944,12 +969,14 @@ Public Class ElencoMessaggi
                If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And
                   LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> VALORE_NESSUNA Then
                   ' Esegue la stampa.
-                  StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
+                  'StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
+                  AnteprimaDiStampa(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
                End If
 
             Else
                ' Esegue la stampa.
-               StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
+               'StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
+               AnteprimaDiStampa(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
             End If
          End If
       Next

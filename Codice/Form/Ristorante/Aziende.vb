@@ -2012,12 +2012,12 @@ Public Class frmAziende
             .Attività = FormattaApici(cmbAttività.Text)
             .TipoCliente = FormattaApici(cmbTipoCliente.Text)
             If IsNumeric(txtSconto.Text) = True Then
-               .Sconto = txtSconto.Text
+               .Sconto = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtSconto.Text))
             Else
                .Sconto = VALORE_ZERO
             End If
             If IsNumeric(txtIva.Text) = True Then
-               .Iva = txtIva.Text
+               .Iva = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtIva.Text))
             Else
                .Iva = VALORE_ZERO
             End If
@@ -2735,8 +2735,7 @@ Public Class frmAziende
       End Try
    End Sub
 
-   ' TODO_A: MODIFICARE - URGENTE!
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal numDoc As Integer)
+   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal numDoc As Integer, ByVal nomeStampante As String)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -2747,7 +2746,7 @@ Public Class frmAziende
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOC & " WHERE Id = " & numDoc, cn)
 
-         Dim ds As New Dataset1
+         Dim ds As New HospitalityDataSet 'Dataset1 utilizzato con Crystal Reports.
          ds.Clear()
          oleAdapter.Fill(ds, TAB_DOC)
 
@@ -2761,15 +2760,28 @@ Public Class frmAziende
          oleAdapter2.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_AZIENDA, cn)
          oleAdapter2.Fill(ds, TAB_AZIENDA)
 
-         Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepDocumenti(ds, nomeDoc, nomeStampante)
+         frm.ShowDialog()
 
-         rep.Load(Application.StartupPath & nomeDoc)
+         ' ---------------------------------------------------------------------------------
+         ' NON UTILIZZATO! - Vecchio codice che utilizza CrystalReports.
+         'Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
 
-         rep.SetDataSource(ds)
+         'rep.Load(Application.StartupPath & nomeDoc)
 
-         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                            PrintDialog1.PrinterSettings.FromPage,
-                            PrintDialog1.PrinterSettings.ToPage)
+         'rep.SetDataSource(ds)
+
+         'If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
+         '   rep.PrintOptions.PrinterName = nomeStampante
+         'End If
+
+         'PrintDialog1.PrinterSettings.Copies = NumeroCopieStampa
+
+         'rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+         '                   PrintDialog1.PrinterSettings.FromPage,
+         '                   PrintDialog1.PrinterSettings.ToPage)
+         ' ---------------------------------------------------------------------------------
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2829,10 +2841,10 @@ Public Class frmAziende
          DatiConfig = New AppConfig
          DatiConfig.ConfigType = ConfigFileType.AppConfig
 
-         If DatiConfig.GetValue("FormatoFattAziende").Length = 0 Then
-            Return formatoFattAziende.Grande
+         If DatiConfig.GetValue("FormatoFattAziende") <> String.Empty Then
+            Return DatiConfig.GetValue("FormatoFattAziende")
          Else
-            Return formatoFattAziende.Piccola
+            Return formatoFattAziende.Grande
          End If
 
       Catch ex As Exception
@@ -2881,8 +2893,8 @@ Public Class frmAziende
                txtContatto.Text = .Contatto
                cmbAttività.Text = .Attività
                cmbTipoCliente.Text = .TipoCliente
-               txtSconto.Text = .Sconto
-               txtIva.Text = .Iva
+               txtSconto.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Sconto))
+               txtIva.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Iva))
                txtTelCasa.Text = .TelCasa
                txtTelUfficio.Text = .TelUfficio
                txtCell.Text = .Cell
@@ -3338,17 +3350,17 @@ Public Class frmAziende
 
          Select Case LeggiFormatoFatt()
             Case formatoFattAziende.Grande
-               percorsoRep = PERCORSO_REP_FF_AZIENDE
+               percorsoRep = PERCORSO_REP_FF_A4_AZIENDE
 
             Case formatoFattAziende.Piccola
-               percorsoRep = PERCORSO_REP_FF
+               percorsoRep = PERCORSO_REP_FF_A4_DOPPIA_AZIENDE
          End Select
 
          ' Salva il documento fiscale.
          SalvaDocumento()
 
          ' Esegue la stampa.
-         StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC))
+         StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC), ImpostaNomeStampante(0))
 
          AzzeraFatturazione()
 

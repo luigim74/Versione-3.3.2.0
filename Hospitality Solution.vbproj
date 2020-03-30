@@ -484,6 +484,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentiDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\MessaggiRepartiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessaggiRepartiDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\PiattiDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -620,6 +625,12 @@
       <DependentUpon>RepInventario.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepMessaggiReparti.Designer.vb">
+      <DependentUpon>RepMessaggiReparti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepMessaggiReparti.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepMovMagazzino.Designer.vb">
@@ -1365,6 +1376,17 @@
     <None Include="Codice\DataSet\GruppiOpDataSet.xss">
       <DependentUpon>GruppiOpDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\MessaggiRepartiDataSet.xsc">
+      <DependentUpon>MessaggiRepartiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\MessaggiRepartiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MessaggiRepartiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\MessaggiRepartiDataSet.xss">
+      <DependentUpon>MessaggiRepartiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\PiattiDataSet.xsc">
       <DependentUpon>PiattiDataSet.xsd</DependentUpon>
     </None>
@@ -1574,6 +1596,7 @@
     <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
     <EmbeddedResource Include="bin\Reports\GruppiOp.rdlc" />
     <EmbeddedResource Include="bin\Reports\Inventario.rdlc" />
+    <EmbeddedResource Include="bin\Reports\MessaggiReparti.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
@@ -1681,6 +1704,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepInventario.resx">
       <DependentUpon>RepInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepMessaggiReparti.resx">
+      <DependentUpon>RepMessaggiReparti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepMovMagazzino.resx">
       <DependentUpon>RepMovMagazzino.vb</DependentUpon>

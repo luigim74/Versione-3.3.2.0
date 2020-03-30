@@ -79,7 +79,7 @@ Partial Class RepDocumenti
       Me.ReportViewer1.Name = "ReportViewer1"
       Me.ReportViewer1.PromptAreaCollapsed = True
       Me.ReportViewer1.ServerReport.BearerToken = Nothing
-      Me.ReportViewer1.Size = New System.Drawing.Size(733, 262)
+      Me.ReportViewer1.Size = New System.Drawing.Size(749, 278)
       Me.ReportViewer1.TabIndex = 1
       '
       'DettagliDocTableAdapter
@@ -104,7 +104,7 @@ Partial Class RepDocumenti
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(733, 262)
+      Me.ClientSize = New System.Drawing.Size(749, 278)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepDocumenti"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

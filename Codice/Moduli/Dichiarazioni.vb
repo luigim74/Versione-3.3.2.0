@@ -248,8 +248,8 @@ Module Dichiarazioni
    Public Const REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Proforma A4_Doppia - Centro sportivo.rdlc"
 
    ' Documenti fiscali formato .rpt
-   Public Const PERCORSO_REP_FF_AZIENDE As String = "\Reports\FattAziende.rpt"
-   Public Const PERCORSO_REP_FF As String = "\Reports\Fattura.rpt" ' NON UTILIZZATA.
+   Public Const PERCORSO_REP_FF_A4_AZIENDE As String = "\Reports\Fattura A4.rdlc"
+   Public Const PERCORSO_REP_FF_A4_DOPPIA_AZIENDE As String = "\Reports\Fattura A4_Doppia.rdlc"
    Public Const PERCORSO_REP_RF As String = "\Reports\RFiscale.rpt" ' NON UTILIZZATA.
    Public Const PERCORSO_REP_PF As String = "\Reports\Proforma.rpt" ' NON UTILIZZATA.
    Public Const PERCORSO_REP_SF As String = "\Reports\Scontrino.rpt"
@@ -292,7 +292,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_COMANDA_REPARTI_WPOS1 As String = "\Reports\ComandaRepartiWPOS1.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_WPOS1 As String = "\Reports\ComandaClientiWPOS1.rpt.txt"
 
-   Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\Messaggi.rpt"
+   Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\MessaggiReparti.rdlc"
 
    ' Percorso reports Etichette.
    Public Const PERCORSO_ETICHETTE_635_72 As String = "\Reports\Etichette\Etichette635_72.rpt"
