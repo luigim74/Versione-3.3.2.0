@@ -1,7 +1,8 @@
 Option Strict Off
-Option Explicit On 
+Option Explicit On
 
 Imports System.Data.OleDb
+Imports Microsoft.Reporting.WinForms
 
 Public Class ElencoMessaggi
    Inherits System.Windows.Forms.Form
@@ -810,8 +811,11 @@ Public Class ElencoMessaggi
          oleAdapter.Fill(ds, tabella)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New RepMessaggiReparti(ds, nomeDoc, nomeStampante)
-         frm.ShowDialog()
+         'Dim frm As New RepMessaggiReparti(ds, nomeDoc, nomeStampante)
+         'frm.ShowDialog()
+
+         Dim stampa As New StampaReports(ds, nomeStampante, NumeroCopieStampa)
+         stampa.Run(Application.StartupPath & nomeDoc) ' \Reports\Report1.rdlc
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -821,6 +825,7 @@ Public Class ElencoMessaggi
          cn.Close()
 
       End Try
+
    End Sub
 
    Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)

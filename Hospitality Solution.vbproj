@@ -340,6 +340,7 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.vb" />
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Codice\Classi\StampaReports.vb" />
     <Compile Include="Codice\DataSet\ArticoliDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1610,6 +1611,7 @@
     <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenSale.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Report1.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />

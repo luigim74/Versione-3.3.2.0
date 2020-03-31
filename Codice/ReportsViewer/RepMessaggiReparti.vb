@@ -11,9 +11,13 @@
 ' ******************************************************************
 #End Region
 
+Imports Microsoft.Reporting.WinForms
+Imports System.Threading
+
 Public Class RepMessaggiReparti
    Dim nomeStampante As String
    Dim nomeReport As String
+   Dim inStampa As Boolean = False
 
    Public Sub New(ByVal ds As MessaggiRepartiDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
@@ -66,6 +70,8 @@ Public Class RepMessaggiReparti
 
          ' Aggiorna il report.
          Me.ReportViewer1.RefreshReport()
+
+         'inStampa = True
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
