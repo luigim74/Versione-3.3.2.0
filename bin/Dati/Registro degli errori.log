@@ -547,3 +547,245 @@
    in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 818"
 "
 "
+"*** 01/04/2020 - 13:52:22 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Export(LocalReport report)
+   in Hospitality_Solution.StampaReports.Run(String nomeReport)
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella)"
+"
+"
+"*** 01/04/2020 - 16:46:31 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 144
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 16:53:17 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 17:03:19 ***"
+"- DESCRIZIONE ERRORE: L'oggetto origine dati del report deve essere di tipo System.Data.DataTable, System.Collections.IEnumerable, System.Windows.Forms.BindingSource o System.Type."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.ReportDataSource.set_Value(Object value)
+   in Microsoft.Reporting.WinForms.ReportDataSource..ctor(String name, Object dataSourceValue)
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 140
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 17:06:04 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 17:51:57 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 17:54:20 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 18:06:02 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 162
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 18:16:11 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 18:27:36 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 146
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 18:30:14 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 150
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 01/04/2020 - 18:49:00 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 01/04/2020 - 18:53:01 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 13:47:35 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 13:49:55 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 13:54:37 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare la tabella 1."
+"- NOME PROCEDURA:    in System.Data.DataTableCollection.get_Item(Int32 index)
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 144
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 13:56:49 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 13:59:31 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 14:01:14 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 80
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 14:18:45 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 02/04/2020 - 14:22:22 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmPrenRisorse.LeggiNumeroDocFiscaleConfig(String tabella, String tipoDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 3986"
+"
+"
+"*** 02/04/2020 - 14:23:43 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 146
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 02/04/2020 - 14:27:28 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 148
+   in Hospitality_Solution.frmPrenRisorse.StampaDocumento(String nomeDoc, Int32 numDoc, String nomeStampante) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Centro sportivo\PrenRisorse.vb:riga 4394"
+"
+"
+"*** 02/04/2020 - 14:47:01 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 78
+   in Hospitality_Solution.StampaReports.Avvia(String nomeReport) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 146
+   in Hospitality_Solution.ElencoMessaggi.AnteprimaDiStampa(String nomeDoc, Int32 idMsg, String nomeStampante, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoMessaggi.vb:riga 830"
+"
+"
+"*** 02/04/2020 - 17:16:10 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report)"
+"
+"
+"*** 02/04/2020 - 17:16:17 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"

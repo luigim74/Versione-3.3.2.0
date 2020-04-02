@@ -3741,6 +3741,36 @@ Public Class frmPos
 
    Private Sub StampaDocumento(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
       Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New ComandeDataSet
+         ds.Clear()
+
+         ' Tabella Comande.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_COMANDE)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, 1, "80mm")
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+         Now.ToShortTimeString()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaDocumento1(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
+      Try
          'If PrintDialog1.ShowDialog() = DialogResult.OK Then
 
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
@@ -5435,8 +5465,8 @@ Public Class frmPos
                g_frmVCTavoli.lblInvioComande.Text = "Invio dati ai reparti in corso..."
 
                ' Invia comande ai reparti.
-               'StampaComande()
-               StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
+               StampaComande()
+               'StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
                RegistraMsgComanda()
                RegistraTuttiMsgComanda()
                StampaMessaggi()

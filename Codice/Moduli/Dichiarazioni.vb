@@ -207,7 +207,7 @@ Module Dichiarazioni
    Public Const REPORT_FATTURA_CENTRO_SPORTIVO As String = "Fattura - Centro sportivo.rpt"
    Public Const REPORT_PROFORMA_CENTRO_SPORTIVO As String = "Proforma - Centro sportivo.rpt"
 
-   Public Const REPORT_COMANDA_REPARTI As String = "ComandaReparti.rpt"
+   Public Const REPORT_COMANDA_REPARTI As String = "ComandaReparti 80mm.rdlc"
    Public Const REPORT_COMANDA_CLIENTI As String = "ComandaClienti.rpt"
    Public Const REPORT_COMANDA_REPARTI_KUBEII As String = "ComandaRepartiKubeII.rpt.txt"
    Public Const REPORT_COMANDA_CLIENTI_KUBEII As String = "ComandaClientiKubeII.rpt.txt"
@@ -284,7 +284,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Proforma A4_Doppia - Centro sportivo.rdlc"
 
    ' Comanda.
-   Public Const PERCORSO_REP_COMANDA_REPARTI As String = "\Reports\ComandaReparti.rpt"
+   Public Const PERCORSO_REP_COMANDA_REPARTI As String = "\Reports\ComandaReparti 80mm.rdlc"
    Public Const PERCORSO_REP_COMANDA_CLIENTI As String = "\Reports\ComandaClienti.rpt"
    Public Const PERCORSO_REP_COMANDA_REPARTI_KUBEII As String = "\Reports\ComandaRepartiKubeII.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_KUBEII As String = "\Reports\ComandaClientiKubeII.rpt.txt"
@@ -292,7 +292,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_COMANDA_REPARTI_WPOS1 As String = "\Reports\ComandaRepartiWPOS1.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_WPOS1 As String = "\Reports\ComandaClientiWPOS1.rpt.txt"
 
-   Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\MessaggiReparti.rdlc"
+   Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\MessaggiReparti 80mm.rdlc"
 
    ' Percorso reports Etichette.
    Public Const PERCORSO_ETICHETTE_635_72 As String = "\Reports\Etichette\Etichette635_72.rpt"

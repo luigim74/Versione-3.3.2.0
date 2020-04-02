@@ -475,6 +475,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\ComandeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComandeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\CorrispettiviDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -499,6 +504,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\DataSet\ProvaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Codice\DataSet\StatisticheBarRistoranteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1287,6 +1297,17 @@
     <None Include="Codice\DataSet\AnagraficheDataSet.xss">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\ComandeDataSet.xsc">
+      <DependentUpon>ComandeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ComandeDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComandeDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\ComandeDataSet.xss">
+      <DependentUpon>ComandeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\CorrispettiviDataSet.xsc">
       <DependentUpon>CorrispettiviDataSet.xsd</DependentUpon>
     </None>
@@ -1409,6 +1430,17 @@
     </None>
     <None Include="Codice\DataSet\PrimaNotaDataSet.xss">
       <DependentUpon>PrimaNotaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ProvaDataSet.xsc">
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ProvaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProvaDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\ProvaDataSet.xss">
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </None>
     <None Include="Codice\DataSet\StatisticheBarRistoranteDataSet.xsc">
       <DependentUpon>StatisticheBarRistoranteDataSet.xsd</DependentUpon>
@@ -1588,6 +1620,7 @@
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\ComandaReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\Corrispettivi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Documenti.rdlc" />
     <EmbeddedResource Include="bin\Reports\Fattura A4.rdlc" />
@@ -1597,7 +1630,7 @@
     <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
     <EmbeddedResource Include="bin\Reports\GruppiOp.rdlc" />
     <EmbeddedResource Include="bin\Reports\Inventario.rdlc" />
-    <EmbeddedResource Include="bin\Reports\MessaggiReparti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\MessaggiReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />

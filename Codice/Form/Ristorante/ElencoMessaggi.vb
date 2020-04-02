@@ -797,7 +797,7 @@ Public Class ElencoMessaggi
       End If
    End Function
 
-   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
+   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -810,12 +810,8 @@ Public Class ElencoMessaggi
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
-         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         'Dim frm As New RepMessaggiReparti(ds, nomeDoc, nomeStampante)
-         'frm.ShowDialog()
-
-         Dim stampa As New StampaReports(ds, nomeStampante, NumeroCopieStampa)
-         stampa.Run(Application.StartupPath & nomeDoc) ' \Reports\Report1.rdlc
+         Dim stampa As New StampaReports(ds, nomeStampante, 1, "80mm")
+         stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -825,10 +821,9 @@ Public Class ElencoMessaggi
          cn.Close()
 
       End Try
-
    End Sub
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
+   Private Sub StampaDocumento1(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
       Try
          'If PrintDialog1.ShowDialog() = DialogResult.OK Then
 
@@ -857,8 +852,8 @@ Public Class ElencoMessaggi
             rep.PrintOptions.PrinterName = nomeStampante
          End If
 
-         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-                            PrintDialog1.PrinterSettings.FromPage, _
+         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+                            PrintDialog1.PrinterSettings.FromPage,
                             PrintDialog1.PrinterSettings.ToPage)
 
          'End If
@@ -974,14 +969,12 @@ Public Class ElencoMessaggi
                If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And
                   LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> VALORE_NESSUNA Then
                   ' Esegue la stampa.
-                  'StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
-                  AnteprimaDiStampa(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
+                  StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
                End If
 
             Else
                ' Esegue la stampa.
-               'StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
-               AnteprimaDiStampa(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
+               StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
             End If
          End If
       Next
