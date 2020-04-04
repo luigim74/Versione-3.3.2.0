@@ -4288,15 +4288,12 @@ Public Class frmPrenRisorse
             Case PERCORSO_REP_FF_A4, PERCORSO_REP_FF_A4_DOPPIA, PERCORSO_REP_FF_A4_IVA_MULTIPLA,
                  PERCORSO_REP_RF_A4_DOPPIA, PERCORSO_REP_RF_A5, PERCORSO_REP_RF_A6,
                  PERCORSO_REP_PF_A4_DOPPIA, PERCORSO_REP_PF_A5, PERCORSO_REP_PF_A6,
-                 PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO,
-                 PERCORSO_REP_RF_BELLA_NAPOLI, PERCORSO_REP_FF_BELLA_NAPOLI, PERCORSO_REP_PF_BELLA_NAPOLI,
-                 PERCORSO_REP_RF_CELIDE, PERCORSO_REP_FF_CELIDE, PERCORSO_REP_PF_CELIDE,
-                 PERCORSO_REP_RF_FORCHETTA_DORO, PERCORSO_REP_FF_FORCHETTA_DORO, PERCORSO_REP_PF_FORCHETTA_DORO
+                 PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO
 
                ' Esegue la stampa.
                StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC), nomeStampante)
 
-            Case PERCORSO_REP_SF
+            Case PERCORSO_REP_SF_RT
                ' Esegue la stampa.
                If nomeStampante = "Swing ECR 65/A" Then
                   If CreaFileScontrinoSwing() = False Then
@@ -4599,7 +4596,7 @@ Public Class frmPrenRisorse
          If ImpostaNomeDoc(3) <> String.Empty Then
             percorsoRep = "\Reports\" & ImpostaNomeDoc(3)
          Else
-            percorsoRep = PERCORSO_REP_SF
+            percorsoRep = PERCORSO_REP_SF_RT
          End If
 
          'If txtSospeso.Text <> VALORE_ZERO Then

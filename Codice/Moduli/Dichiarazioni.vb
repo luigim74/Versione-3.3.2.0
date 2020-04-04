@@ -154,7 +154,7 @@ Module Dichiarazioni
    Public Const PERCORSO_BKP As String = "\Backup\Hospitality.mdb"
    Public Const CARTELLA_FATTURE_ELETTRONICHE As String = "Fatture elettroniche"
 
-   ' Percorso reports.
+   ' Percorso cartella Reports per gli elenchi dati.
    Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rdlc"
    Public Const PERCORSO_REP_AZIENDE As String = "\Reports\Aziende.rdlc"
    Public Const PERCORSO_REP_FORNITORI As String = "\Reports\Fornitori.rdlc"
@@ -168,26 +168,18 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_SALE As String = "\Reports\Sale.rdlc"
    Public Const PERCORSO_REP_TAVOLI As String = "\Reports\Tavoli.rdlc"
    Public Const PERCORSO_REP_CAMERE As String = "\Reports\Camere.rdlc"
-
    Public Const PERCORSO_REP_PREN As String = "\Reports\PrenTavoli.rdlc"
    Public Const PERCORSO_REP_PREN_SALE As String = "\Reports\PrenSale.rdlc"
-   Public Const PERCORSO_REP_MENU_ARIAL As String = "\Reports\Arial\Menu.rpt"
-   Public Const PERCORSO_REP_MENU_TIMES As String = "\Reports\Times\Menu.rpt"
-   Public Const PERCORSO_REP_MENU_COMIC As String = "\Reports\Comic\Menu.rpt"
-   Public Const PERCORSO_REP_ACQUISTI As String = "\Reports\Acquisti.rpt"
    Public Const PERCORSO_REP_PRIMANOTA As String = "\Reports\PrimaNota.rdlc"
    Public Const PERCORSO_REP_DOC As String = "\Reports\Documenti.rdlc"
    Public Const PERCORSO_REP_CORRISPETTIVI As String = "\Reports\Corrispettivi.rdlc"
    Public Const PERCORSO_REP_STAT As String = "\Reports\StatisticheBarRistorante.rdlc"
-   Public Const PERCORSO_REP_ACCESSORI_SERVIZI As String = "\Reports\AccessoriServizi.rpt"
    Public Const PERCORSO_REP_RISORSE As String = "\Reports\RisorseSportive.rdlc"
    Public Const PERCORSO_REP_PREN_RISORSE As String = "\Reports\PrenRisorseSportive.rdlc"
    Public Const PERCORSO_REP_STAT_RISORSE As String = "\Reports\StatisticheCentroSportivo.rdlc"
    Public Const PERCORSO_REP_GRUPPI As String = "\Reports\GruppiOp.rdlc"
    Public Const PERCORSO_REP_OPERATORI As String = "\Reports\Operatori.rdlc"
    Public Const PERCORSO_REP_OPERAZIONI As String = "\Reports\Operazioni.rdlc"
-
-   ' Nomi per i reports dei documenti in formato .rdlc
    Public Const PERCORSO_REP_ACQUISTI_A4 As String = "\Reports\Acquisti.rdlc"
    Public Const PERCORSO_REP_ACCESSORI_SERVIZI_A4 As String = "\Reports\AccessoriServizi.rdlc"
    Public Const PERCORSO_REP_CAP_A4 As String = "\Reports\Cap.rdlc"
@@ -199,38 +191,39 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdlc"
    Public Const PERCORSO_REP_MODELLO_ISTAT_59_A4 As String = "\Reports\ModelloIstatC59 A4.rdlc"
 
-   ' Nomi per i reports dei documenti in formato .rpt
-   Public Const REPORT_RICEVUTA As String = "RFiscale.rpt"
-   Public Const REPORT_FATTURA As String = "Fattura.rpt"
-   Public Const REPORT_PROFORMA As String = "Proforma.rpt"
-   Public Const REPORT_RICEVUTA_CENTRO_SPORTIVO As String = "RFiscale - Centro sportivo.rpt"
-   Public Const REPORT_FATTURA_CENTRO_SPORTIVO As String = "Fattura - Centro sportivo.rpt"
-   Public Const REPORT_PROFORMA_CENTRO_SPORTIVO As String = "Proforma - Centro sportivo.rpt"
+   ' Nomi per i reports dei documenti in formato .rdlc
+   'Public Const REPORT_RICEVUTA As String = "RFiscale.rpt"
+   'Public Const REPORT_FATTURA As String = "Fattura.rpt"
+   'Public Const REPORT_PROFORMA As String = "Proforma.rpt"
+   'Public Const REPORT_RICEVUTA_CENTRO_SPORTIVO As String = "RFiscale - Centro sportivo.rpt"
+   'Public Const REPORT_FATTURA_CENTRO_SPORTIVO As String = "Fattura - Centro sportivo.rpt"
+   'Public Const REPORT_PROFORMA_CENTRO_SPORTIVO As String = "Proforma - Centro sportivo.rpt"
 
-   Public Const REPORT_COMANDA_REPARTI As String = "ComandaReparti 80mm.rdlc"
-   Public Const REPORT_COMANDA_CLIENTI As String = "ComandaClienti.rpt"
+   ' Nomi per i reports personalizzati in formato .rpt per la Pizzeria Bella Napoli.
+   'Public Const REPORT_RICEVUTA_BELLA_NAPOLI As String = "RFiscale - Pizz. Bella Napoli.rpt"
+   'Public Const REPORT_FATTURA_BELLA_NAPOLI As String = "Fattura - Pizz. Bella Napoli.rpt"
+   'Public Const REPORT_PROFORMA_BELLA_NAPOLI As String = "Proforma - Pizz. Bella Napoli.rpt"
+
+   ' Nomi per i reports personalizzati in formato .rpt per il Ristorante Celide.
+   'Public Const REPORT_FATTURA_CELIDE As String = "Fattura - Rist. Celide.rpt"
+   'Public Const REPORT_RICEVUTA_CELIDE As String = "RFiscale - Rist. Celide.rpt"
+   'Public Const REPORT_PROFORMA_CELIDE As String = "Proforma - Rist. Celide.rpt"
+
+   ' Nomi per i reports personalizzati in formato .rpt per il Ristorante La Forchetta D'Oro.
+   'Public Const REPORT_FATTURA_FORCHETTA_DORO As String = "Fattura - Rist. La Forchetta D'Oro.rpt"
+   'Public Const REPORT_RICEVUTA_FORCHETTA_DORO As String = "RFiscale - Rist. La Forchetta D'Oro.rpt"
+   'Public Const REPORT_PROFORMA_FORCHETTA_DORO As String = "Proforma - Rist. La Forchetta D'Oro.rpt"
+
+   Public Const REPORT_COMANDA_REPARTI_80mm As String = "ComandaReparti 80mm.rdlc"
+   Public Const REPORT_COMANDA_CLIENTI_80mm As String = "ComandaClienti 80mm.rdlc"
+
    Public Const REPORT_COMANDA_REPARTI_KUBEII As String = "ComandaRepartiKubeII.rpt.txt"
    Public Const REPORT_COMANDA_CLIENTI_KUBEII As String = "ComandaClientiKubeII.rpt.txt"
    Public Const REPORT_RICEVUTA_KUBEII As String = "RicevutaKubeII.rpt.txt" ' NON UTILIZZATA.
    Public Const REPORT_FATTURA_KUBEII As String = "FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
    Public Const REPORT_PROFORMA_KUBEII As String = "ProformaKubeII.rpt.txt"
 
-   ' Nomi per i reports personalizzati in formato .rpt per la Pizzeria Bella Napoli.
-   Public Const REPORT_RICEVUTA_BELLA_NAPOLI As String = "RFiscale - Pizz. Bella Napoli.rpt"
-   Public Const REPORT_FATTURA_BELLA_NAPOLI As String = "Fattura - Pizz. Bella Napoli.rpt"
-   Public Const REPORT_PROFORMA_BELLA_NAPOLI As String = "Proforma - Pizz. Bella Napoli.rpt"
-
-   ' Nomi per i reports personalizzati in formato .rpt per il Ristorante Celide.
-   Public Const REPORT_FATTURA_CELIDE As String = "Fattura - Rist. Celide.rpt"
-   Public Const REPORT_RICEVUTA_CELIDE As String = "RFiscale - Rist. Celide.rpt"
-   Public Const REPORT_PROFORMA_CELIDE As String = "Proforma - Rist. Celide.rpt"
-
-   ' Nomi per i reports personalizzati in formato .rpt per il Ristorante La Forchetta D'Oro.
-   Public Const REPORT_FATTURA_FORCHETTA_DORO As String = "Fattura - Rist. La Forchetta D'Oro.rpt"
-   Public Const REPORT_RICEVUTA_FORCHETTA_DORO As String = "RFiscale - Rist. La Forchetta D'Oro.rpt"
-   Public Const REPORT_PROFORMA_FORCHETTA_DORO As String = "Proforma - Rist. La Forchetta D'Oro.rpt"
-
-   ' Nomi per i reports dei documenti in formato .rdlc
+   ' Documenti fiscali formato .rdlc
    Public Const REPORT_RICEVUTA_A4_DOPPIA As String = "RFiscale A4_Doppia.rdlc"
    Public Const REPORT_RICEVUTA_A5 As String = "RFiscale A5.rdlc"
    Public Const REPORT_RICEVUTA_A6 As String = "RFiscale A6.rdlc"
@@ -247,29 +240,30 @@ Module Dichiarazioni
    Public Const REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Fattura A4_Doppia - Centro sportivo.rdlc"
    Public Const REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Proforma A4_Doppia - Centro sportivo.rdlc"
 
-   ' Documenti fiscali formato .rpt
-   Public Const PERCORSO_REP_FF_A4_AZIENDE As String = "\Reports\Fattura A4.rdlc"
-   Public Const PERCORSO_REP_FF_A4_DOPPIA_AZIENDE As String = "\Reports\Fattura A4_Doppia.rdlc"
-   Public Const PERCORSO_REP_RF As String = "\Reports\RFiscale.rpt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_PF As String = "\Reports\Proforma.rpt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_SF As String = "\Reports\Scontrino.rpt"
-   Public Const PERCORSO_REP_FF_CENTRO_SPORTIVO As String = "\Reports\Fattura - Centro sportivo.rpt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_RF_CENTRO_SPORTIVO As String = "\Reports\RFiscale - Centro sportivo.rpt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_PF_CENTRO_SPORTIVO As String = "\Reports\Proforma - Centro sportivo.rpt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_FF_BELLA_NAPOLI As String = "\Reports\Fattura - Pizz. Bella Napoli.rpt"
-   Public Const PERCORSO_REP_RF_BELLA_NAPOLI As String = "\Reports\RFiscale - Pizz. Bella Napoli.rpt"
-   Public Const PERCORSO_REP_PF_BELLA_NAPOLI As String = "\Reports\Proforma - Pizz. Bella Napoli.rpt"
-   Public Const PERCORSO_REP_FF_CELIDE As String = "\Reports\Fattura - Rist. Celide.rpt"
-   Public Const PERCORSO_REP_RF_CELIDE As String = "\Reports\RFiscale - Rist. Celide.rpt"
-   Public Const PERCORSO_REP_PF_CELIDE As String = "\Reports\Proforma - Rist. Celide.rpt"
-   Public Const PERCORSO_REP_FF_FORCHETTA_DORO As String = "\Reports\Fattura - Rist. La Forchetta D'Oro.rpt"
-   Public Const PERCORSO_REP_RF_FORCHETTA_DORO As String = "\Reports\RFiscale - Rist. La Forchetta D'Oro.rpt"
-   Public Const PERCORSO_REP_PF_FORCHETTA_DORO As String = "\Reports\Proforma - Rist. La Forchetta D'Oro.rpt"
+   Public Const REPORT_SCONTRINO_RT As String = "Scontrino RT.txt"
+   Public Const REPORT_SCONTRINO_NF_80mm As String = "Scontrino NF_80mm.rdlc"
+
+   'Public Const PERCORSO_REP_RF As String = "\Reports\RFiscale.rpt" ' NON UTILIZZATA.
+   'Public Const PERCORSO_REP_PF As String = "\Reports\Proforma.rpt" ' NON UTILIZZATA.
+   'Public Const PERCORSO_REP_FF_CENTRO_SPORTIVO As String = "\Reports\Fattura - Centro sportivo.rpt" ' NON UTILIZZATA.
+   'Public Const PERCORSO_REP_RF_CENTRO_SPORTIVO As String = "\Reports\RFiscale - Centro sportivo.rpt" ' NON UTILIZZATA.
+   'Public Const PERCORSO_REP_PF_CENTRO_SPORTIVO As String = "\Reports\Proforma - Centro sportivo.rpt" ' NON UTILIZZATA.
+   'Public Const PERCORSO_REP_FF_BELLA_NAPOLI As String = "\Reports\Fattura - Pizz. Bella Napoli.rpt"
+   'Public Const PERCORSO_REP_RF_BELLA_NAPOLI As String = "\Reports\RFiscale - Pizz. Bella Napoli.rpt"
+   'Public Const PERCORSO_REP_PF_BELLA_NAPOLI As String = "\Reports\Proforma - Pizz. Bella Napoli.rpt"
+   'Public Const PERCORSO_REP_FF_CELIDE As String = "\Reports\Fattura - Rist. Celide.rpt"
+   'Public Const PERCORSO_REP_RF_CELIDE As String = "\Reports\RFiscale - Rist. Celide.rpt"
+   'Public Const PERCORSO_REP_PF_CELIDE As String = "\Reports\Proforma - Rist. Celide.rpt"
+   'Public Const PERCORSO_REP_FF_FORCHETTA_DORO As String = "\Reports\Fattura - Rist. La Forchetta D'Oro.rpt"
+   'Public Const PERCORSO_REP_RF_FORCHETTA_DORO As String = "\Reports\RFiscale - Rist. La Forchetta D'Oro.rpt"
+   'Public Const PERCORSO_REP_PF_FORCHETTA_DORO As String = "\Reports\Proforma - Rist. La Forchetta D'Oro.rpt"
    Public Const PERCORSO_REP_FF_KUBEII As String = "\Reports\FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
    Public Const PERCORSO_REP_RF_KUBEII As String = "\Reports\RicevutaKubeII.rpt.txt" ' NON UTILIZZATA.
    Public Const PERCORSO_REP_PF_KUBEII As String = "\Reports\ProformaKubeII.rpt.txt"
 
-   ' Documenti fiscali formato .rdlc
+   ' Percorso cartella Reports per i documenti fiscali formato .rdlc
+   Public Const PERCORSO_REP_FF_A4_AZIENDE As String = "\Reports\Fattura A4.rdlc"
+   Public Const PERCORSO_REP_FF_A4_DOPPIA_AZIENDE As String = "\Reports\Fattura A4_Doppia.rdlc"
    Public Const PERCORSO_REP_FF_A4 As String = "\Reports\Fattura A4.rdlc"
    Public Const PERCORSO_REP_FF_A4_DOPPIA As String = "\Reports\Fattura A4_Doppia.rdlc"
    Public Const PERCORSO_REP_FF_A4_IVA_MULTIPLA As String = "\Reports\Fattura A4_Iva_Multipla.rdlc"
@@ -282,19 +276,28 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Fattura A4_Doppia - Centro sportivo.rdlc"
    Public Const PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc"
    Public Const PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Proforma A4_Doppia - Centro sportivo.rdlc"
+   Public Const PERCORSO_REP_SF_RT As String = "\Reports\Scontrino RT.txt"
+   Public Const PERCORSO_REP_SF_NF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc"
 
-   ' Comanda.
-   Public Const PERCORSO_REP_COMANDA_REPARTI As String = "\Reports\ComandaReparti 80mm.rdlc"
-   Public Const PERCORSO_REP_COMANDA_CLIENTI As String = "\Reports\ComandaClienti.rpt"
+   ' Comanda formato .rdlc.
+   Public Const PERCORSO_REP_COMANDA_REPARTI_80mm As String = "\Reports\ComandaReparti 80mm.rdlc"
+   Public Const PERCORSO_REP_COMANDA_CLIENTI_80mm As String = "\Reports\ComandaClienti 80mm.rdlc"
+   Public Const PERCORSO_REP_MESSAGGI_80mm As String = "\Reports\MessaggiReparti 80mm.rdlc"
+
+   ' Comanda formato .txt per Custom KubeII.
    Public Const PERCORSO_REP_COMANDA_REPARTI_KUBEII As String = "\Reports\ComandaRepartiKubeII.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_KUBEII As String = "\Reports\ComandaClientiKubeII.rpt.txt"
 
+   ' Comanda formato .txt per driver Wpos1.
    Public Const PERCORSO_REP_COMANDA_REPARTI_WPOS1 As String = "\Reports\ComandaRepartiWPOS1.rpt.txt"
    Public Const PERCORSO_REP_COMANDA_CLIENTI_WPOS1 As String = "\Reports\ComandaClientiWPOS1.rpt.txt"
 
-   Public Const PERCORSO_REP_MESSAGGI As String = "\Reports\MessaggiReparti 80mm.rdlc"
+   ' Percorso reports Formazione Menu .rpt.
+   Public Const PERCORSO_REP_MENU_ARIAL As String = "\Reports\Arial\Menu.rpt"
+   Public Const PERCORSO_REP_MENU_TIMES As String = "\Reports\Times\Menu.rpt"
+   Public Const PERCORSO_REP_MENU_COMIC As String = "\Reports\Comic\Menu.rpt"
 
-   ' Percorso reports Etichette.
+   ' Percorso reports Etichette .rpt.
    Public Const PERCORSO_ETICHETTE_635_72 As String = "\Reports\Etichette\Etichette635_72.rpt"
    Public Const PERCORSO_ETICHETTE_635_339 As String = "\Reports\Etichette\Etichette635_339.rpt"
    Public Const PERCORSO_ETICHETTE_635_381 As String = "\Reports\Etichette\Etichette635_381.rpt"

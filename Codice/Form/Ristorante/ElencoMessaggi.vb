@@ -969,12 +969,12 @@ Public Class ElencoMessaggi
                If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And
                   LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> VALORE_NESSUNA Then
                   ' Esegue la stampa.
-                  StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
+                  StampaDocumento(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
                End If
 
             Else
                ' Esegue la stampa.
-               StampaDocumento(PERCORSO_REP_MESSAGGI, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
+               StampaDocumento(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
             End If
          End If
       Next

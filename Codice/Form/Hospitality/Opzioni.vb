@@ -1962,7 +1962,6 @@ Public Class frmOpzioni
       'cmbReportScontrini
       '
       Me.cmbReportScontrini.ItemHeight = 13
-      Me.cmbReportScontrini.Items.AddRange(New Object() {"Scontrino.rpt"})
       Me.cmbReportScontrini.Location = New System.Drawing.Point(392, 96)
       Me.cmbReportScontrini.Name = "cmbReportScontrini"
       Me.cmbReportScontrini.Size = New System.Drawing.Size(312, 21)
@@ -2865,7 +2864,7 @@ Public Class frmOpzioni
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(778, 564)
+      Me.ClientSize = New System.Drawing.Size(788, 574)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -2929,7 +2928,7 @@ Public Class frmOpzioni
    Const TAB_DOC As String = "Documenti"
    Const TAB_SCHEDINE As String = "SchedinePS"
 
-   Const NUMERO_DOC As Integer = 25
+   Const NUMERO_DOC As Integer = 16
 
    Const DIM_PAGINA As String = "50"
 
@@ -5734,41 +5733,88 @@ Public Class frmOpzioni
       End Try
    End Function
 
-   Public Sub CaricaListaReports(ByVal cmb As ComboBox)
+   Public Sub CaricaListaReportsComande(ByVal cmb As ComboBox)
       Try
-         Dim documenti(NUMERO_DOC) As String
-
-         documenti(0) = REPORT_RICEVUTA_A4_DOPPIA
-         documenti(1) = REPORT_RICEVUTA_A5
-         documenti(2) = REPORT_RICEVUTA_A6
-         documenti(3) = REPORT_FATTURA_A4_DOPPIA
-         documenti(4) = REPORT_FATTURA_A4
-         documenti(5) = REPORT_FATTURA_A4_IVA_MULTIPLA
-         documenti(6) = REPORT_PROFORMA_A4_DOPPIA
-         documenti(7) = REPORT_PROFORMA_A5
-         documenti(8) = REPORT_PROFORMA_A6
-         documenti(9) = REPORT_COMANDA_REPARTI
-         documenti(10) = REPORT_COMANDA_CLIENTI
-         documenti(11) = REPORT_COMANDA_REPARTI_KUBEII
-         documenti(12) = REPORT_COMANDA_CLIENTI_KUBEII
-         documenti(13) = REPORT_RICEVUTA_BELLA_NAPOLI
-         documenti(14) = REPORT_FATTURA_BELLA_NAPOLI
-         documenti(15) = REPORT_PROFORMA_BELLA_NAPOLI
-         documenti(16) = REPORT_PROFORMA_KUBEII
-         documenti(17) = REPORT_RICEVUTA_A4_DOPPIA_CENTRO_SPORTIVO
-         documenti(18) = REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO
-         documenti(19) = REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO
-         documenti(20) = REPORT_RICEVUTA_CELIDE
-         documenti(21) = REPORT_FATTURA_CELIDE
-         documenti(22) = REPORT_PROFORMA_CELIDE
-         documenti(23) = REPORT_RICEVUTA_FORCHETTA_DORO
-         documenti(24) = REPORT_FATTURA_FORCHETTA_DORO
-         documenti(25) = REPORT_PROFORMA_FORCHETTA_DORO
-         'documenti(26) = REPORT_RICEVUTA_KUBEII
-         'documenti(27) = REPORT_FATTURA_KUBEII
+         Dim documenti() As String = {REPORT_COMANDA_REPARTI_80mm,
+                                      REPORT_COMANDA_CLIENTI_80mm,
+                                      REPORT_COMANDA_REPARTI_KUBEII,
+                                      REPORT_COMANDA_CLIENTI_KUBEII}
 
          Dim i As Integer
-         For i = 0 To NUMERO_DOC
+         For i = 0 To documenti.Length - 1
+            cmb.Items.Add(documenti(i))
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub CaricaListaReportsRicevute(ByVal cmb As ComboBox)
+      Try
+         Dim documenti() As String = {REPORT_RICEVUTA_A4_DOPPIA,
+                                      REPORT_RICEVUTA_A5, REPORT_RICEVUTA_A6,
+                                      REPORT_RICEVUTA_A4_DOPPIA_CENTRO_SPORTIVO} ' REPORT_RICEVUTA_KUBEII
+
+         Dim i As Integer
+         For i = 0 To documenti.Length - 1
+            cmb.Items.Add(documenti(i))
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub CaricaListaReportsFatture(ByVal cmb As ComboBox)
+      Try
+         Dim documenti() As String = {REPORT_FATTURA_A4_DOPPIA,
+                                      REPORT_FATTURA_A4,
+                                      REPORT_FATTURA_A4_IVA_MULTIPLA,
+                                      REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO} ' REPORT_FATTURA_KUBEII
+
+         Dim i As Integer
+         For i = 0 To documenti.Length - 1
+            cmb.Items.Add(documenti(i))
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub CaricaListaReportsProforma(ByVal cmb As ComboBox)
+      Try
+         Dim documenti() As String = {REPORT_PROFORMA_A4_DOPPIA,
+                                      REPORT_PROFORMA_A5,
+                                      REPORT_PROFORMA_A6,
+                                      REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO,
+                                      REPORT_PROFORMA_KUBEII}
+
+         Dim i As Integer
+         For i = 0 To documenti.Length - 1
+            cmb.Items.Add(documenti(i))
+         Next
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+   Public Sub CaricaListaReportsScontrini(ByVal cmb As ComboBox)
+      Try
+         Dim documenti() As String = {REPORT_SCONTRINO_RT,
+                                      REPORT_SCONTRINO_NF_80mm}
+
+         Dim i As Integer
+         For i = 0 To documenti.Length - 1
             cmb.Items.Add(documenti(i))
          Next
 
@@ -5923,21 +5969,29 @@ Public Class frmOpzioni
          CaricaListaStampanti(cmbStampanteFatture)
          CaricaListaStampanti(cmbStampanteProforma)
 
-         ' Report.
-         CaricaListaReports(cmbReportComanda1)
-         CaricaListaReports(cmbReportComanda2)
-         CaricaListaReports(cmbReportComanda3)
-         CaricaListaReports(cmbReportComanda4)
-         CaricaListaReports(cmbReportComanda5)
-         CaricaListaReports(cmbReportComanda6)
-         CaricaListaReports(cmbReportComanda7)
-         CaricaListaReports(cmbReportComanda8)
-         CaricaListaReports(cmbReportComanda9)
-         CaricaListaReports(cmbReportComanda10)
-         CaricaListaReports(cmbReportComandaAgg)
-         CaricaListaReports(cmbReportRicevute)
-         CaricaListaReports(cmbReportFatture)
-         CaricaListaReports(cmbReportProforma)
+         ' Reports per le Comande.
+         CaricaListaReportsComande(cmbReportComanda1)
+         CaricaListaReportsComande(cmbReportComanda2)
+         CaricaListaReportsComande(cmbReportComanda3)
+         CaricaListaReportsComande(cmbReportComanda4)
+         CaricaListaReportsComande(cmbReportComanda5)
+         CaricaListaReportsComande(cmbReportComanda6)
+         CaricaListaReportsComande(cmbReportComanda7)
+         CaricaListaReportsComande(cmbReportComanda8)
+         CaricaListaReportsComande(cmbReportComanda9)
+         CaricaListaReportsComande(cmbReportComanda10)
+         CaricaListaReportsComande(cmbReportComandaAgg)
+
+         ' Reports per le Ricevute.
+         CaricaListaReportsRicevute(cmbReportRicevute)
+
+         ' Reports per le Fatture.
+         CaricaListaReportsFatture(cmbReportFatture)
+
+         ' Reports per i Conti / Proforma.
+         CaricaListaReportsProforma(cmbReportProforma)
+
+         ' Reports per gli Scontrini.
 
          LeggiDatiConfig()
 

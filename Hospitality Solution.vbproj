@@ -1620,6 +1620,7 @@
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\ComandaClienti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ComandaReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\Corrispettivi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Documenti.rdlc" />

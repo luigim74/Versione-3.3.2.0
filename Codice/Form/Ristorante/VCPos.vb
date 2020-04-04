@@ -87,7 +87,8 @@ Public Class frmPos
 
    Private controlloAttivo As Control
 
-   Dim percorsoRep As String = PERCORSO_REP_COMANDA_REPARTI
+   Dim percorsoRep As String = PERCORSO_REP_COMANDA_REPARTI_80mm
+
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents netBtn_CancellaTutto As Softgroup.NetButton.NetButton
    Friend WithEvents netBtn_Cancella As Softgroup.NetButton.NetButton
@@ -3667,20 +3668,20 @@ Public Class frmPos
       Try
          cn.Open()
 
-         ' Stampa della comanda aggiuntiva con tutti i piatti.
+         ' Stampa della comanda aggiuntiva per i Clienti con tutti i piatti.
          sql = "SELECT * FROM Comande WHERE Inviata = 'No'"
 
          If LeggiPercorsiComanda(10, percorsiStampa.Report) <> String.Empty Then
             percorsoRep = "\Reports\" & LeggiPercorsiComanda(10, percorsiStampa.Report)
          Else
-            percorsoRep = PERCORSO_REP_COMANDA_CLIENTI
+            percorsoRep = PERCORSO_REP_COMANDA_CLIENTI_80mm
          End If
 
          If LeggiPercorsiComanda(10, percorsiStampa.Stampante) <> String.Empty And
             LeggiPercorsiComanda(10, percorsiStampa.Stampante) <> "<Nessuna>" Then
 
             Select Case percorsoRep
-               Case PERCORSO_REP_COMANDA_CLIENTI
+               Case PERCORSO_REP_COMANDA_CLIENTI_80mm
                   ' Esegue la stampa.
                   StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(10, percorsiStampa.Stampante))
 
@@ -3706,11 +3707,11 @@ Public Class frmPos
                         If LeggiPercorsiComanda(i, percorsiStampa.Report) <> String.Empty Then
                            percorsoRep = "\Reports\" & LeggiPercorsiComanda(i, percorsiStampa.Report)
                         Else
-                           percorsoRep = PERCORSO_REP_COMANDA_REPARTI
+                           percorsoRep = PERCORSO_REP_COMANDA_REPARTI_80mm
                         End If
 
                         Select Case percorsoRep
-                           Case PERCORSO_REP_COMANDA_REPARTI
+                           Case PERCORSO_REP_COMANDA_REPARTI_80mm
                               ' Esegue la stampa.
                               StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
 
@@ -3850,7 +3851,7 @@ Public Class frmPos
                         'End If
 
                         ' Esegue la stampa.
-                        StampaDocumento(sql, PERCORSO_REP_MESSAGGI, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+                        StampaDocumento(sql, PERCORSO_REP_MESSAGGI_80mm, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
                      End If
                   Next
                End If

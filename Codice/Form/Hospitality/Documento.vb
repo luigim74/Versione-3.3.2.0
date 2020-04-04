@@ -2510,7 +2510,7 @@ Public Class frmDocumento
                If ImpostaNomeDoc(3) <> String.Empty Then
                   percorsoReport = "\Reports\" & ImpostaNomeDoc(3)
                Else
-                  percorsoReport = PERCORSO_REP_SF
+                  percorsoReport = PERCORSO_REP_SF_RT
                End If
 
          End Select

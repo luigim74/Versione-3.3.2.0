@@ -114,7 +114,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -475,7 +474,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Reparto.Value, "ComandeDataSet")</Value>
+                  <Value>Ordine cliente</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
