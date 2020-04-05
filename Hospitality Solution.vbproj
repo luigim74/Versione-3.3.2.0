@@ -1640,12 +1640,13 @@
     <EmbeddedResource Include="bin\Reports\PrenRisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenTavoli.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrimaNota.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma 80mm.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Proforma A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A5.rdlc" />
     <EmbeddedResource Include="bin\Reports\Proforma A6.rdlc" />
     <EmbeddedResource Include="bin\Reports\PrenSale.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Report1.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A4_Doppia.rdlc" />
     <EmbeddedResource Include="bin\Reports\RFiscale A5.rdlc" />

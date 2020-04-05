@@ -5791,10 +5791,12 @@ Public Class frmOpzioni
 
    Public Sub CaricaListaReportsProforma(ByVal cmb As ComboBox)
       Try
-         Dim documenti() As String = {REPORT_PROFORMA_A4_DOPPIA,
+         Dim documenti() As String = {REPORT_PROFORMA_A4,
+                                      REPORT_PROFORMA_A4_DOPPIA,
                                       REPORT_PROFORMA_A5,
                                       REPORT_PROFORMA_A6,
                                       REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO,
+                                      REPORT_PROFORMA_80mm,
                                       REPORT_PROFORMA_KUBEII}
 
          Dim i As Integer
@@ -5808,6 +5810,7 @@ Public Class frmOpzioni
 
       End Try
    End Sub
+
    Public Sub CaricaListaReportsScontrini(ByVal cmb As ComboBox)
       Try
          Dim documenti() As String = {REPORT_SCONTRINO_RT,

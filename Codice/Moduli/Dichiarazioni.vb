@@ -224,24 +224,29 @@ Module Dichiarazioni
    Public Const REPORT_PROFORMA_KUBEII As String = "ProformaKubeII.rpt.txt"
 
    ' Documenti fiscali formato .rdlc
+   Public Const REPORT_FATTURA_A4_DOPPIA As String = "Fattura A4_Doppia.rdlc"
+   Public Const REPORT_FATTURA_A4 As String = "Fattura A4.rdlc"
+   Public Const REPORT_FATTURA_A4_IVA_MULTIPLA As String = "Fattura A4_Iva_Multipla.rdlc"
+   Public Const REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Fattura A4_Doppia - Centro sportivo.rdlc"
+
    Public Const REPORT_RICEVUTA_A4_DOPPIA As String = "RFiscale A4_Doppia.rdlc"
    Public Const REPORT_RICEVUTA_A5 As String = "RFiscale A5.rdlc"
    Public Const REPORT_RICEVUTA_A6 As String = "RFiscale A6.rdlc"
-
-   Public Const REPORT_FATTURA_A4_DOPPIA As String = "Fattura A4_Doppia.rdlc"
-   Public Const REPORT_FATTURA_A4 As String = "Fattura A4.rdlc"
-    Public Const REPORT_FATTURA_A4_IVA_MULTIPLA As String = "Fattura A4_Iva_Multipla.rdlc"
-
-    Public Const REPORT_PROFORMA_A4_DOPPIA As String = "Proforma A4_Doppia.rdlc"
-    Public Const REPORT_PROFORMA_A5 As String = "Proforma A5.rdlc"
-   Public Const REPORT_PROFORMA_A6 As String = "Proforma A6.rdlc"
-
    Public Const REPORT_RICEVUTA_A4_DOPPIA_CENTRO_SPORTIVO As String = "RFiscale A4_Doppia - Centro sportivo.rdlc"
-   Public Const REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Fattura A4_Doppia - Centro sportivo.rdlc"
+
+   Public Const REPORT_PROFORMA_A4_DOPPIA As String = "Proforma A4_Doppia.rdlc"
+   Public Const REPORT_PROFORMA_A4 As String = "Proforma A4.rdlc"
+   Public Const REPORT_PROFORMA_A5 As String = "Proforma A5.rdlc"
+   Public Const REPORT_PROFORMA_A6 As String = "Proforma A6.rdlc"
    Public Const REPORT_PROFORMA_A4_DOPPIA_CENTRO_SPORTIVO As String = "Proforma A4_Doppia - Centro sportivo.rdlc"
+   Public Const REPORT_PROFORMA_80mm As String = "Proforma 80mm.rdlc"
 
    Public Const REPORT_SCONTRINO_RT As String = "Scontrino RT.txt"
    Public Const REPORT_SCONTRINO_NF_80mm As String = "Scontrino NF_80mm.rdlc"
+
+   Public Const PERCORSO_REP_FF_KUBEII As String = "\Reports\FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
+   Public Const PERCORSO_REP_RF_KUBEII As String = "\Reports\RicevutaKubeII.rpt.txt" ' NON UTILIZZATA.
+   Public Const PERCORSO_REP_PF_KUBEII As String = "\Reports\ProformaKubeII.rpt.txt"
 
    'Public Const PERCORSO_REP_RF As String = "\Reports\RFiscale.rpt" ' NON UTILIZZATA.
    'Public Const PERCORSO_REP_PF As String = "\Reports\Proforma.rpt" ' NON UTILIZZATA.
@@ -257,25 +262,28 @@ Module Dichiarazioni
    'Public Const PERCORSO_REP_FF_FORCHETTA_DORO As String = "\Reports\Fattura - Rist. La Forchetta D'Oro.rpt"
    'Public Const PERCORSO_REP_RF_FORCHETTA_DORO As String = "\Reports\RFiscale - Rist. La Forchetta D'Oro.rpt"
    'Public Const PERCORSO_REP_PF_FORCHETTA_DORO As String = "\Reports\Proforma - Rist. La Forchetta D'Oro.rpt"
-   Public Const PERCORSO_REP_FF_KUBEII As String = "\Reports\FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_RF_KUBEII As String = "\Reports\RicevutaKubeII.rpt.txt" ' NON UTILIZZATA.
-   Public Const PERCORSO_REP_PF_KUBEII As String = "\Reports\ProformaKubeII.rpt.txt"
 
    ' Percorso cartella Reports per i documenti fiscali formato .rdlc
    Public Const PERCORSO_REP_FF_A4_AZIENDE As String = "\Reports\Fattura A4.rdlc"
    Public Const PERCORSO_REP_FF_A4_DOPPIA_AZIENDE As String = "\Reports\Fattura A4_Doppia.rdlc"
+
    Public Const PERCORSO_REP_FF_A4 As String = "\Reports\Fattura A4.rdlc"
    Public Const PERCORSO_REP_FF_A4_DOPPIA As String = "\Reports\Fattura A4_Doppia.rdlc"
    Public Const PERCORSO_REP_FF_A4_IVA_MULTIPLA As String = "\Reports\Fattura A4_Iva_Multipla.rdlc"
+   Public Const PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Fattura A4_Doppia - Centro sportivo.rdlc"
+
    Public Const PERCORSO_REP_RF_A4_DOPPIA As String = "\Reports\RFiscale A4_Doppia.rdlc"
    Public Const PERCORSO_REP_RF_A5 As String = "\Reports\RFiscale A5.rdlc"
    Public Const PERCORSO_REP_RF_A6 As String = "\Reports\RFiscale A6.rdlc"
+   Public Const PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc"
+
+   Public Const PERCORSO_REP_PF_A4 As String = "\Reports\Proforma A4.rdlc"
    Public Const PERCORSO_REP_PF_A4_DOPPIA As String = "\Reports\Proforma A4_Doppia.rdlc"
    Public Const PERCORSO_REP_PF_A5 As String = "\Reports\Proforma A5.rdlc"
    Public Const PERCORSO_REP_PF_A6 As String = "\Reports\Proforma A6.rdlc"
-   Public Const PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Fattura A4_Doppia - Centro sportivo.rdlc"
-   Public Const PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\RFiscale A4_Doppia - Centro sportivo.rdlc"
    Public Const PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO As String = "\Reports\Proforma A4_Doppia - Centro sportivo.rdlc"
+   Public Const PERCORSO_REP_PF_80mm As String = "\Reports\Proforma 80mm.rdlc"
+
    Public Const PERCORSO_REP_SF_RT As String = "\Reports\Scontrino RT.txt"
    Public Const PERCORSO_REP_SF_NF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc"
 
