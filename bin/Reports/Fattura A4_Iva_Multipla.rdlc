@@ -622,7 +622,7 @@
               <TextRuns>
                 <TextRun>
                   <Label>TipoNumDoc</Label>
-                  <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti"))</Value>
+                  <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti") &amp; "/" &amp; First(Fields!AnnoDoc.Value, "Documenti"))</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1143,7 +1143,9 @@
                 <TextRun>
                   <Label>AliquotaIvaRep1</Label>
                   <Value>=IIf(First(Fields!AliquotaIvaRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep1.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>0.00</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1155,7 +1157,9 @@
                 <TextRun>
                   <Label>AliquotaIvaRep2</Label>
                   <Value>=IIf(First(Fields!AliquotaIvaRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep2.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>0.00</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1167,7 +1171,9 @@
                 <TextRun>
                   <Label>AliquotaIvaRep3</Label>
                   <Value>=IIf(First(Fields!AliquotaIvaRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep3.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>0.00</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1179,7 +1185,9 @@
                 <TextRun>
                   <Label>AliquotaIvaRep4</Label>
                   <Value>=IIf(First(Fields!AliquotaIvaRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep4.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>0.00</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1223,7 +1231,10 @@
                 <TextRun>
                   <Label>ImponibileRep1</Label>
                   <Value>=IIf(First(Fields!ImpLordoRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep1.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1235,7 +1246,10 @@
                 <TextRun>
                   <Label>ImponibileRep2</Label>
                   <Value>=IIf(First(Fields!ImpLordoRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep2.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1247,7 +1261,10 @@
                 <TextRun>
                   <Label>ImponibileRep3</Label>
                   <Value>=IIf(First(Fields!ImpLordoRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep3.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1259,7 +1276,10 @@
                 <TextRun>
                   <Label>ImponibileRep4</Label>
                   <Value>=IIf(First(Fields!ImpLordoRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep4.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1303,7 +1323,10 @@
                 <TextRun>
                   <Label>ImpostaRep1</Label>
                   <Value>=IIf(First(Fields!ImpostaRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep1.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1315,7 +1338,10 @@
                 <TextRun>
                   <Label>ImpostaRep2</Label>
                   <Value>=IIf(First(Fields!ImpostaRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep2.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1327,7 +1353,10 @@
                 <TextRun>
                   <Label>ImpostaRep3</Label>
                   <Value>=IIf(First(Fields!ImpostaRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep3.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1339,7 +1368,10 @@
                 <TextRun>
                   <Label>ImpostaRep4</Label>
                   <Value>=IIf(First(Fields!ImpostaRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep4.Value, "Documenti"), string.Empty)</Value>
-                  <Style />
+                  <Style>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>

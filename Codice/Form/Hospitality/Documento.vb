@@ -1240,15 +1240,15 @@ Public Class frmDocumento
             .CodFiscale = eui_txtCodiceFiscale.Text
             .CodAzienda = String.Empty
 
-            .Sconto = eui_txtTotaliSconto.Text
+            .Sconto = CFormatta.FormattaNumeroDouble(eui_txtTotaliSconto.Text)
             .TipoSconto = String.Empty
             .Servizio = VALORE_ZERO
             .TipoServizio = String.Empty
             .Coperto = VALORE_ZERO
-            .Contanti = eui_txtTotaliContanti.Text
-            .Carte = eui_txtTotaliCarte.Text
-            .BuoniPasto = eui_txtTotaliBuoni.Text
-            .BuoniPastoIncassare = eui_txtTotaliBuoni.Text
+            .Contanti = CFormatta.FormattaNumeroDouble(eui_txtTotaliContanti.Text)
+            .Carte = CFormatta.FormattaNumeroDouble(eui_txtTotaliCarte.Text)
+            .BuoniPasto = CFormatta.FormattaNumeroDouble(eui_txtTotaliBuoni.Text)
+            .BuoniPastoIncassare = CFormatta.FormattaNumeroDouble(eui_txtTotaliBuoni.Text)
             .Note = eui_txtNote.Text
             .Chiuso = "No"
             .Tavolo = eui_txtTavolo.Text
@@ -1263,37 +1263,49 @@ Public Class frmDocumento
             .CodiceCIG_PA = eui_txtCodiceCIG_PA.Text
             .CodiceCommConv_PA = eui_txtCodiceCommConv_PA.Text
 
-            ' Imposta il tipo di pagamento con il relativo importo.
+            ' Pagamento eletronico.
+            Dim pagElettronico As String
             If eui_txtTotaliCarte.Text <> VALORE_ZERO And eui_txtTotaliCarte.Text <> String.Empty Then
-               .TipoPagamento = eui_cmbTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(eui_txtTotaliCarte.Text))
+               pagElettronico = "Carte: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(eui_txtTotaliCarte.Text))
             Else
-               If eui_txtTotaliContanti.Text <> VALORE_ZERO And eui_txtTotaliContanti.Text <> String.Empty Then
-                  .TipoPagamento = "Contanti"
-               Else
-                  .TipoPagamento = String.Empty
-               End If
+               pagElettronico = String.Empty
+            End If
+
+            ' Pagamento contante.
+            Dim pagContante As String
+            If eui_txtTotaliContanti.Text <> VALORE_ZERO And eui_txtTotaliContanti.Text <> String.Empty Then
+               pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(eui_txtTotaliContanti.Text))
+            Else
+               pagContante = String.Empty
+            End If
+
+            ' Nel caso sia selezionato un pagamento diverso dai contanti.
+            If eui_cmbTipoPagamento.Text.Replace(" ", String.Empty) <> String.Empty And eui_cmbTipoPagamento.Text <> "Contanti" Then
+               .TipoPagamento = eui_cmbTipoPagamento.Text
+            Else
+               .TipoPagamento = pagContante & " " & pagElettronico
             End If
 
             ' Se Fattura, Ricevuta o Scontrino salva l'iva...
             If eui_cmbTipoDocumento.Text = TIPO_DOC_FF Or eui_cmbTipoDocumento.Text = TIPO_DOC_RF Or eui_cmbTipoDocumento.Text = TIPO_DOC_SF Then
 
-               .ImpLordoRep1 = eui_txtTotaliRep1ImponibileLordo.Text
-               .ImpLordoRep2 = eui_txtTotaliRep2ImponibileLordo.Text
-               .ImpLordoRep3 = eui_txtTotaliRep3ImponibileLordo.Text
-               .ImpLordoRep4 = eui_txtTotaliRep4ImponibileLordo.Text
+               .ImpLordoRep1 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep1ImponibileLordo.Text)
+               .ImpLordoRep2 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep2ImponibileLordo.Text)
+               .ImpLordoRep3 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep3ImponibileLordo.Text)
+               .ImpLordoRep4 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep4ImponibileLordo.Text)
 
-               .AliquotaIvaRep1 = eui_txtTotaliRep1Aliquota.Text
-               .AliquotaIvaRep2 = eui_txtTotaliRep2Aliquota.Text
-               .AliquotaIvaRep3 = eui_txtTotaliRep3Aliquota.Text
-               .AliquotaIvaRep4 = eui_txtTotaliRep4Aliquota.Text
+               .AliquotaIvaRep1 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep1Aliquota.Text)
+               .AliquotaIvaRep2 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep2Aliquota.Text)
+               .AliquotaIvaRep3 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep3Aliquota.Text)
+               .AliquotaIvaRep4 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep4Aliquota.Text)
 
-               .ImpostaRep1 = eui_txtTotaliRep1Imposta.Text
-               .ImpostaRep2 = eui_txtTotaliRep2Imposta.Text
-               .ImpostaRep3 = eui_txtTotaliRep3Imposta.Text
-               .ImpostaRep4 = eui_txtTotaliRep4Imposta.Text
+               .ImpostaRep1 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep1Imposta.Text)
+               .ImpostaRep2 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep2Imposta.Text)
+               .ImpostaRep3 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep3Imposta.Text)
+               .ImpostaRep4 = CFormatta.FormattaNumeroDouble(eui_txtTotaliRep4Imposta.Text)
 
-               .Imponibile = eui_txtImponibile.Text
-               .Imposta = eui_txtImposta.Text
+               .Imponibile = CFormatta.FormattaNumeroDouble(eui_txtImponibile.Text)
+               .Imposta = CFormatta.FormattaNumeroDouble(eui_txtImposta.Text)
                .Iva = VALORE_ZERO
             Else
                .ImpLordoRep1 = VALORE_ZERO

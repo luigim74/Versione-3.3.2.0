@@ -3145,7 +3145,7 @@ Public Class ContoPos
          g_frmPos.CausaleMovMag = tipoDocumento
 
          Select Case percorsoRep
-            Case PERCORSO_REP_FF_A4, PERCORSO_REP_FF_A4_DOPPIA, PERCORSO_REP_FF_A4_IVA_MULTIPLA,
+            Case PERCORSO_REP_FF_A4, PERCORSO_REP_FF_A4_DOPPIA, PERCORSO_REP_FF_A4_IVA_MULTIPLA, PERCORSO_REP_FF_80mm_IVA_MULTIPLA,
                  PERCORSO_REP_RF_A4_DOPPIA, PERCORSO_REP_RF_A5, PERCORSO_REP_RF_A6,
                  REPORT_PROFORMA_A4, PERCORSO_REP_PF_A4_DOPPIA, PERCORSO_REP_PF_A5, PERCORSO_REP_PF_A6,
                  PERCORSO_REP_PF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_FF_A4_DOPPIA_CENTRO_SPORTIVO, PERCORSO_REP_RF_A4_DOPPIA_CENTRO_SPORTIVO,
@@ -3416,15 +3416,38 @@ Public Class ContoPos
             .Note = String.Empty
             .Chiuso = "No"
 
-            If txtCartaCredito.Text <> VALORE_ZERO Then
-               .TipoPagamento = eui_cmdTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
+            'If txtCartaCredito.Text <> VALORE_ZERO Then
+            '   .TipoPagamento = eui_cmdTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
+            'Else
+            '   If txtContanti.Text <> VALORE_ZERO Then
+            '      .TipoPagamento = "Contanti"
+            '   Else
+            '      .TipoPagamento = String.Empty
+            '   End If
+            'End If
+
+            ' Pagamento eletronico.
+            Dim pagElettronico As String
+            If txtCartaCredito.Text <> VALORE_ZERO And txtCartaCredito.Text <> String.Empty Then
+               pagElettronico = "Carte: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtCartaCredito.Text))
             Else
-               If txtContanti.Text <> VALORE_ZERO Then
-                  .TipoPagamento = "Contanti"
-               Else
-                  .TipoPagamento = String.Empty
-               End If
+               pagElettronico = String.Empty
             End If
+
+            ' Pagamento contante.
+            Dim pagContante As String
+            If txtContanti.Text <> VALORE_ZERO And txtContanti.Text <> String.Empty Then
+               pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtContanti.Text))
+            Else
+               pagContante = String.Empty
+            End If
+
+            ' Nel caso sia selezionato un pagamento diverso dai contanti.
+            'If eui_cmdTipoPagamento.Text.Replace(" ", String.Empty) <> String.Empty And eui_cmdTipoPagamento.Text <> "Contanti" Then
+            '   .TipoPagamento = eui_cmdTipoPagamento.Text
+            'Else
+            .TipoPagamento = pagContante & " " & pagElettronico
+            'End If
 
             .Tavolo = nomeTavoloDoc
             .Cameriere = nomeCameriereDoc

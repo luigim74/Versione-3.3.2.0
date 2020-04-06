@@ -5775,7 +5775,8 @@ Public Class frmOpzioni
          Dim documenti() As String = {REPORT_FATTURA_A4_DOPPIA,
                                       REPORT_FATTURA_A4,
                                       REPORT_FATTURA_A4_IVA_MULTIPLA,
-                                      REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO} ' REPORT_FATTURA_KUBEII
+                                      REPORT_FATTURA_A4_DOPPIA_CENTRO_SPORTIVO,
+                                      REPORT_FATTURA_80mm_IVA_MULTIPLA} ' REPORT_FATTURA_KUBEII
 
          Dim i As Integer
          For i = 0 To documenti.Length - 1

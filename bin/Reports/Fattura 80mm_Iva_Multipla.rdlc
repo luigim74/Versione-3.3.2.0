@@ -6,53 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.35494cm</Width>
+              <Width>0.99251cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.41516cm</Width>
+              <Width>2.61815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.01846cm</Width>
+              <Width>1.01472cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.17072cm</Width>
+              <Width>1.346cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.68162cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.4589cm</Height>
+              <Height>0.45008cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox39">
-                      <CanGrow>true</CanGrow>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox39</rd:DefaultName>
-                      <RepeatWith>Tablix2</RepeatWith>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Quantità1">
@@ -61,6 +33,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Label>Qta</Label>
                               <Value>=IIf(Fields!Quantità.Value &lt;&gt; 0.00, Fields!Quantità.Value, string.Empty)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
@@ -87,8 +60,9 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Descrizione1">
+                    <Textbox Name="Descrizione">
                       <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
@@ -102,8 +76,41 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Descrizione1</rd:DefaultName>
+                      <rd:DefaultName>Descrizione</rd:DefaultName>
                       <RepeatWith>Tablix2</RepeatWith>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Sconto">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Label>Sconto</Label>
+                              <Value>=IIf(Fields!Sconto.Value &lt;&gt; 0.00, Fields!Sconto.Value, string.Empty)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>0.00</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Sconto</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -147,12 +154,46 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="AliquotaIva">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Label>AliquotaIva</Label>
+                              <Value>=IIf(Fields!AliquotaIva.Value &lt;&gt; 0, Fields!AliquotaIva.Value, string.Empty)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>AliquotaIva</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -169,182 +210,9 @@
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>DettagliDoc</DataSetName>
-        <Left>1.78325cm</Left>
-        <Height>0.4589cm</Height>
-        <Width>9.95928cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>0.35426cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.39637cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>6.06319cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.17072cm</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.4589cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox27">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox27</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Quantità2">
-                      <CanGrow>true</CanGrow>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Microsoft.VisualBasic.Interaction.IIf(Fields!Quantità.Value &lt;&gt; 0, Fields!Quantità.Value, System.String.Empty)</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                                <Format>#,0.00</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Quantità1</rd:DefaultName>
-                      <RepeatWith>Tablix2</RepeatWith>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Descrizione2">
-                      <CanGrow>true</CanGrow>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Descrizione.Value</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Descrizione1</rd:DefaultName>
-                      <RepeatWith>Tablix2</RepeatWith>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="ImportoNetto2">
-                      <CanGrow>true</CanGrow>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!ImportoNetto.Value</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                                <Format>'€' #,0.00;'€' -#,0.00</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>ImportoNetto1</rd:DefaultName>
-                      <RepeatWith>Tablix2</RepeatWith>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <Group Name="Dettagli" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>DettagliDoc</DataSetName>
-        <Left>15.78397cm</Left>
-        <Height>0.4589cm</Height>
-        <Width>9.98454cm</Width>
-        <ZIndex>1</ZIndex>
+        <Left>0.45196cm</Left>
+        <Height>0.45008cm</Height>
+        <Width>6.653cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -352,17 +220,27 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.20845in</Height>
+    <Height>0.2015in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
+      <LeftBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </LeftBorder>
+      <RightBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </RightBorder>
     </Style>
   </Body>
-  <Width>10.5762in</Width>
+  <Width>3.05777in</Width>
   <Page>
     <PageHeader>
-      <Height>7.1535cm</Height>
+      <Height>11.06933cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -381,7 +259,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
@@ -393,7 +273,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
@@ -405,7 +287,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
@@ -417,7 +301,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
@@ -429,7 +315,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
@@ -441,14 +329,16 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Indirizzo</rd:DefaultName>
-          <Top>1.31322cm</Top>
-          <Left>6.86308cm</Left>
-          <Height>2.09865cm</Height>
-          <Width>5.17169cm</Width>
+          <Top>3.02411cm</Top>
+          <Left>0.61777cm</Left>
+          <Height>2.28386cm</Height>
+          <Width>6.41749cm</Width>
           <ToolTip>Indirizzo</ToolTip>
           <Style>
             <Border>
@@ -474,14 +364,16 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>RagSoc1</rd:DefaultName>
-          <Top>0.62502cm</Top>
-          <Left>6.54638cm</Left>
-          <Height>0.51181cm</Height>
-          <Width>5.48839cm</Width>
+          <Top>2.25652cm</Top>
+          <Left>0.61777cm</Left>
+          <Height>0.59119cm</Height>
+          <Width>6.41749cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -571,10 +463,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.10583cm</Top>
-              <Left>0.3167cm</Left>
-              <Height>2.24669cm</Height>
-              <Width>4.82892cm</Width>
+              <Top>0.15875cm</Top>
+              <Left>0.34393cm</Left>
+              <Height>2.28725cm</Height>
+              <Width>6.4175cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -585,10 +477,10 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>3.58826cm</Top>
-          <Left>6.59691cm</Left>
-          <Height>2.52538cm</Height>
-          <Width>5.46312cm</Width>
+          <Top>5.48436cm</Top>
+          <Left>0.27383cm</Left>
+          <Height>2.63121cm</Height>
+          <Width>7.02163cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -604,7 +496,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Q.TA'</Value>
+                      <Value>QTA</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -615,9 +507,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
               <Top>0.15214cm</Top>
-              <Left>0.70828cm</Left>
+              <Left>0.29899cm</Left>
               <Height>0.53385cm</Height>
-              <Width>0.99183cm</Width>
+              <Width>0.8267cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -645,9 +537,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>0.15214cm</Top>
-              <Left>1.7701cm</Left>
+              <Left>1.14333cm</Left>
               <Height>0.53385cm</Height>
-              <Width>6.49471cm</Width>
+              <Width>2.47351cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -665,7 +557,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>TOTALE</Value>
+                      <Value>TOT.</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -676,10 +568,72 @@
               </Paragraphs>
               <rd:DefaultName>Textbox31</rd:DefaultName>
               <Top>0.15214cm</Top>
-              <Left>8.26481cm</Left>
+              <Left>4.73034cm</Left>
               <Height>0.53385cm</Height>
-              <Width>1.69447cm</Width>
+              <Width>0.9966cm</Width>
               <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox33">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SC%</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>0.15214cm</Top>
+              <Left>3.63448cm</Left>
+              <Height>0.53385cm</Height>
+              <Width>1.06058cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox34">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>IVA%</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>0.15214cm</Top>
+              <Left>5.77633cm</Left>
+              <Height>0.53385cm</Height>
+              <Width>1.00985cm</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -692,10 +646,10 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>6.29003cm</Top>
-          <Left>1.78325cm</Left>
-          <Height>0.78021cm</Height>
-          <Width>10.28207cm</Width>
+          <Top>10.17352cm</Top>
+          <Left>0.27383cm</Left>
+          <Height>0.81937cm</Height>
+          <Width>6.97668cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -713,19 +667,6 @@
                   <Label>TipoNumDoc</Label>
                   <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti") &amp; "/" &amp; First(Fields!AnnoDoc.Value, "Documenti"))</Value>
                   <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -754,7 +695,8 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
+                  <Label>Tavolo</Label>
+                  <Value>=IIf(First(Fields!Tavolo.Value, "Documenti") &lt;&gt; string.Empty, "Tavolo: " &amp; First(Fields!Tavolo.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -765,7 +707,8 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
+                  <Label>Cameriere</Label>
+                  <Value>=IIf(First(Fields!Cameriere.Value, "Documenti") &lt;&gt; string.Empty, "Cameriere: " &amp; First(Fields!Cameriere.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -775,10 +718,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.57944cm</Top>
-          <Left>1.81853cm</Left>
-          <Height>2.52538cm</Height>
-          <Width>4.55146cm</Width>
+          <Top>8.29196cm</Top>
+          <Left>0.61777cm</Left>
+          <Height>1.70517cm</Height>
+          <Width>6.41749cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -795,10 +738,10 @@
           <Value>=First(Fields!Immagine.Value, "Azienda")</Value>
           <MIMEType>image/png</MIMEType>
           <Sizing>FitProportional</Sizing>
-          <Top>0.62502cm</Top>
-          <Left>1.81853cm</Left>
-          <Height>2.78685cm</Height>
-          <Width>4.55146cm</Width>
+          <Top>0.12231cm</Top>
+          <Left>0.61776cm</Left>
+          <Height>1.9931cm</Height>
+          <Width>6.4175cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -806,502 +749,33 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Indirizzo2">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Indirizzo</Label>
-                  <Value>=First(Fields!Indirizzo.Value, "Azienda")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Indirizzo1</Label>
-                  <Value>=First(Fields!Cap.Value, "Azienda") &amp; " " &amp; First(Fields!Città.Value, "Azienda") &amp; " " &amp; First(Fields!Prov.Value, "Azienda")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Piva</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!Iva.Value, "Azienda") &lt;&gt; System.String.Empty, "Partita Iva: " &amp; First(Fields!Iva.Value, "Azienda"), System.String.Empty)</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>CodFisc</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!CodFisc.Value, "Azienda") &lt;&gt; System.String.Empty, "Cod. Fiscale: " &amp; First(Fields!CodFisc.Value, "Azienda"), System.String.Empty)</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Telefono</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!Tel.Value, "Azienda") &lt;&gt; System.String.Empty, "Tel. :" &amp; First(Fields!Tel.Value, "Azienda"), System.String.Empty)</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Internet</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!Internet.Value, "Azienda") &lt;&gt; System.String.Empty, "Internet: " &amp; First(Fields!Internet.Value, "Azienda"), System.String.Empty)</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Indirizzo</rd:DefaultName>
-          <Top>1.19857cm</Top>
-          <Left>20.88906cm</Left>
-          <Height>2.09865cm</Height>
-          <Width>5.17169cm</Width>
-          <ZIndex>6</ZIndex>
-          <ToolTip>Indirizzo</ToolTip>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-          </Style>
-        </Textbox>
-        <Textbox Name="RagSoc2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>RagSoc</Label>
-                  <Value>=First(Fields!RagSoc.Value, "Azienda")</Value>
-                  <Style>
-                    <FontStyle>Italic</FontStyle>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>RagSoc1</rd:DefaultName>
-          <Top>0.51037cm</Top>
-          <Left>20.59762cm</Left>
-          <Height>0.51181cm</Height>
-          <Width>5.48839cm</Width>
-          <ZIndex>7</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-          </Style>
-        </Textbox>
-        <Rectangle Name="Rectangle3">
-          <ReportItems>
-            <Textbox Name="Textbox5">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>CLIENTE:</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Cliente</Label>
-                      <Value>=First(Fields!Cliente.Value, "Documenti")</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Indirizzo</Label>
-                      <Value>=First(Fields!Indirizzo.Value, "Documenti")</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Indirizzo1</Label>
-                      <Value>=First(Fields!Cap.Value, "Documenti") &amp; " " &amp; First(Fields!Città.Value, "Documenti") &amp; " " &amp; First(Fields!Provincia.Value, "Documenti")</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Piva</Label>
-                      <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!Piva.Value, "Documenti") &lt;&gt; System.String.Empty, "Partita Iva: " &amp; First(Fields!Piva.Value, "Documenti"), System.String.Empty)</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>CodFisc</Label>
-                      <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!CodFiscale.Value, "Documenti") &lt;&gt; System.String.Empty, "Cod. Fiscale: " &amp; First(Fields!CodFiscale.Value, "Documenti"), System.String.Empty)</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.10583cm</Top>
-              <Left>0.3167cm</Left>
-              <Height>2.24669cm</Height>
-              <Width>4.82892cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <KeepTogether>true</KeepTogether>
-          <Top>3.47361cm</Top>
-          <Left>20.62289cm</Left>
-          <Height>2.52538cm</Height>
-          <Width>5.46312cm</Width>
-          <ZIndex>8</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Rectangle>
-        <Rectangle Name="Rectangle4">
-          <ReportItems>
-            <Textbox Name="Textbox29">
-              <CanGrow>true</CanGrow>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Q.TA'</Value>
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox27</rd:DefaultName>
-              <Top>0.15214cm</Top>
-              <Left>0.70828cm</Left>
-              <Height>0.53385cm</Height>
-              <Width>0.99183cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox31">
-              <CanGrow>true</CanGrow>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>DESCRIZIONE</Value>
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox29</rd:DefaultName>
-              <Top>0.15214cm</Top>
-              <Left>1.7701cm</Left>
-              <Height>0.53385cm</Height>
-              <Width>6.49471cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox33">
-              <CanGrow>true</CanGrow>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>TOTALE</Value>
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox31</rd:DefaultName>
-              <Top>0.15214cm</Top>
-              <Left>8.26481cm</Left>
-              <Height>0.53385cm</Height>
-              <Width>1.69447cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <KeepTogether>true</KeepTogether>
-          <Top>6.17538cm</Top>
-          <Left>15.80923cm</Left>
-          <Height>0.78021cm</Height>
-          <Width>10.28207cm</Width>
-          <ZIndex>9</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Rectangle>
-        <Textbox Name="Textbox10">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>TipoNumDoc</Label>
-                  <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti") &amp; "/" &amp; First(Fields!AnnoDoc.Value, "Documenti"))</Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Data: </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>DataDoc</Label>
-                  <Value>=First(Fields!DataDoc.Value, "Documenti")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>d</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.46479cm</Top>
-          <Left>15.84451cm</Left>
-          <Height>2.52538cm</Height>
-          <Width>4.55146cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Image Name="Immagine2">
-          <Source>Database</Source>
-          <Value>=First(Fields!Immagine.Value, "Azienda")</Value>
-          <MIMEType>image/png</MIMEType>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.51037cm</Top>
-          <Left>15.84451cm</Left>
-          <Height>2.78685cm</Height>
-          <Width>4.55146cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Line Name="Line6">
-          <Left>13.91391cm</Left>
-          <Height>7.1535cm</Height>
-          <Width>0cm</Width>
-          <ZIndex>12</ZIndex>
-          <Style>
-            <Border>
-              <Style>Dashed</Style>
-            </Border>
-          </Style>
-        </Line>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
+        <TopBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </TopBorder>
+        <LeftBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </LeftBorder>
+        <RightBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </RightBorder>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>4.25179cm</Height>
+      <Height>7.50505cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox7">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Documento elaborato con software gestionale Hospitality Solution - www.montanasoftware.it</Value>
-                  <Style>
-                    <FontSize>5pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>3.01679cm</Top>
-          <Left>1.75799cm</Left>
-          <Height>0.33542cm</Height>
-          <Width>8.26481cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="TotalPages">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1334,16 +808,15 @@
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Right</TextAlign>
+                <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>3.01679cm</Top>
-          <Left>9.74819cm</Left>
-          <Height>1.235cm</Height>
-          <Width>2.26132cm</Width>
-          <ZIndex>1</ZIndex>
+          <Top>6.34081cm</Top>
+          <Left>0.49071cm</Left>
+          <Height>0.54708cm</Height>
+          <Width>6.54369cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1355,11 +828,11 @@
           </Style>
         </Textbox>
         <Line Name="Line4">
-          <Top>0.17639cm</Top>
-          <Left>1.78325cm</Left>
+          <Top>0.04938cm</Top>
+          <Left>0.31878cm</Left>
           <Height>0cm</Height>
-          <Width>10.27678cm</Width>
-          <ZIndex>2</ZIndex>
+          <Width>6.97668cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -1386,7 +859,9 @@
               <TextRuns>
                 <TextRun>
                   <Value />
-                  <Style />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -1405,11 +880,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TipoPagamento</rd:DefaultName>
-          <Top>0.24695cm</Top>
-          <Left>1.80851cm</Left>
-          <Height>0.51178cm</Height>
-          <Width>4.56148cm</Width>
-          <ZIndex>3</ZIndex>
+          <Top>0.19754cm</Top>
+          <Left>0.49071cm</Left>
+          <Height>0.5118cm</Height>
+          <Width>6.54369cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1471,19 +946,6 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
                   <Value xml:space="preserve"> </Value>
                   <Style>
                     <FontSize>9pt</FontSize>
@@ -1512,11 +974,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>9.80873cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>1.99434cm</Width>
-          <ZIndex>4</ZIndex>
+          <Top>3.60241cm</Top>
+          <Left>4.1499cm</Left>
+          <Height>1.2791cm</Height>
+          <Width>2.85975cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1527,18 +989,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Line Name="Line1">
-          <Top>2.8404cm</Top>
-          <Left>1.75799cm</Left>
-          <Height>0cm</Height>
-          <Width>10.27678cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1572,19 +1022,6 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
                   <Value>TOTALE:</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
@@ -1597,11 +1034,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>6.15713cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>3.47522cm</Width>
-          <ZIndex>6</ZIndex>
+          <Top>3.6024cm</Top>
+          <Left>0.49691cm</Left>
+          <Height>1.27911cm</Height>
+          <Width>3.4766cm</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1612,126 +1049,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox8">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Documento elaborato con software gestionale Hospitality Solution - www.montanasoftware.it</Value>
-                  <Style>
-                    <FontSize>5pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>3.01679cm</Top>
-          <Left>15.84451cm</Left>
-          <Height>0.33542cm</Height>
-          <Width>8.26481cm</Width>
-          <ZIndex>7</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="TotalPages2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pagina </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=Globals!PageNumber</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value> di </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=Globals!TotalPages</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>3.01679cm</Top>
-          <Left>23.80945cm</Left>
-          <Height>1.235cm</Height>
-          <Width>2.28658cm</Width>
-          <ZIndex>8</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Line Name="Line5">
-          <Top>0.17639cm</Top>
-          <Left>15.80923cm</Left>
-          <Height>0cm</Height>
-          <Width>10.27678cm</Width>
-          <ZIndex>9</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
-        <Line Name="Line2">
-          <Top>2.8404cm</Top>
-          <Left>15.80923cm</Left>
-          <Height>0cm</Height>
-          <Width>10.27678cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
-        <Line Name="Line7">
-          <Left>13.91391cm</Left>
-          <Height>4.25179cm</Height>
-          <Width>0cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Style>Dashed</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="Textbox11">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1746,17 +1063,15 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.24695cm</Top>
-          <Left>6.59691cm</Left>
-          <Height>0.51178cm</Height>
-          <Width>5.20616cm</Width>
-          <ZIndex>12</ZIndex>
+          <Top>0.85044cm</Top>
+          <Left>0.49691cm</Left>
+          <Height>0.50273cm</Height>
+          <Width>6.53749cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1774,84 +1089,22 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Imponibile:</Value>
+                  <Value>Aliquota %:</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Right</TextAlign>
+                <TextAlign>Left</TextAlign>
               </Style>
             </Paragraph>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>% IVA:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Imposta:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>1.78325cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>1.7701cm</Width>
-          <ZIndex>13</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Imponibile</Label>
-                  <Value>=First(Fields!Imponibile.Value, "Documenti")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>'€' #,0.00;'€' -#,0.00</Format>
-                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>Iva</Label>
-                  <Value>=First(Fields!Iva.Value, "Documenti")</Value>
+                  <Label>AliquotaIvaRep1</Label>
+                  <Value>=IIf(First(Fields!AliquotaIvaRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep1.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                     <Format>0.00</Format>
@@ -1865,12 +1118,41 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Imposta</Label>
-                  <Value>=First(Fields!Imposta.Value, "Documenti")</Value>
+                  <Label>AliquotaIvaRep2</Label>
+                  <Value>=IIf(First(Fields!AliquotaIvaRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep2.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>'€' #,0.00;('€' #,0.00)</Format>
-                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                    <Format>0.00</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>AliquotaIvaRep3</Label>
+                  <Value>=IIf(First(Fields!AliquotaIvaRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep3.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>0.00</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>AliquotaIvaRep4</Label>
+                  <Value>=IIf(First(Fields!AliquotaIvaRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!AliquotaIvaRep4.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1879,246 +1161,12 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.93512cm</Top>
-          <Left>3.72974cm</Left>
-          <Height>1.72889cm</Height>
-          <Width>2.251cm</Width>
-          <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="TipoPagamento2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>TipoPagamento</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIF(First(Fields!TipoPagamento.Value, "Documenti") = "Contanti", "Pagamento: " &amp; First(Fields!TipoPagamento.Value, "Documenti"), First(Fields!TipoPagamento.Value, "Documenti"))</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Label>BuoniPasto</Label>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>TipoPagamento</rd:DefaultName>
-          <Top>0.24695cm</Top>
-          <Left>15.86977cm</Left>
-          <Height>0.51178cm</Height>
-          <Width>4.56148cm</Width>
-          <ZIndex>15</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value xml:space="preserve">   </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>Pagato</Label>
-                  <Value>=First(Fields!TotDoc.Value, "Documenti") - First(Fields!Sospeso.Value, "Documenti") - First(Fields!BuoniPasto.Value, "Documenti")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>'€' #,0.00;'€' -#,0.00</Format>
-                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value xml:space="preserve">   </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>Sospeso</Label>
-                  <Value>=First(Fields!Sospeso.Value, "Documenti")</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>'€' #,0.00;'€' -#,0.00</Format>
-                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value xml:space="preserve"> </Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value xml:space="preserve">  </Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>TotDoc</Label>
-                  <Value>=First(Fields!TotDoc.Value, "Documenti")</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                    <Format>'€' #,0.00;'€' -#,0.00</Format>
-                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>23.86999cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>1.99434cm</Width>
-          <ZIndex>16</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox9">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Corrispettivo pagato:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Corrispettivo non pagato:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>TOTALE:</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>20.21839cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>3.47522cm</Width>
-          <ZIndex>17</ZIndex>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>1.49429cm</Top>
+          <Left>0.49071cm</Left>
+          <Height>1.96701cm</Height>
+          <Width>1.99487cm</Width>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2136,10 +1184,74 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>BuoniPasto</Label>
-                  <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!BuoniPasto.Value, "Documenti") &lt;&gt; 0, "Buoni pasto: € " &amp; First(Fields!BuoniPasto.Value, "Documenti"), System.String.Empty)</Value>
+                  <Value>Imponibile:</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>ImponibileRep1</Label>
+                  <Value>=IIf(First(Fields!ImpLordoRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep1.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>ImponibileRep2</Label>
+                  <Value>=IIf(First(Fields!ImpLordoRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep2.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>ImponibileRep3</Label>
+                  <Value>=IIf(First(Fields!ImpLordoRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep3.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>ImponibileRep4</Label>
+                  <Value>=IIf(First(Fields!ImpLordoRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpLordoRep4.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2148,12 +1260,12 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.24695cm</Top>
-          <Left>20.65817cm</Left>
-          <Height>0.51178cm</Height>
-          <Width>5.20616cm</Width>
-          <ZIndex>18</ZIndex>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>1.49429cm</Top>
+          <Left>2.55261cm</Left>
+          <Height>1.96702cm</Height>
+          <Width>2.34955cm</Width>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2171,68 +1283,22 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Imponibile:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>% IVA:</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
                   <Value>Imposta:</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Right</TextAlign>
+                <TextAlign>Left</TextAlign>
               </Style>
             </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.89984cm</Top>
-          <Left>15.84451cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>1.7701cm</Width>
-          <ZIndex>19</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox16">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Imponibile</Label>
-                  <Value>=First(Fields!Imponibile.Value, "Documenti")</Value>
+                  <Label>ImpostaRep1</Label>
+                  <Value>=IIf(First(Fields!ImpostaRep1.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep1.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                     <Format>'€' #,0.00;'€' -#,0.00</Format>
@@ -2247,11 +1313,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Iva</Label>
-                  <Value>=First(Fields!Iva.Value, "Documenti")</Value>
+                  <Label>ImpostaRep2</Label>
+                  <Value>=IIf(First(Fields!ImpostaRep2.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep2.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>0.00</Format>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2262,11 +1329,27 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Imposta</Label>
-                  <Value>=First(Fields!Imposta.Value, "Documenti")</Value>
+                  <Label>ImpostaRep3</Label>
+                  <Value>=IIf(First(Fields!ImpostaRep3.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep3.Value, "Documenti"), string.Empty)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>'€' #,0.00;('€' #,0.00)</Format>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
+                    <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>ImpostaRep4</Label>
+                  <Value>=IIf(First(Fields!ImpostaRep4.Value, "Documenti") &lt;&gt; 0.00, First(Fields!ImpostaRep4.Value, "Documenti"), string.Empty)</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>'€' #,0.00;'€' -#,0.00</Format>
                     <rd:FormatSymbolCulture>it-IT</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2276,12 +1359,12 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.93512cm</Top>
-          <Left>17.791cm</Left>
-          <Height>1.72889cm</Height>
-          <Width>2.251cm</Width>
-          <ZIndex>20</ZIndex>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>1.49429cm</Top>
+          <Left>5.01505cm</Left>
+          <Height>1.96701cm</Height>
+          <Width>1.9946cm</Width>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2292,20 +1375,82 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Rectangle Name="Rectangle4">
+          <ReportItems>
+            <Textbox Name="Note">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Label>Note</Label>
+                      <Value>=IIf(First(Fields!Note.Value, "Documenti") &lt;&gt; string.Empty, "Note: " &amp; First(Fields!Note.Value, "Documenti"), string.Empty)</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Note</rd:DefaultName>
+              <Top>0.07056cm</Top>
+              <Left>0.2743cm</Left>
+              <Height>0.9966cm</Height>
+              <Width>6.51274cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Top>5.0579cm</Top>
+          <Left>0.24822cm</Left>
+          <Height>1.17708cm</Height>
+          <Width>7.04724cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
+        <BottomBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </BottomBorder>
+        <LeftBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </LeftBorder>
+        <RightBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
+        </RightBorder>
         <BackgroundColor>White</BackgroundColor>
       </Style>
     </PageFooter>
-    <PageHeight>21cm</PageHeight>
-    <PageWidth>29.7cm</PageWidth>
-    <LeftMargin>1cm</LeftMargin>
-    <RightMargin>1cm</RightMargin>
-    <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <PageHeight>30cm</PageHeight>
+    <PageWidth>8cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

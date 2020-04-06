@@ -859,3 +859,77 @@ Nome parametro: rowIndex"
 "- NOME PROCEDURA:    in Hospitality_Solution.frmOpzioni.CaricaListaReportsComande(ComboBox cmb)"
 "
 "
+"*** 06/04/2020 - 17:27:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Documenti.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 06/04/2020 - 17:29:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Documenti.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 06/04/2020 - 17:39:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa()"
+"
+"
+"*** 06/04/2020 - 17:40:00 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa()"
+"
+"
+"*** 06/04/2020 - 17:40:31 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa()"
+"
+"
+"*** 06/04/2020 - 17:41:11 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa()"
+"
+"

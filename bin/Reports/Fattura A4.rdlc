@@ -521,7 +521,7 @@
               <TextRuns>
                 <TextRun>
                   <Label>TipoNumDoc</Label>
-                  <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti"))</Value>
+                  <Value>=UCase(First(Fields!TipoDoc.Value, "Documenti") &amp; " N. " &amp; First(Fields!NumDoc.Value, "Documenti") &amp; "/" &amp; First(Fields!AnnoDoc.Value, "Documenti"))</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -665,7 +665,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>2.74313cm</Top>
+          <Top>2.74312cm</Top>
           <Left>1.75799cm</Left>
           <Height>0.33542cm</Height>
           <Width>8.26481cm</Width>
@@ -716,7 +716,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>2.74313cm</Top>
+          <Top>2.74312cm</Top>
           <Left>14.77413cm</Left>
           <Height>1.235cm</Height>
           <Width>2.62844cm</Width>
@@ -732,7 +732,7 @@
           </Style>
         </Textbox>
         <Line Name="Line4">
-          <Top>0.17639cm</Top>
+          <Top>0.17638cm</Top>
           <Left>1.78325cm</Left>
           <Height>0cm</Height>
           <Width>15.61932cm</Width>
@@ -778,9 +778,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TipoPagamento</rd:DefaultName>
-          <Top>0.35278cm</Top>
+          <Top>0.35277cm</Top>
           <Left>1.81853cm</Left>
-          <Height>0.61761cm</Height>
+          <Height>1.24357cm</Height>
           <Width>3.18382cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
@@ -888,7 +888,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.38806cm</Top>
+          <Top>0.38805cm</Top>
           <Left>14.44094cm</Left>
           <Height>2.00229cm</Height>
           <Width>2.62844cm</Width>
@@ -904,7 +904,7 @@
           </Style>
         </Textbox>
         <Line Name="Line1">
-          <Top>2.56674cm</Top>
+          <Top>2.56673cm</Top>
           <Left>1.72744cm</Left>
           <Height>0cm</Height>
           <Width>15.67513cm</Width>
@@ -968,7 +968,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.38806cm</Top>
+          <Top>0.38805cm</Top>
           <Left>9.89751cm</Left>
           <Height>2.0023cm</Height>
           <Width>4.36705cm</Width>
@@ -999,7 +999,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>1.77274cm</Top>
+          <Top>1.77273cm</Top>
           <Left>1.80851cm</Left>
           <Height>0.61761cm</Height>
           <Width>3.2191cm</Width>
@@ -1053,7 +1053,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.38806cm</Top>
+          <Top>0.38805cm</Top>
           <Left>5.17874cm</Left>
           <Height>2.00229cm</Height>
           <Width>2.03468cm</Width>
@@ -1118,7 +1118,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.38806cm</Top>
+          <Top>0.38805cm</Top>
           <Left>7.38981cm</Left>
           <Height>2.00229cm</Height>
           <Width>2.22323cm</Width>
