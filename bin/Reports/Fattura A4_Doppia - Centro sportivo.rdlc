@@ -1266,7 +1266,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>4.25179cm</Height>
+      <Height>4.46346cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1291,7 +1291,7 @@
           <Top>3.01679cm</Top>
           <Left>1.75799cm</Left>
           <Height>0.33542cm</Height>
-          <Width>8.26481cm</Width>
+          <Width>8.1237cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1340,9 +1340,9 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>3.01679cm</Top>
-          <Left>9.74819cm</Left>
+          <Left>10.0228cm</Left>
           <Height>1.235cm</Height>
-          <Width>2.26132cm</Width>
+          <Width>1.98671cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -1683,9 +1683,9 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>3.01679cm</Top>
-          <Left>23.80945cm</Left>
+          <Left>24.1446cm</Left>
           <Height>1.235cm</Height>
-          <Width>2.28658cm</Width>
+          <Width>1.95143cm</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>

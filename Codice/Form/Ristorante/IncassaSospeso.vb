@@ -9,10 +9,6 @@ Public Class IncassaSospeso
    Const TAB_DETTAGLI_DOC As String = "DettagliDoc"
    Const TAB_AZIENDA As String = "Azienda"
 
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
-   Const TIPO_DOC_SF As String = "Scontrino"
-
    Dim percorsoRep As String = PERCORSO_REP_RF_A4_DOPPIA
    Dim idCliente As String = ""
    Dim tipoDocumento As String = TIPO_DOC_RF

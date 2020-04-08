@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2017
-' Data ultima modifica: 05/09/2018
+' Data ultima modifica: 08/04/2020
 ' Descrizione:          Form per la compilazione dei documenti fiscali (Fatture, Ricevute ecc.)
 ' Note:
 '
@@ -11,6 +11,7 @@
 ' ***********************************************************************************************
 #End Region
 
+Imports System.IO
 Imports Elegant.Ui
 
 Public Class frmDocumento
@@ -25,12 +26,6 @@ Public Class frmDocumento
    Const TAB_TIPO_PAGAMENTO As String = "ModPagamento"
    Const TAB_STATISTICHE As String = "Statistiche"
    Const TAB_COMANDE As String = "Comande"
-
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
-   Const TIPO_DOC_SF As String = "Scontrino"
-   Const TIPO_DOC_PF As String = "Proforma"
-   Const TIPO_DOC_CO As String = "Conto"
 
    Private idDocumento As String
    Private tipoDocumento As String
@@ -592,7 +587,7 @@ Public Class frmDocumento
                NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
 
             Case TIPO_DOC_SF
-               NumeroDocumento = LeggiNumeroMax(TAB_DOCUMENTI, tipoDocumento)
+               NumeroDocumento = 0 'LeggiNumeroMax(TAB_DOCUMENTI, tipoDocumento)
 
          End Select
 
@@ -1202,13 +1197,17 @@ Public Class frmDocumento
             If eui_txtNumero.Text <> String.Empty And eui_txtNumero.Text <> "0" Then
                .Numero = Convert.ToInt32(eui_txtNumero.Text)
             Else
-               MessageBox.Show("Non è possibile salvare il documento senza una numerazione valida! Verrà utilizzato l'ultimo numero disponibile.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               If eui_cmbTipoDocumento.Text <> TIPO_DOC_SF Then
+                  MessageBox.Show("Non è possibile salvare il documento senza una numerazione valida! Verrà utilizzato l'ultimo numero disponibile.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-               ' Applica l'ultimo numero progressivo per il tipo di documento.
-               eui_txtNumero.Text = eui_txtNumProgressivo.Text
-               eui_txtNumero.Focus()
-
-               Return False
+                  ' Applica l'ultimo numero progressivo per il tipo di documento.
+                  eui_txtNumero.Text = eui_txtNumProgressivo.Text
+                  eui_txtNumero.Focus()
+                  Return False
+               Else
+                  ' Numerazione temporanea per gli scontrini RT. La numerazione è creata dal registratore di cassa.
+                  .Numero = 0
+               End If
             End If
 
             ' Verifica l'esistenza di almeno una riga di dettaglio per il documento.
@@ -1271,12 +1270,15 @@ Public Class frmDocumento
                pagElettronico = String.Empty
             End If
 
-            ' Pagamento contante.
             Dim pagContante As String
-            If eui_txtTotaliContanti.Text <> VALORE_ZERO And eui_txtTotaliContanti.Text <> String.Empty Then
-               pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(eui_txtTotaliContanti.Text))
+            If pagElettronico <> String.Empty Then
+               If eui_txtTotaliContanti.Text <> VALORE_ZERO And eui_txtTotaliContanti.Text <> String.Empty Then
+                  pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(eui_txtTotaliContanti.Text))
+               Else
+                  pagContante = String.Empty
+               End If
             Else
-               pagContante = String.Empty
+               pagContante = "Contante"
             End If
 
             ' Nel caso sia selezionato un pagamento diverso dai contanti.
@@ -2436,23 +2438,35 @@ Public Class frmDocumento
             Case TIPO_DOC_CO, TIPO_DOC_PF
                NumeroDocumento = LeggiNumeroMax(TAB_DOCUMENTI, eui_cmbTipoDocumento.Text) + 1
 
+               eui_txtNumero.Enabled = True
+               eui_txtAnno.Enabled = True
+
                eui_cmdAnteprima.Enabled = True
                eui_cmdEmettiStampa.Enabled = False
                eui_cmdEmetti.Enabled = False
+               eui_cmdSalva.Enabled = True
 
             Case TIPO_DOC_RF, TIPO_DOC_FF
                NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, eui_cmbTipoDocumento.Text)
 
+               eui_txtNumero.Enabled = True
+               eui_txtAnno.Enabled = True
+
                eui_cmdAnteprima.Enabled = True
                eui_cmdEmettiStampa.Enabled = True
                eui_cmdEmetti.Enabled = True
+               eui_cmdSalva.Enabled = True
 
             Case TIPO_DOC_SF
-               NumeroDocumento = LeggiNumeroMax(TAB_DOCUMENTI, eui_cmbTipoDocumento.Text) + 1
+               NumeroDocumento = 0 'LeggiNumeroMax(TAB_DOCUMENTI, eui_cmbTipoDocumento.Text) + 1
+
+               eui_txtNumero.Enabled = False
+               eui_txtAnno.Enabled = False
 
                eui_cmdAnteprima.Enabled = False
-               eui_cmdEmettiStampa.Enabled = False
-               eui_cmdEmetti.Enabled = True
+               eui_cmdEmettiStampa.Enabled = True
+               eui_cmdEmetti.Enabled = False
+               eui_cmdSalva.Enabled = False
 
          End Select
 
@@ -2598,7 +2612,7 @@ Public Class frmDocumento
          ' Tabella Documenti.
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOCUMENTI & " WHERE Id = " & idDocumento, cn)
-         Dim ds As New HospitalityDataSet 'Dataset1 'utilizzato con Crystal Reports
+         Dim ds As New HospitalityDataSet
          ds.Clear()
          oleAdapter.Fill(ds, TAB_DOCUMENTI)
 
@@ -2626,6 +2640,143 @@ Public Class frmDocumento
       End Try
 
    End Sub
+
+   Public Function CreaFileScontrinoWPOS1() As Boolean
+      Try
+         Dim SR_DATI_TEST As String = "SR_DATI_TEST.TXT"
+         Dim SR_DATI As String = "SR_DATI."
+         Dim SR_START As String = "SR_START."
+         Dim tipoPagContanti As String
+         Dim tipoPagCartaCredito As String
+         Dim tipoPagBuoni As String
+         Dim sw As StreamWriter
+
+         If PercorsoLavoroWpos1 = String.Empty Then
+            Return False
+         End If
+
+         If EstensioneFileWpos1 = String.Empty Then
+            Return False
+         Else
+            SR_DATI = SR_DATI & EstensioneFileWpos1
+            SR_START = SR_START & EstensioneFileWpos1
+         End If
+
+         ' Tipo pagamento - Contanti.
+         If eui_txtTotaliContanti.Text <> "0,00" And eui_txtTotaliContanti.Text <> "" Then
+            tipoPagContanti = "CASH,V" & RimuoviVirgola(eui_txtTotaliContanti.Text) & ";"
+         End If
+
+         ' Tipo pagamento.
+         If eui_txtTotaliCarte.Text <> "0,00" And eui_txtTotaliCarte.Text <> "" Then
+            If eui_cmbTipoPagamento.Text.ToUpper <> "ASSEGNI" And eui_cmbTipoPagamento.Text.ToUpper <> "ASSEGNO" Then
+               ' Tipo pagamento - Carta di credito.
+               tipoPagCartaCredito = "CARD,V" & RimuoviVirgola(eui_txtTotaliCarte.Text) & ",:" & eui_cmbTipoPagamento.Text & ";"
+            Else
+               ' Tipo pagamento - Assegno
+               tipoPagCartaCredito = "CHEQ,V" & RimuoviVirgola(eui_txtTotaliCarte.Text) & ";"
+            End If
+         End If
+
+         ' Tipo pagamento - Buoni Pasto.
+         If eui_txtTotaliBuoni.Text <> "0,00" And eui_txtTotaliBuoni.Text <> "" Then
+            tipoPagBuoni = "CASH,V" & RimuoviVirgola(eui_txtTotaliBuoni.Text) & ";"
+         End If
+
+         If tipoPagContanti = String.Empty And tipoPagCartaCredito = String.Empty And tipoPagBuoni = String.Empty Then
+            MessageBox.Show("E' necessario specificare il tipo di pagamento e il valore dell'importo.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_txtTotaliContanti.Focus()
+            Return False
+         End If
+
+         ' Crea il file Start con la password.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_START)
+         sw.WriteLine(PwdDriverWpos1)
+         sw.Close()
+
+         ' Crea il file Dati con le righe di vendita.
+         sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_DATI)
+
+         ' Righe di vendita articoli.
+         Dim numRep As String
+         Dim valImporto As Double
+         Dim j As Integer
+         For j = 0 To dgvDettagli.Rows.Count - 1
+
+            If IsNumeric(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value) = True Then
+               valImporto = Convert.ToDouble(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value)
+            End If
+
+            If valImporto < 0 Then
+               ' Viene considerato uno sconto.
+               If dgvDettagli.Rows(j).Cells(clnSconto.Name).Value.Contains("%") = True Then
+                  Dim sconto As String = dgvDettagli.Rows(j).Cells(clnSconto.Name).Value.Substring(7)
+                  sconto = sconto.Replace("%", String.Empty)
+
+                  ' Sconto percentuale.
+                  sw.WriteLine("DISC,%" & sconto & ";")
+               Else
+                  ' Sconto a valore.
+                  sw.WriteLine("COUP,V" & RimuoviVirgola(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value) & ";")
+               End If
+            Else
+               ' Leggo il numero di reparto iva per l'articolo.
+               numRep = LeggiNumeroRepartoIva(dgvDettagli.Rows(j).Cells(clnRepartoIva.Name).Value)
+               Dim rigaScontrino As String = "PLUD,C1,N" & numRep & ",P" & RimuoviVirgola(dgvDettagli.Rows(j).Cells(clnImporto.Name).Value) & ",Q" & dgvDettagli.Rows(j).Cells(clnQta.Name).Value & ",:" & dgvDettagli.Rows(j).Cells(clnSconto.Name).Value.ToUpper & ";"
+               sw.WriteLine(rigaScontrino)
+            End If
+         Next
+
+         ' Servizio %.
+         If eui_txtTotaliServizio.Text <> "0,00" And eui_txtTotaliServizio.Text <> "" Then
+            sw.WriteLine("PRNT,N" & numRep & ",:;")
+
+            If eui_txtTotaliServizio.Text.Substring(eui_txtTotaliServizio.Text.Length - 1, 1) = "%" Then
+               ' Maggiorazione percentuale.
+               sw.WriteLine("PRNT,:SERVIZIO " & SostituisciVirgola(eui_txtTotaliServizio.Text) & "%;")
+               sw.WriteLine("MOST,%" & SostituisciVirgola(eui_txtTotaliServizio.Text) & ";")
+            Else
+               ' Maggiorazione a valore.
+               sw.WriteLine("PRNT,:SERVIZIO " & eui_txtTotaliServizio.Text & ";")
+               sw.WriteLine("ADDS,V" & RimuoviVirgola(eui_txtTotaliServizio.Text) & ";")
+            End If
+         End If
+
+         ' Sconto %.
+         If eui_txtTotaliSconto.Text <> "0,00" And eui_txtTotaliSconto.Text <> "" Then
+            sw.WriteLine("PRNT,N" & numRep & ",:;")
+            If eui_txtTotaliSconto.Text.Substring(eui_txtTotaliSconto.Text.Length - 1, 1) = "%" Then
+               ' Sconto percentuale.
+               sw.WriteLine("DOST,%" & SostituisciVirgola(eui_txtTotaliSconto.Text) & ";")
+            Else
+               ' Sconto a valore.
+               sw.WriteLine("COST,V" & RimuoviVirgola(eui_txtTotaliSconto.Text) & ";")
+            End If
+         End If
+
+         ' Istruzioni da verificare...non utilizzate perchè il registratore di cassa dovrebbe inserirle automaticamente.
+         ' Operatore - Numero postazione cassa.
+         'sw.WriteLine("EXTL,N1,:OPERATORE N. " & LeggiCodiceOperatoreConfig() & ";")
+         'sw.WriteLine("EXTL,N1,:;")
+         'sw.WriteLine("EXTL,N1,:NUMERO CASSA " & g_frmMain.eui_cmdPostazione.Text.Remove(0, 1) & ";")
+
+         ' Tipo pagamento - Contanti.
+         sw.WriteLine(tipoPagContanti)
+
+         ' Tipo pagamento - Carta di credito - Assegno.
+         sw.WriteLine(tipoPagCartaCredito)
+
+         sw.Close()
+
+         Return True
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+      End Try
+   End Function
 
    Private Sub eui_cmdImportaDoc_Click(sender As Object, e As EventArgs) Handles eui_cmdImportaDoc.Click
       Try
@@ -2768,12 +2919,27 @@ Public Class frmDocumento
                g_frmDocumenti.AggiornaDati()
             End If
 
-            ' Apre l'anteprima di stampa per il documento selezionato.
-            AnteprimaDiStampa()
+            If eui_cmbTipoDocumento.Text <> TIPO_DOC_SF Then
+               ' Apre l'anteprima di stampa per il documento selezionato.
+               AnteprimaDiStampa()
+            Else
+               ' Esegue la stampa.
+               If CreaFileScontrinoWPOS1() = False Then
+                  InfoScontrinoWPOS1()
+                  Exit Sub
+               Else
+                  Dim numScontrino As String = LeggiNumScontrino()
+                  If numScontrino <> String.Empty Then
+                     ModificaNumScontrino(TAB_DOCUMENTI, numScontrino)
+                  Else
+                     EliminaScontrinoTemp(TAB_DOCUMENTI, 0)
+                  End If
+               End If
+            End If
 
             Me.Close()
          Else
-            MessageBox.Show("Il comando non è stato eseguito! Verificare di avere compilato correttamente il documento e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+               MessageBox.Show("Il comando non è stato eseguito! Verificare di avere compilato correttamente il documento e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
          End If
 

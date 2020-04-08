@@ -40,12 +40,6 @@ Public Class ElencoDoc
    Const COLONNA_IMPORTO_BUONI_INC As Short = 16
    Const COLONNA_ID_CLIENTE As Short = 17
 
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
-   Const TIPO_DOC_SF As String = "Scontrino"
-   Const TIPO_DOC_PF As String = "Proforma"
-   Const TIPO_DOC_CO As String = "Conto"
-
    Const STATO_DOC_EMESSO As String = "Emesso"
    Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
    Const STATO_DOC_ANNULLATO As String = "Annullato"

@@ -191,6 +191,13 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdlc"
    Public Const PERCORSO_REP_MODELLO_ISTAT_59_A4 As String = "\Reports\ModelloIstatC59 A4.rdlc"
 
+   ' Nomi per le tipologie di documenti fiscali e non fiscali.
+   Public Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
+   Public Const TIPO_DOC_FF As String = "Fattura"
+   Public Const TIPO_DOC_SF As String = "Scontrino"
+   Public Const TIPO_DOC_PF As String = "Proforma"
+   Public Const TIPO_DOC_CO As String = "Conto"
+
    ' Nomi per i reports dei documenti in formato .rdlc
    'Public Const REPORT_RICEVUTA As String = "RFiscale.rpt"
    'Public Const REPORT_FATTURA As String = "Fattura.rpt"
@@ -243,7 +250,7 @@ Module Dichiarazioni
    Public Const REPORT_PROFORMA_80mm As String = "Proforma 80mm.rdlc"
 
    Public Const REPORT_SCONTRINO_RT As String = "Scontrino RT.txt"
-   Public Const REPORT_SCONTRINO_NF_80mm As String = "Scontrino NF_80mm.rdlc"
+   'Public Const REPORT_SCONTRINO_NF_80mm As String = "Scontrino NF_80mm.rdlc" ' NON UTILIZZATO.
 
    Public Const PERCORSO_REP_FF_KUBEII As String = "\Reports\FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
    Public Const PERCORSO_REP_RF_KUBEII As String = "\Reports\RicevutaKubeII.rpt.txt" ' NON UTILIZZATA.
@@ -287,7 +294,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_PF_80mm As String = "\Reports\Proforma 80mm.rdlc"
 
    Public Const PERCORSO_REP_SF_RT As String = "\Reports\Scontrino RT.txt"
-   Public Const PERCORSO_REP_SF_NF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc"
+   ' Public Const PERCORSO_REP_SF_NF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc" ' NON UTILIZZATO.
 
    ' Comanda formato .rdlc.
    Public Const PERCORSO_REP_COMANDA_REPARTI_80mm As String = "\Reports\ComandaReparti 80mm.rdlc"
@@ -819,12 +826,14 @@ Module Dichiarazioni
    ' Dati di configurazione per le stampanti fiscali.
    Public ProduttoreSF As String
    Public ModelloSF As String
-   ' RCH Swing A/65 ECR.
-   Public PortaSF As String
-   Public ParametriSF As String
-   Public NomeScontrinoSF As String
-   Public PercorsoOutputSF As String
-   Public PercorsoDriverSF As String
+
+   ' RCH Swing A/65 ECR. Driver non più utilizzato direttamente.
+   'Public PortaSF As String
+   'Public ParametriSF As String
+   'Public NomeScontrinoSF As String
+   'Public PercorsoOutputSF As String
+   'Public PercorsoDriverSF As String
+
    ' Driver RTS Wpos1.
    Public PercorsoDriverWpos1 As String
    Public PercorsoLavoroWpos1 As String

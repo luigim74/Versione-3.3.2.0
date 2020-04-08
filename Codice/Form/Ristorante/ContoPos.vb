@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/01/2005
-' Data ultima modifica: 05/09/2019
+' Data ultima modifica: 08/04/2020
 ' Descrizione:          Interfaccia Punto cassa - Conto.
 ' Note:
 '
@@ -22,7 +22,7 @@ Public Class ContoPos
    Const ANA_CLIENTI As String = "Clienti"
    Const ANA_AZIENDE As String = "Aziende"
    Const TAB_CONTI_TAVOLI As String = "ContiTavoli"
-   Const TAB_DOC As String = "Documenti"
+   Const TAB_DOCUMENTI As String = "Documenti"
    Const TAB_DETTAGLI_DOC As String = "DettagliDoc"
    Const TAB_AZIENDA As String = "Azienda"
    Const TAB_BUONI_PASTO = "BuoniPasto"
@@ -30,12 +30,6 @@ Public Class ContoPos
    Const TAB_COMANDE As String = "Comande"
    Const TAB_PREN_CAMERE As String = "PrenCamere"
    Const TAB_PREN_CAMERE_ADDEBITI As String = "PrenCamereAddebiti"
-
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
-   Const TIPO_DOC_SF As String = "Scontrino"
-   Const TIPO_DOC_PF As String = "Proforma"
-   Const TIPO_DOC_CO As String = "Conto"
 
    Const ALTEZZA_RIGA_DETTAGLI As Short = 22
 
@@ -2234,72 +2228,74 @@ Public Class ContoPos
    End Function
 
    Public Function CreaFileScontrinoSwing() As Boolean
-      Try
-         Dim numComandiScontrino As Integer = 2
-         Dim numRigheScontrino As Integer = lstvDettagli.Items.Count + numComandiScontrino
-         Dim sw As StreamWriter
+      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      'Try
+      '   Dim numComandiScontrino As Integer = 2
+      '   Dim numRigheScontrino As Integer = lstvDettagli.Items.Count + numComandiScontrino
+      '   Dim sw As StreamWriter
 
-         If NomeScontrinoSF = String.Empty Then
-            Return False
-         End If
+      '   If NomeScontrinoSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If PercorsoOutputSF = String.Empty Then
-            Return False
-         End If
+      '   If PercorsoOutputSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If PercorsoDriverSF = String.Empty Then
-            Return False
-         End If
+      '   If PercorsoDriverSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If File.Exists(PercorsoOutputSF & "\" & NomeScontrinoSF) = True Then
-            File.Delete(PercorsoOutputSF & "\" & NomeScontrinoSF)
-         End If
+      '   If File.Exists(PercorsoOutputSF & "\" & NomeScontrinoSF) = True Then
+      '      File.Delete(PercorsoOutputSF & "\" & NomeScontrinoSF)
+      '   End If
 
-         sw = File.CreateText(PercorsoOutputSF & "\" & NomeScontrinoSF)
-         sw.WriteLine(" " & PortaSF.ToString.Substring(4))
-         sw.WriteLine(ParametriSF)
-         sw.WriteLine(" " & numRigheScontrino.ToString)
-         sw.WriteLine("=K")
-         sw.WriteLine("=C1")
+      '   sw = File.CreateText(PercorsoOutputSF & "\" & NomeScontrinoSF)
+      '   sw.WriteLine(" " & PortaSF.ToString.Substring(4))
+      '   sw.WriteLine(ParametriSF)
+      '   sw.WriteLine(" " & numRigheScontrino.ToString)
+      '   sw.WriteLine("=K")
+      '   sw.WriteLine("=C1")
 
-         Dim i As Integer
-         For i = 0 To lstvDettagli.Items.Count - 1
-            Dim rigaScontrino As String = "=R1/$" & lstvDettagli.Items(i).SubItems(4).Text & "/*" & lstvDettagli.Items(i).SubItems(1).Text & "/" & "(" & lstvDettagli.Items(i).SubItems(2).Text.ToUpper & ")"
-            sw.WriteLine(rigaScontrino)
-         Next
+      '   Dim i As Integer
+      '   For i = 0 To lstvDettagli.Items.Count - 1
+      '      Dim rigaScontrino As String = "=R1/$" & lstvDettagli.Items(i).SubItems(4).Text & "/*" & lstvDettagli.Items(i).SubItems(1).Text & "/" & "(" & lstvDettagli.Items(i).SubItems(2).Text.ToUpper & ")"
+      '      sw.WriteLine(rigaScontrino)
+      '   Next
 
-         sw.Close()
+      '   sw.Close()
 
-         EseguiFileScontrino(Me.Handle)
+      '   EseguiFileScontrino(Me.Handle)
 
-         Return True
+      '   Return True
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return False
-      End Try
+      '   Return False
+      'End Try
    End Function
 
    Public Sub EseguiFileScontrino(ByVal frmHandle As IntPtr)
-      Dim NOME_APP As String = PercorsoDriverSF & "SWINGDRIVER.EXE"
-      Dim Proc As New Process
+      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      'Dim NOME_APP As String = PercorsoDriverSF & "SWINGDRIVER.EXE"
+      'Dim Proc As New Process
 
-      Try
-         ' Avvia l'applicazione.
-         Proc.StartInfo.FileName = NOME_APP
-         Proc.StartInfo.Arguments = PercorsoOutputSF & NomeScontrinoSF
-         Proc.StartInfo.ErrorDialog = True
-         Proc.StartInfo.ErrorDialogParentHandle = frmHandle
-         Proc.StartInfo.UseShellExecute = True
-         Proc.Start()
+      'Try
+      '   ' Avvia l'applicazione.
+      '   Proc.StartInfo.FileName = NOME_APP
+      '   Proc.StartInfo.Arguments = PercorsoOutputSF & NomeScontrinoSF
+      '   Proc.StartInfo.ErrorDialog = True
+      '   Proc.StartInfo.ErrorDialogParentHandle = frmHandle
+      '   Proc.StartInfo.UseShellExecute = True
+      '   Proc.Start()
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'End Try
    End Sub
 
    Private Function LeggiCodiceOperatoreConfig() As String
@@ -2705,7 +2701,7 @@ Public Class ContoPos
          If IsNothing(g_frmVCTavoli) = False Then
             txtValSconto.Text = VALORE_ZERO
          Else
-            Dim scontoConto As String = LeggiScontoConto(g_frmPos.numeroContoDoc, TAB_DOC)
+            Dim scontoConto As String = LeggiScontoConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
 
             If scontoConto <> VALORE_ZERO Then
                valSconto = Convert.ToDouble(scontoConto)
@@ -2730,7 +2726,7 @@ Public Class ContoPos
          If IsNothing(g_frmVCTavoli) = False Then
             txtServizio.Text = VALORE_ZERO
          Else
-            Dim servizioConto As String = LeggiServizioConto(g_frmPos.numeroContoDoc, TAB_DOC)
+            Dim servizioConto As String = LeggiServizioConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
 
             If servizioConto <> VALORE_ZERO Then
                valServizio = Convert.ToDouble(servizioConto)
@@ -2755,7 +2751,7 @@ Public Class ContoPos
          If IsNothing(g_frmVCTavoli) = False Then
             txtContanti.Text = VALORE_ZERO
          Else
-            txtContanti.Text = LeggiContantiConto(g_frmPos.numeroContoDoc, TAB_DOC)
+            txtContanti.Text = LeggiContantiConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
          End If
 
       Catch ex As Exception
@@ -2771,7 +2767,7 @@ Public Class ContoPos
          If IsNothing(g_frmVCTavoli) = False Then
             txtCartaCredito.Text = VALORE_ZERO
          Else
-            txtCartaCredito.Text = LeggiCarteConto(g_frmPos.numeroContoDoc, TAB_DOC)
+            txtCartaCredito.Text = LeggiCarteConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
          End If
 
       Catch ex As Exception
@@ -2803,7 +2799,7 @@ Public Class ContoPos
                   If IsNothing(g_frmVCTavoli) = False Then
                      txtCoperto.Text = CalcolaCostoTotaleCoperto(CopertoRistorante, g_frmVCTavoli.lblCoperti.Text)
                   Else
-                     txtCoperto.Text = LeggiCopertoConto(g_frmPos.numeroContoDoc, TAB_DOC)
+                     txtCoperto.Text = LeggiCopertoConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
                   End If
                Else
                   txtCoperto.Text = VALORE_ZERO
@@ -3152,38 +3148,31 @@ Public Class ContoPos
                  PERCORSO_REP_PF_80mm
 
                ' Esegue la stampa.
-               StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
             Case PERCORSO_REP_SF_RT
                ' Esegue la stampa.
-               If ModelloSF = "Swing ECR 65/A" Then
-                  If CreaFileScontrinoSwing() = False Then
-                     g_frmPos.InfoScontrino()
-                     Exit Sub
-                  End If
+               If CreaFileScontrinoWPOS1() = False Then
+                  InfoScontrinoWPOS1()
+                  Exit Sub
                Else
-                  If CreaFileScontrinoWPOS1() = False Then
-                     g_frmPos.InfoScontrino()
-                     Exit Sub
+                  Dim numScontrino As String = LeggiNumScontrino()
+                  If numScontrino <> String.Empty Then
+                     ModificaNumScontrino(TAB_DOCUMENTI, numScontrino)
                   Else
-                     Dim numScontrino As String = LeggiNumScontrino()
-                     If numScontrino <> String.Empty Then
-                        ModificaNumScontrino(TAB_DOC, numScontrino)
-                     Else
-                        EliminaScontrinoTemp(TAB_DOC, 0)
-                     End If
+                     EliminaScontrinoTemp(TAB_DOCUMENTI, 0)
                   End If
                End If
 
             Case PERCORSO_REP_PF_KUBEII
-               Dim sql As String = "SELECT * FROM " & TAB_DETTAGLI_DOC & " WHERE RifDoc = " & LeggiUltimoRecord(TAB_DOC)
-               StampaProformaKUBEII(sql, percorsoRep, LeggiUltimoRecord(TAB_DOC), nomeTavoloDoc, nomeCameriereDoc, nomeStampante)
+               'Dim sql As String = "SELECT * FROM " & TAB_DETTAGLI_DOC & " WHERE RifDoc = " & LeggiUltimoRecord(TAB_DOCUMENTI)
+               'StampaProformaKUBEII(sql, percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeTavoloDoc, nomeCameriereDoc, nomeStampante)
 
             Case PERCORSO_REP_RF_KUBEII
-               StampaRicevutaFatturaKUBEII(PERCORSO_REP_RF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               'StampaRicevutaFatturaKUBEII(PERCORSO_REP_RF_KUBEII, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
             Case PERCORSO_REP_FF_KUBEII
-               StampaRicevutaFatturaKUBEII(PERCORSO_REP_FF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               'StampaRicevutaFatturaKUBEII(PERCORSO_REP_FF_KUBEII, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
          End Select
 
@@ -3303,11 +3292,11 @@ Public Class ContoPos
 
          ' Tabella Documenti.
          Dim oleAdapter As New OleDbDataAdapter
-         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOC & " WHERE Id = " & numDoc, cn)
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOCUMENTI & " WHERE Id = " & numDoc, cn)
 
          Dim ds As New HospitalityDataSet 'Dataset1 'utilizzato con Crystal Reports
          ds.Clear()
-         oleAdapter.Fill(ds, TAB_DOC)
+         oleAdapter.Fill(ds, TAB_DOCUMENTI)
 
          ' Tabella DettagliDoc
          Dim oleAdapter1 As New OleDbDataAdapter
@@ -3356,7 +3345,7 @@ Public Class ContoPos
 
    Private Function SalvaDocumento() As Boolean
       Try
-         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento)
+         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtSospeso.Text)
@@ -3436,18 +3425,17 @@ Public Class ContoPos
 
             ' Pagamento contante.
             Dim pagContante As String
-            If txtContanti.Text <> VALORE_ZERO And txtContanti.Text <> String.Empty Then
-               pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtContanti.Text))
+            If pagElettronico <> String.Empty Then
+               If txtContanti.Text <> VALORE_ZERO And txtContanti.Text <> String.Empty Then
+                  pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtContanti.Text))
+               Else
+                  pagContante = String.Empty
+               End If
             Else
-               pagContante = String.Empty
+               pagContante = "Contante"
             End If
 
-            ' Nel caso sia selezionato un pagamento diverso dai contanti.
-            'If eui_cmdTipoPagamento.Text.Replace(" ", String.Empty) <> String.Empty And eui_cmdTipoPagamento.Text <> "Contanti" Then
-            '   .TipoPagamento = eui_cmdTipoPagamento.Text
-            'Else
             .TipoPagamento = pagContante & " " & pagElettronico
-            'End If
 
             .Tavolo = nomeTavoloDoc
             .Cameriere = nomeCameriereDoc
@@ -3597,7 +3585,7 @@ Public Class ContoPos
                .Imposta = VALORE_ZERO
             End If
 
-            .InserisciDati(TAB_DOC)
+            .InserisciDati(TAB_DOCUMENTI)
          End With
 
          ' SALVA I DETTAGLI DEL DOCUMENTO.
@@ -3617,7 +3605,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
                cmdInsert.Parameters.AddWithValue("@Descrizione", "COPERTO")
                cmdInsert.Parameters.AddWithValue("@UnitàMisura", String.Empty)
@@ -3658,7 +3646,7 @@ Public Class ContoPos
                quantità = VALORE_ZERO
             End If
 
-            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
             cmdInsert.Parameters.AddWithValue("@CodiceArticolo", lstvDettagli.Items(i).SubItems(6).Text)
             cmdInsert.Parameters.AddWithValue("@Descrizione", FormattaApici(lstvDettagli.Items(i).SubItems(2).Text))
             cmdInsert.Parameters.AddWithValue("@UnitàMisura", String.Empty)
@@ -3689,7 +3677,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoServizio <> String.Empty Then
@@ -3725,7 +3713,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoSconto <> String.Empty Then
@@ -3750,7 +3738,7 @@ Public Class ContoPos
          End If
 
          ' Salva il Numero del prossimo documento da stampare.
-         SalvaNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento, NumeroDocumento)
+         SalvaNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento, NumeroDocumento)
 
          Return True
 
@@ -3774,7 +3762,7 @@ Public Class ContoPos
       Try
          Dim NumeroDocumento As Integer
          If numConto = String.Empty Then
-            NumeroDocumento = LeggiNumeroMax(TAB_DOC, TIPO_DOC_CO) + 1
+            NumeroDocumento = LeggiNumeroMax(TAB_DOCUMENTI, TIPO_DOC_CO) + 1
          Else
             NumeroDocumento = Convert.ToInt32(numConto)
          End If
@@ -3839,15 +3827,37 @@ Public Class ContoPos
             .Chiuso = "No"
             .Note = noteDoc
 
-            If txtCartaCredito.Text <> VALORE_ZERO Then
-               .TipoPagamento = eui_cmdTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
+            'If txtCartaCredito.Text <> VALORE_ZERO Then
+            '   .TipoPagamento = eui_cmdTipoPagamento.Text & ": € " & CFormatta.FormattaNumeroDouble(txtCartaCredito.Text)
+            'Else
+            '   If txtContanti.Text <> VALORE_ZERO Then
+            '      .TipoPagamento = "Contanti"
+            '   Else
+            '      .TipoPagamento = String.Empty
+            '   End If
+            'End If
+
+            ' Pagamento eletronico.
+            Dim pagElettronico As String
+            If txtCartaCredito.Text <> VALORE_ZERO And txtCartaCredito.Text <> String.Empty Then
+               pagElettronico = "Carte: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtCartaCredito.Text))
             Else
-               If txtContanti.Text <> VALORE_ZERO Then
-                  .TipoPagamento = "Contanti"
-               Else
-                  .TipoPagamento = String.Empty
-               End If
+               pagElettronico = String.Empty
             End If
+
+            ' Pagamento contante.
+            Dim pagContante As String
+            If pagElettronico <> String.Empty Then
+               If txtContanti.Text <> VALORE_ZERO And txtContanti.Text <> String.Empty Then
+                  pagContante = "Contante: € " & CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtContanti.Text))
+               Else
+                  pagContante = String.Empty
+               End If
+            Else
+               pagContante = "Contante"
+            End If
+
+            .TipoPagamento = pagContante & " " & pagElettronico
 
             .Tavolo = nomeTavoloDoc
             .Cameriere = nomeCameriereDoc
@@ -3878,7 +3888,7 @@ Public Class ContoPos
             .Imponibile = VALORE_ZERO
             .Imposta = VALORE_ZERO
 
-            .InserisciDati(TAB_DOC)
+            .InserisciDati(TAB_DOCUMENTI)
          End With
 
          ' SALVA I DETTAGLI DEL DOCUMENTO.
@@ -3899,7 +3909,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
                cmdInsert.Parameters.AddWithValue("@Descrizione", "COPERTO")
                cmdInsert.Parameters.AddWithValue("@UnitàMisura", String.Empty)
@@ -3940,7 +3950,7 @@ Public Class ContoPos
                quantità = VALORE_ZERO
             End If
 
-            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
             cmdInsert.Parameters.AddWithValue("@CodiceArticolo", lstvDettagli.Items(i).SubItems(6).Text)
             cmdInsert.Parameters.AddWithValue("@Descrizione", FormattaApici(lstvDettagli.Items(i).SubItems(2).Text))
             cmdInsert.Parameters.AddWithValue("@UnitàMisura", String.Empty)
@@ -3971,7 +3981,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoSconto <> String.Empty Then
@@ -4007,7 +4017,7 @@ Public Class ContoPos
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+               cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
                cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
                If Doc.TipoServizio <> String.Empty Then
@@ -4468,88 +4478,6 @@ Public Class ContoPos
       End Try
    End Function
 
-   Public Function ModificaNumScontrino(ByVal tabella As String, ByVal numScontrino As Integer) As Boolean
-      Dim sql As String
-
-      Try
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " &
-                             "SET NumDoc = '{1}' " &
-                             "WHERE TipoDoc = 'Scontrino' AND NumDoc = 0",
-                             tabella,
-                             numScontrino)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
-         ' Esegue il comando.
-         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
-
-         ' Conferma transazione.
-         tr.Commit()
-
-         Return True
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Function
-
-   Public Function EliminaScontrinoTemp(ByVal tabella As String, ByVal numDoc As Integer) As Boolean
-      Dim sql As String
-
-      Try
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-         ' Crea la stringa di eliminazione.
-
-         sql = String.Format("DELETE FROM {0} WHERE NumDoc = {1}", tabella, numDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma transazione.
-         tr.Commit()
-
-         Return True
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-
-   End Function
-
    Private Sub SalvaDatiBuoni()
       Try
          ' Salva i dati per l'anagrafica Aziende.
@@ -4576,7 +4504,7 @@ Public Class ContoPos
             Dim i As Integer
             For i = 0 To lstvDatiBuoni.Items.Count - 1
                .IdBuono = lstvDatiBuoni.Items(i).SubItems(4).Text
-               .IdDoc = LeggiUltimoDocCreato(TAB_DOC)
+               .IdDoc = LeggiUltimoDocCreato(TAB_DOCUMENTI)
                .NumDoc = Doc.Numero
                .DataDoc = Doc.Data
                .Quantità = lstvDatiBuoni.Items(i).SubItems(1).Text
@@ -4907,19 +4835,19 @@ Public Class ContoPos
 
             ' Salva i dati per la moltiplicazione.
             If moltiplica = False Then
-                  ctrl.Text = ctrl.Text & net_Btn.TextButton
-                  op1 = Convert.ToDouble(ctrl.Text)
-               Else
-                  If op2 = 0 Then
-                     ctrl.Text = String.Empty
-                  End If
-
-                  ctrl.Text = ctrl.Text & net_Btn.TextButton
-                  op2 = Convert.ToDouble(ctrl.Text)
+               ctrl.Text = ctrl.Text & net_Btn.TextButton
+               op1 = Convert.ToDouble(ctrl.Text)
+            Else
+               If op2 = 0 Then
+                  ctrl.Text = String.Empty
                End If
 
-               ctrl.Focus()
+               ctrl.Text = ctrl.Text & net_Btn.TextButton
+               op2 = Convert.ToDouble(ctrl.Text)
             End If
+
+            ctrl.Focus()
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -5012,9 +4940,9 @@ Public Class ContoPos
          Else
             ' Conto nuovo da elaborare.
             If DateTime.Now.Minute.ToString.Length = 1 Then
-               Me.Text = "DETTAGLI CONTO N. " & LeggiNumeroMax(TAB_DOC, TIPO_DOC_CO) + 1 & " - Data: " & dtpData.Text & " - Ora: " & DateTime.Now.Hour & "." & "0" & DateTime.Now.Minute
+               Me.Text = "DETTAGLI CONTO N. " & LeggiNumeroMax(TAB_DOCUMENTI, TIPO_DOC_CO) + 1 & " - Data: " & dtpData.Text & " - Ora: " & DateTime.Now.Hour & "." & "0" & DateTime.Now.Minute
             Else
-               Me.Text = "DETTAGLI CONTO N. " & LeggiNumeroMax(TAB_DOC, TIPO_DOC_CO) + 1 & " - Data: " & dtpData.Text & " - Ora: " & DateTime.Now.Hour & "." & DateTime.Now.Minute
+               Me.Text = "DETTAGLI CONTO N. " & LeggiNumeroMax(TAB_DOCUMENTI, TIPO_DOC_CO) + 1 & " - Data: " & dtpData.Text & " - Ora: " & DateTime.Now.Hour & "." & DateTime.Now.Minute
             End If
          End If
 
@@ -6375,7 +6303,7 @@ Public Class ContoPos
          ' Se il proforma è stampato da un conto parcheggiato modifica lo stato del conto come Stampato.
          If g_frmPos.numeroContoDoc <> String.Empty Then
             g_frmPos.tipoDocumento = TIPO_DOC_PF
-            ModificaStatoConto(TAB_DOC, Convert.ToInt32(g_frmPos.numeroContoDoc))
+            ModificaStatoConto(TAB_DOCUMENTI, Convert.ToInt32(g_frmPos.numeroContoDoc))
          End If
 
       Catch ex As Exception
@@ -6391,7 +6319,7 @@ Public Class ContoPos
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
          If ImpostaNomeStampante(3) = String.Empty Then
-            g_frmPos.InfoScontrino()
+            InfoScontrinoWPOS1()
             Exit Sub
          End If
 
@@ -6501,8 +6429,8 @@ Public Class ContoPos
 
                ' Nel caso esista elimina il conto addebitato e le relative righe di dettaglio.
                If g_frmPos.numeroContoDoc <> String.Empty Then
-                  DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOC, g_frmPos.numeroContoDoc))
-                  Doc.EliminaDati(TAB_DOC, g_frmPos.numeroContoDoc)
+                  DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOCUMENTI, g_frmPos.numeroContoDoc))
+                  Doc.EliminaDati(TAB_DOCUMENTI, g_frmPos.numeroContoDoc)
                End If
 
                ' Nasconde il form del Conto.
@@ -6535,8 +6463,8 @@ Public Class ContoPos
 
                            ' Nel caso esista elimina il conto addebitato e le relative righe di dettaglio.
                            If g_frmPos.numeroContoDoc <> String.Empty Then
-                              DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOC, g_frmPos.numeroContoDoc))
-                              Doc.EliminaDati(TAB_DOC, g_frmPos.numeroContoDoc)
+                              DettagliDoc.EliminaDati(TAB_DETTAGLI_DOC, LeggiIdDocumento(TAB_DOCUMENTI, g_frmPos.numeroContoDoc))
+                              Doc.EliminaDati(TAB_DOCUMENTI, g_frmPos.numeroContoDoc)
                            End If
 
                            ' Nasconde il form del Conto.

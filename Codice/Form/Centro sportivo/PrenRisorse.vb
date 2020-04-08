@@ -1,7 +1,7 @@
 ' Nome form:            frmPrenotazioni
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 28/02/2006
+' Data ultima modifica: 08/04/2020
 ' Descrizione:          Scheda prenotazione risorse.
 
 Option Strict Off
@@ -21,14 +21,9 @@ Public Class frmPrenRisorse
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
 
-   Const TAB_DOC As String = "Documenti"
+   Const TAB_DOCUMENTI As String = "Documenti"
    Const TAB_DETTAGLI_DOC As String = "DettagliDoc"
    Const TAB_AZIENDA As String = "Azienda"
-
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
-   Const TIPO_DOC_SF As String = "Scontrino"
-   Const TIPO_DOC_PF As String = "Proforma"
 
    Dim Doc As New Documenti
    Dim DocSalvato As Boolean = False
@@ -3899,72 +3894,74 @@ Public Class frmPrenRisorse
    End Function
 
    Public Function CreaFileScontrinoSwing() As Boolean
-      Try
-         Dim numComandiScontrino As Integer = 2
-         Dim numRigheScontrino As Integer = lvwConto.Items.Count + numComandiScontrino
-         Dim sw As StreamWriter
+      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      'Try
+      '   Dim numComandiScontrino As Integer = 2
+      '   Dim numRigheScontrino As Integer = lvwConto.Items.Count + numComandiScontrino
+      '   Dim sw As StreamWriter
 
-         If NomeScontrinoSF = String.Empty Then
-            Return False
-         End If
+      '   If NomeScontrinoSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If PercorsoOutputSF = String.Empty Then
-            Return False
-         End If
+      '   If PercorsoOutputSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If PercorsoDriverSF = String.Empty Then
-            Return False
-         End If
+      '   If PercorsoDriverSF = String.Empty Then
+      '      Return False
+      '   End If
 
-         If File.Exists(PercorsoOutputSF & "\" & NomeScontrinoSF) = True Then
-            File.Delete(PercorsoOutputSF & "\" & NomeScontrinoSF)
-         End If
+      '   If File.Exists(PercorsoOutputSF & "\" & NomeScontrinoSF) = True Then
+      '      File.Delete(PercorsoOutputSF & "\" & NomeScontrinoSF)
+      '   End If
 
-         sw = File.CreateText(PercorsoOutputSF & "\" & NomeScontrinoSF)
-         sw.WriteLine(" " & PortaSF.ToString.Substring(4))
-         sw.WriteLine(ParametriSF)
-         sw.WriteLine(" " & numRigheScontrino.ToString)
-         sw.WriteLine("=K")
-         sw.WriteLine("=C1")
+      '   sw = File.CreateText(PercorsoOutputSF & "\" & NomeScontrinoSF)
+      '   sw.WriteLine(" " & PortaSF.ToString.Substring(4))
+      '   sw.WriteLine(ParametriSF)
+      '   sw.WriteLine(" " & numRigheScontrino.ToString)
+      '   sw.WriteLine("=K")
+      '   sw.WriteLine("=C1")
 
-         Dim i As Integer
-         For i = 0 To lvwConto.Items.Count - 1
-            Dim rigaScontrino As String = "=R1/$" & lvwConto.Items(i).SubItems(2).Text & "/*" & lvwConto.Items(i).SubItems(1).Text & "/" & "(" & lvwConto.Items(i).SubItems(0).Text.ToUpper & ")"
-            sw.WriteLine(rigaScontrino)
-         Next
+      '   Dim i As Integer
+      '   For i = 0 To lvwConto.Items.Count - 1
+      '      Dim rigaScontrino As String = "=R1/$" & lvwConto.Items(i).SubItems(2).Text & "/*" & lvwConto.Items(i).SubItems(1).Text & "/" & "(" & lvwConto.Items(i).SubItems(0).Text.ToUpper & ")"
+      '      sw.WriteLine(rigaScontrino)
+      '   Next
 
-         sw.Close()
+      '   sw.Close()
 
-         EseguiFileScontrino(Me.Handle)
+      '   EseguiFileScontrino(Me.Handle)
 
-         Return True
+      '   Return True
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return False
-      End Try
+      '   Return False
+      'End Try
    End Function
 
    Public Sub EseguiFileScontrino(ByVal frmHandle As IntPtr)
-      Dim NOME_APP As String = PercorsoDriverSF & "SWINGDRIVER.EXE"
-      Dim Proc As New Process
+      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      'Dim NOME_APP As String = PercorsoDriverSF & "SWINGDRIVER.EXE"
+      'Dim Proc As New Process
 
-      Try
-         ' Avvia l'applicazione.
-         Proc.StartInfo.FileName = NOME_APP
-         Proc.StartInfo.Arguments = PercorsoOutputSF & NomeScontrinoSF
-         Proc.StartInfo.ErrorDialog = True
-         Proc.StartInfo.ErrorDialogParentHandle = frmHandle
-         Proc.StartInfo.UseShellExecute = True
-         Proc.Start()
+      'Try
+      '   ' Avvia l'applicazione.
+      '   Proc.StartInfo.FileName = NOME_APP
+      '   Proc.StartInfo.Arguments = PercorsoOutputSF & NomeScontrinoSF
+      '   Proc.StartInfo.ErrorDialog = True
+      '   Proc.StartInfo.ErrorDialogParentHandle = frmHandle
+      '   Proc.StartInfo.UseShellExecute = True
+      '   Proc.Start()
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'End Try
    End Sub
 
    Private Function LeggiNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String) As Integer
@@ -4053,7 +4050,7 @@ Public Class frmPrenRisorse
    ' DA_FARE: Verificare! SalvaDocumento.
    Private Function SalvaDocumento() As Boolean
       Try
-         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento)
+         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtTotale.Text)
@@ -4157,7 +4154,7 @@ Public Class frmPrenRisorse
                .Imposta = VALORE_ZERO
             End If
 
-            .InserisciDati(TAB_DOC)
+            .InserisciDati(TAB_DOCUMENTI)
          End With
 
          ' SALVA I DETTAGLI DEL DOCUMENTO.
@@ -4180,7 +4177,7 @@ Public Class frmPrenRisorse
             ' Crea il comando per la connessione corrente.
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
             cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
             cmdInsert.Parameters.AddWithValue("@Descrizione", FormattaApici(lvwConto.Items(i).SubItems(0).Text))
             cmdInsert.Parameters.AddWithValue("@UnitàMisura", String.Empty)
@@ -4212,7 +4209,7 @@ Public Class frmPrenRisorse
             ' Crea il comando per la connessione corrente.
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOC))
+            cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))
             cmdInsert.Parameters.AddWithValue("@CodiceArticolo", String.Empty)
 
             If cmbApplicaSconto.SelectedIndex = 1 Then
@@ -4257,7 +4254,7 @@ Public Class frmPrenRisorse
          'End If
 
          ' Salva il Numero del prossimo documento da stampare.
-         SalvaNumeroDocFiscaleConfig(TAB_DOC, tipoDocumento, NumeroDocumento)
+         SalvaNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento, NumeroDocumento)
 
          Return True
 
@@ -4292,31 +4289,31 @@ Public Class frmPrenRisorse
                  PERCORSO_REP_PF_80mm
 
                ' Esegue la stampa.
-               StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
             Case PERCORSO_REP_SF_RT
                ' Esegue la stampa.
-               If nomeStampante = "Swing ECR 65/A" Then
-                  If CreaFileScontrinoSwing() = False Then
-                     g_frmPos.InfoScontrino()
-                     Exit Sub
-                  End If
+               If CreaFileScontrinoWPOS1() = False Then
+                  InfoScontrinoWPOS1()
+                  Exit Sub
                Else
-                  If CreaFileScontrinoWPOS1() = False Then
-                     g_frmPos.InfoScontrino()
-                     Exit Sub
+                  Dim numScontrino As String = LeggiNumScontrino()
+                  If numScontrino <> String.Empty Then
+                     ModificaNumScontrino(TAB_DOCUMENTI, numScontrino)
+                  Else
+                     EliminaScontrinoTemp(TAB_DOCUMENTI, 0)
                   End If
                End If
 
             Case PERCORSO_REP_PF_KUBEII
-               Dim sql As String = "SELECT * FROM " & TAB_DETTAGLI_DOC & " WHERE RifDoc = " & LeggiUltimoRecord(TAB_DOC)
+               'Dim sql As String = "SELECT * FROM " & TAB_DETTAGLI_DOC & " WHERE RifDoc = " & LeggiUltimoRecord(TAB_DOC)
                'StampaProformaKUBEII(sql, percorsoRep, LeggiUltimoRecord(TAB_DOC), nomeTavoloDoc, nomeCameriereDoc, nomeStampante)
 
             Case PERCORSO_REP_RF_KUBEII
-               StampaRicevutaFatturaKUBEII(PERCORSO_REP_RF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               'StampaRicevutaFatturaKUBEII(PERCORSO_REP_RF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
 
             Case PERCORSO_REP_FF_KUBEII
-               StampaRicevutaFatturaKUBEII(PERCORSO_REP_FF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
+               'StampaRicevutaFatturaKUBEII(PERCORSO_REP_FF_KUBEII, LeggiUltimoRecord(TAB_DOC), nomeStampante)
 
          End Select
 
@@ -4368,11 +4365,11 @@ Public Class frmPrenRisorse
 
          ' Tabella Documenti.
          Dim oleAdapter As New OleDbDataAdapter
-         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOC & " WHERE Id = " & numDoc, cn)
+         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_DOCUMENTI & " WHERE Id = " & numDoc, cn)
 
          Dim ds As New HospitalityDataSet 'Dataset1 utilizzato con Crystal Reports.
          ds.Clear()
-         oleAdapter.Fill(ds, TAB_DOC)
+         oleAdapter.Fill(ds, TAB_DOCUMENTI)
 
          ' Tabella DettagliDoc
          Dim oleAdapter1 As New OleDbDataAdapter

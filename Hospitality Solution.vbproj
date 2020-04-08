@@ -1655,7 +1655,7 @@
     <EmbeddedResource Include="bin\Reports\RisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\Sale.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Scontrino.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Scontrino NF_80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ScorteMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\StatisticheBarRistorante.rdlc" />
     <EmbeddedResource Include="bin\Reports\StatisticheCentroSportivo.rdlc" />
@@ -2234,6 +2234,7 @@
     <Content Include="bin\Reports\ComandaRepartiKubeII.rpt.txt" />
     <Content Include="bin\Reports\ProformaKubeII.rpt.txt" />
     <Content Include="bin\Reports\RicevutaKubeII.rpt.txt" />
+    <Content Include="bin\Reports\Scontrino RT.txt" />
     <Content Include="Codice\ReportsViewer\Istruzioni per creare un Report.txt" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />

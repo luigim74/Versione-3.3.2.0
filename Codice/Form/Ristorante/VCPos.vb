@@ -4230,10 +4230,6 @@ Public Class frmPos
       End Try
    End Sub
 
-   Public Sub InfoScontrino()
-      MsgBox("Non è possibile stampare lo scontrino! Verificare che per questo documento sia impostata una stampante o registratore di cassa.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
-   End Sub
-
    Private Sub StampaConto(ByVal tipo As Short)
       Try
          ' Serve a registrare l'operazione svolta.

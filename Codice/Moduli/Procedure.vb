@@ -2781,7 +2781,8 @@ Module Procedure
       End Try
    End Function
 
-   Public Function StampaProformaKUBEII(ByVal sql As String, ByVal nomeDoc As String, ByVal numDoc As String, _
+   ' NON UTILIZZATA.
+   Public Function StampaProformaKUBEII(ByVal sql As String, ByVal nomeDoc As String, ByVal numDoc As String,
                                       ByVal nomeTavolo As String, ByVal nomeCameriereDoc As String, ByVal nomeStampante As String) As Boolean
       Dim i As Integer
       Dim File As String
@@ -2789,9 +2790,9 @@ Module Procedure
       Dim datiStringa(4) As String
       Dim totComande As Integer
 
-        Dim Kube As New OposPOSPrinter_1_9_Lib.OPOSPOSPrinter
+      Dim Kube As New OposPOSPrinter_1_9_Lib.OPOSPOSPrinter
 
-        Dim reportDirectory As String = Application.StartupPath & nomeDoc
+      Dim reportDirectory As String = Application.StartupPath & nomeDoc
 
       Try
          If reportDirectory <> "" Then
@@ -3204,6 +3205,94 @@ Module Procedure
 
    End Function
 
+   Public Function ModificaNumScontrino(ByVal tabella As String, ByVal numScontrino As Integer) As Boolean
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} " &
+                             "SET NumDoc = '{1}' " &
+                             "WHERE TipoDoc = 'Scontrino' AND NumDoc = 0",
+                             tabella,
+                             numScontrino)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Function
+
+   Public Function EliminaScontrinoTemp(ByVal tabella As String, ByVal numDoc As Integer) As Boolean
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim tr As OleDbTransaction
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+
+         sql = String.Format("DELETE FROM {0} WHERE NumDoc = {1}", tabella, numDoc)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Function
+
    ' TODO_A: Terminare e testare il funzionamento.
    Public Function LeggiNumeroCassa() As String
       Try
@@ -3248,6 +3337,18 @@ Module Procedure
       End Try
 
    End Function
+
+   Public Sub InfoScontrinoWPOS1()
+      Try
+         MsgBox("Non è possibile stampare lo scontrino! Verificare che per questo documento sia impostata una stampante fiscale o registratore di cassa.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 #End Region
 
 

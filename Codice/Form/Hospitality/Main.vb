@@ -6844,27 +6844,28 @@ Friend Class frmMain
             ModelloSF = ""
          End If
 
+         ' TODO_B: Eliminare! Vecchia procedura.
          ' RCH Swing ECR A/65
-         PortaSF = DatiConfig.GetValue("PortaSF")
-         If PortaSF.Length = 0 Then
-            PortaSF = ""
-         End If
-         ParametriSF = DatiConfig.GetValue("ParametriSF")
-         If ParametriSF.Length = 0 Then
-            ParametriSF = ""
-         End If
-         NomeScontrinoSF = DatiConfig.GetValue("NomeScontrinoSF")
-         If NomeScontrinoSF.Length = 0 Then
-            NomeScontrinoSF = ""
-         End If
-         PercorsoOutputSF = DatiConfig.GetValue("PercorsoOutputSF")
-         If PercorsoOutputSF.Length = 0 Then
-            PercorsoOutputSF = ""
-         End If
-         PercorsoDriverSF = DatiConfig.GetValue("PercorsoDriverSF")
-         If PercorsoDriverSF.Length = 0 Then
-            PercorsoDriverSF = ""
-         End If
+         'PortaSF = DatiConfig.GetValue("PortaSF")
+         'If PortaSF.Length = 0 Then
+         '   PortaSF = ""
+         'End If
+         'ParametriSF = DatiConfig.GetValue("ParametriSF")
+         'If ParametriSF.Length = 0 Then
+         '   ParametriSF = ""
+         'End If
+         'NomeScontrinoSF = DatiConfig.GetValue("NomeScontrinoSF")
+         'If NomeScontrinoSF.Length = 0 Then
+         '   NomeScontrinoSF = ""
+         'End If
+         'PercorsoOutputSF = DatiConfig.GetValue("PercorsoOutputSF")
+         'If PercorsoOutputSF.Length = 0 Then
+         '   PercorsoOutputSF = ""
+         'End If
+         'PercorsoDriverSF = DatiConfig.GetValue("PercorsoDriverSF")
+         'If PercorsoDriverSF.Length = 0 Then
+         '   PercorsoDriverSF = ""
+         'End If
 
          ' Driver RTS WPOS1.
          PercorsoDriverWpos1 = DatiConfig.GetValue("PercorsoDriverWpos1")

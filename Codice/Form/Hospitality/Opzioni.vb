@@ -2923,8 +2923,6 @@ Public Class frmOpzioni
 
 #End Region
 
-   Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
-   Const TIPO_DOC_FF As String = "Fattura"
    Const TAB_DOC As String = "Documenti"
    Const TAB_SCHEDINE As String = "SchedinePS"
 
@@ -4762,47 +4760,48 @@ Public Class frmOpzioni
             ModelloSF = cmbStampanteModello.Text
          End If
 
+         ' TODO_B: Eliminare! Vecchia procedura.
          ' RCH Swing A/65 ECR.
 
-         If cmbStampantePorta.Text.Length = 0 Then
-            DatiConfig.SetValue("PortaSF", "")
-            PortaSF = ""
-         Else
-            DatiConfig.SetValue("PortaSF", cmbStampantePorta.Text)
-            PortaSF = cmbStampantePorta.Text
-         End If
+         'If cmbStampantePorta.Text.Length = 0 Then
+         '   DatiConfig.SetValue("PortaSF", "")
+         '   PortaSF = ""
+         'Else
+         '   DatiConfig.SetValue("PortaSF", cmbStampantePorta.Text)
+         '   PortaSF = cmbStampantePorta.Text
+         'End If
 
-         If txtStampanteParametri.Text.Length = 0 Then
-            DatiConfig.SetValue("ParametriSF", "")
-            ParametriSF = ""
-         Else
-            DatiConfig.SetValue("ParametriSF", txtStampanteParametri.Text)
-            ParametriSF = txtStampanteParametri.Text
-         End If
+         'If txtStampanteParametri.Text.Length = 0 Then
+         '   DatiConfig.SetValue("ParametriSF", "")
+         '   ParametriSF = ""
+         'Else
+         '   DatiConfig.SetValue("ParametriSF", txtStampanteParametri.Text)
+         '   ParametriSF = txtStampanteParametri.Text
+         'End If
 
-         If txtNomeScontrino.Text.Length = 0 Then
-            DatiConfig.SetValue("NomeScontrinoSF", "")
-            NomeScontrinoSF = ""
-         Else
-            DatiConfig.SetValue("NomeScontrinoSF", txtNomeScontrino.Text)
-            NomeScontrinoSF = txtNomeScontrino.Text
-         End If
+         'If txtNomeScontrino.Text.Length = 0 Then
+         '   DatiConfig.SetValue("NomeScontrinoSF", "")
+         '   NomeScontrinoSF = ""
+         'Else
+         '   DatiConfig.SetValue("NomeScontrinoSF", txtNomeScontrino.Text)
+         '   NomeScontrinoSF = txtNomeScontrino.Text
+         'End If
 
-         If txtPercorsoOutput.Text.Length = 0 Then
-            DatiConfig.SetValue("PercorsoOutputSF", "")
-            PercorsoOutputSF = ""
-         Else
-            DatiConfig.SetValue("PercorsoOutputSF", txtPercorsoOutput.Text)
-            PercorsoOutputSF = txtPercorsoOutput.Text
-         End If
+         'If txtPercorsoOutput.Text.Length = 0 Then
+         '   DatiConfig.SetValue("PercorsoOutputSF", "")
+         '   PercorsoOutputSF = ""
+         'Else
+         '   DatiConfig.SetValue("PercorsoOutputSF", txtPercorsoOutput.Text)
+         '   PercorsoOutputSF = txtPercorsoOutput.Text
+         'End If
 
-         If txtPercorsoDriver.Text.Length = 0 Then
-            DatiConfig.SetValue("PercorsoDriverSF", "")
-            PercorsoDriverSF = ""
-         Else
-            DatiConfig.SetValue("PercorsoDriverSF", txtPercorsoDriver.Text)
-            PercorsoDriverSF = txtPercorsoDriver.Text
-         End If
+         'If txtPercorsoDriver.Text.Length = 0 Then
+         '   DatiConfig.SetValue("PercorsoDriverSF", "")
+         '   PercorsoDriverSF = ""
+         'Else
+         '   DatiConfig.SetValue("PercorsoDriverSF", txtPercorsoDriver.Text)
+         '   PercorsoDriverSF = txtPercorsoDriver.Text
+         'End If
 
          ' Driver RTS WPOS1.
 
@@ -5814,8 +5813,7 @@ Public Class frmOpzioni
 
    Public Sub CaricaListaReportsScontrini(ByVal cmb As ComboBox)
       Try
-         Dim documenti() As String = {REPORT_SCONTRINO_RT,
-                                      REPORT_SCONTRINO_NF_80mm}
+         Dim documenti() As String = {REPORT_SCONTRINO_RT}
 
          Dim i As Integer
          For i = 0 To documenti.Length - 1
@@ -5863,12 +5861,13 @@ Public Class frmOpzioni
          ProduttoreSF = cmbStampanteProduttore.Text
          ModelloSF = cmbStampanteModello.Text
 
+         ' TODO_B: Eliminare! Vecchia procedura.
          ' RCH Swing ECR 65/A
-         PortaSF = cmbStampantePorta.Text
-         ParametriSF = txtStampanteParametri.Text
-         NomeScontrinoSF = txtNomeScontrino.Text
-         PercorsoOutputSF = txtPercorsoOutput.Text
-         PercorsoDriverSF = txtPercorsoDriver.Text
+         'PortaSF = cmbStampantePorta.Text
+         'ParametriSF = txtStampanteParametri.Text
+         'NomeScontrinoSF = txtNomeScontrino.Text
+         'PercorsoOutputSF = txtPercorsoOutput.Text
+         'PercorsoDriverSF = txtPercorsoDriver.Text
 
          ' Driver RTS WPOS1.
          PercorsoDriverWpos1 = txtPercorsoDriverWPOS1.Text
@@ -5996,6 +5995,7 @@ Public Class frmOpzioni
          CaricaListaReportsProforma(cmbReportProforma)
 
          ' Reports per gli Scontrini.
+         CaricaListaReportsScontrini(cmbReportScontrini)
 
          LeggiDatiConfig()
 
