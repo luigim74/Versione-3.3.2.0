@@ -3660,7 +3660,7 @@ Public Class frmPos
       End Try
    End Function
 
-   Public Sub StampaComande()
+   Public Sub StampaComandeReparti()
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim sql As String
@@ -3683,7 +3683,7 @@ Public Class frmPos
             Select Case percorsoRep
                Case PERCORSO_REP_COMANDA_CLIENTI_80mm
                   ' Esegue la stampa.
-                  StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(10, percorsiStampa.Stampante))
+                  StampaComanda(sql, percorsoRep, LeggiPercorsiComanda(10, percorsiStampa.Stampante), 1)
 
                Case PERCORSO_REP_COMANDA_CLIENTI_KUBEII
                   StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(10, percorsiStampa.Stampante))
@@ -3713,7 +3713,7 @@ Public Class frmPos
                         Select Case percorsoRep
                            Case PERCORSO_REP_COMANDA_REPARTI_80mm
                               ' Esegue la stampa.
-                              StampaDocumento(sql, percorsoRep, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+                              StampaComanda(sql, percorsoRep, LeggiPercorsiComanda(i, percorsiStampa.Stampante), 1)
 
                            Case PERCORSO_REP_COMANDA_REPARTI_KUBEII
                               StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
@@ -3740,7 +3740,7 @@ Public Class frmPos
       End Try
    End Sub
 
-   Private Sub StampaDocumento(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
+   Private Sub StampaComanda(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -3755,10 +3755,8 @@ Public Class frmPos
          oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
          oleAdapter1.Fill(ds, TAB_COMANDE)
 
-         Dim stampa As New StampaReports(ds, nomeStampante, 1, "80mm")
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_80mm)
          stampa.Avvia(Application.StartupPath & nomeDoc)
-
-         Now.ToShortTimeString()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3771,58 +3769,60 @@ Public Class frmPos
    End Sub
 
    Private Sub StampaDocumento1(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
-      Try
-         'If PrintDialog1.ShowDialog() = DialogResult.OK Then
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
 
-         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-         Dim cn As New OleDbConnection(ConnString)
+      'Try
+      '   'If PrintDialog1.ShowDialog() = DialogResult.OK Then
 
-         cn.Open()
+      '   'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '   Dim cn As New OleDbConnection(ConnString)
 
-         Dim ds As New Dataset1
-         ds.Clear()
+      '   cn.Open()
 
-         ' Tabella Comande.
-         Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
-         oleAdapter1.Fill(ds, TAB_COMANDE)
+      '   Dim ds As New Dataset1
+      '   ds.Clear()
 
-         ' Tabella Azienda
-         Dim oleAdapter2 As New OleDbDataAdapter
-         oleAdapter2.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_AZIENDA, cn)
-         oleAdapter2.Fill(ds, TAB_AZIENDA)
+      '   ' Tabella Comande.
+      '   Dim oleAdapter1 As New OleDbDataAdapter
+      '   oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+      '   oleAdapter1.Fill(ds, TAB_COMANDE)
 
-         ' Tabella Messaggi.
-         Dim oleAdapter3 As New OleDbDataAdapter
-         oleAdapter3.SelectCommand = New OleDbCommand(sql, cn)
-         oleAdapter3.Fill(ds, TAB_MESSAGGI)
+      '   ' Tabella Azienda
+      '   Dim oleAdapter2 As New OleDbDataAdapter
+      '   oleAdapter2.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_AZIENDA, cn)
+      '   oleAdapter2.Fill(ds, TAB_AZIENDA)
 
-         Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+      '   ' Tabella Messaggi.
+      '   Dim oleAdapter3 As New OleDbDataAdapter
+      '   oleAdapter3.SelectCommand = New OleDbCommand(sql, cn)
+      '   oleAdapter3.Fill(ds, TAB_MESSAGGI)
 
-         rep.Load(Application.StartupPath & nomeDoc)
+      '   Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
 
-         rep.SetDataSource(ds)
+      '   rep.Load(Application.StartupPath & nomeDoc)
 
-         If nomeStampante <> String.Empty And nomeStampante <> "<Nessuna>" Then
-            rep.PrintOptions.PrinterName = nomeStampante
-         End If
+      '   rep.SetDataSource(ds)
 
-         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                      PrintDialog1.PrinterSettings.FromPage,
-                      PrintDialog1.PrinterSettings.ToPage)
-         'End If
+      '   If nomeStampante <> String.Empty And nomeStampante <> "<Nessuna>" Then
+      '      rep.PrintOptions.PrinterName = nomeStampante
+      '   End If
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      '   rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                PrintDialog1.PrinterSettings.FromPage,
+      '                PrintDialog1.PrinterSettings.ToPage)
+      '   'End If
 
-      Finally
-         cn.Close()
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'Finally
+      '   cn.Close()
+
+      'End Try
    End Sub
 
-   Public Sub StampaMessaggi()
+   Public Sub StampaMessaggiReparti()
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim sql As String
@@ -3851,7 +3851,7 @@ Public Class frmPos
                         'End If
 
                         ' Esegue la stampa.
-                        StampaDocumento(sql, PERCORSO_REP_MESSAGGI_80mm, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
+                        StampaComanda(sql, PERCORSO_REP_MESSAGGI_80mm, LeggiPercorsiComanda(i, percorsiStampa.Stampante), 1)
                      End If
                   Next
                End If
@@ -5462,11 +5462,11 @@ Public Class frmPos
                g_frmVCTavoli.lblInvioComande.Text = "Invio dati ai reparti in corso..."
 
                ' Invia comande ai reparti.
-               StampaComande()
+               StampaComandeReparti()
                'StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
                RegistraMsgComanda()
                RegistraTuttiMsgComanda()
-               StampaMessaggi()
+               StampaMessaggiReparti()
                ModificaStatoMessaggi(TAB_MESSAGGI)
                ModificaStatoComande(TAB_COMANDE)
                If IsNothing(g_frmMessaggi) = False Then

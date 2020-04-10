@@ -999,7 +999,35 @@ Public Class frmElencoAcquisti
       End Try
    End Sub
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New DocAcquistoDataSet
+         ds.Clear()
+
+         ' Tabella Comande.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_ACQUISTI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaDocumento1(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Try
 
@@ -1147,7 +1175,7 @@ Public Class frmElencoAcquisti
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_ELENCO_ACQUISTI, MODULO_GESTIONE_ACQUISTI)
 
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampa(PERCORSO_REP_ACQUISTI_A4, TAB_ACQUISTI, repSql)
+               StampaElenco(repSql, PERCORSO_REP_ACQUISTI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"

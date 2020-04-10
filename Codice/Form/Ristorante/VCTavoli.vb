@@ -3466,10 +3466,10 @@ Public Class frmVCTavoli
                                     g_frmPos = New frmPos(idTavolo, nomeTavolo, "", cameriere)
                                     g_frmPos.Opacity = 0
                                     g_frmPos.Show()
-                                    g_frmPos.StampaComande()
+                                    g_frmPos.StampaComandeReparti()
                                     g_frmPos.RegistraMsgComanda()
                                     g_frmPos.RegistraTuttiMsgComanda()
-                                    g_frmPos.StampaMessaggi()
+                                    g_frmPos.StampaMessaggiReparti()
                                     g_frmPos.ModificaStatoMessaggi(TAB_MESSAGGI)
                                     g_frmPos.ModificaStatoComande(TAB_COMANDE)
                                     If IsNothing(g_frmMessaggi) = False Then
@@ -3711,13 +3711,13 @@ Public Class frmVCTavoli
                         g_frmPos = New frmPos(idTavolo, nomeTavolo, String.Empty, cameriere)
                         g_frmPos.Opacity = 0
                         g_frmPos.Show()
-                        g_frmPos.StampaComande()
+                        g_frmPos.StampaComandeReparti()
 
                         g_frmPos.RegistraMsgComanda()
 
                         g_frmPos.RegistraTuttiMsgComanda()
 
-                        g_frmPos.StampaMessaggi()
+                        g_frmPos.StampaMessaggiReparti()
 
                         g_frmPos.ModificaStatoMessaggi(TAB_MESSAGGI)
 

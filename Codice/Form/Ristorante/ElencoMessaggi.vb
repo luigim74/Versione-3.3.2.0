@@ -663,7 +663,7 @@ Public Class ElencoMessaggi
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Data, Reparto, IdRisorsa, DescrizioneRisorsa, Messaggio, Inviato) " & _
+         sql = String.Format("INSERT INTO {0} (Data, Reparto, IdRisorsa, DescrizioneRisorsa, Messaggio, Inviato) " &
                                        "VALUES(@Data, @Reparto, @IdRisorsa, @DescrizioneRisorsa, @Messaggio, @Inviato)", tabella)
 
          ' Crea il comando per la connessione corrente.
@@ -797,7 +797,7 @@ Public Class ElencoMessaggi
       End If
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
+   Private Sub StampaMessaggio(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -810,7 +810,7 @@ Public Class ElencoMessaggi
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
-         Dim stampa As New StampaReports(ds, nomeStampante, 1, "80mm")
+         Dim stampa As New StampaReports(ds, nomeStampante, 1, FORMATO_REPORT_80mm)
          stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
@@ -824,48 +824,49 @@ Public Class ElencoMessaggi
    End Sub
 
    Private Sub StampaDocumento1(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
-      Try
-         'If PrintDialog1.ShowDialog() = DialogResult.OK Then
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Try
+      '   'If PrintDialog1.ShowDialog() = DialogResult.OK Then
 
-         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-         Dim cn As New OleDbConnection(ConnString)
+      '   'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '   Dim cn As New OleDbConnection(ConnString)
 
-         cn.Open()
+      '   cn.Open()
 
-         Dim oleAdapter As New OleDbDataAdapter
+      '   Dim oleAdapter As New OleDbDataAdapter
 
-         oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idMsg, cn)
+      '   oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idMsg, cn)
 
-         Dim ds As New Dataset1
+      '   Dim ds As New Dataset1
 
-         ds.Clear()
+      '   ds.Clear()
 
-         oleAdapter.Fill(ds, tabella)
+      '   oleAdapter.Fill(ds, tabella)
 
-         Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+      '   Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
 
-         rep.Load(Application.StartupPath & nomeDoc)
+      '   rep.Load(Application.StartupPath & nomeDoc)
 
-         rep.SetDataSource(ds)
+      '   rep.SetDataSource(ds)
 
-         If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
-            rep.PrintOptions.PrinterName = nomeStampante
-         End If
+      '   If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
+      '      rep.PrintOptions.PrinterName = nomeStampante
+      '   End If
 
-         rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                            PrintDialog1.PrinterSettings.FromPage,
-                            PrintDialog1.PrinterSettings.ToPage)
+      '   rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                      PrintDialog1.PrinterSettings.FromPage,
+      '                      PrintDialog1.PrinterSettings.ToPage)
 
-         'End If
+      '   'End If
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      Finally
-         cn.Close()
+      'Finally
+      '   cn.Close()
 
-      End Try
+      'End Try
    End Sub
 
    Private Sub ElencoMessaggi_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
@@ -969,12 +970,12 @@ Public Class ElencoMessaggi
                If LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> String.Empty And
                   LeggiPercorsiComanda(j, percorsiStampa.Stampante) <> VALORE_NESSUNA Then
                   ' Esegue la stampa.
-                  StampaDocumento(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
+                  StampaMessaggio(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiComanda(j, percorsiStampa.Stampante), TAB_MESSAGGI)
                End If
 
             Else
                ' Esegue la stampa.
-               StampaDocumento(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
+               StampaMessaggio(PERCORSO_REP_MESSAGGI_80mm, LeggiUltimoRecord(TAB_MESSAGGI), LeggiPercorsiDoc(i - indiceTb, percorsiStampa.Stampante), TAB_MESSAGGI)
             End If
          End If
       Next

@@ -154,6 +154,10 @@ Module Dichiarazioni
    Public Const PERCORSO_BKP As String = "\Backup\Hospitality.mdb"
    Public Const CARTELLA_FATTURE_ELETTRONICHE As String = "Fatture elettroniche"
 
+   ' Formati per i documenti di stampa. Utilizzati nella classe StampaReports per la stampa diretta dei reports senza utilizzare l'anteprima.
+   Public Const FORMATO_REPORT_A4 As String = "A4"
+   Public Const FORMATO_REPORT_80mm As String = "80mm"
+
    ' Percorso cartella Reports per gli elenchi dati.
    Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rdlc"
    Public Const PERCORSO_REP_AZIENDE As String = "\Reports\Aziende.rdlc"
@@ -901,7 +905,7 @@ Module Dichiarazioni
    Public AbilitaRicezionePren As Boolean
    Public ColorePrenTavAgent As Color
 
-   ' Contatore per sapere il numero di finestre MDI aperte.
+   ' Numero di copie da stampare per documento.
    Public NumeroCopieStampa As Short = 1
 
    ' Contatore per sapere il numero di finestre MDI aperte.

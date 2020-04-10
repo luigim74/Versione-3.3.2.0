@@ -66,8 +66,8 @@ Public Class StampaReports
          Dim deviceInfo As String
 
          Select Case formatoPaginaDevice
-         Case "A4"
-            deviceInfo = "<DeviceInfo>" &
+            Case FORMATO_REPORT_A4
+               deviceInfo = "<DeviceInfo>" &
                          "<OutputFormat>EMF</OutputFormat>" &
                          "<PageWidth>8.5in</PageWidth>" &
                          "<PageHeight>11in</PageHeight>" &
@@ -77,8 +77,8 @@ Public Class StampaReports
                          "<MarginBottom>0.20in</MarginBottom>" &
                          "</DeviceInfo>"
 
-         Case "80mm"
-            deviceInfo = "<DeviceInfo>" &
+            Case FORMATO_REPORT_80mm
+               deviceInfo = "<DeviceInfo>" &
                          "<OutputFormat>EMF</OutputFormat>" &
                          "<PageWidth>3.14in</PageWidth>" &
                          "<PageHeight>15in</PageHeight>" &

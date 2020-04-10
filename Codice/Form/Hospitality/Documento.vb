@@ -2305,6 +2305,7 @@ Public Class frmDocumento
                eui_cmbTipoDocumento.Items.Add(TIPO_DOC_PF)
                eui_cmbTipoDocumento.Items.Add(TIPO_DOC_RF)
                eui_cmbTipoDocumento.Items.Add(TIPO_DOC_FF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_SF)
 
                ' Crea un nuovo documento con i dati della prenotazione.
                NuovoDocumento()

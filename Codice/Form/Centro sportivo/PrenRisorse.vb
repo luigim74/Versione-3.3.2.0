@@ -3807,7 +3807,7 @@ Public Class frmPrenRisorse
 
          '' Tipo pagamento.
          'If txtCartaCredito.Text <> "0,00" And txtCartaCredito.Text <> "" Then
-         '   If cmdTipoPagamento.Text.ToUpper <> "ASSEGNI" And cmdTipoPagamento.Text.ToUpper <> "ASSEGNO" Then
+         '   If cmbTipoPagamento.Text.ToUpper <> "ASSEGNI" And cmdTipoPagamento.Text.ToUpper <> "ASSEGNO" Then
          '      ' Tipo pagamento - Carta di credito.
          '      tipoPagCartaCredito = "CARD,V" & RimuoviVirgola(txtCartaCredito.Text) & ",:" & cmdTipoPagamento.Text & ";"
          '   Else
@@ -3836,9 +3836,13 @@ Public Class frmPrenRisorse
          sw = File.CreateText(PercorsoLavoroWpos1 & "\" & SR_DATI)
 
          ' Righe di vendita articoli.
+         Dim numRep As String
+         ' Leggo il numero di reparto iva per l'articolo.
+         numRep = LeggiNumeroRepartoIva(AliquotaIvaCentroSportivo) ' TODO_A: da verificare!
+
          Dim j As Integer
          For j = 0 To lvwConto.Items.Count - 1
-            Dim rigaScontrino As String = "PLUD,C1,N1,P" & RimuoviVirgola(lvwConto.Items(j).SubItems(2).Text) & ",Q" & lvwConto.Items(j).SubItems(1).Text & ",:" & lvwConto.Items(j).SubItems(0).Text.ToUpper & ";"
+            Dim rigaScontrino As String = "PLUD,C1,N" & numRep & ",P" & RimuoviVirgola(lvwConto.Items(j).SubItems(2).Text) & ",Q" & lvwConto.Items(j).SubItems(1).Text & ",:" & lvwConto.Items(j).SubItems(0).Text.ToUpper & ";"
             sw.WriteLine(rigaScontrino)
          Next
 
@@ -4585,7 +4589,7 @@ Public Class frmPrenRisorse
    Private Sub eui_cmdStampaDocSF_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdStampaDocSF.Click
       Try
          If ImpostaNomeStampante(3) = String.Empty Then
-            InfoScontrino()
+            InfoScontrinoWPOS1()
             Exit Sub
          End If
 
@@ -4610,10 +4614,6 @@ Public Class frmPrenRisorse
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   Public Sub InfoScontrino()
-      MsgBox("Non è possibile stampare lo scontrino! Nessuna stampante impostata per stampare questo documento.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
    End Sub
 
    Private Sub cmdColore_Click(sender As System.Object, e As System.EventArgs) Handles cmdColore.Click
