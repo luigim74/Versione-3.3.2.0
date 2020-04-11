@@ -1,8 +1,17 @@
-' Nome form:            frmElencoDati
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 18/08/2014
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
 
 Option Strict Off
 Option Explicit On
@@ -14,21 +23,21 @@ Public Class frmElencoDati
 
 #Region "Dichiarazioni"
 
-   Dim TAB_CLIENTI = "Clienti"
-   Dim TAB_AZIENDE = "Aziende"
-   Dim TAB_FORNITORI = "Fornitori"
-   Dim TAB_ARTICOLI = "Articoli"
-   Dim TAB_CAT_PIATTI = "CategoriePiatti"
-   Dim TAB_PREN = "Prenotazioni"
-   Dim TAB_PREN_SALE = "PrenSale"
-   Dim TAB_CAMERIERI = "Camerieri"
-   Dim TAB_SALE = "Sale"
-   Dim TAB_TAVOLI = "Tavoli"
-   Dim TAB_CAMERE = "Camere"
-   Dim TAB_STATO_PREN = "Gruppi"
-   Dim TAB_OPERATORI = "Operatori"
-   Dim TAB_GRUPPI = "Gruppi"
-   Dim TAB_CARATT_RISORSE = "CaratteristicheRisorse"
+   Const TAB_CLIENTI = "Clienti"
+   Const TAB_AZIENDE = "Aziende"
+   Const TAB_FORNITORI = "Fornitori"
+   Const TAB_ARTICOLI = "Articoli"
+   Const TAB_CAT_PIATTI = "CategoriePiatti"
+   Const TAB_PREN = "Prenotazioni"
+   Const TAB_PREN_SALE = "PrenSale"
+   Const TAB_CAMERIERI = "Camerieri"
+   Const TAB_SALE = "Sale"
+   Const TAB_TAVOLI = "Tavoli"
+   Const TAB_CAMERE = "Camere"
+   Const TAB_STATO_PREN = "Gruppi"
+   Const TAB_OPERATORI = "Operatori"
+   Const TAB_GRUPPI = "Gruppi"
+   Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnStringAnagrafiche)
@@ -4250,52 +4259,417 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      Dim cn As OleDbConnection
-
+   Private Sub StampaElencoCamere(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
 
-            If frmId = "Clienti" Or frmId = "Aziende" Then
-               ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
+         cn.Open()
 
-               ' Dichiara un oggetto connessione.
-               cn = New OleDbConnection(ConnStringAnagrafiche)
-            Else
-               'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-               cn = New OleDbConnection(ConnString)
-            End If
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
 
-            cn.Open()
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_CAMERE)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                               PrintDialog1.PrinterSettings.FromPage,
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         cn.Close()
+
       End Try
+   End Sub
+
+   Private Sub StampaElencoClienti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New AnagraficheDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_CLIENTI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoFornitori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New FornitoriDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_FORNITORI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New CamerieriDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_CAMERIERI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoAziende(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New AziendeDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_AZIENDE)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoCategoriePiatti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New CategoriePiattiDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_CAT_PIATTI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New SaleDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_SALE)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New TavoliDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_TAVOLI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoPrenTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New PrenTavoliDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_PREN)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoPrenSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New PrenSaleDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_PREN_SALE)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoGruppiOp(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New GruppiOpDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_GRUPPI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoOperatori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New OperatoriDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_OPERATORI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoArticoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_ARTICOLI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Dim cn As OleDbConnection
+
+      'Try
+      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
+
+      '      If frmId = "Clienti" Or frmId = "Aziende" Then
+      '         ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
+
+      '         ' Dichiara un oggetto connessione.
+      '         cn = New OleDbConnection(ConnStringAnagrafiche)
+      '      Else
+      '         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '         cn = New OleDbConnection(ConnString)
+      '      End If
+
+      '      cn.Open()
+
+      '      Dim oleAdapter As New OleDbDataAdapter
+
+      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '      Dim ds As New Dataset1
+
+      '      ds.Clear()
+
+      '      oleAdapter.Fill(ds, tabella)
+
+      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '      rep.Load(Application.StartupPath & nomeDoc)
+
+      '      rep.SetDataSource(ds)
+
+      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                         PrintDialog1.PrinterSettings.FromPage,
+      '                         PrintDialog1.PrinterSettings.ToPage)
+
+      '      cn.Close()
+      '   End If
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'End Try
    End Sub
 
    Private Sub frmElencoDati_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
@@ -4733,88 +5107,74 @@ Public Class frmElencoDati
 
             Select Case TipoElenco
                Case Elenco.Clienti
-                  'StampaDocumento(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql, "Clienti")
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql)
+                     StampaElencoClienti(repSql, PERCORSO_REP_CLIENTI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Aziende
-                  'StampaDocumento(PERCORSO_REP_AZIENDE, TAB_AZIENDE, repSql, "Aziende")
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE, TAB_AZIENDE, repSql)
+                     StampaElencoAziende(repSql, PERCORSO_REP_AZIENDE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Fornitori
-                  'StampaDocumento(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
+                     StampaElencoFornitori(repSql, PERCORSO_REP_FORNITORI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.CatPiatti
-                  'StampaDocumento(PERCORSO_REP_CAT_PIATTI, TAB_CAT_PIATTI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI, TAB_CAT_PIATTI, repSql)
+                     StampaElencoCategoriePiatti(repSql, PERCORSO_REP_CAT_PIATTI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Articoli
-                  'StampaDocumento(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
+                     StampaElencoArticoli(repSql, PERCORSO_REP_ARTICOLI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Camerieri
-                  'StampaDocumento(PERCORSO_REP_CAMERIERI, TAB_CAMERIERI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI, TAB_CAMERIERI, repSql)
+                     StampaElencoCamerieri(repSql, PERCORSO_REP_CAMERIERI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Sale
-                  'StampaDocumento(PERCORSO_REP_SALE, TAB_SALE, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaSale(PERCORSO_REP_SALE, TAB_SALE, repSql)
+                     StampaElencoSale(repSql, PERCORSO_REP_SALE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Tavoli
-                  'StampaDocumento(PERCORSO_REP_TAVOLI, TAB_TAVOLI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI, TAB_TAVOLI, repSql)
+                     StampaElencoTavoli(repSql, PERCORSO_REP_TAVOLI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Camere
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampacamere(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                     StampaElencoCamere(repSql, PERCORSO_REP_CAMERE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.StatoPren
-                  ' StampaDocumento(PERCORSO_REP_STATO_PREN, TAB_STATO_PREN, repSql)
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Prenotazioni
-                  'StampaDocumento(PERCORSO_REP_PREN, TAB_PREN, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN, TAB_PREN, repSql)
+                     StampaElencoPrenTavoli(repSql, PERCORSO_REP_PREN_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.PrenSale
-                  'StampaDocumento(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
+                     StampaElencoPrenSale(repSql, PERCORSO_REP_PREN_SALE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Gruppi
-                  'StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                     StampaElencoGruppiOp(repSql, PERCORSO_REP_GRUPPI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.Operatori
-                  'StampaDocumento(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
+                     StampaElencoOperatori(repSql, PERCORSO_REP_OPERATORI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
                Case Elenco.CaratteristicheRisorse
-                  'StampaDocumento(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End Select
@@ -4825,62 +5185,48 @@ Public Class frmElencoDati
 
             Select Case TipoElenco
                Case Elenco.Clienti
-                  'g_frmMain.ApriReports(repSql, TAB_CLIENTI, PERCORSO_REP_CLIENTI, "Clienti")
-                  AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI, TAB_CLIENTI, repSql)
+                  AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, TAB_CLIENTI, repSql)
 
                Case Elenco.Aziende
-                  'g_frmMain.ApriReports(repSql, TAB_AZIENDE, PERCORSO_REP_AZIENDE, "Aziende")
-                  AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE, TAB_AZIENDE, repSql)
+                  AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE_A4, TAB_AZIENDE, repSql)
 
                Case Elenco.Fornitori
-                  'g_frmMain.ApriReports(repSql, TAB_FORNITORI, PERCORSO_REP_FORNITORI)
-                  AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI, TAB_FORNITORI, repSql)
+                  AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI_A4, TAB_FORNITORI, repSql)
 
                Case Elenco.CatPiatti
-                  'g_frmMain.ApriReports(repSql, TAB_CAT_PIATTI, PERCORSO_REP_CAT_PIATTI)
-                  AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI, TAB_CAT_PIATTI, repSql)
+                  AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI_A4, TAB_CAT_PIATTI, repSql)
 
                Case Elenco.Articoli
-                  'g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_ARTICOLI)
-                  AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI, TAB_ARTICOLI, repSql)
+                  AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, TAB_ARTICOLI, repSql)
 
                Case Elenco.Camerieri
-                  'g_frmMain.ApriReports(repSql, TAB_CAMERIERI, PERCORSO_REP_CAMERIERI)
-                  AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI, TAB_CAMERIERI, repSql)
+                  AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, TAB_CAMERIERI, repSql)
 
                Case Elenco.Sale
-                  'g_frmMain.ApriReports(repSql, TAB_SALE, PERCORSO_REP_SALE)
-                  AnteprimaDiStampaSale(PERCORSO_REP_SALE, TAB_SALE, repSql)
+                  AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)
 
                Case Elenco.Tavoli
-                  'g_frmMain.ApriReports(repSql, TAB_TAVOLI, PERCORSO_REP_TAVOLI)
-                  AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI, TAB_TAVOLI, repSql)
+                  AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI_A4, TAB_TAVOLI, repSql)
 
                Case Elenco.Camere
-                  AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE, TAB_CAMERE, repSql)
+                  AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE_A4, TAB_CAMERE, repSql)
 
                Case Elenco.StatoPren
-                  'g_frmMain.ApriReports(repSql, TAB_STATO_PREN, PERCORSO_REP_STATO_PREN)
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Prenotazioni
-                  'g_frmMain.ApriReports(repSql, TAB_PREN, PERCORSO_REP_PREN)
-                  AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN, TAB_PREN, repSql)
+                  AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN_A4, TAB_PREN, repSql)
 
                Case Elenco.PrenSale
-                  'g_frmMain.ApriReports(repSql, TAB_PREN_SALE, PERCORSO_REP_PREN_SALE)
-                  AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE, TAB_PREN_SALE, repSql)
+                  AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE_A4, TAB_PREN_SALE, repSql)
 
                Case Elenco.Gruppi
-                  'g_frmMain.ApriReports(repSql, TAB_GRUPPI, PERCORSO_REP_GRUPPI)
-                  AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI, TAB_GRUPPI, repSql)
+                  AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI_A4, TAB_GRUPPI, repSql)
 
                Case Elenco.Operatori
-                  'g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
-                  AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI, TAB_OPERATORI, repSql)
+                  AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI_A4, TAB_OPERATORI, repSql)
 
                Case Elenco.CaratteristicheRisorse
-                  'g_frmMain.ApriReports(repSql, TAB_OPERATORI, PERCORSO_REP_OPERATORI)
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End Select

@@ -1,15 +1,15 @@
 #Region " DATI FILE.VB "
 
-' ******************************************************************
+' ****************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 25/01/2020
-' Descrizione:           Elenco dati riutilizzabile per tutte le anagrafiche.
+' Data ultima modifica: 11/04/2020
+' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
 ' Elenco Attivita:
 '
-' ******************************************************************
+' ****************************************************************************
 
 #End Region
 
@@ -835,7 +835,7 @@ Public Class ElencoScorte
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Dim cn As OleDbConnection
 
@@ -900,6 +900,34 @@ Public Class ElencoScorte
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
          Dim frm As New RepScorteMagazzino(ds, nomeDoc, String.Empty)
          frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New ScorteMagazzinoDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_ARTICOLI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1027,9 +1055,8 @@ Public Class ElencoScorte
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_MAGAZZINO_SCORTE, MODULO_MAGAZZINO_SCORTE)
 
-            'StampaDocumento(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampaScorte(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
+               StampaElenco(repSql, PERCORSO_REP_SCORTE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"
@@ -1037,7 +1064,7 @@ Public Class ElencoScorte
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_MAGAZZINO_SCORTE, MODULO_MAGAZZINO_SCORTE)
 
             'g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_SCORTE)
-            AnteprimaDiStampaScorte(PERCORSO_REP_SCORTE, TAB_ARTICOLI, repSql)
+            AnteprimaDiStampaScorte(PERCORSO_REP_SCORTE_A4, TAB_ARTICOLI, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.

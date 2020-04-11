@@ -2027,6 +2027,34 @@ Public Class ElencoPrenCamere
       End Try
    End Sub
 
+   Public Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New HospitalityDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_PRENOTAZIONI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Public Sub AnteprimaDiStampaModIstatC59(ByVal nomeDoc As String)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
@@ -2060,7 +2088,6 @@ Public Class ElencoPrenCamere
       End Try
 
    End Sub
-
 
    Private Sub ElencoPrenCamere_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 

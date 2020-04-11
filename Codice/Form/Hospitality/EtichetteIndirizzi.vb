@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2005
+' Data ultima modifica: 11/04/2020
+' Descrizione:          Etichette e Indirizzi.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 Option Strict Off
 Option Explicit On 
 

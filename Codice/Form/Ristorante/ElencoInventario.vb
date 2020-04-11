@@ -1,8 +1,16 @@
-' Nome form:            frmElencoInventario
+#Region " DATI FILE.VB "
+' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       22/10/2006
-' Data ultima modifica: 23/10/2006
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Elenco inventario di magazzino.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
+
 
 Option Strict Off
 Option Explicit On 
@@ -1097,7 +1105,7 @@ Public Class ElencoInventario
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Dim cn As OleDbConnection
 
@@ -1162,6 +1170,34 @@ Public Class ElencoInventario
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
          Dim frm As New RepInventario(ds, nomeDoc, String.Empty)
          frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New InventarioDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_ARTICOLI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1287,9 +1323,8 @@ Public Class ElencoInventario
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_MAGAZZINO_INVENTARIO, MODULO_MAGAZZINO_INVENTARIO)
 
-            'StampaDocumento(PERCORSO_REP_INVENTARIO, TAB_ARTICOLI, repSql)
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampa(PERCORSO_REP_INVENTARIO, TAB_ARTICOLI, repSql)
+               StampaElenco(repSql, PERCORSO_REP_INVENTARIO_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"
@@ -1297,7 +1332,7 @@ Public Class ElencoInventario
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_MAGAZZINO_INVENTARIO, MODULO_MAGAZZINO_INVENTARIO)
 
             'g_frmMain.ApriReports(repSql, TAB_ARTICOLI, PERCORSO_REP_INVENTARIO)
-            AnteprimaDiStampa(PERCORSO_REP_INVENTARIO, TAB_ARTICOLI, repSql)
+            AnteprimaDiStampa(PERCORSO_REP_INVENTARIO_A4, TAB_ARTICOLI, repSql)
 
             'Case "Primo"
             '   ' Crea la stringa sql.

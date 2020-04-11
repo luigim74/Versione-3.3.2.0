@@ -1,8 +1,18 @@
-' Nome form:            RegOperazioni
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       14/08/2011
-' Data ultima modifica: 14/08/2011
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Registro delle operazioni.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 
 Option Strict Off
 Option Explicit On 
@@ -878,7 +888,7 @@ Public Class RegOperazioni
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Try
 
@@ -946,6 +956,33 @@ Public Class RegOperazioni
       End Try
    End Sub
 
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New OperazioniDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_OPERAZIONI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
 
    Private Sub RegOperazioni_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
       ' Visualizza i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
@@ -1040,9 +1077,8 @@ Public Class RegOperazioni
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_REGISTRO_OPERAZIONI, MODULO_REG_OPERAZIONI)
 
-            'StampaDocumento(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampaOperazioni(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
+               StampaElenco(repSql, PERCORSO_REP_OPERAZIONI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"
@@ -1050,7 +1086,7 @@ Public Class RegOperazioni
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_REGISTRO_OPERAZIONI, MODULO_REG_OPERAZIONI)
 
             'g_frmMain.ApriReports(repSql, TAB_OPERAZIONI, PERCORSO_REP_OPERAZIONI)
-            AnteprimaDiStampaOperazioni(PERCORSO_REP_OPERAZIONI, TAB_OPERAZIONI, repSql)
+            AnteprimaDiStampaOperazioni(PERCORSO_REP_OPERAZIONI_A4, TAB_OPERAZIONI, repSql)
 
          Case "Primo"
             '' Crea la stringa sql.

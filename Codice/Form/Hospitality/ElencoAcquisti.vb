@@ -1009,7 +1009,7 @@ Public Class frmElencoAcquisti
          Dim ds As New DocAcquistoDataSet
          ds.Clear()
 
-         ' Tabella Comande.
+         ' Carica i dati della tabella in un DataAdapter.
          Dim oleAdapter1 As New OleDbDataAdapter
          oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
          oleAdapter1.Fill(ds, TAB_ACQUISTI)
@@ -1027,7 +1027,7 @@ Public Class frmElencoAcquisti
       End Try
    End Sub
 
-   Private Sub StampaDocumento1(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Try
 

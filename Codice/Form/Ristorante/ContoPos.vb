@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/01/2005
-' Data ultima modifica: 08/04/2020
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Interfaccia Punto cassa - Conto.
 ' Note:
 '

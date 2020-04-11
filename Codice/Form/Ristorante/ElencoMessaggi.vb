@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2005
+' Data ultima modifica: 11/04/2020
+' Descrizione:          Elenco messaggi.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 Option Strict Off
 Option Explicit On
 
@@ -823,7 +838,7 @@ Public Class ElencoMessaggi
       End Try
    End Sub
 
-   Private Sub StampaDocumento1(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Try
       '   'If PrintDialog1.ShowDialog() = DialogResult.OK Then

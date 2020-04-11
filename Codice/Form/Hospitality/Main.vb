@@ -1,8 +1,8 @@
 #Region " DATI FILE.VB "
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
-' Data creazione:       04/01/2006
-' Data ultima modifica: 29/12/2018
+' Data creazione:       04/01/2005
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -12328,7 +12328,7 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
-               ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
+               ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC_A4)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
@@ -12374,8 +12374,7 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
-               'ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC)
-               g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+               g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC_A4, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
@@ -12400,17 +12399,18 @@ Friend Class frmMain
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                If g_frmPrenCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
-                  g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
+                  g_frmPrenCamere.StampaElenco(g_frmPrenCamere.repSql, PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmPrenCamere.PrintDialog1.PrinterSettings.Copies)
+
                End If
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
                If g_frmSchedinePS.PrintDialog1.ShowDialog() = DialogResult.OK Then
-                  g_frmSchedinePS.AnteprimaDiStampa(PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.repSql)
+                  g_frmSchedinePS.StampaElenco(g_frmSchedinePS.repSql, PERCORSO_REP_SCHEDINE_PS_A4, g_frmSchedinePS.PrintDialog1.PrinterSettings.PrinterName, g_frmSchedinePS.PrintDialog1.PrinterSettings.Copies)
                End If
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                If g_frmListiniCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
-                  g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
+                  g_frmListiniCamere.StampaElenco(g_frmListiniCamere.repSql, PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmListiniCamere.PrintDialog1.PrinterSettings.Copies)
                End If
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
@@ -12418,14 +12418,13 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Stampa il documento selezionato nell'elenco.
-               'g_frmDocumenti.StampaDocumento(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
                If g_frmDocumenti.PrintDialog1.ShowDialog() = DialogResult.OK Then
-                  g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
+                  g_frmDocumenti.StampaElenco(g_frmDocumenti.repSql, PERCORSO_REP_DOC_A4, g_frmDocumenti.PrintDialog1.PrinterSettings.PrinterName, g_frmDocumenti.PrintDialog1.PrinterSettings.Copies)
                End If
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                If g_frmEmail.PrintDialog1.ShowDialog() = DialogResult.OK Then
-                  g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
+                  g_frmEmail.StampaElenco(g_frmEmail.repSql, PERCORSO_REP_EMAIL_A4, g_frmEmail.PrintDialog1.PrinterSettings.PrinterName, g_frmEmail.PrintDialog1.PrinterSettings.Copies)
                End If
 
                ' Inserire qui il codice per gestire le altre finestre.

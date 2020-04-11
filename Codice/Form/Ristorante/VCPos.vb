@@ -3,7 +3,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       10/04/2006
-' Data ultima modifica: 12/01/2020
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Interfaccia Punto cassa - conto immediato.
 ' Note:
 '
@@ -3768,7 +3768,7 @@ Public Class frmPos
       End Try
    End Sub
 
-   Private Sub StampaDocumento1(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
+   Private Sub _StampaDocumento(ByVal sql As String, ByVal nomeDoc As String, ByVal nomeStampante As String)
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
 
       'Try

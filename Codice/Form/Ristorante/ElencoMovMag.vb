@@ -1,8 +1,18 @@
-' Nome form:            ElencoMovMag
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       28/10/2006
-' Data ultima modifica: 20/01/2020
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Elenco storico dei movimenti di magazzino.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 
 Option Strict Off
 Option Explicit On 
@@ -15,7 +25,7 @@ Public Class ElencoMovMag
 #Region "Dichiarazioni"
 
    Const TITOLO_FINESTRA As String = "Storico movimenti di magazzino"
-   Dim TAB_MOV_MAG As String = "MovMagazzino"
+   Const TAB_MOV_MAG As String = "MovMagazzino"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnStringAnagrafiche)
@@ -870,7 +880,7 @@ Public Class ElencoMovMag
       End Try
    End Function
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
       ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
       'Dim cn As OleDbConnection
 
@@ -946,6 +956,33 @@ Public Class ElencoMovMag
       End Try
    End Sub
 
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New MovMagazzinoDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_MOV_MAG)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
 
    Private Sub ElencoMovMag_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
       ' Visualizza i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
@@ -1047,9 +1084,8 @@ Public Class ElencoMovMag
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_MAGAZZINO_MOVIMENTI, MODULO_MAGAZZINO_MOVIMENTI)
 
-            'StampaDocumento(PERCORSO_REP_MOV_MAG, TAB_MOV_MAG, repSql)
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampaMovMagazzino(PERCORSO_REP_MOV_MAG, TAB_MOV_MAG, repSql)
+               StampaElenco(repSql, PERCORSO_REP_MOV_MAG_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"
@@ -1057,7 +1093,7 @@ Public Class ElencoMovMag
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_MAGAZZINO_MOVIMENTI, MODULO_MAGAZZINO_MOVIMENTI)
 
             'g_frmMain.ApriReports(repSql, TAB_MOV_MAG, PERCORSO_REP_MOV_MAG)
-            AnteprimaDiStampaMovMagazzino(PERCORSO_REP_MOV_MAG, TAB_MOV_MAG, repSql)
+            AnteprimaDiStampaMovMagazzino(PERCORSO_REP_MOV_MAG_A4, TAB_MOV_MAG, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.

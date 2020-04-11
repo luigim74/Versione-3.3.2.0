@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       07/01/2006
-' Data ultima modifica: 15/12/2018
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Anagrafica Aziende.
 ' Note:
 '

@@ -1,8 +1,18 @@
-' Nome form:            frmStatistiche
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       10/05/2006
-' Data ultima modifica: 10/05/2006
+' Data ultima modifica: 11/04/2020
 ' Descrizione:          Elenco statistiche di vendita.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 
 Option Strict Off
 Option Explicit On 
@@ -1140,45 +1150,74 @@ Public Class frmStatisticheRisorse
       End Try
    End Sub
 
-   Private Sub StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+   Private Sub StampaElenco(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
 
-         If PrintDialog1.ShowDialog() = DialogResult.OK Then
+         cn.Open()
 
-            'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-            Dim cn As New OleDbConnection(ConnString)
+         Dim ds As New StatisticheCentroSportivoDataSet
+         ds.Clear()
 
-            cn.Open()
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.Fill(ds, TAB_STATISTICHE)
 
-            Dim oleAdapter As New OleDbDataAdapter
-
-            oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-            Dim ds As New Dataset1
-
-            ds.Clear()
-
-            oleAdapter.Fill(ds, tabella)
-
-            Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-            rep.Load(Application.StartupPath & nomeDoc)
-
-            rep.SetDataSource(ds)
-
-            rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-                               PrintDialog1.PrinterSettings.FromPage,
-                               PrintDialog1.PrinterSettings.ToPage)
-
-            cn.Close()
-         End If
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         cn.Close()
+
       End Try
+   End Sub
+
+
+   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
+      'Try
+
+      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
+
+      '      'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+      '      Dim cn As New OleDbConnection(ConnString)
+
+      '      cn.Open()
+
+      '      Dim oleAdapter As New OleDbDataAdapter
+
+      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+      '      Dim ds As New Dataset1
+
+      '      ds.Clear()
+
+      '      oleAdapter.Fill(ds, tabella)
+
+      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+
+      '      rep.Load(Application.StartupPath & nomeDoc)
+
+      '      rep.SetDataSource(ds)
+
+      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
+      '                         PrintDialog1.PrinterSettings.FromPage,
+      '                         PrintDialog1.PrinterSettings.ToPage)
+
+      '      cn.Close()
+      '   End If
+
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      'End Try
    End Sub
 
    Private Sub frmStatisticheRisorse_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
@@ -1290,9 +1329,8 @@ Public Class frmStatisticheRisorse
             ' Registra loperazione effettuata dall'operatore identificato.
             g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_GESTIONE_STATISTICHE_CENTRO_SPORTIVO, MODULO_GESTIONE_STATISTICHE_CENTRO_SPORTIVO)
 
-            'StampaDocumento(PERCORSO_REP_STAT_RISORSE, TAB_STATISTICHE, repSql)
             If PrintDialog1.ShowDialog() = DialogResult.OK Then
-               AnteprimaDiStampa(PERCORSO_REP_STAT_RISORSE, TAB_STATISTICHE, repSql)
+               StampaElenco(repSql, PERCORSO_REP_STAT_RISORSE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
             End If
 
          Case "Anteprima"
@@ -1300,7 +1338,7 @@ Public Class frmStatisticheRisorse
             g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_GESTIONE_STATISTICHE_CENTRO_SPORTIVO, MODULO_GESTIONE_STATISTICHE_CENTRO_SPORTIVO)
 
             'g_frmMain.ApriReports(repSql, TAB_STATISTICHE, PERCORSO_REP_STAT_RISORSE)
-            AnteprimaDiStampa(PERCORSO_REP_STAT_RISORSE, TAB_STATISTICHE, repSql)
+            AnteprimaDiStampa(PERCORSO_REP_STAT_RISORSE_A4, TAB_STATISTICHE, repSql)
 
          Case "Primo"
             ' Crea la stringa sql.
