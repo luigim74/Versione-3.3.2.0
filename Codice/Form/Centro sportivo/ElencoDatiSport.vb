@@ -1507,7 +1507,7 @@ Public Class frmElencoDatiSport
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-         Dim ds As New HospitalityDataSet
+         Dim ds As New AccessoriServiziDataSet
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
@@ -1586,12 +1586,12 @@ Public Class frmElencoDatiSport
 
          cn.Open()
 
-         Dim ds As New HospitalityDataSet
+         Dim ds As New AccessoriServiziDataSet
          ds.Clear()
 
          ' Carica i dati della tabella in un DataAdapter.
          Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
          oleAdapter1.Fill(ds, TAB_ACCESSORI_SERVIZI)
 
          Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
@@ -1619,7 +1619,7 @@ Public Class frmElencoDatiSport
 
          ' Carica i dati della tabella in un DataAdapter.
          Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
          oleAdapter1.Fill(ds, TAB_RISORSE)
 
          Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
@@ -1647,7 +1647,7 @@ Public Class frmElencoDatiSport
 
          ' Carica i dati della tabella in un DataAdapter.
          Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
          oleAdapter1.Fill(ds, TAB_PREN)
 
          Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)

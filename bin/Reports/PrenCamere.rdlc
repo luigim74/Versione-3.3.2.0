@@ -253,7 +253,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -279,7 +278,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
-        <DataSetName>PrenCamere</DataSetName>
+        <DataSetName>PrenCamereDataSet</DataSetName>
         <Top>0.17639cm</Top>
         <Left>0.31073cm</Left>
         <Height>0.6cm</Height>
@@ -816,18 +815,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="HospitalityDataSet">
+    <DataSource Name="PrenCamereDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>61e1481f-ea33-4b8c-b6cc-e8ac5f85ba13</rd:DataSourceID>
+      <rd:DataSourceID>95491658-9d41-41ba-b7c1-4c871ab4beda</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="PrenCamere">
+    <DataSet Name="PrenCamereDataSet">
       <Query>
-        <DataSourceName>HospitalityDataSet</DataSourceName>
+        <DataSourceName>PrenCamereDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -861,6 +860,14 @@
         </Field>
         <Field Name="Nome">
           <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Provincia">
+          <DataField>Provincia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nazionalità">
+          <DataField>Nazionalità</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Adulti">
@@ -969,8 +976,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>PrenCamereDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\PrenCamereDataSet.xsd</rd:SchemaPath>
         <rd:TableName>PrenCamere</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

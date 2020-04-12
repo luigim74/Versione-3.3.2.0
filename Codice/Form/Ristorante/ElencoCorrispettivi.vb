@@ -1266,7 +1266,7 @@ Public Class ElencoCorrispettivi
 
          ' Carica i dati della tabella in un DataAdapter.
          Dim oleAdapter1 As New OleDbDataAdapter
-         oleAdapter1.SelectCommand = New OleDbCommand(sql, cn)
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
          oleAdapter1.Fill(ds, TAB_CORRISPETTIVI)
 
          Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)

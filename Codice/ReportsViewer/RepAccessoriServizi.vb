@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       02/09/2018
-' Data ultima modifica: 02/09/2018
+' Data ultima modifica: 12/04/2020
 ' Descrizione:          Report di stampa con ReportsViewer.
 ' Note:
 '
@@ -15,7 +15,7 @@ Public Class RepAccessoriServizi
    Dim nomeStampante As String
    Dim nomeReport As String
 
-   Public Sub New(ByVal ds As HospitalityDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
+   Public Sub New(ByVal ds As AccessoriServiziDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
          ' La chiamata è richiesta dalla finestra di progettazione.
          InitializeComponent()
@@ -49,7 +49,7 @@ Public Class RepAccessoriServizi
          ImpostaIcona(Me)
 
          ' Carica i dati delle rispettive tabelle.
-         Me.AccessoriServiziTableAdapter.Fill(Me.HospitalityDataSet.AccessoriServizi)
+         Me.AccessoriServiziTableAdapter.Fill(Me.AccessoriServiziDataSet.AccessoriServizi)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)

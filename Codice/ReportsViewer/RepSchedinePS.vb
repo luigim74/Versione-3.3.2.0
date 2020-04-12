@@ -15,7 +15,7 @@ Public Class RepSchedinePS
    Dim nomeStampante As String
    Dim nomeReport As String
 
-   Public Sub New(ByVal ds As HospitalityDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
+   Public Sub New(ByVal ds As SchedinePSDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
          ' La chiamata è richiesta dalla finestra di progettazione.
          InitializeComponent()
@@ -49,7 +49,7 @@ Public Class RepSchedinePS
          ImpostaIcona(Me)
 
          ' Carica i dati delle rispettive tabelle.
-         Me.SchedinePSTableAdapter.Fill(Me.HospitalityDataSet.SchedinePS)
+         Me.SchedinePSTableAdapter.Fill(Me.SchedinePSDataSet.SchedinePS)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)

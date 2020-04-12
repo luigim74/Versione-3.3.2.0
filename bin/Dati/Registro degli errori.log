@@ -150,3 +150,283 @@
 "- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
 "
 "
+"*** 12/04/2020 - 15:07:38 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoCorrispettivi.StampaElenco(String sqlRep, String nomeDoc, String nomeStampante, Int16 numCopie) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoCorrispettivi.vb:riga 1270"
+"
+"
+"*** 12/04/2020 - 15:44:13 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:44:23 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:44:40 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:44:43 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:45:03 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:45:05 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:45:23 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:45:25 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:45:50 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:45:52 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:46:15 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:46:17 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 15:48:03 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 15:48:05 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 16:27:36 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ClientiDataSetTableAdapters.ClientiTableAdapter.Fill(ClientiDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\ClientiDataSet.Designer.vb:riga 3781
+   in Hospitality_Solution.RepClienti.RepClienti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\ReportsViewer\RepClienti.vb:riga 52"
+"
+"
+"*** 12/04/2020 - 17:06:33 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 17:06:36 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 17:25:13 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 17:25:17 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 17:28:11 ***"
+"- DESCRIZIONE ERRORE: Errore durante l'elaborazione locale del report."
+"- NOME PROCEDURA:    in Microsoft.Reporting.WinForms.LocalReport.InternalRender(String format, Boolean allowInternalRenderers, String deviceInfo, PageCountMode pageCountMode, CreateAndRegisterStream createStreamCallback, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, PageCountMode pageCountMode, CreateStreamCallback createStream, Warning[]& warnings)
+   in Microsoft.Reporting.WinForms.LocalReport.Render(String format, String deviceInfo, CreateStreamCallback createStream, Warning[]& warnings)
+   in Hospitality_Solution.StampaReports.Esporta(LocalReport report) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 94"
+"
+"
+"*** 12/04/2020 - 17:28:17 ***"
+"- DESCRIZIONE ERRORE: Errore: nessun flusso da stampare."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 137"
+"
+"
+"*** 12/04/2020 - 17:41:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 17:55:28 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:04:46 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:09:17 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:10:26 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:14:18 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:15:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:17:00 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"
+"*** 12/04/2020 - 18:28:28 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1114"
+"
+"

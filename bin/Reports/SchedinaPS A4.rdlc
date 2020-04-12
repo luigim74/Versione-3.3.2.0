@@ -1861,10 +1861,6 @@
           <DataField>CodFisc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Rea">
-          <DataField>Rea</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Iri">
           <DataField>Iri</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1893,6 +1889,10 @@
           <DataField>Nazione</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="RegimeFiscale">
+          <DataField>RegimeFiscale</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Tel">
           <DataField>Tel</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1907,6 +1907,10 @@
         </Field>
         <Field Name="Mail">
           <DataField>Mail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PEC">
+          <DataField>PEC</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Immagine">
@@ -1953,10 +1957,58 @@
           <DataField>IBAN</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="UfficioRea">
+          <DataField>UfficioRea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumeroRea">
+          <DataField>NumeroRea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatoLiquidazioneRea">
+          <DataField>StatoLiquidazioneRea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeIdPaese">
+          <DataField>TiSeIdPaese</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSePartitaIva">
+          <DataField>TiSePartitaIva</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeCodiceFiscale">
+          <DataField>TiSeCodiceFiscale</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeDenominazione">
+          <DataField>TiSeDenominazione</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeNome">
+          <DataField>TiSeNome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeCognome">
+          <DataField>TiSeCognome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeTitolo">
+          <DataField>TiSeTitolo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TiSeCodiceEORI">
+          <DataField>TiSeCodiceEORI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SoggettoEmittente">
+          <DataField>SoggettoEmittente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\HospitalityDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>Azienda</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -2080,7 +2132,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\HospitalityDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>SchedinePS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

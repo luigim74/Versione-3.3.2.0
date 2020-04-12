@@ -15,7 +15,7 @@ Public Class RepCamere
    Dim nomeStampante As String
    Dim nomeReport As String
 
-   Public Sub New(ByVal ds As HospitalityDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
+   Public Sub New(ByVal ds As CamereDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
          ' La chiamata è richiesta dalla finestra di progettazione.
          InitializeComponent()
@@ -51,7 +51,7 @@ Public Class RepCamere
          ImpostaIcona(Me)
 
          ' Carica i dati delle rispettive tabelle.
-         Me.CamereTableAdapter.Fill(Me.HospitalityDataSet.Camere)
+         Me.CamereTableAdapter.Fill(Me.CamereDataSet.Camere)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)

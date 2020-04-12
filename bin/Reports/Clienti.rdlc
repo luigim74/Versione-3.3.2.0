@@ -271,6 +271,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -297,7 +298,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
-        <DataSetName>Clienti</DataSetName>
+        <DataSetName>ClientiDataSet</DataSetName>
         <Top>0.14111cm</Top>
         <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
@@ -866,18 +867,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="Dataset1">
+    <DataSource Name="ClientiDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>79795ccd-6f5f-45f5-bb18-36a0e1747786</rd:DataSourceID>
+      <rd:DataSourceID>48e3abfb-d41b-43b4-90d7-fa791e323716</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Clienti">
+    <DataSet Name="ClientiDataSet">
       <Query>
-        <DataSourceName>Dataset1</DataSourceName>
+        <DataSourceName>ClientiDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1123,8 +1124,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>AnagraficheDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\AnagraficheDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>ClientiDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\ClientiDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Clienti</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

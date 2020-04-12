@@ -170,7 +170,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
-        <DataSetName>AccessoriServizi</DataSetName>
+        <DataSetName>AccessoriServiziDataSet</DataSetName>
         <Top>0.14111cm</Top>
         <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
@@ -615,18 +615,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="HospitalityDataSet">
+    <DataSource Name="AccessoriServiziDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>06f118dc-a342-4157-bc06-ad3c324e9199</rd:DataSourceID>
+      <rd:DataSourceID>dd0b3db0-65fe-4fb3-b464-98f4d7d123b5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="AccessoriServizi">
+    <DataSet Name="AccessoriServiziDataSet">
       <Query>
-        <DataSourceName>HospitalityDataSet</DataSourceName>
+        <DataSourceName>AccessoriServiziDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -672,8 +672,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>AccessoriServiziDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\AccessoriServiziDataSet.xsd</rd:SchemaPath>
         <rd:TableName>AccessoriServizi</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
