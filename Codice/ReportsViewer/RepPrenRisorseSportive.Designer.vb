@@ -41,14 +41,14 @@ Partial Class RepPrenRisorseSportive
       'ReportViewer1
       '
       Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-      ReportDataSource1.Name = "PreRisorseSportiveDataSet"
+      ReportDataSource1.Name = "PrenRisorseSportiveDataSet"
       ReportDataSource1.Value = Me.PrenRisorseBindingSource
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
       Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Hospitality_Solution.PrenRisorseSportive.rdlc"
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
       Me.ReportViewer1.ServerReport.BearerToken = Nothing
-      Me.ReportViewer1.Size = New System.Drawing.Size(816, 466)
+      Me.ReportViewer1.Size = New System.Drawing.Size(832, 482)
       Me.ReportViewer1.TabIndex = 1
       '
       'PrenRisorseSportiveDataSet
@@ -69,7 +69,7 @@ Partial Class RepPrenRisorseSportive
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(816, 466)
+      Me.ClientSize = New System.Drawing.Size(832, 482)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepPrenRisorseSportive"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

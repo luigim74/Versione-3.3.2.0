@@ -185,7 +185,7 @@
   <Width>7.31578in</Width>
   <Page>
     <PageHeader>
-      <Height>11.62496cm</Height>
+      <Height>11.57204cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -684,7 +684,7 @@
           <KeepTogether>true</KeepTogether>
           <Top>9.99cm</Top>
           <Left>1.4913cm</Left>
-          <Height>1.40565cm</Height>
+          <Height>1.45857cm</Height>
           <Width>15.91127cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
@@ -1826,18 +1826,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="HospitalityDataSet1">
+    <DataSource Name="SchedinaPSDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>767c1cbe-a12b-404b-8084-9adf85e6a21a</rd:DataSourceID>
+      <rd:DataSourceID>53c8239e-5d59-4e8b-a058-7d8fd4244eab</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Azienda">
       <Query>
-        <DataSourceName>HospitalityDataSet1</DataSourceName>
+        <DataSourceName>SchedinaPSDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2007,17 +2007,89 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\HospitalityDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>SchedinaPSDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\SchedinaPSDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Azienda</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>AziendaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="ComponentiSchedinePS">
+      <Query>
+        <DataSourceName>SchedinaPSDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RifPren">
+          <DataField>RifPren</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CodiceCliente">
+          <DataField>CodiceCliente</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cognome">
+          <DataField>Cognome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sesso">
+          <DataField>Sesso</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataNascita">
+          <DataField>DataNascita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LuogoNascita">
+          <DataField>LuogoNascita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProvNascita">
+          <DataField>ProvNascita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatoNascita">
+          <DataField>StatoNascita</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cittadinanza">
+          <DataField>Cittadinanza</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Permanenza">
+          <DataField>Permanenza</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataArrivo">
+          <DataField>DataArrivo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TipoAlloggiato">
+          <DataField>TipoAlloggiato</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>SchedinaPSDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\SchedinaPSDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>ComponentiSchedinePS</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ComponentiSchedinePSTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
     <DataSet Name="SchedinePS">
       <Query>
-        <DataSourceName>HospitalityDataSet1</DataSourceName>
+        <DataSourceName>SchedinaPSDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2131,89 +2203,17 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\HospitalityDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>SchedinaPSDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\SchedinaPSDataSet.xsd</rd:SchemaPath>
         <rd:TableName>SchedinePS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>SchedinePSTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="ComponentiSchedinePS">
-      <Query>
-        <DataSourceName>HospitalityDataSet1</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RifPren">
-          <DataField>RifPren</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CodiceCliente">
-          <DataField>CodiceCliente</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Cognome">
-          <DataField>Cognome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nome">
-          <DataField>Nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Sesso">
-          <DataField>Sesso</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DataNascita">
-          <DataField>DataNascita</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LuogoNascita">
-          <DataField>LuogoNascita</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ProvNascita">
-          <DataField>ProvNascita</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StatoNascita">
-          <DataField>StatoNascita</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cittadinanza">
-          <DataField>Cittadinanza</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Permanenza">
-          <DataField>Permanenza</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DataArrivo">
-          <DataField>DataArrivo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TipoAlloggiato">
-          <DataField>TipoAlloggiato</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>ComponentiSchedinePS</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ComponentiSchedinePSTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="Clienti">
       <Query>
-        <DataSourceName>HospitalityDataSet1</DataSourceName>
+        <DataSourceName>SchedinaPSDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2389,6 +2389,10 @@
           <DataField>Email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="PEC">
+          <DataField>PEC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Internet">
           <DataField>Internet</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2449,10 +2453,14 @@
           <DataField>NumeroDoc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CodiceDestinatario">
+          <DataField>CodiceDestinatario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>HospitalityDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\HospitalityDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>SchedinaPSDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\DataSet\SchedinaPSDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Clienti</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

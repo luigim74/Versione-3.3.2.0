@@ -2146,6 +2146,8 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_StrumentiDocumenti.Visible = True
 
       ' Stampa.
+      g_frmMain.eui_Strumenti_Documenti_Scontrino.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Sep.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True

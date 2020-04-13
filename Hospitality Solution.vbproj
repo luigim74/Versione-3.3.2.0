@@ -530,6 +530,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\SchedinaPSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedinaPSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\SchedinePSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -627,12 +632,6 @@
     </Compile>
     <Compile Include="Codice\DataSet\HospitalityDataSet.vb">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Codice\DataSet\HospitalityDataSet1.Designer.vb">
-      <DependentUpon>HospitalityDataSet1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Codice\DataSet\HospitalityDataSet1.vb">
-      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Codice\DataSet\IstatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1414,15 +1413,6 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Codice\DataSet\HospitalityDataSet1.xsc">
-      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Codice\DataSet\HospitalityDataSet1.xsd">
-      <LastGenOutput>HospitalityDataSet11.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Codice\DataSet\HospitalityDataSet1.xss">
-      <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Codice\DataSet\FornitoriDataSet.xsc">
       <DependentUpon>FornitoriDataSet.xsd</DependentUpon>
     </None>
@@ -1510,6 +1500,17 @@
     </None>
     <None Include="Codice\DataSet\ProvaDataSet.xss">
       <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\SchedinaPSDataSet.xsc">
+      <DependentUpon>SchedinaPSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\SchedinaPSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SchedinaPSDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\SchedinaPSDataSet.xss">
+      <DependentUpon>SchedinaPSDataSet.xsd</DependentUpon>
     </None>
     <None Include="Codice\DataSet\SchedinePSDataSet.xsc">
       <DependentUpon>SchedinePSDataSet.xsd</DependentUpon>

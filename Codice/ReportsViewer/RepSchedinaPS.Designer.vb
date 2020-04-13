@@ -29,19 +29,19 @@ Partial Class RepSchedinaPS
       Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-      Me.HospitalityDataSet1 = New HospitalityDataSet1()
+      Me.SchedinaPSDataSet = New SchedinaPSDataSet()
       Me.AziendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.AziendaTableAdapter = New HospitalityDataSet1TableAdapters.AziendaTableAdapter()
-      Me.SchedinePSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.SchedinePSTableAdapter = New HospitalityDataSet1TableAdapters.SchedinePSTableAdapter()
+      Me.AziendaTableAdapter = New SchedinaPSDataSetTableAdapters.AziendaTableAdapter()
       Me.ComponentiSchedinePSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.ComponentiSchedinePSTableAdapter = New HospitalityDataSet1TableAdapters.ComponentiSchedinePSTableAdapter()
+      Me.ComponentiSchedinePSTableAdapter = New SchedinaPSDataSetTableAdapters.ComponentiSchedinePSTableAdapter()
+      Me.SchedinePSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+      Me.SchedinePSTableAdapter = New SchedinaPSDataSetTableAdapters.SchedinePSTableAdapter()
       Me.ClientiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-      Me.ClientiTableAdapter = New HospitalityDataSet1TableAdapters.ClientiTableAdapter()
-      CType(Me.HospitalityDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.ClientiTableAdapter = New SchedinaPSDataSetTableAdapters.ClientiTableAdapter()
+      CType(Me.SchedinaPSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.SchedinePSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.ComponentiSchedinePSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.SchedinePSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -55,10 +55,10 @@ Partial Class RepSchedinaPS
       Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
       ReportDataSource1.Name = "Azienda"
       ReportDataSource1.Value = Me.AziendaBindingSource
-      ReportDataSource2.Name = "SchedinePS"
-      ReportDataSource2.Value = Me.SchedinePSBindingSource
-      ReportDataSource3.Name = "ComponentiSchedinePS"
-      ReportDataSource3.Value = Me.ComponentiSchedinePSBindingSource
+      ReportDataSource2.Name = "ComponentiSchedinePS"
+      ReportDataSource2.Value = Me.ComponentiSchedinePSBindingSource
+      ReportDataSource3.Name = "SchedinePS"
+      ReportDataSource3.Value = Me.SchedinePSBindingSource
       ReportDataSource4.Name = "Clienti"
       ReportDataSource4.Value = Me.ClientiBindingSource
       Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
@@ -69,45 +69,45 @@ Partial Class RepSchedinaPS
       Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
       Me.ReportViewer1.Name = "ReportViewer1"
       Me.ReportViewer1.ServerReport.BearerToken = Nothing
-      Me.ReportViewer1.Size = New System.Drawing.Size(904, 554)
+      Me.ReportViewer1.Size = New System.Drawing.Size(920, 570)
       Me.ReportViewer1.TabIndex = 1
       '
-      'HospitalityDataSet1
+      'SchedinaPSDataSet
       '
-      Me.HospitalityDataSet1.DataSetName = "HospitalityDataSet1"
-      Me.HospitalityDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+      Me.SchedinaPSDataSet.DataSetName = "SchedinaPSDataSet"
+      Me.SchedinaPSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
       '
       'AziendaBindingSource
       '
       Me.AziendaBindingSource.DataMember = "Azienda"
-      Me.AziendaBindingSource.DataSource = Me.HospitalityDataSet1
+      Me.AziendaBindingSource.DataSource = Me.SchedinaPSDataSet
       '
       'AziendaTableAdapter
       '
       Me.AziendaTableAdapter.ClearBeforeFill = True
       '
-      'SchedinePSBindingSource
-      '
-      Me.SchedinePSBindingSource.DataMember = "SchedinePS"
-      Me.SchedinePSBindingSource.DataSource = Me.HospitalityDataSet1
-      '
-      'SchedinePSTableAdapter
-      '
-      Me.SchedinePSTableAdapter.ClearBeforeFill = True
-      '
       'ComponentiSchedinePSBindingSource
       '
       Me.ComponentiSchedinePSBindingSource.DataMember = "ComponentiSchedinePS"
-      Me.ComponentiSchedinePSBindingSource.DataSource = Me.HospitalityDataSet1
+      Me.ComponentiSchedinePSBindingSource.DataSource = Me.SchedinaPSDataSet
       '
       'ComponentiSchedinePSTableAdapter
       '
       Me.ComponentiSchedinePSTableAdapter.ClearBeforeFill = True
       '
+      'SchedinePSBindingSource
+      '
+      Me.SchedinePSBindingSource.DataMember = "SchedinePS"
+      Me.SchedinePSBindingSource.DataSource = Me.SchedinaPSDataSet
+      '
+      'SchedinePSTableAdapter
+      '
+      Me.SchedinePSTableAdapter.ClearBeforeFill = True
+      '
       'ClientiBindingSource
       '
       Me.ClientiBindingSource.DataMember = "Clienti"
-      Me.ClientiBindingSource.DataSource = Me.HospitalityDataSet1
+      Me.ClientiBindingSource.DataSource = Me.SchedinaPSDataSet
       '
       'ClientiTableAdapter
       '
@@ -117,15 +117,15 @@ Partial Class RepSchedinaPS
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(904, 554)
+      Me.ClientSize = New System.Drawing.Size(920, 570)
       Me.Controls.Add(Me.ReportViewer1)
       Me.Name = "RepSchedinaPS"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Anteprima di stampa"
-      CType(Me.HospitalityDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.SchedinaPSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.AziendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.SchedinePSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.ComponentiSchedinePSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.SchedinePSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
@@ -134,12 +134,12 @@ Partial Class RepSchedinaPS
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
    Friend WithEvents AziendaBindingSource As BindingSource
-   Friend WithEvents HospitalityDataSet1 As HospitalityDataSet1
-   Friend WithEvents SchedinePSBindingSource As BindingSource
+   Friend WithEvents SchedinaPSDataSet As SchedinaPSDataSet
    Friend WithEvents ComponentiSchedinePSBindingSource As BindingSource
+   Friend WithEvents SchedinePSBindingSource As BindingSource
    Friend WithEvents ClientiBindingSource As BindingSource
-   Friend WithEvents AziendaTableAdapter As HospitalityDataSet1TableAdapters.AziendaTableAdapter
-   Friend WithEvents SchedinePSTableAdapter As HospitalityDataSet1TableAdapters.SchedinePSTableAdapter
-   Friend WithEvents ComponentiSchedinePSTableAdapter As HospitalityDataSet1TableAdapters.ComponentiSchedinePSTableAdapter
-   Friend WithEvents ClientiTableAdapter As HospitalityDataSet1TableAdapters.ClientiTableAdapter
+   Friend WithEvents AziendaTableAdapter As SchedinaPSDataSetTableAdapters.AziendaTableAdapter
+   Friend WithEvents ComponentiSchedinePSTableAdapter As SchedinaPSDataSetTableAdapters.ComponentiSchedinePSTableAdapter
+   Friend WithEvents SchedinePSTableAdapter As SchedinaPSDataSetTableAdapters.SchedinePSTableAdapter
+   Friend WithEvents ClientiTableAdapter As SchedinaPSDataSetTableAdapters.ClientiTableAdapter
 End Class

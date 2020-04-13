@@ -15,7 +15,7 @@ Public Class RepSchedinaPS
    Dim nomeStampante As String
    Dim nomeReport As String
 
-   Public Sub New(ByVal ds As DataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
+   Public Sub New(ByVal ds As SchedinaPSDataSet, ByVal nomeDoc As String, ByVal percorsoNomeStampante As String)
       Try
          ' La chiamata è richiesta dalla finestra di progettazione.
          InitializeComponent()
@@ -57,10 +57,10 @@ Public Class RepSchedinaPS
          ' Imposta le dimensioni del form.
          FormResize(REPORTS_LARGHEZZA, REPORTS_ALTEZZA)
 
-         Me.AziendaTableAdapter.Fill(Me.HospitalityDataSet1.Azienda)
-         Me.SchedinePSTableAdapter.Fill(Me.HospitalityDataSet1.SchedinePS)
-         Me.ComponentiSchedinePSTableAdapter.Fill(Me.HospitalityDataSet1.ComponentiSchedinePS)
-         Me.ClientiTableAdapter.Fill(Me.HospitalityDataSet1.Clienti)
+         Me.AziendaTableAdapter.Fill(Me.SchedinaPSDataSet.Azienda)
+         Me.SchedinePSTableAdapter.Fill(Me.SchedinaPSDataSet.SchedinePS)
+         Me.ComponentiSchedinePSTableAdapter.Fill(Me.SchedinaPSDataSet.ComponentiSchedinePS)
+         Me.ClientiTableAdapter.Fill(Me.SchedinaPSDataSet.Clienti)
 
          ' Impostazioni per l'anteprima di stampa.
          Me.ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)

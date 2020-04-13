@@ -1099,7 +1099,7 @@ Public Class ElencoSchedinePS
          ' Tabella SchedinePS.
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & TAB_SCHEDINE & " WHERE Id = " & idDocumento, cn)
-         Dim ds As New HospitalityDataSet1
+         Dim ds As New SchedinaPSDataSet
          ds.Clear()
          oleAdapter.Fill(ds, TAB_SCHEDINE)
 
@@ -1190,6 +1190,8 @@ Public Class ElencoSchedinePS
       g_frmMain.eui_StrumentiDocumenti.Visible = True
 
       ' Stampa.
+      g_frmMain.eui_Strumenti_Documenti_Scontrino.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Sep.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = False
