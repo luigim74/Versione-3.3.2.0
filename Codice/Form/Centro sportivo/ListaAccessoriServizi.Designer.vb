@@ -37,6 +37,7 @@ Partial Class ListaAccessoriServizi
       '
       Me.lvwAccessoriServizi.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
       Me.lvwAccessoriServizi.FullRowSelect = True
+      Me.lvwAccessoriServizi.HideSelection = False
       Me.lvwAccessoriServizi.Location = New System.Drawing.Point(0, 0)
       Me.lvwAccessoriServizi.MultiSelect = False
       Me.lvwAccessoriServizi.Name = "lvwAccessoriServizi"
@@ -93,7 +94,7 @@ Partial Class ListaAccessoriServizi
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(410, 477)
+      Me.ClientSize = New System.Drawing.Size(410, 473)
       Me.Controls.Add(Me.eui_cmdInserisci)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.lvwAccessoriServizi)

@@ -691,3 +691,82 @@
    in Hospitality_Solution.frmMain.eui_PCamere_PrenSchedina_Click(Object sender, EventArgs e)"
 "
 "
+"*** 16/04/2020 - 16:43:42 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 16:43:53 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 17:06:58 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"
+"*** 16/04/2020 - 17:28:27 ***"
+"- DESCRIZIONE ERRORE: NumerUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 17:28:44 ***"
+"- DESCRIZIONE ERRORE: NumerUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiVariazione(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 17:29:53 ***"
+"- DESCRIZIONE ERRORE: NumerUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 17:52:25 ***"
+"- DESCRIZIONE ERRORE: NumeroUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 17:52:40 ***"
+"- DESCRIZIONE ERRORE: NumeroUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiVariazione(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 18:02:26 ***"
+"- DESCRIZIONE ERRORE: NumeroUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 18:02:45 ***"
+"- DESCRIZIONE ERRORE: NumeroUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiPiatto(String tabella, Int32 codice)"
+"
+"
+"*** 16/04/2020 - 18:02:51 ***"
+"- DESCRIZIONE ERRORE: NumeroUscita"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmPos.LeggiDatiVariazione(String tabella, Int32 codice)"
+"
+"
