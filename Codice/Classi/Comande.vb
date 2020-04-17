@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2005
+' Data ultima modifica: 17/04/2020
+' Descrizione:          Classe per la gestione dei dati con il database.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class Comande
@@ -18,6 +33,7 @@ Public Class Comande
    Public Offerta As String
    Public NumeroConto As String
    Public AliquotaIva As String
+   Public NumeroUscita As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -127,6 +143,12 @@ Public Class Comande
             Else
                Me.NumeroConto = String.Empty
             End If
+            ' Numero Uscita.
+            If IsDBNull(dr.Item("NumeroUscita")) = False Then
+               Me.NumeroUscita = dr.Item("NumeroUscita").ToString
+            Else
+               Me.NumeroUscita = "1"
+            End If
             ' Aliquota Iva.
             If IsDBNull(dr.Item("AliquotaIva")) = False Then
                Me.AliquotaIva = dr.Item("AliquotaIva").ToString
@@ -231,6 +253,7 @@ Public Class Comande
                lst.Items(i).SubItems.Add(String.Empty)
             End If
 
+            ' Numero Conto 
             lst.Items(i).SubItems.Add(dr.Item("Id").ToString)
 
             ' Aliquota Iva.
@@ -238,6 +261,13 @@ Public Class Comande
                lst.Items(i).SubItems.Add(dr.Item("AliquotaIva").ToString)
             Else
                lst.Items(i).SubItems.Add(String.Empty)
+            End If
+
+            ' Numero Uscita.
+            If IsDBNull(dr.Item("NumeroUscita")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("NumeroUscita").ToString)
+            Else
+               lst.Items(i).SubItems.Add("1")
             End If
 
             If dr.Item("Inviata").ToString = "Sì" Then
@@ -257,6 +287,15 @@ Public Class Comande
                lst.Items(i).ForeColor = Color.White
                lst.Items(i).Font = New Font(FontFamily.GenericSansSerif, 10, FontStyle.Strikeout)
             End If
+
+            ' Stabilisce il gruppo di appartenenza. Uscita 1, 2, 3, 4, 5.
+            If IsDBNull(dr.Item("NumeroUscita")) = False Then
+               lst.Items(lst.Items.Count - 1).Group = lst.Groups.Item(Convert.ToInt32(dr.Item("NumeroUscita")) - 1)
+            Else
+               lst.Items(i).SubItems.Add("1")
+            End If
+
+            ' Contatore.
             i = i + 1
 
             Caricati = True
@@ -357,6 +396,7 @@ Public Class Comande
                lst.Items(i).SubItems.Add(String.Empty)
             End If
 
+            ' Numero conto.
             lst.Items(i).SubItems.Add(dr.Item("Id").ToString)
 
             ' Aliquota Iva.
@@ -383,6 +423,15 @@ Public Class Comande
                lst.Items(i).ForeColor = Color.White
                lst.Items(i).Font = New Font(FontFamily.GenericSansSerif, 10, FontStyle.Strikeout)
             End If
+
+            ' Stabilisce il gruppo di appartenenza. Uscita 1, 2, 3, 4, 5.
+            If IsDBNull(dr.Item("NumeroUscita")) = False Then
+               lst.Items(lst.Items.Count - 1).Group = lst.Groups.Item(Convert.ToInt32(dr.Item("NumeroUscita")) - 1)
+            Else
+               lst.Items(i).SubItems.Add("1")
+            End If
+
+            ' Contatore.
             i = i + 1
 
             Caricati = True
@@ -410,8 +459,10 @@ Public Class Comande
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreUnitario, ImportoNetto, IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, AliquotaIva) " &
-                                       "VALUES(@IdRisorsa, @Risorsa, @Cameriere, @Coperti, @Descrizione, @Quantità, @ValoreUnitario, @ImportoNetto, @IdPiatto, @CategoriaPiatto, @Reparto, @Inviata, @Esclusa, @Offerta, @NumeroConto, @AliquotaIva)", tabella)
+         sql = String.Format("INSERT INTO {0} (IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreUnitario, ImportoNetto, 
+                                               IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, AliquotaIva, NumeroUscita) " &
+                                       "VALUES(@IdRisorsa, @Risorsa, @Cameriere, @Coperti, @Descrizione, @Quantità, @ValoreUnitario, @ImportoNetto, 
+                                               @IdPiatto, @CategoriaPiatto, @Reparto, @Inviata, @Esclusa, @Offerta, @NumeroConto, @AliquotaIva, @NumeroUscita)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -432,6 +483,7 @@ Public Class Comande
          cmdInsert.Parameters.AddWithValue("@Offerta", Me.Offerta)
          cmdInsert.Parameters.AddWithValue("@NumeroConto", Me.NumeroConto)
          cmdInsert.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
+         cmdInsert.Parameters.AddWithValue("@NumeroUscita", Me.NumeroUscita)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -484,7 +536,8 @@ Public Class Comande
                              "Esclusa = @Esclusa, " &
                              "Offerta = @Offerta, " &
                              "NumeroConto = @NumeroConto, " &
-                             "AliquotaIva = @AliquotaIva " &
+                             "AliquotaIva = @AliquotaIva, " &
+                             "NumeroUscita = @NumeroUscita " &
                              "WHERE IdRisorsa = {1}",
                              tabella,
                              codRisorsa)
@@ -508,6 +561,7 @@ Public Class Comande
          cmdUpdate.Parameters.AddWithValue("@Offerta", Me.Offerta)
          cmdUpdate.Parameters.AddWithValue("@NumeroConto", Me.NumeroConto)
          cmdUpdate.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
+         cmdUpdate.Parameters.AddWithValue("@NumeroUscita", Me.NumeroUscita)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

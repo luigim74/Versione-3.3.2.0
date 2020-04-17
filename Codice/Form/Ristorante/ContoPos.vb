@@ -3865,6 +3865,12 @@ Public Class ContoPos
             .SospesoIncassare = CFormatta.FormattaNumeroDouble(valSospeso)
             .TotDoc = CFormatta.FormattaNumeroDouble(Convert.ToDouble(valDaPagare))
 
+            ' SCHEDA PA.
+            .NumeroDoc_PA = String.Empty
+            .CodiceCUP_PA = String.Empty
+            .CodiceCIG_PA = String.Empty
+            .CodiceCommConv_PA = String.Empty
+
             ' Aliquote Iva.
             .AliquotaIvaRep1 = VALORE_ZERO
             .AliquotaIvaRep2 = VALORE_ZERO
@@ -5377,6 +5383,7 @@ Public Class ContoPos
                .Offerta = g_frmPos.lstvDettagli.Items(i).SubItems(10).Text
                .AliquotaIva = g_frmPos.lstvDettagli.Items(i).SubItems(12).Text
                .NumeroConto = numConto
+               .NumeroUscita = g_frmPos.lstvDettagli.Items(i).SubItems(13).Text
 
                .InserisciDati(TAB_COMANDE)
             Next

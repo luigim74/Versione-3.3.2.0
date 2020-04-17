@@ -37,8 +37,9 @@ Public Class ModificaPiattoPOS
    Private op2 As Double = 0
 
    Private NumListino As Short
-
+   Public NumUscita As Short
    Public aliquotaIvaPiatto As String
+   Friend WithEvents eui_cmdUscita As Elegant.Ui.Button
 
    Public Enum Listino As Short
       Uno = 1
@@ -47,10 +48,18 @@ Public Class ModificaPiattoPOS
       Quattro = 4
    End Enum
 
+   Public Enum Uscita As Short
+      Uno = 1
+      Due = 2
+      Tre = 3
+      Quattro = 4
+      Cinque = 5
+   End Enum
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New(ByVal idPiatto As String, ByVal quantità As String, ByVal descrizione As String, ByVal prezzo As String, ByVal totPrezzo As String, ByVal aliquotaIva As String)
+   Public Sub New(ByVal idPiatto As String, ByVal quantità As String, ByVal descrizione As String, ByVal prezzo As String,
+                  ByVal totPrezzo As String, ByVal aliquotaIva As String, ByVal numeroUscita As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
@@ -64,6 +73,7 @@ Public Class ModificaPiattoPOS
       eui_txtPrezzo.Text = CFormatta.FormattaEuro(prezzo)
       netBtn_Totale.TextButton = CFormatta.FormattaEuro(totPrezzo)
       aliquotaIvaPiatto = aliquotaIva
+      NumUscita = Convert.ToInt32(numeroUscita)
 
    End Sub
 
@@ -162,6 +172,7 @@ Public Class ModificaPiattoPOS
       Me.eui_txtPrezzo = New Elegant.Ui.TextBox()
       Me.netBtn_Totale = New Softgroup.NetButton.NetButton()
       Me.NetButton1 = New Softgroup.NetButton.NetButton()
+      Me.eui_cmdUscita = New Elegant.Ui.Button()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
@@ -190,7 +201,7 @@ Public Class ModificaPiattoPOS
       Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
       Me.eui_cmdTastiera.Size = New System.Drawing.Size(80, 53)
       Me.eui_cmdTastiera.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdTastiera.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdTastiera.TabIndex = 24
+      Me.eui_cmdTastiera.TabIndex = 25
       Me.eui_cmdTastiera.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
       'eui_cmdAnnulla
@@ -198,10 +209,10 @@ Public Class ModificaPiattoPOS
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdAnnulla.Id = "712effff-0d29-4d2b-9a14-29e9c9177fae"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(359, 368)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(361, 368)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
-      Me.eui_cmdAnnulla.TabIndex = 26
+      Me.eui_cmdAnnulla.TabIndex = 27
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
       'eui_cmdOk
@@ -212,27 +223,27 @@ Public Class ModificaPiattoPOS
       Me.eui_cmdOk.Location = New System.Drawing.Point(215, 368)
       Me.eui_cmdOk.Name = "eui_cmdOk"
       Me.eui_cmdOk.Size = New System.Drawing.Size(128, 53)
-      Me.eui_cmdOk.TabIndex = 25
+      Me.eui_cmdOk.TabIndex = 26
       Me.eui_cmdOk.Text = "&OK"
       '
       'eui_cmdListino
       '
       Me.eui_cmdListino.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdListino.Id = "5cd40801-a389-44fd-8a4a-145cef3be2d0"
-      Me.eui_cmdListino.Location = New System.Drawing.Point(361, 228)
+      Me.eui_cmdListino.Location = New System.Drawing.Point(361, 241)
       Me.eui_cmdListino.Name = "eui_cmdListino"
-      Me.eui_cmdListino.Size = New System.Drawing.Size(128, 53)
-      Me.eui_cmdListino.TabIndex = 22
+      Me.eui_cmdListino.Size = New System.Drawing.Size(128, 51)
+      Me.eui_cmdListino.TabIndex = 23
       Me.eui_cmdListino.Text = "&Listino 1"
       '
       'eui_cmdIva
       '
       Me.eui_cmdIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmdIva.Id = "4f7025a2-09b4-4c5c-a6bc-ca41ff96dc20"
-      Me.eui_cmdIva.Location = New System.Drawing.Point(361, 291)
+      Me.eui_cmdIva.Location = New System.Drawing.Point(361, 293)
       Me.eui_cmdIva.Name = "eui_cmdIva"
-      Me.eui_cmdIva.Size = New System.Drawing.Size(128, 53)
-      Me.eui_cmdIva.TabIndex = 23
+      Me.eui_cmdIva.Size = New System.Drawing.Size(128, 51)
+      Me.eui_cmdIva.TabIndex = 24
       Me.eui_cmdIva.Text = "&IVA"
       '
       'eui_cmdIngredienti
@@ -241,7 +252,7 @@ Public Class ModificaPiattoPOS
       Me.eui_cmdIngredienti.Id = "78044281-2e71-4b81-ba15-d1e704df97e7"
       Me.eui_cmdIngredienti.Location = New System.Drawing.Point(361, 137)
       Me.eui_cmdIngredienti.Name = "eui_cmdIngredienti"
-      Me.eui_cmdIngredienti.Size = New System.Drawing.Size(128, 53)
+      Me.eui_cmdIngredienti.Size = New System.Drawing.Size(128, 51)
       Me.eui_cmdIngredienti.TabIndex = 21
       Me.eui_cmdIngredienti.Text = "Ig&redienti"
       '
@@ -631,12 +642,23 @@ Public Class ModificaPiattoPOS
       Me.NetButton1.TabIndex = 314
       Me.NetButton1.TextButton = "€"
       '
+      'eui_cmdUscita
+      '
+      Me.eui_cmdUscita.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmdUscita.Id = "04e05694-a9ca-4522-bc75-152199bd5a9a"
+      Me.eui_cmdUscita.Location = New System.Drawing.Point(361, 189)
+      Me.eui_cmdUscita.Name = "eui_cmdUscita"
+      Me.eui_cmdUscita.Size = New System.Drawing.Size(128, 51)
+      Me.eui_cmdUscita.TabIndex = 22
+      Me.eui_cmdUscita.Text = "&Uscita 1"
+      '
       'ModificaPiattoPOS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(495, 429)
+      Me.ClientSize = New System.Drawing.Size(508, 438)
+      Me.Controls.Add(Me.eui_cmdUscita)
       Me.Controls.Add(Me.NetButton1)
       Me.Controls.Add(Me.netBtn_Totale)
       Me.Controls.Add(Me.eui_txtPrezzo)
@@ -879,10 +901,42 @@ Public Class ModificaPiattoPOS
       End Try
    End Sub
 
+   Private Sub ApplicaUscita(ByVal numeroUscita As String)
+      Try
+         eui_cmdUscita.Text = numeroUscita
+
+         Select Case numeroUscita
+            Case "Uscita 1"
+               NumUscita = Uscita.Uno
+
+            Case "Uscita 2"
+               NumUscita = Uscita.Due
+
+            Case "Uscita 3"
+               NumUscita = Uscita.Tre
+
+            Case "Uscita 4"
+               NumUscita = Uscita.Quattro
+
+            Case "Uscita 5"
+               NumUscita = Uscita.Cinque
+
+         End Select
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub ModificaPiattoPOS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
+
+         ' Imposta il numero di uscita.
+         eui_cmdUscita.Text = "Uscita " & NumUscita.ToString
 
          ' Applica il listino.
          NumListino = Listino.Uno
@@ -1257,4 +1311,22 @@ Public Class ModificaPiattoPOS
       End Try
 
    End Sub
+
+   Private Sub Eui_cmdUscita_Click(sender As Object, e As EventArgs) Handles eui_cmdUscita.Click
+      Try
+         ' Riproduce un effetto sonoro.
+         RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
+
+         Dim frm As New NumeroUscitePOS
+         If frm.ShowDialog() = DialogResult.OK Then
+            ApplicaUscita(frm.Tag.ToString)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+
+   End Sub
+
 End Class

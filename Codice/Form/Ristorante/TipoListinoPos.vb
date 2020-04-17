@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+
+' **************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/04/2015
+' Data ultima modifica: 17/04/2020
+' Descrizione:          Form per la selezione dell'ordine di uscita del piatto.
+' Note:
+'
+' Elenco Attivita:
+'
+' **************************************************************************************
+
+#End Region
+
 Imports System.IO
 Imports System.Data.OleDb
 
@@ -38,20 +53,9 @@ Public Class TipoListinoPos
 
    'Richiesto da Progettazione Windows Form
    Private components As System.ComponentModel.IContainer
-
-   'NOTA: la procedura che segue è richiesta da Progettazione Windows Form.
-   'Può essere modificata in Progettazione Windows Form.  
-   'Non modificarla nell'editor del codice.
-   Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-   Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
-   Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
    Friend WithEvents pnlPag As System.Windows.Forms.Panel
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-      Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TipoListinoPos))
-      Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-      Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-      Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.pnlPag = New System.Windows.Forms.Panel()
       Me.netBtn_Listino4 = New Softgroup.NetButton.NetButton()
       Me.netBtn_Listino3 = New Softgroup.NetButton.NetButton()
@@ -59,21 +63,8 @@ Public Class TipoListinoPos
       Me.netBtn_Listino1 = New Softgroup.NetButton.NetButton()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_cmdAnnulla = New Elegant.Ui.Button()
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.pnlPag.SuspendLayout()
       Me.SuspendLayout()
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'PrintDialog1
-      '
-      Me.PrintDialog1.Document = Me.PrintDocument1
-      '
-      'PrintDocument1
-      '
-      Me.PrintDocument1.DocumentName = "RFiscale.rpt"
       '
       'pnlPag
       '
@@ -171,12 +162,12 @@ Public Class TipoListinoPos
       Me.eui_cmdAnnulla.TabIndex = 0
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
-      'TipoListinoPos
+      'NumeroUscitaPos
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(369, 277)
+      Me.ClientSize = New System.Drawing.Size(371, 274)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.pnlPag)
       Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -184,10 +175,9 @@ Public Class TipoListinoPos
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.MaximizeBox = False
       Me.MinimizeBox = False
-      Me.Name = "TipoListinoPos"
+      Me.Name = "NumeroUscitaPos"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "TIPO LISTINO"
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.pnlPag.ResumeLayout(False)
       Me.ResumeLayout(False)
 
