@@ -44,7 +44,7 @@ Public Class ImpostazioniPos
    Const TASTO_MODIFICA As String = "Modifica"
    Const TASTO_PIU_1 As String = "+1"
    Const TASTO_MENO_1 As String = "-1"
-   Const TASTO_CONFERMA As String = "Conferma"
+   Const TASTO_CONFERMA As String = "Conferma e invia comanda"
    Const TASTO_CONTO As String = "Conto"
    Const TASTO_C As String = "C"
    Const TASTO_X As String = "X"

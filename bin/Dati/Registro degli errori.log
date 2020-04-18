@@ -1,0 +1,87 @@
+"*** 18/04/2020 - 17:54:51 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.frmPos.InserisciImporto(String importo)"
+"
+"
+"*** 18/04/2020 - 18:08:31 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '-1' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListView.ListViewItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPos.InserisciImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5282
+   in Hospitality_Solution.frmPos.SelezionaImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5238"
+"
+"
+"*** 18/04/2020 - 18:08:45 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '-1' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListView.ListViewItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPos.InserisciImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5282
+   in Hospitality_Solution.frmPos.SelezionaImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5238"
+"
+"
+"*** 18/04/2020 - 18:10:35 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '-1' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListView.ListViewItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPos.InserisciImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5282
+   in Hospitality_Solution.frmPos.SelezionaImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5238"
+"
+"
+"*** 18/04/2020 - 18:19:47 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.frmPos.InserisciImporto(String importo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5299"
+"
+"
+"*** 18/04/2020 - 18:22:29 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:22:32 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:22:34 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:22:34 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:22:51 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:23:28 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '9' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.CaricaListaConto() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 2870"
+"
+"
+"*** 18/04/2020 - 18:24:02 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '8' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmPos.netBtn_Cancella_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5829"
+"
+"

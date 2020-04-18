@@ -2451,7 +2451,25 @@ Module Procedure
 
 #End Region
 
-#Region "Calcoli numerici"
+#Region "Calcoli numerici "
+   Public Function CalcolaImporto(ByVal quantità As Double, ByVal prezzo As Double) As String
+      Try
+         Dim valQuantità As Double = Convert.ToDouble(quantità)
+         Dim valprezzo As Double = Convert.ToDouble(prezzo)
+
+         ' Calcolo l'importo.
+         Dim valImporto As Double = valprezzo * valQuantità
+
+         ' Formatto l'importo con gli zeri decimali.
+         Return CFormatta.FormattaNumeroDouble(valImporto)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
 
    Public Function CalcolaPercentuale(ByVal valNum As Double, ByVal valPerc As Double) As Double
       Try

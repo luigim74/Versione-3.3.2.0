@@ -657,7 +657,7 @@ Public Class ModificaPiattoPOS
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(508, 438)
+      Me.ClientSize = New System.Drawing.Size(496, 428)
       Me.Controls.Add(Me.eui_cmdUscita)
       Me.Controls.Add(Me.NetButton1)
       Me.Controls.Add(Me.netBtn_Totale)
