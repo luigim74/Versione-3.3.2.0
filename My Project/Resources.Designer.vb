@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -558,6 +558,16 @@ Namespace My.Resources
         Friend ReadOnly Property DiscardChanges() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("DiscardChanges", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property FrecciaDestra() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("FrecciaDestra", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

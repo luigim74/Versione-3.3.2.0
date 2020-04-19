@@ -1357,6 +1357,7 @@ Public Class frmVCEsauriti
          Categorie(NumCategorie).Size = New Size(LARGHEZZA_CATEGORIA, altezza)
          Categorie(NumCategorie).ColorBottom = coloreSfondo
          Categorie(NumCategorie).ColorText = coloreTesto
+         Categorie(NumCategorie).ColorDisabled = Color.Orange
          Categorie(NumCategorie).Font = New Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold)
          Categorie(NumCategorie).TextButton = nome
          Categorie(NumCategorie).Tag = componenti
@@ -1368,19 +1369,14 @@ Public Class frmVCEsauriti
             Categorie(NumCategorie).TextButtonAlign = ContentAlignment.BottomCenter
          End If
 
-         'If note = "" Then
-         '   ToolTip1.SetToolTip(Categorie(NumCategorie), "Nessuna nota.")
-         'Else
-         '   ToolTip1.SetToolTip(Categorie(NumCategorie), note)
-         'End If
-
          pnlCategoria.Controls.Add(Categorie(NumCategorie))
-         'Panel1.Controls.Add(Categorie(NumCategorie))
+
+         ' Imposta la selezione per il primo elemento.
+         If NumCategorie = 1 Then
+            Categorie(NumCategorie).Enabled = False
+         End If
 
          AddHandler Categorie(NumCategorie).Click, AddressOf Categorie_Click
-         'AddHandler Categorie(NumCategorie).DoubleClick, AddressOf Categorie_DoubleClick
-         'AddHandler Categorie(NumCategorie).GotFocus, AddressOf Categorie_GotFocus
-
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1687,10 +1683,32 @@ Public Class frmVCEsauriti
       End Try
    End Sub
 
+   Private Sub ImpostaSelezioneCategoria(ByVal categoria As System.Object)
+      Try
+         Dim i As Integer
+         For i = 1 To NumCategorie
+            Categorie(i).Enabled = True
+         Next
+
+         CType(categoria, NetButton).Enabled = False
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
    Private Sub Categorie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       Try
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         ImpostaSelezioneCategoria(sender)
 
          pnlPiatti.Controls.Clear()
          NumPiatti = 0
@@ -1701,6 +1719,9 @@ Public Class frmVCEsauriti
          NumVariazioni = 0
 
          LeggiDatiVariazioni(TAB_PIATTI, CType(sender, NetButton).TextButton)
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file

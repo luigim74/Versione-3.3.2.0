@@ -1185,12 +1185,18 @@ Public Class DivisioneContoPOS
          Conti(NumConti).CornerRadius = 2
          Conti(NumConti).ColorBottom = Color.Black
          Conti(NumConti).ColorText = Color.White
+         Conti(NumConti).ColorDisabled = Color.Orange
          Conti(NumConti).Font = New Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold)
          Conti(NumConti).TextButtonAlign = ContentAlignment.MiddleCenter
          Conti(NumConti).TextButton = nome
          Conti(NumConti).Tag = val
 
          pnlConti.Controls.Add(Conti(NumConti))
+
+         ' Imposta la selezione per il primo elemento.
+         If NumConti = 1 Then
+            Conti(NumConti).Enabled = False
+         End If
 
          AddHandler Conti(NumConti).Click, AddressOf Conti_Click
 
@@ -1363,10 +1369,32 @@ Public Class DivisioneContoPOS
       End Try
    End Sub
 
+   Private Sub ImpostaSelezioneConti(ByVal conto As System.Object)
+      Try
+         Dim i As Integer
+         For i = 1 To NumConti
+            Conti(i).Enabled = True
+         Next
+
+         CType(conto, NetButton).Enabled = False
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
    Private Sub Conti_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
       Try
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         ImpostaSelezioneConti(sender)
 
          lblConto.Text = CType(sender, NetButton).TextButton
 
@@ -1374,6 +1402,9 @@ Public Class DivisioneContoPOS
 
          CalcolaTotaleConto()
          CalcolaTotaleQtà()
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file

@@ -2326,6 +2326,7 @@
     <Content Include="bin\Reports\RicevutaKubeII.rpt.txt" />
     <Content Include="bin\Reports\Scontrino RT.txt" />
     <Content Include="Codice\ReportsViewer\Istruzioni per creare un Report.txt" />
+    <Content Include="Resources\FrecciaDestra.bmp" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

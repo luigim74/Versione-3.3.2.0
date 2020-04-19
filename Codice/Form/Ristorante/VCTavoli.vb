@@ -1675,11 +1675,8 @@ Public Class frmVCTavoli
          Sala(NumSale).Location = New Point(x, y)
          Sala(NumSale).Size = New Size(LARGHEZZA_SALE, altezza)
          Sala(NumSale).ColorStyle = NetButton.ColorStyleEnum.Custom
-         'If iniziale = "Sì" Then
-         '   Sala(NumSale).ColorBottom = Color.Orange
-         'Else
          Sala(NumSale).ColorBottom = coloreSfondo
-         'End If
+
          If iniziale = "Sì" Then
             Sala(NumSale).Enabled = False
          Else
@@ -1687,6 +1684,7 @@ Public Class frmVCTavoli
          End If
 
          Sala(NumSale).ColorText = coloreTesto
+         Sala(NumSale).ColorDisabled = Color.Orange
          Sala(NumSale).Font = New Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold)
          Sala(NumSale).TextButton = nome
 
@@ -4666,6 +4664,22 @@ Public Class frmVCTavoli
 
    End Sub
 
+   Private Sub ImpostaSelezioneSale(ByVal salaSelezionata As System.Object)
+      Try
+         Dim i As Integer
+         For i = 1 To NumSale
+            Sala(i).Enabled = True
+         Next
+
+         CType(salaSelezionata, NetButton).Enabled = False
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub Sala_Click(ByVal sender As Object, ByVal e As System.EventArgs)
       Try
          ' Riproduce un effetto sonoro.
@@ -4674,20 +4688,9 @@ Public Class frmVCTavoli
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Me.Text = TITOLO_FINESTRA & " - " & sender.TextButton.ToString.ToUpper
+         ImpostaSelezioneSale(sender)
 
-         'Dim i As Integer
-         'For i = 1 To NumSale
-         '   Sala(i).ColorBottom = Color.Black
-         '   Sala(i).ColorText = Color.White
-         'Next
-         'sender.ColorBottom = Color.Orange
-         'sender.ColorText = Color.Black
-         Dim i As Integer
-         For i = 1 To NumSale
-            Sala(i).Enabled = True
-         Next
-         sender.Enabled = False
+         Me.Text = TITOLO_FINESTRA & " - " & sender.TextButton.ToString.ToUpper
 
          salaSelezionata = sender.TextButton
 

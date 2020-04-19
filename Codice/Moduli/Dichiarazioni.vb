@@ -841,7 +841,7 @@ Module Dichiarazioni
    Public g_VerDemo As Boolean = False
    Public giorniVerDemo As String
 
-    ' Chiave per la generazione della licenza.
+   ' Chiave per la generazione della licenza.
    Public Const CHIAVE_ATTIVAZIONE As String = "C1DM0" ' Vecchia non utilizzata.
    Public Const CHIAVE_ATTIVAZIONE_HOSPITALITY As String = "HS3M0"
    Public Const CHIAVE_ATTIVAZIONE_HOTEL As String = "HM311"
