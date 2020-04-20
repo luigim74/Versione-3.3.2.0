@@ -1168,4 +1168,9 @@ Module Dichiarazioni
       Planning4 = 4
    End Enum
 
+   ' Testo del pulsante per annullare le modifiche di un conto salvato.
+   Public Const ANNULLA_MODIFICHE_CONTO As String = "Annulla modifiche conto"
+   ' Testo del pulsante per inviare la comanda.
+   Public Const CONFERMA_INVIA_COMANDA As String = "Conferma e invia comanda"
+
 End Module

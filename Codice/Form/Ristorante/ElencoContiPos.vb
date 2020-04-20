@@ -1212,7 +1212,7 @@ Public Class ElencoContiPos
             eui_cmdModifica.Enabled = False
             Exit Sub
          Else
-            ' Apre il punto cassa.
+            ' Carica la comanda del conto salvato nel punto cassa per essere modificata.
             If g_frmPos.CaricaComandeConto(dataConto, oraOccConto, numConto, tavoloConto, cameriereConto) = True Then
                Me.Close()
             Else

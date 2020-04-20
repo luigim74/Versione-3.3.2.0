@@ -85,3 +85,78 @@ Nome parametro: index"
    in Hospitality_Solution.frmPos.netBtn_Cancella_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5829"
 "
 "
+"*** 20/04/2020 - 15:29:24 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '13' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto)"
+"
+"
+"*** 20/04/2020 - 15:53:36 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '13' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5386"
+"
+"
+"*** 20/04/2020 - 17:17:45 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Coperti."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 489"
+"
+"
+"*** 20/04/2020 - 17:30:15 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '13' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5399"
+"
+"
+"*** 20/04/2020 - 17:57:41 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 20/04/2020 - 17:57:52 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 20/04/2020 - 17:58:23 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 20/04/2020 - 18:03:12 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '13' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5395"
+"
+"
+"*** 20/04/2020 - 18:22:02 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 20/04/2020 - 18:23:29 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 20/04/2020 - 18:27:57 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"

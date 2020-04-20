@@ -2422,13 +2422,13 @@ Public Class ContoPos
 
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumDoc = " & numDoc, cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumDoc = " & numDoc & " AND TipoDoc = 'Conto'", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Dim valCampo As String
 
          Do While dr.Read()
-            valCampo = CFormatta.FormattaEuro(dr.Item("Coperto").ToString)
+            valCampo = CFormatta.FormattaNumeroDouble(dr.Item("Coperto"))
          Loop
 
          Return valCampo
@@ -2796,16 +2796,20 @@ Public Class ContoPos
             ' Imposta il coperto.
             If .nomeTavolo <> String.Empty And .nomeTavolo <> "Asporto" Then
                If CopertoRistorante <> String.Empty Then
-                  If IsNothing(g_frmVCTavoli) = False Then
-                     txtCoperto.Text = CalcolaCostoTotaleCoperto(CopertoRistorante, g_frmVCTavoli.lblCoperti.Text)
-                  Else
+                  If g_frmPos.numeroContoDoc <> String.Empty Then
                      txtCoperto.Text = LeggiCopertoConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
+                  Else
+                     If IsNothing(g_frmVCTavoli) = False Then
+                        txtCoperto.Text = CalcolaCostoTotaleCoperto(CopertoRistorante, g_frmVCTavoli.lblCoperti.Text)
+                     Else
+                        txtCoperto.Text = VALORE_ZERO
+                     End If
                   End If
                Else
                   txtCoperto.Text = VALORE_ZERO
                End If
             Else
-               txtCoperto.Text = VALORE_ZERO
+               txtCoperto.Text = LeggiCopertoConto(g_frmPos.numeroContoDoc, TAB_DOCUMENTI)
             End If
 
             ' Imposta lo sconto.
@@ -5346,13 +5350,14 @@ Public Class ContoPos
       End Try
    End Function
 
-   Private Function SalvaComande(ByVal numConto As String) As Boolean
+   Private Function SalvaComande(ByVal numConto As String, ByVal numCoperti As String) As Boolean
       ' Salva i dati per il Tavolo selezionato.
       Try
          Dim CComande As New Comande
          Dim i As Integer
 
          With CComande
+            ' Elimina i vecchi dati.
             .EliminaDati(TAB_COMANDE, numConto)
 
             For i = 0 To g_frmPos.lstvDettagli.Items.Count - 1
@@ -5360,10 +5365,14 @@ Public Class ContoPos
                .Risorsa = nomeTavoloDoc
                .Cameriere = nomeCameriereDoc
 
-               If IsNothing(g_frmVCTavoli) = False Then
-                  .Coperti = g_frmVCTavoli.lblCoperti.Text
+               If numCoperti <> String.Empty Then
+                  .Coperti = numCoperti
                Else
-                  .Coperti = "0"
+                  If IsNothing(g_frmVCTavoli) = False Then
+                     .Coperti = g_frmVCTavoli.lblCoperti.Text
+                  Else
+                     .Coperti = "0"
+                  End If
                End If
 
                If g_frmPos.lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
@@ -5382,8 +5391,8 @@ Public Class ContoPos
                .Esclusa = g_frmPos.lstvDettagli.Items(i).SubItems(9).Text
                .Offerta = g_frmPos.lstvDettagli.Items(i).SubItems(10).Text
                .AliquotaIva = g_frmPos.lstvDettagli.Items(i).SubItems(12).Text
+               .NumeroUscita = g_frmPos.lstvDettagli.Items(i).SubItems(14).Text
                .NumeroConto = numConto
-               .NumeroUscita = g_frmPos.lstvDettagli.Items(i).SubItems(13).Text
 
                .InserisciDati(TAB_COMANDE)
             Next
@@ -6367,7 +6376,10 @@ Public Class ContoPos
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
+         Dim CComande As New Comande
          Dim frm As New NoteContiPOS
+         Dim numCoperti As String
+
          If frm.ShowDialog = DialogResult.Yes Then
 
             Dim note As String
@@ -6379,6 +6391,9 @@ Public Class ContoPos
 
             ' Se un conto esistente.
             If g_frmPos.numeroContoDoc <> String.Empty Then
+               ' Legge il numero dei coperti.
+               numCoperti = CComande.LeggiNumCoperti(TAB_COMANDE, g_frmPos.numeroContoDoc)
+
                ' Elimina il conto del documento stampato.
                g_frmPos.EliminaConto(g_frmPos.numeroContoDoc)
             End If
@@ -6387,7 +6402,7 @@ Public Class ContoPos
             Dim numeroConto As String = SalvaConto(g_frmPos.numeroContoDoc, note)
             If numeroConto <> 0 Then
                ' Salva i dettagli del conto.
-               SalvaComande(numeroConto)
+               SalvaComande(numeroConto, numCoperti)
 
                Me.Close()
             End If

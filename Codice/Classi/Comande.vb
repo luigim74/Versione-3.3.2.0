@@ -664,4 +664,42 @@ Public Class Comande
       End Try
    End Function
 
+   Public Function LeggiNumCoperti(ByVal tabella As String, ByVal numConto As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumeroConto = '" & numConto & "'", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+            ' Coperti.
+            If IsDBNull(dr.Item("Coperti")) = False Then
+               Me.Coperti = dr.Item("Coperti").ToString
+            Else
+               Me.Coperti = String.Empty
+            End If
+         Loop
+
+         If IsNothing(Me.Coperti) = False Then
+            Return Me.Coperti
+         Else
+            Return String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return "0"
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+
 End Class
