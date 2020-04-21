@@ -253,12 +253,19 @@ Public Class Comande
                lst.Items(i).SubItems.Add(String.Empty)
             End If
 
-            ' Numero Conto 
+            ' Id comanda.
             lst.Items(i).SubItems.Add(dr.Item("Id").ToString)
 
             ' Aliquota Iva.
             If IsDBNull(dr.Item("AliquotaIva")) = False Then
                lst.Items(i).SubItems.Add(dr.Item("AliquotaIva").ToString)
+            Else
+               lst.Items(i).SubItems.Add(String.Empty)
+            End If
+
+            ' Numero conto.
+            If IsDBNull(dr.Item("NumeroConto")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("NumeroConto").ToString)
             Else
                lst.Items(i).SubItems.Add(String.Empty)
             End If
@@ -396,7 +403,7 @@ Public Class Comande
                lst.Items(i).SubItems.Add(String.Empty)
             End If
 
-            ' Numero conto.
+            ' Id comanda.
             lst.Items(i).SubItems.Add(dr.Item("Id").ToString)
 
             ' Aliquota Iva.
@@ -404,6 +411,20 @@ Public Class Comande
                lst.Items(i).SubItems.Add(dr.Item("AliquotaIva").ToString)
             Else
                lst.Items(i).SubItems.Add(String.Empty)
+            End If
+
+            ' Numero conto.
+            If IsDBNull(dr.Item("NumeroConto")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("NumeroConto").ToString)
+            Else
+               lst.Items(i).SubItems.Add(String.Empty)
+            End If
+
+            ' Numero Uscita.
+            If IsDBNull(dr.Item("NumeroUscita")) = False Then
+               lst.Items(i).SubItems.Add(dr.Item("NumeroUscita").ToString)
+            Else
+               lst.Items(i).SubItems.Add("1")
             End If
 
             If dr.Item("Inviata").ToString = "Sì" Then

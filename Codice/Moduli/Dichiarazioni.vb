@@ -1068,6 +1068,8 @@ Module Dichiarazioni
       RimuoviPiatto = 47
       Propriet‡Risorsa = 48
       Offerto = 49
+      Parcheggia = 50
+      Ristampa = 51
    End Enum
 
    ' Dati Moduli.

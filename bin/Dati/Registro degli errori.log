@@ -160,3 +160,110 @@ Nome parametro: index"
    in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
 "
 "
+"*** 21/04/2020 - 14:13:38 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 21/04/2020 - 14:17:31 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 21/04/2020 - 14:23:05 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 21/04/2020 - 14:31:54 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdModifica_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1203"
+"
+"
+"*** 21/04/2020 - 14:33:07 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 21/04/2020 - 14:34:37 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '14' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContoPos.SalvaComande(String numConto, String numCoperti) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ContoPos.vb:riga 5394"
+"
+"
+"*** 21/04/2020 - 14:55:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 14:55:10 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 14:55:25 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 14:55:32 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 14:55:49 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 14:55:54 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ModificaPiattoPOS..ctor(String idPiatto, String quantità, String descrizione, String prezzo, String totPrezzo, String aliquotaIva, String numeroUscita) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ModificaPiattoPOS.vb:riga 76
+   in Hospitality_Solution.frmPos.ModificaElemento() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCPos.vb:riga 5518"
+"
+"
+"*** 21/04/2020 - 15:06:08 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 21/04/2020 - 15:06:45 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ElencoContiPos.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\ElencoContiPos.vb:riga 1286"
+"
+"
+"*** 21/04/2020 - 15:38:39 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"

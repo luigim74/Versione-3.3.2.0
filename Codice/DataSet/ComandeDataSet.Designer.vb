@@ -315,6 +315,8 @@ Partial Public Class ComandeDataSet
         
         Private columnNumeroConto As Global.System.Data.DataColumn
         
+        Private columnNumeroUscita As Global.System.Data.DataColumn
+        
         Private columnAliquotaIva As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -482,6 +484,14 @@ Partial Public Class ComandeDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NumeroUscitaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNumeroUscita
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property AliquotaIvaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnAliquotaIva
@@ -541,9 +551,10 @@ Partial Public Class ComandeDataSet
                     ByVal Esclusa As String,  _
                     ByVal Offerta As String,  _
                     ByVal NumeroConto As String,  _
+                    ByVal NumeroUscita As Short,  _
                     ByVal AliquotaIva As Decimal) As ComandeRow
             Dim rowComandeRow As ComandeRow = CType(Me.NewRow,ComandeRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreUnitario, ImportoNetto, IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, AliquotaIva}
+            Dim columnValuesArray() As Object = New Object() {Nothing, IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreUnitario, ImportoNetto, IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, NumeroUscita, AliquotaIva}
             rowComandeRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowComandeRow)
             Return rowComandeRow
@@ -588,6 +599,7 @@ Partial Public Class ComandeDataSet
             Me.columnEsclusa = MyBase.Columns("Esclusa")
             Me.columnOfferta = MyBase.Columns("Offerta")
             Me.columnNumeroConto = MyBase.Columns("NumeroConto")
+            Me.columnNumeroUscita = MyBase.Columns("NumeroUscita")
             Me.columnAliquotaIva = MyBase.Columns("AliquotaIva")
         End Sub
         
@@ -626,6 +638,8 @@ Partial Public Class ComandeDataSet
             MyBase.Columns.Add(Me.columnOfferta)
             Me.columnNumeroConto = New Global.System.Data.DataColumn("NumeroConto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumeroConto)
+            Me.columnNumeroUscita = New Global.System.Data.DataColumn("NumeroUscita", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNumeroUscita)
             Me.columnAliquotaIva = New Global.System.Data.DataColumn("AliquotaIva", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAliquotaIva)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
@@ -1026,6 +1040,21 @@ Partial Public Class ComandeDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NumeroUscita() As Short
+            Get
+                Try 
+                    Return CType(Me(Me.tableComande.NumeroUscitaColumn),Short)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'NumeroUscita' nella tabella 'Comande' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableComande.NumeroUscitaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property AliquotaIva() As Decimal
             Get
                 Try 
@@ -1217,6 +1246,18 @@ Partial Public Class ComandeDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetNumeroContoNull()
             Me(Me.tableComande.NumeroContoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsNumeroUscitaNull() As Boolean
+            Return Me.IsNull(Me.tableComande.NumeroUscitaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetNumeroUscitaNull()
+            Me(Me.tableComande.NumeroUscitaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1414,6 +1455,7 @@ Namespace ComandeDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Esclusa", "Esclusa")
             tableMapping.ColumnMappings.Add("Offerta", "Offerta")
             tableMapping.ColumnMappings.Add("NumeroConto", "NumeroConto")
+            tableMapping.ColumnMappings.Add("NumeroUscita", "NumeroUscita")
             tableMapping.ColumnMappings.Add("AliquotaIva", "AliquotaIva")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
@@ -1429,8 +1471,9 @@ Namespace ComandeDataSetTableAdapters
                 "o` = ?)) AND ((? = 1 AND `Reparto` IS NULL) OR (`Reparto` = ?)) AND ((? = 1 AND "& _ 
                 "`Inviata` IS NULL) OR (`Inviata` = ?)) AND ((? = 1 AND `Esclusa` IS NULL) OR (`E"& _ 
                 "sclusa` = ?)) AND ((? = 1 AND `Offerta` IS NULL) OR (`Offerta` = ?)) AND ((? = 1"& _ 
-                " AND `NumeroConto` IS NULL) OR (`NumeroConto` = ?)) AND ((? = 1 AND `AliquotaIva"& _ 
-                "` IS NULL) OR (`AliquotaIva` = ?)))"
+                " AND `NumeroConto` IS NULL) OR (`NumeroConto` = ?)) AND ((? = 1 AND `NumeroUscit"& _ 
+                "a` IS NULL) OR (`NumeroUscita` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR ("& _ 
+                "`AliquotaIva` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_IdRisorsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdRisorsa", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1463,14 +1506,16 @@ Namespace ComandeDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Offerta", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Offerta", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroConto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroConto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroUscita", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroUscita", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_AliquotaIva", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_AliquotaIva", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Comande` (`IdRisorsa`, `Risorsa`, `Cameriere`, `Coperti`, `Descrizio"& _ 
                 "ne`, `Quantità`, `ValoreUnitario`, `ImportoNetto`, `IdPiatto`, `CategoriaPiatto`"& _ 
-                ", `Reparto`, `Inviata`, `Esclusa`, `Offerta`, `NumeroConto`, `AliquotaIva`) VALU"& _ 
-                "ES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                ", `Reparto`, `Inviata`, `Esclusa`, `Offerta`, `NumeroConto`, `NumeroUscita`, `Al"& _ 
+                "iquotaIva`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IdRisorsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdRisorsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Risorsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Risorsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -1487,25 +1532,27 @@ Namespace ComandeDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Esclusa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Esclusa", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Offerta", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Offerta", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroConto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroUscita", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("AliquotaIva", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Comande` SET `IdRisorsa` = ?, `Risorsa` = ?, `Cameriere` = ?, `Coperti` ="& _ 
                 " ?, `Descrizione` = ?, `Quantità` = ?, `ValoreUnitario` = ?, `ImportoNetto` = ?,"& _ 
                 " `IdPiatto` = ?, `CategoriaPiatto` = ?, `Reparto` = ?, `Inviata` = ?, `Esclusa` "& _ 
-                "= ?, `Offerta` = ?, `NumeroConto` = ?, `AliquotaIva` = ? WHERE ((`Id` = ?) AND ("& _ 
-                "(? = 1 AND `IdRisorsa` IS NULL) OR (`IdRisorsa` = ?)) AND ((? = 1 AND `Risorsa` "& _ 
-                "IS NULL) OR (`Risorsa` = ?)) AND ((? = 1 AND `Cameriere` IS NULL) OR (`Cameriere"& _ 
-                "` = ?)) AND ((? = 1 AND `Coperti` IS NULL) OR (`Coperti` = ?)) AND ((? = 1 AND `"& _ 
-                "Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `Quantità` IS NULL"& _ 
-                ") OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS NULL) OR (`ValoreUnit"& _ 
-                "ario` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`ImportoNetto` = ?)) AND"& _ 
-                " ((? = 1 AND `IdPiatto` IS NULL) OR (`IdPiatto` = ?)) AND ((? = 1 AND `Categoria"& _ 
-                "Piatto` IS NULL) OR (`CategoriaPiatto` = ?)) AND ((? = 1 AND `Reparto` IS NULL) "& _ 
-                "OR (`Reparto` = ?)) AND ((? = 1 AND `Inviata` IS NULL) OR (`Inviata` = ?)) AND ("& _ 
-                "(? = 1 AND `Esclusa` IS NULL) OR (`Esclusa` = ?)) AND ((? = 1 AND `Offerta` IS N"& _ 
-                "ULL) OR (`Offerta` = ?)) AND ((? = 1 AND `NumeroConto` IS NULL) OR (`NumeroConto"& _ 
-                "` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)))"
+                "= ?, `Offerta` = ?, `NumeroConto` = ?, `NumeroUscita` = ?, `AliquotaIva` = ? WHE"& _ 
+                "RE ((`Id` = ?) AND ((? = 1 AND `IdRisorsa` IS NULL) OR (`IdRisorsa` = ?)) AND (("& _ 
+                "? = 1 AND `Risorsa` IS NULL) OR (`Risorsa` = ?)) AND ((? = 1 AND `Cameriere` IS "& _ 
+                "NULL) OR (`Cameriere` = ?)) AND ((? = 1 AND `Coperti` IS NULL) OR (`Coperti` = ?"& _ 
+                ")) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AN"& _ 
+                "D `Quantità` IS NULL) OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS N"& _ 
+                "ULL) OR (`ValoreUnitario` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`Imp"& _ 
+                "ortoNetto` = ?)) AND ((? = 1 AND `IdPiatto` IS NULL) OR (`IdPiatto` = ?)) AND (("& _ 
+                "? = 1 AND `CategoriaPiatto` IS NULL) OR (`CategoriaPiatto` = ?)) AND ((? = 1 AND"& _ 
+                " `Reparto` IS NULL) OR (`Reparto` = ?)) AND ((? = 1 AND `Inviata` IS NULL) OR (`"& _ 
+                "Inviata` = ?)) AND ((? = 1 AND `Esclusa` IS NULL) OR (`Esclusa` = ?)) AND ((? = "& _ 
+                "1 AND `Offerta` IS NULL) OR (`Offerta` = ?)) AND ((? = 1 AND `NumeroConto` IS NU"& _ 
+                "LL) OR (`NumeroConto` = ?)) AND ((? = 1 AND `NumeroUscita` IS NULL) OR (`NumeroU"& _ 
+                "scita` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IdRisorsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdRisorsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Risorsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Risorsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -1522,6 +1569,7 @@ Namespace ComandeDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Esclusa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Esclusa", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Offerta", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Offerta", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroConto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumeroUscita", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("AliquotaIva", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_IdRisorsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdRisorsa", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1554,6 +1602,8 @@ Namespace ComandeDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Offerta", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Offerta", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroConto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroConto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroConto", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NumeroUscita", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NumeroUscita", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumeroUscita", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_AliquotaIva", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_AliquotaIva", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "AliquotaIva", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -1562,7 +1612,7 @@ Namespace ComandeDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString41
+            Me._connection.ConnectionString = Global.Hospitality_Solution.My.MySettings.Default.HospitalityConnectionString45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1573,7 +1623,7 @@ Namespace ComandeDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Id, IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreU"& _ 
                 "nitario, ImportoNetto, IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Off"& _ 
-                "erta, NumeroConto, AliquotaIva FROM Comande"
+                "erta, NumeroConto, NumeroUscita, AliquotaIva FROM Comande"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1650,6 +1700,7 @@ Namespace ComandeDataSetTableAdapters
                     ByVal Original_Esclusa As String,  _
                     ByVal Original_Offerta As String,  _
                     ByVal Original_NumeroConto As String,  _
+                    ByVal Original_NumeroUscita As Global.System.Nullable(Of Short),  _
                     ByVal Original_AliquotaIva As Global.System.Nullable(Of Decimal)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_IdRisorsa.HasValue = true) Then
@@ -1757,12 +1808,19 @@ Namespace ComandeDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_NumeroConto,String)
             End If
-            If (Original_AliquotaIva.HasValue = true) Then
+            If (Original_NumeroUscita.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_AliquotaIva.Value,Decimal)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_NumeroUscita.Value,Short)
             Else
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AliquotaIva.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_AliquotaIva.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1799,6 +1857,7 @@ Namespace ComandeDataSetTableAdapters
                     ByVal Esclusa As String,  _
                     ByVal Offerta As String,  _
                     ByVal NumeroConto As String,  _
+                    ByVal NumeroUscita As Global.System.Nullable(Of Short),  _
                     ByVal AliquotaIva As Global.System.Nullable(Of Decimal)) As Integer
             If (IdRisorsa.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(IdRisorsa.Value,Integer)
@@ -1875,10 +1934,15 @@ Namespace ComandeDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(14).Value = CType(NumeroConto,String)
             End If
-            If (AliquotaIva.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(15).Value = CType(AliquotaIva.Value,Decimal)
+            If (NumeroUscita.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(NumeroUscita.Value,Short)
             Else
                 Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (AliquotaIva.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(16).Value = CType(AliquotaIva.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1915,6 +1979,7 @@ Namespace ComandeDataSetTableAdapters
                     ByVal Esclusa As String,  _
                     ByVal Offerta As String,  _
                     ByVal NumeroConto As String,  _
+                    ByVal NumeroUscita As Global.System.Nullable(Of Short),  _
                     ByVal AliquotaIva As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_IdRisorsa As Global.System.Nullable(Of Integer),  _
@@ -1932,6 +1997,7 @@ Namespace ComandeDataSetTableAdapters
                     ByVal Original_Esclusa As String,  _
                     ByVal Original_Offerta As String,  _
                     ByVal Original_NumeroConto As String,  _
+                    ByVal Original_NumeroUscita As Global.System.Nullable(Of Short),  _
                     ByVal Original_AliquotaIva As Global.System.Nullable(Of Decimal)) As Integer
             If (IdRisorsa.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IdRisorsa.Value,Integer)
@@ -2008,123 +2074,135 @@ Namespace ComandeDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(NumeroConto,String)
             End If
-            If (AliquotaIva.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(AliquotaIva.Value,Decimal)
+            If (NumeroUscita.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(NumeroUscita.Value,Short)
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Id,Integer)
-            If (Original_IdRisorsa.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_IdRisorsa.Value,Integer)
+            If (AliquotaIva.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(AliquotaIva.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Id,Integer)
+            If (Original_IdRisorsa.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_IdRisorsa.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
             If (Original_Risorsa Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Risorsa,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Risorsa,String)
             End If
             If (Original_Cameriere Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Cameriere,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Cameriere,String)
             End If
             If (Original_Coperti Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Coperti,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Coperti,String)
             End If
             If (Original_Descrizione Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Descrizione,String)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Descrizione,String)
             End If
             If (Original_Quantità.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_Quantità.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_Quantità.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (Original_ValoreUnitario.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_ValoreUnitario.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_ValoreUnitario.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (Original_ImportoNetto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_ImportoNetto.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_ImportoNetto.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             If (Original_IdPiatto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_IdPiatto.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_IdPiatto.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (Original_CategoriaPiatto Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_CategoriaPiatto,String)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_CategoriaPiatto,String)
             End If
             If (Original_Reparto Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_Reparto,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_Reparto,String)
             End If
             If (Original_Inviata Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_Inviata,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_Inviata,String)
             End If
             If (Original_Esclusa Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_Esclusa,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_Esclusa,String)
             End If
             If (Original_Offerta Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_Offerta,String)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_Offerta,String)
             End If
             If (Original_NumeroConto Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_NumeroConto,String)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_NumeroConto,String)
+            End If
+            If (Original_NumeroUscita.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_NumeroUscita.Value,Short)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             End If
             If (Original_AliquotaIva.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_AliquotaIva.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_AliquotaIva.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

@@ -7583,6 +7583,12 @@ Friend Class frmMain
             Case TipoOperazione.Offerto
                descrizioneOp = "Eseguito comando PIATTO OFFERTO . " & descrizione
 
+            Case TipoOperazione.Parcheggia
+               descrizioneOp = "Eseguito comando PARCHEGGIA COMANDA. " & descrizione
+
+            Case TipoOperazione.Ristampa
+               descrizioneOp = "Eseguito comando RISTAMPA COMANDA. " & descrizione
+
             Case TipoOperazione.Conferma
                descrizioneOp = "Eseguito comando CONFERMA. " & descrizione
 

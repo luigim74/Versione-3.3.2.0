@@ -1283,6 +1283,8 @@ Public Class ElencoContiPos
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
+         lstvConti.Focus()
+
          Dim dataConto As String = lstvConti.Items(lstvConti.FocusedItem.Index).SubItems(0).Text
          Dim numeroConto As String = lstvConti.Items(lstvConti.FocusedItem.Index).SubItems(2).Text
 
@@ -1311,7 +1313,6 @@ Public Class ElencoContiPos
          If lstvConti.Items.Count <> 0 Then
             lstvConti.Items(0).Selected = True
          End If
-
       End Try
    End Sub
 
