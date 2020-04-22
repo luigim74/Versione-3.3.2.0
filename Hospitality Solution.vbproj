@@ -638,6 +638,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\Form\Ristorante\NoteComandePOS.Designer.vb">
+      <DependentUpon>NoteComandePOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\NoteComandePOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Ristorante\NumeroUscitePOS.Designer.vb">
       <DependentUpon>NumeroUscitePOS.vb</DependentUpon>
     </Compile>
@@ -1817,6 +1823,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\DataModIstatC59.resx">
       <DependentUpon>DataModIstatC59.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\NoteComandePOS.resx">
+      <DependentUpon>NoteComandePOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\NumeroUscitePOS.resx">
       <DependentUpon>NumeroUscitePOS.vb</DependentUpon>

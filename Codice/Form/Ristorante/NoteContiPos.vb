@@ -3,6 +3,8 @@ Public Class NoteContiPOS
    Inherits System.Windows.Forms.Form
 
 #Region "Dichiarazioni"
+   Private noteConto As String
+
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents eui_cmdNo As Elegant.Ui.Button
    Friend WithEvents eui_cmdSì As Elegant.Ui.Button
@@ -15,7 +17,7 @@ Public Class NoteContiPOS
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New()
+   Public Sub New(ByVal note As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
@@ -23,6 +25,7 @@ Public Class NoteContiPOS
 
       'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
 
+      noteConto = note
    End Sub
 
    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
@@ -131,7 +134,7 @@ Public Class NoteContiPOS
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdNo
-      Me.ClientSize = New System.Drawing.Size(567, 375)
+      Me.ClientSize = New System.Drawing.Size(577, 385)
       Me.Controls.Add(Me.eui_txtNote)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.Label7)
@@ -153,6 +156,7 @@ Public Class NoteContiPOS
 
    Private Sub NoteContiPOS_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
+         eui_txtNote.Text = noteConto
          eui_txtNote.Focus()
 
       Catch ex As Exception

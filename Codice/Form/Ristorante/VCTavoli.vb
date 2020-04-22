@@ -4608,6 +4608,9 @@ Public Class frmVCTavoli
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         CalcolaTempoOccupazioneTavolo()
+
       End Try
    End Sub
 
@@ -5041,6 +5044,12 @@ Public Class frmVCTavoli
 
          Else
             lblOra.Text = DateTime.Now.Hour & sepOra & DateTime.Now.Minute & sepOra & DateTime.Now.Second
+         End If
+
+         If Risorsa(1).ColorStyle = NetButton.ColorStyleEnum.Green Then
+            Risorsa(1).ColorStyle = NetButton.ColorStyleEnum.Pink
+         Else
+            Risorsa(1).ColorStyle = NetButton.ColorStyleEnum.Green
          End If
 
          ' Controlla se ci sono prenotazioni.
@@ -5656,6 +5665,50 @@ Public Class frmVCTavoli
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Function leggiOraOccupazioneTavolo(ByVal idTavolo As String, ByVal tabella As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idTavolo & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("OraOcc").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Private Sub CalcolaTempoOccupazioneTavolo()
+      Try
+         Dim oraOcc As String = leggiOraOccupazioneTavolo(tavoloSelezionato, ANAG_TAVOLI)
+
+         Dim oraInizio As DateTime = Convert.ToDateTime(oraOcc)
+         Dim orafine As DateTime = oraInizio.AddMinutes(10)
+
+         If orafine.ToShortTimeString = Now.TimeOfDay.ToString Then
+            MessageBox.Show(oraInizio.ToString, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try

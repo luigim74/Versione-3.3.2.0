@@ -5393,6 +5393,7 @@ Public Class ContoPos
                .AliquotaIva = g_frmPos.lstvDettagli.Items(i).SubItems(12).Text
                .NumeroUscita = g_frmPos.lstvDettagli.Items(i).SubItems(14).Text
                .NumeroConto = numConto
+               .Note = ""
 
                .InserisciDati(TAB_COMANDE)
             Next
@@ -6377,11 +6378,17 @@ Public Class ContoPos
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
          Dim CComande As New Comande
-         Dim frm As New NoteContiPOS
+         Dim frm As Form
          Dim numCoperti As String
 
-         If frm.ShowDialog = DialogResult.Yes Then
+         ' Se un conto esistente.
+         If IsNothing(g_frmPos.numeroContoDoc) = False Then
+            frm = New NoteContiPOS(LeggiNoteConto(TAB_DOCUMENTI, g_frmPos.numeroContoDoc))
+         Else
+            frm = New NoteContiPOS(String.Empty)
+         End If
 
+         If frm.ShowDialog = DialogResult.Yes Then
             Dim note As String
             If frm.Tag.ToString <> String.Empty Then
                note = frm.Tag.ToString
@@ -6866,5 +6873,38 @@ Public Class ContoPos
       End Try
    End Sub
 
+   Public Function LeggiNoteConto(ByVal tabella As String, ByVal numConto As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NumDoc = " & numConto & " AND TipoDoc = 'Conto'", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Dim note As String
+         Do While dr.Read()
+            ' Note.
+            If IsDBNull(dr.Item("Note")) = False Then
+               note = dr.Item("Note").ToString
+            Else
+               note = String.Empty
+            End If
+         Loop
+
+         Return note
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
 
 End Class

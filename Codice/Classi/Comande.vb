@@ -34,6 +34,7 @@ Public Class Comande
    Public NumeroConto As String
    Public AliquotaIva As String
    Public NumeroUscita As String
+   Public Note As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -154,6 +155,12 @@ Public Class Comande
                Me.AliquotaIva = dr.Item("AliquotaIva").ToString
             Else
                Me.AliquotaIva = String.Empty
+            End If
+            ' Note.
+            If IsDBNull(dr.Item("Note")) = False Then
+               Me.Note = dr.Item("Note").ToString
+            Else
+               Me.Note = String.Empty
             End If
          Loop
 
@@ -481,9 +488,9 @@ Public Class Comande
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (IdRisorsa, Risorsa, Cameriere, Coperti, Descrizione, Quantità, ValoreUnitario, ImportoNetto, 
-                                               IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, AliquotaIva, NumeroUscita) " &
+                                               IdPiatto, CategoriaPiatto, Reparto, Inviata, Esclusa, Offerta, NumeroConto, AliquotaIva, NumeroUscita, [Note]) " &
                                        "VALUES(@IdRisorsa, @Risorsa, @Cameriere, @Coperti, @Descrizione, @Quantità, @ValoreUnitario, @ImportoNetto, 
-                                               @IdPiatto, @CategoriaPiatto, @Reparto, @Inviata, @Esclusa, @Offerta, @NumeroConto, @AliquotaIva, @NumeroUscita)", tabella)
+                                               @IdPiatto, @CategoriaPiatto, @Reparto, @Inviata, @Esclusa, @Offerta, @NumeroConto, @AliquotaIva, @NumeroUscita, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -505,6 +512,7 @@ Public Class Comande
          cmdInsert.Parameters.AddWithValue("@NumeroConto", Me.NumeroConto)
          cmdInsert.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
          cmdInsert.Parameters.AddWithValue("@NumeroUscita", Me.NumeroUscita)
+         cmdInsert.Parameters.AddWithValue("@Note", Me.Note)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -558,7 +566,8 @@ Public Class Comande
                              "Offerta = @Offerta, " &
                              "NumeroConto = @NumeroConto, " &
                              "AliquotaIva = @AliquotaIva, " &
-                             "NumeroUscita = @NumeroUscita " &
+                             "NumeroUscita = @NumeroUscita, " &
+                             "Note = @Note " &
                              "WHERE IdRisorsa = {1}",
                              tabella,
                              codRisorsa)
@@ -583,6 +592,7 @@ Public Class Comande
          cmdUpdate.Parameters.AddWithValue("@NumeroConto", Me.NumeroConto)
          cmdUpdate.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
          cmdUpdate.Parameters.AddWithValue("@NumeroUscita", Me.NumeroUscita)
+         cmdUpdate.Parameters.AddWithValue("@Note", Me.Note)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
@@ -719,6 +729,51 @@ Public Class Comande
       Finally
          cn.Close()
 
+      End Try
+   End Function
+
+   Public Function ModificaNote(ByVal tabella As String, ByVal codRisorsa As Integer, ByVal note As String) As Boolean
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("UPDATE {0} " &
+                             "SET Note = @Note " &
+                             "WHERE IdRisorsa = {1}",
+                             tabella,
+                             codRisorsa)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+         cmdUpdate.Parameters.AddWithValue("@Note", note)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
       End Try
    End Function
 
