@@ -1175,4 +1175,9 @@ Module Dichiarazioni
    ' Testo del pulsante per inviare la comanda.
    Public Const CONFERMA_INVIA_COMANDA As String = "Conferma e invia comanda"
 
+   ' Per la gestione dei Tavoli a tempo.
+   Public Const MINUTI_TAVOLO As Integer = 60
+   Public GestioneTavoliATempo As Boolean = False
+   Public minutiOccupazioneTavolo As Integer = MINUTI_TAVOLO
+
 End Module

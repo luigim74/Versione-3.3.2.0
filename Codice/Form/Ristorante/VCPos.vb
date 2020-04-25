@@ -4151,7 +4151,7 @@ Public Class frmPos
                .AliquotaIva = lstvDettagli.Items(i).SubItems(12).Text
                .NumeroUscita = lstvDettagli.Items(i).SubItems(14).Text
                .NumeroConto = String.Empty
-               .Note = noteComanda
+               .Note = String.Empty 'noteComanda
 
                .InserisciDati(TAB_COMANDE)
             Next

@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2005
-' Data ultima modifica: 11/04/2020
+' Data ultima modifica: 25/04/2020
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -6962,6 +6962,19 @@ Friend Class frmMain
             EffettiSonoriPOS = True
          Else
             EffettiSonoriPOS = DatiConfig.GetValue("EffettiSonoriPOS")
+         End If
+
+         ' Gestione Tavoli a tempo.
+         If DatiConfig.GetValue("GestioneTavoliATempo") <> String.Empty Then
+            GestioneTavoliATempo = DatiConfig.GetValue("GestioneTavoliATempo")
+         Else
+            GestioneTavoliATempo = False
+         End If
+
+         If DatiConfig.GetValue("MinutiOccupazioneTavolo") <> String.Empty Then
+            minutiOccupazioneTavolo = DatiConfig.GetValue("MinutiOccupazioneTavolo")
+         Else
+            minutiOccupazioneTavolo = MINUTI_TAVOLO
          End If
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)

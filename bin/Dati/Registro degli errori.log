@@ -402,3 +402,105 @@ Nome parametro: index"
    in Hospitality_Solution.frmVCTavoli.CalcolaTempoOccupazioneTavolo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCTavoli.vb:riga 5697"
 "
 "
+"*** 25/04/2020 - 14:42:13 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value)
+   in Hospitality_Solution.frmVCTavoli.CalcolaTempoOccupazioneTavolo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCTavoli.vb:riga 5714"
+"
+"
+"*** 25/04/2020 - 14:50:49 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value)
+   in Hospitality_Solution.frmVCTavoli.CalcolaTempoOccupazioneTavolo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Form\Ristorante\VCTavoli.vb:riga 5710"
+"
+"
+"*** 25/04/2020 - 15:12:03 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:12:06 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:15:29 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:16:43 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:41:01 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:55:11 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:55:35 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"
+"*** 25/04/2020 - 15:55:53 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Note."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Comande.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.2.0\Codice\Classi\Comande.vb:riga 518"
+"
+"

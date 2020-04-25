@@ -3,7 +3,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2005
-' Data ultima modifica: 26/01/2019
+' Data ultima modifica: 25/04/2020
 ' Descrizione:          Form per la configurazione di tutte le opzioni del programma.
 ' Note:
 '
@@ -259,6 +259,9 @@ Public Class frmOpzioni
    Friend WithEvents chkAbilitaPalmareAndroid As System.Windows.Forms.CheckBox
    Friend WithEvents txtDescrizioneTassaSogg As TextBox
    Public WithEvents Label54 As Label
+   Friend WithEvents cmbMinutiOccupazioneTavolo As ComboBox
+   Public WithEvents Label56 As Label
+   Friend WithEvents ckbGestioneTavoliATempo As CheckBox
    Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -322,6 +325,9 @@ Public Class frmOpzioni
       Me.cmdAvviaTavAgent = New System.Windows.Forms.Button()
       Me.ckbNotificaTavAgent = New System.Windows.Forms.CheckBox()
       Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+      Me.cmbMinutiOccupazioneTavolo = New System.Windows.Forms.ComboBox()
+      Me.Label56 = New System.Windows.Forms.Label()
+      Me.ckbGestioneTavoliATempo = New System.Windows.Forms.CheckBox()
       Me.ckbEffettiSonoriPos = New System.Windows.Forms.CheckBox()
       Me.txtServizioRistorante = New System.Windows.Forms.TextBox()
       Me.Label34 = New System.Windows.Forms.Label()
@@ -1175,6 +1181,9 @@ Public Class frmOpzioni
       '
       'GroupBox3
       '
+      Me.GroupBox3.Controls.Add(Me.cmbMinutiOccupazioneTavolo)
+      Me.GroupBox3.Controls.Add(Me.Label56)
+      Me.GroupBox3.Controls.Add(Me.ckbGestioneTavoliATempo)
       Me.GroupBox3.Controls.Add(Me.ckbEffettiSonoriPos)
       Me.GroupBox3.Controls.Add(Me.txtServizioRistorante)
       Me.GroupBox3.Controls.Add(Me.Label34)
@@ -1189,13 +1198,45 @@ Public Class frmOpzioni
       Me.GroupBox3.TabStop = False
       Me.GroupBox3.Text = "Varie"
       '
+      'cmbMinutiOccupazioneTavolo
+      '
+      Me.cmbMinutiOccupazioneTavolo.Items.AddRange(New Object() {"10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60"})
+      Me.cmbMinutiOccupazioneTavolo.Location = New System.Drawing.Point(578, 96)
+      Me.cmbMinutiOccupazioneTavolo.Name = "cmbMinutiOccupazioneTavolo"
+      Me.cmbMinutiOccupazioneTavolo.Size = New System.Drawing.Size(75, 21)
+      Me.cmbMinutiOccupazioneTavolo.Sorted = True
+      Me.cmbMinutiOccupazioneTavolo.TabIndex = 5
+      '
+      'Label56
+      '
+      Me.Label56.AutoSize = True
+      Me.Label56.BackColor = System.Drawing.Color.Transparent
+      Me.Label56.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label56.ForeColor = System.Drawing.Color.Black
+      Me.Label56.Location = New System.Drawing.Point(294, 97)
+      Me.Label56.Name = "Label56"
+      Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label56.Size = New System.Drawing.Size(264, 13)
+      Me.Label56.TabIndex = 195
+      Me.Label56.Text = "Tempo massimo di occupazione di un Tavolo in minuti:"
+      '
+      'ckbGestioneTavoliATempo
+      '
+      Me.ckbGestioneTavoliATempo.AutoSize = True
+      Me.ckbGestioneTavoliATempo.Location = New System.Drawing.Point(297, 67)
+      Me.ckbGestioneTavoliATempo.Name = "ckbGestioneTavoliATempo"
+      Me.ckbGestioneTavoliATempo.Size = New System.Drawing.Size(170, 17)
+      Me.ckbGestioneTavoliATempo.TabIndex = 4
+      Me.ckbGestioneTavoliATempo.Text = "Abilita gestione Tavoli a tempo"
+      Me.ckbGestioneTavoliATempo.UseVisualStyleBackColor = True
+      '
       'ckbEffettiSonoriPos
       '
       Me.ckbEffettiSonoriPos.AutoSize = True
-      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(344, 32)
+      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(297, 37)
       Me.ckbEffettiSonoriPos.Name = "ckbEffettiSonoriPos"
       Me.ckbEffettiSonoriPos.Size = New System.Drawing.Size(210, 17)
-      Me.ckbEffettiSonoriPos.TabIndex = 193
+      Me.ckbEffettiSonoriPos.TabIndex = 3
       Me.ckbEffettiSonoriPos.Text = "Riproduci effetti sonori nel Punto cassa"
       Me.ckbEffettiSonoriPos.UseVisualStyleBackColor = True
       '
@@ -2864,7 +2905,7 @@ Public Class frmOpzioni
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(788, 574)
+      Me.ClientSize = New System.Drawing.Size(785, 565)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -3722,6 +3763,25 @@ Public Class frmOpzioni
             ckbEffettiSonoriPos.Checked = True
          End If
 
+         ' Gestione Tavoli a tempo.
+         If DatiConfig.GetValue("GestioneTavoliATempo") <> String.Empty Then
+            ckbGestioneTavoliATempo.Checked = DatiConfig.GetValue("GestioneTavoliATempo")
+            cmbMinutiOccupazioneTavolo.Enabled = ckbGestioneTavoliATempo.Checked
+            GestioneTavoliATempo = ckbGestioneTavoliATempo.Checked
+         Else
+            ckbGestioneTavoliATempo.Checked = False
+            cmbMinutiOccupazioneTavolo.Enabled = False
+            GestioneTavoliATempo = False
+         End If
+
+         If DatiConfig.GetValue("MinutiOccupazioneTavolo") <> String.Empty Then
+            cmbMinutiOccupazioneTavolo.Text = DatiConfig.GetValue("MinutiOccupazioneTavolo")
+            minutiOccupazioneTavolo = cmbMinutiOccupazioneTavolo.Text
+         Else
+            cmbMinutiOccupazioneTavolo.Text = MINUTI_TAVOLO.ToString
+            minutiOccupazioneTavolo = MINUTI_TAVOLO
+         End If
+
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
 
          ' Percorso file Tavoloso Agent.
@@ -4331,6 +4391,18 @@ Public Class frmOpzioni
          ' Effetti sonori per il Punto cassa.
          DatiConfig.SetValue("EffettiSonoriPOS", ckbEffettiSonoriPos.Checked)
          EffettiSonoriPOS = ckbEffettiSonoriPos.Checked
+
+         ' Gestione dei Tavoli a tempo.
+         DatiConfig.SetValue("GestioneTavoliATempo", ckbGestioneTavoliATempo.Checked)
+         GestioneTavoliATempo = ckbGestioneTavoliATempo.Checked
+
+         If IsNumeric(cmbMinutiOccupazioneTavolo.Text) = True Then
+            DatiConfig.SetValue("MinutiOccupazioneTavolo", cmbMinutiOccupazioneTavolo.Text)
+            minutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
+         Else
+            DatiConfig.SetValue("MinutiOccupazioneTavolo", MINUTI_TAVOLO.ToString)
+            minutiOccupazioneTavolo = MINUTI_TAVOLO
+         End If
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
 
@@ -6767,5 +6839,36 @@ Public Class frmOpzioni
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
+   End Sub
+
+   Private Sub ckbGestioneTavoliATempo_CheckedChanged(sender As Object, e As EventArgs) Handles ckbGestioneTavoliATempo.CheckedChanged
+      Try
+         cmbMinutiOccupazioneTavolo.Enabled = ckbGestioneTavoliATempo.Checked
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CmbMinutiOccupazioneTavolo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMinutiOccupazioneTavolo.SelectedIndexChanged
+      Try
+         If IsNumeric(cmbMinutiOccupazioneTavolo.Text) = True Then
+            minutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
+         Else
+            cmbMinutiOccupazioneTavolo.Text = MINUTI_TAVOLO.ToString
+            minutiOccupazioneTavolo = MINUTI_TAVOLO
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub cmbMinutiOccupazioneTavolo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbMinutiOccupazioneTavolo.KeyPress
+      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
    End Sub
 End Class
