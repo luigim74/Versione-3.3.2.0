@@ -92,7 +92,7 @@ Public Class frmPos
    Private valQuantità As Double = 1
 
    ' Note della comanda.
-   Private noteComanda As String
+   Private noteComanda As String = String.Empty
 
    Private controlloAttivo As Control
 
@@ -4151,7 +4151,7 @@ Public Class frmPos
                .AliquotaIva = lstvDettagli.Items(i).SubItems(12).Text
                .NumeroUscita = lstvDettagli.Items(i).SubItems(14).Text
                .NumeroConto = String.Empty
-               .Note = String.Empty 'noteComanda
+               .Note = noteComanda
 
                .InserisciDati(TAB_COMANDE)
             Next
@@ -6009,12 +6009,14 @@ Public Class frmPos
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
          If nomeTavolo <> String.Empty And nomeTavolo <> "Tavoli" Then
-            ' Se un conto esistente.
-            If IsNothing(g_frmPos.numeroContoDoc) = False Then
-               frm = New NoteComandePOS(LeggiNoteComande(TAB_COMANDE, g_frmPos.numeroContoDoc))
-            Else
-               frm = New NoteComandePOS(String.Empty)
+
+            ' Se non ci sono note in memoria le cerca nell'archivio.
+            If noteComanda = String.Empty Then
+               noteComanda = LeggiNoteComande(TAB_COMANDE, idTavolo)
             End If
+
+            ' Apre il form per l'inserimento delle note.
+            frm = New NoteComandePOS(noteComanda)
 
             ' Salva temporaneamente le note in memoria per essere salvate in seguito nel database.
             If frm.ShowDialog = DialogResult.Yes Then
@@ -7376,7 +7378,7 @@ Public Class frmPos
       End Try
    End Sub
 
-   Public Function LeggiNoteComande(ByVal tabella As String, ByVal numConto As String) As String
+   Public Function LeggiNoteConto(ByVal tabella As String, ByVal numConto As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 
@@ -7409,6 +7411,41 @@ Public Class frmPos
 
       End Try
    End Function
+
+   Public Function LeggiNoteComande(ByVal tabella As String, ByVal idTavolo As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE IdRisorsa = " & idTavolo, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Dim note As String
+         Do While dr.Read()
+            ' Note.
+            If IsDBNull(dr.Item("Note")) = False Then
+               note = dr.Item("Note").ToString
+            Else
+               note = String.Empty
+            End If
+         Loop
+
+         Return note
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
 
 
 End Class

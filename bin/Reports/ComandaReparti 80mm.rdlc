@@ -47,7 +47,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -322,7 +321,7 @@
         <Top>0.17639cm</Top>
         <Left>0.28698cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.1cm</Width>
+        <Width>7.09999cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -330,7 +329,7 @@
         </Style>
       </Tablix>
       <Line Name="Line3">
-        <Top>2.15278cm</Top>
+        <Top>2.94653cm</Top>
         <Left>0.28699cm</Left>
         <Height>0cm</Height>
         <Width>7.09999cm</Width>
@@ -341,8 +340,39 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Note">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Note.Value, "ComandeDataSet")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Note</rd:DefaultName>
+        <Top>2.15278cm</Top>
+        <Left>0.28699cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.09998cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>0.94791in</Height>
+    <Height>1.20833in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -777,6 +807,10 @@
         <Field Name="AliquotaIva">
           <DataField>AliquotaIva</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Note">
+          <DataField>Note</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -107,7 +107,7 @@ Partial Class NoteComandePOS
       Me.eui_cmdSalva.Name = "eui_cmdSalva"
       Me.eui_cmdSalva.Size = New System.Drawing.Size(138, 53)
       Me.eui_cmdSalva.TabIndex = 284
-      Me.eui_cmdSalva.Text = "&Salva"
+      Me.eui_cmdSalva.Text = "&OK"
       '
       'NoteComandePOS
       '
@@ -115,7 +115,7 @@ Partial Class NoteComandePOS
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(580, 378)
+      Me.ClientSize = New System.Drawing.Size(574, 375)
       Me.Controls.Add(Me.eui_txtNote)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.Label7)
@@ -126,6 +126,7 @@ Partial Class NoteComandePOS
       Me.MaximizeBox = False
       Me.MinimizeBox = False
       Me.Name = "NoteComandePOS"
+      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "NOTE COMANDA"
       Me.ResumeLayout(False)
       Me.PerformLayout()
