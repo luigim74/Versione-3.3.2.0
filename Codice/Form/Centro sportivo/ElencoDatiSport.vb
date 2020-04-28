@@ -1463,41 +1463,6 @@ Public Class frmElencoDatiSport
       End Try
    End Function
 
-   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
-      'Try
-      '   Dim cn As New OleDbConnection(ConnString)
-
-      '   cn.Open()
-
-      '   Dim oleAdapter As New OleDbDataAdapter
-
-      '   oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-      '   Dim ds As New HospitalityDataSet
-      '   ds.Clear()
-      '   oleAdapter.Fill(ds, tabella)
-
-      '   Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-      '   rep.Load(Application.StartupPath & nomeDoc)
-
-      '   rep.SetDataSource(ds)
-
-      '   rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-      '                      PrintDialog1.PrinterSettings.FromPage,
-      '                      PrintDialog1.PrinterSettings.ToPage)
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'Finally
-      '   cn.Close()
-
-      'End Try
-   End Sub
-
    Private Sub AnteprimaDiStampaAccessoriServizi(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)

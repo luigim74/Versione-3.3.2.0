@@ -108,6 +108,10 @@ Public Class frmCamerieri
    Public WithEvents txtCodice As System.Windows.Forms.TextBox
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents cmbCittà As ComboBox
+   Public WithEvents Label7 As Label
+   Friend WithEvents txtCostoGiorno As TextBox
+   Friend WithEvents cmbAgenzia As ComboBox
+   Public WithEvents Label8 As Label
    Friend WithEvents eui_cmdNuovoMsg As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -172,6 +176,10 @@ Public Class frmCamerieri
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.txtCostoGiorno = New System.Windows.Forms.TextBox()
+      Me.Label7 = New System.Windows.Forms.Label()
+      Me.cmbAgenzia = New System.Windows.Forms.ComboBox()
+      Me.Label8 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -193,7 +201,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(581, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(591, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -236,7 +244,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(581, 20)
+      Me.Panel1.Size = New System.Drawing.Size(591, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -261,12 +269,16 @@ Public Class frmCamerieri
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(581, 343)
+      Me.TabControl1.Size = New System.Drawing.Size(591, 353)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.cmbAgenzia)
+      Me.TabPage1.Controls.Add(Me.Label8)
+      Me.TabPage1.Controls.Add(Me.Label7)
+      Me.TabPage1.Controls.Add(Me.txtCostoGiorno)
       Me.TabPage1.Controls.Add(Me.cmbCittà)
       Me.TabPage1.Controls.Add(Me.txtCostoOra)
       Me.TabPage1.Controls.Add(Me.Label3)
@@ -293,7 +305,7 @@ Public Class frmCamerieri
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(573, 317)
+      Me.TabPage1.Size = New System.Drawing.Size(583, 327)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -312,12 +324,12 @@ Public Class frmCamerieri
       Me.txtCostoOra.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCostoOra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtCostoOra.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.txtCostoOra.Location = New System.Drawing.Point(104, 240)
+      Me.txtCostoOra.Location = New System.Drawing.Point(272, 261)
       Me.txtCostoOra.MaxLength = 0
       Me.txtCostoOra.Name = "txtCostoOra"
       Me.txtCostoOra.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCostoOra.Size = New System.Drawing.Size(104, 20)
-      Me.txtCostoOra.TabIndex = 9
+      Me.txtCostoOra.Size = New System.Drawing.Size(96, 20)
+      Me.txtCostoOra.TabIndex = 11
       Me.txtCostoOra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label3
@@ -326,7 +338,7 @@ Public Class frmCamerieri
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(16, 240)
+      Me.Label3.Location = New System.Drawing.Point(207, 264)
       Me.Label3.Name = "Label3"
       Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label3.Size = New System.Drawing.Size(59, 13)
@@ -369,7 +381,7 @@ Public Class frmCamerieri
       Me.EliminaImg.Location = New System.Drawing.Point(456, 160)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
-      Me.EliminaImg.TabIndex = 11
+      Me.EliminaImg.TabIndex = 13
       Me.EliminaImg.Text = "&Elimina"
       '
       'ApriImg
@@ -378,7 +390,7 @@ Public Class frmCamerieri
       Me.ApriImg.Location = New System.Drawing.Point(384, 160)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(64, 24)
-      Me.ApriImg.TabIndex = 10
+      Me.ApriImg.TabIndex = 12
       Me.ApriImg.Text = "&Apri"
       '
       'picFoto
@@ -755,7 +767,7 @@ Public Class frmCamerieri
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(563, 307)
+      Me.TabPage4.Size = New System.Drawing.Size(573, 317)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -791,6 +803,7 @@ Public Class frmCamerieri
       Me.lvwAllegati.AllowColumnReorder = True
       Me.lvwAllegati.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
       Me.lvwAllegati.FullRowSelect = True
+      Me.lvwAllegati.HideSelection = False
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
@@ -835,7 +848,7 @@ Public Class frmCamerieri
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(563, 307)
+      Me.TabPage6.Size = New System.Drawing.Size(573, 317)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -853,7 +866,7 @@ Public Class frmCamerieri
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(563, 307)
+      Me.txtNote.Size = New System.Drawing.Size(573, 317)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -865,12 +878,55 @@ Public Class frmCamerieri
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'txtCostoGiorno
+      '
+      Me.txtCostoGiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtCostoGiorno.Location = New System.Drawing.Point(104, 261)
+      Me.txtCostoGiorno.Name = "txtCostoGiorno"
+      Me.txtCostoGiorno.Size = New System.Drawing.Size(97, 20)
+      Me.txtCostoGiorno.TabIndex = 10
+      Me.txtCostoGiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label7
+      '
+      Me.Label7.AutoSize = True
+      Me.Label7.BackColor = System.Drawing.Color.Transparent
+      Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label7.ForeColor = System.Drawing.Color.Black
+      Me.Label7.Location = New System.Drawing.Point(16, 264)
+      Me.Label7.Name = "Label7"
+      Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label7.Size = New System.Drawing.Size(73, 13)
+      Me.Label7.TabIndex = 190
+      Me.Label7.Text = "Costo/Giorno:"
+      '
+      'cmbAgenzia
+      '
+      Me.cmbAgenzia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbAgenzia.Location = New System.Drawing.Point(104, 234)
+      Me.cmbAgenzia.Name = "cmbAgenzia"
+      Me.cmbAgenzia.Size = New System.Drawing.Size(184, 21)
+      Me.cmbAgenzia.TabIndex = 9
+      '
+      'Label8
+      '
+      Me.Label8.AutoSize = True
+      Me.Label8.BackColor = System.Drawing.Color.Transparent
+      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label8.ForeColor = System.Drawing.Color.Black
+      Me.Label8.Location = New System.Drawing.Point(16, 234)
+      Me.Label8.Name = "Label8"
+      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label8.Size = New System.Drawing.Size(48, 13)
+      Me.Label8.TabIndex = 192
+      Me.Label8.Text = "Agenzia:"
+      '
       'frmCamerieri
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(581, 389)
+      Me.ClientSize = New System.Drawing.Size(591, 399)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -910,6 +966,7 @@ Public Class frmCamerieri
 
    Const TAB_CAP As String = "CAP"
    Const TAB_NAZIONI As String = "Nazioni"
+   Const TAB_AGENZIE As String = "Agenzie"
    Const TAB_ALLEGATI As String = "Ca_Allegati"
    Const TAB_PREN As String = "Prenotazioni"
    Const NOME_TABELLA As String = "Camerieri"
@@ -1060,6 +1117,7 @@ Public Class frmCamerieri
             .Città = FormattaApici(cmbCittà.Text)
             .Provincia = FormattaApici(txtProv.Text)
             .Nazione = FormattaApici(cmbNazione.Text)
+            .Agenzia = FormattaApici(cmbAgenzia.Text)
             .TelCasa = FormattaApici(txtTelCasa.Text)
             .TelUfficio = FormattaApici(txtTelUfficio.Text)
             .Cell = FormattaApici(txtCell.Text)
@@ -1067,8 +1125,14 @@ Public Class frmCamerieri
             .Email = FormattaApici(txtEmail.Text)
             .Note = FormattaApici(txtNote.Text)
 
+            If IsNumeric(txtCostoGiorno.Text) Then
+               .CostoGiorno = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtCostoGiorno.Text))
+            Else
+               .CostoGiorno = VALORE_ZERO
+            End If
+
             If IsNumeric(txtCostoOra.Text) Then
-               .CostoOra = CFormatta.FormattaEuro(txtCostoOra.Text)
+               .CostoOra = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtCostoOra.Text))
             Else
                .CostoOra = VALORE_ZERO
             End If
@@ -1141,6 +1205,7 @@ Public Class frmCamerieri
          ' Carica le liste.
          CaricaLista(cmbCittà, TAB_CAP)
          CaricaLista(cmbNazione, TAB_NAZIONI)
+         CaricaLista(cmbAgenzia, TAB_AGENZIE)
 
          If Me.Tag <> "" Then
             With ACamerieri
@@ -1157,13 +1222,25 @@ Public Class frmCamerieri
                cmbCittà.Text = .Città
                txtProv.Text = .Provincia
                cmbNazione.Text = .Nazione
+               cmbAgenzia.Text = .Agenzia
                txtTelCasa.Text = .TelCasa
                txtTelUfficio.Text = .TelUfficio
                txtCell.Text = .Cell
                txtFax.Text = .Fax
                txtEmail.Text = .Email
                txtNote.Text = .Note
-               txtCostoOra.Text = .CostoOra
+
+               If IsNumeric(.CostoGiorno) = True Then
+                  txtCostoGiorno.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.CostoGiorno))
+               Else
+                  txtCostoGiorno.Text = VALORE_ZERO
+               End If
+
+               If IsNumeric(.CostoOra) = True Then
+                  txtCostoOra.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.CostoOra))
+               Else
+                  txtCostoOra.Text = VALORE_ZERO
+               End If
 
                If .Immagine <> Nothing Then
                   If File.Exists(.Immagine) = True Then

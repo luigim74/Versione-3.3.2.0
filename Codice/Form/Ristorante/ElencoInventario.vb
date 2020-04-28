@@ -1105,55 +1105,6 @@ Public Class ElencoInventario
       End Try
    End Function
 
-   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String, Optional ByVal frmId As String = "")
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
-      'Dim cn As OleDbConnection
-
-      'Try
-      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-
-      '      If frmId = "Clienti" Then
-      '         ConnStringAnagrafiche = CreaConnString(PercorsoDBClienti)
-
-      '         ' Dichiara un oggetto connessione.
-      '         cn = New OleDbConnection(ConnStringAnagrafiche)
-      '      Else
-      '         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-      '         cn = New OleDbConnection(ConnString)
-      '      End If
-
-      '      cn.Open()
-
-      '      Dim oleAdapter As New OleDbDataAdapter
-
-      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-      '      Dim ds As New Dataset1
-
-      '      ds.Clear()
-
-      '      oleAdapter.Fill(ds, tabella)
-
-      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-      '      rep.Load(Application.StartupPath & nomeDoc)
-
-      '      rep.SetDataSource(ds)
-
-      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True, _
-      '                         PrintDialog1.PrinterSettings.FromPage, _
-      '                         PrintDialog1.PrinterSettings.ToPage)
-
-      '      cn.Close()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
    Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)

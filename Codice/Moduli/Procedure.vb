@@ -699,6 +699,38 @@ Module Procedure
       End Try
    End Sub
 
+   Public Sub CaricaListaTavoli(ByVal cmbIdTavoli As ComboBox, ByVal cmbTavoli As ComboBox, ByVal tabella As String)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         cmbIdTavoli.Items.Clear()
+         cmbTavoli.Items.Clear()
+
+         cmbIdTavoli.Items.Add("0")
+         cmbTavoli.Items.Add(VALORE_NESSUNO)
+
+         Do While dr.Read
+            cmbIdTavoli.Items.Add(dr.Item("Id"))
+            cmbTavoli.Items.Add(dr.Item("Descrizione"))
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+
    Public Sub CaricaListaMsgReparti(ByVal cmb As ComboBox, ByVal tabella As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)

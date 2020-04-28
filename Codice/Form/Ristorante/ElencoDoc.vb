@@ -2455,48 +2455,6 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-   Public Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
-
-      'Try
-
-      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-
-      '      'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-      '      Dim cn As New OleDbConnection(ConnString)
-
-      '      cn.Open()
-
-      '      Dim oleAdapter As New OleDbDataAdapter
-
-      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-      '      Dim ds As New Dataset1
-
-      '      ds.Clear()
-
-      '      oleAdapter.Fill(ds, tabella)
-
-      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-      '      rep.Load(Application.StartupPath & nomeDoc)
-
-      '      rep.SetDataSource(ds)
-
-      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-      '                         PrintDialog1.PrinterSettings.FromPage,
-      '                         PrintDialog1.PrinterSettings.ToPage)
-
-      '      cn.Close()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
    Public Sub IncassaSospeso()
       Try
          ' Apre la finestra per l'incasso del sospeso.

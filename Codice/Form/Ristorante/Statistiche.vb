@@ -898,6 +898,22 @@ Public Class frmStatistiche
          descrizioneStyle.NullText = ""
          descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
          gridStyle.GridColumnStyles.Add(descrizioneStyle)
+         ' Tavolo
+         Dim tavoloStyle As New DataGridTextBoxColumn
+         tavoloStyle.MappingName = "DesTavolo"
+         tavoloStyle.HeaderText = "Tavolo"
+         tavoloStyle.Width = 70
+         tavoloStyle.NullText = ""
+         tavoloStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tavoloStyle)
+         ' Cameriere
+         Dim cameriereStyle As New DataGridTextBoxColumn
+         cameriereStyle.MappingName = "DesCameriere"
+         cameriereStyle.HeaderText = "Cameriere"
+         cameriereStyle.Width = 70
+         cameriereStyle.NullText = ""
+         cameriereStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(cameriereStyle)
          ' Quantit‡ venduta
          Dim qt‡VendutaStyle As New DataGridTextBoxColumn
          qt‡VendutaStyle.MappingName = "Quantit‡"
@@ -948,6 +964,10 @@ Public Class frmStatistiche
                campoRicerca = "IdPiatto"
             Case "Descrizione"
                campoRicerca = "DesPiatto"
+            Case "Tavolo"
+               campoRicerca = "DesTavolo"
+            Case "Cameriere"
+               campoRicerca = "DesCameriere"
             Case "Q.t‡ venduta"
                campoRicerca = "Quantit‡"
             Case "Val. venduto"
@@ -1023,6 +1043,8 @@ Public Class frmStatistiche
       Try
          CampoRicerca.Items.Add("Codice")
          CampoRicerca.Items.Add("Descrizione")
+         CampoRicerca.Items.Add("Tavolo")
+         CampoRicerca.Items.Add("Cameriere")
          CampoRicerca.Items.Add("Q.t‡ venduta")
          CampoRicerca.Items.Add("Prezzo")
          CampoRicerca.Items.Add("Val. venduto")
@@ -1114,47 +1136,6 @@ Public Class frmStatistiche
          cn.Close()
 
       End Try
-   End Sub
-
-   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
-      'Try
-
-      '   If PrintDialog1.ShowDialog() = DialogResult.OK Then
-
-      '      'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-      '      Dim cn As New OleDbConnection(ConnString)
-
-      '      cn.Open()
-
-      '      Dim oleAdapter As New OleDbDataAdapter
-
-      '      oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
-
-      '      Dim ds As New Dataset1
-
-      '      ds.Clear()
-
-      '      oleAdapter.Fill(ds, tabella)
-
-      '      Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-      '      rep.Load(Application.StartupPath & nomeDoc)
-
-      '      rep.SetDataSource(ds)
-
-      '      rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-      '                         PrintDialog1.PrinterSettings.FromPage,
-      '                         PrintDialog1.PrinterSettings.ToPage)
-
-      '      cn.Close()
-      '   End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
    End Sub
 
    Private Sub frmStatistiche_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated

@@ -14,6 +14,8 @@ Public Class Cameriere
    Public NumComp As String
    Public Strutture As String
    Public CostoOra As String
+   Public CostoGiorno As String
+   Public Agenzia As String
 
    Private m_ConnString As String
 
@@ -310,6 +312,16 @@ Public Class Cameriere
          Else
             Me.CostoOra = ""
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("CostoGiorno")) = False Then
+            Me.CostoGiorno = ds.Tables(tabella).Rows(0)("CostoGiorno")
+         Else
+            Me.CostoGiorno = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Agenzia")) = False Then
+            Me.Agenzia = ds.Tables(tabella).Rows(0)("Agenzia")
+         Else
+            Me.Agenzia = ""
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -335,69 +347,71 @@ Public Class Cameriere
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Nome, Cap, Cell, Città, CodFisc, Cognome, DataNascita, DataRilascioDoc, " & _
-                                              "Disabile, Email, Fax, Indirizzo, InvioCorrisp, LuogoNascita, Nazione, " & _
-                                              "NazioneNascita, NumCarta, NumeroDoc, PIva, Provincia, ProvNascita, " & _
-                                              "Regione, RilasciatoDa, ScadenzaCarta, Sesso, Strutture, Targa, TelCasa, " & _
-                                              "TelUfficio, TipoCliente, TipoDoc, TipoPagamento, TitolareCarta, Titolo, " & _
-                                              "[Note], Immagine, Internet, Mastro, Intestatario, CartaCredito, " & _
-                                              "Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, CostoOra) " & _
-                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', " & _
-                                              "'{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', " & _
-                                              "'{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', " & _
-                                              "'{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', " & _
-                                              "'{41}', '{42}', '{43}', '{44}', '{45}', '{46}', '{47}', '{48}', '{49}', '{50}')", _
-                                              tabella, _
-                                              Me.Nome, _
-                                              Me.Cap, _
-                                              Me.Cell, _
-                                              Me.Città, _
-                                              Me.CodFisc, _
-                                              Me.Cognome, _
-                                              Me.DataNascita, _
-                                              Me.DataRilascioDoc, _
-                                              Me.Disabile, _
-                                              Me.Email, _
-                                              Me.Fax, _
-                                              Me.Indirizzo1, _
-                                              Me.InvioCorrisp, _
-                                              Me.LuogoNascita, _
-                                              Me.Nazione, _
-                                              Me.NazioneNascita, _
-                                              Me.NumCarta, _
-                                              Me.NumeroDoc, _
-                                              Me.PIva, _
-                                              Me.Provincia, _
-                                              Me.ProvNascita, _
-                                              Me.Regione, _
-                                              Me.RilasciatoDa, _
-                                              Me.ScadenzaCarta, _
-                                              Me.Sesso, _
-                                              Me.Strutture, _
-                                              Me.Targa, _
-                                              Me.TelCasa, _
-                                              Me.TelUfficio, _
-                                              Me.TipoCliente, _
-                                              Me.TipoDoc, _
-                                              Me.TipoPagamento, _
-                                              Me.TitolareCarta, _
-                                              Me.Titolo, _
-                                              Me.Note, _
-                                              Me.Immagine, _
-                                              Me.Internet, _
-                                              Me.Mastro, _
-                                              Me.Intestatario, _
-                                              Me.CartaCredito, _
-                                              Me.Mercato, _
-                                              Me.Canale, _
-                                              Me.Lingua, _
-                                              Me.Professione, _
-                                              Me.NoteVideo, _
-                                              Me.NoteStampa, _
-                                              Me.Privacy, _
-                                              Me.InsPS, _
-                                              Me.NumComp, _
-                                              Me.CostoOra)
+         sql = String.Format("INSERT INTO {0} (Nome, Cap, Cell, Città, CodFisc, Cognome, DataNascita, DataRilascioDoc, " &
+                                              "Disabile, Email, Fax, Indirizzo, InvioCorrisp, LuogoNascita, Nazione, " &
+                                              "NazioneNascita, NumCarta, NumeroDoc, PIva, Provincia, ProvNascita, " &
+                                              "Regione, RilasciatoDa, ScadenzaCarta, Sesso, Strutture, Targa, TelCasa, " &
+                                              "TelUfficio, TipoCliente, TipoDoc, TipoPagamento, TitolareCarta, Titolo, " &
+                                              "[Note], Immagine, Internet, Mastro, Intestatario, CartaCredito, " &
+                                              "Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, CostoOra, CostoGiorno, Agenzia) " &
+                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', " &
+                                              "'{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', " &
+                                              "'{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', " &
+                                              "'{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', " &
+                                              "'{41}', '{42}', '{43}', '{44}', '{45}', '{46}', '{47}', '{48}', '{49}', '{50}', '{51}', '{52}')",
+                                              tabella,
+                                              Me.Nome,
+                                              Me.Cap,
+                                              Me.Cell,
+                                              Me.Città,
+                                              Me.CodFisc,
+                                              Me.Cognome,
+                                              Me.DataNascita,
+                                              Me.DataRilascioDoc,
+                                              Me.Disabile,
+                                              Me.Email,
+                                              Me.Fax,
+                                              Me.Indirizzo1,
+                                              Me.InvioCorrisp,
+                                              Me.LuogoNascita,
+                                              Me.Nazione,
+                                              Me.NazioneNascita,
+                                              Me.NumCarta,
+                                              Me.NumeroDoc,
+                                              Me.PIva,
+                                              Me.Provincia,
+                                              Me.ProvNascita,
+                                              Me.Regione,
+                                              Me.RilasciatoDa,
+                                              Me.ScadenzaCarta,
+                                              Me.Sesso,
+                                              Me.Strutture,
+                                              Me.Targa,
+                                              Me.TelCasa,
+                                              Me.TelUfficio,
+                                              Me.TipoCliente,
+                                              Me.TipoDoc,
+                                              Me.TipoPagamento,
+                                              Me.TitolareCarta,
+                                              Me.Titolo,
+                                              Me.Note,
+                                              Me.Immagine,
+                                              Me.Internet,
+                                              Me.Mastro,
+                                              Me.Intestatario,
+                                              Me.CartaCredito,
+                                              Me.Mercato,
+                                              Me.Canale,
+                                              Me.Lingua,
+                                              Me.Professione,
+                                              Me.NoteVideo,
+                                              Me.NoteStampa,
+                                              Me.Privacy,
+                                              Me.InsPS,
+                                              Me.NumComp,
+                                              Me.CostoOra,
+                                              Me.CostoGiorno,
+                                              Me.Agenzia)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -438,109 +452,113 @@ Public Class Cameriere
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET Nome = '{1}', " & _
-                             "Cap = '{2}', " & _
-                             "Cell = '{3}', " & _
-                             "Città = '{4}', " & _
-                             "CodFisc = '{5}', " & _
-                             "Cognome = '{6}', " & _
-                             "DataNascita = '{7}', " & _
-                             "DataRilascioDoc = '{8}', " & _
-                             "Disabile = '{9}', " & _
-                             "Email = '{10}', " & _
-                             "Fax = '{11}', " & _
-                             "Indirizzo = '{12}', " & _
-                             "InvioCorrisp = '{13}', " & _
-                             "LuogoNascita = '{14}', " & _
-                             "Nazione = '{15}', " & _
-                             "NazioneNascita = '{16}', " & _
-                             "NumCarta = '{17}', " & _
-                             "NumeroDoc = '{18}', " & _
-                             "PIva = '{19}', " & _
-                             "Provincia = '{20}', " & _
-                             "ProvNascita = '{21}', " & _
-                             "Regione = '{22}', " & _
-                             "RilasciatoDa = '{23}', " & _
-                             "ScadenzaCarta = '{24}', " & _
-                             "Sesso = '{25}', " & _
-                             "Strutture = '{26}', " & _
-                             "Targa = '{27}', " & _
-                             "TelCasa = '{28}', " & _
-                             "TelUfficio = '{29}', " & _
-                             "TipoCliente = '{30}', " & _
-                             "TipoDoc = '{31}', " & _
-                             "TipoPagamento = '{32}', " & _
-                             "TitolareCarta = '{33}', " & _
-                             "Titolo = '{34}', " & _
-                             "[Note] = '{35}', " & _
-                             "Immagine = '{36}', " & _
-                             "Internet = '{37}', " & _
-                             "Mastro = '{38}', " & _
-                             "Intestatario = '{39}', " & _
-                             "CartaCredito = '{40}', " & _
-                             "Mercato = '{41}', " & _
-                             "Canale = '{42}', " & _
-                             "Lingua = '{43}', " & _
-                             "Professione = '{44}', " & _
-                             "[NoteVideo] = '{45}', " & _
-                             "[NoteStampa] = '{46}', " & _
-                             "Privacy = '{47}', " & _
-                             "InsPS = '{48}', " & _
-                             "NumComp = '{49}', " & _
-                             "CostoOra = '{50}' " & _
-                             "WHERE Id = {51}", _
-                              tabella, _
-                              Me.Nome, _
-                              Me.Cap, _
-                              Me.Cell, _
-                              Me.Città, _
-                              Me.CodFisc, _
-                              Me.Cognome, _
-                              Me.DataNascita, _
-                              Me.DataRilascioDoc, _
-                              Me.Disabile, _
-                              Me.Email, _
-                              Me.Fax, _
-                              Me.Indirizzo1, _
-                              Me.InvioCorrisp, _
-                              Me.LuogoNascita, _
-                              Me.Nazione, _
-                              Me.NazioneNascita, _
-                              Me.NumCarta, _
-                              Me.NumeroDoc, _
-                              Me.PIva, _
-                              Me.Provincia, _
-                              Me.ProvNascita, _
-                              Me.Regione, _
-                              Me.RilasciatoDa, _
-                              Me.ScadenzaCarta, _
-                              Me.Sesso, _
-                              Me.Strutture, _
-                              Me.Targa, _
-                              Me.TelCasa, _
-                              Me.TelUfficio, _
-                              Me.TipoCliente, _
-                              Me.TipoDoc, _
-                              Me.TipoPagamento, _
-                              Me.TitolareCarta, _
-                              Me.Titolo, _
-                              Me.Note, _
-                              Me.Immagine, _
-                              Me.Internet, _
-                              Me.Mastro, _
-                              Me.Intestatario, _
-                              Me.CartaCredito, _
-                              Me.Mercato, _
-                              Me.Canale, _
-                              Me.Lingua, _
-                              Me.Professione, _
-                              Me.NoteVideo, _
-                              Me.NoteStampa, _
-                              Me.Privacy, _
-                              Me.InsPS, _
-                              Me.NumComp, _
-                              Me.CostoOra, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET Nome = '{1}', " &
+                             "Cap = '{2}', " &
+                             "Cell = '{3}', " &
+                             "Città = '{4}', " &
+                             "CodFisc = '{5}', " &
+                             "Cognome = '{6}', " &
+                             "DataNascita = '{7}', " &
+                             "DataRilascioDoc = '{8}', " &
+                             "Disabile = '{9}', " &
+                             "Email = '{10}', " &
+                             "Fax = '{11}', " &
+                             "Indirizzo = '{12}', " &
+                             "InvioCorrisp = '{13}', " &
+                             "LuogoNascita = '{14}', " &
+                             "Nazione = '{15}', " &
+                             "NazioneNascita = '{16}', " &
+                             "NumCarta = '{17}', " &
+                             "NumeroDoc = '{18}', " &
+                             "PIva = '{19}', " &
+                             "Provincia = '{20}', " &
+                             "ProvNascita = '{21}', " &
+                             "Regione = '{22}', " &
+                             "RilasciatoDa = '{23}', " &
+                             "ScadenzaCarta = '{24}', " &
+                             "Sesso = '{25}', " &
+                             "Strutture = '{26}', " &
+                             "Targa = '{27}', " &
+                             "TelCasa = '{28}', " &
+                             "TelUfficio = '{29}', " &
+                             "TipoCliente = '{30}', " &
+                             "TipoDoc = '{31}', " &
+                             "TipoPagamento = '{32}', " &
+                             "TitolareCarta = '{33}', " &
+                             "Titolo = '{34}', " &
+                             "[Note] = '{35}', " &
+                             "Immagine = '{36}', " &
+                             "Internet = '{37}', " &
+                             "Mastro = '{38}', " &
+                             "Intestatario = '{39}', " &
+                             "CartaCredito = '{40}', " &
+                             "Mercato = '{41}', " &
+                             "Canale = '{42}', " &
+                             "Lingua = '{43}', " &
+                             "Professione = '{44}', " &
+                             "[NoteVideo] = '{45}', " &
+                             "[NoteStampa] = '{46}', " &
+                             "Privacy = '{47}', " &
+                             "InsPS = '{48}', " &
+                             "NumComp = '{49}', " &
+                             "CostoOra = '{50}', " &
+                             "CostoGiorno = '{51}', " &
+                             "Agenzia = '{52}' " &
+                             "WHERE Id = {53}",
+                              tabella,
+                              Me.Nome,
+                              Me.Cap,
+                              Me.Cell,
+                              Me.Città,
+                              Me.CodFisc,
+                              Me.Cognome,
+                              Me.DataNascita,
+                              Me.DataRilascioDoc,
+                              Me.Disabile,
+                              Me.Email,
+                              Me.Fax,
+                              Me.Indirizzo1,
+                              Me.InvioCorrisp,
+                              Me.LuogoNascita,
+                              Me.Nazione,
+                              Me.NazioneNascita,
+                              Me.NumCarta,
+                              Me.NumeroDoc,
+                              Me.PIva,
+                              Me.Provincia,
+                              Me.ProvNascita,
+                              Me.Regione,
+                              Me.RilasciatoDa,
+                              Me.ScadenzaCarta,
+                              Me.Sesso,
+                              Me.Strutture,
+                              Me.Targa,
+                              Me.TelCasa,
+                              Me.TelUfficio,
+                              Me.TipoCliente,
+                              Me.TipoDoc,
+                              Me.TipoPagamento,
+                              Me.TitolareCarta,
+                              Me.Titolo,
+                              Me.Note,
+                              Me.Immagine,
+                              Me.Internet,
+                              Me.Mastro,
+                              Me.Intestatario,
+                              Me.CartaCredito,
+                              Me.Mercato,
+                              Me.Canale,
+                              Me.Lingua,
+                              Me.Professione,
+                              Me.NoteVideo,
+                              Me.NoteStampa,
+                              Me.Privacy,
+                              Me.InsPS,
+                              Me.NumComp,
+                              Me.CostoOra,
+                              Me.CostoGiorno,
+                              Me.Agenzia,
                               codice)
 
          ' Crea il comando per la connessione corrente.

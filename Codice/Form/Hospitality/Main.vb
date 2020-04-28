@@ -10179,7 +10179,7 @@ Friend Class frmMain
             ' Visualizza un messaggio nella barra di stato.
             Me.eui_Informazioni.Text = CAR_MESSAGGI
 
-            g_frmMessaggi = New ElencoMessaggi
+            g_frmMessaggi = New ElencoMessaggi(String.Empty)
             g_frmMessaggi.MdiParent = Me
 
             ' Visualizza l'anagrafica clienti.

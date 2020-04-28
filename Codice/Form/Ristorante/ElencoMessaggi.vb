@@ -22,6 +22,7 @@ Imports Microsoft.Reporting.WinForms
 Public Class ElencoMessaggi
    Inherits System.Windows.Forms.Form
 
+   Const TAB_TAVOLI As String = "Tavoli"
    Const TAB_MESSAGGI As String = "Messaggi"
    Const TAB_MSG_REPARTI As String = "MessaggiReparti"
 
@@ -44,7 +45,12 @@ Public Class ElencoMessaggi
 
    Private DatiConfig As AppConfig
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
+   Friend WithEvents cmbTavolo As ComboBox
+   Friend WithEvents Label2 As Label
+   Friend WithEvents cmbIdTavolo As ComboBox
    Private CFormatta As New ClsFormatta
+
+   Dim nomeTavolo As String
 
    Private Enum percorsiStampa As Short
       Reparto = 0
@@ -54,13 +60,15 @@ Public Class ElencoMessaggi
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New()
+   Public Sub New(ByVal tavolo As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
       InitializeComponent()
 
       dt = ds.Tables.Add(TAB_MESSAGGI)
+
+      nomeTavolo = tavolo
 
    End Sub
 
@@ -130,6 +138,9 @@ Public Class ElencoMessaggi
       Me.cmdInvia = New System.Windows.Forms.Button()
       Me.Label1 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.cmbTavolo = New System.Windows.Forms.ComboBox()
+      Me.cmbIdTavolo = New System.Windows.Forms.ComboBox()
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel2.SuspendLayout()
       Me.SuspendLayout()
@@ -145,7 +156,7 @@ Public Class ElencoMessaggi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(516, 40)
+      Me.ToolBar1.Size = New System.Drawing.Size(659, 40)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.Wrappable = False
       '
@@ -303,7 +314,7 @@ Public Class ElencoMessaggi
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(516, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(659, 256)
       Me.DataGrid1.TabIndex = 1
       '
       'PrintDialog1
@@ -317,33 +328,36 @@ Public Class ElencoMessaggi
       'Panel2
       '
       Me.Panel2.BackColor = System.Drawing.Color.Gray
+      Me.Panel2.Controls.Add(Me.cmbIdTavolo)
+      Me.Panel2.Controls.Add(Me.cmbTavolo)
+      Me.Panel2.Controls.Add(Me.Label2)
       Me.Panel2.Controls.Add(Me.cmbMsg)
       Me.Panel2.Controls.Add(Me.cmdInvia)
       Me.Panel2.Controls.Add(Me.Label1)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 294)
+      Me.Panel2.Location = New System.Drawing.Point(0, 302)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(516, 56)
+      Me.Panel2.Size = New System.Drawing.Size(659, 56)
       Me.Panel2.TabIndex = 0
       '
       'cmbMsg
       '
       Me.cmbMsg.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.cmbMsg.Location = New System.Drawing.Point(96, 16)
+      Me.cmbMsg.Location = New System.Drawing.Point(319, 16)
       Me.cmbMsg.Name = "cmbMsg"
-      Me.cmbMsg.Size = New System.Drawing.Size(308, 21)
-      Me.cmbMsg.TabIndex = 0
+      Me.cmbMsg.Size = New System.Drawing.Size(228, 21)
+      Me.cmbMsg.TabIndex = 1
       '
       'cmdInvia
       '
       Me.cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmdInvia.BackColor = System.Drawing.SystemColors.Control
       Me.cmdInvia.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdInvia.Location = New System.Drawing.Point(412, 14)
+      Me.cmdInvia.Location = New System.Drawing.Point(555, 14)
       Me.cmdInvia.Name = "cmdInvia"
       Me.cmdInvia.Size = New System.Drawing.Size(88, 24)
-      Me.cmdInvia.TabIndex = 1
+      Me.cmdInvia.TabIndex = 2
       Me.cmdInvia.Text = "&Invia"
       Me.cmdInvia.UseVisualStyleBackColor = False
       '
@@ -352,7 +366,7 @@ Public Class ElencoMessaggi
       Me.Label1.AutoSize = True
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(16, 16)
+      Me.Label1.Location = New System.Drawing.Point(232, 18)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(81, 15)
       Me.Label1.TabIndex = 237
@@ -363,12 +377,40 @@ Public Class ElencoMessaggi
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label2.ForeColor = System.Drawing.Color.White
+      Me.Label2.Location = New System.Drawing.Point(12, 18)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(53, 15)
+      Me.Label2.TabIndex = 238
+      Me.Label2.Text = "Tavolo:"
+      '
+      'cmbTavolo
+      '
+      Me.cmbTavolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTavolo.Location = New System.Drawing.Point(71, 16)
+      Me.cmbTavolo.Name = "cmbTavolo"
+      Me.cmbTavolo.Size = New System.Drawing.Size(155, 21)
+      Me.cmbTavolo.TabIndex = 0
+      '
+      'cmbIdTavolo
+      '
+      Me.cmbIdTavolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbIdTavolo.Location = New System.Drawing.Point(179, 35)
+      Me.cmbIdTavolo.Name = "cmbIdTavolo"
+      Me.cmbIdTavolo.Size = New System.Drawing.Size(47, 21)
+      Me.cmbIdTavolo.TabIndex = 239
+      Me.cmbIdTavolo.Visible = False
+      '
       'ElencoMessaggi
       '
       Me.AcceptButton = Me.cmdInvia
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(516, 350)
+      Me.ClientSize = New System.Drawing.Size(659, 358)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.ToolBar1)
@@ -668,7 +710,7 @@ Public Class ElencoMessaggi
       End Try
    End Sub
 
-   Public Function SalvaDati(ByVal tabella As String, ByVal reparto As String, ByVal messaggio As String) As Boolean
+   Public Function SalvaDati(ByVal tabella As String, ByVal reparto As String, ByVal idRisorsa As String, ByVal descrizioneRisorsa As String, ByVal messaggio As String) As Boolean
       Dim sql As String
 
       Try
@@ -686,8 +728,8 @@ Public Class ElencoMessaggi
 
          cmdInsert.Parameters.Add("@Data", Now.ToShortDateString & " " & Now.ToShortTimeString)
          cmdInsert.Parameters.Add("@Reparto", reparto)
-         cmdInsert.Parameters.Add("@IdRisorsa", "")
-         cmdInsert.Parameters.Add("@DescrizioneRisorsa", "")
+         cmdInsert.Parameters.Add("@IdRisorsa", idRisorsa)
+         cmdInsert.Parameters.Add("@DescrizioneRisorsa", descrizioneRisorsa)
          cmdInsert.Parameters.Add("@Messaggio", messaggio)
          cmdInsert.Parameters.Add("@Inviato", "No")
 
@@ -838,52 +880,6 @@ Public Class ElencoMessaggi
       End Try
    End Sub
 
-   Private Sub _StampaDocumento(ByVal nomeDoc As String, ByVal idMsg As Integer, ByVal nomeStampante As String, ByVal tabella As String)
-      ' TODO_B: Eliminare! Vecchia procedura per CrystalReports.
-      'Try
-      '   'If PrintDialog1.ShowDialog() = DialogResult.OK Then
-
-      '   'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
-      '   Dim cn As New OleDbConnection(ConnString)
-
-      '   cn.Open()
-
-      '   Dim oleAdapter As New OleDbDataAdapter
-
-      '   oleAdapter.SelectCommand = New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idMsg, cn)
-
-      '   Dim ds As New Dataset1
-
-      '   ds.Clear()
-
-      '   oleAdapter.Fill(ds, tabella)
-
-      '   Dim rep As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-
-      '   rep.Load(Application.StartupPath & nomeDoc)
-
-      '   rep.SetDataSource(ds)
-
-      '   If nomeStampante <> String.Empty And nomeStampante <> VALORE_NESSUNA Then
-      '      rep.PrintOptions.PrinterName = nomeStampante
-      '   End If
-
-      '   rep.PrintToPrinter(PrintDialog1.PrinterSettings.Copies, True,
-      '                      PrintDialog1.PrinterSettings.FromPage,
-      '                      PrintDialog1.PrinterSettings.ToPage)
-
-      '   'End If
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'Finally
-      '   cn.Close()
-
-      'End Try
-   End Sub
-
    Private Sub ElencoMessaggi_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
       ' Visualizza i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
       g_frmMain.rtgGestionaleAmica.Visible = False
@@ -953,6 +949,19 @@ Public Class ElencoMessaggi
          ' Carica l'elenco dei messaggi per i reparti.
          CaricaListaMsgReparti(cmbMsg, TAB_MSG_REPARTI)
 
+         ' Carica l'elenco dei Tavoli.
+         CaricaListaTavoli(cmbIdTavolo, cmbTavolo, TAB_TAVOLI)
+
+         ' Seleziona il tavolo corrente.
+         If nomeTavolo <> String.Empty Then
+            cmbTavolo.SelectedItem = nomeTavolo
+         Else
+            cmbTavolo.SelectedItem = VALORE_NESSUNO
+         End If
+
+         ' Seleziona il rispettivo Id del Tavolo.
+         cmbIdTavolo.SelectedIndex = cmbTavolo.SelectedIndex
+
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_STRUMENTI_MSG_REPARTI, MODULO_STRUMENTI_MSG_REPARTI)
 
@@ -972,7 +981,7 @@ Public Class ElencoMessaggi
       For i = 0 To ToolBar1.Buttons.Count - 1
          If ToolBar1.Buttons(i).Pushed = True Then
 
-            SalvaDati(TAB_MESSAGGI, ToolBar1.Buttons(i).Text, cmbMsg.Text)
+            SalvaDati(TAB_MESSAGGI, ToolBar1.Buttons(i).Text, cmbIdTavolo.Text, cmbTavolo.Text, cmbMsg.Text)
 
             If i < indiceTb Then
                Dim j As Integer
@@ -1005,4 +1014,15 @@ Public Class ElencoMessaggi
       cmbMsg.Focus()
    End Sub
 
+   Private Sub cmbTavolo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTavolo.SelectedIndexChanged
+      Try
+         ' Seleziona il rispettivo Id del Tavolo.
+         cmbIdTavolo.SelectedIndex = cmbTavolo.SelectedIndex
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
 End Class
