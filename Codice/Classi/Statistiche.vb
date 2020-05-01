@@ -15,6 +15,7 @@ Public Class Statistiche
    Public Quantità As Double
    Public Prezzo As String
    Public Importo As String
+   Public Contabilizzata As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -109,6 +110,12 @@ Public Class Statistiche
          Else
             Me.Importo = ""
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Contabilizzata")) = False Then
+            Me.Importo = ds.Tables(tabella).Rows(0)("Contabilizzata")
+         Else
+            Me.Importo = "No"
+         End If
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -131,22 +138,23 @@ Public Class Statistiche
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Data, IdCategoria, DesCategoria, IdPiatto, DesPiatto, " & _
-                                              "IdTavolo, DesTavolo, IdCameriere, DesCameriere, Quantità, Prezzo, Importo) " & _
-                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10}, '{11}', '{12}')", _
-                                                tabella, _
-                                                Me.Data, _
-                                                Me.IdCategoria, _
-                                                Me.DesCategoria, _
-                                                Me.IdPiatto, _
-                                                Me.DesPiatto, _
-                                                Me.IdTavolo, _
-                                                Me.DesTavolo, _
-                                                Me.IdCameriere, _
-                                                Me.DesCameriere, _
-                                                Me.Quantità, _
-                                                Me.Prezzo, _
-                                                Me.Importo)
+         sql = String.Format("INSERT INTO {0} (Data, IdCategoria, DesCategoria, IdPiatto, DesPiatto, " &
+                                              "IdTavolo, DesTavolo, IdCameriere, DesCameriere, Quantità, Prezzo, Importo, Contabilizzata) " &
+                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10}, '{11}', '{12}', '{13}')",
+                                                tabella,
+                                                Me.Data,
+                                                Me.IdCategoria,
+                                                Me.DesCategoria,
+                                                Me.IdPiatto,
+                                                Me.DesPiatto,
+                                                Me.IdTavolo,
+                                                Me.DesTavolo,
+                                                Me.IdCameriere,
+                                                Me.DesCameriere,
+                                                Me.Quantità,
+                                                Me.Prezzo,
+                                                Me.Importo,
+                                                Me.Contabilizzata)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)

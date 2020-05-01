@@ -668,3 +668,55 @@ Nome parametro: rowIndex"
    in Hospitality_Solution.Cameriere.ModificaDati(String tabella, String codice)"
 "
 "
+"*** 29/04/2020 - 21:00:48 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella)"
+"
+"
+"*** 29/04/2020 - 21:00:51 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella)"
+"
+"
+"*** 29/04/2020 - 21:00:52 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella)"
+"
+"
+"*** 29/04/2020 - 21:00:53 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmCamerieri.frmCamerieri_Load(Object sender, EventArgs e)"
+"
+"
+"*** 01/05/2020 - 13:56:23 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella proposizione FROM."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.frmCamerieri.CaricaListaStatisticheVendita(ListView lstView, String idCameriere, String tabella)"
+"
+"
+"*** 01/05/2020 - 14:01:47 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella proposizione FROM."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.frmCamerieri.CaricaListaStatisticheVendita(ListView lstView, String idCameriere, String tabella)"
+"
+"
+"*** 01/05/2020 - 14:03:09 ***"
+"- DESCRIZIONE ERRORE: Categoria"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmCamerieri.CaricaListaStatisticheVendita(ListView lstView, String idCameriere, String tabella)"
+"
+"

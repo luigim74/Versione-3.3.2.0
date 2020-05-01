@@ -44,6 +44,10 @@ Module Dichiarazioni
    Public Const CLIENTI_LARGHEZZA As Integer = 600
    Public Const CLIENTI_ALTEZZA As Integer = 420
 
+   ' Dimensioni della finesta Camerieri.
+   Public Const CAMERIERI_LARGHEZZA As Integer = 700
+   Public Const CAMERIERI_ALTEZZA As Integer = 500
+
    ' Dimensioni del form Statistiche.
    Public Const STAT_LARGHEZZA As Integer = 750
    Public Const STAT_ALTEZZA As Integer = 500

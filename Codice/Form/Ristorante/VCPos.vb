@@ -4025,6 +4025,7 @@ Public Class frmPos
 
                .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
                .Importo = lstvDettagli.Items(i).SubItems(3).Text
+               .Contabilizzata = "No"
 
                .InserisciDati(TAB_STATISTICHE)
 

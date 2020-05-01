@@ -433,6 +433,7 @@ Public Class frmDocumento
 
                   .Prezzo = dgvDettagli.Rows(i).Cells(clnPrezzo.Name).Value.ToString
                   .Importo = dgvDettagli.Rows(i).Cells(clnImporto.Name).Value.ToString
+                  .Contabilizzata = "No"
 
                   .InserisciDati(TAB_STATISTICHE)
 
