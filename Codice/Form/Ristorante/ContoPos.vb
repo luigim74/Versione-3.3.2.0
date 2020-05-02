@@ -2323,6 +2323,24 @@ Public Class ContoPos
       End Try
    End Function
 
+   Public Function LeggiNumeroScontrinoNFConfig() As Integer
+      Try
+         ' Legge dal database.
+         Dim num As Integer = LeggiNumeroScontrinoNFMax()
+
+         If num = 0 Then
+            Return 1
+         Else
+            Return num + 1
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
    Public Function LeggiNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String) As Integer
       Try
          Dim chiaveConfig As String = String.Empty
@@ -3160,6 +3178,12 @@ Public Class ContoPos
                ' Esegue la stampa.
                StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
+            Case PERCORSO_REP_SNF
+               ' Attualmente usato per creare uno scontrino virtuale nel gestionale per la contabilià
+
+               ' Eseguire qui l'eventuale stampa su report.
+               'StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
+
             Case PERCORSO_REP_SF_RT
                ' Esegue la stampa.
                If CreaFileScontrinoWPOS1() = False Then
@@ -3355,7 +3379,16 @@ Public Class ContoPos
 
    Private Function SalvaDocumento() As Boolean
       Try
-         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         Dim NumeroDocumento As Integer
+
+         Select Case percorsoRep
+            Case PERCORSO_REP_SNF
+               NumeroDocumento = LeggiNumeroScontrinoNFConfig()
+               MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Case PERCORSO_REP_SF_RT
+               NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         End Select
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtSospeso.Text)
@@ -4912,6 +4945,41 @@ Public Class ContoPos
       End Try
    End Function
 
+   Public Function LeggiNumeroScontrinoNFMax() As Integer
+      Dim closeOnExit As Boolean
+      Dim numDoc As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene i dati per l'anno corrente.
+         Dim Oggi As String = CFormatta.FormattaData(Now.ToShortDateString)
+
+         cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM Documenti WHERE TipoDoc = 'Scontrino' AND DataDoc = #{0}#", Oggi)
+
+         If IsDBNull(cmd.ExecuteScalar()) = False Then
+            numDoc = CInt(cmd.ExecuteScalar())
+         Else
+            numDoc = 0
+         End If
+
+         Return numDoc
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
    Private Function LeggiUltimoDocCreato(ByVal tabella As String) As Integer
       Dim closeOnExit As Boolean
       Dim numRec As Integer
@@ -6345,8 +6413,8 @@ Public Class ContoPos
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
-         If ImpostaNomeStampante(3) = String.Empty Then
-            InfoScontrinoWPOS1()
+         If ImpostaNomeDoc(3) = String.Empty Then
+            InfoScontrino()
             Exit Sub
          End If
 
@@ -6361,15 +6429,8 @@ Public Class ContoPos
          If ImpostaNomeDoc(3) <> String.Empty Then
             percorsoRep = "\Reports\" & ImpostaNomeDoc(3)
          Else
-            percorsoRep = PERCORSO_REP_SF_RT
+            percorsoRep = PERCORSO_REP_SNF
          End If
-
-         '' B_TODO: Modifica per Retail.
-         'If txtSospeso.Text <> VALORE_ZERO Then
-         '   If VerificaIntestazione() = False Then
-         '      Exit Sub
-         '   End If
-         'End If
 
          If VerificaCartaCredito() = True Then
             StampaConto(ImpostaNomeStampante(3))

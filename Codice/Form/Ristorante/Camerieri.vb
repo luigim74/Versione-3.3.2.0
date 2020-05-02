@@ -197,31 +197,31 @@ Public Class frmCamerieri
       Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.eui_ddwnFiltro = New Elegant.Ui.DropDown()
+      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdStatTutte = New Elegant.Ui.Button()
+      Me.eui_cmdStatDaContabilizzare = New Elegant.Ui.Button()
+      Me.eui_cmdStatContabilizzate = New Elegant.Ui.Button()
+      Me.eui_cmdStatContabilizza = New Elegant.Ui.Button()
+      Me.txtTotale = New System.Windows.Forms.TextBox()
+      Me.txtTotaleQuantità = New System.Windows.Forms.TextBox()
+      Me.Label14 = New System.Windows.Forms.Label()
+      Me.Label12 = New System.Windows.Forms.Label()
+      Me.lvwStatistiche = New System.Windows.Forms.ListView()
+      Me.clnData = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnCategoria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnTavolo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnQuantità = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnPrezzo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnTotale = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnContabilizzata = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.TabPage6 = New System.Windows.Forms.TabPage()
       Me.txtNote = New System.Windows.Forms.TextBox()
       Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.lvwStatistiche = New System.Windows.Forms.ListView()
-      Me.clnData = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnTavolo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnQuantità = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnPrezzo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnTotale = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnCategoria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.Label12 = New System.Windows.Forms.Label()
-      Me.Label14 = New System.Windows.Forms.Label()
-      Me.txtTotaleQuantità = New System.Windows.Forms.TextBox()
-      Me.txtTotale = New System.Windows.Forms.TextBox()
-      Me.eui_cmdStatContabilizza = New Elegant.Ui.Button()
-      Me.clnContabilizzata = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.eui_ddwnFiltro = New Elegant.Ui.DropDown()
-      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.eui_cmdStatTutte = New Elegant.Ui.Button()
-      Me.eui_cmdStatDaContabilizzare = New Elegant.Ui.Button()
-      Me.eui_cmdStatContabilizzate = New Elegant.Ui.Button()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -229,9 +229,9 @@ Public Class frmCamerieri
       Me.TabPage3.SuspendLayout()
       Me.TabPage4.SuspendLayout()
       Me.TabPage5.SuspendLayout()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage6.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'ToolBar1
@@ -245,7 +245,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(691, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(692, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -288,7 +288,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(691, 20)
+      Me.Panel1.Size = New System.Drawing.Size(692, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -950,145 +950,6 @@ Public Class frmCamerieri
       Me.TabPage5.TabIndex = 6
       Me.TabPage5.Text = "Statistiche di vendita"
       '
-      'TabPage6
-      '
-      Me.TabPage6.Controls.Add(Me.txtNote)
-      Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-      Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(683, 397)
-      Me.TabPage6.TabIndex = 5
-      Me.TabPage6.Text = "Note"
-      Me.TabPage6.ToolTipText = "Note varie"
-      '
-      'txtNote
-      '
-      Me.txtNote.AcceptsReturn = True
-      Me.txtNote.BackColor = System.Drawing.SystemColors.Window
-      Me.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNote.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.txtNote.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtNote.Location = New System.Drawing.Point(0, 0)
-      Me.txtNote.MaxLength = 0
-      Me.txtNote.Multiline = True
-      Me.txtNote.Name = "txtNote"
-      Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(683, 397)
-      Me.txtNote.TabIndex = 0
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'lvwStatistiche
-      '
-      Me.lvwStatistiche.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lvwStatistiche.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnCategoria, Me.clnDescrizione, Me.clnTavolo, Me.clnQuantità, Me.clnPrezzo, Me.clnTotale, Me.clnContabilizzata})
-      Me.lvwStatistiche.FullRowSelect = True
-      Me.lvwStatistiche.Location = New System.Drawing.Point(0, 38)
-      Me.lvwStatistiche.Name = "lvwStatistiche"
-      Me.lvwStatistiche.Size = New System.Drawing.Size(683, 325)
-      Me.lvwStatistiche.TabIndex = 3
-      Me.lvwStatistiche.UseCompatibleStateImageBehavior = False
-      Me.lvwStatistiche.View = System.Windows.Forms.View.Details
-      '
-      'clnData
-      '
-      Me.clnData.Text = "Data"
-      Me.clnData.Width = 70
-      '
-      'clnDescrizione
-      '
-      Me.clnDescrizione.Text = "Descrizione"
-      Me.clnDescrizione.Width = 150
-      '
-      'clnTavolo
-      '
-      Me.clnTavolo.Text = "Tavolo"
-      Me.clnTavolo.Width = 80
-      '
-      'clnQuantità
-      '
-      Me.clnQuantità.Text = "Quantità"
-      Me.clnQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'clnPrezzo
-      '
-      Me.clnPrezzo.Text = "Prezzo"
-      Me.clnPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'clnTotale
-      '
-      Me.clnTotale.Text = "Totale"
-      Me.clnTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.clnTotale.Width = 80
-      '
-      'clnCategoria
-      '
-      Me.clnCategoria.Text = "Categoria"
-      Me.clnCategoria.Width = 80
-      '
-      'Label12
-      '
-      Me.Label12.AutoSize = True
-      Me.Label12.Location = New System.Drawing.Point(252, 372)
-      Me.Label12.Name = "Label12"
-      Me.Label12.Size = New System.Drawing.Size(123, 13)
-      Me.Label12.TabIndex = 1
-      Me.Label12.Text = "Totale quantità vendute:"
-      '
-      'Label14
-      '
-      Me.Label14.AutoSize = True
-      Me.Label14.Location = New System.Drawing.Point(504, 372)
-      Me.Label14.Name = "Label14"
-      Me.Label14.Size = New System.Drawing.Size(65, 13)
-      Me.Label14.TabIndex = 2
-      Me.Label14.Text = "Totale Euro:"
-      '
-      'txtTotaleQuantità
-      '
-      Me.txtTotaleQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleQuantità.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleQuantità.Location = New System.Drawing.Point(381, 369)
-      Me.txtTotaleQuantità.Name = "txtTotaleQuantità"
-      Me.txtTotaleQuantità.ReadOnly = True
-      Me.txtTotaleQuantità.Size = New System.Drawing.Size(100, 20)
-      Me.txtTotaleQuantità.TabIndex = 4
-      Me.txtTotaleQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtTotale
-      '
-      Me.txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotale.ForeColor = System.Drawing.Color.Red
-      Me.txtTotale.Location = New System.Drawing.Point(575, 369)
-      Me.txtTotale.Name = "txtTotale"
-      Me.txtTotale.ReadOnly = True
-      Me.txtTotale.Size = New System.Drawing.Size(100, 20)
-      Me.txtTotale.TabIndex = 5
-      Me.txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'eui_cmdStatContabilizza
-      '
-      Me.eui_cmdStatContabilizza.Id = "47ae13c6-0f01-4346-bbb8-c509f7bada73"
-      Me.eui_cmdStatContabilizza.Location = New System.Drawing.Point(528, 3)
-      Me.eui_cmdStatContabilizza.Name = "eui_cmdStatContabilizza"
-      Me.eui_cmdStatContabilizza.Size = New System.Drawing.Size(150, 32)
-      Me.eui_cmdStatContabilizza.TabIndex = 1
-      Me.eui_cmdStatContabilizza.Text = "&Contabilizza"
-      '
-      'clnContabilizzata
-      '
-      Me.clnContabilizzata.Text = "Contabilizzata"
-      Me.clnContabilizzata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-      Me.clnContabilizzata.Width = 80
-      '
       'eui_ddwnFiltro
       '
       Me.eui_ddwnFiltro.Id = "e9d3598d-dc23-4df5-99d1-1d1cd48543da"
@@ -1133,12 +994,152 @@ Public Class frmCamerieri
       Me.eui_cmdStatContabilizzate.TabIndex = 5
       Me.eui_cmdStatContabilizzate.Text = "C&ontabilizzate"
       '
+      'eui_cmdStatContabilizza
+      '
+      Me.eui_cmdStatContabilizza.Id = "47ae13c6-0f01-4346-bbb8-c509f7bada73"
+      Me.eui_cmdStatContabilizza.Location = New System.Drawing.Point(528, 3)
+      Me.eui_cmdStatContabilizza.Name = "eui_cmdStatContabilizza"
+      Me.eui_cmdStatContabilizza.Size = New System.Drawing.Size(150, 32)
+      Me.eui_cmdStatContabilizza.TabIndex = 1
+      Me.eui_cmdStatContabilizza.Text = "&Contabilizza"
+      '
+      'txtTotale
+      '
+      Me.txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotale.ForeColor = System.Drawing.Color.Red
+      Me.txtTotale.Location = New System.Drawing.Point(575, 369)
+      Me.txtTotale.Name = "txtTotale"
+      Me.txtTotale.ReadOnly = True
+      Me.txtTotale.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotale.TabIndex = 5
+      Me.txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'txtTotaleQuantità
+      '
+      Me.txtTotaleQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotaleQuantità.ForeColor = System.Drawing.Color.Red
+      Me.txtTotaleQuantità.Location = New System.Drawing.Point(381, 369)
+      Me.txtTotaleQuantità.Name = "txtTotaleQuantità"
+      Me.txtTotaleQuantità.ReadOnly = True
+      Me.txtTotaleQuantità.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotaleQuantità.TabIndex = 4
+      Me.txtTotaleQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label14
+      '
+      Me.Label14.AutoSize = True
+      Me.Label14.Location = New System.Drawing.Point(504, 372)
+      Me.Label14.Name = "Label14"
+      Me.Label14.Size = New System.Drawing.Size(65, 13)
+      Me.Label14.TabIndex = 2
+      Me.Label14.Text = "Totale Euro:"
+      '
+      'Label12
+      '
+      Me.Label12.AutoSize = True
+      Me.Label12.Location = New System.Drawing.Point(252, 372)
+      Me.Label12.Name = "Label12"
+      Me.Label12.Size = New System.Drawing.Size(123, 13)
+      Me.Label12.TabIndex = 1
+      Me.Label12.Text = "Totale quantità vendute:"
+      '
+      'lvwStatistiche
+      '
+      Me.lvwStatistiche.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.lvwStatistiche.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnCategoria, Me.clnDescrizione, Me.clnTavolo, Me.clnQuantità, Me.clnPrezzo, Me.clnTotale, Me.clnContabilizzata})
+      Me.lvwStatistiche.FullRowSelect = True
+      Me.lvwStatistiche.HideSelection = False
+      Me.lvwStatistiche.Location = New System.Drawing.Point(0, 38)
+      Me.lvwStatistiche.Name = "lvwStatistiche"
+      Me.lvwStatistiche.Size = New System.Drawing.Size(683, 325)
+      Me.lvwStatistiche.TabIndex = 3
+      Me.lvwStatistiche.UseCompatibleStateImageBehavior = False
+      Me.lvwStatistiche.View = System.Windows.Forms.View.Details
+      '
+      'clnData
+      '
+      Me.clnData.Text = "Data"
+      Me.clnData.Width = 70
+      '
+      'clnCategoria
+      '
+      Me.clnCategoria.Text = "Categoria"
+      Me.clnCategoria.Width = 80
+      '
+      'clnDescrizione
+      '
+      Me.clnDescrizione.Text = "Descrizione"
+      Me.clnDescrizione.Width = 150
+      '
+      'clnTavolo
+      '
+      Me.clnTavolo.Text = "Tavolo"
+      Me.clnTavolo.Width = 80
+      '
+      'clnQuantità
+      '
+      Me.clnQuantità.Text = "Quantità"
+      Me.clnQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'clnPrezzo
+      '
+      Me.clnPrezzo.Text = "Prezzo"
+      Me.clnPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'clnTotale
+      '
+      Me.clnTotale.Text = "Totale"
+      Me.clnTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.clnTotale.Width = 80
+      '
+      'clnContabilizzata
+      '
+      Me.clnContabilizzata.Text = "Contabilizzata"
+      Me.clnContabilizzata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+      Me.clnContabilizzata.Width = 80
+      '
+      'TabPage6
+      '
+      Me.TabPage6.Controls.Add(Me.txtNote)
+      Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage6.Name = "TabPage6"
+      Me.TabPage6.Size = New System.Drawing.Size(683, 397)
+      Me.TabPage6.TabIndex = 5
+      Me.TabPage6.Text = "Note"
+      Me.TabPage6.ToolTipText = "Note varie"
+      '
+      'txtNote
+      '
+      Me.txtNote.AcceptsReturn = True
+      Me.txtNote.BackColor = System.Drawing.SystemColors.Window
+      Me.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtNote.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.txtNote.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtNote.Location = New System.Drawing.Point(0, 0)
+      Me.txtNote.MaxLength = 0
+      Me.txtNote.Multiline = True
+      Me.txtNote.Name = "txtNote"
+      Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+      Me.txtNote.Size = New System.Drawing.Size(683, 397)
+      Me.txtNote.TabIndex = 0
+      '
+      'ErrorProvider1
+      '
+      Me.ErrorProvider1.ContainerControl = Me
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
       'frmCamerieri
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(691, 469)
+      Me.ClientSize = New System.Drawing.Size(692, 468)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1161,10 +1162,10 @@ Public Class frmCamerieri
       Me.TabPage4.ResumeLayout(False)
       Me.TabPage5.ResumeLayout(False)
       Me.TabPage5.PerformLayout()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage6.ResumeLayout(False)
       Me.TabPage6.PerformLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -1577,6 +1578,9 @@ Public Class frmCamerieri
          ' Imposta le dimensioni del form.
          FormResize(CAMERIERI_LARGHEZZA, CAMERIERI_ALTEZZA)
 
+         ' Imposta il titolo del form con la denominazione associata.
+         Me.Text = DenominazioneCamerieri
+
          ' Carica le liste.
          CaricaLista(cmbCittà, TAB_CAP)
          CaricaLista(cmbNazione, TAB_NAZIONI)
@@ -1640,7 +1644,7 @@ Public Class frmCamerieri
          End If
 
          ' Carica le statistiche di vendita per il cameriere selezionato.
-         CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_DA_CONTABILIZZARE)
+         CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione(txtCodice.Text, txtNome.Text, "")

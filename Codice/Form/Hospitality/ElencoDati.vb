@@ -115,7 +115,7 @@ Public Class frmElencoDati
          Case Elenco.Camerieri
             TipoElenco = Elenco.Camerieri
             NomeTabella = "Camerieri"
-            TitoloFinestra = "Elenco Camerieri"
+            TitoloFinestra = "Elenco " & DenominazioneCamerieri
 
          Case Elenco.Sale
             TipoElenco = Elenco.Sale
@@ -3043,6 +3043,14 @@ Public Class frmElencoDati
          emailStyle.NullText = ""
          emailStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(emailStyle)
+         ' Agenzia
+         Dim agenziaStyle As New DataGridTextBoxColumn
+         agenziaStyle.MappingName = "Agenzia"
+         agenziaStyle.HeaderText = "Agenzia"
+         agenziaStyle.Width = 150
+         agenziaStyle.NullText = ""
+         agenziaStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(agenziaStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -3807,6 +3815,7 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("Fax")
                CampoRicerca.Items.Add("Cellulare")
                CampoRicerca.Items.Add("E-mail")
+               CampoRicerca.Items.Add("Agenzia")
 
             Case Elenco.Tavoli
                CampoRicerca.Items.Add("Codice")

@@ -263,6 +263,7 @@ Module Dichiarazioni
    Public Const REPORT_PROFORMA_80mm As String = "Proforma 80mm.rdlc"
 
    Public Const REPORT_SCONTRINO_RT As String = "Scontrino RT.txt"
+   Public Const REPORT_SCONTRINO_NF As String = "Scontrino NF.txt"
    'Public Const REPORT_SCONTRINO_NF_80mm As String = "Scontrino NF_80mm.rdlc" ' NON UTILIZZATO.
 
    Public Const PERCORSO_REP_FF_KUBEII As String = "\Reports\FatturaKubeII.rpt.txt" ' NON UTILIZZATA.
@@ -292,7 +293,8 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_PF_80mm As String = "\Reports\Proforma 80mm.rdlc"
 
    Public Const PERCORSO_REP_SF_RT As String = "\Reports\Scontrino RT.txt"
-   ' Public Const PERCORSO_REP_SF_NF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc" ' NON UTILIZZATO.
+   Public Const PERCORSO_REP_SNF As String = "\Reports\Scontrino NF.txt"
+   'Public Const PERCORSO_REP_SNF_80mm As String = "\Reports\Scontrino NF_80mm.rdlc" ' NON UTILIZZATO.
 
    ' Comanda formato .rdlc.
    Public Const PERCORSO_REP_COMANDA_REPARTI_80mm As String = "\Reports\ComandaReparti 80mm.rdlc"
@@ -1179,9 +1181,11 @@ Module Dichiarazioni
    ' Testo del pulsante per inviare la comanda.
    Public Const CONFERMA_INVIA_COMANDA As String = "Conferma e invia comanda"
 
-   ' Per la gestione dei Tavoli a tempo.
+   ' Per la gestione di un Night Club - Tavoli a tempo.
    Public Const MINUTI_TAVOLO As Integer = 60
+   Public Const DENOMINAZIONE_CAMERIERI As String = "Camerieri"
    Public GestioneTavoliATempo As Boolean = False
-   Public minutiOccupazioneTavolo As Integer = MINUTI_TAVOLO
+   Public MinutiOccupazioneTavolo As Integer = MINUTI_TAVOLO
+   Public DenominazioneCamerieri As String = DENOMINAZIONE_CAMERIERI
 
 End Module

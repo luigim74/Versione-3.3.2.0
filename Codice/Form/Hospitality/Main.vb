@@ -6972,10 +6972,20 @@ Friend Class frmMain
          End If
 
          If DatiConfig.GetValue("MinutiOccupazioneTavolo") <> String.Empty Then
-            minutiOccupazioneTavolo = DatiConfig.GetValue("MinutiOccupazioneTavolo")
+            MinutiOccupazioneTavolo = DatiConfig.GetValue("MinutiOccupazioneTavolo")
          Else
-            minutiOccupazioneTavolo = MINUTI_TAVOLO
+            MinutiOccupazioneTavolo = MINUTI_TAVOLO
          End If
+
+         ' Denominazione Camerieri.
+         If DatiConfig.GetValue("DenominazioneCamerieri") <> String.Empty Then
+            DenominazioneCamerieri = DatiConfig.GetValue("DenominazioneCamerieri")
+         Else
+            DenominazioneCamerieri = DENOMINAZIONE_CAMERIERI
+         End If
+
+         ' Modifica al menu con la nuova denominazione.
+         eui_cmdArchiviAnagraficheCamerieri.Text = DenominazioneCamerieri
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
 

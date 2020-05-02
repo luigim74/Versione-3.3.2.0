@@ -3789,6 +3789,42 @@ Public Class frmPrenRisorse
       End Try
    End Function
 
+   Public Function LeggiNumeroScontrinoNFMax() As Integer
+      Dim closeOnExit As Boolean
+      Dim numDoc As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene i dati per l'anno corrente.
+         Dim Oggi As String = CFormatta.FormattaData(Now.ToShortDateString)
+
+         cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM Documenti WHERE TipoDoc = 'Scontrino' AND DataDoc = #{0}#", Oggi)
+
+         If IsDBNull(cmd.ExecuteScalar()) = False Then
+            numDoc = CInt(cmd.ExecuteScalar())
+         Else
+            numDoc = 0
+         End If
+
+         Return numDoc
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
+
    Public Function CreaFileScontrinoWPOS1() As Boolean
       Try
          Dim SR_DATI_TEST As String = "SR_DATI_TEST.TXT"
@@ -3978,6 +4014,24 @@ Public Class frmPrenRisorse
       'End Try
    End Sub
 
+   Public Function LeggiNumeroScontrinoNFConfig() As Integer
+      Try
+         ' Legge dal database.
+         Dim num As Integer = LeggiNumeroScontrinoNFMax()
+
+         If num = 0 Then
+            Return 1
+         Else
+            Return num + 1
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
    Private Function LeggiNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String) As Integer
       Try
          Dim DatiConfig As AppConfig
@@ -4064,7 +4118,16 @@ Public Class frmPrenRisorse
    ' DA_FARE: Verificare! SalvaDocumento.
    Private Function SalvaDocumento() As Boolean
       Try
-         Dim NumeroDocumento As Integer = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         Dim NumeroDocumento As Integer
+
+         Select Case percorsoRep
+            Case PERCORSO_REP_SNF
+               NumeroDocumento = LeggiNumeroScontrinoNFConfig()
+               MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Case PERCORSO_REP_SF_RT
+               NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         End Select
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtTotale.Text)
@@ -4304,6 +4367,12 @@ Public Class frmPrenRisorse
 
                ' Esegue la stampa.
                StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
+
+            Case PERCORSO_REP_SNF
+               ' Attualmente usato per creare uno scontrino virtuale nel gestionale per la contabilià
+
+               ' Eseguire qui l'eventuale stampa su report.
+               'StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOCUMENTI), nomeStampante)
 
             Case PERCORSO_REP_SF_RT
                ' Esegue la stampa.
@@ -4599,7 +4668,7 @@ Public Class frmPrenRisorse
    Private Sub eui_cmdStampaDocSF_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdStampaDocSF.Click
       Try
          If ImpostaNomeStampante(3) = String.Empty Then
-            InfoScontrinoWPOS1()
+            InfoScontrino()
             Exit Sub
          End If
 

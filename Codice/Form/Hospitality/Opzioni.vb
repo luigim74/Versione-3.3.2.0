@@ -262,6 +262,8 @@ Public Class frmOpzioni
    Friend WithEvents cmbMinutiOccupazioneTavolo As ComboBox
    Public WithEvents Label56 As Label
    Friend WithEvents ckbGestioneTavoliATempo As CheckBox
+   Friend WithEvents Label57 As Label
+   Friend WithEvents cmbDenominazioneCamerieri As ComboBox
    Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -484,6 +486,8 @@ Public Class frmOpzioni
       Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+      Me.Label57 = New System.Windows.Forms.Label()
+      Me.cmbDenominazioneCamerieri = New System.Windows.Forms.ComboBox()
       Me.tabOpzioni.SuspendLayout()
       Me.tbpGenerali.SuspendLayout()
       Me.GroupBox5.SuspendLayout()
@@ -1054,7 +1058,7 @@ Public Class frmOpzioni
       '
       'cmdImpostazioniTavAgent
       '
-      Me.cmdImpostazioniTavAgent.Location = New System.Drawing.Point(224, 128)
+      Me.cmdImpostazioniTavAgent.Location = New System.Drawing.Point(358, 133)
       Me.cmdImpostazioniTavAgent.Name = "cmdImpostazioniTavAgent"
       Me.cmdImpostazioniTavAgent.Size = New System.Drawing.Size(160, 32)
       Me.cmdImpostazioniTavAgent.TabIndex = 4
@@ -1065,9 +1069,9 @@ Public Class frmOpzioni
       '
       Me.cmdColorePrenTavAgent.BackColor = System.Drawing.SystemColors.Control
       Me.cmdColorePrenTavAgent.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-      Me.cmdColorePrenTavAgent.Location = New System.Drawing.Point(440, 240)
+      Me.cmdColorePrenTavAgent.Location = New System.Drawing.Point(425, 237)
       Me.cmdColorePrenTavAgent.Name = "cmdColorePrenTavAgent"
-      Me.cmdColorePrenTavAgent.Size = New System.Drawing.Size(112, 19)
+      Me.cmdColorePrenTavAgent.Size = New System.Drawing.Size(93, 19)
       Me.cmdColorePrenTavAgent.TabIndex = 8
       Me.cmdColorePrenTavAgent.TabStop = False
       Me.cmdColorePrenTavAgent.UseVisualStyleBackColor = False
@@ -1101,7 +1105,7 @@ Public Class frmOpzioni
       Me.cmdPercorsoFileTavAgent.FlatStyle = System.Windows.Forms.FlatStyle.System
       Me.cmdPercorsoFileTavAgent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmdPercorsoFileTavAgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdPercorsoFileTavAgent.Location = New System.Drawing.Point(528, 48)
+      Me.cmdPercorsoFileTavAgent.Location = New System.Drawing.Point(662, 48)
       Me.cmdPercorsoFileTavAgent.Name = "cmdPercorsoFileTavAgent"
       Me.cmdPercorsoFileTavAgent.Size = New System.Drawing.Size(24, 20)
       Me.cmdPercorsoFileTavAgent.TabIndex = 1
@@ -1112,7 +1116,7 @@ Public Class frmOpzioni
       '
       Me.txtPercorsoFileTavAgent.Location = New System.Drawing.Point(24, 48)
       Me.txtPercorsoFileTavAgent.Name = "txtPercorsoFileTavAgent"
-      Me.txtPercorsoFileTavAgent.Size = New System.Drawing.Size(504, 20)
+      Me.txtPercorsoFileTavAgent.Size = New System.Drawing.Size(632, 20)
       Me.txtPercorsoFileTavAgent.TabIndex = 0
       '
       'Label43
@@ -1133,7 +1137,7 @@ Public Class frmOpzioni
       Me.cmdPercorsoCartellaTavAgent.FlatStyle = System.Windows.Forms.FlatStyle.System
       Me.cmdPercorsoCartellaTavAgent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmdPercorsoCartellaTavAgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdPercorsoCartellaTavAgent.Location = New System.Drawing.Point(528, 96)
+      Me.cmdPercorsoCartellaTavAgent.Location = New System.Drawing.Point(662, 96)
       Me.cmdPercorsoCartellaTavAgent.Name = "cmdPercorsoCartellaTavAgent"
       Me.cmdPercorsoCartellaTavAgent.Size = New System.Drawing.Size(24, 20)
       Me.cmdPercorsoCartellaTavAgent.TabIndex = 3
@@ -1144,7 +1148,7 @@ Public Class frmOpzioni
       '
       Me.txtPercorsoCartellaTavAgent.Location = New System.Drawing.Point(24, 96)
       Me.txtPercorsoCartellaTavAgent.Name = "txtPercorsoCartellaTavAgent"
-      Me.txtPercorsoCartellaTavAgent.Size = New System.Drawing.Size(504, 20)
+      Me.txtPercorsoCartellaTavAgent.Size = New System.Drawing.Size(632, 20)
       Me.txtPercorsoCartellaTavAgent.TabIndex = 2
       '
       'Label46
@@ -1162,7 +1166,7 @@ Public Class frmOpzioni
       '
       'cmdAvviaTavAgent
       '
-      Me.cmdAvviaTavAgent.Location = New System.Drawing.Point(392, 128)
+      Me.cmdAvviaTavAgent.Location = New System.Drawing.Point(526, 133)
       Me.cmdAvviaTavAgent.Name = "cmdAvviaTavAgent"
       Me.cmdAvviaTavAgent.Size = New System.Drawing.Size(160, 32)
       Me.cmdAvviaTavAgent.TabIndex = 5
@@ -1181,6 +1185,8 @@ Public Class frmOpzioni
       '
       'GroupBox3
       '
+      Me.GroupBox3.Controls.Add(Me.cmbDenominazioneCamerieri)
+      Me.GroupBox3.Controls.Add(Me.Label57)
       Me.GroupBox3.Controls.Add(Me.cmbMinutiOccupazioneTavolo)
       Me.GroupBox3.Controls.Add(Me.Label56)
       Me.GroupBox3.Controls.Add(Me.ckbGestioneTavoliATempo)
@@ -1193,7 +1199,7 @@ Public Class frmOpzioni
       Me.GroupBox3.Controls.Add(Me.Label35)
       Me.GroupBox3.Location = New System.Drawing.Point(24, 24)
       Me.GroupBox3.Name = "GroupBox3"
-      Me.GroupBox3.Size = New System.Drawing.Size(714, 144)
+      Me.GroupBox3.Size = New System.Drawing.Size(714, 162)
       Me.GroupBox3.TabIndex = 190
       Me.GroupBox3.TabStop = False
       Me.GroupBox3.Text = "Varie"
@@ -1201,11 +1207,11 @@ Public Class frmOpzioni
       'cmbMinutiOccupazioneTavolo
       '
       Me.cmbMinutiOccupazioneTavolo.Items.AddRange(New Object() {"10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60"})
-      Me.cmbMinutiOccupazioneTavolo.Location = New System.Drawing.Point(578, 96)
+      Me.cmbMinutiOccupazioneTavolo.Location = New System.Drawing.Point(577, 64)
       Me.cmbMinutiOccupazioneTavolo.Name = "cmbMinutiOccupazioneTavolo"
-      Me.cmbMinutiOccupazioneTavolo.Size = New System.Drawing.Size(75, 21)
+      Me.cmbMinutiOccupazioneTavolo.Size = New System.Drawing.Size(109, 21)
       Me.cmbMinutiOccupazioneTavolo.Sorted = True
-      Me.cmbMinutiOccupazioneTavolo.TabIndex = 5
+      Me.cmbMinutiOccupazioneTavolo.TabIndex = 4
       '
       'Label56
       '
@@ -1213,7 +1219,7 @@ Public Class frmOpzioni
       Me.Label56.BackColor = System.Drawing.Color.Transparent
       Me.Label56.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label56.ForeColor = System.Drawing.Color.Black
-      Me.Label56.Location = New System.Drawing.Point(294, 97)
+      Me.Label56.Location = New System.Drawing.Point(294, 64)
       Me.Label56.Name = "Label56"
       Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label56.Size = New System.Drawing.Size(264, 13)
@@ -1223,20 +1229,20 @@ Public Class frmOpzioni
       'ckbGestioneTavoliATempo
       '
       Me.ckbGestioneTavoliATempo.AutoSize = True
-      Me.ckbGestioneTavoliATempo.Location = New System.Drawing.Point(297, 67)
+      Me.ckbGestioneTavoliATempo.Location = New System.Drawing.Point(297, 32)
       Me.ckbGestioneTavoliATempo.Name = "ckbGestioneTavoliATempo"
       Me.ckbGestioneTavoliATempo.Size = New System.Drawing.Size(170, 17)
-      Me.ckbGestioneTavoliATempo.TabIndex = 4
+      Me.ckbGestioneTavoliATempo.TabIndex = 3
       Me.ckbGestioneTavoliATempo.Text = "Abilita gestione Tavoli a tempo"
       Me.ckbGestioneTavoliATempo.UseVisualStyleBackColor = True
       '
       'ckbEffettiSonoriPos
       '
       Me.ckbEffettiSonoriPos.AutoSize = True
-      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(297, 37)
+      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(297, 128)
       Me.ckbEffettiSonoriPos.Name = "ckbEffettiSonoriPos"
       Me.ckbEffettiSonoriPos.Size = New System.Drawing.Size(210, 17)
-      Me.ckbEffettiSonoriPos.TabIndex = 3
+      Me.ckbEffettiSonoriPos.TabIndex = 6
       Me.ckbEffettiSonoriPos.Text = "Riproduci effetti sonori nel Punto cassa"
       Me.ckbEffettiSonoriPos.UseVisualStyleBackColor = True
       '
@@ -2899,13 +2905,31 @@ Public Class frmOpzioni
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'Label57
+      '
+      Me.Label57.AutoSize = True
+      Me.Label57.Location = New System.Drawing.Point(294, 96)
+      Me.Label57.Name = "Label57"
+      Me.Label57.Size = New System.Drawing.Size(183, 13)
+      Me.Label57.TabIndex = 196
+      Me.Label57.Text = "Denominazione Anagrafica Camerieri:"
+      '
+      'cmbDenominazioneCamerieri
+      '
+      Me.cmbDenominazioneCamerieri.FormattingEnabled = True
+      Me.cmbDenominazioneCamerieri.Items.AddRange(New Object() {"Camerieri"})
+      Me.cmbDenominazioneCamerieri.Location = New System.Drawing.Point(494, 95)
+      Me.cmbDenominazioneCamerieri.Name = "cmbDenominazioneCamerieri"
+      Me.cmbDenominazioneCamerieri.Size = New System.Drawing.Size(192, 21)
+      Me.cmbDenominazioneCamerieri.TabIndex = 5
+      '
       'frmOpzioni
       '
       Me.AcceptButton = Me.cmdOK
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(785, 565)
+      Me.ClientSize = New System.Drawing.Size(795, 575)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -3776,10 +3800,19 @@ Public Class frmOpzioni
 
          If DatiConfig.GetValue("MinutiOccupazioneTavolo") <> String.Empty Then
             cmbMinutiOccupazioneTavolo.Text = DatiConfig.GetValue("MinutiOccupazioneTavolo")
-            minutiOccupazioneTavolo = cmbMinutiOccupazioneTavolo.Text
+            MinutiOccupazioneTavolo = cmbMinutiOccupazioneTavolo.Text
          Else
             cmbMinutiOccupazioneTavolo.Text = MINUTI_TAVOLO.ToString
-            minutiOccupazioneTavolo = MINUTI_TAVOLO
+            MinutiOccupazioneTavolo = MINUTI_TAVOLO
+         End If
+
+         ' Denominazione Camerieri.
+         If DatiConfig.GetValue("DenominazioneCamerieri") <> String.Empty Then
+            cmbDenominazioneCamerieri.Text = DatiConfig.GetValue("DenominazioneCamerieri")
+            DenominazioneCamerieri = cmbDenominazioneCamerieri.Text
+         Else
+            cmbDenominazioneCamerieri.Text = DENOMINAZIONE_CAMERIERI
+            DenominazioneCamerieri = DENOMINAZIONE_CAMERIERI
          End If
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
@@ -4398,11 +4431,23 @@ Public Class frmOpzioni
 
          If IsNumeric(cmbMinutiOccupazioneTavolo.Text) = True Then
             DatiConfig.SetValue("MinutiOccupazioneTavolo", cmbMinutiOccupazioneTavolo.Text)
-            minutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
+            MinutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
          Else
             DatiConfig.SetValue("MinutiOccupazioneTavolo", MINUTI_TAVOLO.ToString)
-            minutiOccupazioneTavolo = MINUTI_TAVOLO
+            MinutiOccupazioneTavolo = MINUTI_TAVOLO
          End If
+
+         ' Denominazione Camerieri.
+         If cmbDenominazioneCamerieri.Text <> String.Empty Then
+            DatiConfig.SetValue("DenominazioneCamerieri", cmbDenominazioneCamerieri.Text)
+            DenominazioneCamerieri = cmbDenominazioneCamerieri.Text
+         Else
+            DatiConfig.SetValue("DenominazioneCamerieri", DENOMINAZIONE_CAMERIERI)
+            DenominazioneCamerieri = DENOMINAZIONE_CAMERIERI
+         End If
+
+         ' Modifica al menu con la nuova denominazione.
+         g_frmMain.eui_cmdArchiviAnagraficheCamerieri.Text = DenominazioneCamerieri
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
 
@@ -5885,7 +5930,8 @@ Public Class frmOpzioni
 
    Public Sub CaricaListaReportsScontrini(ByVal cmb As ComboBox)
       Try
-         Dim documenti() As String = {REPORT_SCONTRINO_RT}
+         Dim documenti() As String = {REPORT_SCONTRINO_NF,
+                                      REPORT_SCONTRINO_RT}
 
          Dim i As Integer
          For i = 0 To documenti.Length - 1
@@ -6012,7 +6058,7 @@ Public Class frmOpzioni
             grbWpos.Enabled = False
 
             cmbStampanteScontrini.Items.Clear()
-            cmbStampanteScontrini.Items.Add("<Nessuna>")
+            CaricaListaStampanti(cmbStampanteScontrini)
             cmbStampanteScontrini.SelectedIndex = 0
          End If
 
@@ -6855,10 +6901,10 @@ Public Class frmOpzioni
    Private Sub CmbMinutiOccupazioneTavolo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMinutiOccupazioneTavolo.SelectedIndexChanged
       Try
          If IsNumeric(cmbMinutiOccupazioneTavolo.Text) = True Then
-            minutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
+            MinutiOccupazioneTavolo = Convert.ToInt32(cmbMinutiOccupazioneTavolo.Text)
          Else
             cmbMinutiOccupazioneTavolo.Text = MINUTI_TAVOLO.ToString
-            minutiOccupazioneTavolo = MINUTI_TAVOLO
+            MinutiOccupazioneTavolo = MINUTI_TAVOLO
          End If
 
       Catch ex As Exception

@@ -3388,6 +3388,17 @@ Module Procedure
 
    End Function
 
+   Public Sub InfoScontrino()
+      Try
+         MsgBox("Non è possibile stampare lo scontrino! Verificare che per questo documento sia impostato il percorso di stampa appropriato nella finestra Opzioni.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Public Sub InfoScontrinoWPOS1()
       Try
          MsgBox("Non è possibile stampare lo scontrino! Verificare che per questo documento sia impostata una stampante fiscale o registratore di cassa.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)

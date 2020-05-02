@@ -5093,7 +5093,7 @@ Public Class frmVCTavoli
                ' Gestione dei Tavoli a tempo.
                If GestioneTavoliATempo = True Then
                   Dim minutiTavolo As Integer = (ts.Hours * 60) + ts.Minutes
-                  If minutiTavolo >= minutiOccupazioneTavolo Then
+                  If minutiTavolo >= MinutiOccupazioneTavolo Then
                      If Risorsa(IndiceTavoloOccupato(i)).ColorStyle <> NetButton.ColorStyleEnum.Red Then
                         Risorsa(IndiceTavoloOccupato(i)).ColorStyle = NetButton.ColorStyleEnum.Red
                      Else

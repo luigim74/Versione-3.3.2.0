@@ -2927,7 +2927,7 @@ Public Class frmDocumento
             Else
                ' Esegue la stampa.
                If CreaFileScontrinoWPOS1() = False Then
-                  InfoScontrinoWPOS1()
+                  InfoScontrino()
                   Exit Sub
                Else
                   Dim numScontrino As String = LeggiNumScontrino()
