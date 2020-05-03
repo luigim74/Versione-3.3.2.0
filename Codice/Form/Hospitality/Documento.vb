@@ -2460,15 +2460,38 @@ Public Class frmDocumento
                eui_cmdSalva.Enabled = True
 
             Case TIPO_DOC_SF
-               NumeroDocumento = 0 'LeggiNumeroMax(TAB_DOCUMENTI, eui_cmbTipoDocumento.Text) + 1
+               ' Leggo il tipo di report impostato nei percorsi di stampa nel form Opzioni.
+               Dim percorsoRep As String
+               If ImpostaNomeDoc(3) <> String.Empty Then
+                  percorsoRep = "\Reports\" & ImpostaNomeDoc(3)
+               Else
+                  percorsoRep = PERCORSO_REP_SNF
+               End If
 
-               eui_txtNumero.Enabled = False
-               eui_txtAnno.Enabled = False
+               Select Case percorsoRep
+                  Case PERCORSO_REP_SNF
+                     ' Attualmente usato per creare uno scontrino virtuale nel gestionale per la contabilià
+                     NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
 
-               eui_cmdAnteprima.Enabled = False
-               eui_cmdEmettiStampa.Enabled = True
-               eui_cmdEmetti.Enabled = False
-               eui_cmdSalva.Enabled = False
+                     eui_txtNumero.Enabled = True
+                     eui_txtAnno.Enabled = True
+
+                     eui_cmdAnteprima.Enabled = False
+                     eui_cmdEmettiStampa.Enabled = False
+                     eui_cmdEmetti.Enabled = True
+                     eui_cmdSalva.Enabled = True
+
+                  Case PERCORSO_REP_SF_RT
+                     NumeroDocumento = 0
+
+                     eui_txtNumero.Enabled = False
+                     eui_txtAnno.Enabled = False
+
+                     eui_cmdAnteprima.Enabled = False
+                     eui_cmdEmettiStampa.Enabled = True
+                     eui_cmdEmetti.Enabled = False
+                     eui_cmdSalva.Enabled = False
+               End Select
 
          End Select
 
@@ -2927,7 +2950,7 @@ Public Class frmDocumento
             Else
                ' Esegue la stampa.
                If CreaFileScontrinoWPOS1() = False Then
-                  InfoScontrino()
+                  InfoScontrinoWPOS1()
                   Exit Sub
                Else
                   Dim numScontrino As String = LeggiNumScontrino()

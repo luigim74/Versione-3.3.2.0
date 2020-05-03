@@ -327,6 +327,8 @@ Public Class frmOpzioni
       Me.cmdAvviaTavAgent = New System.Windows.Forms.Button()
       Me.ckbNotificaTavAgent = New System.Windows.Forms.CheckBox()
       Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+      Me.cmbDenominazioneCamerieri = New System.Windows.Forms.ComboBox()
+      Me.Label57 = New System.Windows.Forms.Label()
       Me.cmbMinutiOccupazioneTavolo = New System.Windows.Forms.ComboBox()
       Me.Label56 = New System.Windows.Forms.Label()
       Me.ckbGestioneTavoliATempo = New System.Windows.Forms.CheckBox()
@@ -486,8 +488,6 @@ Public Class frmOpzioni
       Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-      Me.Label57 = New System.Windows.Forms.Label()
-      Me.cmbDenominazioneCamerieri = New System.Windows.Forms.ComboBox()
       Me.tabOpzioni.SuspendLayout()
       Me.tbpGenerali.SuspendLayout()
       Me.GroupBox5.SuspendLayout()
@@ -1203,6 +1203,24 @@ Public Class frmOpzioni
       Me.GroupBox3.TabIndex = 190
       Me.GroupBox3.TabStop = False
       Me.GroupBox3.Text = "Varie"
+      '
+      'cmbDenominazioneCamerieri
+      '
+      Me.cmbDenominazioneCamerieri.FormattingEnabled = True
+      Me.cmbDenominazioneCamerieri.Items.AddRange(New Object() {"Camerieri"})
+      Me.cmbDenominazioneCamerieri.Location = New System.Drawing.Point(494, 95)
+      Me.cmbDenominazioneCamerieri.Name = "cmbDenominazioneCamerieri"
+      Me.cmbDenominazioneCamerieri.Size = New System.Drawing.Size(192, 21)
+      Me.cmbDenominazioneCamerieri.TabIndex = 5
+      '
+      'Label57
+      '
+      Me.Label57.AutoSize = True
+      Me.Label57.Location = New System.Drawing.Point(294, 96)
+      Me.Label57.Name = "Label57"
+      Me.Label57.Size = New System.Drawing.Size(183, 13)
+      Me.Label57.TabIndex = 196
+      Me.Label57.Text = "Denominazione Anagrafica Camerieri:"
       '
       'cmbMinutiOccupazioneTavolo
       '
@@ -2905,31 +2923,13 @@ Public Class frmOpzioni
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'Label57
-      '
-      Me.Label57.AutoSize = True
-      Me.Label57.Location = New System.Drawing.Point(294, 96)
-      Me.Label57.Name = "Label57"
-      Me.Label57.Size = New System.Drawing.Size(183, 13)
-      Me.Label57.TabIndex = 196
-      Me.Label57.Text = "Denominazione Anagrafica Camerieri:"
-      '
-      'cmbDenominazioneCamerieri
-      '
-      Me.cmbDenominazioneCamerieri.FormattingEnabled = True
-      Me.cmbDenominazioneCamerieri.Items.AddRange(New Object() {"Camerieri"})
-      Me.cmbDenominazioneCamerieri.Location = New System.Drawing.Point(494, 95)
-      Me.cmbDenominazioneCamerieri.Name = "cmbDenominazioneCamerieri"
-      Me.cmbDenominazioneCamerieri.Size = New System.Drawing.Size(192, 21)
-      Me.cmbDenominazioneCamerieri.TabIndex = 5
-      '
       'frmOpzioni
       '
       Me.AcceptButton = Me.cmdOK
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(795, 575)
+      Me.ClientSize = New System.Drawing.Size(781, 564)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)

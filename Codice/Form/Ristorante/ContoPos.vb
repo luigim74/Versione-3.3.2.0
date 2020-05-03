@@ -2323,24 +2323,6 @@ Public Class ContoPos
       End Try
    End Function
 
-   Public Function LeggiNumeroScontrinoNFConfig() As Integer
-      Try
-         ' Legge dal database.
-         Dim num As Integer = LeggiNumeroScontrinoNFMax()
-
-         If num = 0 Then
-            Return 1
-         Else
-            Return num + 1
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Function
-
    Public Function LeggiNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String) As Integer
       Try
          Dim chiaveConfig As String = String.Empty
@@ -3383,7 +3365,7 @@ Public Class ContoPos
 
          Select Case percorsoRep
             Case PERCORSO_REP_SNF
-               NumeroDocumento = LeggiNumeroScontrinoNFConfig()
+               NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
                MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case PERCORSO_REP_SF_RT
@@ -4933,41 +4915,6 @@ Public Class ContoPos
          End If
 
          Return numRec
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Function
-
-   Public Function LeggiNumeroScontrinoNFMax() As Integer
-      Dim closeOnExit As Boolean
-      Dim numDoc As Integer
-
-      Try
-         ' Se necessario apre la connessione.
-         If cn.State = ConnectionState.Closed Then
-            cn.Open()
-            closeOnExit = True
-         End If
-
-         ' Ottiene i dati per l'anno corrente.
-         Dim Oggi As String = CFormatta.FormattaData(Now.ToShortDateString)
-
-         cmd.CommandText = String.Format("SELECT MAX(NumDoc) FROM Documenti WHERE TipoDoc = 'Scontrino' AND DataDoc = #{0}#", Oggi)
-
-         If IsDBNull(cmd.ExecuteScalar()) = False Then
-            numDoc = CInt(cmd.ExecuteScalar())
-         Else
-            numDoc = 0
-         End If
-
-         Return numDoc
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
