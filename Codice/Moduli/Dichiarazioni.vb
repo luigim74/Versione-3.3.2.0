@@ -868,7 +868,7 @@ Module Dichiarazioni
    ' Testo che compare nel titolo del programma.
    Public Const VER_DEMO As String = "VERSIONE DIMOSTRATIVA"
    ' Numero di serie del prodotto. (VERSIONE_FILE - VERSIONE_PRODOTTO - DATA_RILASCIO - ORA_RILASCIO)
-   Public Const NUMERO_SERIE As String = "03320-003-0401020-01630"
+   Public Const NUMERO_SERIE As String = "03400-003-0305020-01520"
    ' Numero di elementi inseribili per la versione demo.
    Public Const NUM_ELEMENTI_DEMO As Integer = 16
    ' File per la data di installazione.

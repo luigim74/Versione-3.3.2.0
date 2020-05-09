@@ -5375,12 +5375,12 @@ Public Class ContoPos
       ' Salva i dati per il Tavolo selezionato.
       Try
          Dim CComande As New Comande
-         Dim noteComanda As String
+         Dim noteComanda As String = String.Empty
          Dim i As Integer
 
          With CComande
             ' Prima di eliminare i dati della comanda salva eventuali note per rileggerle nuovamente.
-            noteComanda = g_frmPos.LeggiNoteConto(TAB_COMANDE, numConto)
+            noteComanda = g_frmPos.LeggiNoteComande(TAB_COMANDE, numConto)
 
             ' Elimina i vecchi dati della comanda.
             .EliminaDati(TAB_COMANDE, numConto)

@@ -4655,9 +4655,9 @@ Module Procedure
       Try
          Dim colore1 As String = Convert.ToString(coloreA.ToArgb)
          Dim colore2 As String = Convert.ToString(coloreB.ToArgb)
-            Dim colore3 As String = Convert.ToString(coloreC.ToArgb)
+         Dim colore3 As String = Convert.ToString(coloreC.ToArgb)
 
-            If (colore1 = colore2) Or (colore1 = colore3) Then
+         If (colore1 = colore2) Or (colore1 = colore3) Then
                 Return True
             Else
                 Return False

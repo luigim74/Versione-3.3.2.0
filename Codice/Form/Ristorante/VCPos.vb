@@ -7455,7 +7455,7 @@ Public Class frmPos
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE IdRisorsa = " & idTavolo, cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         Dim note As String
+         Dim note As String = String.Empty
          Do While dr.Read()
             ' Note.
             If IsDBNull(dr.Item("Note")) = False Then

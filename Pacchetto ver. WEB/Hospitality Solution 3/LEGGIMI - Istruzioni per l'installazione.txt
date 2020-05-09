@@ -2,13 +2,13 @@ ISTRUZIONI PER L'INSTALLAZIONE:
 
 IMPORTANTE: Il programma Hospitality Solution 3 richiede per funzionare correttamente i seguenti pacchetti che installeranno sul vostro computer i file necessari.
 
-1. HOSPITALITY SOLUTION 3: Eseguendo il file Hospitality Solution 3 Setup.msi che trovate nel pacchetto di installazione verrà avviata la procedura principale di installazione del programma.
+1. HOSPITALITY SOLUTION 3: Eseguendo il file Hospitality Solution Setup.exe che trovate nel pacchetto di installazione verrà avviata la procedura principale di installazione del programma.
 
-2. FRAMEWORK .NET 4.0: Se l'installazione lo richiede installare il Framework.NET eseguendo il file dotNetFx40_Full_x86_x64.exe, (se non presente sul vostro computer) che trovate nel pacchetto di installazione del programma. 
+2. FRAMEWORK .NET 4.6: Se l'installazione lo richiede installare il Framework.NET eseguendo il file NDP46-KB3045560-Web.exe, (se non presente sul vostro computer) che trovate nel pacchetto di installazione del programma. 
 
-3. FRAMEWORK .NET 4.0 LANGUAGE PACK: Si consiglia di installare anche il supporto della lingua italiana del Framework.NET eseguendo il file dotNetFx40LP_Full_x86_x64.exe che trovate nel pacchetto di installazione del programma.
+3. FRAMEWORK .NET 4.6 LANGUAGE PACK: Si consiglia di installare anche il supporto della lingua italiana del Framework.NET eseguendo il file NDP46-KB3045557-x86-x64-AllOS-ITA.exe che trovate nel pacchetto di installazione del programma.
 
-4. SQL SERVER 2014 SYSTEM CLR TYPES: Se l'installazione lo richiede installare SQL Server 2014 System CLR Types per l'utilizzo di Report Viewer 2015 eseguendo il file SQLSysClrTypes.msi che trovate nel pacchetto di installazione del programma.
+4. SQL SERVER 2014 SYSTEM CLR TYPES: Se l'installazione lo richiede installare SQL Server 2014 System CLR Types per l'utilizzo di Report Viewer 2017 eseguendo il file SQLSysClrTypes.msi che trovate nel pacchetto di installazione del programma.
 
 5. REPORT VIEWER 2015 RUNTIME: Se l'installazione lo richiede installare Report Viewer 2015 Runtime per il corretto funzionamento delle stampe dei documenti, eseguendo il file ReportViewer.msi che trovate nel pacchetto di installazione del programma.
 
