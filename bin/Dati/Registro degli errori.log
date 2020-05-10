@@ -191,3 +191,60 @@ Nome parametro: startIndex"
    in Hospitality_Solution.frmVCTavoli.LeggiDatiAsportoTavolo(String tabella, String idRisorsa) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 2110"
 "
 "
+"*** 10/05/2020 - 15:26:20 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.frmPos.ScaricaIngredienti()"
+"
+"
+"*** 10/05/2020 - 15:26:25 ***"
+"- DESCRIZIONE ERRORE: Il numero dei valori nella query non corrisponde a quello dei campi di destinazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella)"
+"
+"
+"*** 10/05/2020 - 15:37:56 ***"
+"- DESCRIZIONE ERRORE: Il numero dei valori nella query non corrisponde a quello dei campi di destinazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Statistiche.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\Statistiche.vb:riga 162"
+"
+"
+"*** 10/05/2020 - 16:14:24 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.DettagliDocTableAdapter.Fill(DettagliDocDataTable dataTable)
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e)"
+"
+"
+"*** 10/05/2020 - 18:51:02 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.frmVCTavoli.LeggiDatiAsportoTavolo(String tabella, String idRisorsa) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 2113"
+"
+"

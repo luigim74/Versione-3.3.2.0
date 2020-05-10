@@ -28,6 +28,7 @@ Public Class frmPos
    Const TAB_MESSAGGI As String = "Messaggi"
    Const TAB_DOCUMENTI As String = "Documenti"
    Const TAB_POS_IMPOSTAZIONI_PIATTI As String = "POS_ImpostazioniPiatti"
+   Const TAB_CAMERIERI As String = "Camerieri"
 
    Const TIPO_DOC_PF As String = "Proforma"
 
@@ -2497,9 +2498,9 @@ Public Class frmPos
             Dim IdPiatto As Integer = Convert.ToInt32(lstvDettagli.Items(i).SubItems(5).Text)
 
             ' Codice necessario per le varianti che non hanno una quantit‡.
-            Dim qt‡Piatto As Integer
+            Dim qt‡Piatto As Double
             If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
-               qt‡Piatto = Convert.ToInt32(lstvDettagli.Items(i).SubItems(1).Text)
+               qt‡Piatto = Convert.ToDouble(lstvDettagli.Items(i).SubItems(1).Text)
             Else
                qt‡Piatto = 1
             End If
@@ -3958,7 +3959,6 @@ Public Class frmPos
    Public Function LeggiIdCameriere(ByVal tabella As String, ByVal nome As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
-      Dim infoRisorse As String = ""
 
       Try
          cn.Open()
@@ -3986,6 +3986,40 @@ Public Class frmPos
       End Try
    End Function
 
+   Public Function LeggiSpettanzaCameriere(ByVal tabella As String, ByVal idPiatto As String, ByVal quantit‡ As String) As Double
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idPiatto, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim spettanza As Double
+         Dim totaleSpettanza As Double
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
+               totaleSpettanza = spettanza * quantit‡
+
+               Return totaleSpettanza
+            Else
+               Return 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
 
    Private Sub SalvaStatistiche(ByVal rifDoc As Boolean)
 
@@ -4014,7 +4048,7 @@ Public Class frmPos
                .DesPiatto = FormattaApici(lstvDettagli.Items(i).SubItems(2).Text)
                .IdTavolo = idTavolo.ToString
                .DesTavolo = nomeTavolo
-               .IdCameriere = LeggiIdCameriere("Camerieri", nomeCameriereDoc)
+               .IdCameriere = LeggiIdCameriere(TAB_CAMERIERI, nomeCameriereDoc)
                .DesCameriere = nomeCameriereDoc
 
                If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
@@ -4025,6 +4059,7 @@ Public Class frmPos
 
                .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
                .Importo = lstvDettagli.Items(i).SubItems(3).Text
+               .SpettanzaCameriere = CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text))
                .Contabilizzata = "No"
 
                .InserisciDati(TAB_STATISTICHE)

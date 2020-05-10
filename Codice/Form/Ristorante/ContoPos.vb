@@ -3363,14 +3363,12 @@ Public Class ContoPos
       Try
          Dim NumeroDocumento As Integer
 
-         Select Case percorsoRep
-            Case PERCORSO_REP_SNF
-               NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
-               MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Case PERCORSO_REP_SF_RT
-               NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
-         End Select
+         If percorsoRep = PERCORSO_REP_SNF Then
+            NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
+            MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         Else
+            NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         End If
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtSospeso.Text)
@@ -3664,11 +3662,11 @@ Public Class ContoPos
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
             ' In caso di variante senza una quantità.
-            Dim quantità As String
+            Dim quantità As Double
             If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
-               quantità = lstvDettagli.Items(i).SubItems(1).Text
+               quantità = Convert.ToDouble(lstvDettagli.Items(i).SubItems(1).Text)
             Else
-               quantità = VALORE_ZERO
+               quantità = 0
             End If
 
             cmdInsert.Parameters.AddWithValue("@RifDoc", LeggiUltimoRecord(TAB_DOCUMENTI))

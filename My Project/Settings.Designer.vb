@@ -552,8 +552,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\bin\Archivi\Hospital"& _ 
-            "ity.mdb;Persist Security Info=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Archivi\Hospitality."& _ 
+            "mdb;Persist Security Info=True")>  _
         Public ReadOnly Property HospitalityConnectionString45() As String
             Get
                 Return CType(Me("HospitalityConnectionString45"),String)

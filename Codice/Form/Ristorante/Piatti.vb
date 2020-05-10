@@ -114,6 +114,8 @@ Public Class frmPiatti
    Friend WithEvents Label18 As Elegant.Ui.Label
    Friend WithEvents Label17 As Elegant.Ui.Label
    Friend WithEvents Label16 As Elegant.Ui.Label
+   Public WithEvents txtSpettanza As TextBox
+   Public WithEvents Label21 As Label
    Friend WithEvents cmdImmagine As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -126,6 +128,8 @@ Public Class frmPiatti
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.txtSpettanza = New System.Windows.Forms.TextBox()
+      Me.Label21 = New System.Windows.Forms.Label()
       Me.Label19 = New Elegant.Ui.Label()
       Me.Label18 = New Elegant.Ui.Label()
       Me.Label17 = New Elegant.Ui.Label()
@@ -204,7 +208,7 @@ Public Class frmPiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(543, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(560, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -238,7 +242,7 @@ Public Class frmPiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(543, 20)
+      Me.Panel1.Size = New System.Drawing.Size(560, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -262,12 +266,14 @@ Public Class frmPiatti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(543, 337)
+      Me.TabControl1.Size = New System.Drawing.Size(560, 371)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.txtSpettanza)
+      Me.TabPage1.Controls.Add(Me.Label21)
       Me.TabPage1.Controls.Add(Me.Label19)
       Me.TabPage1.Controls.Add(Me.Label18)
       Me.TabPage1.Controls.Add(Me.Label17)
@@ -306,9 +312,37 @@ Public Class frmPiatti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(535, 311)
+      Me.TabPage1.Size = New System.Drawing.Size(552, 345)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'txtSpettanza
+      '
+      Me.txtSpettanza.AcceptsReturn = True
+      Me.txtSpettanza.BackColor = System.Drawing.SystemColors.Window
+      Me.txtSpettanza.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtSpettanza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtSpettanza.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtSpettanza.Location = New System.Drawing.Point(381, 300)
+      Me.txtSpettanza.MaxLength = 0
+      Me.txtSpettanza.Name = "txtSpettanza"
+      Me.txtSpettanza.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtSpettanza.Size = New System.Drawing.Size(136, 20)
+      Me.txtSpettanza.TabIndex = 14
+      Me.txtSpettanza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label21
+      '
+      Me.Label21.AutoSize = True
+      Me.Label21.BackColor = System.Drawing.Color.Transparent
+      Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label21.ForeColor = System.Drawing.Color.Black
+      Me.Label21.Location = New System.Drawing.Point(16, 303)
+      Me.Label21.Name = "Label21"
+      Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label21.Size = New System.Drawing.Size(317, 13)
+      Me.Label21.TabIndex = 55785
+      Me.Label21.Text = "Questo piatto genera una spettanza nelle vendite per il Cameriere:"
       '
       'Label19
       '
@@ -412,7 +446,7 @@ Public Class frmPiatti
       Me.txtIngredienti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIngredienti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtIngredienti.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIngredienti.Location = New System.Drawing.Point(135, 250)
+      Me.txtIngredienti.Location = New System.Drawing.Point(135, 248)
       Me.txtIngredienti.MaxLength = 0
       Me.txtIngredienti.Name = "txtIngredienti"
       Me.txtIngredienti.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -425,7 +459,7 @@ Public Class frmPiatti
       Me.Label9.BackColor = System.Drawing.Color.Transparent
       Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label9.ForeColor = System.Drawing.Color.Black
-      Me.Label9.Location = New System.Drawing.Point(13, 250)
+      Me.Label9.Location = New System.Drawing.Point(16, 248)
       Me.Label9.Name = "Label9"
       Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label9.Size = New System.Drawing.Size(116, 13)
@@ -551,7 +585,7 @@ Public Class frmPiatti
       Me.txtValVenduto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtValVenduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtValVenduto.ForeColor = System.Drawing.Color.Red
-      Me.txtValVenduto.Location = New System.Drawing.Point(135, 276)
+      Me.txtValVenduto.Location = New System.Drawing.Point(135, 274)
       Me.txtValVenduto.MaxLength = 0
       Me.txtValVenduto.Name = "txtValVenduto"
       Me.txtValVenduto.ReadOnly = True
@@ -566,7 +600,7 @@ Public Class frmPiatti
       Me.Label4.BackColor = System.Drawing.Color.Transparent
       Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(13, 276)
+      Me.Label4.Location = New System.Drawing.Point(16, 274)
       Me.Label4.Name = "Label4"
       Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label4.Size = New System.Drawing.Size(82, 13)
@@ -580,7 +614,7 @@ Public Class frmPiatti
       Me.txtQVenduta.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtQVenduta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtQVenduta.ForeColor = System.Drawing.Color.Red
-      Me.txtQVenduta.Location = New System.Drawing.Point(381, 276)
+      Me.txtQVenduta.Location = New System.Drawing.Point(381, 274)
       Me.txtQVenduta.MaxLength = 0
       Me.txtQVenduta.Name = "txtQVenduta"
       Me.txtQVenduta.ReadOnly = True
@@ -595,7 +629,7 @@ Public Class frmPiatti
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(285, 276)
+      Me.Label2.Location = New System.Drawing.Point(285, 274)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(92, 13)
@@ -749,7 +783,7 @@ Public Class frmPiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(535, 311)
+      Me.TabPage2.Size = New System.Drawing.Size(542, 335)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -837,6 +871,7 @@ Public Class frmPiatti
       '
       'lstwIcona
       '
+      Me.lstwIcona.HideSelection = False
       Me.lstwIcona.LargeImageList = Me.ImageList1
       Me.lstwIcona.Location = New System.Drawing.Point(89, 195)
       Me.lstwIcona.Name = "lstwIcona"
@@ -923,7 +958,7 @@ Public Class frmPiatti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(566, 324)
+      Me.TabPage6.Size = New System.Drawing.Size(542, 335)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -940,7 +975,7 @@ Public Class frmPiatti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(566, 324)
+      Me.txtNote.Size = New System.Drawing.Size(542, 335)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -957,7 +992,7 @@ Public Class frmPiatti
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(543, 383)
+      Me.ClientSize = New System.Drawing.Size(560, 417)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1062,6 +1097,12 @@ Public Class frmPiatti
                .Listino4 = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtListino4.Text))
             Else
                .Listino4 = VALORE_ZERO
+            End If
+
+            If IsNumeric(txtSpettanza.Text) Then
+               .Spettanza = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtSpettanza.Text))
+            Else
+               .Spettanza = VALORE_ZERO
             End If
 
             If .Immagine = String.Empty Then
@@ -1217,7 +1258,7 @@ Public Class frmPiatti
 
    Private Function SommaCampoQtà(ByVal tabella As String) As Integer
       Dim closeOnExit As Boolean
-      Dim somma As Integer
+      Dim somma As Double
 
       Try
          ' Se necessario apre la connessione.
@@ -1229,7 +1270,7 @@ Public Class frmPiatti
          ' Ottiene il numero di record.
          cmd.CommandText = String.Format("SELECT SUM(Quantità) FROM {0} WHERE IdPiatto = '" & Me.Tag & "'", tabella)
          If IsDBNull(cmd.ExecuteScalar()) = False Then
-            somma = CInt(cmd.ExecuteScalar())
+            somma = Convert.ToDouble(cmd.ExecuteScalar())
          Else
             somma = 0
          End If
@@ -1249,7 +1290,7 @@ Public Class frmPiatti
 
    Private Function SommaCampoValore(ByVal tabella As String) As Decimal
       Dim closeOnExit As Boolean
-      Dim somma As Decimal
+      Dim somma As Double
 
       Try
          ' Se necessario apre la connessione.
@@ -1261,7 +1302,7 @@ Public Class frmPiatti
          ' Ottiene il numero di record.
          cmd.CommandText = String.Format("SELECT SUM(Importo) FROM {0} WHERE IdPiatto = '" & Me.Tag & "'", tabella)
          If IsDBNull(cmd.ExecuteScalar()) = False Then
-            somma = CDec(cmd.ExecuteScalar())
+            somma = Convert.ToDouble(cmd.ExecuteScalar())
          Else
             somma = 0
          End If
@@ -1393,7 +1434,7 @@ Public Class frmPiatti
          ImpostaIcona(Me)
 
          ' Imposta le dimensioni del form.
-         FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
+         FormResize(560, 440)
 
          If Me.Tag <> String.Empty Then
             With APiatti
@@ -1407,12 +1448,13 @@ Public Class frmPiatti
                txtDescrizionePos.Text = .DescrizionePos
                txtIngredienti.Text = .Ingredienti
                cmbCategoria.Text = .Categoria
-               txtQVenduta.Text = CFormatta.FormattaNumero(SommaCampoQtà(TAB_STATISTICHE))
+               txtQVenduta.Text = CFormatta.FormattaEuro(SommaCampoQtà(TAB_STATISTICHE))
                txtValVenduto.Text = CFormatta.FormattaEuro(SommaCampoValore(TAB_STATISTICHE))
                txtListino1.Text = .Listino1
                txtListino2.Text = .Listino2
                txtListino3.Text = .Listino3
                txtListino4.Text = .Listino4
+               txtSpettanza.Text = .Spettanza
                cmbAliquotaIva.Text = .AliquotaIva
 
                txtNote.Text = .Note
@@ -1604,6 +1646,14 @@ Public Class frmPiatti
       e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
    End Sub
 
+   Private Sub txtSpettanza_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSpettanza.KeyPress
+      e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+   End Sub
 
+   Private Sub txtSpettanza_LostFocus(sender As Object, e As EventArgs) Handles txtSpettanza.LostFocus
+      If IsNumeric(sender.Text) Then
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+      End If
+   End Sub
 End Class
 

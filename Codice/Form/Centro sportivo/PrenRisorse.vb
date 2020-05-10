@@ -4066,14 +4066,12 @@ Public Class frmPrenRisorse
       Try
          Dim NumeroDocumento As Integer
 
-         Select Case percorsoRep
-            Case PERCORSO_REP_SNF
-               NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
-               MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Case PERCORSO_REP_SF_RT
-               NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
-         End Select
+         If percorsoRep = PERCORSO_REP_SNF Then
+            NumeroDocumento = LeggiProssimoNumeroScontrinoNF()
+            MessageBox.Show("Verra emesso lo scontrino numero " & NumeroDocumento.ToString & " del giorno " & Now.ToShortDateString & ".", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         Else
+            NumeroDocumento = LeggiNumeroDocFiscaleConfig(TAB_DOCUMENTI, tipoDocumento)
+         End If
 
          With Doc
             Dim valSospeso As Double = Convert.ToDouble(txtTotale.Text)

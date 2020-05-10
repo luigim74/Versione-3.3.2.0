@@ -1381,9 +1381,6 @@ Public Class frmDocumento
                ' Crea il comando per la connessione corrente.
                Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-               ' In caso di variante senza una quantità.
-               Dim quantità As String
-
                If Me.Tag <> String.Empty Then
                   cmdInsert.Parameters.AddWithValue("@RifDoc", Me.Tag.ToString)
                Else
@@ -1543,10 +1540,10 @@ Public Class frmDocumento
    Private Sub CalcolaImportoRigaDoc()
       Try
          ' Quantità.
-         Dim qtà As Integer
+         Dim qtà As Double
          If IsNothing(dgvDettagli.CurrentRow.Cells(clnQta.Name).Value) = False Then
             If IsNumeric(dgvDettagli.CurrentRow.Cells(clnQta.Name).Value) = True Then
-               qtà = Convert.ToInt32(dgvDettagli.CurrentRow.Cells(clnQta.Name).Value)
+               qtà = Convert.ToDouble(dgvDettagli.CurrentRow.Cells(clnQta.Name).Value)
             End If
          End If
 
@@ -3227,7 +3224,7 @@ Public Class frmDocumento
             End If
 
             ' Questa riga è necessaria altrimenti non calcola lo sconto inserito. 
-            Dim qtà As Integer = dgvDettagli.CurrentRow.Cells(clnQta.Name).Value
+            Dim qtà As Double = dgvDettagli.CurrentRow.Cells(clnQta.Name).Value
 
             CalcolaImportoRigaDoc()
             CalcolaTotaleSconto()

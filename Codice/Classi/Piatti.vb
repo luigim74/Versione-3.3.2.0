@@ -27,6 +27,7 @@ Public Class Piatti
    Public OrdineTasto As Integer
    Public Icona As String
    Public Immagine As String
+   Public Spettanza As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -126,6 +127,11 @@ Public Class Piatti
          Else
             Me.Listino4 = VALORE_ZERO
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Spettanza")) = False Then
+            Me.Spettanza = ds.Tables(tabella).Rows(0)("Spettanza").ToString
+         Else
+            Me.Spettanza = VALORE_ZERO
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("AliquotaIva")) = False Then
             Me.AliquotaIva = ds.Tables(tabella).Rows(0)("AliquotaIva").ToString
          Else
@@ -200,10 +206,10 @@ Public Class Piatti
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (CodBarre, Descrizione, DescrizionePos, Categoria, Variazione, Qt‡Venduta, ValVenduto, " &
-                                              "Listino1, Listino2, Listino3, Listino4, AliquotaIva, Immagine, [Note], Ingredienti, EscludiMenu, Icona, " &
+                                              "Listino1, Listino2, Listino3, Listino4, Spettanza, AliquotaIva, Immagine, [Note], Ingredienti, EscludiMenu, Icona, " &
                                               "ColoreStile, ColoreSfondo, ColoreTesto, AltezzaTasto, LarghezzaTasto, NumTastiRiga, OrdineTasto) " &
                                        "VALUES(@CodBarre, @Descrizione, @DescrizionePos, @Categoria, @Variazione, @Qt‡Venduta, @ValVenduto, " &
-                                              "@Listino1, @Listino2, @Listino3, @Listino4, @AliquotaIva, @Immagine, @Note, @Ingredienti, @EscludiMenu, @Icona, " &
+                                              "@Listino1, @Listino2, @Listino3, @Listino4, @Spettanza, @AliquotaIva, @Immagine, @Note, @Ingredienti, @EscludiMenu, @Icona, " &
                                               "@ColoreStile, @ColoreSfondo, @ColoreTesto, @AltezzaTasto, @LarghezzaTasto, @NumTastiRiga, @OrdineTasto)", tabella)
 
          ' Crea il comando per la connessione corrente.
@@ -220,6 +226,7 @@ Public Class Piatti
          cmdInsert.Parameters.AddWithValue("@Listino2", Me.Listino2)
          cmdInsert.Parameters.AddWithValue("@Listino3", Me.Listino3)
          cmdInsert.Parameters.AddWithValue("@Listino4", Me.Listino4)
+         cmdInsert.Parameters.AddWithValue("@Spettanza", Me.Spettanza)
          cmdInsert.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
          cmdInsert.Parameters.AddWithValue("@Immagine", Me.Immagine)
          cmdInsert.Parameters.AddWithValue("@Note", Me.Note)
@@ -281,6 +288,7 @@ Public Class Piatti
                              "Listino2 = @Listino2, " &
                              "Listino3 = @Listino3, " &
                              "Listino4 = @Listino4, " &
+                             "Spettanza = @Spettanza, " &
                              "AliquotaIva = @AliquotaIva, " &
                              "Immagine = @Immagine, " &
                              "Ingredienti = @Ingredienti, " &
@@ -312,6 +320,7 @@ Public Class Piatti
          cmdUpdate.Parameters.AddWithValue("@Listino2", Me.Listino2)
          cmdUpdate.Parameters.AddWithValue("@Listino3", Me.Listino3)
          cmdUpdate.Parameters.AddWithValue("@Listino4", Me.Listino4)
+         cmdUpdate.Parameters.AddWithValue("@Spettanza", Me.Spettanza)
          cmdUpdate.Parameters.AddWithValue("@AliquotaIva", Me.AliquotaIva)
          cmdUpdate.Parameters.AddWithValue("@Immagine", Me.Immagine)
          cmdUpdate.Parameters.AddWithValue("@Ingredienti", Me.Ingredienti)
@@ -348,6 +357,7 @@ Public Class Piatti
          cn.Close()
       End Try
    End Function
+
    Public Function ModificaDati(ByVal coloreStile As Integer, ByVal coloreSfondo As Integer, ByVal coloreTesto As Integer, ByVal altezzaTasto As Integer, ByVal larghezzaTasto As Integer, ByVal numTastiRiga As Integer, ByVal immagine As String, ByVal descrizionePos As String, ByVal tabella As String) As Boolean
       Dim sql As String
 

@@ -16,6 +16,7 @@ Public Class Statistiche
    Public Prezzo As String
    Public Importo As String
    Public Contabilizzata As String
+   Public SpettanzaCameriere As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -103,17 +104,22 @@ Public Class Statistiche
          If IsDBNull(ds.Tables(tabella).Rows(0)("Prezzo")) = False Then
             Me.Prezzo = ds.Tables(tabella).Rows(0)("Prezzo")
          Else
-            Me.Prezzo = ""
+            Me.Prezzo = VALORE_ZERO
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Importo")) = False Then
             Me.Importo = ds.Tables(tabella).Rows(0)("Importo")
          Else
-            Me.Importo = ""
+            Me.Importo = VALORE_ZERO
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Contabilizzata")) = False Then
-            Me.Importo = ds.Tables(tabella).Rows(0)("Contabilizzata")
+            Me.Contabilizzata = ds.Tables(tabella).Rows(0)("Contabilizzata")
          Else
-            Me.Importo = "No"
+            Me.Contabilizzata = "No"
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("SpettanzaCameriere")) = False Then
+            Me.SpettanzaCameriere = ds.Tables(tabella).Rows(0)("SpettanzaCameriere")
+         Else
+            Me.SpettanzaCameriere = VALORE_ZERO
          End If
 
       Catch ex As Exception
@@ -139,8 +145,8 @@ Public Class Statistiche
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (Data, IdCategoria, DesCategoria, IdPiatto, DesPiatto, " &
-                                              "IdTavolo, DesTavolo, IdCameriere, DesCameriere, Quantità, Prezzo, Importo, Contabilizzata) " &
-                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10}, '{11}', '{12}', '{13}')",
+                                              "IdTavolo, DesTavolo, IdCameriere, DesCameriere, Quantità, Prezzo, Importo, Contabilizzata, SpettanzaCameriere) " &
+                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')",
                                                 tabella,
                                                 Me.Data,
                                                 Me.IdCategoria,
@@ -154,7 +160,8 @@ Public Class Statistiche
                                                 Me.Quantità,
                                                 Me.Prezzo,
                                                 Me.Importo,
-                                                Me.Contabilizzata)
+                                                Me.Contabilizzata,
+                                                Me.SpettanzaCameriere)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)

@@ -2,7 +2,7 @@
 <xs:schema id="HospitalityDataSet" targetNamespace="http://tempuri.org/HospitalityDataSet.xsd" xmlns:mstns="http://tempuri.org/HospitalityDataSet.xsd" xmlns="http://tempuri.org/HospitalityDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="13" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="14" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString" Provider="System.Data.OleDb" />
@@ -18,6 +18,7 @@
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString11" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString11 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString10" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString12" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString12 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString10" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString14" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString14 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString14" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString45" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString45 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString45" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AccessoriServiziTableAdapter" GeneratorDataComponentClassName="AccessoriServiziTableAdapter" Name="AccessoriServizi" UserDataComponentName="AccessoriServiziTableAdapter">
@@ -490,115 +491,6 @@
               <Mapping SourceColumn="Cameriere" DataSetColumn="Cameriere" />
               <Mapping SourceColumn="Chiuso" DataSetColumn="Chiuso" />
               <Mapping SourceColumn="Note" DataSetColumn="Note" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DettagliDocTableAdapter" GeneratorDataComponentClassName="DettagliDocTableAdapter" Name="DettagliDoc" UserDataComponentName="DettagliDocTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HospitalityConnectionString (MySettings)" DbObjectName="DettagliDoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `DettagliDoc` WHERE ((`Id` = ?) AND ((? = 1 AND `RifDoc` IS NULL) OR (`RifDoc` = ?)) AND ((? = 1 AND `CodiceArticolo` IS NULL) OR (`CodiceArticolo` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `UnitàMisura` IS NULL) OR (`UnitàMisura` = ?)) AND ((? = 1 AND `Quantità` IS NULL) OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS NULL) OR (`ValoreUnitario` = ?)) AND ((? = 1 AND `Sconto` IS NULL) OR (`Sconto` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`ImportoNetto` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)) AND ((? = 1 AND `Categoria` IS NULL) OR (`Categoria` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceArticolo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UnitàMisura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ValoreUnitario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Sconto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ImportoNetto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AliquotaIva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Categoria" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `DettagliDoc` (`RifDoc`, `CodiceArticolo`, `Descrizione`, `UnitàMisura`, `Quantità`, `ValoreUnitario`, `Sconto`, `ImportoNetto`, `AliquotaIva`, `Categoria`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, RifDoc, CodiceArticolo, Descrizione, UnitàMisura, Quantità, ValoreUnitario, Sconto, ImportoNetto, AliquotaIva, Categoria FROM DettagliDoc</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `DettagliDoc` SET `RifDoc` = ?, `CodiceArticolo` = ?, `Descrizione` = ?, `UnitàMisura` = ?, `Quantità` = ?, `ValoreUnitario` = ?, `Sconto` = ?, `ImportoNetto` = ?, `AliquotaIva` = ?, `Categoria` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `RifDoc` IS NULL) OR (`RifDoc` = ?)) AND ((? = 1 AND `CodiceArticolo` IS NULL) OR (`CodiceArticolo` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `UnitàMisura` IS NULL) OR (`UnitàMisura` = ?)) AND ((? = 1 AND `Quantità` IS NULL) OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS NULL) OR (`ValoreUnitario` = ?)) AND ((? = 1 AND `Sconto` IS NULL) OR (`Sconto` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`ImportoNetto` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)) AND ((? = 1 AND `Categoria` IS NULL) OR (`Categoria` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceArticolo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UnitàMisura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ValoreUnitario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Sconto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ImportoNetto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AliquotaIva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Categoria" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Id" DataSetColumn="Id" />
-              <Mapping SourceColumn="RifDoc" DataSetColumn="RifDoc" />
-              <Mapping SourceColumn="CodiceArticolo" DataSetColumn="CodiceArticolo" />
-              <Mapping SourceColumn="Descrizione" DataSetColumn="Descrizione" />
-              <Mapping SourceColumn="UnitàMisura" DataSetColumn="UnitàMisura" />
-              <Mapping SourceColumn="Quantità" DataSetColumn="Quantità" />
-              <Mapping SourceColumn="ValoreUnitario" DataSetColumn="ValoreUnitario" />
-              <Mapping SourceColumn="Sconto" DataSetColumn="Sconto" />
-              <Mapping SourceColumn="ImportoNetto" DataSetColumn="ImportoNetto" />
-              <Mapping SourceColumn="AliquotaIva" DataSetColumn="AliquotaIva" />
-              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2140,6 +2032,115 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DettagliDocTableAdapter" GeneratorDataComponentClassName="DettagliDocTableAdapter" Name="DettagliDoc" UserDataComponentName="DettagliDocTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalityConnectionString45 (MySettings)" DbObjectName="DettagliDoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `DettagliDoc` WHERE ((`Id` = ?) AND ((? = 1 AND `RifDoc` IS NULL) OR (`RifDoc` = ?)) AND ((? = 1 AND `CodiceArticolo` IS NULL) OR (`CodiceArticolo` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `UnitàMisura` IS NULL) OR (`UnitàMisura` = ?)) AND ((? = 1 AND `Quantità` IS NULL) OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS NULL) OR (`ValoreUnitario` = ?)) AND ((? = 1 AND `Sconto` IS NULL) OR (`Sconto` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`ImportoNetto` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)) AND ((? = 1 AND `Categoria` IS NULL) OR (`Categoria` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceArticolo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UnitàMisura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_Quantità" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ValoreUnitario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Sconto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ImportoNetto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AliquotaIva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Categoria" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `DettagliDoc` (`RifDoc`, `CodiceArticolo`, `Descrizione`, `UnitàMisura`, `Quantità`, `ValoreUnitario`, `Sconto`, `ImportoNetto`, `AliquotaIva`, `Categoria`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Quantità" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, RifDoc, CodiceArticolo, Descrizione, UnitàMisura, Quantità, ValoreUnitario, Sconto, ImportoNetto, AliquotaIva, Categoria FROM DettagliDoc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `DettagliDoc` SET `RifDoc` = ?, `CodiceArticolo` = ?, `Descrizione` = ?, `UnitàMisura` = ?, `Quantità` = ?, `ValoreUnitario` = ?, `Sconto` = ?, `ImportoNetto` = ?, `AliquotaIva` = ?, `Categoria` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `RifDoc` IS NULL) OR (`RifDoc` = ?)) AND ((? = 1 AND `CodiceArticolo` IS NULL) OR (`CodiceArticolo` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `UnitàMisura` IS NULL) OR (`UnitàMisura` = ?)) AND ((? = 1 AND `Quantità` IS NULL) OR (`Quantità` = ?)) AND ((? = 1 AND `ValoreUnitario` IS NULL) OR (`ValoreUnitario` = ?)) AND ((? = 1 AND `Sconto` IS NULL) OR (`Sconto` = ?)) AND ((? = 1 AND `ImportoNetto` IS NULL) OR (`ImportoNetto` = ?)) AND ((? = 1 AND `AliquotaIva` IS NULL) OR (`AliquotaIva` = ?)) AND ((? = 1 AND `Categoria` IS NULL) OR (`Categoria` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Quantità" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RifDoc" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RifDoc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodiceArticolo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodiceArticolo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodiceArticolo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Descrizione" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Descrizione" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Descrizione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UnitàMisura" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UnitàMisura" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UnitàMisura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantità" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_Quantità" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Quantità" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ValoreUnitario" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ValoreUnitario" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ValoreUnitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Sconto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_Sconto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="Sconto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ImportoNetto" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_ImportoNetto" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="ImportoNetto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_AliquotaIva" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="Original_AliquotaIva" Precision="0" ProviderType="Currency" Scale="0" Size="0" SourceColumn="AliquotaIva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Categoria" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Categoria" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="RifDoc" DataSetColumn="RifDoc" />
+              <Mapping SourceColumn="CodiceArticolo" DataSetColumn="CodiceArticolo" />
+              <Mapping SourceColumn="Descrizione" DataSetColumn="Descrizione" />
+              <Mapping SourceColumn="UnitàMisura" DataSetColumn="UnitàMisura" />
+              <Mapping SourceColumn="Quantità" DataSetColumn="Quantità" />
+              <Mapping SourceColumn="ValoreUnitario" DataSetColumn="ValoreUnitario" />
+              <Mapping SourceColumn="Sconto" DataSetColumn="Sconto" />
+              <Mapping SourceColumn="ImportoNetto" DataSetColumn="ImportoNetto" />
+              <Mapping SourceColumn="AliquotaIva" DataSetColumn="AliquotaIva" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2148,7 +2149,7 @@
   <xs:element name="HospitalityDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HospitalityDataSet" msprop:Generator_UserDSName="HospitalityDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AccessoriServizi" msprop:Generator_TableClassName="AccessoriServiziDataTable" msprop:Generator_TableVarName="tableAccessoriServizi" msprop:Generator_TablePropName="AccessoriServizi" msprop:Generator_RowDeletingName="AccessoriServiziRowDeleting" msprop:Generator_RowChangingName="AccessoriServiziRowChanging" msprop:Generator_RowEvHandlerName="AccessoriServiziRowChangeEventHandler" msprop:Generator_RowDeletedName="AccessoriServiziRowDeleted" msprop:Generator_UserTableName="AccessoriServizi" msprop:Generator_RowChangedName="AccessoriServiziRowChanged" msprop:Generator_RowEvArgName="AccessoriServiziRowChangeEvent" msprop:Generator_RowClassName="AccessoriServiziRow">
+        <xs:element name="AccessoriServizi" msprop:Generator_TableClassName="AccessoriServiziDataTable" msprop:Generator_TableVarName="tableAccessoriServizi" msprop:Generator_RowChangedName="AccessoriServiziRowChanged" msprop:Generator_TablePropName="AccessoriServizi" msprop:Generator_RowDeletingName="AccessoriServiziRowDeleting" msprop:Generator_RowChangingName="AccessoriServiziRowChanging" msprop:Generator_RowEvHandlerName="AccessoriServiziRowChangeEventHandler" msprop:Generator_RowDeletedName="AccessoriServiziRowDeleted" msprop:Generator_RowClassName="AccessoriServiziRow" msprop:Generator_UserTableName="AccessoriServizi" msprop:Generator_RowEvArgName="AccessoriServiziRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2206,7 +2207,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Documenti" msprop:Generator_TableClassName="DocumentiDataTable" msprop:Generator_TableVarName="tableDocumenti" msprop:Generator_RowChangedName="DocumentiRowChanged" msprop:Generator_TablePropName="Documenti" msprop:Generator_RowDeletingName="DocumentiRowDeleting" msprop:Generator_RowChangingName="DocumentiRowChanging" msprop:Generator_RowEvHandlerName="DocumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentiRowDeleted" msprop:Generator_RowClassName="DocumentiRow" msprop:Generator_UserTableName="Documenti" msprop:Generator_RowEvArgName="DocumentiRowChangeEvent">
+        <xs:element name="Documenti" msprop:Generator_TableClassName="DocumentiDataTable" msprop:Generator_TableVarName="tableDocumenti" msprop:Generator_TablePropName="Documenti" msprop:Generator_RowDeletingName="DocumentiRowDeleting" msprop:Generator_RowChangingName="DocumentiRowChanging" msprop:Generator_RowEvHandlerName="DocumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentiRowDeleted" msprop:Generator_UserTableName="Documenti" msprop:Generator_RowChangedName="DocumentiRowChanged" msprop:Generator_RowEvArgName="DocumentiRowChangeEvent" msprop:Generator_RowClassName="DocumentiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2387,48 +2388,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DettagliDoc" msprop:Generator_TableClassName="DettagliDocDataTable" msprop:Generator_TableVarName="tableDettagliDoc" msprop:Generator_RowChangedName="DettagliDocRowChanged" msprop:Generator_TablePropName="DettagliDoc" msprop:Generator_RowDeletingName="DettagliDocRowDeleting" msprop:Generator_RowChangingName="DettagliDocRowChanging" msprop:Generator_RowEvHandlerName="DettagliDocRowChangeEventHandler" msprop:Generator_RowDeletedName="DettagliDocRowDeleted" msprop:Generator_RowClassName="DettagliDocRow" msprop:Generator_UserTableName="DettagliDoc" msprop:Generator_RowEvArgName="DettagliDocRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="RifDoc" msprop:Generator_ColumnVarNameInTable="columnRifDoc" msprop:Generator_ColumnPropNameInRow="RifDoc" msprop:Generator_ColumnPropNameInTable="RifDocColumn" msprop:Generator_UserColumnName="RifDoc" type="xs:int" minOccurs="0" />
-              <xs:element name="CodiceArticolo" msprop:Generator_ColumnVarNameInTable="columnCodiceArticolo" msprop:Generator_ColumnPropNameInRow="CodiceArticolo" msprop:Generator_ColumnPropNameInTable="CodiceArticoloColumn" msprop:Generator_UserColumnName="CodiceArticolo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Descrizione" msprop:Generator_ColumnVarNameInTable="columnDescrizione" msprop:Generator_ColumnPropNameInRow="Descrizione" msprop:Generator_ColumnPropNameInTable="DescrizioneColumn" msprop:Generator_UserColumnName="Descrizione" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="UnitàMisura" msprop:Generator_ColumnVarNameInTable="columnUnitàMisura" msprop:Generator_ColumnPropNameInRow="UnitàMisura" msprop:Generator_ColumnPropNameInTable="UnitàMisuraColumn" msprop:Generator_UserColumnName="UnitàMisura" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Quantità" msprop:Generator_ColumnVarNameInTable="columnQuantità" msprop:Generator_ColumnPropNameInRow="Quantità" msprop:Generator_ColumnPropNameInTable="QuantitàColumn" msprop:Generator_UserColumnName="Quantità" type="xs:int" minOccurs="0" />
-              <xs:element name="ValoreUnitario" msprop:Generator_ColumnVarNameInTable="columnValoreUnitario" msprop:Generator_ColumnPropNameInRow="ValoreUnitario" msprop:Generator_ColumnPropNameInTable="ValoreUnitarioColumn" msprop:Generator_UserColumnName="ValoreUnitario" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Sconto" msprop:Generator_ColumnVarNameInTable="columnSconto" msprop:Generator_ColumnPropNameInRow="Sconto" msprop:Generator_ColumnPropNameInTable="ScontoColumn" msprop:Generator_UserColumnName="Sconto" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ImportoNetto" msprop:Generator_ColumnVarNameInTable="columnImportoNetto" msprop:Generator_ColumnPropNameInRow="ImportoNetto" msprop:Generator_ColumnPropNameInTable="ImportoNettoColumn" msprop:Generator_UserColumnName="ImportoNetto" type="xs:decimal" minOccurs="0" />
-              <xs:element name="AliquotaIva" msprop:Generator_ColumnVarNameInTable="columnAliquotaIva" msprop:Generator_ColumnPropNameInRow="AliquotaIva" msprop:Generator_ColumnPropNameInTable="AliquotaIvaColumn" msprop:Generator_UserColumnName="AliquotaIva" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Camere" msprop:Generator_TableClassName="CamereDataTable" msprop:Generator_TableVarName="tableCamere" msprop:Generator_TablePropName="Camere" msprop:Generator_RowDeletingName="CamereRowDeleting" msprop:Generator_RowChangingName="CamereRowChanging" msprop:Generator_RowEvHandlerName="CamereRowChangeEventHandler" msprop:Generator_RowDeletedName="CamereRowDeleted" msprop:Generator_UserTableName="Camere" msprop:Generator_RowChangedName="CamereRowChanged" msprop:Generator_RowEvArgName="CamereRowChangeEvent" msprop:Generator_RowClassName="CamereRow">
+        <xs:element name="Camere" msprop:Generator_TableClassName="CamereDataTable" msprop:Generator_TableVarName="tableCamere" msprop:Generator_RowChangedName="CamereRowChanged" msprop:Generator_TablePropName="Camere" msprop:Generator_RowDeletingName="CamereRowDeleting" msprop:Generator_RowChangingName="CamereRowChanging" msprop:Generator_RowEvHandlerName="CamereRowChangeEventHandler" msprop:Generator_RowDeletedName="CamereRowDeleted" msprop:Generator_RowClassName="CamereRow" msprop:Generator_UserTableName="Camere" msprop:Generator_RowEvArgName="CamereRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2520,7 +2480,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CAP" msprop:Generator_TableClassName="CAPDataTable" msprop:Generator_TableVarName="tableCAP" msprop:Generator_RowChangedName="CAPRowChanged" msprop:Generator_TablePropName="CAP" msprop:Generator_RowDeletingName="CAPRowDeleting" msprop:Generator_RowChangingName="CAPRowChanging" msprop:Generator_RowEvHandlerName="CAPRowChangeEventHandler" msprop:Generator_RowDeletedName="CAPRowDeleted" msprop:Generator_RowClassName="CAPRow" msprop:Generator_UserTableName="CAP" msprop:Generator_RowEvArgName="CAPRowChangeEvent">
+        <xs:element name="CAP" msprop:Generator_TableClassName="CAPDataTable" msprop:Generator_TableVarName="tableCAP" msprop:Generator_TablePropName="CAP" msprop:Generator_RowDeletingName="CAPRowDeleting" msprop:Generator_RowChangingName="CAPRowChanging" msprop:Generator_RowEvHandlerName="CAPRowChangeEventHandler" msprop:Generator_RowDeletedName="CAPRowDeleted" msprop:Generator_UserTableName="CAP" msprop:Generator_RowChangedName="CAPRowChanged" msprop:Generator_RowEvArgName="CAPRowChangeEvent" msprop:Generator_RowClassName="CAPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2576,7 +2536,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Email" msprop:Generator_TableClassName="EmailDataTable" msprop:Generator_TableVarName="tableEmail" msprop:Generator_RowChangedName="EmailRowChanged" msprop:Generator_TablePropName="Email" msprop:Generator_RowDeletingName="EmailRowDeleting" msprop:Generator_RowChangingName="EmailRowChanging" msprop:Generator_RowEvHandlerName="EmailRowChangeEventHandler" msprop:Generator_RowDeletedName="EmailRowDeleted" msprop:Generator_RowClassName="EmailRow" msprop:Generator_UserTableName="Email" msprop:Generator_RowEvArgName="EmailRowChangeEvent">
+        <xs:element name="Email" msprop:Generator_TableClassName="EmailDataTable" msprop:Generator_TableVarName="tableEmail" msprop:Generator_TablePropName="Email" msprop:Generator_RowDeletingName="EmailRowDeleting" msprop:Generator_RowChangingName="EmailRowChanging" msprop:Generator_RowEvHandlerName="EmailRowChangeEventHandler" msprop:Generator_RowDeletedName="EmailRowDeleted" msprop:Generator_UserTableName="Email" msprop:Generator_RowChangedName="EmailRowChanged" msprop:Generator_RowEvArgName="EmailRowChangeEvent" msprop:Generator_RowClassName="EmailRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2674,7 +2634,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PrenCamere" msprop:Generator_TableClassName="PrenCamereDataTable" msprop:Generator_TableVarName="tablePrenCamere" msprop:Generator_RowChangedName="PrenCamereRowChanged" msprop:Generator_TablePropName="PrenCamere" msprop:Generator_RowDeletingName="PrenCamereRowDeleting" msprop:Generator_RowChangingName="PrenCamereRowChanging" msprop:Generator_RowEvHandlerName="PrenCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="PrenCamereRowDeleted" msprop:Generator_RowClassName="PrenCamereRow" msprop:Generator_UserTableName="PrenCamere" msprop:Generator_RowEvArgName="PrenCamereRowChangeEvent">
+        <xs:element name="PrenCamere" msprop:Generator_TableClassName="PrenCamereDataTable" msprop:Generator_TableVarName="tablePrenCamere" msprop:Generator_TablePropName="PrenCamere" msprop:Generator_RowDeletingName="PrenCamereRowDeleting" msprop:Generator_RowChangingName="PrenCamereRowChanging" msprop:Generator_RowEvHandlerName="PrenCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="PrenCamereRowDeleted" msprop:Generator_UserTableName="PrenCamere" msprop:Generator_RowChangedName="PrenCamereRowChanged" msprop:Generator_RowEvArgName="PrenCamereRowChangeEvent" msprop:Generator_RowClassName="PrenCamereRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2846,7 +2806,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SchedinePS" msprop:Generator_TableClassName="SchedinePSDataTable" msprop:Generator_TableVarName="tableSchedinePS" msprop:Generator_RowChangedName="SchedinePSRowChanged" msprop:Generator_TablePropName="SchedinePS" msprop:Generator_RowDeletingName="SchedinePSRowDeleting" msprop:Generator_RowChangingName="SchedinePSRowChanging" msprop:Generator_RowEvHandlerName="SchedinePSRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedinePSRowDeleted" msprop:Generator_RowClassName="SchedinePSRow" msprop:Generator_UserTableName="SchedinePS" msprop:Generator_RowEvArgName="SchedinePSRowChangeEvent">
+        <xs:element name="SchedinePS" msprop:Generator_TableClassName="SchedinePSDataTable" msprop:Generator_TableVarName="tableSchedinePS" msprop:Generator_TablePropName="SchedinePS" msprop:Generator_RowDeletingName="SchedinePSRowDeleting" msprop:Generator_RowChangingName="SchedinePSRowChanging" msprop:Generator_RowEvHandlerName="SchedinePSRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedinePSRowDeleted" msprop:Generator_UserTableName="SchedinePS" msprop:Generator_RowChangedName="SchedinePSRowChanged" msprop:Generator_RowEvArgName="SchedinePSRowChangeEvent" msprop:Generator_RowClassName="SchedinePSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2999,7 +2959,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ListiniCamere" msprop:Generator_TableClassName="ListiniCamereDataTable" msprop:Generator_TableVarName="tableListiniCamere" msprop:Generator_RowChangedName="ListiniCamereRowChanged" msprop:Generator_TablePropName="ListiniCamere" msprop:Generator_RowDeletingName="ListiniCamereRowDeleting" msprop:Generator_RowChangingName="ListiniCamereRowChanging" msprop:Generator_RowEvHandlerName="ListiniCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="ListiniCamereRowDeleted" msprop:Generator_RowClassName="ListiniCamereRow" msprop:Generator_UserTableName="ListiniCamere" msprop:Generator_RowEvArgName="ListiniCamereRowChangeEvent">
+        <xs:element name="ListiniCamere" msprop:Generator_TableClassName="ListiniCamereDataTable" msprop:Generator_TableVarName="tableListiniCamere" msprop:Generator_TablePropName="ListiniCamere" msprop:Generator_RowDeletingName="ListiniCamereRowDeleting" msprop:Generator_RowChangingName="ListiniCamereRowChanging" msprop:Generator_RowEvHandlerName="ListiniCamereRowChangeEventHandler" msprop:Generator_RowDeletedName="ListiniCamereRowDeleted" msprop:Generator_UserTableName="ListiniCamere" msprop:Generator_RowChangedName="ListiniCamereRowChanged" msprop:Generator_RowEvArgName="ListiniCamereRowChangeEvent" msprop:Generator_RowClassName="ListiniCamereRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -3048,7 +3008,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StoricoPresenzeTemp" msprop:Generator_TableClassName="StoricoPresenzeTempDataTable" msprop:Generator_TableVarName="tableStoricoPresenzeTemp" msprop:Generator_RowChangedName="StoricoPresenzeTempRowChanged" msprop:Generator_TablePropName="StoricoPresenzeTemp" msprop:Generator_RowDeletingName="StoricoPresenzeTempRowDeleting" msprop:Generator_RowChangingName="StoricoPresenzeTempRowChanging" msprop:Generator_RowEvHandlerName="StoricoPresenzeTempRowChangeEventHandler" msprop:Generator_RowDeletedName="StoricoPresenzeTempRowDeleted" msprop:Generator_RowClassName="StoricoPresenzeTempRow" msprop:Generator_UserTableName="StoricoPresenzeTemp" msprop:Generator_RowEvArgName="StoricoPresenzeTempRowChangeEvent">
+        <xs:element name="StoricoPresenzeTemp" msprop:Generator_TableClassName="StoricoPresenzeTempDataTable" msprop:Generator_TableVarName="tableStoricoPresenzeTemp" msprop:Generator_TablePropName="StoricoPresenzeTemp" msprop:Generator_RowDeletingName="StoricoPresenzeTempRowDeleting" msprop:Generator_RowChangingName="StoricoPresenzeTempRowChanging" msprop:Generator_RowEvHandlerName="StoricoPresenzeTempRowChangeEventHandler" msprop:Generator_RowDeletedName="StoricoPresenzeTempRowDeleted" msprop:Generator_UserTableName="StoricoPresenzeTemp" msprop:Generator_RowChangedName="StoricoPresenzeTempRowChanged" msprop:Generator_RowEvArgName="StoricoPresenzeTempRowChangeEvent" msprop:Generator_RowClassName="StoricoPresenzeTempRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -3071,7 +3031,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ComponentiSchedinePS" msprop:Generator_TableClassName="ComponentiSchedinePSDataTable" msprop:Generator_TableVarName="tableComponentiSchedinePS" msprop:Generator_TablePropName="ComponentiSchedinePS" msprop:Generator_RowDeletingName="ComponentiSchedinePSRowDeleting" msprop:Generator_RowChangingName="ComponentiSchedinePSRowChanging" msprop:Generator_RowEvHandlerName="ComponentiSchedinePSRowChangeEventHandler" msprop:Generator_RowDeletedName="ComponentiSchedinePSRowDeleted" msprop:Generator_UserTableName="ComponentiSchedinePS" msprop:Generator_RowChangedName="ComponentiSchedinePSRowChanged" msprop:Generator_RowEvArgName="ComponentiSchedinePSRowChangeEvent" msprop:Generator_RowClassName="ComponentiSchedinePSRow">
+        <xs:element name="ComponentiSchedinePS" msprop:Generator_TableClassName="ComponentiSchedinePSDataTable" msprop:Generator_TableVarName="tableComponentiSchedinePS" msprop:Generator_RowChangedName="ComponentiSchedinePSRowChanged" msprop:Generator_TablePropName="ComponentiSchedinePS" msprop:Generator_RowDeletingName="ComponentiSchedinePSRowDeleting" msprop:Generator_RowChangingName="ComponentiSchedinePSRowChanging" msprop:Generator_RowEvHandlerName="ComponentiSchedinePSRowChangeEventHandler" msprop:Generator_RowDeletedName="ComponentiSchedinePSRowDeleted" msprop:Generator_RowClassName="ComponentiSchedinePSRow" msprop:Generator_UserTableName="ComponentiSchedinePS" msprop:Generator_RowEvArgName="ComponentiSchedinePSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -3151,7 +3111,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Azienda" msprop:Generator_TableClassName="AziendaDataTable" msprop:Generator_TableVarName="tableAzienda" msprop:Generator_TablePropName="Azienda" msprop:Generator_RowDeletingName="AziendaRowDeleting" msprop:Generator_RowChangingName="AziendaRowChanging" msprop:Generator_RowEvHandlerName="AziendaRowChangeEventHandler" msprop:Generator_RowDeletedName="AziendaRowDeleted" msprop:Generator_UserTableName="Azienda" msprop:Generator_RowChangedName="AziendaRowChanged" msprop:Generator_RowEvArgName="AziendaRowChangeEvent" msprop:Generator_RowClassName="AziendaRow">
+        <xs:element name="Azienda" msprop:Generator_TableClassName="AziendaDataTable" msprop:Generator_TableVarName="tableAzienda" msprop:Generator_RowChangedName="AziendaRowChanged" msprop:Generator_TablePropName="Azienda" msprop:Generator_RowDeletingName="AziendaRowDeleting" msprop:Generator_RowChangingName="AziendaRowChanging" msprop:Generator_RowEvHandlerName="AziendaRowChangeEventHandler" msprop:Generator_RowDeletedName="AziendaRowDeleted" msprop:Generator_RowClassName="AziendaRow" msprop:Generator_UserTableName="Azienda" msprop:Generator_RowEvArgName="AziendaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -3432,6 +3392,47 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DettagliDoc" msprop:Generator_TableClassName="DettagliDocDataTable" msprop:Generator_TableVarName="tableDettagliDoc" msprop:Generator_TablePropName="DettagliDoc" msprop:Generator_RowDeletingName="DettagliDocRowDeleting" msprop:Generator_RowChangingName="DettagliDocRowChanging" msprop:Generator_RowEvHandlerName="DettagliDocRowChangeEventHandler" msprop:Generator_RowDeletedName="DettagliDocRowDeleted" msprop:Generator_UserTableName="DettagliDoc" msprop:Generator_RowChangedName="DettagliDocRowChanged" msprop:Generator_RowEvArgName="DettagliDocRowChangeEvent" msprop:Generator_RowClassName="DettagliDocRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="RifDoc" msprop:Generator_ColumnVarNameInTable="columnRifDoc" msprop:Generator_ColumnPropNameInRow="RifDoc" msprop:Generator_ColumnPropNameInTable="RifDocColumn" msprop:Generator_UserColumnName="RifDoc" type="xs:int" minOccurs="0" />
+              <xs:element name="CodiceArticolo" msprop:Generator_ColumnVarNameInTable="columnCodiceArticolo" msprop:Generator_ColumnPropNameInRow="CodiceArticolo" msprop:Generator_ColumnPropNameInTable="CodiceArticoloColumn" msprop:Generator_UserColumnName="CodiceArticolo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descrizione" msprop:Generator_ColumnVarNameInTable="columnDescrizione" msprop:Generator_ColumnPropNameInRow="Descrizione" msprop:Generator_ColumnPropNameInTable="DescrizioneColumn" msprop:Generator_UserColumnName="Descrizione" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitàMisura" msprop:Generator_ColumnVarNameInTable="columnUnitàMisura" msprop:Generator_ColumnPropNameInRow="UnitàMisura" msprop:Generator_ColumnPropNameInTable="UnitàMisuraColumn" msprop:Generator_UserColumnName="UnitàMisura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantità" msprop:Generator_ColumnVarNameInTable="columnQuantità" msprop:Generator_ColumnPropNameInRow="Quantità" msprop:Generator_ColumnPropNameInTable="QuantitàColumn" msprop:Generator_UserColumnName="Quantità" type="xs:double" minOccurs="0" />
+              <xs:element name="ValoreUnitario" msprop:Generator_ColumnVarNameInTable="columnValoreUnitario" msprop:Generator_ColumnPropNameInRow="ValoreUnitario" msprop:Generator_ColumnPropNameInTable="ValoreUnitarioColumn" msprop:Generator_UserColumnName="ValoreUnitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sconto" msprop:Generator_ColumnVarNameInTable="columnSconto" msprop:Generator_ColumnPropNameInRow="Sconto" msprop:Generator_ColumnPropNameInTable="ScontoColumn" msprop:Generator_UserColumnName="Sconto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ImportoNetto" msprop:Generator_ColumnVarNameInTable="columnImportoNetto" msprop:Generator_ColumnPropNameInRow="ImportoNetto" msprop:Generator_ColumnPropNameInTable="ImportoNettoColumn" msprop:Generator_UserColumnName="ImportoNetto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AliquotaIva" msprop:Generator_ColumnVarNameInTable="columnAliquotaIva" msprop:Generator_ColumnPropNameInRow="AliquotaIva" msprop:Generator_ColumnPropNameInTable="AliquotaIvaColumn" msprop:Generator_UserColumnName="AliquotaIva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -3440,10 +3441,6 @@
     </xs:unique>
     <xs:unique name="Documenti_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Documenti" />
-      <xs:field xpath="mstns:Id" />
-    </xs:unique>
-    <xs:unique name="DettagliDoc_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DettagliDoc" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
     <xs:unique name="Camere_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
@@ -3481,6 +3478,10 @@
     <xs:unique name="Azienda_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Azienda" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="DettagliDoc_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DettagliDoc" />
+      <xs:field xpath="mstns:Id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

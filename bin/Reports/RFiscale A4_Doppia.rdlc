@@ -64,7 +64,7 @@
                               <Value>=IIf(Fields!Quantità.Value &lt;&gt; 0.00, Fields!Quantità.Value, string.Empty)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
-                                <Format>#,0.00</Format>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -83,6 +83,7 @@
                         <PaddingRight>2pt</PaddingRight>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -238,7 +239,7 @@
                               <Value>=Microsoft.VisualBasic.Interaction.IIf(Fields!Quantità.Value &lt;&gt; 0, Fields!Quantità.Value, System.String.Empty)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
-                                <Format>#,0.00</Format>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
