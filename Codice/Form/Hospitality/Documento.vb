@@ -26,6 +26,7 @@ Public Class frmDocumento
    Const TAB_TIPO_PAGAMENTO As String = "ModPagamento"
    Const TAB_STATISTICHE As String = "Statistiche"
    Const TAB_COMANDE As String = "Comande"
+   Const TAB_PIATTI As String = "Piatti"
 
    Private idDocumento As String
    Private tipoDocumento As String
@@ -433,6 +434,7 @@ Public Class frmDocumento
 
                   .Prezzo = dgvDettagli.Rows(i).Cells(clnPrezzo.Name).Value.ToString
                   .Importo = dgvDettagli.Rows(i).Cells(clnImporto.Name).Value.ToString
+                  .SpettanzaCameriere = CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString, dgvDettagli.Rows(i).Cells(clnQta.Name).Value.ToString))
                   .Contabilizzata = "No"
 
                   .InserisciDati(TAB_STATISTICHE)

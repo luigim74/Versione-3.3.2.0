@@ -782,6 +782,41 @@ Module Procedure
       End Try
    End Sub
 
+   Public Function LeggiSpettanzaCameriere(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String) As Double
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idPiatto, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim spettanza As Double
+         Dim totaleSpettanza As Double
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
+               totaleSpettanza = spettanza * quantità
+
+               Return totaleSpettanza
+            Else
+               Return 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
    Public Function LeggiDescrizioneCamera(ByVal numero As String, ByVal tabella As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)

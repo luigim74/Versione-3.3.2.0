@@ -499,20 +499,21 @@ Friend Class frmMain
       Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BAR SOLUTION", System.Drawing.Color.Green, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per bar e gelaterie.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 17)
       Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CHEF SOLUTION", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ristorative.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 16)
       Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PALMARI", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei palmari.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOTEL SOLUTION", System.Drawing.Color.Brown, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ricettive.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 21)
-      Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CAMPING SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per campeggi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 22)
-      Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEACH SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri balneari e piscine.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 19)
-      Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEAUTY SOLUTION", System.Drawing.Color.Purple, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri benessere.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 18)
-      Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "SPORTING CLUB SOLUTION", System.Drawing.Color.DarkCyan, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri sportivi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 20)
-      Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "RETAIL SOLUTION", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per la vendita al dettaglio.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 23)
-      Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "TAGLIE E COLORI", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione delle Taglie e Colori.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "MAGAZZINO", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione del magazzino.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "ETICHETTE E CODICI A BARRE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione di etichette e codici a barre.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PRENOTAZIONI ON-LINE", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per le prenotazioni da Internet.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE PORTABLE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per l'installazione del software su memoria esterna.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE RECOVERY", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il salvataggio e recupero automatico dei dati del software.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "REGISTRATORI DI CASSA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il collegamento ai registratori di cassa e stampanti fiscali.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "FATTURAZIONE ELETTRONICA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la Fatturazione Elettronica.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
+      Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NIGHT CLUB", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei tavoli e del personale di un locale notturno.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
+      Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PRENOTAZIONI ON-LINE", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per le prenotazioni da Internet.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOTEL SOLUTION", System.Drawing.Color.Brown, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ricettive.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 21)
+      Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CAMPING SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per campeggi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 22)
+      Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEACH SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri balneari e piscine.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 19)
+      Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEAUTY SOLUTION", System.Drawing.Color.Purple, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri benessere.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 18)
+      Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "SPORTING CLUB SOLUTION", System.Drawing.Color.DarkCyan, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri sportivi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 20)
+      Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "RETAIL SOLUTION", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per la vendita al dettaglio.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 23)
+      Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "TAGLIE E COLORI", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione delle Taglie e Colori.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "MAGAZZINO", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione del magazzino.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "ETICHETTE E CODICI A BARRE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione di etichette e codici a barre.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE PORTABLE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per l'installazione del software su memoria esterna.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE RECOVERY", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il salvataggio e recupero automatico dei dati del software.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "REGISTRATORI DI CASSA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il collegamento ai registratori di cassa e stampanti fiscali.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem19 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "FATTURAZIONE ELETTRONICA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la Fatturazione Elettronica.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.picProg = New System.Windows.Forms.PictureBox()
       Me.txtPercorso = New Elegant.Ui.TextBox()
@@ -529,6 +530,44 @@ Friend Class frmMain
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_File = New Elegant.Ui.Ribbon()
       Me.eui_BackstageView1 = New Elegant.Ui.BackstageView()
+      Me.eui_GestioneModuli = New Elegant.Ui.BackstageViewPage()
+      Me.eui_Info = New Elegant.Ui.BackstageViewPage()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.lblPercorso = New System.Windows.Forms.Label()
+      Me.Label19 = New System.Windows.Forms.Label()
+      Me.Label18 = New System.Windows.Forms.Label()
+      Me.Label17 = New System.Windows.Forms.Label()
+      Me.Label16 = New System.Windows.Forms.Label()
+      Me.Label11 = New System.Windows.Forms.Label()
+      Me.Label12 = New System.Windows.Forms.Label()
+      Me.Label13 = New System.Windows.Forms.Label()
+      Me.Label14 = New System.Windows.Forms.Label()
+      Me.Label15 = New System.Windows.Forms.Label()
+      Me.lblDimensioniFile = New System.Windows.Forms.Label()
+      Me.lblDataUltimaScrittura = New System.Windows.Forms.Label()
+      Me.lblDataUltimoAccesso = New System.Windows.Forms.Label()
+      Me.lblDataCreazione = New System.Windows.Forms.Label()
+      Me.lblAttributi = New System.Windows.Forms.Label()
+      Me.Label10 = New System.Windows.Forms.Label()
+      Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+      Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+      Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+      Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+      Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+      Me.Label8 = New System.Windows.Forms.Label()
+      Me.Label9 = New System.Windows.Forms.Label()
+      Me.Label6 = New System.Windows.Forms.Label()
+      Me.Label7 = New System.Windows.Forms.Label()
+      Me.Label4 = New System.Windows.Forms.Label()
+      Me.Label5 = New System.Windows.Forms.Label()
+      Me.cmdCompatta = New Elegant.Ui.Button()
+      Me.cmdPulizia = New Elegant.Ui.Button()
+      Me.cmdBackup = New Elegant.Ui.Button()
+      Me.Label3 = New System.Windows.Forms.Label()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.cmdAttivaModuli = New Elegant.Ui.Button()
+      Me.cmdApriPercorso = New Elegant.Ui.Button()
+      Me.BackstageViewSeparator1 = New Elegant.Ui.BackstageViewSeparator()
       Me.eui_Guida = New Elegant.Ui.BackstageViewPage()
       Me.BackstageViewPage1 = New Elegant.Ui.BackstageViewPage()
       Me.PictureBox20 = New System.Windows.Forms.PictureBox()
@@ -568,44 +607,6 @@ Friend Class frmMain
       Me.Button3 = New Elegant.Ui.Button()
       Me.Button2 = New Elegant.Ui.Button()
       Me.Button34 = New Elegant.Ui.Button()
-      Me.eui_Info = New Elegant.Ui.BackstageViewPage()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.lblPercorso = New System.Windows.Forms.Label()
-      Me.Label19 = New System.Windows.Forms.Label()
-      Me.Label18 = New System.Windows.Forms.Label()
-      Me.Label17 = New System.Windows.Forms.Label()
-      Me.Label16 = New System.Windows.Forms.Label()
-      Me.Label11 = New System.Windows.Forms.Label()
-      Me.Label12 = New System.Windows.Forms.Label()
-      Me.Label13 = New System.Windows.Forms.Label()
-      Me.Label14 = New System.Windows.Forms.Label()
-      Me.Label15 = New System.Windows.Forms.Label()
-      Me.lblDimensioniFile = New System.Windows.Forms.Label()
-      Me.lblDataUltimaScrittura = New System.Windows.Forms.Label()
-      Me.lblDataUltimoAccesso = New System.Windows.Forms.Label()
-      Me.lblDataCreazione = New System.Windows.Forms.Label()
-      Me.lblAttributi = New System.Windows.Forms.Label()
-      Me.Label10 = New System.Windows.Forms.Label()
-      Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-      Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-      Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-      Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-      Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-      Me.Label8 = New System.Windows.Forms.Label()
-      Me.Label9 = New System.Windows.Forms.Label()
-      Me.Label6 = New System.Windows.Forms.Label()
-      Me.Label7 = New System.Windows.Forms.Label()
-      Me.Label4 = New System.Windows.Forms.Label()
-      Me.Label5 = New System.Windows.Forms.Label()
-      Me.cmdCompatta = New Elegant.Ui.Button()
-      Me.cmdPulizia = New Elegant.Ui.Button()
-      Me.cmdBackup = New Elegant.Ui.Button()
-      Me.Label3 = New System.Windows.Forms.Label()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.cmdAttivaModuli = New Elegant.Ui.Button()
-      Me.cmdApriPercorso = New Elegant.Ui.Button()
-      Me.eui_GestioneModuli = New Elegant.Ui.BackstageViewPage()
-      Me.BackstageViewSeparator1 = New Elegant.Ui.BackstageViewSeparator()
       Me.eui_Opzioni = New Elegant.Ui.BackstageViewButton()
       Me.eui_Esci = New Elegant.Ui.BackstageViewButton()
       Me.rtgStrumentiModifica = New Elegant.Ui.RibbonContextualTabGroup(Me.components)
@@ -932,6 +933,13 @@ Friend Class frmMain
       CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GestioneModuli.SuspendLayout()
+      Me.eui_Info.SuspendLayout()
+      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.eui_Guida.SuspendLayout()
       Me.BackstageViewPage1.SuspendLayout()
       CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -944,13 +952,6 @@ Friend Class frmMain
       CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Info.SuspendLayout()
-      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GestioneModuli.SuspendLayout()
       CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.eui_StrumentiModifica.SuspendLayout()
       CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1156,34 +1157,34 @@ Friend Class frmMain
       ListViewItem4.Group = ListViewGroup3
       ListViewItem4.StateImageIndex = 0
       ListViewItem4.UseItemStyleForSubItems = False
-      ListViewItem5.Group = ListViewGroup4
+      ListViewItem5.Group = ListViewGroup3
       ListViewItem5.StateImageIndex = 0
       ListViewItem5.UseItemStyleForSubItems = False
-      ListViewItem6.Group = ListViewGroup5
+      ListViewItem6.Group = ListViewGroup3
       ListViewItem6.StateImageIndex = 0
       ListViewItem6.UseItemStyleForSubItems = False
-      ListViewItem7.Group = ListViewGroup6
+      ListViewItem7.Group = ListViewGroup4
       ListViewItem7.StateImageIndex = 0
       ListViewItem7.UseItemStyleForSubItems = False
-      ListViewItem8.Group = ListViewGroup7
+      ListViewItem8.Group = ListViewGroup5
       ListViewItem8.StateImageIndex = 0
       ListViewItem8.UseItemStyleForSubItems = False
-      ListViewItem9.Group = ListViewGroup8
+      ListViewItem9.Group = ListViewGroup6
       ListViewItem9.StateImageIndex = 0
       ListViewItem9.UseItemStyleForSubItems = False
-      ListViewItem10.Group = ListViewGroup9
+      ListViewItem10.Group = ListViewGroup7
       ListViewItem10.StateImageIndex = 0
       ListViewItem10.UseItemStyleForSubItems = False
-      ListViewItem11.Group = ListViewGroup9
+      ListViewItem11.Group = ListViewGroup8
       ListViewItem11.StateImageIndex = 0
       ListViewItem11.UseItemStyleForSubItems = False
-      ListViewItem12.Group = ListViewGroup10
+      ListViewItem12.Group = ListViewGroup9
       ListViewItem12.StateImageIndex = 0
       ListViewItem12.UseItemStyleForSubItems = False
-      ListViewItem13.Group = ListViewGroup10
+      ListViewItem13.Group = ListViewGroup9
       ListViewItem13.StateImageIndex = 0
       ListViewItem13.UseItemStyleForSubItems = False
-      ListViewItem14.Group = ListViewGroup3
+      ListViewItem14.Group = ListViewGroup10
       ListViewItem14.StateImageIndex = 0
       ListViewItem14.UseItemStyleForSubItems = False
       ListViewItem15.Group = ListViewGroup10
@@ -1198,12 +1199,15 @@ Friend Class frmMain
       ListViewItem18.Group = ListViewGroup10
       ListViewItem18.StateImageIndex = 0
       ListViewItem18.UseItemStyleForSubItems = False
-      Me.lvwGestioneModuli.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10, ListViewItem11, ListViewItem12, ListViewItem13, ListViewItem14, ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18})
+      ListViewItem19.Group = ListViewGroup10
+      ListViewItem19.StateImageIndex = 0
+      ListViewItem19.UseItemStyleForSubItems = False
+      Me.lvwGestioneModuli.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10, ListViewItem11, ListViewItem12, ListViewItem13, ListViewItem14, ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18, ListViewItem19})
       Me.lvwGestioneModuli.Location = New System.Drawing.Point(0, 1)
       Me.lvwGestioneModuli.MultiSelect = False
       Me.lvwGestioneModuli.Name = "lvwGestioneModuli"
       Me.lvwGestioneModuli.ShowItemToolTips = True
-      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1313, 602)
+      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1066, 583)
       Me.lvwGestioneModuli.SmallImageList = Me.ImageList1
       Me.lvwGestioneModuli.TabIndex = 79
       Me.ToolTip1.SetToolTip(Me.lvwGestioneModuli, "Elenco moduli.")
@@ -1303,21 +1307,462 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1198, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1214, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilit‡, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
       '
       'eui_BackstageView1
       '
-      Me.eui_BackstageView1.CurrentPage = Me.eui_Guida
+      Me.eui_BackstageView1.CurrentPage = Me.eui_GestioneModuli
       Me.eui_BackstageView1.Id = "26b6ed12-6b3d-4104-bf29-d19f8880bdff"
       Me.eui_BackstageView1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_Info, Me.eui_GestioneModuli, Me.BackstageViewSeparator1, Me.eui_Guida, Me.eui_Opzioni, Me.eui_Esci})
       Me.eui_BackstageView1.Location = New System.Drawing.Point(0, 55)
       Me.eui_BackstageView1.Name = "eui_BackstageView1"
-      Me.eui_BackstageView1.Size = New System.Drawing.Size(1166, 272)
+      Me.eui_BackstageView1.Size = New System.Drawing.Size(1214, 713)
       Me.eui_BackstageView1.Style = Elegant.Ui.BackstageViewStyle.Office2010DarkBlue
       Me.eui_BackstageView1.TabIndex = 16
+      '
+      'eui_GestioneModuli
+      '
+      Me.eui_GestioneModuli.AutoScroll = True
+      Me.eui_GestioneModuli.Controls.Add(Me.lvwGestioneModuli)
+      Me.eui_GestioneModuli.KeyTip = "G"
+      Me.eui_GestioneModuli.Location = New System.Drawing.Point(0, 0)
+      Me.eui_GestioneModuli.Name = "eui_GestioneModuli"
+      Me.eui_GestioneModuli.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
+      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1071, 711)
+      Me.eui_GestioneModuli.TabIndex = 0
+      Me.eui_GestioneModuli.Text = "Gestione Moduli    "
+      '
+      'eui_Info
+      '
+      Me.eui_Info.Controls.Add(Me.Label1)
+      Me.eui_Info.Controls.Add(Me.txtPercorso)
+      Me.eui_Info.Controls.Add(Me.lblPercorso)
+      Me.eui_Info.Controls.Add(Me.Label19)
+      Me.eui_Info.Controls.Add(Me.Label18)
+      Me.eui_Info.Controls.Add(Me.Label17)
+      Me.eui_Info.Controls.Add(Me.Label16)
+      Me.eui_Info.Controls.Add(Me.Label11)
+      Me.eui_Info.Controls.Add(Me.Label12)
+      Me.eui_Info.Controls.Add(Me.Label13)
+      Me.eui_Info.Controls.Add(Me.Label14)
+      Me.eui_Info.Controls.Add(Me.Label15)
+      Me.eui_Info.Controls.Add(Me.lblDimensioniFile)
+      Me.eui_Info.Controls.Add(Me.lblDataUltimaScrittura)
+      Me.eui_Info.Controls.Add(Me.lblDataUltimoAccesso)
+      Me.eui_Info.Controls.Add(Me.lblDataCreazione)
+      Me.eui_Info.Controls.Add(Me.lblAttributi)
+      Me.eui_Info.Controls.Add(Me.Label10)
+      Me.eui_Info.Controls.Add(Me.PictureBox11)
+      Me.eui_Info.Controls.Add(Me.picProg)
+      Me.eui_Info.Controls.Add(Me.PictureBox9)
+      Me.eui_Info.Controls.Add(Me.PictureBox8)
+      Me.eui_Info.Controls.Add(Me.PictureBox7)
+      Me.eui_Info.Controls.Add(Me.PictureBox6)
+      Me.eui_Info.Controls.Add(Me.Label8)
+      Me.eui_Info.Controls.Add(Me.Label9)
+      Me.eui_Info.Controls.Add(Me.Label6)
+      Me.eui_Info.Controls.Add(Me.Label7)
+      Me.eui_Info.Controls.Add(Me.Label4)
+      Me.eui_Info.Controls.Add(Me.Label5)
+      Me.eui_Info.Controls.Add(Me.cmdCompatta)
+      Me.eui_Info.Controls.Add(Me.cmdPulizia)
+      Me.eui_Info.Controls.Add(Me.cmdBackup)
+      Me.eui_Info.Controls.Add(Me.Label3)
+      Me.eui_Info.Controls.Add(Me.Label2)
+      Me.eui_Info.Controls.Add(Me.cmdAttivaModuli)
+      Me.eui_Info.Controls.Add(Me.cmdApriPercorso)
+      Me.eui_Info.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+      Me.eui_Info.KeyTip = "I"
+      Me.eui_Info.Location = New System.Drawing.Point(0, 0)
+      Me.eui_Info.Name = "eui_Info"
+      Me.eui_Info.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
+      Me.eui_Info.Size = New System.Drawing.Size(1318, 730)
+      Me.eui_Info.TabIndex = 0
+      Me.eui_Info.Text = "Informazioni"
+      '
+      'Label1
+      '
+      Me.Label1.AutoSize = True
+      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+      Me.Label1.Location = New System.Drawing.Point(24, 24)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(229, 20)
+      Me.Label1.TabIndex = 39
+      Me.Label1.Text = "Informazioni su Hospitality.mdb"
+      '
+      'lblPercorso
+      '
+      Me.lblPercorso.AutoSize = True
+      Me.lblPercorso.ForeColor = System.Drawing.Color.DimGray
+      Me.lblPercorso.Location = New System.Drawing.Point(633, 256)
+      Me.lblPercorso.Name = "lblPercorso"
+      Me.lblPercorso.Size = New System.Drawing.Size(49, 13)
+      Me.lblPercorso.TabIndex = 37
+      Me.lblPercorso.Text = "Propriet‡"
+      '
+      'Label19
+      '
+      Me.Label19.AutoSize = True
+      Me.Label19.ForeColor = System.Drawing.Color.DimGray
+      Me.Label19.Location = New System.Drawing.Point(513, 256)
+      Me.Label19.Name = "Label19"
+      Me.Label19.Size = New System.Drawing.Size(52, 13)
+      Me.Label19.TabIndex = 36
+      Me.Label19.Text = "Percorso:"
+      '
+      'Label18
+      '
+      Me.Label18.AutoSize = True
+      Me.Label18.Location = New System.Drawing.Point(513, 344)
+      Me.Label18.Name = "Label18"
+      Me.Label18.Size = New System.Drawing.Size(30, 13)
+      Me.Label18.TabIndex = 35
+      Me.Label18.Text = "Date"
+      '
+      'Label17
+      '
+      Me.Label17.AutoSize = True
+      Me.Label17.ForeColor = System.Drawing.Color.DimGray
+      Me.Label17.Location = New System.Drawing.Point(633, 232)
+      Me.Label17.Name = "Label17"
+      Me.Label17.Size = New System.Drawing.Size(214, 13)
+      Me.Label17.TabIndex = 34
+      Me.Label17.Text = "Applicazione Microsoft Office Access (.mdb)"
+      '
+      'Label16
+      '
+      Me.Label16.AutoSize = True
+      Me.Label16.ForeColor = System.Drawing.Color.DimGray
+      Me.Label16.Location = New System.Drawing.Point(513, 232)
+      Me.Label16.Name = "Label16"
+      Me.Label16.Size = New System.Drawing.Size(47, 13)
+      Me.Label16.TabIndex = 33
+      Me.Label16.Text = "Tipo file:"
+      '
+      'Label11
+      '
+      Me.Label11.AutoSize = True
+      Me.Label11.ForeColor = System.Drawing.Color.DimGray
+      Me.Label11.Location = New System.Drawing.Point(513, 280)
+      Me.Label11.Name = "Label11"
+      Me.Label11.Size = New System.Drawing.Size(61, 13)
+      Me.Label11.TabIndex = 32
+      Me.Label11.Text = "Dimensioni:"
+      '
+      'Label12
+      '
+      Me.Label12.AutoSize = True
+      Me.Label12.ForeColor = System.Drawing.Color.DimGray
+      Me.Label12.Location = New System.Drawing.Point(513, 392)
+      Me.Label12.Name = "Label12"
+      Me.Label12.Size = New System.Drawing.Size(105, 13)
+      Me.Label12.TabIndex = 31
+      Me.Label12.Text = "Data ultima modifica:"
+      '
+      'Label13
+      '
+      Me.Label13.AutoSize = True
+      Me.Label13.ForeColor = System.Drawing.Color.DimGray
+      Me.Label13.Location = New System.Drawing.Point(513, 416)
+      Me.Label13.Name = "Label13"
+      Me.Label13.Size = New System.Drawing.Size(106, 13)
+      Me.Label13.TabIndex = 30
+      Me.Label13.Text = "Data ultimo accesso:"
+      '
+      'Label14
+      '
+      Me.Label14.AutoSize = True
+      Me.Label14.ForeColor = System.Drawing.Color.DimGray
+      Me.Label14.Location = New System.Drawing.Point(513, 368)
+      Me.Label14.Name = "Label14"
+      Me.Label14.Size = New System.Drawing.Size(82, 13)
+      Me.Label14.TabIndex = 29
+      Me.Label14.Text = "Data creazione:"
+      '
+      'Label15
+      '
+      Me.Label15.AutoSize = True
+      Me.Label15.ForeColor = System.Drawing.Color.DimGray
+      Me.Label15.Location = New System.Drawing.Point(513, 304)
+      Me.Label15.Name = "Label15"
+      Me.Label15.Size = New System.Drawing.Size(45, 13)
+      Me.Label15.TabIndex = 28
+      Me.Label15.Text = "Attributi:"
+      '
+      'lblDimensioniFile
+      '
+      Me.lblDimensioniFile.AutoSize = True
+      Me.lblDimensioniFile.ForeColor = System.Drawing.Color.DimGray
+      Me.lblDimensioniFile.Location = New System.Drawing.Point(633, 280)
+      Me.lblDimensioniFile.Name = "lblDimensioniFile"
+      Me.lblDimensioniFile.Size = New System.Drawing.Size(52, 13)
+      Me.lblDimensioniFile.TabIndex = 27
+      Me.lblDimensioniFile.Text = "Propriet‡:"
+      '
+      'lblDataUltimaScrittura
+      '
+      Me.lblDataUltimaScrittura.AutoSize = True
+      Me.lblDataUltimaScrittura.ForeColor = System.Drawing.Color.DimGray
+      Me.lblDataUltimaScrittura.Location = New System.Drawing.Point(633, 392)
+      Me.lblDataUltimaScrittura.Name = "lblDataUltimaScrittura"
+      Me.lblDataUltimaScrittura.Size = New System.Drawing.Size(52, 13)
+      Me.lblDataUltimaScrittura.TabIndex = 26
+      Me.lblDataUltimaScrittura.Text = "Propriet‡:"
+      '
+      'lblDataUltimoAccesso
+      '
+      Me.lblDataUltimoAccesso.AutoSize = True
+      Me.lblDataUltimoAccesso.ForeColor = System.Drawing.Color.DimGray
+      Me.lblDataUltimoAccesso.Location = New System.Drawing.Point(633, 416)
+      Me.lblDataUltimoAccesso.Name = "lblDataUltimoAccesso"
+      Me.lblDataUltimoAccesso.Size = New System.Drawing.Size(52, 13)
+      Me.lblDataUltimoAccesso.TabIndex = 25
+      Me.lblDataUltimoAccesso.Text = "Propriet‡:"
+      '
+      'lblDataCreazione
+      '
+      Me.lblDataCreazione.AutoSize = True
+      Me.lblDataCreazione.ForeColor = System.Drawing.Color.DimGray
+      Me.lblDataCreazione.Location = New System.Drawing.Point(633, 368)
+      Me.lblDataCreazione.Name = "lblDataCreazione"
+      Me.lblDataCreazione.Size = New System.Drawing.Size(52, 13)
+      Me.lblDataCreazione.TabIndex = 24
+      Me.lblDataCreazione.Text = "Propriet‡:"
+      '
+      'lblAttributi
+      '
+      Me.lblAttributi.AutoSize = True
+      Me.lblAttributi.ForeColor = System.Drawing.Color.DimGray
+      Me.lblAttributi.Location = New System.Drawing.Point(633, 304)
+      Me.lblAttributi.Name = "lblAttributi"
+      Me.lblAttributi.Size = New System.Drawing.Size(52, 13)
+      Me.lblAttributi.TabIndex = 23
+      Me.lblAttributi.Text = "Propriet‡:"
+      '
+      'Label10
+      '
+      Me.Label10.AutoSize = True
+      Me.Label10.Location = New System.Drawing.Point(513, 208)
+      Me.Label10.Name = "Label10"
+      Me.Label10.Size = New System.Drawing.Size(49, 13)
+      Me.Label10.TabIndex = 22
+      Me.Label10.Text = "Propriet‡"
+      '
+      'PictureBox11
+      '
+      Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+      Me.PictureBox11.Location = New System.Drawing.Point(8, 88)
+      Me.PictureBox11.Name = "PictureBox11"
+      Me.PictureBox11.Size = New System.Drawing.Size(465, 16)
+      Me.PictureBox11.TabIndex = 21
+      Me.PictureBox11.TabStop = False
+      '
+      'PictureBox9
+      '
+      Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+      Me.PictureBox9.Location = New System.Drawing.Point(488, -16)
+      Me.PictureBox9.Name = "PictureBox9"
+      Me.PictureBox9.Size = New System.Drawing.Size(8, 823)
+      Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+      Me.PictureBox9.TabIndex = 19
+      Me.PictureBox9.TabStop = False
+      '
+      'PictureBox8
+      '
+      Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+      Me.PictureBox8.Location = New System.Drawing.Point(8, 512)
+      Me.PictureBox8.Name = "PictureBox8"
+      Me.PictureBox8.Size = New System.Drawing.Size(465, 11)
+      Me.PictureBox8.TabIndex = 18
+      Me.PictureBox8.TabStop = False
+      '
+      'PictureBox7
+      '
+      Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+      Me.PictureBox7.Location = New System.Drawing.Point(8, 376)
+      Me.PictureBox7.Name = "PictureBox7"
+      Me.PictureBox7.Size = New System.Drawing.Size(465, 11)
+      Me.PictureBox7.TabIndex = 17
+      Me.PictureBox7.TabStop = False
+      '
+      'PictureBox6
+      '
+      Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+      Me.PictureBox6.Location = New System.Drawing.Point(8, 240)
+      Me.PictureBox6.Name = "PictureBox6"
+      Me.PictureBox6.Size = New System.Drawing.Size(465, 11)
+      Me.PictureBox6.TabIndex = 16
+      Me.PictureBox6.TabStop = False
+      '
+      'Label8
+      '
+      Me.Label8.Location = New System.Drawing.Point(144, 568)
+      Me.Label8.Name = "Label8"
+      Me.Label8.Size = New System.Drawing.Size(316, 72)
+      Me.Label8.TabIndex = 15
+      Me.Label8.Text = "Consente di effettuare la compattazione e il ripristino degli archivi. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Riduce" &
+    " le dimensioni dell'archivio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Corregge eventuali errori sul file." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Aumenta le p" &
+    "restazioni di accesso ai dati."
+      '
+      'Label9
+      '
+      Me.Label9.AutoSize = True
+      Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+      Me.Label9.ForeColor = System.Drawing.Color.DimGray
+      Me.Label9.Location = New System.Drawing.Point(144, 544)
+      Me.Label9.Name = "Label9"
+      Me.Label9.Size = New System.Drawing.Size(201, 16)
+      Me.Label9.TabIndex = 14
+      Me.Label9.Text = "Compatta e ripristina archivi"
+      '
+      'Label6
+      '
+      Me.Label6.Location = New System.Drawing.Point(144, 432)
+      Me.Label6.Name = "Label6"
+      Me.Label6.Size = New System.Drawing.Size(308, 64)
+      Me.Label6.TabIndex = 13
+      Me.Label6.Text = "Consente di effettuare l'eliminazione dei dati per singola tabella presenti negli" &
+    " archivi."
+      '
+      'Label7
+      '
+      Me.Label7.AutoSize = True
+      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+      Me.Label7.ForeColor = System.Drawing.Color.DimGray
+      Me.Label7.Location = New System.Drawing.Point(144, 408)
+      Me.Label7.Name = "Label7"
+      Me.Label7.Size = New System.Drawing.Size(143, 16)
+      Me.Label7.TabIndex = 12
+      Me.Label7.Text = "Pulizia degli archivi"
+      '
+      'Label4
+      '
+      Me.Label4.Location = New System.Drawing.Point(144, 304)
+      Me.Label4.Name = "Label4"
+      Me.Label4.Size = New System.Drawing.Size(308, 56)
+      Me.Label4.TabIndex = 11
+      Me.Label4.Text = "Consente di effettuare copie di sicurezza degli archivi specificando il percorso " &
+    "desiderato."
+      '
+      'Label5
+      '
+      Me.Label5.AutoSize = True
+      Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+      Me.Label5.ForeColor = System.Drawing.Color.DimGray
+      Me.Label5.Location = New System.Drawing.Point(144, 280)
+      Me.Label5.Name = "Label5"
+      Me.Label5.Size = New System.Drawing.Size(116, 16)
+      Me.Label5.TabIndex = 10
+      Me.Label5.Text = "Backup dei dati"
+      '
+      'cmdCompatta
+      '
+      Me.cmdCompatta.Id = "3beaa235-1cf2-428b-bc5f-a89ca116578d"
+      Me.cmdCompatta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.cmdCompatta.KeyTip = "C"
+      Me.cmdCompatta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdCompatta.LargeImages.Images"), System.Drawing.Image))})
+      Me.cmdCompatta.Location = New System.Drawing.Point(24, 544)
+      Me.cmdCompatta.Name = "cmdCompatta"
+      Me.cmdCompatta.Size = New System.Drawing.Size(96, 88)
+      Me.cmdCompatta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdCompatta.SmallImages.Images"), System.Drawing.Image))})
+      Me.cmdCompatta.TabIndex = 4
+      Me.cmdCompatta.Text = "&Compatta e ripristina archivi"
+      Me.cmdCompatta.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.cmdCompatta.WordWrap = True
+      '
+      'cmdPulizia
+      '
+      Me.cmdPulizia.Id = "a26273e3-99b4-4aef-bfc7-06a038020054"
+      Me.cmdPulizia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.cmdPulizia.KeyTip = "P"
+      Me.cmdPulizia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdPulizia.LargeImages.Images"), System.Drawing.Image))})
+      Me.cmdPulizia.Location = New System.Drawing.Point(24, 408)
+      Me.cmdPulizia.Name = "cmdPulizia"
+      Me.cmdPulizia.Size = New System.Drawing.Size(96, 88)
+      Me.cmdPulizia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdPulizia.SmallImages.Images"), System.Drawing.Image))})
+      Me.cmdPulizia.TabIndex = 3
+      Me.cmdPulizia.Text = "&Pulizia degli archivi"
+      Me.cmdPulizia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.cmdPulizia.WordWrap = True
+      '
+      'cmdBackup
+      '
+      Me.cmdBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+      Me.cmdBackup.Id = "0a083b69-95e9-4f3d-9bdb-3e7a42c9a4f4"
+      Me.cmdBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.cmdBackup.KeyTip = "B"
+      Me.cmdBackup.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Default", CType(resources.GetObject("cmdBackup.LargeImages.Images"), System.Drawing.Image)), New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdBackup.LargeImages.Images1"), System.Drawing.Image))})
+      Me.cmdBackup.Location = New System.Drawing.Point(24, 280)
+      Me.cmdBackup.Name = "cmdBackup"
+      Me.cmdBackup.Size = New System.Drawing.Size(96, 80)
+      Me.cmdBackup.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdBackup.SmallImages.Images"), System.Drawing.Image))})
+      Me.cmdBackup.TabIndex = 2
+      Me.cmdBackup.Text = "&Backup dati archivi"
+      Me.cmdBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.cmdBackup.WordWrap = True
+      '
+      'Label3
+      '
+      Me.Label3.Location = New System.Drawing.Point(144, 152)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(300, 72)
+      Me.Label3.TabIndex = 5
+      Me.Label3.Text = resources.GetString("Label3.Text")
+      '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+      Me.Label2.ForeColor = System.Drawing.Color.DimGray
+      Me.Label2.Location = New System.Drawing.Point(144, 128)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(232, 16)
+      Me.Label2.TabIndex = 4
+      Me.Label2.Text = "Che cosa Ë Hospitality Solution?"
+      '
+      'cmdAttivaModuli
+      '
+      Me.cmdAttivaModuli.Enabled = False
+      Me.cmdAttivaModuli.Id = "47bd6e8b-ff32-4fe7-8d53-cb2317e0671a"
+      Me.cmdAttivaModuli.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.cmdAttivaModuli.KeyTip = "G"
+      Me.cmdAttivaModuli.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdAttivaModuli.LargeImages.Images"), System.Drawing.Image))})
+      Me.cmdAttivaModuli.Location = New System.Drawing.Point(24, 128)
+      Me.cmdAttivaModuli.Name = "cmdAttivaModuli"
+      Me.cmdAttivaModuli.Size = New System.Drawing.Size(96, 88)
+      Me.cmdAttivaModuli.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdAttivaModuli.SmallImages.Images"), System.Drawing.Image))})
+      Me.cmdAttivaModuli.TabIndex = 1
+      Me.cmdAttivaModuli.Text = "&Vai a Gestione Moduli"
+      Me.cmdAttivaModuli.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.cmdAttivaModuli.WordWrap = True
+      '
+      'cmdApriPercorso
+      '
+      Me.cmdApriPercorso.Id = "9aa60f9d-9ffb-4c55-a5eb-f497a2e91e6b"
+      Me.cmdApriPercorso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+      Me.cmdApriPercorso.KeyTip = "A"
+      Me.cmdApriPercorso.Location = New System.Drawing.Point(513, 464)
+      Me.cmdApriPercorso.Name = "cmdApriPercorso"
+      Me.cmdApriPercorso.ScreenTip.Caption = "Apri percorso archivio"
+      Me.cmdApriPercorso.ScreenTip.Text = "Apre il percorso archivio in Esplora file."
+      Me.cmdApriPercorso.Size = New System.Drawing.Size(248, 40)
+      Me.cmdApriPercorso.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdApriPercorso.SmallImages.Images"), System.Drawing.Image))})
+      Me.cmdApriPercorso.TabIndex = 5
+      Me.cmdApriPercorso.Text = "Apri percorso archivio"
+      Me.cmdApriPercorso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+      Me.cmdApriPercorso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+      '
+      'BackstageViewSeparator1
+      '
+      Me.BackstageViewSeparator1.Id = "c365ef30-7323-4c13-8726-3d28dd1304d8"
+      Me.BackstageViewSeparator1.Location = New System.Drawing.Point(1, 83)
+      Me.BackstageViewSeparator1.Name = "BackstageViewSeparator1"
+      Me.BackstageViewSeparator1.Size = New System.Drawing.Size(142, 2)
+      Me.BackstageViewSeparator1.TabIndex = 4
+      Me.BackstageViewSeparator1.Text = "BackstageViewSeparator1"
       '
       'eui_Guida
       '
@@ -1332,7 +1777,7 @@ Friend Class frmMain
       Me.eui_Guida.Location = New System.Drawing.Point(0, 0)
       Me.eui_Guida.Name = "eui_Guida"
       Me.eui_Guida.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_Guida.Size = New System.Drawing.Size(1081, 270)
+      Me.eui_Guida.Size = New System.Drawing.Size(1063, 708)
       Me.eui_Guida.TabIndex = 0
       Me.eui_Guida.Text = "Guida"
       '
@@ -1375,7 +1820,7 @@ Friend Class frmMain
       Me.BackstageViewPage1.Location = New System.Drawing.Point(0, 1)
       Me.BackstageViewPage1.Name = "BackstageViewPage1"
       Me.BackstageViewPage1.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.BackstageViewPage1.Size = New System.Drawing.Size(1079, 268)
+      Me.BackstageViewPage1.Size = New System.Drawing.Size(1061, 706)
       Me.BackstageViewPage1.TabIndex = 6
       Me.BackstageViewPage1.Text = "Guida"
       '
@@ -1848,447 +2293,6 @@ Friend Class frmMain
       Me.Button34.TextAlign = System.Drawing.ContentAlignment.TopLeft
       Me.Button34.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
       Me.Button34.WordWrap = True
-      '
-      'eui_Info
-      '
-      Me.eui_Info.Controls.Add(Me.Label1)
-      Me.eui_Info.Controls.Add(Me.txtPercorso)
-      Me.eui_Info.Controls.Add(Me.lblPercorso)
-      Me.eui_Info.Controls.Add(Me.Label19)
-      Me.eui_Info.Controls.Add(Me.Label18)
-      Me.eui_Info.Controls.Add(Me.Label17)
-      Me.eui_Info.Controls.Add(Me.Label16)
-      Me.eui_Info.Controls.Add(Me.Label11)
-      Me.eui_Info.Controls.Add(Me.Label12)
-      Me.eui_Info.Controls.Add(Me.Label13)
-      Me.eui_Info.Controls.Add(Me.Label14)
-      Me.eui_Info.Controls.Add(Me.Label15)
-      Me.eui_Info.Controls.Add(Me.lblDimensioniFile)
-      Me.eui_Info.Controls.Add(Me.lblDataUltimaScrittura)
-      Me.eui_Info.Controls.Add(Me.lblDataUltimoAccesso)
-      Me.eui_Info.Controls.Add(Me.lblDataCreazione)
-      Me.eui_Info.Controls.Add(Me.lblAttributi)
-      Me.eui_Info.Controls.Add(Me.Label10)
-      Me.eui_Info.Controls.Add(Me.PictureBox11)
-      Me.eui_Info.Controls.Add(Me.picProg)
-      Me.eui_Info.Controls.Add(Me.PictureBox9)
-      Me.eui_Info.Controls.Add(Me.PictureBox8)
-      Me.eui_Info.Controls.Add(Me.PictureBox7)
-      Me.eui_Info.Controls.Add(Me.PictureBox6)
-      Me.eui_Info.Controls.Add(Me.Label8)
-      Me.eui_Info.Controls.Add(Me.Label9)
-      Me.eui_Info.Controls.Add(Me.Label6)
-      Me.eui_Info.Controls.Add(Me.Label7)
-      Me.eui_Info.Controls.Add(Me.Label4)
-      Me.eui_Info.Controls.Add(Me.Label5)
-      Me.eui_Info.Controls.Add(Me.cmdCompatta)
-      Me.eui_Info.Controls.Add(Me.cmdPulizia)
-      Me.eui_Info.Controls.Add(Me.cmdBackup)
-      Me.eui_Info.Controls.Add(Me.Label3)
-      Me.eui_Info.Controls.Add(Me.Label2)
-      Me.eui_Info.Controls.Add(Me.cmdAttivaModuli)
-      Me.eui_Info.Controls.Add(Me.cmdApriPercorso)
-      Me.eui_Info.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-      Me.eui_Info.KeyTip = "I"
-      Me.eui_Info.Location = New System.Drawing.Point(0, 0)
-      Me.eui_Info.Name = "eui_Info"
-      Me.eui_Info.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_Info.Size = New System.Drawing.Size(1318, 730)
-      Me.eui_Info.TabIndex = 0
-      Me.eui_Info.Text = "Informazioni"
-      '
-      'Label1
-      '
-      Me.Label1.AutoSize = True
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-      Me.Label1.Location = New System.Drawing.Point(24, 24)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(229, 20)
-      Me.Label1.TabIndex = 39
-      Me.Label1.Text = "Informazioni su Hospitality.mdb"
-      '
-      'lblPercorso
-      '
-      Me.lblPercorso.AutoSize = True
-      Me.lblPercorso.ForeColor = System.Drawing.Color.DimGray
-      Me.lblPercorso.Location = New System.Drawing.Point(633, 256)
-      Me.lblPercorso.Name = "lblPercorso"
-      Me.lblPercorso.Size = New System.Drawing.Size(49, 13)
-      Me.lblPercorso.TabIndex = 37
-      Me.lblPercorso.Text = "Propriet‡"
-      '
-      'Label19
-      '
-      Me.Label19.AutoSize = True
-      Me.Label19.ForeColor = System.Drawing.Color.DimGray
-      Me.Label19.Location = New System.Drawing.Point(513, 256)
-      Me.Label19.Name = "Label19"
-      Me.Label19.Size = New System.Drawing.Size(52, 13)
-      Me.Label19.TabIndex = 36
-      Me.Label19.Text = "Percorso:"
-      '
-      'Label18
-      '
-      Me.Label18.AutoSize = True
-      Me.Label18.Location = New System.Drawing.Point(513, 344)
-      Me.Label18.Name = "Label18"
-      Me.Label18.Size = New System.Drawing.Size(30, 13)
-      Me.Label18.TabIndex = 35
-      Me.Label18.Text = "Date"
-      '
-      'Label17
-      '
-      Me.Label17.AutoSize = True
-      Me.Label17.ForeColor = System.Drawing.Color.DimGray
-      Me.Label17.Location = New System.Drawing.Point(633, 232)
-      Me.Label17.Name = "Label17"
-      Me.Label17.Size = New System.Drawing.Size(214, 13)
-      Me.Label17.TabIndex = 34
-      Me.Label17.Text = "Applicazione Microsoft Office Access (.mdb)"
-      '
-      'Label16
-      '
-      Me.Label16.AutoSize = True
-      Me.Label16.ForeColor = System.Drawing.Color.DimGray
-      Me.Label16.Location = New System.Drawing.Point(513, 232)
-      Me.Label16.Name = "Label16"
-      Me.Label16.Size = New System.Drawing.Size(47, 13)
-      Me.Label16.TabIndex = 33
-      Me.Label16.Text = "Tipo file:"
-      '
-      'Label11
-      '
-      Me.Label11.AutoSize = True
-      Me.Label11.ForeColor = System.Drawing.Color.DimGray
-      Me.Label11.Location = New System.Drawing.Point(513, 280)
-      Me.Label11.Name = "Label11"
-      Me.Label11.Size = New System.Drawing.Size(61, 13)
-      Me.Label11.TabIndex = 32
-      Me.Label11.Text = "Dimensioni:"
-      '
-      'Label12
-      '
-      Me.Label12.AutoSize = True
-      Me.Label12.ForeColor = System.Drawing.Color.DimGray
-      Me.Label12.Location = New System.Drawing.Point(513, 392)
-      Me.Label12.Name = "Label12"
-      Me.Label12.Size = New System.Drawing.Size(105, 13)
-      Me.Label12.TabIndex = 31
-      Me.Label12.Text = "Data ultima modifica:"
-      '
-      'Label13
-      '
-      Me.Label13.AutoSize = True
-      Me.Label13.ForeColor = System.Drawing.Color.DimGray
-      Me.Label13.Location = New System.Drawing.Point(513, 416)
-      Me.Label13.Name = "Label13"
-      Me.Label13.Size = New System.Drawing.Size(106, 13)
-      Me.Label13.TabIndex = 30
-      Me.Label13.Text = "Data ultimo accesso:"
-      '
-      'Label14
-      '
-      Me.Label14.AutoSize = True
-      Me.Label14.ForeColor = System.Drawing.Color.DimGray
-      Me.Label14.Location = New System.Drawing.Point(513, 368)
-      Me.Label14.Name = "Label14"
-      Me.Label14.Size = New System.Drawing.Size(82, 13)
-      Me.Label14.TabIndex = 29
-      Me.Label14.Text = "Data creazione:"
-      '
-      'Label15
-      '
-      Me.Label15.AutoSize = True
-      Me.Label15.ForeColor = System.Drawing.Color.DimGray
-      Me.Label15.Location = New System.Drawing.Point(513, 304)
-      Me.Label15.Name = "Label15"
-      Me.Label15.Size = New System.Drawing.Size(45, 13)
-      Me.Label15.TabIndex = 28
-      Me.Label15.Text = "Attributi:"
-      '
-      'lblDimensioniFile
-      '
-      Me.lblDimensioniFile.AutoSize = True
-      Me.lblDimensioniFile.ForeColor = System.Drawing.Color.DimGray
-      Me.lblDimensioniFile.Location = New System.Drawing.Point(633, 280)
-      Me.lblDimensioniFile.Name = "lblDimensioniFile"
-      Me.lblDimensioniFile.Size = New System.Drawing.Size(52, 13)
-      Me.lblDimensioniFile.TabIndex = 27
-      Me.lblDimensioniFile.Text = "Propriet‡:"
-      '
-      'lblDataUltimaScrittura
-      '
-      Me.lblDataUltimaScrittura.AutoSize = True
-      Me.lblDataUltimaScrittura.ForeColor = System.Drawing.Color.DimGray
-      Me.lblDataUltimaScrittura.Location = New System.Drawing.Point(633, 392)
-      Me.lblDataUltimaScrittura.Name = "lblDataUltimaScrittura"
-      Me.lblDataUltimaScrittura.Size = New System.Drawing.Size(52, 13)
-      Me.lblDataUltimaScrittura.TabIndex = 26
-      Me.lblDataUltimaScrittura.Text = "Propriet‡:"
-      '
-      'lblDataUltimoAccesso
-      '
-      Me.lblDataUltimoAccesso.AutoSize = True
-      Me.lblDataUltimoAccesso.ForeColor = System.Drawing.Color.DimGray
-      Me.lblDataUltimoAccesso.Location = New System.Drawing.Point(633, 416)
-      Me.lblDataUltimoAccesso.Name = "lblDataUltimoAccesso"
-      Me.lblDataUltimoAccesso.Size = New System.Drawing.Size(52, 13)
-      Me.lblDataUltimoAccesso.TabIndex = 25
-      Me.lblDataUltimoAccesso.Text = "Propriet‡:"
-      '
-      'lblDataCreazione
-      '
-      Me.lblDataCreazione.AutoSize = True
-      Me.lblDataCreazione.ForeColor = System.Drawing.Color.DimGray
-      Me.lblDataCreazione.Location = New System.Drawing.Point(633, 368)
-      Me.lblDataCreazione.Name = "lblDataCreazione"
-      Me.lblDataCreazione.Size = New System.Drawing.Size(52, 13)
-      Me.lblDataCreazione.TabIndex = 24
-      Me.lblDataCreazione.Text = "Propriet‡:"
-      '
-      'lblAttributi
-      '
-      Me.lblAttributi.AutoSize = True
-      Me.lblAttributi.ForeColor = System.Drawing.Color.DimGray
-      Me.lblAttributi.Location = New System.Drawing.Point(633, 304)
-      Me.lblAttributi.Name = "lblAttributi"
-      Me.lblAttributi.Size = New System.Drawing.Size(52, 13)
-      Me.lblAttributi.TabIndex = 23
-      Me.lblAttributi.Text = "Propriet‡:"
-      '
-      'Label10
-      '
-      Me.Label10.AutoSize = True
-      Me.Label10.Location = New System.Drawing.Point(513, 208)
-      Me.Label10.Name = "Label10"
-      Me.Label10.Size = New System.Drawing.Size(49, 13)
-      Me.Label10.TabIndex = 22
-      Me.Label10.Text = "Propriet‡"
-      '
-      'PictureBox11
-      '
-      Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-      Me.PictureBox11.Location = New System.Drawing.Point(8, 88)
-      Me.PictureBox11.Name = "PictureBox11"
-      Me.PictureBox11.Size = New System.Drawing.Size(465, 16)
-      Me.PictureBox11.TabIndex = 21
-      Me.PictureBox11.TabStop = False
-      '
-      'PictureBox9
-      '
-      Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-      Me.PictureBox9.Location = New System.Drawing.Point(488, -16)
-      Me.PictureBox9.Name = "PictureBox9"
-      Me.PictureBox9.Size = New System.Drawing.Size(8, 823)
-      Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-      Me.PictureBox9.TabIndex = 19
-      Me.PictureBox9.TabStop = False
-      '
-      'PictureBox8
-      '
-      Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-      Me.PictureBox8.Location = New System.Drawing.Point(8, 512)
-      Me.PictureBox8.Name = "PictureBox8"
-      Me.PictureBox8.Size = New System.Drawing.Size(465, 11)
-      Me.PictureBox8.TabIndex = 18
-      Me.PictureBox8.TabStop = False
-      '
-      'PictureBox7
-      '
-      Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-      Me.PictureBox7.Location = New System.Drawing.Point(8, 376)
-      Me.PictureBox7.Name = "PictureBox7"
-      Me.PictureBox7.Size = New System.Drawing.Size(465, 11)
-      Me.PictureBox7.TabIndex = 17
-      Me.PictureBox7.TabStop = False
-      '
-      'PictureBox6
-      '
-      Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-      Me.PictureBox6.Location = New System.Drawing.Point(8, 240)
-      Me.PictureBox6.Name = "PictureBox6"
-      Me.PictureBox6.Size = New System.Drawing.Size(465, 11)
-      Me.PictureBox6.TabIndex = 16
-      Me.PictureBox6.TabStop = False
-      '
-      'Label8
-      '
-      Me.Label8.Location = New System.Drawing.Point(144, 568)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(316, 72)
-      Me.Label8.TabIndex = 15
-      Me.Label8.Text = "Consente di effettuare la compattazione e il ripristino degli archivi. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Riduce" &
-    " le dimensioni dell'archivio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Corregge eventuali errori sul file." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Aumenta le p" &
-    "restazioni di accesso ai dati."
-      '
-      'Label9
-      '
-      Me.Label9.AutoSize = True
-      Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-      Me.Label9.ForeColor = System.Drawing.Color.DimGray
-      Me.Label9.Location = New System.Drawing.Point(144, 544)
-      Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(201, 16)
-      Me.Label9.TabIndex = 14
-      Me.Label9.Text = "Compatta e ripristina archivi"
-      '
-      'Label6
-      '
-      Me.Label6.Location = New System.Drawing.Point(144, 432)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(308, 64)
-      Me.Label6.TabIndex = 13
-      Me.Label6.Text = "Consente di effettuare l'eliminazione dei dati per singola tabella presenti negli" &
-    " archivi."
-      '
-      'Label7
-      '
-      Me.Label7.AutoSize = True
-      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-      Me.Label7.ForeColor = System.Drawing.Color.DimGray
-      Me.Label7.Location = New System.Drawing.Point(144, 408)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(143, 16)
-      Me.Label7.TabIndex = 12
-      Me.Label7.Text = "Pulizia degli archivi"
-      '
-      'Label4
-      '
-      Me.Label4.Location = New System.Drawing.Point(144, 304)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(308, 56)
-      Me.Label4.TabIndex = 11
-      Me.Label4.Text = "Consente di effettuare copie di sicurezza degli archivi specificando il percorso " &
-    "desiderato."
-      '
-      'Label5
-      '
-      Me.Label5.AutoSize = True
-      Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-      Me.Label5.ForeColor = System.Drawing.Color.DimGray
-      Me.Label5.Location = New System.Drawing.Point(144, 280)
-      Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(116, 16)
-      Me.Label5.TabIndex = 10
-      Me.Label5.Text = "Backup dei dati"
-      '
-      'cmdCompatta
-      '
-      Me.cmdCompatta.Id = "3beaa235-1cf2-428b-bc5f-a89ca116578d"
-      Me.cmdCompatta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.cmdCompatta.KeyTip = "C"
-      Me.cmdCompatta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdCompatta.LargeImages.Images"), System.Drawing.Image))})
-      Me.cmdCompatta.Location = New System.Drawing.Point(24, 544)
-      Me.cmdCompatta.Name = "cmdCompatta"
-      Me.cmdCompatta.Size = New System.Drawing.Size(96, 88)
-      Me.cmdCompatta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdCompatta.SmallImages.Images"), System.Drawing.Image))})
-      Me.cmdCompatta.TabIndex = 4
-      Me.cmdCompatta.Text = "&Compatta e ripristina archivi"
-      Me.cmdCompatta.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      Me.cmdCompatta.WordWrap = True
-      '
-      'cmdPulizia
-      '
-      Me.cmdPulizia.Id = "a26273e3-99b4-4aef-bfc7-06a038020054"
-      Me.cmdPulizia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.cmdPulizia.KeyTip = "P"
-      Me.cmdPulizia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdPulizia.LargeImages.Images"), System.Drawing.Image))})
-      Me.cmdPulizia.Location = New System.Drawing.Point(24, 408)
-      Me.cmdPulizia.Name = "cmdPulizia"
-      Me.cmdPulizia.Size = New System.Drawing.Size(96, 88)
-      Me.cmdPulizia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdPulizia.SmallImages.Images"), System.Drawing.Image))})
-      Me.cmdPulizia.TabIndex = 3
-      Me.cmdPulizia.Text = "&Pulizia degli archivi"
-      Me.cmdPulizia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      Me.cmdPulizia.WordWrap = True
-      '
-      'cmdBackup
-      '
-      Me.cmdBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-      Me.cmdBackup.Id = "0a083b69-95e9-4f3d-9bdb-3e7a42c9a4f4"
-      Me.cmdBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.cmdBackup.KeyTip = "B"
-      Me.cmdBackup.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Default", CType(resources.GetObject("cmdBackup.LargeImages.Images"), System.Drawing.Image)), New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdBackup.LargeImages.Images1"), System.Drawing.Image))})
-      Me.cmdBackup.Location = New System.Drawing.Point(24, 280)
-      Me.cmdBackup.Name = "cmdBackup"
-      Me.cmdBackup.Size = New System.Drawing.Size(96, 80)
-      Me.cmdBackup.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdBackup.SmallImages.Images"), System.Drawing.Image))})
-      Me.cmdBackup.TabIndex = 2
-      Me.cmdBackup.Text = "&Backup dati archivi"
-      Me.cmdBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      Me.cmdBackup.WordWrap = True
-      '
-      'Label3
-      '
-      Me.Label3.Location = New System.Drawing.Point(144, 152)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(300, 72)
-      Me.Label3.TabIndex = 5
-      Me.Label3.Text = resources.GetString("Label3.Text")
-      '
-      'Label2
-      '
-      Me.Label2.AutoSize = True
-      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-      Me.Label2.ForeColor = System.Drawing.Color.DimGray
-      Me.Label2.Location = New System.Drawing.Point(144, 128)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(232, 16)
-      Me.Label2.TabIndex = 4
-      Me.Label2.Text = "Che cosa Ë Hospitality Solution?"
-      '
-      'cmdAttivaModuli
-      '
-      Me.cmdAttivaModuli.Enabled = False
-      Me.cmdAttivaModuli.Id = "47bd6e8b-ff32-4fe7-8d53-cb2317e0671a"
-      Me.cmdAttivaModuli.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.cmdAttivaModuli.KeyTip = "G"
-      Me.cmdAttivaModuli.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdAttivaModuli.LargeImages.Images"), System.Drawing.Image))})
-      Me.cmdAttivaModuli.Location = New System.Drawing.Point(24, 128)
-      Me.cmdAttivaModuli.Name = "cmdAttivaModuli"
-      Me.cmdAttivaModuli.Size = New System.Drawing.Size(96, 88)
-      Me.cmdAttivaModuli.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdAttivaModuli.SmallImages.Images"), System.Drawing.Image))})
-      Me.cmdAttivaModuli.TabIndex = 1
-      Me.cmdAttivaModuli.Text = "&Vai a Gestione Moduli"
-      Me.cmdAttivaModuli.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      Me.cmdAttivaModuli.WordWrap = True
-      '
-      'cmdApriPercorso
-      '
-      Me.cmdApriPercorso.Id = "9aa60f9d-9ffb-4c55-a5eb-f497a2e91e6b"
-      Me.cmdApriPercorso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdApriPercorso.KeyTip = "A"
-      Me.cmdApriPercorso.Location = New System.Drawing.Point(513, 464)
-      Me.cmdApriPercorso.Name = "cmdApriPercorso"
-      Me.cmdApriPercorso.ScreenTip.Caption = "Apri percorso archivio"
-      Me.cmdApriPercorso.ScreenTip.Text = "Apre il percorso archivio in Esplora file."
-      Me.cmdApriPercorso.Size = New System.Drawing.Size(248, 40)
-      Me.cmdApriPercorso.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("cmdApriPercorso.SmallImages.Images"), System.Drawing.Image))})
-      Me.cmdApriPercorso.TabIndex = 5
-      Me.cmdApriPercorso.Text = "Apri percorso archivio"
-      Me.cmdApriPercorso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdApriPercorso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-      '
-      'eui_GestioneModuli
-      '
-      Me.eui_GestioneModuli.AutoScroll = True
-      Me.eui_GestioneModuli.Controls.Add(Me.lvwGestioneModuli)
-      Me.eui_GestioneModuli.KeyTip = "G"
-      Me.eui_GestioneModuli.Location = New System.Drawing.Point(0, 0)
-      Me.eui_GestioneModuli.Name = "eui_GestioneModuli"
-      Me.eui_GestioneModuli.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1318, 730)
-      Me.eui_GestioneModuli.TabIndex = 0
-      Me.eui_GestioneModuli.Text = "Gestione Moduli    "
-      '
-      'BackstageViewSeparator1
-      '
-      Me.BackstageViewSeparator1.Id = "c365ef30-7323-4c13-8726-3d28dd1304d8"
-      Me.BackstageViewSeparator1.Location = New System.Drawing.Point(1, 83)
-      Me.BackstageViewSeparator1.Name = "BackstageViewSeparator1"
-      Me.BackstageViewSeparator1.Size = New System.Drawing.Size(142, 2)
-      Me.BackstageViewSeparator1.TabIndex = 4
-      Me.BackstageViewSeparator1.Text = "BackstageViewSeparator1"
       '
       'eui_Opzioni
       '
@@ -2794,11 +2798,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Scontrino.Id = "d1138f28-3809-487d-ae8b-704b525fb605"
       Me.eui_Strumenti_Documenti_Scontrino.KeyTip = "SC"
       Me.eui_Strumenti_Documenti_Scontrino.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Scontrino.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Scontrino.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Documenti_Scontrino.Location = New System.Drawing.Point(59, 2)
       Me.eui_Strumenti_Documenti_Scontrino.Name = "eui_Strumenti_Documenti_Scontrino"
       Me.eui_Strumenti_Documenti_Scontrino.ScreenTip.Caption = "Stampa Scontrino"
       Me.eui_Strumenti_Documenti_Scontrino.ScreenTip.Text = "Stampa lo scontrino fiscale per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Scontrino.Size = New System.Drawing.Size(55, 72)
+      Me.eui_Strumenti_Documenti_Scontrino.Size = New System.Drawing.Size(54, 0)
       Me.eui_Strumenti_Documenti_Scontrino.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Scontrino.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Scontrino.TabIndex = 9
       Me.eui_Strumenti_Documenti_Scontrino.Text = "Scontrino"
@@ -2806,7 +2810,7 @@ Friend Class frmMain
       'eui_Strumenti_Documenti_Sep
       '
       Me.eui_Strumenti_Documenti_Sep.Id = "487ce7ae-a8ea-478c-90af-3ece9659c76f"
-      Me.eui_Strumenti_Documenti_Sep.Location = New System.Drawing.Point(62, 6)
+      Me.eui_Strumenti_Documenti_Sep.Location = New System.Drawing.Point(60, 6)
       Me.eui_Strumenti_Documenti_Sep.Name = "eui_Strumenti_Documenti_Sep"
       Me.eui_Strumenti_Documenti_Sep.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Documenti_Sep.TabIndex = 7
@@ -2817,11 +2821,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Proforma.Id = "583195b5-3ccf-436e-a5d8-8c817995cb3f"
       Me.eui_Strumenti_Documenti_Proforma.KeyTip = "P"
       Me.eui_Strumenti_Documenti_Proforma.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(68, 2)
+      Me.eui_Strumenti_Documenti_Proforma.Location = New System.Drawing.Point(59, 74)
       Me.eui_Strumenti_Documenti_Proforma.Name = "eui_Strumenti_Documenti_Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Caption = "Stampa Proforma"
       Me.eui_Strumenti_Documenti_Proforma.ScreenTip.Text = "Stampa il conto Proforma per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(54, 72)
+      Me.eui_Strumenti_Documenti_Proforma.Size = New System.Drawing.Size(51, 0)
       Me.eui_Strumenti_Documenti_Proforma.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Proforma.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Proforma.TabIndex = 6
       Me.eui_Strumenti_Documenti_Proforma.Text = "Proforma"
@@ -2831,11 +2835,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Ricevuta.Id = "40fb78a2-d1a2-4d76-9d83-c420f1b36310"
       Me.eui_Strumenti_Documenti_Ricevuta.KeyTip = "R"
       Me.eui_Strumenti_Documenti_Ricevuta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(124, 2)
+      Me.eui_Strumenti_Documenti_Ricevuta.Location = New System.Drawing.Point(59, 74)
       Me.eui_Strumenti_Documenti_Ricevuta.Name = "eui_Strumenti_Documenti_Ricevuta"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Caption = "Ricevuta fiscale"
       Me.eui_Strumenti_Documenti_Ricevuta.ScreenTip.Text = "Stampa la Ricevuta fiscale per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(49, 72)
+      Me.eui_Strumenti_Documenti_Ricevuta.Size = New System.Drawing.Size(85, 0)
       Me.eui_Strumenti_Documenti_Ricevuta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Ricevuta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Ricevuta.TabIndex = 3
       Me.eui_Strumenti_Documenti_Ricevuta.Text = "Ricevuta fiscale"
@@ -2845,11 +2849,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Fattura.Id = "ed4d06e2-69ee-46d8-8703-f665763e7b5e"
       Me.eui_Strumenti_Documenti_Fattura.KeyTip = "F"
       Me.eui_Strumenti_Documenti_Fattura.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(175, 2)
+      Me.eui_Strumenti_Documenti_Fattura.Location = New System.Drawing.Point(59, 74)
       Me.eui_Strumenti_Documenti_Fattura.Name = "eui_Strumenti_Documenti_Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Caption = "Stampa Fattura"
       Me.eui_Strumenti_Documenti_Fattura.ScreenTip.Text = "Stampa la Fattura per la prenotazione selezionata."
-      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 72)
+      Me.eui_Strumenti_Documenti_Fattura.Size = New System.Drawing.Size(42, 0)
       Me.eui_Strumenti_Documenti_Fattura.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Fattura.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Fattura.TabIndex = 0
       Me.eui_Strumenti_Documenti_Fattura.Text = "Fattura"
@@ -2857,7 +2861,7 @@ Friend Class frmMain
       'eui_Strumenti_Documenti_Sep2
       '
       Me.eui_Strumenti_Documenti_Sep2.Id = "27283089-9afa-48f3-8717-ad29d14c313f"
-      Me.eui_Strumenti_Documenti_Sep2.Location = New System.Drawing.Point(220, 6)
+      Me.eui_Strumenti_Documenti_Sep2.Location = New System.Drawing.Point(147, 6)
       Me.eui_Strumenti_Documenti_Sep2.Name = "eui_Strumenti_Documenti_Sep2"
       Me.eui_Strumenti_Documenti_Sep2.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Documenti_Sep2.TabIndex = 8
@@ -2868,11 +2872,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Id = "321eb080-94ff-4f42-acd7-6e69ba51391f"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.KeyTip = "SS"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Stampa_Schedina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Stampa_Schedina.Location = New System.Drawing.Point(226, 2)
+      Me.eui_Strumenti_Documenti_Stampa_Schedina.Location = New System.Drawing.Point(146, 74)
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Name = "eui_Strumenti_Documenti_Stampa_Schedina"
       Me.eui_Strumenti_Documenti_Stampa_Schedina.ScreenTip.Caption = "Schedina P. S."
       Me.eui_Strumenti_Documenti_Stampa_Schedina.ScreenTip.Text = "Stampa la Schedina di Pubbica Sicurezza per l'elemento selezionato."
-      Me.eui_Strumenti_Documenti_Stampa_Schedina.Size = New System.Drawing.Size(52, 72)
+      Me.eui_Strumenti_Documenti_Stampa_Schedina.Size = New System.Drawing.Size(77, 0)
       Me.eui_Strumenti_Documenti_Stampa_Schedina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Stampa_Schedina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Stampa_Schedina.TabIndex = 6
       Me.eui_Strumenti_Documenti_Stampa_Schedina.Text = "Schedina P.S."
@@ -2897,11 +2901,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_IstatC59.Id = "34a3f8f9-2e6d-44aa-ab29-1fa6216b5c74"
       Me.eui_Strumenti_Documenti_IstatC59.KeyTip = "MI"
       Me.eui_Strumenti_Documenti_IstatC59.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_IstatC59.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_IstatC59.Location = New System.Drawing.Point(4, 2)
+      Me.eui_Strumenti_Documenti_IstatC59.Location = New System.Drawing.Point(62, 2)
       Me.eui_Strumenti_Documenti_IstatC59.Name = "eui_Strumenti_Documenti_IstatC59"
       Me.eui_Strumenti_Documenti_IstatC59.ScreenTip.Caption = "Modello Istat C/59"
       Me.eui_Strumenti_Documenti_IstatC59.ScreenTip.Text = "Genera il modello Istat C/59 per la stampa."
-      Me.eui_Strumenti_Documenti_IstatC59.Size = New System.Drawing.Size(54, 72)
+      Me.eui_Strumenti_Documenti_IstatC59.Size = New System.Drawing.Size(96, 0)
       Me.eui_Strumenti_Documenti_IstatC59.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_IstatC59.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_IstatC59.TabIndex = 6
       Me.eui_Strumenti_Documenti_IstatC59.Text = "Modello Istat C/59"
@@ -2911,11 +2915,11 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Schedina.Id = "8ff6c145-83eb-4912-8e1f-214058db0341"
       Me.eui_Strumenti_Documenti_Schedina.KeyTip = "S"
       Me.eui_Strumenti_Documenti_Schedina.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(60, 2)
+      Me.eui_Strumenti_Documenti_Schedina.Location = New System.Drawing.Point(62, 2)
       Me.eui_Strumenti_Documenti_Schedina.Name = "eui_Strumenti_Documenti_Schedina"
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Caption = "Schedina P. S."
       Me.eui_Strumenti_Documenti_Schedina.ScreenTip.Text = "Genera la Schedina di Pubbica Sicurezza per il documento selezionato."
-      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(52, 72)
+      Me.eui_Strumenti_Documenti_Schedina.Size = New System.Drawing.Size(77, 0)
       Me.eui_Strumenti_Documenti_Schedina.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Schedina.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Schedina.TabIndex = 5
       Me.eui_Strumenti_Documenti_Schedina.Text = "Schedina P.S."
@@ -2923,7 +2927,7 @@ Friend Class frmMain
       'eui_Strumenti_Documenti_Sep1
       '
       Me.eui_Strumenti_Documenti_Sep1.Id = "4a143a9b-d4d1-4655-bc13-df4474f55c31"
-      Me.eui_Strumenti_Documenti_Sep1.Location = New System.Drawing.Point(115, 6)
+      Me.eui_Strumenti_Documenti_Sep1.Location = New System.Drawing.Point(63, 6)
       Me.eui_Strumenti_Documenti_Sep1.Name = "eui_Strumenti_Documenti_Sep1"
       Me.eui_Strumenti_Documenti_Sep1.Size = New System.Drawing.Size(3, 61)
       Me.eui_Strumenti_Documenti_Sep1.TabIndex = 4
@@ -2934,12 +2938,12 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Invia.Id = "34645938-3532-4bae-a1dd-d81587bc084f"
       Me.eui_Strumenti_Documenti_Invia.KeyTip = "I"
       Me.eui_Strumenti_Documenti_Invia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(121, 2)
+      Me.eui_Strumenti_Documenti_Invia.Location = New System.Drawing.Point(62, 74)
       Me.eui_Strumenti_Documenti_Invia.Name = "eui_Strumenti_Documenti_Invia"
       Me.eui_Strumenti_Documenti_Invia.Popup = Me.PopupMenu14
       Me.eui_Strumenti_Documenti_Invia.ScreenTip.Caption = "Invia E-mail"
       Me.eui_Strumenti_Documenti_Invia.ScreenTip.Text = "Invia il documento selezionato tramite e-mail in formato PDF."
-      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(48, 72)
+      Me.eui_Strumenti_Documenti_Invia.Size = New System.Drawing.Size(71, 0)
       Me.eui_Strumenti_Documenti_Invia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Invia.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Invia.TabIndex = 2
       Me.eui_Strumenti_Documenti_Invia.Text = "Invia E-mail"
@@ -2993,12 +2997,12 @@ Friend Class frmMain
       Me.eui_Strumenti_Documenti_Esporta.Id = "fb143d4e-04aa-4681-bdf0-22caf76abf9f"
       Me.eui_Strumenti_Documenti_Esporta.KeyTip = "E"
       Me.eui_Strumenti_Documenti_Esporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(171, 2)
+      Me.eui_Strumenti_Documenti_Esporta.Location = New System.Drawing.Point(62, 74)
       Me.eui_Strumenti_Documenti_Esporta.Name = "eui_Strumenti_Documenti_Esporta"
       Me.eui_Strumenti_Documenti_Esporta.Popup = Me.PopupMenu13
       Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Caption = "Esporta documento"
       Me.eui_Strumenti_Documenti_Esporta.ScreenTip.Text = "Esporta il documento selezionato in vari formati."
-      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(45, 72)
+      Me.eui_Strumenti_Documenti_Esporta.Size = New System.Drawing.Size(53, 0)
       Me.eui_Strumenti_Documenti_Esporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_Strumenti_Documenti_Esporta.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_Strumenti_Documenti_Esporta.TabIndex = 1
       Me.eui_Strumenti_Documenti_Esporta.Text = "Esporta"
@@ -3737,7 +3741,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1198, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1214, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -5722,10 +5726,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 339)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 768)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1198, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1214, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5737,7 +5741,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(601, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(617, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5814,7 +5818,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(601, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(617, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -6120,7 +6124,7 @@ Friend Class frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1198, 361)
+      Me.ClientSize = New System.Drawing.Size(1214, 790)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -6134,6 +6138,14 @@ Friend Class frmMain
       CType(Me.picProg, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.eui_File, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_GestioneModuli.ResumeLayout(False)
+      Me.eui_Info.ResumeLayout(False)
+      Me.eui_Info.PerformLayout()
+      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Guida.ResumeLayout(False)
       Me.BackstageViewPage1.ResumeLayout(False)
       Me.BackstageViewPage1.PerformLayout()
@@ -6147,14 +6159,6 @@ Friend Class frmMain
       CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.eui_Info.ResumeLayout(False)
-      Me.eui_Info.PerformLayout()
-      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.eui_GestioneModuli.ResumeLayout(False)
       CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiModifica.ResumeLayout(False)
       Me.eui_StrumentiModifica.PerformLayout()
@@ -13369,6 +13373,14 @@ Friend Class frmMain
             Else
                moduloAttivo.Palmari = False
             End If
+
+            ' TODO_A: NIGHT_CLUB
+            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
+            '   moduloAttivo.NightClub = True
+            'Else
+            '   moduloAttivo.NightClub = False
+            'End If
+
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE) Then
                moduloAttivo.PrenOnLine = True
             Else
@@ -13438,6 +13450,14 @@ Friend Class frmMain
             Else
                moduloAttivo.Palmari = False
             End If
+
+            ' TODO_A: NIGHT_CLUB
+            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
+            '   moduloAttivo.NightClub = True
+            'Else
+            '   moduloAttivo.NightClub = False
+            'End If
+
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG).Length = 25 Then
                moduloAttivo.PrenOnLine = True
             Else
@@ -13562,6 +13582,7 @@ Friend Class frmMain
          AttivaDisattivaModuloMagazzino(moduloAttivo.Magazzino)
          AttivaDisattivaModuloEtichette(moduloAttivo.Etichette)
          AttivaDisattivaModuloPalmari(moduloAttivo.Palmari)
+         AttivaDisattivaModuloNightClub(moduloAttivo.NightClub)
          AttivaDisattivaModuloPrenOnLine(moduloAttivo.PrenOnLine)
          AttivaDisattivaModuloPenDriveRecovery(moduloAttivo.PenDriveRecovery)
          AttivaDisattivaModuloPenDrivePortable(moduloAttivo.PenDrivePortable)
@@ -13625,6 +13646,12 @@ Friend Class frmMain
          If moduloAttivo.Palmari = True Then
             ImpostaDatiListaModuli(Modulo.NOME_PALMARI, CHIAVE_ATTIVAZIONE_PALMARI, Color.Green, True)
          End If
+
+         ' TODO_A: NIGHT_CLUB
+         '' MODULO NIGHT CLUB.
+         'If moduloAttivo.NightClub = True Then
+         '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, CHIAVE_ATTIVAZIONE_NIGHT_CLUB, Color.Green, True)
+         'End If
 
          ' MODULO PRENOTAZIONI ON-LINE.
          If moduloAttivo.PrenOnLine = True Then
@@ -13954,6 +13981,18 @@ Friend Class frmMain
       End Try
    End Sub
 
+   Private Sub AttivaDisattivaModuloNightClub(ByVal stato As Boolean)
+      Try
+         ' Inserire qui eventuali istruzioni.
+         Exit Sub
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub AttivaDisattivaModuloPrenOnLine(ByVal stato As Boolean)
       Try
          ' Inserire qui eventuali istruzioni.
@@ -14012,6 +14051,606 @@ Friend Class frmMain
 
       End Try
    End Sub
+
+   Private Sub CaricaInfoProdottiAttivi()
+
+      ' Pulisce la lista.
+      eui_lstProdottiAttivati.Items.Clear()
+
+      ' HOSPITALITY.
+      If moduloAttivo.Hospitality = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_HOSPITALITY_CONFIG))
+         Dim item As String = Modulo.NOME_HOSPITALITY & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' MAGAZZINO.
+      If moduloAttivo.Magazzino = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_MAGAZZINO_CONFIG))
+         Dim item As String = Modulo.NOME_MAGAZZINO & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' ETICHETTE.
+      If moduloAttivo.Etichette = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_ETICHETTE_CONFIG))
+         Dim item As String = Modulo.NOME_ETICHETTE & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' PENDRIVE PORTABLE.
+      If moduloAttivo.PenDrivePortable = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG))
+         Dim item As String = Modulo.NOME_PENDRIVE_PORTABLE & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' PENDRIVE RECOVERY.
+      If moduloAttivo.PenDriveRecovery = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG))
+         Dim item As String = Modulo.NOME_PENDRIVE_RECOVERY & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' REGISTRATORI DI CASSA.
+      If moduloAttivo.RegCassa = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_REG_CASSA_CONFIG))
+         Dim item As String = Modulo.NOME_REG_CASSA & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' FATTURAZIONE ELETTRONICA.
+      If moduloAttivo.FattElettronica = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_FATT_ELETTRONICA_CONFIG))
+         Dim item As String = Modulo.NOME_FATT_ELETTRONICA & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' BAR.
+      If moduloAttivo.Bar = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BAR_CONFIG))
+         Dim item As String = Modulo.NOME_BAR & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' RISTORANTE.
+      If moduloAttivo.Ristorante = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG))
+         Dim item As String = Modulo.NOME_CHEF & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' PALMARI.
+      If moduloAttivo.Palmari = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PALMARI_CONFIG))
+         Dim item As String = Modulo.NOME_PALMARI & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' TODO_A: NIGHT_CLUB
+      '' NIGHT CLUB.
+      'If moduloAttivo.NightClub = True Then
+      '   Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
+      '   Dim item As String = Modulo.NOME_NIGHT_CLUB & " - " & codice
+      '   eui_lstProdottiAttivati.Items.Add(item)
+      'End If
+
+      ' PRENOTAZIONI ON-LINE.
+      If moduloAttivo.PrenOnLine = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG))
+         Dim item As String = Modulo.NOME_PREN_ONLINE & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' CENTRO SPORTIVO.
+      If moduloAttivo.CentroSportivo = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_SPORTING_CONFIG))
+         Dim item As String = Modulo.NOME_SPORTING & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' HOTEL.
+      If moduloAttivo.Hotel = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_HOTEL_CONFIG))
+         Dim item As String = Modulo.NOME_HOTEL & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' CAMPEGGIO.
+      If moduloAttivo.Campeggio = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_CAMPING_CONFIG))
+         Dim item As String = Modulo.NOME_CAMPING & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' CENTRO BALNEARE.
+      If moduloAttivo.CentroBalneare = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BEACH_CONFIG))
+         Dim item As String = Modulo.NOME_BEACH & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' CENTRO BENESSERE.
+      If moduloAttivo.CentroBenessere = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BEAUTY_CONFIG))
+         Dim item As String = Modulo.NOME_BEAUTY & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' VENDITA AL DETTAGLIO.
+      If moduloAttivo.VenditaDettaglio = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_RETAIL_CONFIG))
+         Dim item As String = Modulo.NOME_RETAIL & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' TAGLIE E COLORI.
+      If moduloAttivo.TaglieColori = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_TAGLIE_COLORI_CONFIG))
+         Dim item As String = Modulo.NOME_TAGLIE_COLORI & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
+
+      ' Visualizza o nasconde l'etichetta Versione dimostrativa.
+      If eui_lstProdottiAttivati.Items.Count <> 0 Then
+         lblDemo.Visible = False
+         lblGiorniProva.Visible = False
+      End If
+   End Sub
+
+   Private Sub VisualizzaInfoProdottiAttivi()
+      Dim item As String = eui_lstProdottiAttivati.SelectedItem
+
+      ' Pulisce la casella di testo.
+      eui_txtDettagliProdotto.Text = String.Empty
+
+      ' HOSPITALITY.
+      If item.Contains(Modulo.NOME_HOSPITALITY) = True Then
+         eui_txtDettagliProdotto.Text = "Software per strutture turistiche composto da moduli specifici per soddisfare le esigenze di ogni singola attivit‡." &
+                                        "Bar, Ristorante, Centro sportivo, Hotel, Campeggio, Centro balneare, Centro benessere e Vendita al detaglio."
+      End If
+
+      ' MAGAZZINO.
+      If item.Contains(Modulo.NOME_MAGAZZINO) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la gestione del magazzino."
+      End If
+
+      ' ETICHETTE.
+      If item.Contains(Modulo.NOME_ETICHETTE) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la gestione di etichette indirizzi e codici a barre."
+      End If
+
+      ' PENDRIVE PORTABLE.
+      If item.Contains(Modulo.NOME_PENDRIVE_PORTABLE) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per l'installazione del software su memoria esterna."
+      End If
+
+      ' PENDRIVE RECOVERY.
+      If item.Contains(Modulo.NOME_PENDRIVE_RECOVERY) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per il salvataggio e recupero automatico dei dati del software."
+      End If
+
+      ' REGISTRATORI DI CASSA.
+      If item.Contains(Modulo.NOME_REG_CASSA) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per il collegamento ai registratori di cassa e stampanti fiscali."
+      End If
+
+      ' FATTURAZIONE ELETTRONICA.
+      If item.Contains(Modulo.NOME_FATT_ELETTRONICA) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la Fatturazione Elettronica."
+      End If
+
+      ' BAR.
+      If item.Contains(Modulo.NOME_BAR) = True Then
+         eui_txtDettagliProdotto.Text = "Software per Bar, Gelaterie e tutte quelle attivit‡ che non necessitano di una gestione dei tavoli."
+      End If
+
+      ' RISTORANTE.
+      If item.Contains(Modulo.NOME_CHEF) = True Then
+         eui_txtDettagliProdotto.Text = "Software per strutture ristorative (Ristoranti, Pizzerie, ecc.) che necessitano della gestione dei tavoli."
+      End If
+
+      ' PALMARI.
+      If item.Contains(Modulo.NOME_PALMARI) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la gestione dei palmari per la presa delle comande ai tavoli."
+      End If
+
+      ' TODO_A: NIGHT_CLUB
+      '' NIGHT CLUB.
+      'If item.Contains(Modulo.NOME_NIGHT_CLUB) = True Then
+      '   eui_txtDettagliProdotto.Text = "Modulo per la gestione del personale per i locali notturni."
+      'End If
+
+      ' PRENOTAZIONI ON-LINE.
+      If item.Contains(Modulo.NOME_PREN_ONLINE) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la prenotazione dei tavoli tramite Internet da Pc, Tablet, SmartPhone."
+      End If
+
+      ' CENTRO SPORTIVO.
+      If item.Contains(Modulo.NOME_SPORTING) = True Then
+         eui_txtDettagliProdotto.Text = "Software per centri sportivi per la gestione di prenotazioni con tipologie diverse di risorse. Campi da tennis, da calcio, Piscina ecc"
+      End If
+
+      ' HOTEL.
+      If item.Contains(Modulo.NOME_HOTEL) = True Then
+         eui_txtDettagliProdotto.Text = "Software per Hotel."
+      End If
+
+      ' CAMPEGGIO.
+      If item.Contains(Modulo.NOME_CAMPING) = True Then
+         eui_txtDettagliProdotto.Text = "Software per campeggi"
+      End If
+
+      ' CENTRO BALNEARE.
+      If item.Contains(Modulo.NOME_BEACH) = True Then
+         eui_txtDettagliProdotto.Text = "Software per centri balneari"
+      End If
+
+      ' CENTRO BENESSERE.
+      If item.Contains(Modulo.NOME_BEAUTY) = True Then
+         eui_txtDettagliProdotto.Text = "Software per centri benessere."
+      End If
+
+      ' VENDITA AL DETTAGLIO.
+      If item.Contains(Modulo.NOME_RETAIL) = True Then
+         eui_txtDettagliProdotto.Text = "Software per Negozi di vendita al dettaglio."
+      End If
+
+      ' TAGLIE E COLORI.
+      If item.Contains(Modulo.NOME_TAGLIE_COLORI) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la gestione delle taglie e colori."
+      End If
+
+   End Sub
+
+   Private Sub lvwGestioneModuli_GotFocus(sender As Object, e As System.EventArgs) Handles lvwGestioneModuli.GotFocus
+      impostaListaModuli = False
+   End Sub
+
+   Private Sub lvwGestioneModuli_ItemChecked(sender As Object, e As System.Windows.Forms.ItemCheckedEventArgs) Handles lvwGestioneModuli.ItemChecked
+      Try
+         ' Se Ë in corso l'impostazione dei dati nella lista non esegue l'attivazione dei moduli.
+         If impostaListaModuli = True Then
+            Exit Sub
+         End If
+
+         ' ATTIVA IL MODULO.
+         If e.Item.Checked = True Then
+            ' Verifica la presenza della chiave di attivazione.
+            DatiConfig = New AppConfig
+            DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+            Select Case e.Item.Text
+
+               Case Modulo.NOME_CAMPING, Modulo.NOME_BEACH, Modulo.NOME_BEAUTY, Modulo.NOME_RETAIL
+                  ' Moduli non disponibili.
+                  MessageBox.Show(MSG_PRODOTTO_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  e.Item.Checked = False
+                  Exit Sub
+
+               Case Modulo.NOME_MAGAZZINO, Modulo.NOME_ETICHETTE, Modulo.NOME_PENDRIVE_PORTABLE, Modulo.NOME_PENDRIVE_RECOVERY, Modulo.NOME_REG_CASSA, Modulo.NOME_FATT_ELETTRONICA
+                  ' Sotto moduli per tutti i Prodotti.
+                  If VerificaProdottoAttivo() = False Then
+                     MessageBox.Show(MSG_ATTIVARE_UN_PRODOTTO, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                     e.Item.Checked = False
+                     Exit Sub
+                  End If
+
+               Case Modulo.NOME_PALMARI, Modulo.NOME_NIGHT_CLUB, Modulo.NOME_PREN_ONLINE
+                  ' Sotto moduli per Ristorante.
+                  If DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG) = String.Empty Then
+                     MessageBox.Show(MSG_ATTIVARE_IL_PRODOTTO & Modulo.NOME_CHEF, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                     e.Item.Checked = False
+                     Exit Sub
+                  End If
+
+               Case Modulo.NOME_TAGLIE_COLORI
+                  ' Sotto moduli per la Vendita al dettaglio.
+                  If DatiConfig.GetValue(Modulo.NOME_RETAIL_CONFIG) = String.Empty Then
+                     MessageBox.Show(MSG_ATTIVARE_IL_PRODOTTO & Modulo.NOME_RETAIL, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                     e.Item.Checked = False
+                     Exit Sub
+                  End If
+
+            End Select
+
+            ' Se non esiste un codice di attivazione apre la finestra per l'inserimento della chiave.
+            If e.Item.SubItems(2).Text = String.Empty Then
+               Dim frm As New CodAccesso
+               ' Passa il nome del modulo alla finestra.
+               frm.Tag = e.Item.Text
+               frm.ShowDialog()
+
+               ' Se non viene attivato rimuove l'impostazione.
+               If frm.DialogResult = DialogResult.Cancel Then
+                  e.Item.Checked = False
+
+               ElseIf frm.DialogResult = DialogResult.OK Then
+                  ' Messaggio sulla barra di stato.
+                  eui_Informazioni.Text = "Caricamento Moduli in corso..."
+
+                  Select Case e.Item.Text
+                     Case Modulo.NOME_HOSPITALITY
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOSPITALITY, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                        ' Attiva anche il modulo Hotel.
+                        If moduloAttivo.Hotel = False Then
+                           Dim chiaveAttivazioneHotel As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOTEL)
+                           DatiConfig.SetValue(Modulo.NOME_HOTEL_CONFIG, chiaveAttivazioneHotel)
+                           moduloAttivo.Hotel = True
+                           ImpostaDatiListaModuli(Modulo.NOME_HOTEL, CHIAVE_ATTIVAZIONE_HOTEL, Color.Brown, True)
+                        End If
+
+                        ' Attiva anche il modulo Bar.
+                        If moduloAttivo.Bar = False Then
+                           Dim chiaveAttivazioneBar As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR)
+                           DatiConfig.SetValue(Modulo.NOME_BAR_CONFIG, chiaveAttivazioneBar)
+                           moduloAttivo.Bar = True
+                           ImpostaDatiListaModuli(Modulo.NOME_BAR, CHIAVE_ATTIVAZIONE_BAR, Color.Green, True)
+                        End If
+
+                        ' Attiva anche il modulo Ristorante.
+                        If moduloAttivo.Ristorante = False Then
+                           Dim chiaveAttivazioneRistorante As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_RISTORANTE)
+                           DatiConfig.SetValue(Modulo.NOME_CHEF_CONFIG, chiaveAttivazioneRistorante)
+                           moduloAttivo.Ristorante = True
+                           ImpostaDatiListaModuli(Modulo.NOME_CHEF, CHIAVE_ATTIVAZIONE_RISTORANTE, Color.Green, True)
+                        End If
+
+                        ' Attiva anche il modulo Centro Sportivo.
+                        If moduloAttivo.CentroSportivo = False Then
+                           Dim chiaveAttivazioneCentroSportivo As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO)
+                           DatiConfig.SetValue(Modulo.NOME_SPORTING_CONFIG, chiaveAttivazioneCentroSportivo)
+                           moduloAttivo.CentroSportivo = True
+                           ImpostaDatiListaModuli(Modulo.NOME_SPORTING, CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO, Color.DarkCyan, True)
+                        End If
+
+                     Case Modulo.NOME_HOTEL
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOTEL, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Brown
+
+                     Case Modulo.NOME_BAR
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Green
+
+                     Case Modulo.NOME_CHEF
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_RISTORANTE, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Green
+
+                        ' Attivando il modulo Ristorante viene attivato anche il modulo Bar.
+                        If moduloAttivo.Bar = False Then
+                           Dim chiaveAttivazioneBar As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR)
+                           DatiConfig.SetValue(Modulo.NOME_BAR_CONFIG, chiaveAttivazioneBar)
+                           moduloAttivo.Bar = True
+                           ImpostaDatiListaModuli(Modulo.NOME_BAR, CHIAVE_ATTIVAZIONE_BAR, Color.Green, True)
+                        End If
+
+                     Case Modulo.NOME_SPORTING
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO, "-")
+                        e.Item.SubItems(3).ForeColor = Color.DarkCyan
+
+                     Case Modulo.NOME_PALMARI
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PALMARI, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Green
+
+                        ' TODO_A: NIGHT_CLUB
+                     'Case Modulo.NOME_NIGHT_CLUB
+                     '   e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB, "-")
+                     '   e.Item.SubItems(3).ForeColor = Color.Green
+
+                     Case Modulo.NOME_PREN_ONLINE
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Green
+
+                     Case Modulo.NOME_MAGAZZINO
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_MAGAZZINO, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                     Case Modulo.NOME_ETICHETTE
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_ETICHETTE, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                     Case Modulo.NOME_PENDRIVE_RECOVERY
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PENDRIVE_RECOVERY, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                     Case Modulo.NOME_PENDRIVE_PORTABLE
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PENDRIVE_PORTABLE, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                     Case Modulo.NOME_REG_CASSA
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_REG_CASSA, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                     Case Modulo.NOME_FATT_ELETTRONICA
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA, "-")
+                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
+
+                  End Select
+
+                  e.Item.SubItems(3).Text = "ATTIVO"
+
+                  ' Attiva disattiva tutte le funzionalit‡ del software.
+                  ImpostaModuli()
+
+                  ' Messaggio sulla barra di stato.
+                  eui_Informazioni.Text = LeggiDatiRivenditore()
+
+                  g_VerDemo = False
+               End If
+            End If
+
+         Else
+
+            ' DISATTIVA IL MODULO.
+            If e.Item.SubItems(2).Text = String.Empty Then
+               Exit Sub
+            End If
+
+            Dim risposta As DialogResult
+            risposta = MessageBox.Show(MSG_DISATTIVA_PRODOTTO, NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+            If risposta = Windows.Forms.DialogResult.No Then
+               e.Item.Checked = True
+               Exit Sub
+            Else
+               ' Messaggio sulla barra di stato.
+               eui_Informazioni.Text = "Rimozione Moduli in corso..."
+
+               Select Case e.Item.Text
+                  Case Modulo.NOME_HOSPITALITY
+                     If DisattivaProdotto(Modulo.NOME_HOSPITALITY_CONFIG) = True Then
+
+                        If moduloAttivo.Hotel = True Then
+                           If DisattivaProdotto(Modulo.NOME_HOTEL_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_HOTEL, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        If moduloAttivo.Bar = True Then
+                           If DisattivaProdotto(Modulo.NOME_BAR_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_BAR, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        If moduloAttivo.Ristorante = True Then
+                           If DisattivaProdotto(Modulo.NOME_CHEF_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_CHEF, "", Color.Gray, False)
+                           End If
+                        End If
+                        If moduloAttivo.Palmari = True Then
+                           If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        ' TODO_A: NIGHT_CLUB
+                        If moduloAttivo.NightClub = True Then
+                           If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        If moduloAttivo.PrenOnLine = True Then
+                           If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        If moduloAttivo.CentroSportivo = True Then
+                           If DisattivaProdotto(Modulo.NOME_SPORTING_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_SPORTING, "", Color.Gray, False)
+                           End If
+                        End If
+
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_HOTEL
+                     If DisattivaProdotto(Modulo.NOME_HOTEL_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_BAR
+                     If DisattivaProdotto(Modulo.NOME_BAR_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_CHEF
+                     If DisattivaProdotto(Modulo.NOME_CHEF_CONFIG) = True Then
+
+                        If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
+                           ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
+                        End If
+
+                        ' TODO_A: NIGHT_CLUB
+                        'If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                        '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
+                        'End If
+
+                        If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
+                           ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
+                        End If
+
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_SPORTING
+                     If DisattivaProdotto(Modulo.NOME_SPORTING_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_PALMARI
+                     If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                     ' TODO_A: NIGHT_CLUB
+                  'Case Modulo.NOME_NIGHT_CLUB
+                  '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                  '      Exit Select
+                  '   End If
+
+                  Case Modulo.NOME_PREN_ONLINE
+                     If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_MAGAZZINO
+                     If DisattivaProdotto(Modulo.NOME_MAGAZZINO_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_ETICHETTE
+                     If DisattivaProdotto(Modulo.NOME_ETICHETTE_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_PENDRIVE_RECOVERY
+                     If DisattivaProdotto(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_PENDRIVE_PORTABLE
+                     If DisattivaProdotto(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_REG_CASSA
+                     If DisattivaProdotto(Modulo.NOME_REG_CASSA_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+                  Case Modulo.NOME_FATT_ELETTRONICA
+                     If DisattivaProdotto(Modulo.NOME_FATT_ELETTRONICA_CONFIG) = True Then
+                        Exit Select
+                     End If
+
+               End Select
+
+               e.Item.SubItems(2).Text = String.Empty
+               e.Item.SubItems(3).ForeColor = Color.Gray
+               e.Item.SubItems(3).Text = "NON ATTIVO"
+
+               ' Attiva disattiva tutte le funzionalit‡ del software.
+               ImpostaModuli()
+
+               ' Messaggio sulla barra di stato.
+               eui_Informazioni.Text = LeggiDatiRivenditore()
+
+               MessageBox.Show(MSG_PRODOTTO_DISATTIVATO, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+            End If
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+#End Region
 
    Private Sub VerificaVisibilit‡GruppiModuli()
       Try
@@ -15201,568 +15840,6 @@ Friend Class frmMain
 
       End Try
    End Function
-
-#End Region
-
-   Private Sub CaricaInfoProdottiAttivi()
-
-      ' Pulisce la lista.
-      eui_lstProdottiAttivati.Items.Clear()
-
-      ' HOSPITALITY.
-      If moduloAttivo.Hospitality = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_HOSPITALITY_CONFIG))
-         Dim item As String = Modulo.NOME_HOSPITALITY & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' MAGAZZINO.
-      If moduloAttivo.Magazzino = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_MAGAZZINO_CONFIG))
-         Dim item As String = Modulo.NOME_MAGAZZINO & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' ETICHETTE.
-      If moduloAttivo.Etichette = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_ETICHETTE_CONFIG))
-         Dim item As String = Modulo.NOME_ETICHETTE & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' PENDRIVE PORTABLE.
-      If moduloAttivo.PenDrivePortable = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG))
-         Dim item As String = Modulo.NOME_PENDRIVE_PORTABLE & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' PENDRIVE RECOVERY.
-      If moduloAttivo.PenDriveRecovery = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG))
-         Dim item As String = Modulo.NOME_PENDRIVE_RECOVERY & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' REGISTRATORI DI CASSA.
-      If moduloAttivo.RegCassa = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_REG_CASSA_CONFIG))
-         Dim item As String = Modulo.NOME_REG_CASSA & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' FATTURAZIONE ELETTRONICA.
-      If moduloAttivo.FattElettronica = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_FATT_ELETTRONICA_CONFIG))
-         Dim item As String = Modulo.NOME_FATT_ELETTRONICA & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' BAR.
-      If moduloAttivo.Bar = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BAR_CONFIG))
-         Dim item As String = Modulo.NOME_BAR & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' RISTORANTE.
-      If moduloAttivo.Ristorante = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG))
-         Dim item As String = Modulo.NOME_CHEF & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' PALMARI.
-      If moduloAttivo.Palmari = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PALMARI_CONFIG))
-         Dim item As String = Modulo.NOME_PALMARI & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' PRENOTAZIONI ON-LINE.
-      If moduloAttivo.PrenOnLine = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG))
-         Dim item As String = Modulo.NOME_PREN_ONLINE & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' CENTRO SPORTIVO.
-      If moduloAttivo.CentroSportivo = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_SPORTING_CONFIG))
-         Dim item As String = Modulo.NOME_SPORTING & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' HOTEL.
-      If moduloAttivo.Hotel = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_HOTEL_CONFIG))
-         Dim item As String = Modulo.NOME_HOTEL & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' CAMPEGGIO.
-      If moduloAttivo.Campeggio = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_CAMPING_CONFIG))
-         Dim item As String = Modulo.NOME_CAMPING & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' CENTRO BALNEARE.
-      If moduloAttivo.CentroBalneare = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BEACH_CONFIG))
-         Dim item As String = Modulo.NOME_BEACH & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' CENTRO BENESSERE.
-      If moduloAttivo.CentroBenessere = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_BEAUTY_CONFIG))
-         Dim item As String = Modulo.NOME_BEAUTY & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' VENDITA AL DETTAGLIO.
-      If moduloAttivo.VenditaDettaglio = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_RETAIL_CONFIG))
-         Dim item As String = Modulo.NOME_RETAIL & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' TAGLIE E COLORI.
-      If moduloAttivo.TaglieColori = True Then
-         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_TAGLIE_COLORI_CONFIG))
-         Dim item As String = Modulo.NOME_TAGLIE_COLORI & " - " & codice
-         eui_lstProdottiAttivati.Items.Add(item)
-      End If
-
-      ' Visualizza o nasconde l'etichetta Versione dimostrativa.
-      If eui_lstProdottiAttivati.Items.Count <> 0 Then
-         lblDemo.Visible = False
-         lblGiorniProva.Visible = False
-      End If
-   End Sub
-
-   Private Sub VisualizzaInfoProdottiAttivi()
-      Dim item As String = eui_lstProdottiAttivati.SelectedItem
-
-      ' Pulisce la casella di testo.
-      eui_txtDettagliProdotto.Text = String.Empty
-
-      ' HOSPITALITY.
-      If item.Contains(Modulo.NOME_HOSPITALITY) = True Then
-         eui_txtDettagliProdotto.Text = "Software per strutture turistiche composto da moduli specifici per soddisfare le esigenze di ogni singola attivit‡." &
-                                        "Bar, Ristorante, Centro sportivo, Hotel, Campeggio, Centro balneare, Centro benessere e Vendita al detaglio."
-      End If
-
-      ' MAGAZZINO.
-      If item.Contains(Modulo.NOME_MAGAZZINO) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la gestione del magazzino."
-      End If
-
-      ' ETICHETTE.
-      If item.Contains(Modulo.NOME_ETICHETTE) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la gestione di etichette indirizzi e codici a barre."
-      End If
-
-      ' PENDRIVE PORTABLE.
-      If item.Contains(Modulo.NOME_PENDRIVE_PORTABLE) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per l'installazione del software su memoria esterna."
-      End If
-
-      ' PENDRIVE RECOVERY.
-      If item.Contains(Modulo.NOME_PENDRIVE_RECOVERY) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per il salvataggio e recupero automatico dei dati del software."
-      End If
-
-      ' REGISTRATORI DI CASSA.
-      If item.Contains(Modulo.NOME_REG_CASSA) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per il collegamento ai registratori di cassa e stampanti fiscali."
-      End If
-
-      ' FATTURAZIONE ELETTRONICA.
-      If item.Contains(Modulo.NOME_FATT_ELETTRONICA) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la Fatturazione Elettronica."
-      End If
-
-      ' BAR.
-      If item.Contains(Modulo.NOME_BAR) = True Then
-         eui_txtDettagliProdotto.Text = "Software per Bar, Gelaterie e tutte quelle attivit‡ che non necessitano di una gestione dei tavoli."
-      End If
-
-      ' RISTORANTE.
-      If item.Contains(Modulo.NOME_CHEF) = True Then
-         eui_txtDettagliProdotto.Text = "Software per strutture ristorative (Ristoranti, Pizzerie, ecc.) che necessitano della gestione dei tavoli."
-      End If
-
-      ' PALMARI.
-      If item.Contains(Modulo.NOME_PALMARI) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la gestione dei palmari per la presa delle comande ai tavoli."
-      End If
-
-      ' PRENOTAZIONI ON-LINE.
-      If item.Contains(Modulo.NOME_PREN_ONLINE) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la prenotazione dei tavoli tramite Internet da Pc, Tablet, SmartPhone."
-      End If
-
-      ' CENTRO SPORTIVO.
-      If item.Contains(Modulo.NOME_SPORTING) = True Then
-         eui_txtDettagliProdotto.Text = "Software per centri sportivi per la gestione di prenotazioni con tipologie diverse di risorse. Campi da tennis, da calcio, Piscina ecc"
-      End If
-
-      ' HOTEL.
-      If item.Contains(Modulo.NOME_HOTEL) = True Then
-         eui_txtDettagliProdotto.Text = "Software per Hotel."
-      End If
-
-      ' CAMPEGGIO.
-      If item.Contains(Modulo.NOME_CAMPING) = True Then
-         eui_txtDettagliProdotto.Text = "Software per campeggi"
-      End If
-
-      ' CENTRO BALNEARE.
-      If item.Contains(Modulo.NOME_BEACH) = True Then
-         eui_txtDettagliProdotto.Text = "Software per centri balneari"
-      End If
-
-      ' CENTRO BENESSERE.
-      If item.Contains(Modulo.NOME_BEAUTY) = True Then
-         eui_txtDettagliProdotto.Text = "Software per centri benessere."
-      End If
-
-      ' VENDITA AL DETTAGLIO.
-      If item.Contains(Modulo.NOME_RETAIL) = True Then
-         eui_txtDettagliProdotto.Text = "Software per Negozi di vendita al dettaglio."
-      End If
-
-      ' TAGLIE E COLORI.
-      If item.Contains(Modulo.NOME_TAGLIE_COLORI) = True Then
-         eui_txtDettagliProdotto.Text = "Modulo per la gestione delle taglie e colori."
-      End If
-
-   End Sub
-
-   Private Sub lvwGestioneModuli_GotFocus(sender As Object, e As System.EventArgs) Handles lvwGestioneModuli.GotFocus
-      impostaListaModuli = False
-   End Sub
-
-   Private Sub lvwGestioneModuli_ItemChecked(sender As Object, e As System.Windows.Forms.ItemCheckedEventArgs) Handles lvwGestioneModuli.ItemChecked
-      Try
-         ' Se Ë in corso l'impostazione dei dati nella lista non esegue l'attivazione dei moduli.
-         If impostaListaModuli = True Then
-            Exit Sub
-         End If
-
-         ' ATTIVA IL MODULO.
-         If e.Item.Checked = True Then
-            ' Verifica la presenza della chiave di attivazione.
-            DatiConfig = New AppConfig
-            DatiConfig.ConfigType = ConfigFileType.AppConfig
-
-            Select Case e.Item.Text
-
-               Case Modulo.NOME_CAMPING, Modulo.NOME_BEACH, Modulo.NOME_BEAUTY, Modulo.NOME_RETAIL
-                  ' Moduli non disponibili.
-                  MessageBox.Show(MSG_PRODOTTO_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                  e.Item.Checked = False
-                  Exit Sub
-
-               Case Modulo.NOME_MAGAZZINO, Modulo.NOME_ETICHETTE, Modulo.NOME_PENDRIVE_PORTABLE, Modulo.NOME_PENDRIVE_RECOVERY, Modulo.NOME_REG_CASSA, Modulo.NOME_FATT_ELETTRONICA
-                  ' Sotto moduli per tutti i Prodotti.
-                  If VerificaProdottoAttivo() = False Then
-                     MessageBox.Show(MSG_ATTIVARE_UN_PRODOTTO, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                     e.Item.Checked = False
-                     Exit Sub
-                  End If
-
-               Case Modulo.NOME_PALMARI, Modulo.NOME_PREN_ONLINE
-                  ' Sotto moduli per Ristorante.
-                  If DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG) = String.Empty Then
-                     MessageBox.Show(MSG_ATTIVARE_IL_PRODOTTO & Modulo.NOME_CHEF, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                     e.Item.Checked = False
-                     Exit Sub
-                  End If
-
-               Case Modulo.NOME_TAGLIE_COLORI
-                  ' Sotto moduli per la Vendita al dettaglio.
-                  If DatiConfig.GetValue(Modulo.NOME_RETAIL_CONFIG) = String.Empty Then
-                     MessageBox.Show(MSG_ATTIVARE_IL_PRODOTTO & Modulo.NOME_RETAIL, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                     e.Item.Checked = False
-                     Exit Sub
-                  End If
-
-            End Select
-
-            ' Se non esiste un codice di attivazione apre la finestra per l'inserimento della chiave.
-            If e.Item.SubItems(2).Text = String.Empty Then
-               Dim frm As New CodAccesso
-               ' Passa il nome del modulo alla finestra.
-               frm.Tag = e.Item.Text
-               frm.ShowDialog()
-
-               ' Se non viene attivato rimuove l'impostazione.
-               If frm.DialogResult = DialogResult.Cancel Then
-                  e.Item.Checked = False
-
-               ElseIf frm.DialogResult = DialogResult.OK Then
-                  ' Messaggio sulla barra di stato.
-                  eui_Informazioni.Text = "Caricamento Moduli in corso..."
-
-                  Select Case e.Item.Text
-                     Case Modulo.NOME_HOSPITALITY
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOSPITALITY, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                        ' Attiva anche il modulo Hotel.
-                        If moduloAttivo.Hotel = False Then
-                           Dim chiaveAttivazioneHotel As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOTEL)
-                           DatiConfig.SetValue(Modulo.NOME_HOTEL_CONFIG, chiaveAttivazioneHotel)
-                           moduloAttivo.Hotel = True
-                           ImpostaDatiListaModuli(Modulo.NOME_HOTEL, CHIAVE_ATTIVAZIONE_HOTEL, Color.Brown, True)
-                        End If
-
-                        ' Attiva anche il modulo Bar.
-                        If moduloAttivo.Bar = False Then
-                           Dim chiaveAttivazioneBar As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR)
-                           DatiConfig.SetValue(Modulo.NOME_BAR_CONFIG, chiaveAttivazioneBar)
-                           moduloAttivo.Bar = True
-                           ImpostaDatiListaModuli(Modulo.NOME_BAR, CHIAVE_ATTIVAZIONE_BAR, Color.Green, True)
-                        End If
-
-                        ' Attiva anche il modulo Ristorante.
-                        If moduloAttivo.Ristorante = False Then
-                           Dim chiaveAttivazioneRistorante As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_RISTORANTE)
-                           DatiConfig.SetValue(Modulo.NOME_CHEF_CONFIG, chiaveAttivazioneRistorante)
-                           moduloAttivo.Ristorante = True
-                           ImpostaDatiListaModuli(Modulo.NOME_CHEF, CHIAVE_ATTIVAZIONE_RISTORANTE, Color.Green, True)
-                        End If
-
-                        ' Attiva anche il modulo Centro Sportivo.
-                        If moduloAttivo.CentroSportivo = False Then
-                           Dim chiaveAttivazioneCentroSportivo As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO)
-                           DatiConfig.SetValue(Modulo.NOME_SPORTING_CONFIG, chiaveAttivazioneCentroSportivo)
-                           moduloAttivo.CentroSportivo = True
-                           ImpostaDatiListaModuli(Modulo.NOME_SPORTING, CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO, Color.DarkCyan, True)
-                        End If
-
-                     Case Modulo.NOME_HOTEL
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOTEL, "-")
-                        e.Item.SubItems(3).ForeColor = Color.Brown
-
-                     Case Modulo.NOME_BAR
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR, "-")
-                        e.Item.SubItems(3).ForeColor = Color.Green
-
-                     Case Modulo.NOME_CHEF
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_RISTORANTE, "-")
-                        e.Item.SubItems(3).ForeColor = Color.Green
-
-                        ' Attivando il modulo Ristorante viene attivato anche il modulo Bar.
-                        If moduloAttivo.Bar = False Then
-                           Dim chiaveAttivazioneBar As String = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_BAR)
-                           DatiConfig.SetValue(Modulo.NOME_BAR_CONFIG, chiaveAttivazioneBar)
-                           moduloAttivo.Bar = True
-                           ImpostaDatiListaModuli(Modulo.NOME_BAR, CHIAVE_ATTIVAZIONE_BAR, Color.Green, True)
-                        End If
-
-                     Case Modulo.NOME_SPORTING
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO, "-")
-                        e.Item.SubItems(3).ForeColor = Color.DarkCyan
-
-                     Case Modulo.NOME_PALMARI
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PALMARI, "-")
-                        e.Item.SubItems(3).ForeColor = Color.Green
-
-                     Case Modulo.NOME_PREN_ONLINE
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE, "-")
-                        e.Item.SubItems(3).ForeColor = Color.Green
-
-                     Case Modulo.NOME_MAGAZZINO
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_MAGAZZINO, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                     Case Modulo.NOME_ETICHETTE
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_ETICHETTE, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                     Case Modulo.NOME_PENDRIVE_RECOVERY
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PENDRIVE_RECOVERY, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                     Case Modulo.NOME_PENDRIVE_PORTABLE
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PENDRIVE_PORTABLE, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                     Case Modulo.NOME_REG_CASSA
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_REG_CASSA, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                     Case Modulo.NOME_FATT_ELETTRONICA
-                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA, "-")
-                        e.Item.SubItems(3).ForeColor = Color.MidnightBlue
-
-                  End Select
-
-                  e.Item.SubItems(3).Text = "ATTIVO"
-
-                  ' Attiva disattiva tutte le funzionalit‡ del software.
-                  ImpostaModuli()
-
-                  ' Messaggio sulla barra di stato.
-                  eui_Informazioni.Text = LeggiDatiRivenditore()
-
-                  g_VerDemo = False
-               End If
-            End If
-
-         Else
-
-            ' DISATTIVA IL MODULO.
-            If e.Item.SubItems(2).Text = String.Empty Then
-               Exit Sub
-            End If
-
-            Dim risposta As DialogResult
-            risposta = MessageBox.Show(MSG_DISATTIVA_PRODOTTO, NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
-
-            If risposta = Windows.Forms.DialogResult.No Then
-               e.Item.Checked = True
-               Exit Sub
-            Else
-               ' Messaggio sulla barra di stato.
-               eui_Informazioni.Text = "Rimozione Moduli in corso..."
-
-               Select Case e.Item.Text
-                  Case Modulo.NOME_HOSPITALITY
-                     If DisattivaProdotto(Modulo.NOME_HOSPITALITY_CONFIG) = True Then
-
-                        If moduloAttivo.Hotel = True Then
-                           If DisattivaProdotto(Modulo.NOME_HOTEL_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_HOTEL, "", Color.Gray, False)
-                           End If
-                        End If
-
-                        If moduloAttivo.Bar = True Then
-                           If DisattivaProdotto(Modulo.NOME_BAR_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_BAR, "", Color.Gray, False)
-                           End If
-                        End If
-
-                        If moduloAttivo.Ristorante = True Then
-                           If DisattivaProdotto(Modulo.NOME_CHEF_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_CHEF, "", Color.Gray, False)
-                           End If
-                        End If
-                        If moduloAttivo.Palmari = True Then
-                           If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
-                           End If
-                        End If
-                        If moduloAttivo.PrenOnLine = True Then
-                           If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
-                           End If
-                        End If
-
-                        If moduloAttivo.CentroSportivo = True Then
-                           If DisattivaProdotto(Modulo.NOME_SPORTING_CONFIG) = True Then
-                              ImpostaDatiListaModuli(Modulo.NOME_SPORTING, "", Color.Gray, False)
-                           End If
-                        End If
-
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_HOTEL
-                     If DisattivaProdotto(Modulo.NOME_HOTEL_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_BAR
-                     If DisattivaProdotto(Modulo.NOME_BAR_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_CHEF
-                     If DisattivaProdotto(Modulo.NOME_CHEF_CONFIG) = True Then
-
-                        If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
-                           ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
-                        End If
-
-                        If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
-                           ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
-                        End If
-
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_SPORTING
-                     If DisattivaProdotto(Modulo.NOME_SPORTING_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_PALMARI
-                     If DisattivaProdotto(Modulo.NOME_PALMARI_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_PREN_ONLINE
-                     If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_MAGAZZINO
-                     If DisattivaProdotto(Modulo.NOME_MAGAZZINO_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_ETICHETTE
-                     If DisattivaProdotto(Modulo.NOME_ETICHETTE_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_PENDRIVE_RECOVERY
-                     If DisattivaProdotto(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_PENDRIVE_PORTABLE
-                     If DisattivaProdotto(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_REG_CASSA
-                     If DisattivaProdotto(Modulo.NOME_REG_CASSA_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-                  Case Modulo.NOME_FATT_ELETTRONICA
-                     If DisattivaProdotto(Modulo.NOME_FATT_ELETTRONICA_CONFIG) = True Then
-                        Exit Select
-                     End If
-
-               End Select
-
-               e.Item.SubItems(2).Text = String.Empty
-               e.Item.SubItems(3).ForeColor = Color.Gray
-               e.Item.SubItems(3).Text = "NON ATTIVO"
-
-               ' Attiva disattiva tutte le funzionalit‡ del software.
-               ImpostaModuli()
-
-               ' Messaggio sulla barra di stato.
-               eui_Informazioni.Text = LeggiDatiRivenditore()
-
-               MessageBox.Show(MSG_PRODOTTO_DISATTIVATO, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            End If
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
 
 #End Region
 

@@ -45,8 +45,12 @@ Module Dichiarazioni
    Public Const CLIENTI_ALTEZZA As Integer = 420
 
    ' Dimensioni della finesta Camerieri.
-   Public Const CAMERIERI_LARGHEZZA As Integer = 700
+   Public Const CAMERIERI_LARGHEZZA As Integer = 790
    Public Const CAMERIERI_ALTEZZA As Integer = 500
+
+   ' Dimensioni della finesta Camerieri.
+   Public Const PIATTI_LARGHEZZA As Integer = 560
+   Public Const PIATTI_ALTEZZA As Integer = 440
 
    ' Dimensioni del form Statistiche.
    Public Const STAT_LARGHEZZA As Integer = 750
@@ -862,6 +866,7 @@ Module Dichiarazioni
    Public Const CHIAVE_ATTIVAZIONE_REG_CASSA As String = "RC3M9"
    Public Const CHIAVE_ATTIVAZIONE_PREN_ONLINE As String = "PO310"
    Public Const CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA As String = "FE3PA"
+   Public Const CHIAVE_ATTIVAZIONE_NIGHT_CLUB As String = "NC312"
 
    ' Codice di accesso per attivare la versione dimostrativa del software. (NON PIU' UTILIZZATA)
    Public Const CHIAVE_ACCESSO_DEMO As String = "0274M F30HS M1083 0ZY3I 90DH2"
@@ -1021,7 +1026,6 @@ Module Dichiarazioni
       CanaliVendita = 67
       TipoAlloggiato = 68
       Comuni = 69
-
    End Enum
 
    Public Enum TipoOperazione
@@ -1093,6 +1097,7 @@ Module Dichiarazioni
 
       Public Const NOME_CHEF As String = "CHEF SOLUTION"
       Public Const NOME_PALMARI As String = "PALMARI"
+      Public Const NOME_NIGHT_CLUB As String = "NIGHT CLUB"
       Public Const NOME_PREN_ONLINE As String = "PRENOTAZIONI ON-LINE"
 
       Public Const NOME_HOTEL As String = "HOTEL SOLUTION"
@@ -1117,6 +1122,7 @@ Module Dichiarazioni
 
       Public Const NOME_CHEF_CONFIG As String = "KeyAccessRistorante"
       Public Const NOME_PALMARI_CONFIG As String = "KeyAccessPalmari"
+      Public Const NOME_NIGHT_CLUB_CONFIG As String = "KeyAccessNightClub"
       Public Const NOME_PREN_ONLINE_CONFIG As String = "KeyAccessPrenOnLine"
 
       Public Const NOME_HOTEL_CONFIG As String = "KeyAccessHotel"
@@ -1141,6 +1147,7 @@ Module Dichiarazioni
 
       Public Ristorante As Boolean
       Public Palmari As Boolean
+      Public NightClub As Boolean
       Public PrenOnLine As Boolean
 
       Public Hotel As Boolean

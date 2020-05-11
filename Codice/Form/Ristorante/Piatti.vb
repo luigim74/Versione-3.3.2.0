@@ -208,7 +208,7 @@ Public Class frmPiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(560, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(570, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -242,7 +242,7 @@ Public Class frmPiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(560, 20)
+      Me.Panel1.Size = New System.Drawing.Size(570, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -266,7 +266,7 @@ Public Class frmPiatti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(560, 371)
+      Me.TabControl1.Size = New System.Drawing.Size(570, 381)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -312,7 +312,7 @@ Public Class frmPiatti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(552, 345)
+      Me.TabPage1.Size = New System.Drawing.Size(562, 355)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -323,7 +323,7 @@ Public Class frmPiatti
       Me.txtSpettanza.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtSpettanza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtSpettanza.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtSpettanza.Location = New System.Drawing.Point(381, 300)
+      Me.txtSpettanza.Location = New System.Drawing.Point(391, 300)
       Me.txtSpettanza.MaxLength = 0
       Me.txtSpettanza.Name = "txtSpettanza"
       Me.txtSpettanza.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -340,13 +340,13 @@ Public Class frmPiatti
       Me.Label21.Location = New System.Drawing.Point(16, 303)
       Me.Label21.Name = "Label21"
       Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label21.Size = New System.Drawing.Size(317, 13)
+      Me.Label21.Size = New System.Drawing.Size(353, 13)
       Me.Label21.TabIndex = 55785
-      Me.Label21.Text = "Questo piatto genera una spettanza nelle vendite per il Cameriere:"
+      Me.Label21.Text = "Questo piatto genera una spettanza nelle vendite per il Cameriere di Euro:"
       '
       'Label19
       '
-      Me.Label19.Location = New System.Drawing.Point(288, 196)
+      Me.Label19.Location = New System.Drawing.Point(298, 196)
       Me.Label19.Name = "Label19"
       Me.Label19.Size = New System.Drawing.Size(58, 15)
       Me.Label19.TabIndex = 55783
@@ -354,7 +354,7 @@ Public Class frmPiatti
       '
       'Label18
       '
-      Me.Label18.Location = New System.Drawing.Point(288, 172)
+      Me.Label18.Location = New System.Drawing.Point(298, 172)
       Me.Label18.Name = "Label18"
       Me.Label18.Size = New System.Drawing.Size(58, 15)
       Me.Label18.TabIndex = 55782
@@ -362,7 +362,7 @@ Public Class frmPiatti
       '
       'Label17
       '
-      Me.Label17.Location = New System.Drawing.Point(288, 148)
+      Me.Label17.Location = New System.Drawing.Point(298, 148)
       Me.Label17.Name = "Label17"
       Me.Label17.Size = New System.Drawing.Size(58, 15)
       Me.Label17.TabIndex = 55781
@@ -370,7 +370,7 @@ Public Class frmPiatti
       '
       'Label16
       '
-      Me.Label16.Location = New System.Drawing.Point(288, 124)
+      Me.Label16.Location = New System.Drawing.Point(298, 124)
       Me.Label16.Name = "Label16"
       Me.Label16.Size = New System.Drawing.Size(58, 15)
       Me.Label16.TabIndex = 55780
@@ -381,7 +381,7 @@ Public Class frmPiatti
       Me.cmbAliquotaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbAliquotaIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbAliquotaIva.Items.AddRange(New Object() {"", "Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
-      Me.cmbAliquotaIva.Location = New System.Drawing.Point(135, 221)
+      Me.cmbAliquotaIva.Location = New System.Drawing.Point(145, 221)
       Me.cmbAliquotaIva.Name = "cmbAliquotaIva"
       Me.cmbAliquotaIva.Size = New System.Drawing.Size(144, 21)
       Me.cmbAliquotaIva.TabIndex = 9
@@ -402,7 +402,7 @@ Public Class frmPiatti
       'txtCodiceBarre
       '
       Me.txtCodiceBarre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCodiceBarre.Location = New System.Drawing.Point(135, 42)
+      Me.txtCodiceBarre.Location = New System.Drawing.Point(145, 42)
       Me.txtCodiceBarre.Name = "txtCodiceBarre"
       Me.txtCodiceBarre.Size = New System.Drawing.Size(144, 20)
       Me.txtCodiceBarre.TabIndex = 2
@@ -421,7 +421,7 @@ Public Class frmPiatti
       '
       Me.chkEscludiMenu.CheckAlign = System.Drawing.ContentAlignment.TopLeft
       Me.chkEscludiMenu.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.chkEscludiMenu.Location = New System.Drawing.Point(501, 224)
+      Me.chkEscludiMenu.Location = New System.Drawing.Point(511, 224)
       Me.chkEscludiMenu.Name = "chkEscludiMenu"
       Me.chkEscludiMenu.Size = New System.Drawing.Size(16, 16)
       Me.chkEscludiMenu.TabIndex = 10
@@ -432,7 +432,7 @@ Public Class frmPiatti
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label10.ForeColor = System.Drawing.Color.Black
-      Me.Label10.Location = New System.Drawing.Point(381, 224)
+      Me.Label10.Location = New System.Drawing.Point(391, 224)
       Me.Label10.Name = "Label10"
       Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label10.Size = New System.Drawing.Size(112, 13)
@@ -446,7 +446,7 @@ Public Class frmPiatti
       Me.txtIngredienti.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIngredienti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtIngredienti.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIngredienti.Location = New System.Drawing.Point(135, 248)
+      Me.txtIngredienti.Location = New System.Drawing.Point(145, 248)
       Me.txtIngredienti.MaxLength = 0
       Me.txtIngredienti.Name = "txtIngredienti"
       Me.txtIngredienti.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -473,7 +473,7 @@ Public Class frmPiatti
       Me.txtListino4.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino4.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino4.Location = New System.Drawing.Point(135, 195)
+      Me.txtListino4.Location = New System.Drawing.Point(145, 195)
       Me.txtListino4.MaxLength = 0
       Me.txtListino4.Name = "txtListino4"
       Me.txtListino4.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -501,7 +501,7 @@ Public Class frmPiatti
       Me.txtListino3.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino3.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino3.Location = New System.Drawing.Point(135, 171)
+      Me.txtListino3.Location = New System.Drawing.Point(145, 171)
       Me.txtListino3.MaxLength = 0
       Me.txtListino3.Name = "txtListino3"
       Me.txtListino3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -529,7 +529,7 @@ Public Class frmPiatti
       Me.txtListino2.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino2.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino2.Location = New System.Drawing.Point(135, 147)
+      Me.txtListino2.Location = New System.Drawing.Point(145, 147)
       Me.txtListino2.MaxLength = 0
       Me.txtListino2.Name = "txtListino2"
       Me.txtListino2.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -557,7 +557,7 @@ Public Class frmPiatti
       Me.txtListino1.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino1.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino1.Location = New System.Drawing.Point(135, 123)
+      Me.txtListino1.Location = New System.Drawing.Point(145, 123)
       Me.txtListino1.MaxLength = 0
       Me.txtListino1.Name = "txtListino1"
       Me.txtListino1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -585,7 +585,7 @@ Public Class frmPiatti
       Me.txtValVenduto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtValVenduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtValVenduto.ForeColor = System.Drawing.Color.Red
-      Me.txtValVenduto.Location = New System.Drawing.Point(135, 274)
+      Me.txtValVenduto.Location = New System.Drawing.Point(145, 274)
       Me.txtValVenduto.MaxLength = 0
       Me.txtValVenduto.Name = "txtValVenduto"
       Me.txtValVenduto.ReadOnly = True
@@ -614,7 +614,7 @@ Public Class frmPiatti
       Me.txtQVenduta.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtQVenduta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtQVenduta.ForeColor = System.Drawing.Color.Red
-      Me.txtQVenduta.Location = New System.Drawing.Point(381, 274)
+      Me.txtQVenduta.Location = New System.Drawing.Point(391, 274)
       Me.txtQVenduta.MaxLength = 0
       Me.txtQVenduta.Name = "txtQVenduta"
       Me.txtQVenduta.ReadOnly = True
@@ -629,7 +629,7 @@ Public Class frmPiatti
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(285, 274)
+      Me.Label2.Location = New System.Drawing.Point(295, 274)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(92, 13)
@@ -640,7 +640,7 @@ Public Class frmPiatti
       '
       Me.chkVariazione.CheckAlign = System.Drawing.ContentAlignment.TopLeft
       Me.chkVariazione.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.chkVariazione.Location = New System.Drawing.Point(359, 15)
+      Me.chkVariazione.Location = New System.Drawing.Point(369, 15)
       Me.chkVariazione.Name = "chkVariazione"
       Me.chkVariazione.Size = New System.Drawing.Size(16, 16)
       Me.chkVariazione.TabIndex = 1
@@ -651,7 +651,7 @@ Public Class frmPiatti
       Me.Label39.BackColor = System.Drawing.Color.Transparent
       Me.Label39.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label39.ForeColor = System.Drawing.Color.Black
-      Me.Label39.Location = New System.Drawing.Point(304, 16)
+      Me.Label39.Location = New System.Drawing.Point(314, 16)
       Me.Label39.Name = "Label39"
       Me.Label39.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label39.Size = New System.Drawing.Size(49, 13)
@@ -661,7 +661,7 @@ Public Class frmPiatti
       'EliminaImg
       '
       Me.EliminaImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.EliminaImg.Location = New System.Drawing.Point(456, 160)
+      Me.EliminaImg.Location = New System.Drawing.Point(466, 160)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
       Me.EliminaImg.TabIndex = 15
@@ -670,7 +670,7 @@ Public Class frmPiatti
       'ApriImg
       '
       Me.ApriImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ApriImg.Location = New System.Drawing.Point(384, 160)
+      Me.ApriImg.Location = New System.Drawing.Point(394, 160)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(64, 24)
       Me.ApriImg.TabIndex = 14
@@ -680,7 +680,7 @@ Public Class frmPiatti
       '
       Me.picFoto.BackColor = System.Drawing.Color.White
       Me.picFoto.Cursor = System.Windows.Forms.Cursors.Default
-      Me.picFoto.Location = New System.Drawing.Point(384, 16)
+      Me.picFoto.Location = New System.Drawing.Point(394, 16)
       Me.picFoto.Name = "picFoto"
       Me.picFoto.Size = New System.Drawing.Size(136, 136)
       Me.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -690,7 +690,7 @@ Public Class frmPiatti
       'cmbCategoria
       '
       Me.cmbCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbCategoria.Location = New System.Drawing.Point(135, 96)
+      Me.cmbCategoria.Location = New System.Drawing.Point(145, 96)
       Me.cmbCategoria.Name = "cmbCategoria"
       Me.cmbCategoria.Size = New System.Drawing.Size(240, 21)
       Me.cmbCategoria.TabIndex = 4
@@ -702,7 +702,7 @@ Public Class frmPiatti
       Me.txtDescrizione.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtDescrizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtDescrizione.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtDescrizione.Location = New System.Drawing.Point(135, 70)
+      Me.txtDescrizione.Location = New System.Drawing.Point(145, 70)
       Me.txtDescrizione.MaxLength = 0
       Me.txtDescrizione.Name = "txtDescrizione"
       Me.txtDescrizione.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -742,7 +742,7 @@ Public Class frmPiatti
       Me.txtNumero.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNumero.ForeColor = System.Drawing.Color.Red
-      Me.txtNumero.Location = New System.Drawing.Point(135, 16)
+      Me.txtNumero.Location = New System.Drawing.Point(145, 16)
       Me.txtNumero.MaxLength = 5
       Me.txtNumero.Name = "txtNumero"
       Me.txtNumero.ReadOnly = True
@@ -783,7 +783,7 @@ Public Class frmPiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(542, 335)
+      Me.TabPage2.Size = New System.Drawing.Size(552, 345)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -958,7 +958,7 @@ Public Class frmPiatti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(542, 335)
+      Me.TabPage6.Size = New System.Drawing.Size(552, 345)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -975,7 +975,7 @@ Public Class frmPiatti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(542, 335)
+      Me.txtNote.Size = New System.Drawing.Size(552, 345)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -992,7 +992,7 @@ Public Class frmPiatti
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(560, 417)
+      Me.ClientSize = New System.Drawing.Size(570, 427)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1434,7 +1434,7 @@ Public Class frmPiatti
          ImpostaIcona(Me)
 
          ' Imposta le dimensioni del form.
-         FormResize(560, 440)
+         FormResize(PIATTI_LARGHEZZA, PIATTI_ALTEZZA)
 
          If Me.Tag <> String.Empty Then
             With APiatti
