@@ -260,9 +260,9 @@ Public Class frmOpzioni
    Friend WithEvents txtDescrizioneTassaSogg As TextBox
    Public WithEvents Label54 As Label
    Friend WithEvents cmbMinutiOccupazioneTavolo As ComboBox
-   Public WithEvents Label56 As Label
+   Public WithEvents lblMinutiOccupazioneTavolo As Label
    Friend WithEvents ckbGestioneTavoliATempo As CheckBox
-   Friend WithEvents Label57 As Label
+   Friend WithEvents lblDenominazioneCamerieri As Label
    Friend WithEvents cmbDenominazioneCamerieri As ComboBox
    Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -328,9 +328,9 @@ Public Class frmOpzioni
       Me.ckbNotificaTavAgent = New System.Windows.Forms.CheckBox()
       Me.GroupBox3 = New System.Windows.Forms.GroupBox()
       Me.cmbDenominazioneCamerieri = New System.Windows.Forms.ComboBox()
-      Me.Label57 = New System.Windows.Forms.Label()
+      Me.lblDenominazioneCamerieri = New System.Windows.Forms.Label()
       Me.cmbMinutiOccupazioneTavolo = New System.Windows.Forms.ComboBox()
-      Me.Label56 = New System.Windows.Forms.Label()
+      Me.lblMinutiOccupazioneTavolo = New System.Windows.Forms.Label()
       Me.ckbGestioneTavoliATempo = New System.Windows.Forms.CheckBox()
       Me.ckbEffettiSonoriPos = New System.Windows.Forms.CheckBox()
       Me.txtServizioRistorante = New System.Windows.Forms.TextBox()
@@ -1186,9 +1186,9 @@ Public Class frmOpzioni
       'GroupBox3
       '
       Me.GroupBox3.Controls.Add(Me.cmbDenominazioneCamerieri)
-      Me.GroupBox3.Controls.Add(Me.Label57)
+      Me.GroupBox3.Controls.Add(Me.lblDenominazioneCamerieri)
       Me.GroupBox3.Controls.Add(Me.cmbMinutiOccupazioneTavolo)
-      Me.GroupBox3.Controls.Add(Me.Label56)
+      Me.GroupBox3.Controls.Add(Me.lblMinutiOccupazioneTavolo)
       Me.GroupBox3.Controls.Add(Me.ckbGestioneTavoliATempo)
       Me.GroupBox3.Controls.Add(Me.ckbEffettiSonoriPos)
       Me.GroupBox3.Controls.Add(Me.txtServizioRistorante)
@@ -1208,46 +1208,46 @@ Public Class frmOpzioni
       '
       Me.cmbDenominazioneCamerieri.FormattingEnabled = True
       Me.cmbDenominazioneCamerieri.Items.AddRange(New Object() {"Camerieri"})
-      Me.cmbDenominazioneCamerieri.Location = New System.Drawing.Point(494, 95)
+      Me.cmbDenominazioneCamerieri.Location = New System.Drawing.Point(494, 127)
       Me.cmbDenominazioneCamerieri.Name = "cmbDenominazioneCamerieri"
       Me.cmbDenominazioneCamerieri.Size = New System.Drawing.Size(192, 21)
       Me.cmbDenominazioneCamerieri.TabIndex = 5
       '
-      'Label57
+      'lblDenominazioneCamerieri
       '
-      Me.Label57.AutoSize = True
-      Me.Label57.Location = New System.Drawing.Point(294, 96)
-      Me.Label57.Name = "Label57"
-      Me.Label57.Size = New System.Drawing.Size(183, 13)
-      Me.Label57.TabIndex = 196
-      Me.Label57.Text = "Denominazione Anagrafica Camerieri:"
+      Me.lblDenominazioneCamerieri.AutoSize = True
+      Me.lblDenominazioneCamerieri.Location = New System.Drawing.Point(294, 128)
+      Me.lblDenominazioneCamerieri.Name = "lblDenominazioneCamerieri"
+      Me.lblDenominazioneCamerieri.Size = New System.Drawing.Size(183, 13)
+      Me.lblDenominazioneCamerieri.TabIndex = 196
+      Me.lblDenominazioneCamerieri.Text = "Denominazione Anagrafica Camerieri:"
       '
       'cmbMinutiOccupazioneTavolo
       '
       Me.cmbMinutiOccupazioneTavolo.Items.AddRange(New Object() {"10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60"})
-      Me.cmbMinutiOccupazioneTavolo.Location = New System.Drawing.Point(577, 64)
+      Me.cmbMinutiOccupazioneTavolo.Location = New System.Drawing.Point(577, 96)
       Me.cmbMinutiOccupazioneTavolo.Name = "cmbMinutiOccupazioneTavolo"
       Me.cmbMinutiOccupazioneTavolo.Size = New System.Drawing.Size(109, 21)
       Me.cmbMinutiOccupazioneTavolo.Sorted = True
       Me.cmbMinutiOccupazioneTavolo.TabIndex = 4
       '
-      'Label56
+      'lblMinutiOccupazioneTavolo
       '
-      Me.Label56.AutoSize = True
-      Me.Label56.BackColor = System.Drawing.Color.Transparent
-      Me.Label56.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label56.ForeColor = System.Drawing.Color.Black
-      Me.Label56.Location = New System.Drawing.Point(294, 64)
-      Me.Label56.Name = "Label56"
-      Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label56.Size = New System.Drawing.Size(264, 13)
-      Me.Label56.TabIndex = 195
-      Me.Label56.Text = "Tempo massimo di occupazione di un Tavolo in minuti:"
+      Me.lblMinutiOccupazioneTavolo.AutoSize = True
+      Me.lblMinutiOccupazioneTavolo.BackColor = System.Drawing.Color.Transparent
+      Me.lblMinutiOccupazioneTavolo.Cursor = System.Windows.Forms.Cursors.Default
+      Me.lblMinutiOccupazioneTavolo.ForeColor = System.Drawing.Color.Black
+      Me.lblMinutiOccupazioneTavolo.Location = New System.Drawing.Point(294, 96)
+      Me.lblMinutiOccupazioneTavolo.Name = "lblMinutiOccupazioneTavolo"
+      Me.lblMinutiOccupazioneTavolo.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.lblMinutiOccupazioneTavolo.Size = New System.Drawing.Size(264, 13)
+      Me.lblMinutiOccupazioneTavolo.TabIndex = 195
+      Me.lblMinutiOccupazioneTavolo.Text = "Tempo massimo di occupazione di un Tavolo in minuti:"
       '
       'ckbGestioneTavoliATempo
       '
       Me.ckbGestioneTavoliATempo.AutoSize = True
-      Me.ckbGestioneTavoliATempo.Location = New System.Drawing.Point(297, 32)
+      Me.ckbGestioneTavoliATempo.Location = New System.Drawing.Point(297, 64)
       Me.ckbGestioneTavoliATempo.Name = "ckbGestioneTavoliATempo"
       Me.ckbGestioneTavoliATempo.Size = New System.Drawing.Size(170, 17)
       Me.ckbGestioneTavoliATempo.TabIndex = 3
@@ -1257,7 +1257,7 @@ Public Class frmOpzioni
       'ckbEffettiSonoriPos
       '
       Me.ckbEffettiSonoriPos.AutoSize = True
-      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(297, 128)
+      Me.ckbEffettiSonoriPos.Location = New System.Drawing.Point(297, 32)
       Me.ckbEffettiSonoriPos.Name = "ckbEffettiSonoriPos"
       Me.ckbEffettiSonoriPos.Size = New System.Drawing.Size(210, 17)
       Me.ckbEffettiSonoriPos.TabIndex = 6
@@ -2929,7 +2929,7 @@ Public Class frmOpzioni
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(781, 564)
+      Me.ClientSize = New System.Drawing.Size(791, 574)
       Me.Controls.Add(Me.cmdOK)
       Me.Controls.Add(Me.cmdAnnulla)
       Me.Controls.Add(Me.tabOpzioni)
@@ -4446,7 +4446,7 @@ Public Class frmOpzioni
             DenominazioneCamerieri = DENOMINAZIONE_CAMERIERI
          End If
 
-         ' Modifica al menu con la nuova denominazione.
+         ' Modifica il menu camerieri con la nuova denominazione.
          g_frmMain.eui_cmdArchiviAnagraficheCamerieri.Text = DenominazioneCamerieri
 
          ' IMPOSTAZIONI PER LE PRENOTAZIONI DEI TAVOLI FATTE DA INTERNET. (WWW.TAVOLOSO.IT)
@@ -6060,6 +6060,25 @@ Public Class frmOpzioni
             cmbStampanteScontrini.Items.Clear()
             CaricaListaStampanti(cmbStampanteScontrini)
             cmbStampanteScontrini.SelectedIndex = 0
+         End If
+
+         ' Impostazioni per il modulo NightClub.
+         If moduloAttivo.NightClub = True Then
+            ckbGestioneTavoliATempo.Enabled = True
+
+            lblMinutiOccupazioneTavolo.Enabled = True
+            cmbMinutiOccupazioneTavolo.Enabled = True
+
+            lblDenominazioneCamerieri.Enabled = True
+            cmbDenominazioneCamerieri.Enabled = True
+         Else
+            ckbGestioneTavoliATempo.Enabled = False
+
+            lblMinutiOccupazioneTavolo.Enabled = False
+            cmbMinutiOccupazioneTavolo.Enabled = False
+
+            lblDenominazioneCamerieri.Enabled = False
+            cmbDenominazioneCamerieri.Enabled = False
          End If
 
          ' Reparti.

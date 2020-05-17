@@ -35,6 +35,7 @@
    End Sub
 
    Private Sub CambiaCameriere_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+      Me.Text = "Cambia " & DenominazioneCamerieri
       CaricaListaCamerieri(eui_cmbCameriere, "Camerieri")
       eui_cmbCameriere.SelectedItem = selCameriere
    End Sub

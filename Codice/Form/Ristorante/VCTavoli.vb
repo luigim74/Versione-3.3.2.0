@@ -220,7 +220,7 @@ Public Class frmVCTavoli
    Friend WithEvents cmd4 As System.Windows.Forms.Button
    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
    Friend WithEvents Label2 As System.Windows.Forms.Label
-   Friend WithEvents Label7 As System.Windows.Forms.Label
+   Friend WithEvents lblEtichettaCameriere As System.Windows.Forms.Label
    Friend WithEvents lblData As System.Windows.Forms.Label
    Friend WithEvents lblOra As System.Windows.Forms.Label
    Public WithEvents Timer1 As System.Windows.Forms.Timer
@@ -287,7 +287,7 @@ Public Class frmVCTavoli
       Me.lblData = New System.Windows.Forms.Label()
       Me.lblOra = New System.Windows.Forms.Label()
       Me.Label2 = New System.Windows.Forms.Label()
-      Me.Label7 = New System.Windows.Forms.Label()
+      Me.lblEtichettaCameriere = New System.Windows.Forms.Label()
       Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
       Me.dtpData = New System.Windows.Forms.DateTimePicker()
       Me.Label6 = New System.Windows.Forms.Label()
@@ -372,7 +372,7 @@ Public Class frmVCTavoli
       Me.lblTavolo.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblTavolo.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblTavolo.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblTavolo.Location = New System.Drawing.Point(741, 61)
+      Me.lblTavolo.Location = New System.Drawing.Point(781, 61)
       Me.lblTavolo.Name = "lblTavolo"
       Me.lblTavolo.Size = New System.Drawing.Size(128, 40)
       Me.lblTavolo.TabIndex = 76
@@ -592,7 +592,7 @@ Public Class frmVCTavoli
       Me.lblData.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblData.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblData.Location = New System.Drawing.Point(581, 8)
+      Me.lblData.Location = New System.Drawing.Point(621, 8)
       Me.lblData.Name = "lblData"
       Me.lblData.Size = New System.Drawing.Size(280, 24)
       Me.lblData.TabIndex = 79
@@ -605,7 +605,7 @@ Public Class frmVCTavoli
       Me.lblOra.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblOra.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblOra.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblOra.Location = New System.Drawing.Point(581, 29)
+      Me.lblOra.Location = New System.Drawing.Point(621, 29)
       Me.lblOra.Name = "lblOra"
       Me.lblOra.Size = New System.Drawing.Size(280, 16)
       Me.lblOra.TabIndex = 80
@@ -618,25 +618,25 @@ Public Class frmVCTavoli
       Me.Label2.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label2.Location = New System.Drawing.Point(565, 0)
+      Me.Label2.Location = New System.Drawing.Point(605, 0)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(312, 184)
       Me.Label2.TabIndex = 81
       Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
       '
-      'Label7
+      'lblEtichettaCameriere
       '
-      Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label7.AutoSize = True
-      Me.Label7.BackColor = System.Drawing.Color.MidnightBlue
-      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label7.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label7.Location = New System.Drawing.Point(581, 120)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(84, 16)
-      Me.Label7.TabIndex = 83
-      Me.Label7.Text = "Cameriere:"
-      Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+      Me.lblEtichettaCameriere.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.lblEtichettaCameriere.AutoSize = True
+      Me.lblEtichettaCameriere.BackColor = System.Drawing.Color.MidnightBlue
+      Me.lblEtichettaCameriere.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblEtichettaCameriere.ForeColor = System.Drawing.Color.DodgerBlue
+      Me.lblEtichettaCameriere.Location = New System.Drawing.Point(621, 120)
+      Me.lblEtichettaCameriere.Name = "lblEtichettaCameriere"
+      Me.lblEtichettaCameriere.Size = New System.Drawing.Size(84, 16)
+      Me.lblEtichettaCameriere.TabIndex = 83
+      Me.lblEtichettaCameriere.Text = "Cameriere:"
+      Me.lblEtichettaCameriere.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
       '
       'Timer1
       '
@@ -656,7 +656,7 @@ Public Class frmVCTavoli
       Me.Label6.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label6.Location = New System.Drawing.Point(573, 61)
+      Me.Label6.Location = New System.Drawing.Point(613, 61)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(176, 40)
       Me.Label6.TabIndex = 82
@@ -670,7 +670,7 @@ Public Class frmVCTavoli
       Me.lblPosti.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblPosti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblPosti.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblPosti.Location = New System.Drawing.Point(628, 96)
+      Me.lblPosti.Location = New System.Drawing.Point(668, 96)
       Me.lblPosti.Name = "lblPosti"
       Me.lblPosti.Size = New System.Drawing.Size(16, 16)
       Me.lblPosti.TabIndex = 247
@@ -684,7 +684,7 @@ Public Class frmVCTavoli
       Me.lblCoperti.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblCoperti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCoperti.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblCoperti.Location = New System.Drawing.Point(738, 96)
+      Me.lblCoperti.Location = New System.Drawing.Point(778, 96)
       Me.lblCoperti.Name = "lblCoperti"
       Me.lblCoperti.Size = New System.Drawing.Size(16, 16)
       Me.lblCoperti.TabIndex = 248
@@ -698,7 +698,7 @@ Public Class frmVCTavoli
       Me.LblPostiLiberi.BackColor = System.Drawing.Color.MidnightBlue
       Me.LblPostiLiberi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.LblPostiLiberi.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.LblPostiLiberi.Location = New System.Drawing.Point(829, 96)
+      Me.LblPostiLiberi.Location = New System.Drawing.Point(869, 96)
       Me.LblPostiLiberi.Name = "LblPostiLiberi"
       Me.LblPostiLiberi.RightToLeft = System.Windows.Forms.RightToLeft.Yes
       Me.LblPostiLiberi.Size = New System.Drawing.Size(16, 16)
@@ -713,7 +713,7 @@ Public Class frmVCTavoli
       Me.lblPrenAsporto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
       Me.lblPrenAsporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblPrenAsporto.ForeColor = System.Drawing.Color.Black
-      Me.lblPrenAsporto.Location = New System.Drawing.Point(565, 184)
+      Me.lblPrenAsporto.Location = New System.Drawing.Point(605, 184)
       Me.lblPrenAsporto.Name = "lblPrenAsporto"
       Me.lblPrenAsporto.Size = New System.Drawing.Size(312, 22)
       Me.lblPrenAsporto.TabIndex = 250
@@ -733,10 +733,10 @@ Public Class frmVCTavoli
       Me.lstvDettagli.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
       Me.lstvDettagli.HideSelection = False
       Me.lstvDettagli.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
-      Me.lstvDettagli.Location = New System.Drawing.Point(565, 205)
+      Me.lstvDettagli.Location = New System.Drawing.Point(605, 205)
       Me.lstvDettagli.MultiSelect = False
       Me.lstvDettagli.Name = "lstvDettagli"
-      Me.lstvDettagli.Size = New System.Drawing.Size(312, 311)
+      Me.lstvDettagli.Size = New System.Drawing.Size(312, 336)
       Me.lstvDettagli.TabIndex = 12
       Me.lstvDettagli.UseCompatibleStateImageBehavior = False
       Me.lstvDettagli.View = System.Windows.Forms.View.Details
@@ -789,7 +789,7 @@ Public Class frmVCTavoli
       Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
       Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label16.ForeColor = System.Drawing.Color.Black
-      Me.Label16.Location = New System.Drawing.Point(565, 515)
+      Me.Label16.Location = New System.Drawing.Point(605, 540)
       Me.Label16.Name = "Label16"
       Me.Label16.Size = New System.Drawing.Size(312, 138)
       Me.Label16.TabIndex = 260
@@ -805,7 +805,7 @@ Public Class frmVCTavoli
       Me.pnlPiantina.Controls.Add(Me.picImmagine)
       Me.pnlPiantina.Location = New System.Drawing.Point(149, 8)
       Me.pnlPiantina.Name = "pnlPiantina"
-      Me.pnlPiantina.Size = New System.Drawing.Size(277, 766)
+      Me.pnlPiantina.Size = New System.Drawing.Size(317, 791)
       Me.pnlPiantina.TabIndex = 0
       '
       'picImmagine
@@ -815,7 +815,7 @@ Public Class frmVCTavoli
       Me.picImmagine.Image = CType(resources.GetObject("picImmagine.Image"), System.Drawing.Image)
       Me.picImmagine.Location = New System.Drawing.Point(0, 0)
       Me.picImmagine.Name = "picImmagine"
-      Me.picImmagine.Size = New System.Drawing.Size(275, 764)
+      Me.picImmagine.Size = New System.Drawing.Size(315, 789)
       Me.picImmagine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
       Me.picImmagine.TabIndex = 228
       Me.picImmagine.TabStop = False
@@ -827,7 +827,7 @@ Public Class frmVCTavoli
       Me.lblCameriere.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblCameriere.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCameriere.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblCameriere.Location = New System.Drawing.Point(662, 120)
+      Me.lblCameriere.Location = New System.Drawing.Point(773, 120)
       Me.lblCameriere.Name = "lblCameriere"
       Me.lblCameriere.Size = New System.Drawing.Size(16, 16)
       Me.lblCameriere.TabIndex = 263
@@ -847,9 +847,9 @@ Public Class frmVCTavoli
       Me.pnlLegenda.Controls.Add(Me.lblConfermata)
       Me.pnlLegenda.Controls.Add(Me.Label3)
       Me.pnlLegenda.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.pnlLegenda.Location = New System.Drawing.Point(0, 781)
+      Me.pnlLegenda.Location = New System.Drawing.Point(0, 806)
       Me.pnlLegenda.Name = "pnlLegenda"
-      Me.pnlLegenda.Size = New System.Drawing.Size(880, 16)
+      Me.pnlLegenda.Size = New System.Drawing.Size(920, 16)
       Me.pnlLegenda.TabIndex = 264
       '
       'lblInvioComande
@@ -882,7 +882,7 @@ Public Class frmVCTavoli
       Me.Label8.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label8.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label8.Location = New System.Drawing.Point(581, 144)
+      Me.Label8.Location = New System.Drawing.Point(621, 144)
       Me.Label8.Name = "Label8"
       Me.Label8.Size = New System.Drawing.Size(119, 16)
       Me.Label8.TabIndex = 265
@@ -896,7 +896,7 @@ Public Class frmVCTavoli
       Me.Label11.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label11.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label11.Location = New System.Drawing.Point(733, 144)
+      Me.Label11.Location = New System.Drawing.Point(773, 144)
       Me.Label11.Name = "Label11"
       Me.Label11.Size = New System.Drawing.Size(95, 16)
       Me.Label11.TabIndex = 266
@@ -915,7 +915,7 @@ Public Class frmVCTavoli
       Me.lblLiberi.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblLiberi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblLiberi.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblLiberi.Location = New System.Drawing.Point(821, 144)
+      Me.lblLiberi.Location = New System.Drawing.Point(861, 144)
       Me.lblLiberi.Name = "lblLiberi"
       Me.lblLiberi.Size = New System.Drawing.Size(16, 16)
       Me.lblLiberi.TabIndex = 267
@@ -929,7 +929,7 @@ Public Class frmVCTavoli
       Me.lblOccupati.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblOccupati.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblOccupati.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblOccupati.Location = New System.Drawing.Point(693, 144)
+      Me.lblOccupati.Location = New System.Drawing.Point(733, 144)
       Me.lblOccupati.Name = "lblOccupati"
       Me.lblOccupati.Size = New System.Drawing.Size(16, 16)
       Me.lblOccupati.TabIndex = 268
@@ -943,7 +943,7 @@ Public Class frmVCTavoli
       Me.Label4.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label4.Location = New System.Drawing.Point(581, 96)
+      Me.Label4.Location = New System.Drawing.Point(621, 96)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(47, 16)
       Me.Label4.TabIndex = 269
@@ -957,7 +957,7 @@ Public Class frmVCTavoli
       Me.Label12.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label12.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label12.Location = New System.Drawing.Point(677, 96)
+      Me.Label12.Location = New System.Drawing.Point(717, 96)
       Me.Label12.Name = "Label12"
       Me.Label12.Size = New System.Drawing.Size(62, 16)
       Me.Label12.TabIndex = 270
@@ -971,7 +971,7 @@ Public Class frmVCTavoli
       Me.Label13.BackColor = System.Drawing.Color.MidnightBlue
       Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label13.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.Label13.Location = New System.Drawing.Point(781, 96)
+      Me.Label13.Location = New System.Drawing.Point(821, 96)
       Me.Label13.Name = "Label13"
       Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label13.Size = New System.Drawing.Size(51, 16)
@@ -986,7 +986,7 @@ Public Class frmVCTavoli
       Me.lblOraOcc.BackColor = System.Drawing.Color.MidnightBlue
       Me.lblOraOcc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblOraOcc.ForeColor = System.Drawing.Color.DodgerBlue
-      Me.lblOraOcc.Location = New System.Drawing.Point(577, 56)
+      Me.lblOraOcc.Location = New System.Drawing.Point(617, 56)
       Me.lblOraOcc.Name = "lblOraOcc"
       Me.lblOraOcc.Size = New System.Drawing.Size(15, 13)
       Me.lblOraOcc.TabIndex = 272
@@ -1001,7 +1001,7 @@ Public Class frmVCTavoli
       Me.txtNotePren.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.txtNotePren.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNotePren.ForeColor = System.Drawing.Color.Black
-      Me.txtNotePren.Location = New System.Drawing.Point(567, 522)
+      Me.txtNotePren.Location = New System.Drawing.Point(607, 547)
       Me.txtNotePren.MaxLength = 0
       Me.txtNotePren.Multiline = True
       Me.txtNotePren.Name = "txtNotePren"
@@ -1030,7 +1030,7 @@ Public Class frmVCTavoli
       Me.netBtn_Occupa.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Occupa.CornerRadius = 2
       Me.netBtn_Occupa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Occupa.Location = New System.Drawing.Point(431, 122)
+      Me.netBtn_Occupa.Location = New System.Drawing.Point(471, 122)
       Me.netBtn_Occupa.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Occupa.Name = "netBtn_Occupa"
       Me.netBtn_Occupa.Size = New System.Drawing.Size(130, 56)
@@ -1048,7 +1048,7 @@ Public Class frmVCTavoli
       Me.netBtn_Apri.ColorTop = System.Drawing.Color.White
       Me.netBtn_Apri.CornerRadius = 2
       Me.netBtn_Apri.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Apri.Location = New System.Drawing.Point(431, 65)
+      Me.netBtn_Apri.Location = New System.Drawing.Point(471, 65)
       Me.netBtn_Apri.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Apri.Name = "netBtn_Apri"
       Me.netBtn_Apri.Size = New System.Drawing.Size(130, 56)
@@ -1066,7 +1066,7 @@ Public Class frmVCTavoli
       Me.netBtn_Libera.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Libera.CornerRadius = 2
       Me.netBtn_Libera.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Libera.Location = New System.Drawing.Point(431, 179)
+      Me.netBtn_Libera.Location = New System.Drawing.Point(471, 179)
       Me.netBtn_Libera.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Libera.Name = "netBtn_Libera"
       Me.netBtn_Libera.Size = New System.Drawing.Size(130, 56)
@@ -1084,7 +1084,7 @@ Public Class frmVCTavoli
       Me.netBtn_Sposta.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Sposta.CornerRadius = 2
       Me.netBtn_Sposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Sposta.Location = New System.Drawing.Point(431, 236)
+      Me.netBtn_Sposta.Location = New System.Drawing.Point(471, 236)
       Me.netBtn_Sposta.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Sposta.Name = "netBtn_Sposta"
       Me.netBtn_Sposta.Size = New System.Drawing.Size(130, 56)
@@ -1102,7 +1102,7 @@ Public Class frmVCTavoli
       Me.netBtn_Asporto.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Asporto.CornerRadius = 2
       Me.netBtn_Asporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Asporto.Location = New System.Drawing.Point(431, 351)
+      Me.netBtn_Asporto.Location = New System.Drawing.Point(471, 351)
       Me.netBtn_Asporto.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Asporto.Name = "netBtn_Asporto"
       Me.netBtn_Asporto.Size = New System.Drawing.Size(130, 56)
@@ -1120,7 +1120,7 @@ Public Class frmVCTavoli
       Me.netBtn_Prenota.ColorTop = System.Drawing.Color.AliceBlue
       Me.netBtn_Prenota.CornerRadius = 2
       Me.netBtn_Prenota.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Prenota.Location = New System.Drawing.Point(431, 293)
+      Me.netBtn_Prenota.Location = New System.Drawing.Point(471, 293)
       Me.netBtn_Prenota.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Prenota.Name = "netBtn_Prenota"
       Me.netBtn_Prenota.Size = New System.Drawing.Size(130, 56)
@@ -1137,7 +1137,7 @@ Public Class frmVCTavoli
       Me.netBtn_Esauriti.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Esauriti.CornerRadius = 2
       Me.netBtn_Esauriti.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Esauriti.Location = New System.Drawing.Point(431, 409)
+      Me.netBtn_Esauriti.Location = New System.Drawing.Point(471, 409)
       Me.netBtn_Esauriti.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Esauriti.Name = "netBtn_Esauriti"
       Me.netBtn_Esauriti.Size = New System.Drawing.Size(130, 56)
@@ -1155,7 +1155,7 @@ Public Class frmVCTavoli
       Me.netBtn_PuntoCassa.ColorTop = System.Drawing.Color.White
       Me.netBtn_PuntoCassa.CornerRadius = 2
       Me.netBtn_PuntoCassa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_PuntoCassa.Location = New System.Drawing.Point(565, 718)
+      Me.netBtn_PuntoCassa.Location = New System.Drawing.Point(605, 743)
       Me.netBtn_PuntoCassa.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_PuntoCassa.Name = "netBtn_PuntoCassa"
       Me.netBtn_PuntoCassa.Size = New System.Drawing.Size(155, 56)
@@ -1173,7 +1173,7 @@ Public Class frmVCTavoli
       Me.netBtn_Esci.ColorTop = System.Drawing.Color.White
       Me.netBtn_Esci.CornerRadius = 2
       Me.netBtn_Esci.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Esci.Location = New System.Drawing.Point(722, 718)
+      Me.netBtn_Esci.Location = New System.Drawing.Point(762, 743)
       Me.netBtn_Esci.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Esci.Name = "netBtn_Esci"
       Me.netBtn_Esci.Size = New System.Drawing.Size(155, 56)
@@ -1192,10 +1192,10 @@ Public Class frmVCTavoli
       Me.netBtn_BarraTavoli.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_BarraTavoli.CornerRadius = 2
       Me.netBtn_BarraTavoli.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_BarraTavoli.Location = New System.Drawing.Point(219, 719)
+      Me.netBtn_BarraTavoli.Location = New System.Drawing.Point(341, 744)
       Me.netBtn_BarraTavoli.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_BarraTavoli.Name = "netBtn_BarraTavoli"
-      Me.netBtn_BarraTavoli.Size = New System.Drawing.Size(138, 56)
+      Me.netBtn_BarraTavoli.Size = New System.Drawing.Size(56, 56)
       Me.netBtn_BarraTavoli.TabIndex = 316
       Me.netBtn_BarraTavoli.Tag = ""
       Me.netBtn_BarraTavoli.TextButton = ""
@@ -1213,7 +1213,7 @@ Public Class frmVCTavoli
       Me.netBtn_TavoliSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_TavoliSu.Image = CType(resources.GetObject("netBtn_TavoliSu.Image"), System.Drawing.Image)
       Me.netBtn_TavoliSu.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_TavoliSu.Location = New System.Drawing.Point(358, 719)
+      Me.netBtn_TavoliSu.Location = New System.Drawing.Point(398, 744)
       Me.netBtn_TavoliSu.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_TavoliSu.Name = "netBtn_TavoliSu"
       Me.netBtn_TavoliSu.Size = New System.Drawing.Size(68, 56)
@@ -1233,7 +1233,7 @@ Public Class frmVCTavoli
       Me.netBtn_TavoliGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_TavoliGiù.Image = CType(resources.GetObject("netBtn_TavoliGiù.Image"), System.Drawing.Image)
       Me.netBtn_TavoliGiù.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_TavoliGiù.Location = New System.Drawing.Point(150, 719)
+      Me.netBtn_TavoliGiù.Location = New System.Drawing.Point(150, 744)
       Me.netBtn_TavoliGiù.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_TavoliGiù.Name = "netBtn_TavoliGiù"
       Me.netBtn_TavoliGiù.Size = New System.Drawing.Size(68, 56)
@@ -1253,7 +1253,7 @@ Public Class frmVCTavoli
       Me.netBtn_SalaSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_SalaSu.Image = CType(resources.GetObject("netBtn_SalaSu.Image"), System.Drawing.Image)
       Me.netBtn_SalaSu.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_SalaSu.Location = New System.Drawing.Point(77, 719)
+      Me.netBtn_SalaSu.Location = New System.Drawing.Point(77, 744)
       Me.netBtn_SalaSu.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_SalaSu.Name = "netBtn_SalaSu"
       Me.netBtn_SalaSu.Size = New System.Drawing.Size(68, 56)
@@ -1273,7 +1273,7 @@ Public Class frmVCTavoli
       Me.netBtn_SalaGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_SalaGiù.Image = CType(resources.GetObject("netBtn_SalaGiù.Image"), System.Drawing.Image)
       Me.netBtn_SalaGiù.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_SalaGiù.Location = New System.Drawing.Point(8, 719)
+      Me.netBtn_SalaGiù.Location = New System.Drawing.Point(8, 744)
       Me.netBtn_SalaGiù.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_SalaGiù.Name = "netBtn_SalaGiù"
       Me.netBtn_SalaGiù.Size = New System.Drawing.Size(68, 56)
@@ -1286,7 +1286,7 @@ Public Class frmVCTavoli
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.pnlSale.Location = New System.Drawing.Point(8, 8)
       Me.pnlSale.Name = "pnlSale"
-      Me.pnlSale.Size = New System.Drawing.Size(138, 705)
+      Me.pnlSale.Size = New System.Drawing.Size(138, 730)
       Me.pnlSale.TabIndex = 310
       '
       'pnlPulsanti
@@ -1297,7 +1297,7 @@ Public Class frmVCTavoli
       Me.pnlPulsanti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
       Me.pnlPulsanti.Location = New System.Drawing.Point(149, 8)
       Me.pnlPulsanti.Name = "pnlPulsanti"
-      Me.pnlPulsanti.Size = New System.Drawing.Size(277, 704)
+      Me.pnlPulsanti.Size = New System.Drawing.Size(317, 729)
       Me.pnlPulsanti.TabIndex = 311
       '
       'netBtn_VisualizzaQuadro
@@ -1311,7 +1311,7 @@ Public Class frmVCTavoli
       Me.netBtn_VisualizzaQuadro.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_VisualizzaQuadro.CornerRadius = 2
       Me.netBtn_VisualizzaQuadro.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_VisualizzaQuadro.Location = New System.Drawing.Point(431, 580)
+      Me.netBtn_VisualizzaQuadro.Location = New System.Drawing.Point(471, 523)
       Me.netBtn_VisualizzaQuadro.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_VisualizzaQuadro.Name = "netBtn_VisualizzaQuadro"
       Me.netBtn_VisualizzaQuadro.Size = New System.Drawing.Size(130, 56)
@@ -1329,7 +1329,7 @@ Public Class frmVCTavoli
       Me.netBtn_Listino.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Listino.CornerRadius = 2
       Me.netBtn_Listino.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Listino.Location = New System.Drawing.Point(431, 8)
+      Me.netBtn_Listino.Location = New System.Drawing.Point(471, 8)
       Me.netBtn_Listino.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Listino.Name = "netBtn_Listino"
       Me.netBtn_Listino.Size = New System.Drawing.Size(130, 56)
@@ -1347,7 +1347,7 @@ Public Class frmVCTavoli
       Me.netBtn_PosizionaTavoli.ColorTop = System.Drawing.Color.White
       Me.netBtn_PosizionaTavoli.CornerRadius = 2
       Me.netBtn_PosizionaTavoli.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_PosizionaTavoli.Location = New System.Drawing.Point(431, 637)
+      Me.netBtn_PosizionaTavoli.Location = New System.Drawing.Point(471, 580)
       Me.netBtn_PosizionaTavoli.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_PosizionaTavoli.Name = "netBtn_PosizionaTavoli"
       Me.netBtn_PosizionaTavoli.Size = New System.Drawing.Size(130, 56)
@@ -1357,7 +1357,7 @@ Public Class frmVCTavoli
       '
       'netBtn_Impostazioni
       '
-      Me.netBtn_Impostazioni.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.netBtn_Impostazioni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.netBtn_Impostazioni.ColorBottom = System.Drawing.Color.Black
       Me.netBtn_Impostazioni.ColorDisabled = System.Drawing.Color.DimGray
       Me.netBtn_Impostazioni.ColorLight = System.Drawing.SystemColors.HighlightText
@@ -1366,10 +1366,10 @@ Public Class frmVCTavoli
       Me.netBtn_Impostazioni.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Impostazioni.CornerRadius = 2
       Me.netBtn_Impostazioni.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Impostazioni.Location = New System.Drawing.Point(431, 523)
+      Me.netBtn_Impostazioni.Location = New System.Drawing.Point(219, 744)
       Me.netBtn_Impostazioni.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Impostazioni.Name = "netBtn_Impostazioni"
-      Me.netBtn_Impostazioni.Size = New System.Drawing.Size(130, 56)
+      Me.netBtn_Impostazioni.Size = New System.Drawing.Size(121, 56)
       Me.netBtn_Impostazioni.TabIndex = 320
       Me.netBtn_Impostazioni.TextButton = "Impostazioni"
       '
@@ -1386,7 +1386,7 @@ Public Class frmVCTavoli
       Me.netBtn_ListaPrenSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_ListaPrenSu.Image = CType(resources.GetObject("netBtn_ListaPrenSu.Image"), System.Drawing.Image)
       Me.netBtn_ListaPrenSu.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_ListaPrenSu.Location = New System.Drawing.Point(722, 657)
+      Me.netBtn_ListaPrenSu.Location = New System.Drawing.Point(762, 682)
       Me.netBtn_ListaPrenSu.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_ListaPrenSu.Name = "netBtn_ListaPrenSu"
       Me.netBtn_ListaPrenSu.Size = New System.Drawing.Size(155, 56)
@@ -1406,7 +1406,7 @@ Public Class frmVCTavoli
       Me.netBtn_ListaPrenGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.netBtn_ListaPrenGiù.Image = CType(resources.GetObject("netBtn_ListaPrenGiù.Image"), System.Drawing.Image)
       Me.netBtn_ListaPrenGiù.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.netBtn_ListaPrenGiù.Location = New System.Drawing.Point(565, 657)
+      Me.netBtn_ListaPrenGiù.Location = New System.Drawing.Point(605, 682)
       Me.netBtn_ListaPrenGiù.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_ListaPrenGiù.Name = "netBtn_ListaPrenGiù"
       Me.netBtn_ListaPrenGiù.Size = New System.Drawing.Size(155, 56)
@@ -1424,7 +1424,7 @@ Public Class frmVCTavoli
       Me.netBtn_Timer.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_Timer.CornerRadius = 2
       Me.netBtn_Timer.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Timer.Location = New System.Drawing.Point(431, 694)
+      Me.netBtn_Timer.Location = New System.Drawing.Point(471, 637)
       Me.netBtn_Timer.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_Timer.Name = "netBtn_Timer"
       Me.netBtn_Timer.Size = New System.Drawing.Size(130, 56)
@@ -1442,7 +1442,7 @@ Public Class frmVCTavoli
       Me.netBtn_CambiaCameriere.ColorTop = System.Drawing.SystemColors.ControlLightLight
       Me.netBtn_CambiaCameriere.CornerRadius = 2
       Me.netBtn_CambiaCameriere.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_CambiaCameriere.Location = New System.Drawing.Point(431, 466)
+      Me.netBtn_CambiaCameriere.Location = New System.Drawing.Point(471, 466)
       Me.netBtn_CambiaCameriere.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
       Me.netBtn_CambiaCameriere.Name = "netBtn_CambiaCameriere"
       Me.netBtn_CambiaCameriere.Size = New System.Drawing.Size(130, 56)
@@ -1453,16 +1453,16 @@ Public Class frmVCTavoli
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(880, 797)
+      Me.ClientSize = New System.Drawing.Size(920, 822)
+      Me.Controls.Add(Me.netBtn_BarraTavoli)
+      Me.Controls.Add(Me.netBtn_Impostazioni)
       Me.Controls.Add(Me.netBtn_CambiaCameriere)
       Me.Controls.Add(Me.netBtn_Timer)
       Me.Controls.Add(Me.txtNotePren)
       Me.Controls.Add(Me.netBtn_ListaPrenSu)
       Me.Controls.Add(Me.netBtn_ListaPrenGiù)
-      Me.Controls.Add(Me.netBtn_Impostazioni)
       Me.Controls.Add(Me.netBtn_PosizionaTavoli)
       Me.Controls.Add(Me.netBtn_Listino)
-      Me.Controls.Add(Me.netBtn_BarraTavoli)
       Me.Controls.Add(Me.netBtn_TavoliSu)
       Me.Controls.Add(Me.netBtn_TavoliGiù)
       Me.Controls.Add(Me.netBtn_VisualizzaQuadro)
@@ -1493,7 +1493,7 @@ Public Class frmVCTavoli
       Me.Controls.Add(Me.LblPostiLiberi)
       Me.Controls.Add(Me.lblCoperti)
       Me.Controls.Add(Me.lblPosti)
-      Me.Controls.Add(Me.Label7)
+      Me.Controls.Add(Me.lblEtichettaCameriere)
       Me.Controls.Add(Me.pnlLegenda)
       Me.Controls.Add(Me.lblPrenAsporto)
       Me.Controls.Add(Me.dtpData)
@@ -1598,9 +1598,6 @@ Public Class frmVCTavoli
 
          ' Tasto funzione - Esci.
          LeggiColoriTastiFunzione("Esci", netBtn_Esci, TAB_POS_IMPOSTAZIONI_TAVOLI)
-
-         ' Tasto funzione - Ferma Timer.
-         netBtn_Timer.Visible = False
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2134,7 +2131,6 @@ Public Class frmVCTavoli
 
       End Try
    End Sub
-
 
    Public Function LeggiNumCopertiPren(ByVal tabella As String, ByVal val As String, ByVal id As Integer) As Integer
       ' Dichiara un oggetto connessione.
@@ -4262,6 +4258,7 @@ Public Class frmVCTavoli
             netBtn_TavoliGiù.Visible = True
             netBtn_BarraTavoli.Visible = True
             netBtn_TavoliSu.Visible = True
+            netBtn_Impostazioni.Visible = True
             netBtn_PosizionaTavoli.Visible = False
             netBtn_VisualizzaQuadro.TextButton = TESTO_BTN_QUADRO_PIANTINA
          Else
@@ -4270,6 +4267,7 @@ Public Class frmVCTavoli
             netBtn_TavoliGiù.Visible = False
             netBtn_BarraTavoli.Visible = False
             netBtn_TavoliSu.Visible = False
+            netBtn_Impostazioni.Visible = False
             pnlPiantina.Visible = True
             netBtn_PosizionaTavoli.Visible = True
             netBtn_VisualizzaQuadro.TextButton = TESTO_BTN_QUADRO_PULSANTI
@@ -4965,6 +4963,13 @@ Public Class frmVCTavoli
       ' Carica i dati dei tavoli.
       AggiornaVCTavoli()
 
+      ' Modifica il pulsante Cambia Camerieri con la nuova denominazione.
+      netBtn_CambiaCameriere.TextButton = "Cambia " & DenominazioneCamerieri
+      lblEtichettaCameriere.Text = DenominazioneCamerieri & ":"
+
+      ' Tasto funzione - Ferma Timer.
+      netBtn_Timer.Visible = False
+
       ' Attiva/Disattiva la gestione dei palmari.
       Timer3.Interval = FreqAggPalmare
 
@@ -5242,6 +5247,7 @@ Public Class frmVCTavoli
                netBtn_TavoliGiù.Visible = True
                netBtn_BarraTavoli.Visible = True
                netBtn_TavoliSu.Visible = True
+               netBtn_Impostazioni.Visible = True
                netBtn_PosizionaTavoli.Visible = False
                netBtn_VisualizzaQuadro.TextButton = TESTO_BTN_QUADRO_PIANTINA
                quadroPulsanti = True
@@ -5251,6 +5257,7 @@ Public Class frmVCTavoli
                netBtn_TavoliGiù.Visible = False
                netBtn_BarraTavoli.Visible = False
                netBtn_TavoliSu.Visible = False
+               netBtn_Impostazioni.Visible = False
                pnlPiantina.Visible = True
                netBtn_PosizionaTavoli.Visible = True
                netBtn_VisualizzaQuadro.TextButton = TESTO_BTN_QUADRO_PULSANTI

@@ -369,6 +369,11 @@ Public Class CodAccesso
             chiaveAttivazione = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PALMARI)
             nomeChiaveConfig = Modulo.NOME_PALMARI_CONFIG
 
+            ' TODO_A: NIGHT_CLUB
+         Case Modulo.NOME_NIGHT_CLUB
+            chiaveAttivazione = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB)
+            nomeChiaveConfig = Modulo.NOME_NIGHT_CLUB_CONFIG
+
          Case Modulo.NOME_PREN_ONLINE
             chiaveAttivazione = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE)
             nomeChiaveConfig = Modulo.NOME_PREN_ONLINE_CONFIG

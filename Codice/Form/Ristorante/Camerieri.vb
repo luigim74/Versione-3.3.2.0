@@ -114,7 +114,7 @@ Public Class frmCamerieri
    Public WithEvents Label8 As Label
    Friend WithEvents TabPage2 As TabPage
    Public WithEvents DataGrid1 As DataGrid
-   Friend WithEvents TabPage5 As TabPage
+   Friend WithEvents tbpStatisticheVendita As TabPage
    Friend WithEvents lvwStatistiche As ListView
    Friend WithEvents clnData As ColumnHeader
    Friend WithEvents clnCategoria As ColumnHeader
@@ -200,7 +200,7 @@ Public Class frmCamerieri
       Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.tbpStatisticheVendita = New System.Windows.Forms.TabPage()
       Me.txtTotaleSpettanza = New System.Windows.Forms.TextBox()
       Me.Label16 = New System.Windows.Forms.Label()
       Me.eui_ddwnFiltro = New Elegant.Ui.DropDown()
@@ -236,7 +236,7 @@ Public Class frmCamerieri
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage3.SuspendLayout()
       Me.TabPage4.SuspendLayout()
-      Me.TabPage5.SuspendLayout()
+      Me.tbpStatisticheVendita.SuspendLayout()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage6.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,7 +253,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(783, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(780, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -296,7 +296,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(783, 20)
+      Me.Panel1.Size = New System.Drawing.Size(780, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -315,7 +315,7 @@ Public Class frmCamerieri
       Me.TabControl1.Controls.Add(Me.TabPage1)
       Me.TabControl1.Controls.Add(Me.TabPage3)
       Me.TabControl1.Controls.Add(Me.TabPage4)
-      Me.TabControl1.Controls.Add(Me.TabPage5)
+      Me.TabControl1.Controls.Add(Me.tbpStatisticheVendita)
       Me.TabControl1.Controls.Add(Me.TabPage6)
       Me.TabControl1.Location = New System.Drawing.Point(0, 46)
       Me.TabControl1.Multiline = True
@@ -941,24 +941,24 @@ Public Class frmCamerieri
       Me.ColumnHeader6.Text = "Codice"
       Me.ColumnHeader6.Width = 0
       '
-      'TabPage5
+      'tbpStatisticheVendita
       '
-      Me.TabPage5.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage5.Controls.Add(Me.txtTotaleSpettanza)
-      Me.TabPage5.Controls.Add(Me.Label16)
-      Me.TabPage5.Controls.Add(Me.eui_ddwnFiltro)
-      Me.TabPage5.Controls.Add(Me.eui_cmdStatContabilizza)
-      Me.TabPage5.Controls.Add(Me.txtTotale)
-      Me.TabPage5.Controls.Add(Me.txtTotaleQuantità)
-      Me.TabPage5.Controls.Add(Me.Label14)
-      Me.TabPage5.Controls.Add(Me.Label12)
-      Me.TabPage5.Controls.Add(Me.lvwStatistiche)
-      Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-      Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage5.Size = New System.Drawing.Size(772, 397)
-      Me.TabPage5.TabIndex = 6
-      Me.TabPage5.Text = "Statistiche di vendita"
+      Me.tbpStatisticheVendita.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleSpettanza)
+      Me.tbpStatisticheVendita.Controls.Add(Me.Label16)
+      Me.tbpStatisticheVendita.Controls.Add(Me.eui_ddwnFiltro)
+      Me.tbpStatisticheVendita.Controls.Add(Me.eui_cmdStatContabilizza)
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotale)
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleQuantità)
+      Me.tbpStatisticheVendita.Controls.Add(Me.Label14)
+      Me.tbpStatisticheVendita.Controls.Add(Me.Label12)
+      Me.tbpStatisticheVendita.Controls.Add(Me.lvwStatistiche)
+      Me.tbpStatisticheVendita.Location = New System.Drawing.Point(4, 22)
+      Me.tbpStatisticheVendita.Name = "tbpStatisticheVendita"
+      Me.tbpStatisticheVendita.Padding = New System.Windows.Forms.Padding(3)
+      Me.tbpStatisticheVendita.Size = New System.Drawing.Size(772, 397)
+      Me.tbpStatisticheVendita.TabIndex = 6
+      Me.tbpStatisticheVendita.Text = "Statistiche di vendita"
       '
       'txtTotaleSpettanza
       '
@@ -1185,7 +1185,7 @@ Public Class frmCamerieri
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(783, 471)
+      Me.ClientSize = New System.Drawing.Size(780, 469)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1206,8 +1206,8 @@ Public Class frmCamerieri
       Me.TabPage3.ResumeLayout(False)
       Me.TabPage3.PerformLayout()
       Me.TabPage4.ResumeLayout(False)
-      Me.TabPage5.ResumeLayout(False)
-      Me.TabPage5.PerformLayout()
+      Me.tbpStatisticheVendita.ResumeLayout(False)
+      Me.tbpStatisticheVendita.PerformLayout()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage6.ResumeLayout(False)
       Me.TabPage6.PerformLayout()
@@ -1697,8 +1697,11 @@ Public Class frmCamerieri
             ' Carica la lista delle degli allegati.
             ConvalidaAllegati()
 
-            ' Carica le statistiche di vendita per il cameriere selezionato.
-            CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
+            ' Impostazioni per il modulo NightClub.
+            If moduloAttivo.NightClub = True Then
+               ' Carica le statistiche di vendita per il cameriere selezionato.
+               CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
+            End If
          Else
             ' In caso di nuovo inserimento dati imposta i valori di default.
             ' Per i nuovi camerieri che non sono nel database (con un id).
@@ -1713,6 +1716,13 @@ Public Class frmCamerieri
 
          ' Genera l'intestazione con i dati del form.
          lblIntestazione.Text = VisIntestazione(txtCodice.Text, txtNome.Text, "")
+
+         ' Impostazioni per il modulo NightClub.
+         If moduloAttivo.NightClub = True Then
+            tbpStatisticheVendita.Enabled = True
+         Else
+            tbpStatisticheVendita.Enabled = False
+         End If
 
          ' Imposta lo stato attivo.
          txtNome.Focus()

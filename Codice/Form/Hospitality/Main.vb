@@ -933,15 +933,15 @@ Friend Class frmMain
       CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GestioneModuli.SuspendLayout()
-      Me.eui_Info.SuspendLayout()
+      Me.eui_GestioneModuli.SuspendLayout
+      Me.eui_Info.SuspendLayout
       CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Guida.SuspendLayout()
-      Me.BackstageViewPage1.SuspendLayout()
+      Me.eui_Guida.SuspendLayout
+      Me.BackstageViewPage1.SuspendLayout
       CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -953,132 +953,132 @@ Friend Class frmMain
       CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_StrumentiModifica.SuspendLayout()
+      Me.eui_StrumentiModifica.SuspendLayout
       CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup21.SuspendLayout()
+      Me.RibbonGroup21.SuspendLayout
       CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup18.SuspendLayout()
+      Me.RibbonGroup18.SuspendLayout
       CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_StrumentiPeriodo.SuspendLayout()
+      Me.eui_StrumentiPeriodo.SuspendLayout
       CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup26.SuspendLayout()
+      Me.RibbonGroup26.SuspendLayout
       CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_rib_Visualizza.SuspendLayout()
+      Me.eui_rib_Visualizza.SuspendLayout
       CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_StrumentiDocumenti.SuspendLayout()
+      Me.eui_StrumentiDocumenti.SuspendLayout
       CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup29.SuspendLayout()
+      Me.RibbonGroup29.SuspendLayout
       CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup27.SuspendLayout()
+      Me.RibbonGroup27.SuspendLayout
       CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_StrumentiSospesiBuoni.SuspendLayout()
+      Me.eui_StrumentiSospesiBuoni.SuspendLayout
       CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup20.SuspendLayout()
+      Me.RibbonGroup20.SuspendLayout
       CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup25.SuspendLayout()
+      Me.RibbonGroup25.SuspendLayout
       CType(Me.eui_Amica_ImportaEsporta, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Amica_ImportaEsporta.SuspendLayout()
+      Me.eui_Amica_ImportaEsporta.SuspendLayout
       CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup2.SuspendLayout()
+      Me.RibbonGroup2.SuspendLayout
       CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_PCamere_Prenotazioni.SuspendLayout()
+      Me.eui_PCamere_Prenotazioni.SuspendLayout
       CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup13.SuspendLayout()
+      Me.RibbonGroup13.SuspendLayout
       CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup3.SuspendLayout()
+      Me.RibbonGroup3.SuspendLayout
       CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup4.SuspendLayout()
+      Me.RibbonGroup4.SuspendLayout
       CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_PCamere_Visualizza.SuspendLayout()
+      Me.eui_PCamere_Visualizza.SuspendLayout
       CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup23.SuspendLayout()
+      Me.RibbonGroup23.SuspendLayout
       CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup24.SuspendLayout()
+      Me.RibbonGroup24.SuspendLayout
       CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Gestione.SuspendLayout()
+      Me.eui_Gestione.SuspendLayout
       CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoPos.SuspendLayout()
+      Me.eui_GruppoPos.SuspendLayout
       CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoPrenotazioni.SuspendLayout()
+      Me.eui_GruppoPrenotazioni.SuspendLayout
       CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonGroup15, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup15.SuspendLayout()
+      Me.RibbonGroup15.SuspendLayout
       CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup16.SuspendLayout()
+      Me.RibbonGroup16.SuspendLayout
       CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup30.SuspendLayout()
+      Me.RibbonGroup30.SuspendLayout
       CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Archivi.SuspendLayout()
+      Me.eui_Archivi.SuspendLayout
       CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup17.SuspendLayout()
+      Me.RibbonGroup17.SuspendLayout
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup5.SuspendLayout()
+      Me.RibbonGroup5.SuspendLayout
       CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup1.SuspendLayout()
+      Me.RibbonGroup1.SuspendLayout
       CType(Me.eui_Contabilità, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Contabilità.SuspendLayout()
+      Me.eui_Contabilità.SuspendLayout
       CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup6.SuspendLayout()
+      Me.RibbonGroup6.SuspendLayout
       CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup7.SuspendLayout()
+      Me.RibbonGroup7.SuspendLayout
       CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Magazzino.SuspendLayout()
+      Me.eui_Magazzino.SuspendLayout
       CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup8.SuspendLayout()
+      Me.RibbonGroup8.SuspendLayout
       CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup9.SuspendLayout()
+      Me.RibbonGroup9.SuspendLayout
       CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup11.SuspendLayout()
+      Me.RibbonGroup11.SuspendLayout
       CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup12.SuspendLayout()
+      Me.RibbonGroup12.SuspendLayout
       CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Visualizza.SuspendLayout()
+      Me.eui_Visualizza.SuspendLayout
       CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup10.SuspendLayout()
+      Me.RibbonGroup10.SuspendLayout
       CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Strumenti.SuspendLayout()
+      Me.eui_Strumenti.SuspendLayout
       CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup28.SuspendLayout()
+      Me.RibbonGroup28.SuspendLayout
       CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoReparti.SuspendLayout()
+      Me.eui_GruppoReparti.SuspendLayout
       CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoEtichette.SuspendLayout()
+      Me.eui_GruppoEtichette.SuspendLayout
       CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup19.SuspendLayout()
+      Me.RibbonGroup19.SuspendLayout
       CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoTavoli.SuspendLayout()
+      Me.eui_GruppoTavoli.SuspendLayout
       CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_GruppoMenu.SuspendLayout()
+      Me.eui_GruppoMenu.SuspendLayout
       CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup22.SuspendLayout()
+      Me.RibbonGroup22.SuspendLayout
       CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_Finestra.SuspendLayout()
+      Me.eui_Finestra.SuspendLayout
       CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.RibbonGroup14.SuspendLayout()
+      Me.RibbonGroup14.SuspendLayout
       CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.eui_sbrMain.SuspendLayout()
-      Me.StatusBarNotificationsArea1.SuspendLayout()
-      Me.StatusBarPane5.SuspendLayout()
-      Me.StatusBarPane8.SuspendLayout()
-      Me.StatusBarControlsArea1.SuspendLayout()
-      Me.StatusBarPane1.SuspendLayout()
-      Me.StatusBarPane3.SuspendLayout()
-      Me.StatusBarPane4.SuspendLayout()
-      Me.StatusBarPane6.SuspendLayout()
-      Me.StatusBarPane2.SuspendLayout()
-      Me.StatusBarPane7.SuspendLayout()
+      Me.eui_sbrMain.SuspendLayout
+      Me.StatusBarNotificationsArea1.SuspendLayout
+      Me.StatusBarPane5.SuspendLayout
+      Me.StatusBarPane8.SuspendLayout
+      Me.StatusBarControlsArea1.SuspendLayout
+      Me.StatusBarPane1.SuspendLayout
+      Me.StatusBarPane3.SuspendLayout
+      Me.StatusBarPane4.SuspendLayout
+      Me.StatusBarPane6.SuspendLayout
+      Me.StatusBarPane2.SuspendLayout
+      Me.StatusBarPane7.SuspendLayout
       CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1087,7 +1087,7 @@ Friend Class frmMain
       CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.SuspendLayout()
+      Me.SuspendLayout
       '
       'picProg
       '
@@ -1207,7 +1207,7 @@ Friend Class frmMain
       Me.lvwGestioneModuli.MultiSelect = False
       Me.lvwGestioneModuli.Name = "lvwGestioneModuli"
       Me.lvwGestioneModuli.ShowItemToolTips = True
-      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1066, 583)
+      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1124, 583)
       Me.lvwGestioneModuli.SmallImageList = Me.ImageList1
       Me.lvwGestioneModuli.TabIndex = 79
       Me.ToolTip1.SetToolTip(Me.lvwGestioneModuli, "Elenco moduli.")
@@ -1307,7 +1307,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1214, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1222, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -1331,7 +1331,7 @@ Friend Class frmMain
       Me.eui_GestioneModuli.Location = New System.Drawing.Point(0, 0)
       Me.eui_GestioneModuli.Name = "eui_GestioneModuli"
       Me.eui_GestioneModuli.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1071, 711)
+      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1129, 711)
       Me.eui_GestioneModuli.TabIndex = 0
       Me.eui_GestioneModuli.Text = "Gestione Moduli    "
       '
@@ -2360,7 +2360,7 @@ Friend Class frmMain
       Me.RibbonGroup21.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup21.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup21.Name = "RibbonGroup21"
-      Me.RibbonGroup21.Size = New System.Drawing.Size(358, 94)
+      Me.RibbonGroup21.Size = New System.Drawing.Size(358, 0)
       Me.RibbonGroup21.TabIndex = 3
       Me.RibbonGroup21.Text = "Dati"
       '
@@ -2533,7 +2533,7 @@ Friend Class frmMain
       Me.RibbonGroup18.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup18.Location = New System.Drawing.Point(363, 1)
       Me.RibbonGroup18.Name = "RibbonGroup18"
-      Me.RibbonGroup18.Size = New System.Drawing.Size(115, 94)
+      Me.RibbonGroup18.Size = New System.Drawing.Size(115, 0)
       Me.RibbonGroup18.TabIndex = 1
       Me.RibbonGroup18.Text = "Stampa"
       '
@@ -2596,7 +2596,7 @@ Friend Class frmMain
       Me.RibbonGroup26.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup26.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup26.Name = "RibbonGroup26"
-      Me.RibbonGroup26.Size = New System.Drawing.Size(442, 94)
+      Me.RibbonGroup26.Size = New System.Drawing.Size(442, 0)
       Me.RibbonGroup26.TabIndex = 3
       Me.RibbonGroup26.Text = "Periodo"
       '
@@ -2746,7 +2746,7 @@ Friend Class frmMain
       Me.eui_rib_Visualizza.Dock = System.Windows.Forms.DockStyle.Fill
       Me.eui_rib_Visualizza.Location = New System.Drawing.Point(447, 1)
       Me.eui_rib_Visualizza.Name = "eui_rib_Visualizza"
-      Me.eui_rib_Visualizza.Size = New System.Drawing.Size(70, 94)
+      Me.eui_rib_Visualizza.Size = New System.Drawing.Size(70, 0)
       Me.eui_rib_Visualizza.TabIndex = 5
       Me.eui_rib_Visualizza.Text = "Visualizza"
       '
@@ -2789,7 +2789,7 @@ Friend Class frmMain
       Me.RibbonGroup29.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup29.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup29.Name = "RibbonGroup29"
-      Me.RibbonGroup29.Size = New System.Drawing.Size(283, 94)
+      Me.RibbonGroup29.Size = New System.Drawing.Size(283, 0)
       Me.RibbonGroup29.TabIndex = 6
       Me.RibbonGroup29.Text = "Stampa"
       '
@@ -2892,7 +2892,7 @@ Friend Class frmMain
       Me.RibbonGroup27.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup27.Location = New System.Drawing.Point(288, 1)
       Me.RibbonGroup27.Name = "RibbonGroup27"
-      Me.RibbonGroup27.Size = New System.Drawing.Size(221, 94)
+      Me.RibbonGroup27.Size = New System.Drawing.Size(221, 0)
       Me.RibbonGroup27.TabIndex = 7
       Me.RibbonGroup27.Text = "Documento"
       '
@@ -3101,7 +3101,7 @@ Friend Class frmMain
       Me.RibbonGroup20.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup20.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup20.Name = "RibbonGroup20"
-      Me.RibbonGroup20.Size = New System.Drawing.Size(198, 94)
+      Me.RibbonGroup20.Size = New System.Drawing.Size(198, 0)
       Me.RibbonGroup20.TabIndex = 0
       Me.RibbonGroup20.Text = "Sospesi"
       '
@@ -3176,7 +3176,7 @@ Friend Class frmMain
       Me.RibbonGroup25.DialogLauncherButtonVisible = False
       Me.RibbonGroup25.Location = New System.Drawing.Point(203, 1)
       Me.RibbonGroup25.Name = "RibbonGroup25"
-      Me.RibbonGroup25.Size = New System.Drawing.Size(83, 94)
+      Me.RibbonGroup25.Size = New System.Drawing.Size(83, 0)
       Me.RibbonGroup25.TabIndex = 1
       Me.RibbonGroup25.Text = "Buoni pasto"
       '
@@ -3284,7 +3284,7 @@ Friend Class frmMain
       Me.RibbonGroup13.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup13.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup13.Name = "RibbonGroup13"
-      Me.RibbonGroup13.Size = New System.Drawing.Size(336, 94)
+      Me.RibbonGroup13.Size = New System.Drawing.Size(336, 0)
       Me.RibbonGroup13.TabIndex = 0
       Me.RibbonGroup13.Text = "Prenotazioni"
       '
@@ -3396,7 +3396,7 @@ Friend Class frmMain
       Me.RibbonGroup3.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup3.Location = New System.Drawing.Point(341, 1)
       Me.RibbonGroup3.Name = "RibbonGroup3"
-      Me.RibbonGroup3.Size = New System.Drawing.Size(196, 94)
+      Me.RibbonGroup3.Size = New System.Drawing.Size(196, 0)
       Me.RibbonGroup3.TabIndex = 1
       Me.RibbonGroup3.Text = "Archivi"
       '
@@ -3469,7 +3469,7 @@ Friend Class frmMain
       Me.RibbonGroup4.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup4.Location = New System.Drawing.Point(537, 1)
       Me.RibbonGroup4.Name = "RibbonGroup4"
-      Me.RibbonGroup4.Size = New System.Drawing.Size(117, 94)
+      Me.RibbonGroup4.Size = New System.Drawing.Size(117, 0)
       Me.RibbonGroup4.TabIndex = 2
       Me.RibbonGroup4.Text = "Documenti"
       '
@@ -3741,7 +3741,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1214, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1222, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -4246,7 +4246,7 @@ Friend Class frmMain
       Me.RibbonGroup17.DialogLauncherButtonVisible = False
       Me.RibbonGroup17.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup17.Name = "RibbonGroup17"
-      Me.RibbonGroup17.Size = New System.Drawing.Size(85, 94)
+      Me.RibbonGroup17.Size = New System.Drawing.Size(85, 0)
       Me.RibbonGroup17.TabIndex = 0
       Me.RibbonGroup17.Text = "Anagrafiche"
       '
@@ -4497,7 +4497,7 @@ Friend Class frmMain
       Me.RibbonGroup5.DialogLauncherButtonVisible = False
       Me.RibbonGroup5.Location = New System.Drawing.Point(90, 1)
       Me.RibbonGroup5.Name = "RibbonGroup5"
-      Me.RibbonGroup5.Size = New System.Drawing.Size(64, 94)
+      Me.RibbonGroup5.Size = New System.Drawing.Size(64, 0)
       Me.RibbonGroup5.TabIndex = 1
       Me.RibbonGroup5.Text = "Tabelle"
       '
@@ -4924,7 +4924,7 @@ Friend Class frmMain
       Me.RibbonGroup1.DialogLauncherButtonVisible = False
       Me.RibbonGroup1.Location = New System.Drawing.Point(154, 1)
       Me.RibbonGroup1.Name = "RibbonGroup1"
-      Me.RibbonGroup1.Size = New System.Drawing.Size(259, 94)
+      Me.RibbonGroup1.Size = New System.Drawing.Size(259, 0)
       Me.RibbonGroup1.TabIndex = 2
       Me.RibbonGroup1.Text = "Strumenti"
       '
@@ -5006,7 +5006,7 @@ Friend Class frmMain
       Me.RibbonGroup6.DialogLauncherButtonVisible = False
       Me.RibbonGroup6.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup6.Name = "RibbonGroup6"
-      Me.RibbonGroup6.Size = New System.Drawing.Size(181, 94)
+      Me.RibbonGroup6.Size = New System.Drawing.Size(181, 0)
       Me.RibbonGroup6.TabIndex = 0
       Me.RibbonGroup6.Text = "Contabilità"
       '
@@ -5059,7 +5059,7 @@ Friend Class frmMain
       Me.RibbonGroup7.DialogLauncherButtonVisible = False
       Me.RibbonGroup7.Location = New System.Drawing.Point(186, 1)
       Me.RibbonGroup7.Name = "RibbonGroup7"
-      Me.RibbonGroup7.Size = New System.Drawing.Size(211, 94)
+      Me.RibbonGroup7.Size = New System.Drawing.Size(211, 0)
       Me.RibbonGroup7.TabIndex = 1
       Me.RibbonGroup7.Text = "Documenti"
       '
@@ -5111,7 +5111,7 @@ Friend Class frmMain
       Me.RibbonGroup8.DialogLauncherButtonVisible = False
       Me.RibbonGroup8.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup8.Name = "RibbonGroup8"
-      Me.RibbonGroup8.Size = New System.Drawing.Size(87, 94)
+      Me.RibbonGroup8.Size = New System.Drawing.Size(87, 0)
       Me.RibbonGroup8.TabIndex = 0
       Me.RibbonGroup8.Text = "Articoli"
       '
@@ -5135,7 +5135,7 @@ Friend Class frmMain
       Me.RibbonGroup9.DialogLauncherButtonVisible = False
       Me.RibbonGroup9.Location = New System.Drawing.Point(92, 1)
       Me.RibbonGroup9.Name = "RibbonGroup9"
-      Me.RibbonGroup9.Size = New System.Drawing.Size(87, 94)
+      Me.RibbonGroup9.Size = New System.Drawing.Size(87, 0)
       Me.RibbonGroup9.TabIndex = 1
       Me.RibbonGroup9.Text = "Movimenti"
       '
@@ -5159,7 +5159,7 @@ Friend Class frmMain
       Me.RibbonGroup11.DialogLauncherButtonVisible = False
       Me.RibbonGroup11.Location = New System.Drawing.Point(179, 1)
       Me.RibbonGroup11.Name = "RibbonGroup11"
-      Me.RibbonGroup11.Size = New System.Drawing.Size(73, 94)
+      Me.RibbonGroup11.Size = New System.Drawing.Size(73, 0)
       Me.RibbonGroup11.TabIndex = 2
       Me.RibbonGroup11.Text = "Inventario"
       '
@@ -5183,7 +5183,7 @@ Friend Class frmMain
       Me.RibbonGroup12.DialogLauncherButtonVisible = False
       Me.RibbonGroup12.Location = New System.Drawing.Point(252, 1)
       Me.RibbonGroup12.Name = "RibbonGroup12"
-      Me.RibbonGroup12.Size = New System.Drawing.Size(101, 94)
+      Me.RibbonGroup12.Size = New System.Drawing.Size(101, 0)
       Me.RibbonGroup12.TabIndex = 3
       Me.RibbonGroup12.Text = "Scorte"
       '
@@ -5219,7 +5219,7 @@ Friend Class frmMain
       Me.RibbonGroup10.DialogLauncherButtonVisible = False
       Me.RibbonGroup10.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup10.Name = "RibbonGroup10"
-      Me.RibbonGroup10.Size = New System.Drawing.Size(147, 94)
+      Me.RibbonGroup10.Size = New System.Drawing.Size(147, 0)
       Me.RibbonGroup10.TabIndex = 0
       Me.RibbonGroup10.Text = "Visualizza"
       '
@@ -5275,7 +5275,7 @@ Friend Class frmMain
       Me.RibbonGroup28.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup28.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup28.Name = "RibbonGroup28"
-      Me.RibbonGroup28.Size = New System.Drawing.Size(85, 94)
+      Me.RibbonGroup28.Size = New System.Drawing.Size(85, 0)
       Me.RibbonGroup28.TabIndex = 6
       Me.RibbonGroup28.Text = "E-mail"
       '
@@ -5301,7 +5301,7 @@ Friend Class frmMain
       Me.eui_GruppoReparti.KeyTip = "M"
       Me.eui_GruppoReparti.Location = New System.Drawing.Point(90, 1)
       Me.eui_GruppoReparti.Name = "eui_GruppoReparti"
-      Me.eui_GruppoReparti.Size = New System.Drawing.Size(101, 94)
+      Me.eui_GruppoReparti.Size = New System.Drawing.Size(101, 0)
       Me.eui_GruppoReparti.TabIndex = 0
       Me.eui_GruppoReparti.Text = "Reparti"
       '
@@ -5326,7 +5326,7 @@ Friend Class frmMain
       Me.eui_GruppoEtichette.Dock = System.Windows.Forms.DockStyle.Fill
       Me.eui_GruppoEtichette.Location = New System.Drawing.Point(191, 1)
       Me.eui_GruppoEtichette.Name = "eui_GruppoEtichette"
-      Me.eui_GruppoEtichette.Size = New System.Drawing.Size(97, 94)
+      Me.eui_GruppoEtichette.Size = New System.Drawing.Size(97, 0)
       Me.eui_GruppoEtichette.TabIndex = 1
       Me.eui_GruppoEtichette.Text = "Etichette"
       '
@@ -5351,7 +5351,7 @@ Friend Class frmMain
       Me.RibbonGroup19.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup19.Location = New System.Drawing.Point(288, 1)
       Me.RibbonGroup19.Name = "RibbonGroup19"
-      Me.RibbonGroup19.Size = New System.Drawing.Size(91, 94)
+      Me.RibbonGroup19.Size = New System.Drawing.Size(91, 0)
       Me.RibbonGroup19.TabIndex = 2
       Me.RibbonGroup19.Text = "Comuni"
       '
@@ -5376,7 +5376,7 @@ Friend Class frmMain
       Me.eui_GruppoTavoli.Dock = System.Windows.Forms.DockStyle.Fill
       Me.eui_GruppoTavoli.Location = New System.Drawing.Point(379, 1)
       Me.eui_GruppoTavoli.Name = "eui_GruppoTavoli"
-      Me.eui_GruppoTavoli.Size = New System.Drawing.Size(79, 94)
+      Me.eui_GruppoTavoli.Size = New System.Drawing.Size(79, 0)
       Me.eui_GruppoTavoli.TabIndex = 3
       Me.eui_GruppoTavoli.Text = "Tavoli"
       '
@@ -5401,7 +5401,7 @@ Friend Class frmMain
       Me.eui_GruppoMenu.Dock = System.Windows.Forms.DockStyle.Fill
       Me.eui_GruppoMenu.Location = New System.Drawing.Point(458, 1)
       Me.eui_GruppoMenu.Name = "eui_GruppoMenu"
-      Me.eui_GruppoMenu.Size = New System.Drawing.Size(75, 94)
+      Me.eui_GruppoMenu.Size = New System.Drawing.Size(75, 0)
       Me.eui_GruppoMenu.TabIndex = 4
       Me.eui_GruppoMenu.Text = "Menù"
       '
@@ -5428,7 +5428,7 @@ Friend Class frmMain
       Me.RibbonGroup22.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup22.Location = New System.Drawing.Point(533, 1)
       Me.RibbonGroup22.Name = "RibbonGroup22"
-      Me.RibbonGroup22.Size = New System.Drawing.Size(164, 94)
+      Me.RibbonGroup22.Size = New System.Drawing.Size(164, 0)
       Me.RibbonGroup22.TabIndex = 5
       Me.RibbonGroup22.Text = "Strumenti"
       '
@@ -5726,10 +5726,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 768)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 771)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1214, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1222, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5741,7 +5741,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(617, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(625, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5818,7 +5818,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(617, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(625, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -6124,7 +6124,7 @@ Friend Class frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1214, 790)
+      Me.ClientSize = New System.Drawing.Size(1222, 793)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -6140,7 +6140,7 @@ Friend Class frmMain
       CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GestioneModuli.ResumeLayout(False)
       Me.eui_Info.ResumeLayout(False)
-      Me.eui_Info.PerformLayout()
+      Me.eui_Info.PerformLayout
       CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6148,7 +6148,7 @@ Friend Class frmMain
       CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Guida.ResumeLayout(False)
       Me.BackstageViewPage1.ResumeLayout(False)
-      Me.BackstageViewPage1.PerformLayout()
+      Me.BackstageViewPage1.PerformLayout
       CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6161,193 +6161,193 @@ Friend Class frmMain
       CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiModifica.ResumeLayout(False)
-      Me.eui_StrumentiModifica.PerformLayout()
+      Me.eui_StrumentiModifica.PerformLayout
       CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup21.ResumeLayout(False)
-      Me.RibbonGroup21.PerformLayout()
+      Me.RibbonGroup21.PerformLayout
       CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup18.ResumeLayout(False)
-      Me.RibbonGroup18.PerformLayout()
+      Me.RibbonGroup18.PerformLayout
       CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiPeriodo.ResumeLayout(False)
-      Me.eui_StrumentiPeriodo.PerformLayout()
+      Me.eui_StrumentiPeriodo.PerformLayout
       CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup26.ResumeLayout(False)
-      Me.RibbonGroup26.PerformLayout()
+      Me.RibbonGroup26.PerformLayout
       CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_rib_Visualizza.ResumeLayout(False)
-      Me.eui_rib_Visualizza.PerformLayout()
+      Me.eui_rib_Visualizza.PerformLayout
       CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiDocumenti.ResumeLayout(False)
-      Me.eui_StrumentiDocumenti.PerformLayout()
+      Me.eui_StrumentiDocumenti.PerformLayout
       CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup29.ResumeLayout(False)
-      Me.RibbonGroup29.PerformLayout()
+      Me.RibbonGroup29.PerformLayout
       CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup27.ResumeLayout(False)
-      Me.RibbonGroup27.PerformLayout()
+      Me.RibbonGroup27.PerformLayout
       CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiSospesiBuoni.ResumeLayout(False)
-      Me.eui_StrumentiSospesiBuoni.PerformLayout()
+      Me.eui_StrumentiSospesiBuoni.PerformLayout
       CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup20.ResumeLayout(False)
-      Me.RibbonGroup20.PerformLayout()
+      Me.RibbonGroup20.PerformLayout
       CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup25.ResumeLayout(False)
-      Me.RibbonGroup25.PerformLayout()
+      Me.RibbonGroup25.PerformLayout
       CType(Me.eui_Amica_ImportaEsporta, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Amica_ImportaEsporta.ResumeLayout(False)
-      Me.eui_Amica_ImportaEsporta.PerformLayout()
+      Me.eui_Amica_ImportaEsporta.PerformLayout
       CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup2.ResumeLayout(False)
-      Me.RibbonGroup2.PerformLayout()
+      Me.RibbonGroup2.PerformLayout
       CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_PCamere_Prenotazioni.ResumeLayout(False)
-      Me.eui_PCamere_Prenotazioni.PerformLayout()
+      Me.eui_PCamere_Prenotazioni.PerformLayout
       CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup13.ResumeLayout(False)
-      Me.RibbonGroup13.PerformLayout()
+      Me.RibbonGroup13.PerformLayout
       CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup3.ResumeLayout(False)
-      Me.RibbonGroup3.PerformLayout()
+      Me.RibbonGroup3.PerformLayout
       CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup4.ResumeLayout(False)
-      Me.RibbonGroup4.PerformLayout()
+      Me.RibbonGroup4.PerformLayout
       CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_PCamere_Visualizza.ResumeLayout(False)
-      Me.eui_PCamere_Visualizza.PerformLayout()
+      Me.eui_PCamere_Visualizza.PerformLayout
       CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup23.ResumeLayout(False)
-      Me.RibbonGroup23.PerformLayout()
+      Me.RibbonGroup23.PerformLayout
       CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup24.ResumeLayout(False)
-      Me.RibbonGroup24.PerformLayout()
+      Me.RibbonGroup24.PerformLayout
       CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Gestione.ResumeLayout(False)
-      Me.eui_Gestione.PerformLayout()
+      Me.eui_Gestione.PerformLayout
       CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoPos.ResumeLayout(False)
-      Me.eui_GruppoPos.PerformLayout()
+      Me.eui_GruppoPos.PerformLayout
       CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoPrenotazioni.ResumeLayout(False)
-      Me.eui_GruppoPrenotazioni.PerformLayout()
+      Me.eui_GruppoPrenotazioni.PerformLayout
       CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonGroup15, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup15.ResumeLayout(False)
-      Me.RibbonGroup15.PerformLayout()
+      Me.RibbonGroup15.PerformLayout
       CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup16.ResumeLayout(False)
-      Me.RibbonGroup16.PerformLayout()
+      Me.RibbonGroup16.PerformLayout
       CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup30.ResumeLayout(False)
-      Me.RibbonGroup30.PerformLayout()
+      Me.RibbonGroup30.PerformLayout
       CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Archivi.ResumeLayout(False)
-      Me.eui_Archivi.PerformLayout()
+      Me.eui_Archivi.PerformLayout
       CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup17.ResumeLayout(False)
-      Me.RibbonGroup17.PerformLayout()
+      Me.RibbonGroup17.PerformLayout
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup5.ResumeLayout(False)
-      Me.RibbonGroup5.PerformLayout()
+      Me.RibbonGroup5.PerformLayout
       CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup1.ResumeLayout(False)
-      Me.RibbonGroup1.PerformLayout()
+      Me.RibbonGroup1.PerformLayout
       CType(Me.eui_Contabilità, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Contabilità.ResumeLayout(False)
-      Me.eui_Contabilità.PerformLayout()
+      Me.eui_Contabilità.PerformLayout
       CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup6.ResumeLayout(False)
-      Me.RibbonGroup6.PerformLayout()
+      Me.RibbonGroup6.PerformLayout
       CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup7.ResumeLayout(False)
-      Me.RibbonGroup7.PerformLayout()
+      Me.RibbonGroup7.PerformLayout
       CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Magazzino.ResumeLayout(False)
-      Me.eui_Magazzino.PerformLayout()
+      Me.eui_Magazzino.PerformLayout
       CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup8.ResumeLayout(False)
-      Me.RibbonGroup8.PerformLayout()
+      Me.RibbonGroup8.PerformLayout
       CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup9.ResumeLayout(False)
-      Me.RibbonGroup9.PerformLayout()
+      Me.RibbonGroup9.PerformLayout
       CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup11.ResumeLayout(False)
-      Me.RibbonGroup11.PerformLayout()
+      Me.RibbonGroup11.PerformLayout
       CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup12.ResumeLayout(False)
-      Me.RibbonGroup12.PerformLayout()
+      Me.RibbonGroup12.PerformLayout
       CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Visualizza.ResumeLayout(False)
-      Me.eui_Visualizza.PerformLayout()
+      Me.eui_Visualizza.PerformLayout
       CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup10.ResumeLayout(False)
-      Me.RibbonGroup10.PerformLayout()
+      Me.RibbonGroup10.PerformLayout
       CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Strumenti.ResumeLayout(False)
-      Me.eui_Strumenti.PerformLayout()
+      Me.eui_Strumenti.PerformLayout
       CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup28.ResumeLayout(False)
-      Me.RibbonGroup28.PerformLayout()
+      Me.RibbonGroup28.PerformLayout
       CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoReparti.ResumeLayout(False)
-      Me.eui_GruppoReparti.PerformLayout()
+      Me.eui_GruppoReparti.PerformLayout
       CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoEtichette.ResumeLayout(False)
-      Me.eui_GruppoEtichette.PerformLayout()
+      Me.eui_GruppoEtichette.PerformLayout
       CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup19.ResumeLayout(False)
-      Me.RibbonGroup19.PerformLayout()
+      Me.RibbonGroup19.PerformLayout
       CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoTavoli.ResumeLayout(False)
-      Me.eui_GruppoTavoli.PerformLayout()
+      Me.eui_GruppoTavoli.PerformLayout
       CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoMenu.ResumeLayout(False)
-      Me.eui_GruppoMenu.PerformLayout()
+      Me.eui_GruppoMenu.PerformLayout
       CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup22.ResumeLayout(False)
-      Me.RibbonGroup22.PerformLayout()
+      Me.RibbonGroup22.PerformLayout
       CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Finestra.ResumeLayout(False)
-      Me.eui_Finestra.PerformLayout()
+      Me.eui_Finestra.PerformLayout
       CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup14.ResumeLayout(False)
-      Me.RibbonGroup14.PerformLayout()
+      Me.RibbonGroup14.PerformLayout
       CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_sbrMain.ResumeLayout(False)
-      Me.eui_sbrMain.PerformLayout()
+      Me.eui_sbrMain.PerformLayout
       Me.StatusBarNotificationsArea1.ResumeLayout(False)
-      Me.StatusBarNotificationsArea1.PerformLayout()
+      Me.StatusBarNotificationsArea1.PerformLayout
       Me.StatusBarPane5.ResumeLayout(False)
-      Me.StatusBarPane5.PerformLayout()
+      Me.StatusBarPane5.PerformLayout
       Me.StatusBarPane8.ResumeLayout(False)
-      Me.StatusBarPane8.PerformLayout()
+      Me.StatusBarPane8.PerformLayout
       Me.StatusBarControlsArea1.ResumeLayout(False)
-      Me.StatusBarControlsArea1.PerformLayout()
+      Me.StatusBarControlsArea1.PerformLayout
       Me.StatusBarPane1.ResumeLayout(False)
-      Me.StatusBarPane1.PerformLayout()
+      Me.StatusBarPane1.PerformLayout
       Me.StatusBarPane3.ResumeLayout(False)
-      Me.StatusBarPane3.PerformLayout()
+      Me.StatusBarPane3.PerformLayout
       Me.StatusBarPane4.ResumeLayout(False)
-      Me.StatusBarPane4.PerformLayout()
+      Me.StatusBarPane4.PerformLayout
       Me.StatusBarPane6.ResumeLayout(False)
-      Me.StatusBarPane6.PerformLayout()
+      Me.StatusBarPane6.PerformLayout
       Me.StatusBarPane2.ResumeLayout(False)
-      Me.StatusBarPane2.PerformLayout()
+      Me.StatusBarPane2.PerformLayout
       Me.StatusBarPane7.ResumeLayout(False)
-      Me.StatusBarPane7.PerformLayout()
+      Me.StatusBarPane7.PerformLayout
       CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6357,7 +6357,7 @@ Friend Class frmMain
       CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
-      Me.PerformLayout()
+      Me.PerformLayout
 
    End Sub
 #End Region
@@ -10703,6 +10703,9 @@ Friend Class frmMain
             Timer2.Enabled = AbilitaRicezionePren
          End If
 
+         ' Modifica il menu Camerieri con la nuova denominazione.
+         g_frmMain.eui_cmdArchiviAnagraficheCamerieri.Text = DenominazioneCamerieri
+
          Me.Focus()
 
       Catch ex As Exception
@@ -12361,7 +12364,7 @@ Friend Class frmMain
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
                ' Apre il documento selezionato nell'elenco in anteprima di stampa.
-               ApriReports(g_frmDocumenti.repSql, g_frmDocumenti.TAB_DOCUMENTI, PERCORSO_REP_DOC_A4)
+               g_frmDocumenti.AnteprimaDiStampa(PERCORSO_REP_DOC_A4, g_frmDocumenti.TAB_DOCUMENTI, g_frmDocumenti.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
@@ -13375,11 +13378,11 @@ Friend Class frmMain
             End If
 
             ' TODO_A: NIGHT_CLUB
-            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
-            '   moduloAttivo.NightClub = True
-            'Else
-            '   moduloAttivo.NightClub = False
-            'End If
+            If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
+               moduloAttivo.NightClub = True
+            Else
+               moduloAttivo.NightClub = False
+            End If
 
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE) Then
                moduloAttivo.PrenOnLine = True
@@ -13452,11 +13455,11 @@ Friend Class frmMain
             End If
 
             ' TODO_A: NIGHT_CLUB
-            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
-            '   moduloAttivo.NightClub = True
-            'Else
-            '   moduloAttivo.NightClub = False
-            'End If
+            If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
+               moduloAttivo.NightClub = True
+            Else
+               moduloAttivo.NightClub = False
+            End If
 
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG).Length = 25 Then
                moduloAttivo.PrenOnLine = True
@@ -13648,10 +13651,10 @@ Friend Class frmMain
          End If
 
          ' TODO_A: NIGHT_CLUB
-         '' MODULO NIGHT CLUB.
-         'If moduloAttivo.NightClub = True Then
-         '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, CHIAVE_ATTIVAZIONE_NIGHT_CLUB, Color.Green, True)
-         'End If
+         ' MODULO NIGHT CLUB.
+         If moduloAttivo.NightClub = True Then
+            ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, CHIAVE_ATTIVAZIONE_NIGHT_CLUB, Color.Green, True)
+         End If
 
          ' MODULO PRENOTAZIONI ON-LINE.
          If moduloAttivo.PrenOnLine = True Then
@@ -14128,12 +14131,12 @@ Friend Class frmMain
       End If
 
       ' TODO_A: NIGHT_CLUB
-      '' NIGHT CLUB.
-      'If moduloAttivo.NightClub = True Then
-      '   Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
-      '   Dim item As String = Modulo.NOME_NIGHT_CLUB & " - " & codice
-      '   eui_lstProdottiAttivati.Items.Add(item)
-      'End If
+      ' NIGHT CLUB.
+      If moduloAttivo.NightClub = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
+         Dim item As String = Modulo.NOME_NIGHT_CLUB & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
 
       ' PRENOTAZIONI ON-LINE.
       If moduloAttivo.PrenOnLine = True Then
@@ -14256,10 +14259,10 @@ Friend Class frmMain
       End If
 
       ' TODO_A: NIGHT_CLUB
-      '' NIGHT CLUB.
-      'If item.Contains(Modulo.NOME_NIGHT_CLUB) = True Then
-      '   eui_txtDettagliProdotto.Text = "Modulo per la gestione del personale per i locali notturni."
-      'End If
+      ' NIGHT CLUB.
+      If item.Contains(Modulo.NOME_NIGHT_CLUB) = True Then
+         eui_txtDettagliProdotto.Text = "Modulo per la gestione del personale per i locali notturni."
+      End If
 
       ' PRENOTAZIONI ON-LINE.
       If item.Contains(Modulo.NOME_PREN_ONLINE) = True Then
@@ -14435,9 +14438,9 @@ Friend Class frmMain
                         e.Item.SubItems(3).ForeColor = Color.Green
 
                         ' TODO_A: NIGHT_CLUB
-                     'Case Modulo.NOME_NIGHT_CLUB
-                     '   e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB, "-")
-                     '   e.Item.SubItems(3).ForeColor = Color.Green
+                     Case Modulo.NOME_NIGHT_CLUB
+                        e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB, "-")
+                        e.Item.SubItems(3).ForeColor = Color.Green
 
                      Case Modulo.NOME_PREN_ONLINE
                         e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE, "-")
@@ -14565,9 +14568,9 @@ Friend Class frmMain
                         End If
 
                         ' TODO_A: NIGHT_CLUB
-                        'If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
-                        '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
-                        'End If
+                        If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                           ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
+                        End If
 
                         If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
                            ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
@@ -14587,10 +14590,10 @@ Friend Class frmMain
                      End If
 
                      ' TODO_A: NIGHT_CLUB
-                  'Case Modulo.NOME_NIGHT_CLUB
-                  '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
-                  '      Exit Select
-                  '   End If
+                  Case Modulo.NOME_NIGHT_CLUB
+                     If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                        Exit Select
+                     End If
 
                   Case Modulo.NOME_PREN_ONLINE
                      If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then

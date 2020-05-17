@@ -1056,17 +1056,17 @@ Public Class frmPiatti
       Try
          With APiatti
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .CodBarre = FormattaApici(txtCodiceBarre.Text)
-            .Descrizione = FormattaApici(txtDescrizione.Text)
+            .CodBarre = txtCodiceBarre.Text
+            .Descrizione = txtDescrizione.Text
 
             If txtDescrizionePos.Text = String.Empty Then
                .DescrizionePos = .Descrizione
             Else
-               .DescrizionePos = FormattaApici(txtDescrizionePos.Text)
+               .DescrizionePos = txtDescrizionePos.Text
             End If
 
-            .Ingredienti = FormattaApici(txtIngredienti.Text)
-            .Categoria = FormattaApici(cmbCategoria.Text)
+            .Ingredienti = txtIngredienti.Text
+            .Categoria = cmbCategoria.Text
 
             If IsNumeric(txtQVenduta.Text) Then
                .Qt‡Venduta = CFormatta.FormattaNumero(txtQVenduta.Text)
@@ -1126,7 +1126,7 @@ Public Class frmPiatti
             End If
 
             .AliquotaIva = cmbAliquotaIva.Text
-            .Note = FormattaApici(txtNote.Text)
+            .Note = txtNote.Text
 
             .ColoreSfondo = cmdColoreSfondo.BackColor.ToArgb
             .ColoreTesto = cmdColoreTesto.BackColor.ToArgb
