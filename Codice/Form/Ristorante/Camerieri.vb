@@ -1496,6 +1496,8 @@ Public Class frmCamerieri
 
    Private Function SalvaDati() As Boolean
       Try
+         ' TODO_A: Modifcare procedure della Classe e rimuovere FormattApici.
+
          ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
          'AggiornaTabella(cmbNazione, TAB_NAZIONI)
 

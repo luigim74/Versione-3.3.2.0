@@ -1039,28 +1039,62 @@ Public Class Fornitori
          AggiornaTabella(cmbAttivit‡, TAB_ATTIVITA)
 
          ' Assegna i dati dei campi della classe alle caselle di testo.
-         AFornitori.RagSociale = FormattaApici(txtRagSoc.Text)
-         AFornitori.PIva = FormattaApici(txtPIva.Text)
-         AFornitori.Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
-         AFornitori.Cap = FormattaApici(txtCap.Text)
-         AFornitori.Citt‡ = FormattaApici(cmbCitt‡.Text)
-         AFornitori.Provincia = FormattaApici(txtProv.Text)
-         AFornitori.Regione = FormattaApici(txtRegione.Text)
-         AFornitori.Nazione = FormattaApici(cmbNazione.Text)
-         AFornitori.Contatto = FormattaApici(txtContatto.Text)
-         AFornitori.Attivit‡ = FormattaApici(cmbAttivit‡.Text)
-         AFornitori.TelCasa = FormattaApici(txtTelCasa.Text)
-         AFornitori.TelUfficio = FormattaApici(txtTelUfficio.Text)
-         AFornitori.Cell = FormattaApici(txtCell.Text)
-         AFornitori.Fax = FormattaApici(txtFax.Text)
-         AFornitori.Email = FormattaApici(txtEmail.Text)
-         AFornitori.PEC = FormattaApici(txtPec.Text)
-         AFornitori.Internet = FormattaApici(txtInternet.Text)
-         AFornitori.Note = FormattaApici(txtNote.Text)
-         AFornitori.NoteDoc = ""
-         AFornitori.CodAzienda = ""
-         AFornitori.Sconto = VALORE_ZERO
-         AFornitori.Iva = VALORE_ZERO
+         With AFornitori
+
+            .RagSociale = txtRagSoc.Text
+            .Indirizzo1 = txtIndirizzo1.Text
+            .Cap = txtCap.Text
+            .Citt‡ = cmbCitt‡.Text
+            .Provincia = txtProv.Text
+            .Regione = txtRegione.Text
+            .Nazione = cmbNazione.Text
+            .Contatto = txtContatto.Text
+            .Attivit‡ = cmbAttivit‡.Text
+            .PIva = txtPIva.Text
+            .TelCasa = txtTelCasa.Text
+            .TelUfficio = txtTelUfficio.Text
+            .Cell = txtCell.Text
+            .Fax = txtFax.Text
+            .Email = txtEmail.Text
+            .PEC = txtPec.Text
+            .Internet = txtInternet.Text
+            .Note = txtNote.Text
+
+            If .Immagine = Nothing Then
+               .Immagine = String.Empty
+            End If
+
+            ' Campi non utilizzati.
+            .Sconto = VALORE_ZERO
+            .Iva = VALORE_ZERO
+            .NoteDoc = String.Empty
+            .CodAzienda = String.Empty
+            .CodFisc = String.Empty
+            .RagSocialeDest = String.Empty
+            .IndirizzoDest = String.Empty
+            .CapDest = String.Empty
+            .Citt‡Dest = String.Empty
+            .ProvDest = String.Empty
+            .NazioneDest = String.Empty
+            .TelDest = String.Empty
+            .FaxDest = String.Empty
+            .TipoPagamento = String.Empty
+            .Banca = String.Empty
+            .Cin = String.Empty
+            .Abi = String.Empty
+            .Cab = String.Empty
+            .Cc = String.Empty
+            .Iban = String.Empty
+            .Listino = String.Empty
+            .IvaInFatt = String.Empty
+            .CodIva = String.Empty
+            .Aliquota = String.Empty
+            .DescrizioneIva = String.Empty
+            .Puntualit‡ = String.Empty
+            .Privacy = String.Empty
+            .Titolo = String.Empty
+         End With
+
 
          ' Se la propriet‡ 'Tag' contiene un valore viene richiamata la procedura
          ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
@@ -1109,7 +1143,7 @@ Public Class Fornitori
          If Not (picFoto.Image Is Nothing) Then
             picFoto.Image.Dispose()
             picFoto.Image = Nothing
-            AFornitori.Immagine = ""
+            AFornitori.Immagine = String.Empty
          End If
 
       Catch ex As Exception

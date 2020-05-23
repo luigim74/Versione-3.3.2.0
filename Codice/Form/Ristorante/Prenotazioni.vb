@@ -644,17 +644,17 @@ Public Class frmPrenotazioni
                cmbCliente.Focus()
                Return False
             Else
-               .Cliente = FormattaApici(cmbCliente.Text)
+               .Cliente = cmbCliente.Text
             End If
 
             ' Telefono.
-            .Telefono = FormattaApici(txtTelefono.Text)
+            .Telefono = txtTelefono.Text
 
             ' E-mail.
-            .eMail = FormattaApici(txtEmail.Text)
+            .eMail = txtEmail.Text
 
             .IdRisorsa = LeggiIdRisorsa(ANA_TAVOLI, cmbRisorsa.Text)
-            .DescrizioneRisorsa = FormattaApici(cmbRisorsa.Text)
+            .DescrizioneRisorsa = cmbRisorsa.Text
 
             ' Controllo sul campo Persone.
             If txtPersone.Text <> "0" And txtPersone.Text <> String.Empty Then
@@ -703,7 +703,7 @@ Public Class frmPrenotazioni
             End If
 
             .stato = cmbStatoPren.Text
-            .Note = FormattaApici(txtNote.Text)
+            .Note = txtNote.Text
 
             If .Colore = 0 Then
                .Colore = Convert.ToInt32(Color.White.ToArgb)

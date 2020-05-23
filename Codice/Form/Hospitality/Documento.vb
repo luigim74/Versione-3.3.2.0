@@ -1234,10 +1234,10 @@ Public Class frmDocumento
                .Cliente = String.Empty
             End If
 
-            .Indirizzo = FormattaApici(eui_txtIndirizzo.Text)
-            .Cap = FormattaApici(eui_txtCap.Text)
-            .Città = FormattaApici(eui_txtCittà.Text)
-            .Provincia = FormattaApici(eui_txtProvincia.Text)
+            .Indirizzo = eui_txtIndirizzo.Text
+            .Cap = eui_txtCap.Text
+            .Città = eui_txtCittà.Text
+            .Provincia = eui_txtProvincia.Text
             .PIva = eui_txtPartitaIva.Text
             .CodFiscale = eui_txtCodiceFiscale.Text
             .CodAzienda = String.Empty

@@ -1,0 +1,54 @@
+"*** 17/05/2020 - 17:24:59 ***"
+"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Piatti.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 19/05/2020 - 20:31:21 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Immagine."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.AziendaCliente.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 19/05/2020 - 20:31:55 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Privacy."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.AziendaCliente.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 19/05/2020 - 20:32:14 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Privacy."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.AziendaCliente.ModificaDati(String tabella, String codice)"
+"
+"
+"*** 23/05/2020 - 16:58:51 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Backup\Hospitality_23-05-2020.mdb' esiste già."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   in System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   in Microsoft.VisualBasic.FileIO.FileSystem.CopyOrMoveFile(CopyOrMove operation, String sourceFileName, String destinationFileName, Boolean overwrite, UIOptionInternal showUI, UICancelOption onUserCancel)
+   in Microsoft.VisualBasic.MyServices.FileSystemProxy.CopyFile(String sourceFileName, String destinationFileName)
+   in Hospitality_Solution.frmMain.eui_cmdArchiviImporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\Main.vb:riga 11524"
+"
+"

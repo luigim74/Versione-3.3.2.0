@@ -268,7 +268,7 @@ Public Class Ingredienti
             ' Assegna i dati dei campi della classe alle caselle di testo.
             .Id_Piatto = Id_Piatto
             .Id_Articolo = Convert.ToInt32(cmbId_Art.Items.Item(cmbDescrizione.Items.IndexOf(cmbDescrizione.Text)))
-            .Descrizione = cmbDescrizione.Text 'FormattaApici(cmbDescrizione.Text)- NON UTILIZZARE CON QUERY PARAMETRICHE.
+            .Descrizione = cmbDescrizione.Text
             .Unit‡Misura = txtUM.Text
 
             If IsNumeric(txtCosto.Text) Then

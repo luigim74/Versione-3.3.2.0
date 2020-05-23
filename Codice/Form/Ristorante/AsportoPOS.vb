@@ -846,11 +846,11 @@ Public Class AsportoPOS
             .CodiceCliente = txtIdCliente.Text
             .CodiceAzienda = txtIdAzienda.Text
             .Intestatario = eui_cmdCliente.Text
-            .Indirizzo = FormattaApici(txtIndirizzo.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(txtCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
-            .PIva = FormattaApici(txtPIva.Text)
+            .Indirizzo = txtIndirizzo.Text
+            .Cap = txtCap.Text
+            .Città = txtCittà.Text
+            .Provincia = txtProv.Text
+            .PIva = txtPIva.Text
             If IsNumeric(txtValSconto.Text) = True Then
                .Sconto = txtValSconto.Text
             Else

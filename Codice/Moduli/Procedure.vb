@@ -1710,6 +1710,8 @@ Module Procedure
          Dim Giorno As String = Now.Day
          Dim Mese As String = Now.Month
          Dim Anno As String = Now.Year
+         Dim Ore As String = Now.Hour
+         Dim Minuti As String = Now.Minute
 
          If Len(Giorno) = LunghezzaStringa Then
             Giorno = Zero & Giorno
@@ -1719,8 +1721,16 @@ Module Procedure
             Mese = Zero & Mese
          End If
 
+         If Len(Ore) = LunghezzaStringa Then
+            Ore = Zero & Ore
+         End If
+
+         If Len(Minuti) = LunghezzaStringa Then
+            Minuti = Zero & Minuti
+         End If
+
          ' Formato Italiano.
-         Return Giorno & "-" & Mese & "-" & Anno
+         Return Giorno & "-" & Mese & "-" & Anno & "_" & Ore & "." & Minuti
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

@@ -803,11 +803,11 @@ Public Class IncassaSospeso
             .Causale = "Riscosso importo sospeso"
 
             .IdCliente = idCliente
-            .Cliente = FormattaApici(cmbIntestatario.Text)
-            .Indirizzo = FormattaApici(txtIndirizzo.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(txtCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
+            .Cliente = cmbIntestatario.Text
+            .Indirizzo = txtIndirizzo.Text
+            .Cap = txtCap.Text
+            .Città = txtCittà.Text
+            .Provincia = txtProv.Text
             .PIva = txtPIva.Text
             .CodFiscale = txtCodiceFiscale.Text
             .CodAzienda = String.Empty

@@ -2013,8 +2013,8 @@ Public Class frmPrenCamera
             .Data = dtpData.Text
             .Tipologia = cmbTipologia.Text
             .Stato = cmbStatoPren.Text
-            .Cognome = FormattaApici(cmbCognome.Text)
-            .Nome = FormattaApici(txtNome.Text)
+            .Cognome = cmbCognome.Text
+            .Nome = txtNome.Text
             .Nazionalit‡ = LeggiNazionalit‡Cliente(TAB_CLIENTI, cmbIdCliente.Text)
 
             If .Nazionalit‡.ToUpper = "ITALIA" Then
@@ -2027,7 +2027,7 @@ Public Class frmPrenCamera
             .Neonati = nudNeonati.Value
             .Bambini = nudBambini.Value
             .Ragazzi = nudRagazzi.Value
-            .NumeroCamera = FormattaApici(cmbNumeroCamera.Text)
+            .NumeroCamera = cmbNumeroCamera.Text
             .DescrizioneCamera = txtDescrizioneCamera.Text
             .Trattamento = cmbTrattamento.Text
             .Gruppo = cmbGruppo.Text
@@ -2038,7 +2038,7 @@ Public Class frmPrenCamera
             .OraArrivo = dtpOraArrivo.Text
             .NumeroNotti = Convert.ToInt32(txtNumeroNotti.Text)
             .Listino = cmbListino.Text
-            .Pagamento = FormattaApici(cmbPagamento.Text)
+            .Pagamento = cmbPagamento.Text
 
             If IsNumeric(txtPrezzoCamera.Text) = True Then
                .CostoCamera = CFormatta.FormattaEuro(Convert.ToDouble(txtPrezzoCamera.Text))
@@ -2083,7 +2083,7 @@ Public Class frmPrenCamera
                .Schedina = VALORE_NESSUNA
             End If
 
-            .Note = FormattaApici(txtNote.Text)
+            .Note = txtNote.Text
 
             If .Colore = 0 Then
                .Colore = Convert.ToInt32(Color.White.ToArgb)

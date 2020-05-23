@@ -431,10 +431,10 @@ Public Class frmOperatori
 
          With COperatori
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .NomeUtente = FormattaApici(txtNomeUtente.Text)
-            .Password = FormattaApici(OffuscaPwd(txtPwd.Text))
-            .Gruppo = FormattaApici(cmbGruppo.Text)
-            .Note = FormattaApici(txtNote.Text)
+            .NomeUtente = txtNomeUtente.Text
+            .Password = OffuscaPwd(txtPwd.Text)
+            .Gruppo = cmbGruppo.Text
+            .Note = txtNote.Text
 
             ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.

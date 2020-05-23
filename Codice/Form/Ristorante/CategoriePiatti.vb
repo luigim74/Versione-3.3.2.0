@@ -507,8 +507,8 @@ Public Class frmCategoriePiatti
 
          With ACatPiatti
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Descrizione = FormattaApici(txtDescrizione.Text)
-            .Reparto = FormattaApici(cmbReparto.Text)
+            .Descrizione = txtDescrizione.Text
+            .Reparto = cmbReparto.Text
 
             If IsNothing(.Icona) = True Then
                .Icona = String.Empty

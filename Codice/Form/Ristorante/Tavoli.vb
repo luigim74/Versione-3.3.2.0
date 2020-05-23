@@ -559,7 +559,7 @@ Public Class frmTavoli
                txtDescrizione.Focus()
                Return False
             Else
-               .Descrizione = FormattaApici(txtDescrizione.Text)
+               .Descrizione = txtDescrizione.Text
             End If
 
             ' Controllo sul campo Persone.
@@ -571,11 +571,11 @@ Public Class frmTavoli
                Return False
             End If
 
-            .Cameriere = FormattaApici(cmbCameriere.Text)
+            .Cameriere = cmbCameriere.Text
             .Listino = cmbListino.Text
             .Orientamento = cmbOrientamento.Text
             .Sala = cmbSala.Text
-            .Note = FormattaApici(txtNote.Text)
+            .Note = txtNote.Text
 
             If chkEscludi.Checked = True Then
                .Escludi = "Sì"

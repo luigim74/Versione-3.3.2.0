@@ -1507,11 +1507,11 @@ Public Class frmPrenRisorse
             ' Assegna i dati dei campi della classe alle caselle di testo.
             ' Formato italiano.
             .Data = FormattaData(dtpData.Value, True)
-            .Intestatario = FormattaApici(cmbCliente.Text)
+            .Intestatario = cmbCliente.Text
             .IdRisorsa = LeggiIdRisorsa(ANA_RISORSE, cmbRisorsa.Text)
-            .DesRisorsa = FormattaApici(cmbRisorsa.Text)
+            .DesRisorsa = cmbRisorsa.Text
             ' A_TODO: MODIFICHE ASD AGON
-            .CaratteristicaRisorsa = FormattaApici(cmbCaratteristiche.Text)
+            .CaratteristicaRisorsa = cmbCaratteristiche.Text
             ' Verifica l'esistenza dei dati della prenotazione nella tabella Statistiche.
             Dim numRec As Integer = VerificaEsistenzaValore(TAB_STAT_VENDITA, cn, cmd, "IdPren", Me.Tag)
 

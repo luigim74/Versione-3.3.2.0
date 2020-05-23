@@ -462,6 +462,7 @@ Public Class frmAcquisti
    End Sub
 
    Private Function SalvaDati() As Boolean
+      ' TODO_A: Modifcare procedure della Classe e rimuovere FormattApici.
 
       ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
       AggiornaTabella(cmbDoc, TAB_DOC)

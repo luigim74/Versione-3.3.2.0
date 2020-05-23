@@ -3993,6 +3993,8 @@ Public Class frmPos
          For i = 0 To lstvDettagli.Items.Count - 1
 
             With Stat
+               ' TODO_A: Modifcare procedure della Classe e rimuovere FormattApici.
+
                ' Assegna i dati dei campi della classe alle caselle di testo.
                .Data = CStr(dtpData.Value.Date)
                If rifDoc = True Then

@@ -2138,17 +2138,17 @@ Public Class frmClienti
             ' Dati principali.
             .Cognome = txtCognome.Text ' FormattaApici(txtCognome.Text)
             .Nome = txtNome.Text ' FormattaApici(txtNome.Text)
-            .Titolo = FormattaApici(cmbTitolo.Text)
-            .CodFisc = FormattaApici(txtCodFisc.Text)
-            .PIva = FormattaApici(txtPIva.Text)
-            .Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Citt‡ = FormattaApici(cmbCitt‡.Text)
-            .Provincia = FormattaApici(txtProv.Text)
-            .Regione = FormattaApici(txtRegione.Text)
-            .Nazione = FormattaApici(cmbNazione.Text)
-            .TipoCliente = FormattaApici(cmbTipoCliente.Text)
-            .NumeroDoc = FormattaApici(txtCodTessera.Text)
+            .Titolo = cmbTitolo.Text
+            .CodFisc = txtCodFisc.Text
+            .PIva = txtPIva.Text
+            .Indirizzo1 = txtIndirizzo1.Text
+            .Cap = txtCap.Text
+            .Citt‡ = cmbCitt‡.Text
+            .Provincia = txtProv.Text
+            .Regione = txtRegione.Text
+            .Nazione = cmbNazione.Text
+            .TipoCliente = cmbTipoCliente.Text
+            .NumeroDoc = txtCodTessera.Text
             If IsNumeric(txtSconto.Text) = True Then
                .Sconto = txtSconto.Text
             Else
@@ -2161,14 +2161,14 @@ Public Class frmClienti
             End If
 
             'Tel/Internet.
-            .TelCasa = FormattaApici(txtTelCasa.Text)
-            .TelUfficio = FormattaApici(txtTelUfficio.Text)
-            .Cell = FormattaApici(txtCell.Text)
-            .Fax = FormattaApici(txtFax.Text)
-            .Email = FormattaApici(txtEmail.Text)
-            .PEC = FormattaApici(txtPec.Text)
-            .Internet = FormattaApici(txtInternet.Text)
-            .Note = FormattaApici(txtNote.Text)
+            .TelCasa = txtTelCasa.Text
+            .TelUfficio = txtTelUfficio.Text
+            .Cell = txtCell.Text
+            .Fax = txtFax.Text
+            .Email = txtEmail.Text
+            .PEC = txtPec.Text
+            .Internet = txtInternet.Text
+            .Note = txtNote.Text
 
             ' Dati personali.
             .TipoAlloggiato = cmbTipoAlloggiato.Text
@@ -2179,19 +2179,19 @@ Public Class frmClienti
             Else
                .DataRilascioDoc = String.Empty
             End If
-            .RilasciatoDa = FormattaApici(txtRilasciatoDaDoc.Text)
-            .Citt‡RilascioDoc = FormattaApici(cmbCitt‡RilascioDoc.Text)
-            .NazioneRilascioDoc = FormattaApici(cmbNazioneRilascioDoc.Text)
-            .LuogoNascita = FormattaApici(cmbComuneNascita.Text)
-            .ProvNascita = FormattaApici(txtProvNascita.Text)
+            .RilasciatoDa = txtRilasciatoDaDoc.Text
+            .Citt‡RilascioDoc = cmbCitt‡RilascioDoc.Text
+            .NazioneRilascioDoc = cmbNazioneRilascioDoc.Text
+            .LuogoNascita = cmbComuneNascita.Text
+            .ProvNascita = txtProvNascita.Text
             If dtpDataNascita.Checked = True Then
                .DataNascita = dtpDataNascita.Text
             Else
                .DataNascita = String.Empty
             End If
             .Sesso = cmbSesso.Text
-            .NazioneNascita = FormattaApici(cmbNazioneNascita.Text)
-            .Nazionalit‡ = FormattaApici(cmbNazionalit‡.Text)
+            .NazioneNascita = cmbNazioneNascita.Text
+            .Nazionalit‡ = cmbNazionalit‡.Text
 
             If chkDisabile.Checked = True Then
                .Disabile = "SÏ"

@@ -6936,4 +6936,5 @@ Public Class frmOpzioni
    Private Sub cmbMinutiOccupazioneTavolo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbMinutiOccupazioneTavolo.KeyPress
       e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
    End Sub
+
 End Class

@@ -1958,13 +1958,13 @@ Public Class frmArticoli
             ' Assegna i dati dei campi della classe alle caselle di testo.
             .Codice = txtCodice.Text
             .CodBarre = txtCodiceBarre.Text
-            .Descrizione = FormattaApici(txtDescrizione.Text)
-            .Fornitore = FormattaApici(cmbFornitore.Text)
+            .Descrizione = txtDescrizione.Text
+            .Fornitore = cmbFornitore.Text
             .Unit‡Misura = cmbUM.Text
-            .Categoria = FormattaApici(cmbCategoria.Text)
-            .Magazzino = FormattaApici(cmbMagazzino.Text)
-            .Ubicazione = FormattaApici(cmbUbicazione.Text)
-            .Scaffale = FormattaApici(cmbScaffale.Text)
+            .Categoria = cmbCategoria.Text
+            .Magazzino = cmbMagazzino.Text
+            .Ubicazione = cmbUbicazione.Text
+            .Scaffale = cmbScaffale.Text
             .SituazioneScorta = situazioneScorta
 
             If IsNumeric(txtPrezzoAcquisto.Text) Then
@@ -2008,13 +2008,13 @@ Public Class frmArticoli
                .ValAttuale = VALORE_ZERO
             End If
 
-            .ProduttoreVino = FormattaApici(txtProduttoreVino.Text)
-            .RegioneVino = FormattaApici(txtRegioneVino.Text)
-            .ZonaVino = FormattaApici(txtZonaVino.Text)
+            .ProduttoreVino = txtProduttoreVino.Text
+            .RegioneVino = txtRegioneVino.Text
+            .ZonaVino = txtZonaVino.Text
             .AnnoVino = txtAnnoVino.Text
-            .FormatoVino = FormattaApici(txtFormatoVino.Text)
-            .ScansiaVino = FormattaApici(txtScansiaVino.Text)
-            .Note = FormattaApici(txtNote.Text)
+            .FormatoVino = txtFormatoVino.Text
+            .ScansiaVino = txtScansiaVino.Text
+            .Note = txtNote.Text
 
             ' Se la propriet‡ 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.

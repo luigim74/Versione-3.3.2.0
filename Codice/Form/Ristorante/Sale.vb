@@ -514,7 +514,7 @@ Public Class frmSale
                txtDescrizione.Focus()
                Return False
             Else
-               .Descrizione = FormattaApici(txtDescrizione.Text)
+               .Descrizione = txtDescrizione.Text
             End If
 
             If chkIniziale.Checked = True Then

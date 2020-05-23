@@ -316,7 +316,7 @@ Public Class frmStatoPrenotazioni
       Try
          With AStatoPren
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Descrizione = FormattaApici(txtDescrizione.Text)
+            .Descrizione = txtDescrizione.Text
             .Colore = cmdColore.BackColor.ToArgb
 
             ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura

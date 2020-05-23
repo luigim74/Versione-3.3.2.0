@@ -542,11 +542,11 @@ Public Class frmAccessoriServizi
       Try
          With ARisorsa
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Descrizione = FormattaApici(txtDescrizione.Text)
-            .Tipologia = FormattaApici(cmbTipologia.Text)
+            .Descrizione = txtDescrizione.Text
+            .Tipologia = cmbTipologia.Text
             .Disponibile = cmbDisponibile.Text
             .Escludi = cmbEscludi.Text
-            .Note = FormattaApici(txtNote.Text)
+            .Note = txtNote.Text
 
             If IsNumeric(txtCosto.Text) Then
                .Costo = CFormatta.FormattaEuro(Convert.ToDouble(txtCosto.Text))

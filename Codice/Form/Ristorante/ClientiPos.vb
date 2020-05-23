@@ -738,16 +738,16 @@ Public Class ClientiPos
       Try
          With AClienti
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Cognome = FormattaApici(txtCognome.Text)
-            .Nome = FormattaApici(txtNome.Text)
+            .Cognome = txtCognome.Text
+            .Nome = txtNome.Text
             .Titolo = .Titolo
             .DataNascita = .DataNascita
-            .PIva = FormattaApici(txtPIva.Text)
-            .CodFisc = FormattaApici(txtCodiceFiscale.Text)
-            .Indirizzo1 = FormattaApici(txtIndirizzo.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(txtCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
+            .PIva = txtPIva.Text
+            .CodFisc = txtCodiceFiscale.Text
+            .Indirizzo1 = txtIndirizzo.Text
+            .Cap = txtCap.Text
+            .Città = txtCittà.Text
+            .Provincia = txtProv.Text
             .Regione = .Regione
             .Nazione = .Nazione
             .TipoCliente = .TipoCliente
@@ -790,14 +790,14 @@ Public Class ClientiPos
       Try
          With AAziende
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .RagSociale = FormattaApici(txtRagioneSociale.Text)
+            .RagSociale = txtRagioneSociale.Text
             .Titolo = .Titolo
-            .PIva = FormattaApici(txtPIva.Text)
-            .CodFisc = FormattaApici(txtCodiceFiscale.Text)
-            .Indirizzo1 = FormattaApici(txtIndirizzo.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(txtCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
+            .PIva = txtPIva.Text
+            .CodFisc = txtCodiceFiscale.Text
+            .Indirizzo1 = txtIndirizzo.Text
+            .Cap = txtCap.Text
+            .Città = txtCittà.Text
+            .Provincia = txtProv.Text
             .Regione = .Regione
             .Nazione = .Nazione
             .TipoCliente = .TipoCliente

@@ -290,7 +290,7 @@ Public Class frmCaratteristicheRisorse
       Try
          With ACarattRisorse
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .Descrizione = FormattaApici(txtDescrizione.Text)
+            .Descrizione = txtDescrizione.Text
 
             If IsNumeric(txtCosto.Text) = True Then
                .Costo = Convert.ToDouble(CFormatta.FormattaEuro(txtCosto.Text))

@@ -1998,19 +1998,19 @@ Public Class frmAziende
 
          With AAziende
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .RagSociale = FormattaApici(txtRagSociale.Text)
-            .Titolo = FormattaApici(cmbTitolo.Text)
-            .CodFisc = FormattaApici(txtCodFisc.Text)
-            .PIva = FormattaApici(txtPIva.Text)
-            .Indirizzo1 = FormattaApici(txtIndirizzo1.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(cmbCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
-            .Regione = FormattaApici(txtRegione.Text)
-            .Nazione = FormattaApici(cmbNazione.Text)
-            .Contatto = FormattaApici(txtContatto.Text)
-            .Attività = FormattaApici(cmbAttività.Text)
-            .TipoCliente = FormattaApici(cmbTipoCliente.Text)
+            .RagSociale = txtRagSociale.Text
+            .Titolo = cmbTitolo.Text
+            .CodFisc = txtCodFisc.Text
+            .PIva = txtPIva.Text
+            .Indirizzo1 = txtIndirizzo1.Text
+            .Cap = txtCap.Text
+            .Città = cmbCittà.Text
+            .Provincia = txtProv.Text
+            .Regione = txtRegione.Text
+            .Nazione = cmbNazione.Text
+            .Contatto = txtContatto.Text
+            .Attività = cmbAttività.Text
+            .TipoCliente = cmbTipoCliente.Text
             If IsNumeric(txtSconto.Text) = True Then
                .Sconto = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtSconto.Text))
             Else
@@ -2026,24 +2026,24 @@ Public Class frmAziende
             Else
                .Privacy = "No"
             End If
-            .TelCasa = FormattaApici(txtTelCasa.Text)
-            .TelUfficio = FormattaApici(txtTelUfficio.Text)
-            .Cell = FormattaApici(txtCell.Text)
-            .Fax = FormattaApici(txtFax.Text)
-            .Email = FormattaApici(txtEmail.Text)
-            .PEC = FormattaApici(txtPec.Text)
-            .Internet = FormattaApici(txtInternet.Text)
-            .TipoPagamento = FormattaApici(cmbPagamento.Text)
-            .Banca = FormattaApici(txtBanca.Text)
-            .Abi = FormattaApici(txtABI.Text)
-            .Cab = FormattaApici(txtCAB.Text)
-            .Cc = FormattaApici(txtCC.Text)
-            .Cin = FormattaApici(txtCIN.Text)
-            .Iban = FormattaApici(txtIBAN.Text)
+            .TelCasa = txtTelCasa.Text
+            .TelUfficio = txtTelUfficio.Text
+            .Cell = txtCell.Text
+            .Fax = txtFax.Text
+            .Email = txtEmail.Text
+            .PEC = txtPec.Text
+            .Internet = txtInternet.Text
+            .TipoPagamento = cmbPagamento.Text
+            .Banca = txtBanca.Text
+            .Abi = txtABI.Text
+            .Cab = txtCAB.Text
+            .Cc = txtCC.Text
+            .Cin = txtCIN.Text
+            .Iban = txtIBAN.Text
 
-            .CodAzienda = FormattaApici(txtCodAzienda.Text)
-            .Note = FormattaApici(txtNote.Text)
-            .NoteDoc = FormattaApici(txtNoteDoc.Text)
+            .CodAzienda = txtCodAzienda.Text
+            .Note = txtNote.Text
+            .NoteDoc = txtNoteDoc.Text
 
             ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
@@ -2503,14 +2503,14 @@ Public Class frmAziende
             .Causale = "Fatturazione Buoni pasto"
 
             .IdCliente = "A" & AAziende.Codice
-            .Cliente = FormattaApici(txtRagSociale.Text)
-            .Indirizzo = FormattaApici(txtIndirizzo1.Text)
-            .Cap = FormattaApici(txtCap.Text)
-            .Città = FormattaApici(cmbCittà.Text)
-            .Provincia = FormattaApici(txtProv.Text)
+            .Cliente = txtRagSociale.Text
+            .Indirizzo = txtIndirizzo1.Text
+            .Cap = txtCap.Text
+            .Città = cmbCittà.Text
+            .Provincia = txtProv.Text
             .PIva = txtPIva.Text
             .CodFiscale = String.Empty ' Aggiungere txtCodiceFiscale.Text
-            .CodAzienda = FormattaApici(txtCodAzienda.Text)
+            .CodAzienda = txtCodAzienda.Text
 
             .ImpLordoRep1 = VALORE_ZERO
             .ImpLordoRep2 = VALORE_ZERO

@@ -1736,8 +1736,8 @@ Public Class frmGruppi
             gruppo = .NomeGruppo
 
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            .NomeGruppo = FormattaApici(txtNomeGruppo.Text)
-            .Note = FormattaApici(txtNote.Text)
+            .NomeGruppo = txtNomeGruppo.Text
+            .Note = txtNote.Text
 
             If chkAmministratore.Checked = True Then
                .Amministratore = "Sì"

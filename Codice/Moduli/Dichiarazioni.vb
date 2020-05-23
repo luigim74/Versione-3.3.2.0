@@ -402,6 +402,7 @@ Module Dichiarazioni
    Public Const CAR_TAB_STAGIONI As String = "Attendere prego. Caricamento delle Stagioni in corso..."
    Public Const DB_NON_COMPATIBILE As String = "Il file archivio selezionato non risulta compatibile con la versione in uso del programma."
    Public Const SALVA_BKP As String = "Attendere prego. Salvataggio della copia di Backup degli archivi in corso..."
+   Public Const LEGGI_BKP As String = "Attendere prego. Apertura e importazione dati degli archivi in corso..."
    Public Const CAR_OPZIONI As String = "Attendere prego. Caricamento della finestra Opzioni di configurazione in corso..."
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
