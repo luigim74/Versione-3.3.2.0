@@ -182,14 +182,14 @@ Public Class ElencoCorrispettivi
       'ToolBar1
       '
       Me.ToolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
-      Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.Modifica, Me.Elimina, Me.ToolBarButton2, Me.tbrTutti, Me.tbrMese, Me.tbrAnno, Me.tbrPeriodo, Me.ToolBarButton4, Me.tbNuovo, Me.Primo, Me.Precedente, Me.Successivo, Me.Ultimo, Me.Aggiorna, Me.ToolBarButton1, Me.Anteprima, Me.Stampa, Me.Sep13, Me.Inserisci})
+      Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.Modifica, Me.Elimina, Me.Inserisci, Me.ToolBarButton2, Me.tbrTutti, Me.tbrMese, Me.tbrAnno, Me.tbrPeriodo, Me.ToolBarButton4, Me.tbNuovo, Me.Primo, Me.Precedente, Me.Successivo, Me.Ultimo, Me.Aggiorna, Me.ToolBarButton1, Me.Anteprima, Me.Stampa, Me.Sep13})
       Me.ToolBar1.Divider = False
       Me.ToolBar1.DropDownArrows = True
       Me.ToolBar1.ImageList = Me.ImageList1
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(751, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(759, 26)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -331,9 +331,11 @@ Public Class ElencoCorrispettivi
       '
       'Inserisci
       '
+      Me.Inserisci.ImageIndex = 18
       Me.Inserisci.Name = "Inserisci"
-      Me.Inserisci.Tag = ""
-      Me.Inserisci.Visible = False
+      Me.Inserisci.Tag = "Inserisci"
+      Me.Inserisci.Text = "Prima nota"
+      Me.Inserisci.ToolTipText = "Inserisci in Prima nota"
       '
       'ImageList1
       '
@@ -356,6 +358,8 @@ Public Class ElencoCorrispettivi
       Me.ImageList1.Images.SetKeyName(14, "")
       Me.ImageList1.Images.SetKeyName(15, "")
       Me.ImageList1.Images.SetKeyName(16, "")
+      Me.ImageList1.Images.SetKeyName(17, "eventlog.ico")
+      Me.ImageList1.Images.SetKeyName(18, "VSProject_genericproject.ico")
       '
       'DataGrid1
       '
@@ -372,7 +376,7 @@ Public Class ElencoCorrispettivi
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(751, 254)
+      Me.DataGrid1.Size = New System.Drawing.Size(759, 260)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -385,14 +389,14 @@ Public Class ElencoCorrispettivi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(751, 30)
+      Me.Panel1.Size = New System.Drawing.Size(759, 30)
       Me.Panel1.TabIndex = 1
       '
       'dtpAl
       '
       Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(567, 8)
+      Me.dtpAl.Location = New System.Drawing.Point(575, 8)
       Me.dtpAl.Name = "dtpAl"
       Me.dtpAl.Size = New System.Drawing.Size(174, 20)
       Me.dtpAl.TabIndex = 1
@@ -401,7 +405,7 @@ Public Class ElencoCorrispettivi
       '
       Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(351, 8)
+      Me.dtpDal.Location = New System.Drawing.Point(359, 8)
       Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.dtpDal.Name = "dtpDal"
       Me.dtpDal.Size = New System.Drawing.Size(174, 20)
@@ -413,7 +417,7 @@ Public Class ElencoCorrispettivi
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.Color.White
-      Me.lblAl.Location = New System.Drawing.Point(540, 8)
+      Me.lblAl.Location = New System.Drawing.Point(548, 8)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(23, 15)
       Me.lblAl.TabIndex = 55668
@@ -425,7 +429,7 @@ Public Class ElencoCorrispettivi
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.Color.White
-      Me.lblDal.Location = New System.Drawing.Point(312, 8)
+      Me.lblDal.Location = New System.Drawing.Point(320, 8)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(33, 15)
       Me.lblDal.TabIndex = 55667
@@ -456,9 +460,9 @@ Public Class ElencoCorrispettivi
       Me.Panel2.Controls.Add(Me.txtTotImporto)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 310)
+      Me.Panel2.Location = New System.Drawing.Point(0, 318)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(751, 48)
+      Me.Panel2.Size = New System.Drawing.Size(759, 48)
       Me.Panel2.TabIndex = 2
       '
       'Label9
@@ -467,7 +471,7 @@ Public Class ElencoCorrispettivi
       Me.Label9.AutoSize = True
       Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label9.ForeColor = System.Drawing.Color.White
-      Me.Label9.Location = New System.Drawing.Point(71, 24)
+      Me.Label9.Location = New System.Drawing.Point(79, 24)
       Me.Label9.Name = "Label9"
       Me.Label9.Size = New System.Drawing.Size(51, 15)
       Me.Label9.TabIndex = 245
@@ -481,7 +485,7 @@ Public Class ElencoCorrispettivi
       Me.txtRicevute.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtRicevute.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtRicevute.ForeColor = System.Drawing.Color.Red
-      Me.txtRicevute.Location = New System.Drawing.Point(231, 24)
+      Me.txtRicevute.Location = New System.Drawing.Point(239, 24)
       Me.txtRicevute.MaxLength = 0
       Me.txtRicevute.Name = "txtRicevute"
       Me.txtRicevute.ReadOnly = True
@@ -496,7 +500,7 @@ Public Class ElencoCorrispettivi
       Me.Label5.AutoSize = True
       Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label5.ForeColor = System.Drawing.Color.White
-      Me.Label5.Location = New System.Drawing.Point(231, 8)
+      Me.Label5.Location = New System.Drawing.Point(239, 8)
       Me.Label5.Name = "Label5"
       Me.Label5.Size = New System.Drawing.Size(66, 15)
       Me.Label5.TabIndex = 244
@@ -510,7 +514,7 @@ Public Class ElencoCorrispettivi
       Me.txtScontrini.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtScontrini.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtScontrini.ForeColor = System.Drawing.Color.Red
-      Me.txtScontrini.Location = New System.Drawing.Point(335, 24)
+      Me.txtScontrini.Location = New System.Drawing.Point(343, 24)
       Me.txtScontrini.MaxLength = 0
       Me.txtScontrini.Name = "txtScontrini"
       Me.txtScontrini.ReadOnly = True
@@ -525,7 +529,7 @@ Public Class ElencoCorrispettivi
       Me.Label7.AutoSize = True
       Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label7.ForeColor = System.Drawing.Color.White
-      Me.Label7.Location = New System.Drawing.Point(335, 8)
+      Me.Label7.Location = New System.Drawing.Point(343, 8)
       Me.Label7.Name = "Label7"
       Me.Label7.Size = New System.Drawing.Size(68, 15)
       Me.Label7.TabIndex = 242
@@ -539,7 +543,7 @@ Public Class ElencoCorrispettivi
       Me.txtFatture.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtFatture.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtFatture.ForeColor = System.Drawing.Color.Red
-      Me.txtFatture.Location = New System.Drawing.Point(127, 24)
+      Me.txtFatture.Location = New System.Drawing.Point(135, 24)
       Me.txtFatture.MaxLength = 0
       Me.txtFatture.Name = "txtFatture"
       Me.txtFatture.ReadOnly = True
@@ -554,7 +558,7 @@ Public Class ElencoCorrispettivi
       Me.Label8.AutoSize = True
       Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label8.ForeColor = System.Drawing.Color.White
-      Me.Label8.Location = New System.Drawing.Point(127, 8)
+      Me.Label8.Location = New System.Drawing.Point(135, 8)
       Me.Label8.Name = "Label8"
       Me.Label8.Size = New System.Drawing.Size(56, 15)
       Me.Label8.TabIndex = 241
@@ -568,7 +572,7 @@ Public Class ElencoCorrispettivi
       Me.txtIncassato.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIncassato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtIncassato.ForeColor = System.Drawing.Color.Red
-      Me.txtIncassato.Location = New System.Drawing.Point(543, 24)
+      Me.txtIncassato.Location = New System.Drawing.Point(551, 24)
       Me.txtIncassato.MaxLength = 0
       Me.txtIncassato.Name = "txtIncassato"
       Me.txtIncassato.ReadOnly = True
@@ -583,7 +587,7 @@ Public Class ElencoCorrispettivi
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(543, 8)
+      Me.Label4.Location = New System.Drawing.Point(551, 8)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(72, 15)
       Me.Label4.TabIndex = 238
@@ -597,7 +601,7 @@ Public Class ElencoCorrispettivi
       Me.txtNonIncassato.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtNonIncassato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNonIncassato.ForeColor = System.Drawing.Color.Red
-      Me.txtNonIncassato.Location = New System.Drawing.Point(647, 24)
+      Me.txtNonIncassato.Location = New System.Drawing.Point(655, 24)
       Me.txtNonIncassato.MaxLength = 0
       Me.txtNonIncassato.Name = "txtNonIncassato"
       Me.txtNonIncassato.ReadOnly = True
@@ -612,7 +616,7 @@ Public Class ElencoCorrispettivi
       Me.Label3.AutoSize = True
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(647, 8)
+      Me.Label3.Location = New System.Drawing.Point(655, 8)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(102, 15)
       Me.Label3.TabIndex = 236
@@ -626,7 +630,7 @@ Public Class ElencoCorrispettivi
       Me.txtTotImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotImporto.Location = New System.Drawing.Point(439, 24)
+      Me.txtTotImporto.Location = New System.Drawing.Point(447, 24)
       Me.txtTotImporto.MaxLength = 0
       Me.txtTotImporto.Name = "txtTotImporto"
       Me.txtTotImporto.ReadOnly = True
@@ -641,7 +645,7 @@ Public Class ElencoCorrispettivi
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(439, 8)
+      Me.Label6.Location = New System.Drawing.Point(447, 8)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(51, 15)
       Me.Label6.TabIndex = 16
@@ -656,7 +660,7 @@ Public Class ElencoCorrispettivi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(751, 358)
+      Me.ClientSize = New System.Drawing.Size(759, 366)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
@@ -1297,6 +1301,46 @@ Public Class ElencoCorrispettivi
       txtNonIncassato.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_NON_INCASSATO, numRecord))
    End Sub
 
+   Private Sub RegistraInPrimaNota()
+      Try
+         Dim dataCorrispettivo As Date = Convert.ToDateTime(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
+         Dim importoCorrispettivo As String = Convert.ToString(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6))
+         Dim dataInserimento As String = Now.ToShortDateString
+         Dim descrizioneInserimento As String = "Corrisettivi del " & dataCorrispettivo.ToShortDateString
+
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa 
+         sql = "INSERT INTO PrimaNota (Data, Descrizione, EntrateCassa, UsciteCassa, VersamentiBanca, PrelieviBanca, EntrateVarie, UsciteVarie) " &
+               "VALUES ('" & dataInserimento & "','" & descrizioneInserimento & "','" & importoCorrispettivo & "','" & VALORE_ZERO & "','" & VALORE_ZERO & "','" & VALORE_ZERO & "','" & VALORE_ZERO & "','" & VALORE_ZERO & "');"
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         ' Annulla transazione.
+         tr.Rollback()
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Sub
+
    Private Sub ElencoCorrispettivi_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
       ' Visualizza i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
       g_frmMain.rtgGestionaleAmica.Visible = False
@@ -1421,6 +1465,44 @@ Public Class ElencoCorrispettivi
          Case "Elimina"
             ' Elimina il valore selezionato.
             EliminaDati(TAB_CORRISPETTIVI, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
+
+         Case "Inserisci"
+            Dim risposta As DialogResult
+            risposta = MessageBox.Show("Si desidera registrare i corrispettivi selezionati in Prima nota?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If risposta = DialogResult.Yes Then
+               ' Registra il corrispettivo selezionato nella Prima nota.
+               RegistraInPrimaNota()
+
+               ' Registra loperazione effettuata dall'operatore identificato.
+               Dim strDescrizione As String = " (Corrispettivi del " & CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)) & " - € " & CFormatta.FormattaNumeroDouble(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6)) & ")"
+               g_frmMain.RegistraOperazione(TipoOperazione.Salva, strDescrizione, MODULO_CONTABILITA_PRIMA_NOTA)
+
+               If IsNothing(g_frmPrimaNota) = False Then
+                  With g_frmPrimaNota
+                     If .tbrMese.Pushed = True Then
+                        ' Aggiorna la griglia dati.
+                        .CaricaGriglia("Mese")
+                        Exit Sub
+                     ElseIf .tbrAnno.Pushed = True Then
+                        ' Aggiorna la griglia dati.
+                        .CaricaGriglia("Anno")
+                        Exit Sub
+                     ElseIf .tbrPeriodo.Pushed = True Then
+                        ' Aggiorna la griglia dati.
+                        .CaricaGriglia("Periodo")
+                        Exit Sub
+                     Else
+                        ' Aggiorna la griglia dati.
+                        .CaricaGriglia("Tutti")
+                        Exit Sub
+                     End If
+
+                     .SommaImporti()
+                     .AggIntGriglia()
+                  End With
+               End If
+            End If
 
          Case "Tutti"
             tbrPeriodo.Pushed = False

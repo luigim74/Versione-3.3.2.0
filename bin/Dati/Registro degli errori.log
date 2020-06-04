@@ -52,3 +52,25 @@
    in Hospitality_Solution.frmMain.eui_cmdArchiviImporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\Main.vb:riga 11524"
 "
 "
+"*** 27/05/2020 - 21:52:44 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'DescrizionePos = 'CAFFE'''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Piatti.ModificaDati(Int32 coloreStile, Int32 coloreSfondo, Int32 coloreTesto, Int32 altezzaTasto, Int32 larghezzaTasto, Int32 numTastiRiga, String immagine, String descrizionePos, String tabella)"
+"
+"
+"*** 27/05/2020 - 21:53:07 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella stringa nell'espressione della query 'DescrizionePos = 'CAFFE'''."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Piatti.ModificaOrdineTasto(Int32 ordine, String descrizionePos, String tabella)"
+"
+"

@@ -379,7 +379,7 @@ Public Class Piatti
                              "Icona = @Icona " &
                              "WHERE DescrizionePos = '{1}'",
                              tabella,
-                             descrizionePos)
+                             FormattaApici(descrizionePos))
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
@@ -429,7 +429,7 @@ Public Class Piatti
                              "SET OrdineTasto = @OrdineTasto " &
                              "WHERE DescrizionePos = '{1}'",
                              tabella,
-                             descrizionePos)
+                             FormattaApici(descrizionePos))
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)

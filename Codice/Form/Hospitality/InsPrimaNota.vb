@@ -60,13 +60,6 @@ Public Class InPrimaNota
                   AppoEntrateVarie = CDec(0)
                End If
 
-            Case "Entrate Cassa"
-               If IsNumeric(txtImporto.Text) Then
-                  AppoUsciteCassa = CFormatta.FormattaEuro(CDec(txtImporto.Text))
-               Else
-                  AppoUsciteCassa = CDec(0)
-               End If
-
             Case "Uscite Varie"
                If IsNumeric(txtImporto.Text) Then
                   AppoUsciteVarie = CFormatta.FormattaEuro(CDec(txtImporto.Text))
