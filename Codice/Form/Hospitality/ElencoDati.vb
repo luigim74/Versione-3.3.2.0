@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 11/04/2020
+' Data ultima modifica: 13/06/2020
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -34,10 +34,11 @@ Public Class frmElencoDati
    Const TAB_SALE = "Sale"
    Const TAB_TAVOLI = "Tavoli"
    Const TAB_CAMERE = "Camere"
-   Const TAB_STATO_PREN = "Gruppi"
+   Const TAB_STATO_PREN = "StatoPren"
    Const TAB_OPERATORI = "Operatori"
    Const TAB_GRUPPI = "Gruppi"
    Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
+   Const TAB_SCONTI_MAGGIORAZIONI = "ScontiMaggiorazioni"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnStringAnagrafiche)
@@ -151,6 +152,11 @@ Public Class frmElencoDati
             TipoElenco = Elenco.CaratteristicheRisorse
             NomeTabella = "CaratteristicheRisorse"
             TitoloFinestra = "Elenco Tipologie di utilizzo Risorse"
+
+         Case Elenco.ScontiMaggiorazioni
+            TipoElenco = Elenco.ScontiMaggiorazioni
+            NomeTabella = "ScontiMaggiorazioni"
+            TitoloFinestra = "Elenco Sconti e Maggiorazioni"
 
       End Select
 
@@ -982,6 +988,37 @@ Public Class frmElencoDati
                   Exit Sub
                End If
 
+            Case Elenco.ScontiMaggiorazioni
+               If DatiConfig.GetValue("WSScontiMaggiorazioni") = CStr(FormWindowState.Maximized) Then
+                  Me.WindowState = FormWindowState.Maximized
+                  Exit Sub
+               ElseIf DatiConfig.GetValue("WSScontiMaggiorazioni") = CStr(FormWindowState.Minimized) Then
+                  Me.WindowState = FormWindowState.Minimized
+                  Exit Sub
+               Else
+                  If DatiConfig.GetValue("AScontiMaggiorazioni") <> "" Then
+                     Me.Height = CInt(DatiConfig.GetValue("AScontiMaggiorazioni"))
+                  Else
+                     Me.Height = FORM_ALTEZZA
+                  End If
+
+                  If DatiConfig.GetValue("LScontiMaggiorazioni") <> "" Then
+                     Me.Width = CInt(DatiConfig.GetValue("LScontiMaggiorazioni"))
+                  Else
+                     Me.Width = FORM_LARGHEZZA
+                  End If
+
+                  If DatiConfig.GetValue("ScontiMaggiorazioniX") <> "" Then
+                     Me.Location = New Point(CInt(DatiConfig.GetValue("ScontiMaggiorazioniX")), Me.Location.Y)
+                  End If
+
+                  If DatiConfig.GetValue("ScontiMaggiorazioniY") <> "" Then
+                     Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("ScontiMaggiorazioniY")))
+                  End If
+
+                  Exit Sub
+               End If
+
          End Select
 
       Catch ex As Exception
@@ -1101,6 +1138,13 @@ Public Class frmElencoDati
                DatiConfig.SetValue("CarattRisorseY", Me.Location.Y)
                DatiConfig.SetValue("ACarattRisorse", Me.Height)
                DatiConfig.SetValue("LCarattRisorse", Me.Width)
+
+            Case Elenco.ScontiMaggiorazioni
+               DatiConfig.SetValue("WSScontiMaggiorazioni", Me.WindowState)
+               DatiConfig.SetValue("ScontiMaggiorazioniX", Me.Location.X)
+               DatiConfig.SetValue("ScontiMaggiorazioniY", Me.Location.Y)
+               DatiConfig.SetValue("AScontiMaggiorazioni", Me.Height)
+               DatiConfig.SetValue("LScontiMaggiorazioni", Me.Width)
 
          End Select
 
@@ -1666,6 +1710,16 @@ Public Class frmElencoDati
                Risposta = MsgBox("Si desidera eliminare la tipologia di utilizzo risorsa " & descrizione &
                                  """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
+            Case Elenco.ScontiMaggiorazioni
+               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare lo Sconto / Maggiorazione '" & descrizione &
+                                 "'?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
          End Select
 
          If Risposta = MsgBoxResult.Yes Then
@@ -1858,6 +1912,12 @@ Public Class frmElencoDati
             If ImpostaFunzioniOperatore(Finestra.Articoli) = True Then
                ImpostaComandi()
             End If
+
+         Case Elenco.ScontiMaggiorazioni
+            ' A_TODO: Da gestire per Sconti Maggiorazioni.
+            'If ImpostaFunzioniOperatore(Finestra.Gruppi) = True Then
+            '   ImpostaComandi()
+            'End If
       End Select
 
    End Sub
@@ -2122,6 +2182,22 @@ Public Class frmElencoDati
                frm.Tag = val
                frm.ShowDialog()
 
+            Case Elenco.ScontiMaggiorazioni
+               ' Per la versione demo.
+               ' Se è un nuovo inserimento verifica il numero dei record.
+               If val = String.Empty Then
+                  If g_VerDemo = True Then
+                     ' Test per la versione demo.
+                     If VerificaNumRecord(LeggiNumRecord(TAB_SCONTI_MAGGIORAZIONI)) = True Then
+                        Exit Sub
+                     End If
+                  End If
+               End If
+
+               Dim frm As New frmScontiMaggiorazioni
+               frm.Tag = val
+               frm.ShowDialog()
+
          End Select
 
       Catch ex As Exception
@@ -2154,7 +2230,8 @@ Public Class frmElencoDati
                                                         " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
 
                Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.Sale, Elenco.Tavoli,
-                    Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse
+                    Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse,
+                    Elenco.ScontiMaggiorazioni
                   DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
                                                         DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
             End Select
@@ -2253,6 +2330,9 @@ Public Class frmElencoDati
 
             Case Elenco.CaratteristicheRisorse
                CreaColonneCarattRisorse(NomeTabella)
+
+            Case Elenco.ScontiMaggiorazioni
+               CreaColonneScontiMaggiorazioni(NomeTabella)
 
          End Select
 
@@ -3609,6 +3689,67 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+      Try
+         Dim gridStyle As New DataGridTableStyle
+         gridStyle.MappingName = tabella
+
+         ' Codice
+         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         codiceStyle.MappingName = "Id"
+         codiceStyle.HeaderText = "Codice"
+         codiceStyle.Width = 50
+         codiceStyle.NullText = ""
+         codiceStyle.Alignment = HorizontalAlignment.Right
+         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         gridStyle.GridColumnStyles.Add(codiceStyle)
+         ' Descrizione
+         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         descrizioneStyle.MappingName = "Descrizione"
+         descrizioneStyle.HeaderText = "Descrizione"
+         descrizioneStyle.Width = 300
+         descrizioneStyle.NullText = ""
+         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(descrizioneStyle)
+
+         ' Tipologia
+         Dim tipologiaStyle As New DataGridTextBoxColumn
+         tipologiaStyle.MappingName = "Tipologia"
+         tipologiaStyle.HeaderText = "Tipologia"
+         tipologiaStyle.Width = 100
+         tipologiaStyle.NullText = ""
+         tipologiaStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tipologiaStyle)
+
+         ' TipoImporto
+         Dim tipoImportoStyle As New DataGridTextBoxColumn
+         tipoImportoStyle.MappingName = "TipoImporto"
+         tipoImportoStyle.HeaderText = "Tipo Importo"
+         tipoImportoStyle.Width = 100
+         tipoImportoStyle.NullText = ""
+         tipoImportoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(tipoImportoStyle)
+
+         ' Valore
+         Dim valoreStyle As New DataGridTextBoxColumn
+         valoreStyle.MappingName = "Valore"
+         valoreStyle.HeaderText = "Valore"
+         valoreStyle.Width = 100
+         valoreStyle.NullText = ""
+         valoreStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(valoreStyle)
+
+         DataGrid1.TableStyles.Clear()
+         DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
    Private Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -3670,6 +3811,8 @@ Public Class frmElencoDati
                campoRicerca = "Stato"
             Case "Tipo cliente"
                campoRicerca = "TipoAlloggiato"
+            Case "Tipo importo"
+               campoRicerca = "TipoImporto"
          End Select
 
          If testoRicerca <> "" Then
@@ -3856,6 +3999,13 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("Codice")
                CampoRicerca.Items.Add("Descrizione")
                CampoRicerca.Items.Add("Costo")
+
+            Case Elenco.ScontiMaggiorazioni
+               CampoRicerca.Items.Add("Codice")
+               CampoRicerca.Items.Add("Descrizione")
+               CampoRicerca.Items.Add("Tipologia")
+               CampoRicerca.Items.Add("TipoImporto")
+               CampoRicerca.Items.Add("Valore")
 
          End Select
 
@@ -4805,6 +4955,12 @@ Public Class frmElencoDati
                strDescrizione = "l'elenco Caratteristiche di utilizzo Risorse." ' STR_GESTIONE_GRUPPI
                strModulo = "GESTIONE CARATTERISTICHE DI UTILIZZO RISORSE" ' MODULO_GESTIONE_GRUPPI
 
+            Case Elenco.ScontiMaggiorazioni
+               CampoRicerca.SelectedIndex = 1
+
+               strDescrizione = STR_TABELLA_STATO_PREN
+               strModulo = MODULO_TABELLA_STATO_PREN
+
             Case Elenco.Prenotazioni
                CampoRicerca.SelectedIndex = 2
 
@@ -4987,6 +5143,13 @@ Public Class frmElencoDati
                g_frmCaratteristicheRisorse.Dispose()
                g_frmCaratteristicheRisorse = Nothing
 
+            Case Elenco.ScontiMaggiorazioni
+               ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
+               g_frmMain.RimuoviFormMenuSeleziona(g_frmScontiMaggiorazioni)
+
+               ' Distrugge l'oggetto e libera le risorse.
+               g_frmScontiMaggiorazioni.Dispose()
+               g_frmScontiMaggiorazioni = Nothing
          End Select
 
          ' Registra loperazione effettuata dall'operatore identificato.

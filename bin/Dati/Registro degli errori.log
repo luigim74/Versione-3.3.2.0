@@ -74,3 +74,1541 @@
    in Hospitality_Solution.Piatti.ModificaOrdineTasto(Int32 ordine, String descrizionePos, String tabella)"
 "
 "
+"*** 07/06/2020 - 16:22:08 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 16:22:25 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 16:22:30 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 16:22:36 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 16:22:38 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 16:22:39 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 07/06/2020 - 16:22:53 ***"
+"- DESCRIZIONE ERRORE: Parola chiave 'provider' non supportata."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   in System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmElencoAcquisti..ctor()
+   in Hospitality_Solution.frmMain.ApriAcquisti()"
+"
+"
+"*** 07/06/2020 - 16:22:58 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.AggiungiFormMenuSeleziona()"
+"
+"
+"*** 07/06/2020 - 16:35:12 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 16:35:35 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 16:35:41 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 16:35:44 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 16:35:47 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 16:41:02 ***"
+"- DESCRIZIONE ERRORE: [DBNETLIB][ConnectionOpen (Connect()).]Server SQL inesistente o accesso negato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 16:41:17 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 16:41:37 ***"
+"- DESCRIZIONE ERRORE: [DBNETLIB][ConnectionOpen (Connect()).]Server SQL inesistente o accesso negato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 16:42:56 ***"
+"- DESCRIZIONE ERRORE: [DBNETLIB][ConnectionOpen (Connect()).]Server SQL inesistente o accesso negato."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 16:43:13 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 16:47:32 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 16:47:45 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:13:50 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di inizializzazione non conforme alla specifica che inizia all'indice 237."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:14:00 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di inizializzazione non conforme alla specifica che inizia all'indice 237."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:14:03 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di inizializzazione non conforme alla specifica che inizia all'indice 237."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:15:18 ***"
+"- DESCRIZIONE ERRORE: Accesso non riuscito per l'utente 'LuigiMontana-PC\Luigi Montana'.
+Impossibile aprire il database ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf"" richiesto dall'account di accesso. Accesso non riuscito."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 17:15:29 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:15:31 ***"
+"- DESCRIZIONE ERRORE: Accesso non riuscito per l'utente 'LuigiMontana-PC\Luigi Montana'.
+Impossibile aprire il database ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf"" richiesto dall'account di accesso. Accesso non riuscito."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:18:00 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 17:18:06 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:18:08 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:18:10 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:18:11 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:18:12 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 07/06/2020 - 17:18:18 ***"
+"- DESCRIZIONE ERRORE: Parola chiave 'provider' non supportata."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   in System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmElencoAcquisti..ctor()
+   in Hospitality_Solution.frmMain.ApriAcquisti()"
+"
+"
+"*** 07/06/2020 - 17:18:30 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.AggiungiFormMenuSeleziona()"
+"
+"
+"*** 07/06/2020 - 17:22:20 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:23:01 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:23:57 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:01 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:24:02 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:06 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:08 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:08 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 07/06/2020 - 17:24:47 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:52 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:24:53 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:57 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:58 ***"
+"- DESCRIZIONE ERRORE: Nessun messaggio di errore disponibile, codice risultato: DB_E_ERRORSOCCURRED(0x80040E21)."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 07/06/2020 - 17:24:59 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 07/06/2020 - 17:25:02 ***"
+"- DESCRIZIONE ERRORE: Parola chiave 'provider' non supportata."
+"- NOME PROCEDURA:    in System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   in System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   in System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   in System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   in System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmElencoAcquisti..ctor()
+   in Hospitality_Solution.frmMain.ApriAcquisti()"
+"
+"
+"*** 07/06/2020 - 17:25:12 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmMain.AggiungiFormMenuSeleziona()"
+"
+"
+"*** 07/06/2020 - 17:26:02 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:26:09 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:26:11 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:26:13 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:26:15 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:26:21 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 07/06/2020 - 17:37:08 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 07/06/2020 - 17:37:15 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 10/06/2020 - 15:05:59 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 10/06/2020 - 15:06:09 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)
+   in Hospitality_Solution.frmAccesso.frmPassword_Load(Object sender, EventArgs e)"
+"
+"
+"*** 10/06/2020 - 15:06:12 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)
+   in Hospitality_Solution.frmAccesso.eui_cmdOK_Click(Object sender, EventArgs e)"
+"
+"
+"*** 13/06/2020 - 16:09:04 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.GetAttributes(String path)
+   in Hospitality_Solution.frmMain.ImpostaProprietàArchivio()"
+"
+"
+"*** 13/06/2020 - 16:09:19 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:23 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 13/06/2020 - 16:09:25 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:37 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:38 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:39 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:09:46 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:48 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:49 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:49 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:50 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:52 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:52 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:53 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:09:54 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:10:10 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:10:24 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:26 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:26 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:27 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:27 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:28 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:28 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:29 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:30 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:30 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:10:31 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:12:45 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.GetAttributes(String path)
+   in Hospitality_Solution.frmMain.ImpostaProprietàArchivio()"
+"
+"
+"*** 13/06/2020 - 16:12:47 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:12:49 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 13/06/2020 - 16:12:52 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:12:55 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:12:55 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:12:56 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:13:01 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:03 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:04 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:04 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:05 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:06 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:06 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:07 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:07 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:08 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:13:09 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:14:10 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Operazioni..ctor()
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:14:26 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Operazioni..ctor()
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:14:52 ***"
+"- DESCRIZIONE ERRORE: Provider OLE DB non specificato in ConnectionString. Utilizzare ad esempio 'Provider=SQLOLEDB;'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionString.ValidateProvider(String progid)
+   in System.Data.OleDb.OleDbConnectionString.ValidateConnectionString(String connectionString)
+   in System.Data.OleDb.OleDbConnectionString..ctor(String connectionString, Boolean validate)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   in System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   in System.Data.OleDb.OleDbConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   in System.Data.OleDb.OleDbConnection.set_ConnectionString(String value)
+   in System.Data.OleDb.OleDbConnection..ctor(String connectionString)
+   in Hospitality_Solution.Operazioni..ctor()
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:17:28 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:38 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 13/06/2020 - 16:17:39 ***"
+"- DESCRIZIONE ERRORE: Impossibile usare """". File già in uso."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:43 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:44 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:44 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:17:48 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:50 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:51 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:51 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:52 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:52 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:53 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:54 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:54 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:55 ***"
+"- DESCRIZIONE ERRORE: Formato di database 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS2019\MSSQL\DATA\DatabaseProva.mdf' non riconosciuto."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 13/06/2020 - 16:17:56 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 13/06/2020 - 16:18:09 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:18:20 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:18:47 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:19:02 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 13/06/2020 - 16:19:06 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"

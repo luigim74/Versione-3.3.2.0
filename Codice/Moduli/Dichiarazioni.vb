@@ -156,7 +156,7 @@ Module Dichiarazioni
    Public Const CARTELLA_ARCHIVI As String = "\Archivi"
    Public Const PERCORSO_LICENZA_RTF As String = "\Documenti\Licenza.rtf"
    Public Const PERCORSO_AZIENDE_DB As String = "\Archivi\StudioA.mdb" ' Non utilizzato.
-   Public Const PERCORSO_DB As String = "\Archivi\Hospitality.mdb"
+   Public Const PERCORSO_DB As String = "\Archivi\Hospitality.mdf" '"\Archivi\Hospitality.mdb"
    Public Const PERCORSO_DB_CLIENTI As String = "\Archivi\Hospitality.mdb"
    Public Const PERCORSO_DB_CAP As String = "\Archivi\Cap.mdb"
    Public Const PERCORSO_BKP As String = "\Backup\Hospitality.mdb"
@@ -500,6 +500,7 @@ Module Dichiarazioni
    Public Const MODULO_TABELLA_UBICAZIONI_CAMERE As String = "TABELLA UBICAZIONI CAMERE"
    Public Const MODULO_TABELLA_POSIZIONI_CAMERE As String = "TABELLA POSIZIONI CAMERE"
    Public Const MODULO_TABELLA_STATO_PREN As String = "TABELLA STATO PRENOTAZIONI"
+   Public Const MODULO_TABELLA_SCONTI_MAGGIORAZIONI As String = "TABELLA SCONTI E MAGGIORAZIONI"
    Public Const MODULO_TABELLA_DOC_IDENTITA As String = "TABELLA DOCUMENTI IDENTITA"
    Public Const MODULO_TABELLA_GRUPPI_OSPITI As String = "TABELLA GRUPPI"
    Public Const MODULO_TABELLA_AGENZIE As String = "TABELLA AGENZIE"
@@ -576,6 +577,7 @@ Module Dichiarazioni
    Public Const STR_TABELLA_UBICAZIONI_CAMERE As String = "la tabella Ubicazioni camere."
    Public Const STR_TABELLA_POSIZIONI_CAMERE As String = "la tabella Documenti d'identità."
    Public Const STR_TABELLA_STATO_PREN As String = "la tabella Stato prenotazioni."
+   Public Const STR_TABELLA_SCONTI_MAGGIORAZIONI As String = "la tabella Sconti e Maggiorazioni."
    Public Const STR_TABELLA_DOC_IDENTITA As String = "la tabella Stato prenotazioni."
    Public Const STR_TABELLA_GRUPPI As String = "la tabella Gruppi."
    Public Const STR_TABELLA_AGENZIE As String = "la tabella Agenzie."
@@ -651,6 +653,7 @@ Module Dichiarazioni
    Public g_frmPrenCamere As ElencoPrenCamere
    Public g_frmPrenCamera As frmPrenCamera
    Public g_frmStatoPren As frmElencoDati
+   Public g_frmScontiMaggiorazioni As frmElencoDati
    Public g_frmSchedinePS As ElencoSchedinePS
    Public g_frmSchedinaPS As frmSchedinaPS
    Public g_frmListiniCamere As ElencoListiniCamere
@@ -934,6 +937,7 @@ Module Dichiarazioni
       Camere = 15
       StatoPren = 16
       CaratteristicheRisorse = 17
+      ScontiMaggiorazioni = 18
    End Enum
 
    Public Const NUMERO_TOT_ENUM_FINESTRA As Integer = 64

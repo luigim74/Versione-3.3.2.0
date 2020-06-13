@@ -12,7 +12,7 @@
 #End Region
 
 Option Strict Off
-Option Explicit On 
+Option Explicit On
 
 Imports System.Data.OleDb
 
@@ -24,10 +24,17 @@ Public Class frmElencoAcquisti
    Const COLONNA_IMPORTO As Short = 5
 
    ' Dichiara un oggetto connessione.
+   'Dim cn As New OleDbConnection(ConnString)
    Dim cn As New OleDbConnection(ConnString)
+
    ' Dichiara un oggetto transazione.
+   'Dim tr As OleDbTransaction
    Dim tr As OleDbTransaction
+
+   'Dim cmd As New OleDbCommand(sql, cn)
    Dim cmd As New OleDbCommand(sql, cn)
+
+   'Dim da As OleDbDataAdapter
    Dim da As OleDbDataAdapter
 
    'Dim TipoElenco As Short
@@ -589,6 +596,7 @@ Public Class frmElencoAcquisti
          cn.Open()
 
          ' Crea un nuovo oggetto DataAdapter.
+         'Dim da As New OleDbDataAdapter(sql, cn)
          Dim da As New OleDbDataAdapter(sql, cn)
 
          ' Pulisce la tabella da precedenti dati.
@@ -642,6 +650,7 @@ Public Class frmElencoAcquisti
             sql = String.Format("DELETE FROM {0} WHERE Id = {1}", tabella, id)
 
             ' Crea il comando per la connessione corrente.
+            'Dim cmdDelete As New OleDbCommand(sql, cn, tr)
             Dim cmdDelete As New OleDbCommand(sql, cn, tr)
 
             ' Esegue il comando.
