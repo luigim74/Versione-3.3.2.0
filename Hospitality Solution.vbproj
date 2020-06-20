@@ -638,6 +638,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\Form\Ristorante\ScontiMaggiorazioniPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Ristorante\CambiaCameriere.Designer.vb">
       <DependentUpon>CambiaCameriere.vb</DependentUpon>
     </Compile>
@@ -1839,6 +1842,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\DataModIstatC59.resx">
       <DependentUpon>DataModIstatC59.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ScontiMaggiorazioniPOS.resx">
+      <DependentUpon>ScontiMaggiorazioniPOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\CambiaCameriere.resx">
       <DependentUpon>CambiaCameriere.vb</DependentUpon>

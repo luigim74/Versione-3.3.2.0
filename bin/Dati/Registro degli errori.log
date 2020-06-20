@@ -1612,3 +1612,549 @@ Impossibile aprire il database ""D:\Montana Software - Progetti\Hospitality Solu
    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
 "
 "
+"*** 20/06/2020 - 15:28:12 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmElencoDati.LeggiDatiConfig()"
+"
+"
+"*** 20/06/2020 - 16:02:36 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.GetAttributes(String path)
+   in Hospitality_Solution.frmMain.ImpostaProprietàArchivio()"
+"
+"
+"*** 20/06/2020 - 16:02:43 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:02:46 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 20/06/2020 - 16:02:48 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:37 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\bin\Archivi\Hospitality.mdf' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.GetAttributes(String path)
+   in Hospitality_Solution.frmMain.ImpostaProprietàArchivio()"
+"
+"
+"*** 20/06/2020 - 16:03:39 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:40 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella)
+   in Hospitality_Solution.frmMain.frmMain_Load(Object eventSender, EventArgs eventArgs)"
+"
+"
+"*** 20/06/2020 - 16:03:41 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.CaricaListaOperatori(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:44 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiOperatore(String nome, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:45 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.frmAccesso.LeggiDatiAccesso(String nome, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:45 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 20/06/2020 - 16:03:49 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:52 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:53 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:53 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:54 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:55 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:55 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:56 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Procedure.CaricaListaReparti(ComboBox cmb, String tabella)"
+"
+"
+"*** 20/06/2020 - 16:03:57 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)
+   in Hospitality_Solution.frmMain.RegistraOperazione(String Operazione, String descrizione, String modulo)"
+"
+"
+"*** 20/06/2020 - 16:04:10 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:04:34 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:04:51 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:05:17 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:05:29 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:05:36 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:05:45 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:05:59 ***"
+"- DESCRIZIONE ERRORE: Il campo ""Operazioni.Operatore"" non può contenere una stringa di lunghezza zero."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 20/06/2020 - 16:41:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:19 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:20 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:28 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:30 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:49 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:41:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:42:00 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:42:02 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:42:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 16:42:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile eseguire il cast dell'oggetto da DBNull ad altri tipi."
+"- NOME PROCEDURA:    in System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.CellaColorata.Paint(Graphics g, Rectangle bounds, CurrencyManager source, Int32 rowNum, Brush backBrush, Brush foreBrush, Boolean alignToRight)"
+"
+"
+"*** 20/06/2020 - 17:52:53 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.AggiornaValoriConto()"
+"
+"
+"*** 20/06/2020 - 17:52:56 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:52:57 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:52:58 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:52:58 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:52:59 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:52:59 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:00 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:02 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:03 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:03 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:04 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:04 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:05 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:06 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:07 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:07 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:08 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:08 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:09 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"
+"*** 20/06/2020 - 17:53:10 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDouble(String value)
+   in Hospitality_Solution.ContoPos.FormattaControlloAttivo(Control controllo)"
+"
+"

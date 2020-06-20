@@ -404,6 +404,7 @@ Module Dichiarazioni
    Public Const SALVA_BKP As String = "Attendere prego. Salvataggio della copia di Backup degli archivi in corso..."
    Public Const LEGGI_BKP As String = "Attendere prego. Apertura e importazione dati degli archivi in corso..."
    Public Const CAR_OPZIONI As String = "Attendere prego. Caricamento della finestra Opzioni di configurazione in corso..."
+   Public Const CAR_TAB_SCONTI_MAGGIORAZIONI As String = "Attendere prego. Caricamento dell'elenco Sconti e Maggiorazioni in corso..."
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
 

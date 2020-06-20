@@ -3731,13 +3731,25 @@ Public Class frmElencoDati
          gridStyle.GridColumnStyles.Add(tipoImportoStyle)
 
          ' Valore
-         Dim valoreStyle As New DataGridTextBoxColumn
+         Dim valoreStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
          valoreStyle.MappingName = "Valore"
          valoreStyle.HeaderText = "Valore"
          valoreStyle.Width = 100
          valoreStyle.NullText = ""
+         valoreStyle.Format = "##,##0.00"
+         valoreStyle.Alignment = HorizontalAlignment.Right
          valoreStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(valoreStyle)
+
+         ' Colore
+         Dim coloreStyle As New CellaColorata(DataGrid1)
+         coloreStyle.MappingName = "Colore"
+         coloreStyle.HeaderText = "Colore"
+         coloreStyle.Width = 50
+         coloreStyle.NullText = ""
+         coloreStyle.TextBox.BackColor = Color.White
+         coloreStyle.TextBox.ForeColor = Color.White
+         gridStyle.GridColumnStyles.Add(coloreStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -4004,7 +4016,7 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("Codice")
                CampoRicerca.Items.Add("Descrizione")
                CampoRicerca.Items.Add("Tipologia")
-               CampoRicerca.Items.Add("TipoImporto")
+               CampoRicerca.Items.Add("Tipo importo")
                CampoRicerca.Items.Add("Valore")
 
          End Select

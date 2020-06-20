@@ -1,8 +1,8 @@
 ' Nome form:            frmPiatti
 ' Autore:               Luigi Montana, Montana Software
-' Data creazione:       23/04/2006
-' Data ultima modifica: 23/04/2006
-' Descrizione:          Anagrafica Piatti.
+' Data creazione:       20/06/2020
+' Data ultima modifica: 20/06/2020
+' Descrizione:          Tabella Sconti e Maggiorazioni.
 
 Option Strict Off
 Option Explicit On 
@@ -60,10 +60,11 @@ Public Class frmScontiMaggiorazioni
    Friend WithEvents cmdColore As System.Windows.Forms.Button
    Public WithEvents Label11 As System.Windows.Forms.Label
     Public WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-   Friend WithEvents TextBox1 As TextBox
+   Friend WithEvents cmbTipologia As ComboBox
+   Friend WithEvents txtValoreImporto As TextBox
    Public WithEvents Label2 As Label
-   Friend WithEvents ComboBox2 As ComboBox
+   Friend WithEvents cmbTipoImporto As ComboBox
+   Public WithEvents Label4 As Label
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -76,6 +77,11 @@ Public Class frmScontiMaggiorazioni
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.txtValoreImporto = New System.Windows.Forms.TextBox()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.cmbTipoImporto = New System.Windows.Forms.ComboBox()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.cmbTipologia = New System.Windows.Forms.ComboBox()
       Me.cmdColore = New System.Windows.Forms.Button()
       Me.Label11 = New System.Windows.Forms.Label()
       Me.txtDescrizione = New System.Windows.Forms.TextBox()
@@ -87,11 +93,7 @@ Public Class frmScontiMaggiorazioni
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-      Me.TextBox1 = New System.Windows.Forms.TextBox()
+      Me.Label4 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -109,7 +111,7 @@ Public Class frmScontiMaggiorazioni
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(520, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(530, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -143,7 +145,7 @@ Public Class frmScontiMaggiorazioni
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(520, 20)
+      Me.Panel1.Size = New System.Drawing.Size(530, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -153,7 +155,7 @@ Public Class frmScontiMaggiorazioni
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -165,17 +167,18 @@ Public Class frmScontiMaggiorazioni
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(520, 305)
+      Me.TabControl1.Size = New System.Drawing.Size(530, 315)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage1.Controls.Add(Me.TextBox1)
+      Me.TabPage1.Controls.Add(Me.Label4)
+      Me.TabPage1.Controls.Add(Me.txtValoreImporto)
       Me.TabPage1.Controls.Add(Me.Label2)
-      Me.TabPage1.Controls.Add(Me.ComboBox2)
+      Me.TabPage1.Controls.Add(Me.cmbTipoImporto)
       Me.TabPage1.Controls.Add(Me.Label1)
-      Me.TabPage1.Controls.Add(Me.ComboBox1)
+      Me.TabPage1.Controls.Add(Me.cmbTipologia)
       Me.TabPage1.Controls.Add(Me.cmdColore)
       Me.TabPage1.Controls.Add(Me.Label11)
       Me.TabPage1.Controls.Add(Me.txtDescrizione)
@@ -184,18 +187,72 @@ Public Class frmScontiMaggiorazioni
       Me.TabPage1.Controls.Add(Me.Label20)
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(512, 279)
+      Me.TabPage1.Size = New System.Drawing.Size(522, 289)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'txtValoreImporto
+      '
+      Me.txtValoreImporto.Location = New System.Drawing.Point(349, 99)
+      Me.txtValoreImporto.Name = "txtValoreImporto"
+      Me.txtValoreImporto.Size = New System.Drawing.Size(139, 20)
+      Me.txtValoreImporto.TabIndex = 4
+      Me.txtValoreImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.BackColor = System.Drawing.Color.Transparent
+      Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label2.ForeColor = System.Drawing.Color.Black
+      Me.Label2.Location = New System.Drawing.Point(24, 102)
+      Me.Label2.Name = "Label2"
+      Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label2.Size = New System.Drawing.Size(45, 13)
+      Me.Label2.TabIndex = 201
+      Me.Label2.Text = "Importo:"
+      '
+      'cmbTipoImporto
+      '
+      Me.cmbTipoImporto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipoImporto.FormattingEnabled = True
+      Me.cmbTipoImporto.Items.AddRange(New Object() {"Percentuale", "Valore"})
+      Me.cmbTipoImporto.Location = New System.Drawing.Point(136, 99)
+      Me.cmbTipoImporto.Name = "cmbTipoImporto"
+      Me.cmbTipoImporto.Size = New System.Drawing.Size(136, 21)
+      Me.cmbTipoImporto.TabIndex = 3
+      '
+      'Label1
+      '
+      Me.Label1.AutoSize = True
+      Me.Label1.BackColor = System.Drawing.Color.Transparent
+      Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label1.ForeColor = System.Drawing.Color.Black
+      Me.Label1.Location = New System.Drawing.Point(290, 35)
+      Me.Label1.Name = "Label1"
+      Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label1.Size = New System.Drawing.Size(53, 13)
+      Me.Label1.TabIndex = 199
+      Me.Label1.Text = "Tipologia:"
+      '
+      'cmbTipologia
+      '
+      Me.cmbTipologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbTipologia.FormattingEnabled = True
+      Me.cmbTipologia.Items.AddRange(New Object() {"Sconto", "Maggiorazione"})
+      Me.cmbTipologia.Location = New System.Drawing.Point(349, 32)
+      Me.cmbTipologia.Name = "cmbTipologia"
+      Me.cmbTipologia.Size = New System.Drawing.Size(139, 21)
+      Me.cmbTipologia.TabIndex = 1
       '
       'cmdColore
       '
       Me.cmdColore.BackColor = System.Drawing.SystemColors.Control
       Me.cmdColore.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-      Me.cmdColore.Location = New System.Drawing.Point(136, 239)
+      Me.cmdColore.Location = New System.Drawing.Point(136, 136)
       Me.cmdColore.Name = "cmdColore"
-      Me.cmdColore.Size = New System.Drawing.Size(104, 19)
-      Me.cmdColore.TabIndex = 2
+      Me.cmdColore.Size = New System.Drawing.Size(136, 19)
+      Me.cmdColore.TabIndex = 5
       Me.cmdColore.UseVisualStyleBackColor = False
       '
       'Label11
@@ -204,7 +261,7 @@ Public Class frmScontiMaggiorazioni
       Me.Label11.BackColor = System.Drawing.Color.Transparent
       Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label11.ForeColor = System.Drawing.Color.Black
-      Me.Label11.Location = New System.Drawing.Point(24, 239)
+      Me.Label11.Location = New System.Drawing.Point(24, 136)
       Me.Label11.Name = "Label11"
       Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label11.Size = New System.Drawing.Size(40, 13)
@@ -223,7 +280,7 @@ Public Class frmScontiMaggiorazioni
       Me.txtDescrizione.Name = "txtDescrizione"
       Me.txtDescrizione.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtDescrizione.Size = New System.Drawing.Size(352, 20)
-      Me.txtDescrizione.TabIndex = 1
+      Me.txtDescrizione.TabIndex = 2
       '
       'Label3
       '
@@ -277,62 +334,24 @@ Public Class frmScontiMaggiorazioni
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'ComboBox1
+      'Label4
       '
-      Me.ComboBox1.FormattingEnabled = True
-      Me.ComboBox1.Items.AddRange(New Object() {"Sconto", "Maggiorazione"})
-      Me.ComboBox1.Location = New System.Drawing.Point(349, 32)
-      Me.ComboBox1.Name = "ComboBox1"
-      Me.ComboBox1.Size = New System.Drawing.Size(139, 21)
-      Me.ComboBox1.TabIndex = 198
-      '
-      'Label1
-      '
-      Me.Label1.AutoSize = True
-      Me.Label1.BackColor = System.Drawing.Color.Transparent
-      Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(290, 35)
-      Me.Label1.Name = "Label1"
-      Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label1.Size = New System.Drawing.Size(53, 13)
-      Me.Label1.TabIndex = 199
-      Me.Label1.Text = "Tipologia:"
-      '
-      'Label2
-      '
-      Me.Label2.AutoSize = True
-      Me.Label2.BackColor = System.Drawing.Color.Transparent
-      Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(24, 102)
-      Me.Label2.Name = "Label2"
-      Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label2.Size = New System.Drawing.Size(45, 13)
-      Me.Label2.TabIndex = 201
-      Me.Label2.Text = "Importo:"
-      '
-      'ComboBox2
-      '
-      Me.ComboBox2.FormattingEnabled = True
-      Me.ComboBox2.Items.AddRange(New Object() {"Percentuale", "Valore"})
-      Me.ComboBox2.Location = New System.Drawing.Point(136, 99)
-      Me.ComboBox2.Name = "ComboBox2"
-      Me.ComboBox2.Size = New System.Drawing.Size(136, 21)
-      Me.ComboBox2.TabIndex = 200
-      '
-      'TextBox1
-      '
-      Me.TextBox1.Location = New System.Drawing.Point(349, 99)
-      Me.TextBox1.Name = "TextBox1"
-      Me.TextBox1.Size = New System.Drawing.Size(139, 20)
-      Me.TextBox1.TabIndex = 202
+      Me.Label4.AutoSize = True
+      Me.Label4.BackColor = System.Drawing.Color.Transparent
+      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label4.ForeColor = System.Drawing.Color.Black
+      Me.Label4.Location = New System.Drawing.Point(290, 102)
+      Me.Label4.Name = "Label4"
+      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label4.Size = New System.Drawing.Size(40, 13)
+      Me.Label4.TabIndex = 202
+      Me.Label4.Text = "Valore:"
       '
       'frmScontiMaggiorazioni
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(520, 351)
+      Me.ClientSize = New System.Drawing.Size(530, 361)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -357,177 +376,204 @@ Public Class frmScontiMaggiorazioni
 
 #End Region
 
-   Public AStatoPren As New StatoPren
+   Public TScontiMaggiorazioni As New ScontiMaggiorazioni
+   Public CFormatta As New ClsFormatta
+   Private CConvalida As New ConvalidaKeyPress
 
-    Const NOME_TABELLA As String = "StatoPren"
+   Const NOME_TABELLA As String = "ScontiMaggiorazioni"
 
-    ' Dichiara un oggetto connessione.
-    Dim cn As New OleDbConnection(ConnString)
-    ' Dichiara un oggetto transazione.
-    Dim tr As OleDbTransaction
-    Dim cmd As New OleDbCommand(sql, cn)
-    Dim ds As New DataSet
+   ' Dichiara un oggetto connessione.
+   Dim cn As New OleDbConnection(ConnString)
+   ' Dichiara un oggetto transazione.
+   Dim tr As OleDbTransaction
+   Dim cmd As New OleDbCommand(sql, cn)
+   Dim ds As New DataSet
 
-    ' Numero di record.
-    Dim numRecord As Integer
-    Dim sql As String
+   ' Numero di record.
+   Dim numRecord As Integer
+   Dim sql As String
 
-    Private Sub FormResize(ByVal larghezza As Short, ByVal altezza As Short)
-        ' Imposta le dimensioni standard del form.
-        Me.Width = larghezza
-        Me.Height = altezza
-    End Sub
+   Private Sub FormResize(ByVal larghezza As Short, ByVal altezza As Short)
+      ' Imposta le dimensioni standard del form.
+      Me.Width = larghezza
+      Me.Height = altezza
+   End Sub
 
-    Private Function SalvaDati() As Boolean
-        Try
-            With AStatoPren
-                ' Assegna i dati dei campi della classe alle caselle di testo.
-                .Descrizione = txtDescrizione.Text
-                .Colore = cmdColore.BackColor.ToArgb
+   Private Function SalvaDati() As Boolean
+      Try
+         With TScontiMaggiorazioni
+            ' Assegna i dati dei campi della classe alle caselle di testo.
+            .Tipologia = cmbTipologia.Text
+            .Descrizione = txtDescrizione.Text
+            .TipoImporto = cmbTipoImporto.Text
 
-                ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
-                ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
-                If Me.Tag <> "" Then
-                    Return .ModificaDati(NOME_TABELLA, Me.Tag)
-                Else
-                    Return .InserisciDati(NOME_TABELLA)
-                End If
-            End With
-
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
-
-        Finally
-
-        End Try
-    End Function
-
-    Private Sub ModificaColore()
-        Try
-            With ColorDialog1()
-                .Color = cmdColore.BackColor
-                .AllowFullOpen = True
-                .SolidColorOnly = True
-
-                If .ShowDialog = DialogResult.OK Then
-                    cmdColore.BackColor = .Color
-                End If
-
-                AStatoPren.Colore = Convert.ToString(.Color.ToArgb)
-
-            End With
-
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
-
-        End Try
-    End Sub
-
-    Private Sub frmCategoriePiatti_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Try
-            ' Imposta l'icona della finestra in base al prodotto installato.
-            ImpostaIcona(Me)
-
-            ' Imposta le dimensioni del form.
-            FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
-
-            If Me.Tag <> "" Then
-                With AStatoPren
-                    ' Visualizza i dati nei rispettivi campi.
-                    .LeggiDati(NOME_TABELLA, Me.Tag)
-
-                    ' Assegna i dati dei campi della classe alle caselle di testo.
-                    txtNumero.Text = .Codice
-                    txtDescrizione.Text = .Descrizione
-
-                    If .Colore <> 0 Then
-                        cmdColore.BackColor = Color.FromArgb(.Colore)
-                    End If
-
-                End With
+            If IsNumeric(txtValoreImporto.Text) = True Then
+               .Valore = Convert.ToDouble(CFormatta.FormattaNumeroDouble(txtValoreImporto.Text))
             Else
-                ' Inserisce automaticamente la categoria selezionata.
-                cmdColore.BackColor = Color.White
-                AStatoPren.Colore = Convert.ToString(Color.White.ToArgb)
+               .Valore = 0.0
             End If
 
-            ' Genera l'intestazione con i dati del form.
-            lblIntestazione.Text = VisIntestazione(txtNumero.Text, txtDescrizione.Text, "")
+            .Colore = cmdColore.BackColor.ToArgb
 
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+            ' Se la proprietà 'Tag' contiene un valore viene richiamata la procedura
+            ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
+            If Me.Tag <> "" Then
+               Return .ModificaDati(NOME_TABELLA, Me.Tag)
+            Else
+               Return .InserisciDati(NOME_TABELLA)
+            End If
+         End With
 
-        Finally
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.Default
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+
+      End Try
+   End Function
+
+   Private Sub ModificaColore()
+      Try
+         With ColorDialog1()
+            .Color = cmdColore.BackColor
+            .AllowFullOpen = True
+            .SolidColorOnly = True
+
+            If .ShowDialog = DialogResult.OK Then
+               cmdColore.BackColor = .Color
+            End If
+
+            TScontiMaggiorazioni.Colore = Convert.ToString(.Color.ToArgb)
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub frmScontiMaggiorazioni_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+      Try
+         ' Imposta l'icona della finestra in base al prodotto installato.
+         ImpostaIcona(Me)
+
+         ' Imposta le dimensioni del form.
+         FormResize(FORM_LARGHEZZA, FORM_ALTEZZA)
+
+         If Me.Tag <> "" Then
+            With TScontiMaggiorazioni
+               ' Visualizza i dati nei rispettivi campi.
+               .LeggiDati(NOME_TABELLA, Me.Tag)
+
+               ' Assegna i dati dei campi della classe alle caselle di testo.
+               txtNumero.Text = .Codice
+               cmbTipologia.Text = .Tipologia
+               txtDescrizione.Text = .Descrizione
+               cmbTipoImporto.Text = .TipoImporto
+               txtValoreImporto.Text = CFormatta.FormattaNumeroDouble(.Valore)
+
+               If .Colore <> 0 Then
+                  cmdColore.BackColor = Color.FromArgb(.Colore)
+               End If
+            End With
+         Else
+            ' Sconto.
+            cmbTipologia.SelectedIndex = 0
+
+            ' Percentuale.
+            cmbTipoImporto.SelectedIndex = 0
+
+            ' Imposta il colore di default.
+            cmdColore.BackColor = Color.White
+            TScontiMaggiorazioni.Colore = Convert.ToString(Color.White.ToArgb)
+         End If
+
+         ' Genera l'intestazione con i dati del form.
+         lblIntestazione.Text = VisIntestazione(txtNumero.Text, txtDescrizione.Text, txtValoreImporto.Text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+         ' Imposta lo stato attivo.
+         txtDescrizione.Focus()
+
+      End Try
+   End Sub
+
+   Private Sub frmScontiMaggiorazioni_FormClosed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.FormClosed
+      ' A_TODO: HOTEL - da modificare!
+      'If Me.Tag <> "0" Then
+      '   ' Registra loperazione effettuata dall'operatore identificato.
+      '   g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_ANAGRAFICA_CAT_PIATTI)
+      'End If
+   End Sub
+
+   ' A_TODO: HOTEL - da modificare!
+   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
+      Select Case e.Button.Tag
+         Case "Salva"
+            ' Salva i dati nel database.
+            If SalvaDati() = True Then
+
+               If IsNothing(g_frmScontiMaggiorazioni) = False Then
+                  ' Aggiorna la griglia dati.
+                  g_frmScontiMaggiorazioni.AggiornaDati()
+               End If
+
+               ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
+               Me.Tag = "0"
+
+               ' Chiude la finestra.
+               Me.Close()
+
+               ' Registra loperazione effettuata dall'operatore identificato.
+               Dim strDescrizione As String = " (" & TScontiMaggiorazioni.Descrizione & ")"
+
+               ' A_TODO: HOTEL - da modificare!
+               'g_frmMain.RegistraOperazione(TipoOperazione.Salva, strDescrizione, MODULO_ANAGRAFICA_CAT_PIATTI)
+            End If
+
+         Case "Annulla"
+            ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
+            Me.Tag = "0"
+
+            ' Chiude la finestra.
+            Me.Close()
+
+            ' A_TODO: HOTEL - da modificare!
+            ' Registra loperazione effettuata dall'operatore identificato.
+            'g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_ANAGRAFICA_CAT_PIATTI)
+      End Select
+   End Sub
+
+   Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
+      Select Case TabControl1.SelectedIndex()
+         Case 0
             ' Imposta lo stato attivo.
-            txtDescrizione.Focus()
+            Me.txtDescrizione.Focus()
+      End Select
+   End Sub
 
-        End Try
-    End Sub
+   Private Sub cmdColore_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdColore.Click
+      ModificaColore()
+   End Sub
 
-    Private Sub frmStatoPren_FormClosed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.FormClosed
-        ' A_TODO: HOTEL - da modificare!
-        'If Me.Tag <> "0" Then
-        '   ' Registra loperazione effettuata dall'operatore identificato.
-        '   g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_ANAGRAFICA_CAT_PIATTI)
-        'End If
-    End Sub
+   Private Sub txtValoreImporto_LostFocus(sender As Object, e As EventArgs) Handles txtValoreImporto.LostFocus
+      If IsNumeric(sender.Text) Then
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+      End If
+   End Sub
 
-    ' A_TODO: HOTEL - da modificare!
-    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
-        Select Case e.Button.Tag
-            Case "Salva"
-                ' Salva i dati nel database.
-                If SalvaDati() = True Then
-
-                    If IsNothing(g_frmStatoPren) = False Then
-                        ' Aggiorna la griglia dati.
-                        g_frmStatoPren.AggiornaDati()
-                    End If
-
-                    ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
-                    Me.Tag = "0"
-
-                    ' Chiude la finestra.
-                    Me.Close()
-
-                    ' Registra loperazione effettuata dall'operatore identificato.
-                    Dim strDescrizione As String = " (" & AStatoPren.Descrizione & ")"
-                    ' A_TODO: HOTEL - da modificare!
-                    g_frmMain.RegistraOperazione(TipoOperazione.Salva, strDescrizione, MODULO_ANAGRAFICA_CAT_PIATTI)
-                End If
-
-            Case "Annulla"
-                ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
-                Me.Tag = "0"
-
-                ' Chiude la finestra.
-                Me.Close()
-                ' A_TODO: HOTEL - da modificare!
-                ' Registra loperazione effettuata dall'operatore identificato.
-                g_frmMain.RegistraOperazione(TipoOperazione.Annulla, String.Empty, MODULO_ANAGRAFICA_CAT_PIATTI)
-        End Select
-    End Sub
-
-    Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
-        Select Case TabControl1.SelectedIndex()
-            Case 0
-                ' Imposta lo stato attivo.
-                Me.txtDescrizione.Focus()
-        End Select
-    End Sub
-
-    Private Sub cmdColore_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdColore.Click
-        ModificaColore()
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
+   Private Sub txtValoreImporto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValoreImporto.KeyPress
+      e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+   End Sub
 End Class
 

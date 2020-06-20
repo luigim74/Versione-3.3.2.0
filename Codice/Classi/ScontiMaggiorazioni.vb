@@ -8,6 +8,7 @@ Public Class ScontiMaggiorazioni
    Public Tipologia As String
    Public TipoImporto As String
    Public Valore As Double
+   Public Colore As Integer
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -62,6 +63,11 @@ Public Class ScontiMaggiorazioni
          Else
             Me.Valore = 0.0
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
+            Me.Colore = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Colore"))
+         Else
+            Me.Colore = 0
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -85,12 +91,13 @@ Public Class ScontiMaggiorazioni
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Descrizione, Tipologia, TipoImporto, Valore) " &
-                                       "VALUES(@Descrizione, @Tipologia, @TipoImporto, @Valore)", tabella,
+         sql = String.Format("INSERT INTO {0} (Descrizione, Tipologia, TipoImporto, Valore, Colore) " &
+                                       "VALUES(@Descrizione, @Tipologia, @TipoImporto, @Valore, @Colore)", tabella,
                                                Me.Descrizione,
                                                Me.Tipologia,
                                                Me.TipoImporto,
-                                               Me.Valore)
+                                               Me.Valore,
+                                               Me.Colore)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -99,6 +106,7 @@ Public Class ScontiMaggiorazioni
          cmdInsert.Parameters.Add("@Tipologia", Me.Tipologia)
          cmdInsert.Parameters.Add("@TipoImporto", Me.TipoImporto)
          cmdInsert.Parameters.Add("@Valore", Me.Valore)
+         cmdInsert.Parameters.Add("@Colore", Me.Colore)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -139,7 +147,8 @@ Public Class ScontiMaggiorazioni
                              "SET Descrizione = @Descrizione, " &
                              "Tipologia = @Tipologia, " &
                              "TipoImporto = @TipoImporto, " &
-                             "Valore = @Valore " &
+                             "Valore = @Valore, " &
+                             "Colore = @Colore " &
                              "WHERE Id = {1}",
                              tabella,
                              codice)
@@ -151,6 +160,7 @@ Public Class ScontiMaggiorazioni
          cmdUpdate.Parameters.Add("@Tipologia", Me.Tipologia)
          cmdUpdate.Parameters.Add("@TipoImporto", Me.TipoImporto)
          cmdUpdate.Parameters.Add("@Valore", Me.Valore)
+         cmdUpdate.Parameters.Add("@Colore", Me.Colore)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
