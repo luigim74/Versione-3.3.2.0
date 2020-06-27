@@ -3848,7 +3848,7 @@ Public Class frmPrenRisorse
          ' Righe di vendita articoli.
          Dim numRep As String
          ' Leggo il numero di reparto iva per l'articolo.
-         numRep = LeggiNumeroRepartoIva(AliquotaIvaCentroSportivo) ' TODO_A: da verificare!
+         numRep = LeggiNumeroRepartoIva(AliquotaIvaCentroSportivo) ' TODO: da verificare!
 
          Dim j As Integer
          For j = 0 To lvwConto.Items.Count - 1
@@ -3908,7 +3908,7 @@ Public Class frmPrenRisorse
    End Function
 
    Public Function CreaFileScontrinoSwing() As Boolean
-      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      ' TODO: Eliminare! Vecchia procedura non più utilizzata.
       'Try
       '   Dim numComandiScontrino As Integer = 2
       '   Dim numRigheScontrino As Integer = lvwConto.Items.Count + numComandiScontrino
@@ -3958,7 +3958,7 @@ Public Class frmPrenRisorse
    End Function
 
    Public Sub EseguiFileScontrino(ByVal frmHandle As IntPtr)
-      ' TODO_B: Eliminare! Vecchia procedura non più utilizzata.
+      ' TODO: Eliminare! Vecchia procedura non più utilizzata.
       'Dim NOME_APP As String = PercorsoDriverSF & "SWINGDRIVER.EXE"
       'Dim Proc As New Process
 

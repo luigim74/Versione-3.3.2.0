@@ -6891,7 +6891,7 @@ Friend Class frmMain
             ModelloSF = ""
          End If
 
-         ' TODO_B: Eliminare! Vecchia procedura.
+         ' TODO: Eliminare! Vecchia procedura.
          ' RCH Swing ECR A/65
          'PortaSF = DatiConfig.GetValue("PortaSF")
          'If PortaSF.Length = 0 Then
@@ -10742,13 +10742,13 @@ Friend Class frmMain
                lblGiorniProva.Visible = False
             End If
 
-            ' TODO_A: Da rimuovere!!!
+            ' TODO: Da rimuovere!!!
             moduloAttivo.NightClub = True
          Else
             ' Visualizza le varie funzionalità in base ai moduli installati.
             ImpostaModuli()
 
-            ' TODO_A: Da rimuovere!!!
+            ' TODO: Da rimuovere!!!
             moduloAttivo.NightClub = True
          End If
 
@@ -13465,7 +13465,7 @@ Friend Class frmMain
                moduloAttivo.Palmari = False
             End If
 
-            ' TODO_A: NIGHT_CLUB
+            ' TODO: NIGHT_CLUB
             'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
             '   moduloAttivo.NightClub = True
             'Else
@@ -13542,7 +13542,7 @@ Friend Class frmMain
                moduloAttivo.Palmari = False
             End If
 
-            ' TODO_A: NIGHT_CLUB
+            ' TODO: NIGHT_CLUB
             'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
             '   moduloAttivo.NightClub = True
             'Else
@@ -13738,7 +13738,7 @@ Friend Class frmMain
             ImpostaDatiListaModuli(Modulo.NOME_PALMARI, CHIAVE_ATTIVAZIONE_PALMARI, Color.Green, True)
          End If
 
-         ' TODO_A: NIGHT_CLUB
+         ' TODO: NIGHT_CLUB
          ' MODULO NIGHT CLUB.
          If moduloAttivo.NightClub = True Then
             ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, CHIAVE_ATTIVAZIONE_NIGHT_CLUB, Color.Green, True)
@@ -14218,7 +14218,7 @@ Friend Class frmMain
          eui_lstProdottiAttivati.Items.Add(item)
       End If
 
-      ' TODO_A: NIGHT_CLUB
+      ' TODO: NIGHT_CLUB
       ' NIGHT CLUB.
       'If moduloAttivo.NightClub = True Then
       '   Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
@@ -14346,7 +14346,7 @@ Friend Class frmMain
          eui_txtDettagliProdotto.Text = "Modulo per la gestione dei palmari per la presa delle comande ai tavoli."
       End If
 
-      ' TODO_A: NIGHT_CLUB
+      ' TODO: NIGHT_CLUB
       ' NIGHT CLUB.
       If item.Contains(Modulo.NOME_NIGHT_CLUB) = True Then
          eui_txtDettagliProdotto.Text = "Modulo per la gestione del personale per i locali notturni."
@@ -14525,7 +14525,7 @@ Friend Class frmMain
                         e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PALMARI, "-")
                         e.Item.SubItems(3).ForeColor = Color.Green
 
-                        ' TODO_A: NIGHT_CLUB
+                        ' TODO: NIGHT_CLUB
                      Case Modulo.NOME_NIGHT_CLUB
                         e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB, "-")
                         e.Item.SubItems(3).ForeColor = Color.Green
@@ -14616,7 +14616,7 @@ Friend Class frmMain
                            End If
                         End If
 
-                        ' TODO_A: NIGHT_CLUB
+                        ' TODO: NIGHT_CLUB
                         'If moduloAttivo.NightClub = True Then
                         '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                         '      ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
@@ -14655,7 +14655,7 @@ Friend Class frmMain
                            ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
                         End If
 
-                        ' TODO_A: NIGHT_CLUB
+                        ' TODO: NIGHT_CLUB
                         'If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                         '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
                         'End If
@@ -14677,7 +14677,7 @@ Friend Class frmMain
                         Exit Select
                      End If
 
-                     ' TODO_A: NIGHT_CLUB
+                     ' TODO: NIGHT_CLUB
                   'Case Modulo.NOME_NIGHT_CLUB
                   '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                   '      Exit Select

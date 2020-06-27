@@ -54,76 +54,76 @@ Public Class Pagamenti
    Friend WithEvents pnlPag As System.Windows.Forms.Panel
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
-      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScontiMaggiorazioniPOS))
-      Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-      Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-      Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-      Me.pnlPag = New System.Windows.Forms.Panel()
-      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.eui_cmdAnnulla = New Elegant.Ui.Button()
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.SuspendLayout()
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'PrintDialog1
-      '
-      Me.PrintDialog1.Document = Me.PrintDocument1
-      '
-      'PrintDocument1
-      '
-      Me.PrintDocument1.DocumentName = "RFiscale.rpt"
-      '
-      'pnlPag
-      '
-      Me.pnlPag.AutoScroll = True
-      Me.pnlPag.Location = New System.Drawing.Point(8, 8)
-      Me.pnlPag.Name = "pnlPag"
-      Me.pnlPag.Size = New System.Drawing.Size(562, 424)
-      Me.pnlPag.TabIndex = 0
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'eui_cmdAnnulla
-      '
-      Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdAnnulla.Id = "27859f66-aaf1-49a4-8ff9-b854b92b080d"
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(439, 435)
-      Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
-      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
-      Me.eui_cmdAnnulla.TabIndex = 1
-      Me.eui_cmdAnnulla.Text = "&Annulla"
-      '
-      'Pagamenti
-      '
-      Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
-      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(576, 496)
-      Me.Controls.Add(Me.eui_cmdAnnulla)
-      Me.Controls.Add(Me.pnlPag)
-      Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.MaximizeBox = False
-      Me.MinimizeBox = False
-      Me.Name = "Pagamenti"
-      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      Me.Text = "SISTEMI DI PAGAMENTO"
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.ResumeLayout(False)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pagamenti))
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.pnlPag = New System.Windows.Forms.Panel()
+        Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+        Me.eui_cmdAnnulla = New Elegant.Ui.Button()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.Document = Me.PrintDocument1
+        '
+        'PrintDocument1
+        '
+        Me.PrintDocument1.DocumentName = "RFiscale.rpt"
+        '
+        'pnlPag
+        '
+        Me.pnlPag.AutoScroll = True
+        Me.pnlPag.Location = New System.Drawing.Point(8, 8)
+        Me.pnlPag.Name = "pnlPag"
+        Me.pnlPag.Size = New System.Drawing.Size(562, 424)
+        Me.pnlPag.TabIndex = 0
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'eui_cmdAnnulla
+        '
+        Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.eui_cmdAnnulla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdAnnulla.Id = "27859f66-aaf1-49a4-8ff9-b854b92b080d"
+        Me.eui_cmdAnnulla.Location = New System.Drawing.Point(439, 435)
+        Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
+        Me.eui_cmdAnnulla.Size = New System.Drawing.Size(128, 53)
+        Me.eui_cmdAnnulla.TabIndex = 1
+        Me.eui_cmdAnnulla.Text = "&Annulla"
+        '
+        'Pagamenti
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.CancelButton = Me.eui_cmdAnnulla
+        Me.ClientSize = New System.Drawing.Size(579, 493)
+        Me.Controls.Add(Me.eui_cmdAnnulla)
+        Me.Controls.Add(Me.pnlPag)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "Pagamenti"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SISTEMI DI PAGAMENTO"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
 
-   End Sub
+    End Sub
 
 #End Region
 
-   Private Function LeggiNumRecord(ByVal tabella As String) As Integer
+    Private Function LeggiNumRecord(ByVal tabella As String) As Integer
       Dim closeOnExit As Boolean
       Dim numRec As Integer
 

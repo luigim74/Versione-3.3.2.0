@@ -264,7 +264,7 @@ Public Class Prenotazione
          ' Apre la connessione.
          cn.Open()
 
-         ' TODO_B: ULTIMA MODIFICA - Modificare la query per ottenere il codice più alto.
+         ' TODO: ULTIMA MODIFICA - Modificare la query per ottenere il codice più alto.
          ' Crea la stringa.
          sql = String.Format("SELECT * FROM {0} WHERE Id = {1}", tabella, codice)
 

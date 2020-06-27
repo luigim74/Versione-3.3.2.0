@@ -20,9 +20,12 @@ Public Class ScontiMaggiorazioniPOS
    Friend WithEvents eui_cmdAnnulla As Elegant.Ui.Button
    Private cmd As New OleDbCommand(sql, cn)
 
+   Private CFormatta As New ClsFormatta
+   Private tipologiaValore As String
+
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New()
+   Public Sub New(ByVal tipologia As String)
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
@@ -30,6 +33,8 @@ Public Class ScontiMaggiorazioniPOS
 
       'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
       ReDim Sconti_Maggiorazioni(LeggiNumRecord(TAB_SCONTI_MAGGIORAZIONI))
+
+      tipologiaValore = tipologia
    End Sub
 
    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
@@ -100,12 +105,12 @@ Public Class ScontiMaggiorazioniPOS
       Me.eui_cmdAnnulla.TabIndex = 1
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
-      'Pagamenti
+      'ScontiMaggiorazioniPOS
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(576, 496)
+      Me.ClientSize = New System.Drawing.Size(577, 493)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.pnlPag)
       Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,9 +118,9 @@ Public Class ScontiMaggiorazioniPOS
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.MaximizeBox = False
       Me.MinimizeBox = False
-      Me.Name = "Pagamenti"
+      Me.Name = "ScontiMaggiorazioniPOS"
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      Me.Text = "SISTEMI DI PAGAMENTO"
+      Me.Text = "SCONTI E MAGGIORAZIONI"
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
@@ -158,7 +163,7 @@ Public Class ScontiMaggiorazioniPOS
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Id ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Tipologia = '" & tipologiaValore & "' ORDER BY Id ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Dim CordX As Integer = 0
@@ -167,8 +172,18 @@ Public Class ScontiMaggiorazioniPOS
 
          Do While dr.Read()
             i += 1
+
+            Dim valoreImporto As String
+            If dr.Item("TipoImporto").ToString = "Valore" Then
+               ' Importo valore.
+               valoreImporto = CFormatta.FormattaNumeroDouble(dr.Item("valore"))
+            Else
+               ' Importo percentuale.
+               valoreImporto = CFormatta.FormattaNumeroDouble(dr.Item("valore")) & "%"
+            End If
+
             If IsDBNull(dr.Item("Descrizione")) = False Then
-               DisegnaPulsante(dr.Item("Id").ToString, dr.Item("Descrizione").ToString, CordX, CordY)
+               DisegnaPulsante(dr.Item("Id").ToString, dr.Item("Descrizione").ToString, valoreImporto, Color.FromArgb(Convert.ToInt32(dr.Item("Colore"))), CordX, CordY)
             End If
 
             CordX = CordX + LARGHEZZA_PULSANTE + 1
@@ -193,7 +208,7 @@ Public Class ScontiMaggiorazioniPOS
       End Try
    End Function
 
-   Private Sub DisegnaPulsante(ByVal numero As String, ByVal nome As String, ByVal x As Integer, ByVal y As Integer)
+   Private Sub DisegnaPulsante(ByVal numero As String, ByVal nome As String, ByVal valoreImporto As String, ByVal coloreSfondo As Color, ByVal x As Integer, ByVal y As Integer)
       Try
          NumScontiMaggiorazioni += 1
 
@@ -203,13 +218,13 @@ Public Class ScontiMaggiorazioniPOS
          Sconti_Maggiorazioni(NumScontiMaggiorazioni).Location = New Point(x, y)
          Sconti_Maggiorazioni(NumScontiMaggiorazioni).Size = New Size(LARGHEZZA_PULSANTE, ALTEZZA_PULSANTE)
          'Sconti_Maggiorazioni(NumScontiMaggiorazioni).FlatStyle = FlatStyle.Popup
-         Sconti_Maggiorazioni(NumScontiMaggiorazioni).ColorBottom = Color.Black
-         Sconti_Maggiorazioni(NumScontiMaggiorazioni).ColorText = Color.White
+         Sconti_Maggiorazioni(NumScontiMaggiorazioni).ColorBottom = coloreSfondo
+         Sconti_Maggiorazioni(NumScontiMaggiorazioni).ColorText = Color.Black
          Sconti_Maggiorazioni(NumScontiMaggiorazioni).Font = New Font(FontFamily.GenericSansSerif, 16, FontStyle.Bold)
          Sconti_Maggiorazioni(NumScontiMaggiorazioni).TextButtonAlign = ContentAlignment.MiddleCenter
          Sconti_Maggiorazioni(NumScontiMaggiorazioni).TextButton = nome
+         Sconti_Maggiorazioni(NumScontiMaggiorazioni).Tag = valoreImporto
          'Sconti_Maggiorazioni(NumScontiMaggiorazioni).DialogResult = DialogResult.OK
-         'Sconti_Maggiorazioni(NumScontiMaggiorazioni).Tag = ""
          'Sconti_Maggiorazioni(NumScontiMaggiorazioni).ImageAlign = ContentAlignment.TopCenter
 
          'If File.Exists(icona) = True Then
@@ -233,7 +248,7 @@ Public Class ScontiMaggiorazioniPOS
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
 
-         Me.Tag = sender.TextButton
+         Me.Tag = sender.Tag
          Me.DialogResult = DialogResult.OK
          Me.Close()
 
@@ -248,11 +263,14 @@ Public Class ScontiMaggiorazioniPOS
       ' Imposta l'icona della finestra in base al prodotto installato.
       ImpostaIcona(Me)
 
-      LeggiDati(TAB_SCONTI_MAGGIORAZIONI)
+      ' Imposta il titolo della finestra.
+      If tipologiaValore = "Sconto" Then
+         Me.Text = "SCONTI"
+      Else
+         Me.Text = "MAGGIORAZIONI"
+      End If
 
-      'If NumScontiMaggiorazioni <> 0 Then
-      '   Me.AcceptButton = ScontiMaggiorazioni(1)
-      'End If
+      LeggiDati(TAB_SCONTI_MAGGIORAZIONI)
    End Sub
 
    Private Sub eui_cmdAnnulla_Click(sender As Object, e As EventArgs) Handles eui_cmdAnnulla.Click

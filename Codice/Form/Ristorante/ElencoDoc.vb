@@ -1902,7 +1902,7 @@ Public Class ElencoDoc
                End If
             End If
 
-            ' TODO_A: Se il documento da annullare è uno scontrino.
+            ' TODO: Se il documento da annullare è uno scontrino.
             'If Documento = TIPO_DOC_SF Then
             '   CreaFileScontrinoWPOS1(Numero, Convert.ToDateTime(Data))
             'End If

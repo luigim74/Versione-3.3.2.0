@@ -4877,7 +4877,7 @@ Public Class frmOpzioni
             ModelloSF = cmbStampanteModello.Text
          End If
 
-         ' TODO_B: Eliminare! Vecchia procedura.
+         ' TODO: Eliminare! Vecchia procedura.
          ' RCH Swing A/65 ECR.
 
          'If cmbStampantePorta.Text.Length = 0 Then
@@ -5979,7 +5979,7 @@ Public Class frmOpzioni
          ProduttoreSF = cmbStampanteProduttore.Text
          ModelloSF = cmbStampanteModello.Text
 
-         ' TODO_B: Eliminare! Vecchia procedura.
+         ' TODO: Eliminare! Vecchia procedura.
          ' RCH Swing ECR 65/A
          'PortaSF = cmbStampantePorta.Text
          'ParametriSF = txtStampanteParametri.Text

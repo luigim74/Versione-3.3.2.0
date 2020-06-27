@@ -3993,7 +3993,7 @@ Public Class frmPos
          For i = 0 To lstvDettagli.Items.Count - 1
 
             With Stat
-               ' TODO_A: Modifcare procedure della Classe e rimuovere FormattApici.
+               ' TODO: Modifcare procedure della Classe e rimuovere FormattApici.
 
                ' Assegna i dati dei campi della classe alle caselle di testo.
                .Data = CStr(dtpData.Value.Date)
@@ -4261,7 +4261,7 @@ Public Class frmPos
                               StampaComandaKUBEII(sql, percorsoRep, nomeTavolo, nomeCameriereDoc, LeggiPercorsiComanda(i, percorsiStampa.Stampante))
 
                            Case PERCORSO_REP_COMANDA_REPARTI_WPOS1
-                              ' TODO_A: RIVEDERE!
+                              ' TODO: RIVEDERE!
                               StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
 
                         End Select
@@ -6079,7 +6079,7 @@ Public Class frmPos
 
                   'StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
 
-                  ' TODO_A: Queste procedure sono da rivedere e testare!
+                  ' TODO: Queste procedure sono da rivedere e testare!
                   RegistraMsgComanda()
                   RegistraTuttiMsgComanda()
                   StampaMessaggiReparti()
@@ -6155,7 +6155,7 @@ Public Class frmPos
 
                'StampaComndaRtsWpos1(sql, nomeTavolo, nomeCameriereDoc)
 
-               ' TODO_A: Queste procedure sono da rivedere e testare!
+               ' TODO: Queste procedure sono da rivedere e testare!
                RegistraMsgComanda()
                RegistraTuttiMsgComanda()
                StampaMessaggiReparti()

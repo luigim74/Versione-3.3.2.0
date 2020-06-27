@@ -229,6 +229,7 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_LISTINI_CAMERE_A4 As String = "\Reports\ListiniCamere.rdlc"
    Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdlc"
    Public Const PERCORSO_REP_MODELLO_ISTAT_59_A4 As String = "\Reports\ModelloIstatC59 A4.rdlc"
+   Public Const PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4 As String = "\Reports\ScontiMaggiorazioni.rdlc"
 
    ' Nomi per le tipologie di documenti fiscali e non fiscali.
    Public Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
@@ -428,7 +429,6 @@ Module Dichiarazioni
 
 
 #Region "Registro Operazioni "
-
    ' Stringhe per identificare i moduli.
    Public Const MODULO_HOSPITALITY_SOLUTION As String = "HOSPITALITY SOLUTION"
    Public Const MODULO_GESTIONE_ACQUISTI As String = "GESTIONE ACQUISTI"

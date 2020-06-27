@@ -1,3 +1,16 @@
+#Region " DATI FILE.VB "
+' ******************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/01/2005
+' Data ultima modifica: 21/06/2020
+' Descrizione:          Finestra per la pulizia delle tabelle dati.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************************************
+#End Region
+
 Option Strict Off
 Option Explicit On 
 
@@ -14,9 +27,12 @@ Public Class PuliziaDB
    Dim tr As OleDbTransaction
    Dim sql As String
 
-   Dim etichetteTabelle(NUMERO_TABELLE) As String
-   Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Dim nomiTabelle(NUMERO_TABELLE) As String
+   Dim etichetteTabelle(NUMERO_TABELLE) As String
+   Friend WithEvents eui_cmdEsci As Elegant.Ui.Button
+   Friend WithEvents eui_cmdEsegui As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSeleziona As Elegant.Ui.Button
+   Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
 
 #Region " Codice generato da Progettazione Windows Form "
 
@@ -50,9 +66,6 @@ Public Class PuliziaDB
    Friend WithEvents Label3 As System.Windows.Forms.Label
    Friend WithEvents cklbTabelle As System.Windows.Forms.CheckedListBox
    Friend WithEvents Label1 As System.Windows.Forms.Label
-   Friend WithEvents cmdSeleziona As System.Windows.Forms.Button
-   Friend WithEvents cmdEsegui As System.Windows.Forms.Button
-   Friend WithEvents cmdAnnulla As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PuliziaDB))
@@ -60,10 +73,10 @@ Public Class PuliziaDB
       Me.Label3 = New System.Windows.Forms.Label()
       Me.cklbTabelle = New System.Windows.Forms.CheckedListBox()
       Me.Label1 = New System.Windows.Forms.Label()
-      Me.cmdSeleziona = New System.Windows.Forms.Button()
-      Me.cmdEsegui = New System.Windows.Forms.Button()
-      Me.cmdAnnulla = New System.Windows.Forms.Button()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.eui_cmdSeleziona = New Elegant.Ui.Button()
+      Me.eui_cmdEsegui = New Elegant.Ui.Button()
+      Me.eui_cmdEsci = New Elegant.Ui.Button()
       Me.SuspendLayout()
       '
       'ImageList1
@@ -85,7 +98,7 @@ Public Class PuliziaDB
       Me.Label3.ForeColor = System.Drawing.Color.White
       Me.Label3.Location = New System.Drawing.Point(0, 0)
       Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(385, 22)
+      Me.Label3.Size = New System.Drawing.Size(390, 22)
       Me.Label3.TabIndex = 10
       Me.Label3.Text = " ELENCO TABELLE DEL DATABASE:"
       Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -108,49 +121,49 @@ Public Class PuliziaDB
       Me.Label1.Text = "Selezionare le Tabelle su cui si desidera effettuare la pulizia. Tutti i dati del" &
     "le tabelle selezionate verranno cancellati."
       '
-      'cmdSeleziona
-      '
-      Me.cmdSeleziona.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdSeleziona.Location = New System.Drawing.Point(288, 40)
-      Me.cmdSeleziona.Name = "cmdSeleziona"
-      Me.cmdSeleziona.Size = New System.Drawing.Size(88, 24)
-      Me.cmdSeleziona.TabIndex = 1
-      Me.cmdSeleziona.Text = "&Seleziona tutto"
-      '
-      'cmdEsegui
-      '
-      Me.cmdEsegui.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdEsegui.Location = New System.Drawing.Point(288, 80)
-      Me.cmdEsegui.Name = "cmdEsegui"
-      Me.cmdEsegui.Size = New System.Drawing.Size(88, 24)
-      Me.cmdEsegui.TabIndex = 2
-      Me.cmdEsegui.Text = "&Esegui"
-      '
-      'cmdAnnulla
-      '
-      Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdAnnulla.Location = New System.Drawing.Point(288, 112)
-      Me.cmdAnnulla.Name = "cmdAnnulla"
-      Me.cmdAnnulla.Size = New System.Drawing.Size(88, 24)
-      Me.cmdAnnulla.TabIndex = 3
-      Me.cmdAnnulla.Text = "&Esci"
-      '
       'formFrameSkinner
       '
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'eui_cmdSeleziona
+      '
+      Me.eui_cmdSeleziona.Id = "d2dea16b-f130-42f6-b010-bc2008503d34"
+      Me.eui_cmdSeleziona.Location = New System.Drawing.Point(288, 32)
+      Me.eui_cmdSeleziona.Name = "eui_cmdSeleziona"
+      Me.eui_cmdSeleziona.Size = New System.Drawing.Size(92, 30)
+      Me.eui_cmdSeleziona.TabIndex = 13
+      Me.eui_cmdSeleziona.Text = "&Seleziona tutto"
+      '
+      'eui_cmdEsegui
+      '
+      Me.eui_cmdEsegui.Id = "c4cb4a65-4765-41f5-a2e4-a3c46e3a06e0"
+      Me.eui_cmdEsegui.Location = New System.Drawing.Point(288, 73)
+      Me.eui_cmdEsegui.Name = "eui_cmdEsegui"
+      Me.eui_cmdEsegui.Size = New System.Drawing.Size(92, 30)
+      Me.eui_cmdEsegui.TabIndex = 14
+      Me.eui_cmdEsegui.Text = "Esegui p&ulizia"
+      '
+      'eui_cmdEsci
+      '
+      Me.eui_cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.eui_cmdEsci.Id = "487a9853-f3ac-469b-9bca-cc120c34a7e3"
+      Me.eui_cmdEsci.Location = New System.Drawing.Point(288, 310)
+      Me.eui_cmdEsci.Name = "eui_cmdEsci"
+      Me.eui_cmdEsci.Size = New System.Drawing.Size(92, 26)
+      Me.eui_cmdEsci.TabIndex = 15
+      Me.eui_cmdEsci.Text = "&Esci"
+      '
       'PuliziaDB
       '
-      Me.AcceptButton = Me.cmdEsegui
+      Me.AcceptButton = Me.eui_cmdEsegui
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.CancelButton = Me.cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(385, 393)
-      Me.Controls.Add(Me.cmdAnnulla)
-      Me.Controls.Add(Me.cmdEsegui)
-      Me.Controls.Add(Me.cmdSeleziona)
+      Me.CancelButton = Me.eui_cmdEsci
+      Me.ClientSize = New System.Drawing.Size(390, 393)
+      Me.Controls.Add(Me.eui_cmdEsci)
+      Me.Controls.Add(Me.eui_cmdEsegui)
+      Me.Controls.Add(Me.eui_cmdSeleziona)
       Me.Controls.Add(Me.Label1)
       Me.Controls.Add(Me.cklbTabelle)
       Me.Controls.Add(Me.Label3)
@@ -618,7 +631,7 @@ Public Class PuliziaDB
       End Try
    End Sub
 
-   Private Sub cmdSeleziona_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSeleziona.Click
+   Private Sub eui_cmdSeleziona_Click(sender As Object, e As EventArgs) Handles eui_cmdSeleziona.Click
       Try
          Dim i As Integer
          For i = 0 To cklbTabelle.Items.Count - 1
@@ -631,11 +644,7 @@ Public Class PuliziaDB
       End Try
    End Sub
 
-   Private Sub cmdAnnulla_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAnnulla.Click
-      Me.Close()
-   End Sub
-
-   Private Sub cmdEsegui_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdEsegui.Click
+   Private Sub eui_cmdEsegui_Click(sender As Object, e As EventArgs) Handles eui_cmdEsegui.Click
       Try
          Dim tabSel As Boolean = False
          Dim j As Integer
@@ -684,6 +693,10 @@ Public Class PuliziaDB
          ' Chiude la connessione.
          cn.Close()
       End Try
+
    End Sub
 
+   Private Sub eui_cmdEsci_Click(sender As Object, e As EventArgs) Handles eui_cmdEsci.Click
+      Me.Close()
+   End Sub
 End Class

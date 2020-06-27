@@ -540,6 +540,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchedinePSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\ScontiMaggiorazioniDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScontiMaggiorazioniDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\StatisticheBarRistoranteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -897,6 +902,12 @@
       <DependentUpon>RepSchedinePS.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepSchedinePS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepScontiMaggiorazioni.Designer.vb">
+      <DependentUpon>RepScontiMaggiorazioni.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepScontiMaggiorazioni.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepScorteMagazzino.Designer.vb">
@@ -1554,6 +1565,17 @@
     <None Include="Codice\DataSet\SchedinePSDataSet.xss">
       <DependentUpon>SchedinePSDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\ScontiMaggiorazioniDataSet.xsc">
+      <DependentUpon>ScontiMaggiorazioniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\ScontiMaggiorazioniDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ScontiMaggiorazioniDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\ScontiMaggiorazioniDataSet.xss">
+      <DependentUpon>ScontiMaggiorazioniDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\StatisticheBarRistoranteDataSet.xsc">
       <DependentUpon>StatisticheBarRistoranteDataSet.xsd</DependentUpon>
     </None>
@@ -1767,6 +1789,7 @@
     <EmbeddedResource Include="bin\Reports\RisorseSportive.rdlc" />
     <EmbeddedResource Include="bin\Reports\Sale.rdlc" />
     <EmbeddedResource Include="bin\Reports\SchedinaPS A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\ScontiMaggiorazioni.rdlc" />
     <EmbeddedResource Include="bin\Reports\Scontrino NF_80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ScorteMagazzino.rdlc" />
     <EmbeddedResource Include="bin\Reports\StatisticheBarRistorante.rdlc" />
@@ -2242,6 +2265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepSchedinePS.resx">
       <DependentUpon>RepSchedinePS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepScontiMaggiorazioni.resx">
+      <DependentUpon>RepScontiMaggiorazioni.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepScorteMagazzino.resx">
       <DependentUpon>RepScorteMagazzino.vb</DependentUpon>

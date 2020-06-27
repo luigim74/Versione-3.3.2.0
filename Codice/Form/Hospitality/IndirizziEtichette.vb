@@ -734,7 +734,7 @@ Public Class IndirizziEtichette
 
    Private Function SalvaDati() As Boolean
       Try
-         ' TODO_A: Modifcare procedure della Classe e rimuovere FormattApici.
+         ' TODO: Modifcare procedure della Classe e rimuovere FormattApici.
 
          ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
          AggiornaTabella(cmbTitolo, TAB_QUALIFICHE)

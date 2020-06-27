@@ -3761,7 +3761,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-
    Private Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -4430,6 +4429,34 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   Private Sub AnteprimaDiStampaScontiMaggiorazioni(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New ScontiMaggiorazioniDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepScontiMaggiorazioni(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+
    Private Sub StampaElencoCamere(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
@@ -4780,6 +4807,34 @@ Public Class frmElencoDati
          Dim oleAdapter1 As New OleDbDataAdapter
          oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
          oleAdapter1.Fill(ds, TAB_ARTICOLI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoScontiMaggiorazioni(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New ScontiMaggiorazioniDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
+         oleAdapter1.Fill(ds, TAB_SCONTI_MAGGIORAZIONI)
 
          Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
          stampa.Avvia(Application.StartupPath & nomeDoc)
@@ -5309,6 +5364,11 @@ Public Class frmElencoDati
                      StampaElencoOperatori(repSql, PERCORSO_REP_OPERATORI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
+               Case Elenco.ScontiMaggiorazioni
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     StampaElencoScontiMaggiorazioni(repSql, PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
+                  End If
+
                Case Elenco.CaratteristicheRisorse
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -5360,6 +5420,9 @@ Public Class frmElencoDati
 
                Case Elenco.Operatori
                   AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI_A4, TAB_OPERATORI, repSql)
+
+               Case Elenco.ScontiMaggiorazioni
+                  AnteprimaDiStampaScontiMaggiorazioni(PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4, TAB_SCONTI_MAGGIORAZIONI, repSql)
 
                Case Elenco.CaratteristicheRisorse
                   MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)

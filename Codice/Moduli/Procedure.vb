@@ -3427,7 +3427,8 @@ Module Procedure
 
    End Function
 
-   ' TODO_A: Terminare e testare il funzionamento.
+   ' A_TODO: Terminare e testare il funzionamento.
+
    Public Function LeggiNumeroCassa() As String
       Try
 
@@ -3439,7 +3440,8 @@ Module Procedure
 
    End Function
 
-   ' TODO_A: Terminare e testare il funzionamento.
+   ' TODO: Terminare e testare il funzionamento.
+
    Public Function LeggiMatricolaRT() As String
       Dim SR_OUT As String = "SR_OUT."
       Dim matricola As String
@@ -3499,8 +3501,8 @@ Module Procedure
 
 #Region "Driver RTS EscWpos1"
    Public Function StampaComndaRtsWpos1(ByVal sql As String, ByVal nomeTavolo As String, ByVal nomeCameriereDoc As String) As Boolean
+      ' TODO: Da terminare con filtro Reparti!
 
-      ' TODO_A: Da terminare con filtro Reparti!
       Dim rigaScontrino As String
       Dim totComande As Integer
 
