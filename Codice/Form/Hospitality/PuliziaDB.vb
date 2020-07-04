@@ -2,7 +2,7 @@
 ' ******************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/01/2005
-' Data ultima modifica: 21/06/2020
+' Data ultima modifica: 04/07/2020
 ' Descrizione:          Finestra per la pulizia delle tabelle dati.
 ' Note:
 '
@@ -20,7 +20,7 @@ Imports System.Data.OleDb
 Public Class PuliziaDB
    Inherits System.Windows.Forms.Form
 
-   Const NUMERO_TABELLE As Integer = 32
+   Const NUMERO_TABELLE As Integer = 63
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
    ' Dichiara un oggetto transazione.
@@ -98,7 +98,7 @@ Public Class PuliziaDB
       Me.Label3.ForeColor = System.Drawing.Color.White
       Me.Label3.Location = New System.Drawing.Point(0, 0)
       Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(390, 22)
+      Me.Label3.Size = New System.Drawing.Size(386, 22)
       Me.Label3.TabIndex = 10
       Me.Label3.Text = " ELENCO TABELLE DEL DATABASE:"
       Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -160,7 +160,7 @@ Public Class PuliziaDB
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdEsci
-      Me.ClientSize = New System.Drawing.Size(390, 393)
+      Me.ClientSize = New System.Drawing.Size(386, 387)
       Me.Controls.Add(Me.eui_cmdEsci)
       Me.Controls.Add(Me.eui_cmdEsegui)
       Me.Controls.Add(Me.eui_cmdSeleziona)
@@ -197,21 +197,21 @@ Public Class PuliziaDB
 
    Public Sub EliminaDatiTabelle(ByVal nomeTabella As String)
       Try
+         ' Apre la connessione.
+         cn.Open()
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("DELETE FROM {0}", nomeTabella)
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+         ' Conferma la transazione.
+         tr.Commit()
+
          Select Case nomeTabella
             Case "Acquisti"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' DETTAGLI_ACQUISTI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -223,23 +223,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Aziende"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' AZIENDE_ALLEGATI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -251,7 +236,6 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
 
                ' BUONI_PASTO.
                ' Avvia una transazione.
@@ -264,7 +248,6 @@ Public Class PuliziaDB
                Dim Record2 As Integer = cmdDelete2.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
 
                ' BUONI_PASTO_FATT.
                ' Avvia una transazione.
@@ -277,23 +260,8 @@ Public Class PuliziaDB
                Dim Record3 As Integer = cmdDelete3.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Camerieri"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' CAMERIERI_ALLEGATI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -305,23 +273,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Clienti"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' CLIENTI_ALLEGATI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -333,23 +286,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Documenti"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' DETTAGLI_DOC.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -361,23 +299,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "EtichetteArticoli"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' ETICHETTE_ARTICOLI_REP.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -389,23 +312,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "EtichetteIndirizzi"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' ETICHETTE_INDIRIZZI_REP.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -417,23 +325,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Fornitori"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' FORN_ALLEGATI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -445,23 +338,8 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
             Case "Piatti"
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-
                ' INGREDIENTI.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -473,23 +351,58 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
-            Case "Tavoli"
-               ' Apre la connessione.
-               cn.Open()
+            Case "PrenCamere"
+               ' PrenCamereAddebiti.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
                ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
+               sql = String.Format("DELETE FROM {0}", "PrenCamereAddebiti")
                ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+               Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
                ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+               Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
 
+               ' PrenCamereAllegati.
+               ' Avvia una transazione.
+               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+               ' Crea la stringa di eliminazione.
+               sql = String.Format("DELETE FROM {0}", "PrenCamereAllegati")
+               ' Crea il comando per la connessione corrente.
+               Dim cmdDelete2 As New OleDbCommand(sql, cn, tr)
+               ' Esegue il comando.
+               Dim Record2 As Integer = cmdDelete1.ExecuteNonQuery()
+               ' Conferma la transazione.
+               tr.Commit()
+
+               ' PrenCamereOccupanti.
+               ' Avvia una transazione.
+               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+               ' Crea la stringa di eliminazione.
+               sql = String.Format("DELETE FROM {0}", "PrenCamereOccupanti")
+               ' Crea il comando per la connessione corrente.
+               Dim cmdDelete3 As New OleDbCommand(sql, cn, tr)
+               ' Esegue il comando.
+               Dim Record3 As Integer = cmdDelete1.ExecuteNonQuery()
+               ' Conferma la transazione.
+               tr.Commit()
+
+            Case "PrenRisorse"
+               ' PrenCamereAddebiti.
+               ' Avvia una transazione.
+               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+               ' Crea la stringa di eliminazione.
+               sql = String.Format("DELETE FROM {0}", "PrenRisorseConto")
+               ' Crea il comando per la connessione corrente.
+               Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
+               ' Esegue il comando.
+               Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
+               ' Conferma la transazione.
+               tr.Commit()
+
+            Case "Tavoli"
                ' Comande.
                ' Avvia una transazione.
                tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -501,29 +414,16 @@ Public Class PuliziaDB
                Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
                ' Conferma la transazione.
                tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
 
-            Case Else
-               ' Apre la connessione.
-               cn.Open()
-               ' Avvia una transazione.
-               tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM {0}", nomeTabella)
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-               ' Esegue il comando.
-               Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-               ' Conferma la transazione.
-               tr.Commit()
-               ' Chiude la connessione.
-               cn.Close()
          End Select
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
 
       End Try
    End Sub
@@ -531,74 +431,137 @@ Public Class PuliziaDB
    Private Sub PuliziaDB_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Nome delle Tabelle visualizzate nella lista.
-         etichetteTabelle(0) = "Acquisti"
-         etichetteTabelle(1) = "Articoli"
-         etichetteTabelle(2) = "Attivit‡"
-         etichetteTabelle(3) = "Aziende"
-         etichetteTabelle(4) = "Camerieri"
-         etichetteTabelle(5) = "Categorie Clienti"
-         etichetteTabelle(6) = "Categorie Merceologiche"
-         etichetteTabelle(7) = "Categorie Piatti"
-         etichetteTabelle(8) = "Clienti"
-         etichetteTabelle(9) = "Corrispettivi"
-         etichetteTabelle(10) = "Documenti"
-         etichetteTabelle(11) = "Etichette Articoli"
-         etichetteTabelle(12) = "Etichette Indirizzi"
-         etichetteTabelle(13) = "Fornitori"
-         etichetteTabelle(14) = "Magazzini"
-         etichetteTabelle(15) = "Modalit‡ di pagamento"
-         etichetteTabelle(16) = "Movimenti di Magazzino"
-         etichetteTabelle(17) = "Nazioni"
-         etichetteTabelle(18) = "Piatti"
-         etichetteTabelle(19) = "Piatti esauriti"
-         etichetteTabelle(20) = "Prenotazioni Tavoli"
-         etichetteTabelle(21) = "Prenotazioni Sale"
-         etichetteTabelle(22) = "Prima Nota"
-         etichetteTabelle(23) = "Qualifiche"
-         etichetteTabelle(24) = "Reparti"
-         etichetteTabelle(25) = "Sale"
-         etichetteTabelle(26) = "Scaffali"
-         etichetteTabelle(27) = "Statistiche"
-         etichetteTabelle(28) = "Tavoli"
-         etichetteTabelle(29) = "Tipo Documenti"
-         etichetteTabelle(30) = "Ubicazioni"
-         etichetteTabelle(31) = "Unit‡ di misura"
+
+         etichetteTabelle(0) = "Accessori e Servizi"
+         etichetteTabelle(1) = "Acquisti"
+         etichetteTabelle(2) = "Agenzie turistiche"
+         etichetteTabelle(3) = "Articoli"
+         etichetteTabelle(4) = "Attivit‡"
+         etichetteTabelle(5) = "Aziende"
+         etichetteTabelle(6) = "Camere"
+         etichetteTabelle(7) = "Camerieri"
+         etichetteTabelle(8) = "Canali di vendita"
+         etichetteTabelle(9) = "Caratteristiche Risorse"
+         etichetteTabelle(10) = "Categorie Clienti"
+         etichetteTabelle(11) = "Categorie Merceologiche"
+         etichetteTabelle(12) = "Categorie Piatti"
+         etichetteTabelle(13) = "Causali Documento"
+         etichetteTabelle(14) = "Clienti"
+         etichetteTabelle(15) = "Conti Tavoli"
+         etichetteTabelle(16) = "Corrispettivi"
+         etichetteTabelle(17) = "Documenti di identit‡"
+         etichetteTabelle(18) = "Documenti"
+         etichetteTabelle(19) = "E-mail"
+         etichetteTabelle(20) = "Etichette Articoli"
+         etichetteTabelle(21) = "Etichette Indirizzi"
+         etichetteTabelle(22) = "Fornitori"
+         etichetteTabelle(23) = "Gruppi Operatori"
+         etichetteTabelle(24) = "Gruppi Ospiti"
+         etichetteTabelle(25) = "Listini Camere"
+         etichetteTabelle(26) = "Magazzini"
+         etichetteTabelle(27) = "Messaggi inviati ai reparti"
+         etichetteTabelle(28) = "Messaggi Reparti"
+         etichetteTabelle(29) = "Modalit‡ di pagamento"
+         etichetteTabelle(30) = "Movimenti di Magazzino"
+         etichetteTabelle(31) = "Nazioni"
          etichetteTabelle(32) = "Registro Operazioni"
+         etichetteTabelle(33) = "Piatti"
+         etichetteTabelle(34) = "Piatti esauriti"
+         etichetteTabelle(35) = "Posizioni camere"
+         etichetteTabelle(36) = "Prenotazione camere"
+         etichetteTabelle(37) = "Prenotazioni Tavoli"
+         etichetteTabelle(38) = "Prenotazioni Sale"
+         etichetteTabelle(39) = "Prenotazione risorse sportive"
+         etichetteTabelle(40) = "Prima Nota"
+         etichetteTabelle(41) = "Qualifiche"
+         etichetteTabelle(42) = "Reparti"
+         etichetteTabelle(43) = "Risorse sportive"
+         etichetteTabelle(44) = "Sale"
+         etichetteTabelle(45) = "Scaffali"
+         etichetteTabelle(46) = "Schedine pubblica sicurezza"
+         etichetteTabelle(47) = "Sconti e maggiorazioni"
+         etichetteTabelle(48) = "Stagioni"
+         etichetteTabelle(49) = "Statistiche di vendita Bar / Ristorante"
+         etichetteTabelle(50) = "Statistiche di vendita risorse sportive"
+         etichetteTabelle(51) = "Statistiche di gioco risorse sportive"
+         etichetteTabelle(52) = "Stato prenotazioni"
+         etichetteTabelle(53) = "Stato prenotazioni risorse sportive"
+         etichetteTabelle(54) = "Storico presenze camere"
+         etichetteTabelle(55) = "Storico presenze Istat"
+         etichetteTabelle(56) = "Storico presenze Istat C59"
+         etichetteTabelle(57) = "Tavoli"
+         etichetteTabelle(58) = "Tipo Documenti"
+         etichetteTabelle(59) = "Tipologie risorse sportive"
+         etichetteTabelle(60) = "Tipologie camere"
+         etichetteTabelle(61) = "Ubicazioni"
+         etichetteTabelle(62) = "Ubicazioni camere"
+         etichetteTabelle(63) = "Unit‡ di misura"
 
          ' Nome delle Tabelle del database.
-         nomiTabelle(0) = "Acquisti"
-         nomiTabelle(1) = "Articoli"
-         nomiTabelle(2) = "Attivit‡"
-         nomiTabelle(3) = "Aziende"
-         nomiTabelle(4) = "Camerieri"
-         nomiTabelle(5) = "CategorieClienti"
-         nomiTabelle(6) = "CategorieMerce"
-         nomiTabelle(7) = "CategoriePiatti"
-         nomiTabelle(8) = "Clienti"
-         nomiTabelle(9) = "Corrispettivi"
-         nomiTabelle(10) = "Documenti"
-         nomiTabelle(11) = "EtichetteArticoli"
-         nomiTabelle(12) = "EtichetteIndirizzi"
-         nomiTabelle(13) = "Fornitori"
-         nomiTabelle(14) = "Magazzini"
-         nomiTabelle(15) = "ModPagamento"
-         nomiTabelle(16) = "MovMagazzino"
-         nomiTabelle(17) = "Nazioni"
-         nomiTabelle(18) = "Piatti"
-         nomiTabelle(19) = "PiattiEsauriti"
-         nomiTabelle(20) = "Prenotazioni"
-         nomiTabelle(21) = "PrenSale"
-         nomiTabelle(22) = "PrimaNota"
-         nomiTabelle(23) = "Qualifiche"
-         nomiTabelle(24) = "Reparti"
-         nomiTabelle(25) = "Sale"
-         nomiTabelle(26) = "Scaffali"
-         nomiTabelle(27) = "Statistiche"
-         nomiTabelle(28) = "Tavoli"
-         nomiTabelle(29) = "TipoDoc"
-         nomiTabelle(30) = "Ubicazioni"
-         nomiTabelle(31) = "Unit‡Misura"
+         nomiTabelle(0) = "AccessoriServizi"
+         nomiTabelle(1) = "Acquisti"
+         nomiTabelle(2) = "Agenzie"
+         nomiTabelle(3) = "Articoli"
+         nomiTabelle(4) = "Attivit‡"
+         nomiTabelle(5) = "Aziende"
+         nomiTabelle(6) = "Camere"
+         nomiTabelle(7) = "Camerieri"
+         nomiTabelle(8) = "CanaliVendita"
+         nomiTabelle(9) = "CaratteristicheRisorse"
+         nomiTabelle(10) = "CategorieClienti"
+         nomiTabelle(11) = "CategorieMerce"
+         nomiTabelle(12) = "CategoriePiatti"
+         nomiTabelle(13) = "CausaliDocumento"
+         nomiTabelle(14) = "Clienti"
+         nomiTabelle(15) = "ContiTavoli"
+         nomiTabelle(16) = "Corrispettivi"
+         nomiTabelle(17) = "DocIdentit‡"
+         nomiTabelle(18) = "Documenti"
+         nomiTabelle(19) = "Email"
+         nomiTabelle(20) = "EtichetteArticoli"
+         nomiTabelle(21) = "EtichetteIndirizzi"
+         nomiTabelle(22) = "Fornitori"
+         nomiTabelle(23) = "Gruppi"
+         nomiTabelle(24) = "GruppiOspiti"
+         nomiTabelle(25) = "ListiniCamere"
+         nomiTabelle(26) = "Magazzini"
+         nomiTabelle(27) = "Messaggi"
+         nomiTabelle(28) = "MessaggiReparti"
+         nomiTabelle(29) = "ModPagamento"
+         nomiTabelle(30) = "MovMagazzino"
+         nomiTabelle(31) = "Nazioni"
          nomiTabelle(32) = "Operazioni"
+         nomiTabelle(33) = "Piatti"
+         nomiTabelle(34) = "PiattiEsauriti"
+         nomiTabelle(35) = "PosizioniCamere"
+         nomiTabelle(36) = "PrenCamere"
+         nomiTabelle(37) = "Prenotazioni"
+         nomiTabelle(38) = "PrenSale"
+         nomiTabelle(39) = "PrenRisorse"
+         nomiTabelle(40) = "PrimaNota"
+         nomiTabelle(41) = "Qualifiche"
+         nomiTabelle(42) = "Reparti"
+         nomiTabelle(43) = "Risorse"
+         nomiTabelle(44) = "Sale"
+         nomiTabelle(45) = "Scaffali"
+         nomiTabelle(46) = "SchedinePS"
+         nomiTabelle(47) = "ScontiMaggiorazioni"
+         nomiTabelle(48) = "Stagioni"
+         nomiTabelle(49) = "Statistiche"
+         nomiTabelle(50) = "StatisticheRisorse"
+         nomiTabelle(51) = "StatisticheGioco"
+         nomiTabelle(52) = "StatoPren"
+         nomiTabelle(53) = "StatoPrenotazione"
+         nomiTabelle(54) = "StoricoPresenzeCamere"
+         nomiTabelle(55) = "StoricoPresenzeIstat"
+         nomiTabelle(56) = "StoricoPresenzeIstatC59"
+         nomiTabelle(57) = "Tavoli"
+         nomiTabelle(58) = "TipoDoc"
+         nomiTabelle(59) = "Tipologie"
+         nomiTabelle(60) = "TipologieCamere"
+         nomiTabelle(61) = "Ubicazioni"
+         nomiTabelle(62) = "UbicazioniCamere"
+         nomiTabelle(63) = "Unit‡Misura"
 
          ' Carica la lista delle Tabelle.
          CaricaListaTabelle(cklbTabelle)

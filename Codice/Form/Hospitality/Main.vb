@@ -10741,15 +10741,9 @@ Friend Class frmMain
                lblDemo.Visible = False
                lblGiorniProva.Visible = False
             End If
-
-            ' TODO: Da rimuovere!!!
-            moduloAttivo.NightClub = True
          Else
             ' Visualizza le varie funzionalità in base ai moduli installati.
             ImpostaModuli()
-
-            ' TODO: Da rimuovere!!!
-            moduloAttivo.NightClub = True
          End If
 
          DatiConfig = New AppConfig
@@ -13466,11 +13460,11 @@ Friend Class frmMain
             End If
 
             ' TODO: NIGHT_CLUB
-            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
-            '   moduloAttivo.NightClub = True
-            'Else
-            '   moduloAttivo.NightClub = False
-            'End If
+            If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
+               moduloAttivo.NightClub = True
+            Else
+               moduloAttivo.NightClub = False
+            End If
 
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PREN_ONLINE) Then
                moduloAttivo.PrenOnLine = True
@@ -13543,11 +13537,11 @@ Friend Class frmMain
             End If
 
             ' TODO: NIGHT_CLUB
-            'If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
-            '   moduloAttivo.NightClub = True
-            'Else
-            '   moduloAttivo.NightClub = False
-            'End If
+            If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
+               moduloAttivo.NightClub = True
+            Else
+               moduloAttivo.NightClub = False
+            End If
 
             If DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG).Length = 25 Then
                moduloAttivo.PrenOnLine = True
@@ -14220,11 +14214,11 @@ Friend Class frmMain
 
       ' TODO: NIGHT_CLUB
       ' NIGHT CLUB.
-      'If moduloAttivo.NightClub = True Then
-      '   Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
-      '   Dim item As String = Modulo.NOME_NIGHT_CLUB & " - " & codice
-      '   eui_lstProdottiAttivati.Items.Add(item)
-      'End If
+      If moduloAttivo.NightClub = True Then
+         Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
+         Dim item As String = Modulo.NOME_NIGHT_CLUB & " - " & codice
+         eui_lstProdottiAttivati.Items.Add(item)
+      End If
 
       ' PRENOTAZIONI ON-LINE.
       If moduloAttivo.PrenOnLine = True Then
@@ -14617,11 +14611,11 @@ Friend Class frmMain
                         End If
 
                         ' TODO: NIGHT_CLUB
-                        'If moduloAttivo.NightClub = True Then
-                        '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
-                        '      ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
-                        '   End If
-                        'End If
+                        If moduloAttivo.NightClub = True Then
+                           If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                              ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
+                           End If
+                        End If
 
                         If moduloAttivo.PrenOnLine = True Then
                            If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
@@ -14656,9 +14650,9 @@ Friend Class frmMain
                         End If
 
                         ' TODO: NIGHT_CLUB
-                        'If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
-                        '   ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
-                        'End If
+                        If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                           ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
+                        End If
 
                         If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
                            ImpostaDatiListaModuli(Modulo.NOME_PREN_ONLINE, "", Color.Gray, False)
@@ -14678,10 +14672,10 @@ Friend Class frmMain
                      End If
 
                      ' TODO: NIGHT_CLUB
-                  'Case Modulo.NOME_NIGHT_CLUB
-                  '   If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
-                  '      Exit Select
-                  '   End If
+                  Case Modulo.NOME_NIGHT_CLUB
+                     If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
+                        Exit Select
+                     End If
 
                   Case Modulo.NOME_PREN_ONLINE
                      If DisattivaProdotto(Modulo.NOME_PREN_ONLINE_CONFIG) = True Then
