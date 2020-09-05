@@ -1693,11 +1693,11 @@ Friend Class frmAzienda
    End Sub
 
    Private Sub txtTel_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtFax_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub TabControl1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged

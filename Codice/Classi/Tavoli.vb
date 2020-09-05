@@ -21,6 +21,7 @@ Public Class Tavoli
    Public PosY As Integer
    Public Colore As Integer
    Public OraOcc As String
+   Public MinutiOcc As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -145,6 +146,11 @@ Public Class Tavoli
          Else
             Me.OraOcc = ""
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("MinutiOcc")) = False Then
+            Me.MinutiOcc = ds.Tables(tabella).Rows(0)("MinutiOcc").ToString
+         Else
+            Me.MinutiOcc = "0"
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -169,9 +175,9 @@ Public Class Tavoli
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (Descrizione, Posti, Cameriere, Listino, Escludi, Orientamento, AltezzaTasto, LarghezzaTasto, NumTastiRiga, " &
-                                              "OrdineTasto, DimensioneTasto, Sala, [Note], PosX, PosY, Colore, Coperti, OraOcc) " &
+                                              "OrdineTasto, DimensioneTasto, Sala, [Note], PosX, PosY, Colore, Coperti, OraOcc, MinutiOcc) " &
                                        "VALUES(@Descrizione, @Posti, @Cameriere, @Listino, @Escludi, @Orientamento, @AltezzaTasto, @LarghezzaTasto, " &
-                                              "@NumTastiRiga, @OrdineTasto, @DimensioneTasto, @Sala, @Note, @PosX, @PosY, @Colore, @Coperti, @OraOcc)", tabella)
+                                              "@NumTastiRiga, @OrdineTasto, @DimensioneTasto, @Sala, @Note, @PosX, @PosY, @Colore, @Coperti, @OraOcc, @MinutiOcc)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -194,6 +200,7 @@ Public Class Tavoli
          cmdInsert.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdInsert.Parameters.AddWithValue("@Coperti", Me.Coperti)
          cmdInsert.Parameters.AddWithValue("@OraOcc", Me.OraOcc)
+         cmdInsert.Parameters.AddWithValue("@MinutiOcc", Me.MinutiOcc)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -248,7 +255,8 @@ Public Class Tavoli
                              "PosY = @PosY, " &
                              "Colore = @Colore, " &
                              "Coperti = @Coperti, " &
-                             "OraOcc = @OraOcc " &
+                             "OraOcc = @OraOcc, " &
+                             "MinutiOcc = @MinutiOcc " &
                              "WHERE Id = {1}",
                              tabella,
                              codice)
@@ -274,6 +282,7 @@ Public Class Tavoli
          cmdUpdate.Parameters.AddWithValue("@Colore", Me.Colore)
          cmdUpdate.Parameters.AddWithValue("@Coperti", Me.Coperti)
          cmdUpdate.Parameters.AddWithValue("@OraOcc", Me.OraOcc)
+         cmdUpdate.Parameters.AddWithValue("@MinutiOcc", Me.MinutiOcc)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

@@ -230,6 +230,7 @@
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll</HintPath>
     </Reference>
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
@@ -643,6 +644,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IstatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\Form\Ristorante\ModificaSpettanzaPOS.Designer.vb">
+      <DependentUpon>ModificaSpettanzaPOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Ristorante\ModificaSpettanzaPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Ristorante\ScontiMaggiorazioniPOS.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -670,6 +677,7 @@
     <Compile Include="Codice\Form\Ristorante\NumeroUscitePOS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Classi\CamerieriTavolo.vb" />
     <Compile Include="Codice\Moduli\Procedure.vb" />
     <Compile Include="Codice\Form\Hospitality\ScontiMaggiorazioni.vb">
       <SubType>Form</SubType>
@@ -1865,6 +1873,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hotel\DataModIstatC59.resx">
       <DependentUpon>DataModIstatC59.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\ModificaSpettanzaPOS.resx">
+      <DependentUpon>ModificaSpettanzaPOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\ScontiMaggiorazioniPOS.resx">
       <DependentUpon>ScontiMaggiorazioniPOS.vb</DependentUpon>

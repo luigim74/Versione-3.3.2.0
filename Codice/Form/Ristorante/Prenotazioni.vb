@@ -1275,7 +1275,7 @@ Public Class frmPrenotazioni
    End Sub
 
    Private Sub txtTelefono_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefono.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub cmbStatoPren_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbStatoPren.SelectedIndexChanged

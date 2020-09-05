@@ -1,10 +1,27 @@
-"*** 04/07/2020 - 16:16:51 ***"
-"- DESCRIZIONE ERRORE: ExecuteNonQuery richiede che il comando abbia una transazione quando la connessione assegnata al comando è in una transazione locale in sospeso. La proprietà Transaction del comando non è stata inizializzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal.ValidateTransaction(OleDbTransaction transaction, String method)
-   in System.Data.OleDb.OleDbConnection.ValidateTransaction(OleDbTransaction transaction, String method)
-   in System.Data.OleDb.OleDbCommand.ValidateConnectionAndTransaction(String method)
+"*** 05/09/2020 - 16:44:08 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nella data nell'espressione della query 'IdTavolo = 'BAR' AND Data = #BAR#'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.PuliziaDB.EliminaDatiTabelle(String nomeTabella)"
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 05/09/2020 - 18:16:22 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Predefinito"" al tipo 'Short'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToShort(String Value)
+   in Hospitality_Solution.CambiaCameriere.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 176"
+"
+"
+"*** 05/09/2020 - 18:22:31 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Symbols.Container.InvokeMethod(Method TargetProcedure, Object[] Arguments, Boolean[] CopyBack, BindingFlags Flags)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Hospitality_Solution.CamerieriTavolo.LeggiDati(ListView lst, String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\CamerieriTavolo.vb:riga 147"
 "
 "

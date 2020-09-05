@@ -2810,19 +2810,19 @@ Public Class frmClienti
    End Sub
 
    Private Sub txtTelCasa_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelCasa.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtTelUfficio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelUfficio.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtFax_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtFax.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtCell_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCell.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtSconto_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSconto.KeyPress

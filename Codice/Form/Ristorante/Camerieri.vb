@@ -138,6 +138,11 @@ Public Class frmCamerieri
    Friend WithEvents txtTotaleSpettanza As TextBox
    Friend WithEvents Label16 As Label
    Friend WithEvents eui_cmdStatDaContabilizzareSpett As Elegant.Ui.Button
+   Friend WithEvents clnIdTavolo As ColumnHeader
+   Friend WithEvents txtTotaleEuroGiorni As TextBox
+   Friend WithEvents Label17 As Label
+   Friend WithEvents txtTotaleGiorni As TextBox
+   Friend WithEvents Label18 As Label
    Friend WithEvents eui_cmdNuovoMsg As Elegant.Ui.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -230,6 +235,11 @@ Public Class frmCamerieri
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.clnIdTavolo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.txtTotaleEuroGiorni = New System.Windows.Forms.TextBox()
+      Me.Label17 = New System.Windows.Forms.Label()
+      Me.txtTotaleGiorni = New System.Windows.Forms.TextBox()
+      Me.Label18 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -253,7 +263,7 @@ Public Class frmCamerieri
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(780, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(781, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -296,7 +306,7 @@ Public Class frmCamerieri
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(780, 20)
+      Me.Panel1.Size = New System.Drawing.Size(781, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -306,7 +316,7 @@ Public Class frmCamerieri
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -321,7 +331,7 @@ Public Class frmCamerieri
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(780, 423)
+      Me.TabControl1.Size = New System.Drawing.Size(780, 458)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -944,6 +954,10 @@ Public Class frmCamerieri
       'tbpStatisticheVendita
       '
       Me.tbpStatisticheVendita.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleEuroGiorni)
+      Me.tbpStatisticheVendita.Controls.Add(Me.Label17)
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleGiorni)
+      Me.tbpStatisticheVendita.Controls.Add(Me.Label18)
       Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleSpettanza)
       Me.tbpStatisticheVendita.Controls.Add(Me.Label16)
       Me.tbpStatisticheVendita.Controls.Add(Me.eui_ddwnFiltro)
@@ -956,7 +970,7 @@ Public Class frmCamerieri
       Me.tbpStatisticheVendita.Location = New System.Drawing.Point(4, 22)
       Me.tbpStatisticheVendita.Name = "tbpStatisticheVendita"
       Me.tbpStatisticheVendita.Padding = New System.Windows.Forms.Padding(3)
-      Me.tbpStatisticheVendita.Size = New System.Drawing.Size(772, 397)
+      Me.tbpStatisticheVendita.Size = New System.Drawing.Size(772, 432)
       Me.tbpStatisticheVendita.TabIndex = 6
       Me.tbpStatisticheVendita.Text = "Statistiche di vendita"
       '
@@ -1086,7 +1100,7 @@ Public Class frmCamerieri
       '
       Me.lvwStatistiche.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lvwStatistiche.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnCategoria, Me.clnDescrizione, Me.clnTavolo, Me.clnQuantità, Me.clnPrezzo, Me.clnTotale, Me.clnSpettanza, Me.clnContabilizzata})
+      Me.lvwStatistiche.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnData, Me.clnCategoria, Me.clnDescrizione, Me.clnTavolo, Me.clnQuantità, Me.clnPrezzo, Me.clnTotale, Me.clnSpettanza, Me.clnContabilizzata, Me.clnIdTavolo})
       Me.lvwStatistiche.FullRowSelect = True
       Me.lvwStatistiche.HideSelection = False
       Me.lvwStatistiche.Location = New System.Drawing.Point(0, 38)
@@ -1180,12 +1194,56 @@ Public Class frmCamerieri
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'clnIdTavolo
+      '
+      Me.clnIdTavolo.Width = 0
+      '
+      'txtTotaleEuroGiorni
+      '
+      Me.txtTotaleEuroGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotaleEuroGiorni.ForeColor = System.Drawing.Color.Red
+      Me.txtTotaleEuroGiorni.Location = New System.Drawing.Point(655, 397)
+      Me.txtTotaleEuroGiorni.Name = "txtTotaleEuroGiorni"
+      Me.txtTotaleEuroGiorni.ReadOnly = True
+      Me.txtTotaleEuroGiorni.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotaleEuroGiorni.TabIndex = 9
+      Me.txtTotaleEuroGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label17
+      '
+      Me.Label17.AutoSize = True
+      Me.Label17.Location = New System.Drawing.Point(558, 400)
+      Me.Label17.Name = "Label17"
+      Me.Label17.Size = New System.Drawing.Size(94, 13)
+      Me.Label17.TabIndex = 10
+      Me.Label17.Text = "Totale euro Giorni:"
+      '
+      'txtTotaleGiorni
+      '
+      Me.txtTotaleGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotaleGiorni.ForeColor = System.Drawing.Color.Red
+      Me.txtTotaleGiorni.Location = New System.Drawing.Point(443, 397)
+      Me.txtTotaleGiorni.Name = "txtTotaleGiorni"
+      Me.txtTotaleGiorni.ReadOnly = True
+      Me.txtTotaleGiorni.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotaleGiorni.TabIndex = 8
+      Me.txtTotaleGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label18
+      '
+      Me.Label18.AutoSize = True
+      Me.Label18.Location = New System.Drawing.Point(372, 400)
+      Me.Label18.Name = "Label18"
+      Me.Label18.Size = New System.Drawing.Size(70, 13)
+      Me.Label18.TabIndex = 7
+      Me.Label18.Text = "Totale Giorni:"
+      '
       'frmCamerieri
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(780, 469)
+      Me.ClientSize = New System.Drawing.Size(781, 507)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1470,6 +1528,13 @@ Public Class frmCamerieri
                lstView.Items(i).SubItems.Add("No")
             End If
 
+            ' IdTavolo.
+            If IsDBNull(dr.Item("IdTavolo")) = False Then
+               lstView.Items(i).SubItems.Add(dr.Item("IdTavolo").ToString)
+            Else
+               lstView.Items(i).SubItems.Add(String.Empty)
+            End If
+
             ' Contatore.
             i += 1
 
@@ -1479,6 +1544,9 @@ Public Class frmCamerieri
          txtTotaleQuantità.Text = CFormatta.FormattaNumeroDouble(SommaColonna(lvwStatistiche, 4))
          txtTotale.Text = "€ " & CFormatta.FormattaNumeroDouble(SommaColonna(lvwStatistiche, 6))
          txtTotaleSpettanza.Text = "€ " & CFormatta.FormattaNumeroDouble(SommaColonna(lvwStatistiche, 7))
+
+         txtTotaleGiorni.Text = TrovaNumeroGiorni(Me.Tag)
+         txtTotaleEuroGiorni.Text = txtTotaleGiorni.Text * txtCostoGiorno.Text
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1628,6 +1696,27 @@ Public Class frmCamerieri
       End Try
    End Function
 
+   Private Function TrovaNumeroGiorni(ByVal idCameriere As String) As Integer
+      Try
+         cn.Open()
+
+         ' Ottiene il numero di record.
+         cmd.CommandText = String.Format("SELECT COUNT(*) FROM Statistiche WHERE IdCameriere = '" & idCameriere & "' GROUP BY Data")
+
+         Return CInt(cmd.ExecuteScalar())
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
 
 #End Region
 
@@ -1635,6 +1724,9 @@ Public Class frmCamerieri
 
    Private Sub frmCamerieri_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
+         ' TODO_A: NIGHT_CLUB
+         moduloAttivo.NightClub = True
+
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
@@ -1820,19 +1912,19 @@ Public Class frmCamerieri
    End Sub
 
    Private Sub txtTelCasa_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelCasa.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtTelUfficio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelUfficio.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtFax_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtFax.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtCell_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCell.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtCostoOra_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCostoOra.KeyPress
@@ -1935,7 +2027,11 @@ Public Class frmCamerieri
          Estensione = Path.GetExtension(Percorso)
 
          Select Case Estensione.ToUpper
-            Case ".DOC", ".RTF"
+            Case ".RTF"
+               ' WordPad
+               NomeApp = "WORDPAD.EXE"
+
+            Case ".DOC"
                ' Word
                NomeApp = "WINWORD.EXE"
 
@@ -1959,14 +2055,20 @@ Public Class frmCamerieri
                ' Acrobat Reader
                NomeApp = "ACRORD32.EXE"
 
-            Case ".HTM"
+            Case ".HTM", ".HTML"
                ' Internet Explorer
                NomeApp = "IEXPLORE.EXE"
+
+            Case ".BMP", ".PNG", ".JPG", ".JPEG", ".JPE", ".JFIF", ".GIF", ".TIF", ".TIFF"
+               ' Paint
+               NomeApp = "MSPAINT.EXE"
+
          End Select
 
          ' Avvia l'applicazione.
          Proc.StartInfo.FileName = NomeApp
          Proc.StartInfo.Arguments = Percorso
+         Proc.StartInfo.Verb = "runas"
          Proc.StartInfo.ErrorDialog = True
          Proc.StartInfo.ErrorDialogParentHandle = Me.Handle
          Proc.StartInfo.UseShellExecute = True
@@ -1976,6 +2078,9 @@ Public Class frmCamerieri
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         Proc.Close()
+         Proc.Dispose()
       End Try
    End Sub
 
@@ -2078,6 +2183,66 @@ Public Class frmCamerieri
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub lvwStatistiche_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvwStatistiche.SelectedIndexChanged
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim sql As String
+
+      Try
+         Dim dataStat As String = FormattaData(lvwStatistiche.Items(lvwStatistiche.FocusedItem.Index).Text, False)
+         Dim idTavolo As String = lvwStatistiche.Items(lvwStatistiche.FocusedItem.Index).SubItems(9).Text
+         Dim idCameriere As String
+         Dim nomeCameriere As String
+         Dim elencoCamerieri As String
+
+         ' Crea la stringa sql di selezione dati.
+         sql = "SELECT * FROM " & TAB_STATISTICHE & " WHERE IdTavolo = '" & idTavolo & "' AND Data = #" & dataStat & "# ORDER BY GruppoCameriere ASC"
+
+         cn.Open()
+
+         Dim cmd As New OleDbCommand(sql, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Dim i As Integer = 0
+         Do While dr.Read
+            ' Id cameriere.
+            If IsDBNull(dr.Item("IdCameriere")) = False Then
+               idCameriere = dr.Item("IdCameriere").ToString
+            Else
+               idCameriere = String.Empty
+            End If
+
+            ' Nome cameriere.
+            If IsDBNull(dr.Item("DesCameriere")) = False Then
+               nomeCameriere = dr.Item("DesCameriere").ToString
+            Else
+               nomeCameriere = String.Empty
+            End If
+
+            If idCameriere <> Me.Tag Then
+               i += 1
+
+               If i = 1 Then
+                  elencoCamerieri = nomeCameriere
+               Else
+                  elencoCamerieri = elencoCamerieri & ", " & nomeCameriere
+               End If
+            End If
+         Loop
+
+         ' Genera l'intestazione con i dati del form.
+         lblIntestazione.Text = VisIntestazione(txtCodice.Text, txtNome.Text, "(" & elencoCamerieri & ")")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
 
       End Try
    End Sub

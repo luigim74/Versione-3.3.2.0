@@ -46,7 +46,7 @@ Module Dichiarazioni
 
    ' Dimensioni della finesta Camerieri.
    Public Const CAMERIERI_LARGHEZZA As Integer = 790
-   Public Const CAMERIERI_ALTEZZA As Integer = 500
+   Public Const CAMERIERI_ALTEZZA As Integer = 540
 
    ' Dimensioni della finesta Camerieri.
    Public Const PIATTI_LARGHEZZA As Integer = 560
@@ -156,7 +156,7 @@ Module Dichiarazioni
    Public Const CARTELLA_ARCHIVI As String = "\Archivi"
    Public Const PERCORSO_LICENZA_RTF As String = "\Documenti\Licenza.rtf"
    Public Const PERCORSO_AZIENDE_DB As String = "\Archivi\StudioA.mdb" ' Non utilizzato.
-   Public Const PERCORSO_DB As String = "\Archivi\Hospitality.mdf" '"\Archivi\Hospitality.mdb"
+   Public Const PERCORSO_DB As String = "\Archivi\Hospitality.mdb"
    Public Const PERCORSO_DB_CLIENTI As String = "\Archivi\Hospitality.mdb"
    Public Const PERCORSO_DB_CAP As String = "\Archivi\Cap.mdb"
    Public Const PERCORSO_BKP As String = "\Backup\Hospitality.mdb"
@@ -470,6 +470,7 @@ Module Dichiarazioni
    Public Const MODULO_ANAGRAFICA_FORNITORI As String = "ANAGRAFICA FORNITORI"
    Public Const MODULO_ANAGRAFICA_CAT_PIATTI As String = "ANAGRAFICA CATEGORIE PIATTI"
    Public Const MODULO_ANAGRAFICA_CAMERIERI As String = "ANAGRAFICA CAMERIERI"
+   Public Const MODULO_ANAGRAFICA_AGENZIE_CAMERIERI As String = "ANAGRAFICA AGENZIE CAMERIERI"
    Public Const MODULO_ANAGRAFICA_SALE As String = "ANAGRAFICA SALE"
    Public Const MODULO_ANAGRAFICA_TAVOLI As String = "ANAGRAFICA TAVOLI"
    Public Const MODULO_ANAGRAFICA_CAMERE As String = "ANAGRAFICA CAMERE"
@@ -547,6 +548,7 @@ Module Dichiarazioni
    Public Const STR_ANAGRAFICA_FORNITORI As String = "l'elenco Fornitori."
    Public Const STR_ANAGRAFICA_CAT_PIATTI As String = "l'elenco Categorie piatti."
    Public Const STR_ANAGRAFICA_CAMERIERI As String = "l'elenco Camerieri."
+   Public Const STR_ANAGRAFICA_AGENZIE_CAMERIERI As String = "l'elenco Agenzie camerieri."
    Public Const STR_ANAGRAFICA_SALE As String = "l'elenco Sale."
    Public Const STR_ANAGRAFICA_TAVOLI As String = "l'elenco Tavoli."
    Public Const STR_ANAGRAFICA_CAMERE As String = "l'elenco Camere."
@@ -618,6 +620,7 @@ Module Dichiarazioni
    Public g_frmAsporto As AsportoPOS
    Public g_frmCatPiatti As frmElencoDati
    Public g_frmCamerieri As frmElencoDati
+   Public g_frmAgenzieCamerieri As frmElencoDati
    Public g_frmSale As frmElencoDati
    Public g_frmPren As frmElencoDati
    Public g_frmPrenSale As frmElencoDati
@@ -939,6 +942,7 @@ Module Dichiarazioni
       StatoPren = 16
       CaratteristicheRisorse = 17
       ScontiMaggiorazioni = 18
+      AgenzieCamerieri = 19
    End Enum
 
    Public Const NUMERO_TOT_ENUM_FINESTRA As Integer = 64
@@ -954,6 +958,7 @@ Module Dichiarazioni
       Piatti = 7
       CatPiatti = 8
       DatiAzienda = 9
+      AgenzieCamerieri = 10
 
       ' Tabelle
       FormeCortesia = 10
@@ -1176,6 +1181,11 @@ Module Dichiarazioni
       Privato = 2
    End Enum
 
+   Public Enum GruppoCamerieri As Short
+      Predefinito = 1
+      Altri = 2
+   End Enum
+
    ' Tipologia di Planning per le Risorse Sportive.
    Public Const PLANNING_1 As String = "Planning 1 - (Inizio ore: 6:00 - Prenotazione minima mezz'ora)"
    Public Const PLANNING_2 As String = "Planning 2 - (Inizio ore: 6:45 - Prenotazione minima un'ora)"
@@ -1200,5 +1210,7 @@ Module Dichiarazioni
    Public GestioneTavoliATempo As Boolean = False
    Public MinutiOccupazioneTavolo As Integer = MINUTI_TAVOLO
    Public DenominazioneCamerieri As String = DENOMINAZIONE_CAMERIERI
+   ' TODO: NIGHT_CLUB
+   Public TimerIncrementale As Boolean = False
 
 End Module

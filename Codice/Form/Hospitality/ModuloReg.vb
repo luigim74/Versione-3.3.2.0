@@ -1467,14 +1467,11 @@ Public Class frmModuloReg
    End Sub
 
    Private Sub txtTelefono_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefono.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtFax_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtFax.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
-   End Sub
-
-   Private Sub txtPiva_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPiva.TextChanged
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
    End Sub
 
    Private Sub txtPiva_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPiva.KeyPress
@@ -1482,7 +1479,7 @@ Public Class frmModuloReg
    End Sub
 
    Private Sub txtTelefonoRiv_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefonoRiv.KeyPress
-      e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+      e.Handled = CConvalida.DigitaSoloNumeriTelefono(e.KeyChar)
 
    End Sub
 

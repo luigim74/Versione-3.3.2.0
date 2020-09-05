@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 13/06/2020
+' Data ultima modifica: 02/09/2020
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -31,6 +31,7 @@ Public Class frmElencoDati
    Const TAB_PREN = "Prenotazioni"
    Const TAB_PREN_SALE = "PrenSale"
    Const TAB_CAMERIERI = "Camerieri"
+   Const TAB_AGENZIE_CAMERIERI = "AgenzieCamerieri"
    Const TAB_SALE = "Sale"
    Const TAB_TAVOLI = "Tavoli"
    Const TAB_CAMERE = "Camere"
@@ -117,6 +118,11 @@ Public Class frmElencoDati
             TipoElenco = Elenco.Camerieri
             NomeTabella = "Camerieri"
             TitoloFinestra = "Elenco " & DenominazioneCamerieri
+
+         Case Elenco.AgenzieCamerieri
+            TipoElenco = Elenco.AgenzieCamerieri
+            NomeTabella = "AgenzieCamerieri"
+            TitoloFinestra = "Elenco Agenzie " & DenominazioneCamerieri
 
          Case Elenco.Sale
             TipoElenco = Elenco.Sale
@@ -740,6 +746,38 @@ Public Class frmElencoDati
                   Exit Sub
                End If
 
+            Case Elenco.AgenzieCamerieri
+               ' todo: Modificare per AgenzieCamerieri
+               If DatiConfig.GetValue("WSCamerieri") = CStr(FormWindowState.Maximized) Then
+                  Me.WindowState = FormWindowState.Maximized
+                  Exit Sub
+               ElseIf DatiConfig.GetValue("WSCamerieri") = CStr(FormWindowState.Minimized) Then
+                  Me.WindowState = FormWindowState.Minimized
+                  Exit Sub
+               Else
+                  If DatiConfig.GetValue("ACamerieri") <> "" Then
+                     Me.Height = CInt(DatiConfig.GetValue("ACamerieri"))
+                  Else
+                     Me.Height = FORM_ALTEZZA
+                  End If
+
+                  If DatiConfig.GetValue("LCamerieri") <> "" Then
+                     Me.Width = CInt(DatiConfig.GetValue("LCamerieri"))
+                  Else
+                     Me.Width = FORM_LARGHEZZA
+                  End If
+
+                  If DatiConfig.GetValue("CamerieriX") <> "" Then
+                     Me.Location = New Point(CInt(DatiConfig.GetValue("CamerieriX")), Me.Location.Y)
+                  End If
+
+                  If DatiConfig.GetValue("CamerieriY") <> "" Then
+                     Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("CamerieriY")))
+                  End If
+
+                  Exit Sub
+               End If
+
             Case Elenco.Sale
                If DatiConfig.GetValue("WSSale") = CStr(FormWindowState.Maximized) Then
                   Me.WindowState = FormWindowState.Maximized
@@ -1083,6 +1121,14 @@ Public Class frmElencoDati
                DatiConfig.SetValue("ACamerieri", Me.Height)
                DatiConfig.SetValue("LCamerieri", Me.Width)
 
+            Case Elenco.AgenzieCamerieri
+               ' todo: Modificare per AgenzieCamerieri.
+               DatiConfig.SetValue("WSCamerieri", Me.WindowState)
+               DatiConfig.SetValue("CamerieriX", Me.Location.X)
+               DatiConfig.SetValue("CamerieriY", Me.Location.Y)
+               DatiConfig.SetValue("ACamerieri", Me.Height)
+               DatiConfig.SetValue("LCamerieri", Me.Width)
+
             Case Elenco.Sale
                DatiConfig.SetValue("WSSale", Me.WindowState)
                DatiConfig.SetValue("SaleX", Me.Location.X)
@@ -1222,6 +1268,18 @@ Public Class frmElencoDati
                   tbrModifica.Enabled = True
                   tbrElimina.Enabled = True
                End If
+
+            Case Finestra.AgenzieCamerieri
+               ' TODO: Modificare per AgenzieCamerieri.
+               'If operatore.AnagCamerieri = VALORE_LETTURA Then
+               '   tbrNuovo.Enabled = False
+               '   tbrModifica.Enabled = False
+               '   tbrElimina.Enabled = False
+               'Else
+               '   tbrNuovo.Enabled = True
+               '   tbrModifica.Enabled = True
+               '   tbrElimina.Enabled = True
+               'End If
 
             Case Finestra.CatPiatti
                If operatore.AnagCatPiatti = VALORE_LETTURA Then
@@ -1408,6 +1466,11 @@ Public Class frmElencoDati
                ' Registra l'operazione.
                Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
                strDescrizione = "(" & Nome & ")"
+
+            Case Elenco.AgenzieCamerieri
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
+               strDescrizione = "(" & ragSoc & ")"
 
             Case Elenco.Sale
                ' Registra l'operazione.
@@ -1614,6 +1677,16 @@ Public Class frmElencoDati
 
                ' Chiede conferma per l'eliminazione.
                Risposta = MsgBox("Si desidera eliminare il cameriere """ & Nome &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.AgenzieCamerieri
+               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & ragSoc & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
                                  """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
             Case Elenco.Sale
@@ -2008,6 +2081,23 @@ Public Class frmElencoDati
                frm.Tag = val
                frm.ShowDialog()
 
+            Case Elenco.AgenzieCamerieri
+               ' Per la versione demo.
+               ' Se è un nuovo inserimento verifica il numero dei record.
+               If val = String.Empty Then
+                  If g_VerDemo = True Then
+                     ' Test per la versione demo.
+                     If VerificaNumRecord(LeggiNumRecord(TAB_AGENZIE_CAMERIERI)) = True Then
+                        Exit Sub
+                     End If
+                  End If
+               End If
+
+               ' TODO: Modificare per AgenzieCamerieri.
+               'Dim frm As New frmCamerieri
+               'frm.Tag = val
+               'frm.ShowDialog()
+
             Case Elenco.Sale
                ' Per la versione demo.
                ' Se è un nuovo inserimento verifica il numero dei record.
@@ -2229,7 +2319,7 @@ Public Class frmElencoDati
                                                         DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) &
                                                         " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
 
-               Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.Sale, Elenco.Tavoli,
+               Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.AgenzieCamerieri, Elenco.Sale, Elenco.Tavoli,
                     Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse,
                     Elenco.ScontiMaggiorazioni
                   DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
@@ -2306,6 +2396,10 @@ Public Class frmElencoDati
 
             Case Elenco.Camerieri
                CreaColonneCamerieri(NomeTabella)
+
+            Case Elenco.AgenzieCamerieri
+               ' TODO: Modificare per AgenzieCamerieri.
+               'CreaColonneCamerieri(NomeTabella)
 
             Case Elenco.Sale
                CreaColonneSale(NomeTabella)
@@ -3971,6 +4065,22 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("E-mail")
                CampoRicerca.Items.Add("Agenzia")
 
+            Case Elenco.AgenzieCamerieri
+               CampoRicerca.Items.Add("Codice")
+               CampoRicerca.Items.Add("Ragione sociale")
+               CampoRicerca.Items.Add("Indirizzo")
+               CampoRicerca.Items.Add("C.A.P.")
+               CampoRicerca.Items.Add("Città")
+               CampoRicerca.Items.Add("Provincia")
+               CampoRicerca.Items.Add("Regione")
+               CampoRicerca.Items.Add("Nazione")
+               CampoRicerca.Items.Add("Contatto")
+               CampoRicerca.Items.Add("Attività")
+               CampoRicerca.Items.Add("Tel. ufficio")
+               CampoRicerca.Items.Add("Fax")
+               CampoRicerca.Items.Add("Cellulare")
+               CampoRicerca.Items.Add("E-mail")
+
             Case Elenco.Tavoli
                CampoRicerca.Items.Add("Codice")
                CampoRicerca.Items.Add("Descrizione")
@@ -4456,7 +4566,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-
    Private Sub StampaElencoCamere(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
@@ -4874,6 +4983,10 @@ Public Class frmElencoDati
             ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
             g_frmMain.rtgGestionaleAmica.Visible = False
 
+         Case Elenco.AgenzieCamerieri
+            ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
+            g_frmMain.rtgGestionaleAmica.Visible = False
+
          Case Elenco.Sale
             ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
             g_frmMain.rtgGestionaleAmica.Visible = False
@@ -4974,6 +5087,12 @@ Public Class frmElencoDati
                strModulo = MODULO_ANAGRAFICA_CAT_PIATTI
 
             Case Elenco.Camerieri
+               CampoRicerca.SelectedIndex = 1
+
+               strDescrizione = STR_ANAGRAFICA_AGENZIE_CAMERIERI
+               strModulo = MODULO_ANAGRAFICA_AGENZIE_CAMERIERI
+
+            Case Elenco.AgenzieCamerieri
                CampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_CAMERIERI
@@ -5129,6 +5248,14 @@ Public Class frmElencoDati
                ' Distrugge l'oggetto e libera le risorse.
                g_frmCamerieri.Dispose()
                g_frmCamerieri = Nothing
+
+            Case Elenco.AgenzieCamerieri
+               ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
+               g_frmMain.RimuoviFormMenuSeleziona(g_frmAgenzieCamerieri)
+
+               ' Distrugge l'oggetto e libera le risorse.
+               g_frmAgenzieCamerieri.Dispose()
+               g_frmAgenzieCamerieri = Nothing
 
             Case Elenco.Sale
                ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
@@ -5326,6 +5453,9 @@ Public Class frmElencoDati
                      StampaElencoCamerieri(repSql, PERCORSO_REP_CAMERIERI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
                   End If
 
+               Case Elenco.AgenzieCamerieri
+                  ' TODO: Modificare per AgenzieCamerieri.
+
                Case Elenco.Sale
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
                      StampaElencoSale(repSql, PERCORSO_REP_SALE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
@@ -5396,6 +5526,9 @@ Public Class frmElencoDati
 
                Case Elenco.Camerieri
                   AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, TAB_CAMERIERI, repSql)
+
+               Case Elenco.AgenzieCamerieri
+                  ' TODO: Modificare per AgenzieCamerieri.
 
                Case Elenco.Sale
                   AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)

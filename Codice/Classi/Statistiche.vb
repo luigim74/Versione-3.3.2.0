@@ -1,3 +1,16 @@
+#Region " DATI FILE.VB "
+' ******************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/01/2005
+' Data ultima modifica: 05/09/2020
+' Descrizione:          Classe per le statistriche di vendita da Ristorante e Bar.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class Statistiche
@@ -17,6 +30,7 @@ Public Class Statistiche
    Public Importo As String
    Public Contabilizzata As String
    Public SpettanzaCameriere As String
+   Public GruppoCameriere As Short
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -122,6 +136,12 @@ Public Class Statistiche
             Me.SpettanzaCameriere = VALORE_ZERO
          End If
 
+         If IsDBNull(ds.Tables(tabella).Rows(0)("GruppoCameriere")) = False Then
+            Me.GruppoCameriere = ds.Tables(tabella).Rows(0)("GruppoCameriere")
+         Else
+            Me.GruppoCameriere = GruppoCamerieri.Predefinito
+         End If
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -144,27 +164,30 @@ Public Class Statistiche
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Data, IdCategoria, DesCategoria, IdPiatto, DesPiatto, " &
-                                              "IdTavolo, DesTavolo, IdCameriere, DesCameriere, Quantità, Prezzo, Importo, Contabilizzata, SpettanzaCameriere) " &
-                                       "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')",
-                                                tabella,
-                                                Me.Data,
-                                                Me.IdCategoria,
-                                                Me.DesCategoria,
-                                                Me.IdPiatto,
-                                                Me.DesPiatto,
-                                                Me.IdTavolo,
-                                                Me.DesTavolo,
-                                                Me.IdCameriere,
-                                                Me.DesCameriere,
-                                                Me.Quantità,
-                                                Me.Prezzo,
-                                                Me.Importo,
-                                                Me.Contabilizzata,
-                                                Me.SpettanzaCameriere)
+         sql = String.Format("INSERT INTO {0} (Data, IdCategoria, DesCategoria, IdPiatto, DesPiatto, IdTavolo, DesTavolo, IdCameriere, DesCameriere, " &
+                                              "Quantità, Prezzo, Importo, Contabilizzata, SpettanzaCameriere, GruppoCameriere) " &
+                                       "VALUES(@Data, @IdCategoria, @DesCategoria, @IdPiatto, @DesPiatto, @IdTavolo, @DesTavolo, @IdCameriere, @DesCameriere, " &
+                                               "@Quantità, @Prezzo, @Importo, @Contabilizzata, @SpettanzaCameriere, @GruppoCameriere)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+
+         cmdInsert.Parameters.AddWithValue("@Data", Me.Data)
+         cmdInsert.Parameters.AddWithValue("@IdCategoria", Me.IdCategoria)
+         cmdInsert.Parameters.AddWithValue("@DesCategoria", Me.DesCategoria)
+         cmdInsert.Parameters.AddWithValue("@IdPiatto", Me.IdPiatto)
+         cmdInsert.Parameters.AddWithValue("@DesPiatto", Me.DesPiatto)
+         cmdInsert.Parameters.AddWithValue("@IdTavolo", Me.IdTavolo)
+         cmdInsert.Parameters.AddWithValue("@DesTavolo", Me.DesTavolo)
+         cmdInsert.Parameters.AddWithValue("@IdCameriere", Me.IdCameriere)
+         cmdInsert.Parameters.AddWithValue("@DesCameriere", Me.DesCameriere)
+         cmdInsert.Parameters.AddWithValue("@Quantità", Me.Quantità)
+         cmdInsert.Parameters.AddWithValue("@Prezzo", Me.Prezzo)
+         cmdInsert.Parameters.AddWithValue("@Importo", Me.Importo)
+         cmdInsert.Parameters.AddWithValue("@Contabilizzata", Me.Contabilizzata)
+         cmdInsert.Parameters.AddWithValue("@SpettanzaCameriere", Me.SpettanzaCameriere)
+         cmdInsert.Parameters.AddWithValue("@GruppoCameriere", Me.GruppoCameriere)
+
          ' Esegue il comando.
          Dim Record As Integer = cmdInsert.ExecuteNonQuery()
 
@@ -226,50 +249,6 @@ Public Class Statistiche
          ' Chiude la connessione.
          cn.Close()
       End Try
-
-   End Function
-
-   Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
-      'Dim sql As String
-
-      'Try
-      '   ' Apre la connessione.
-      '   cn.Open()
-
-      '   ' Avvia una transazione.
-      '   tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-      '   ' Crea la stringa di eliminazione.
-      '   sql = String.Format("UPDATE {0} " & _
-      '                       "SET Data = '{1}' " & _
-      '                       "WHERE Codice = '{3}'", _
-      '                        tabella, _
-      '                        Me.Data, _
-      '                        codice)
-
-      '   ' Crea il comando per la connessione corrente.
-      '   Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
-      '   ' Esegue il comando.
-      '   Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
-
-      '   ' Conferma transazione.
-      '   tr.Commit()
-
-      '   Return True
-
-      'Catch ex As Exception
-      '   ' Annulla transazione.
-      '   tr.Rollback()
-
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      '   Return False
-
-      'Finally
-      '   ' Chiude la connessione.
-      '   cn.Close()
-      'End Try
 
    End Function
 

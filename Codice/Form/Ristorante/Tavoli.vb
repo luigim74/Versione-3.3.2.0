@@ -598,6 +598,7 @@ Public Class frmTavoli
                .PosY = 0
                .Colore = Convert.ToString(Color.MediumSeaGreen.ToArgb)
                .OraOcc = ""
+               .MinutiOcc = "0"
                .Coperti = ""
 
                .AltezzaTasto = .LeggiUltimoRecord("AltezzaTasto", NOME_TABELLA)

@@ -1775,6 +1775,7 @@ Public Class frmVCTavoli
       Dim dimensione As String
       Dim colore As String
       Dim ora As String
+      Dim minutiOcc As String
       Dim i As Integer = 0
       Dim datiTrovati As Boolean = False
       Dim CordX As Integer = 1
@@ -1851,10 +1852,21 @@ Public Class frmVCTavoli
             Else
                ora = ""
             End If
+            If IsDBNull(dr.Item("MinutiOcc")) = False Then
+               If dr.Item("MinutiOcc").ToString <> "" Then
+                  minutiOcc = dr.Item("MinutiOcc").ToString
+               Else
+                  minutiOcc = ""
+               End If
+            Else
+               minutiOcc = ""
+            End If
 
             infoRisorse = "Posti: " & posti & vbCrLf &
                           "Cameriere: " & cameriere & vbCrLf &
                           "Listino: " & listino & vbCrLf &
+                          "Ora occupazione: " & ora & vbCrLf &
+                          "Minuti prenotati: " & minutiOcc & vbCrLf &
                           "Note: " & note
 
             If quadroPulsanti = True Then
@@ -1875,6 +1887,7 @@ Public Class frmVCTavoli
             If ora <> "" Then
                NumTavoliOccupati += 1
                OraOccupazione(NumTavoliOccupati - 1) = Convert.ToDateTime(ora)
+               TempoOccupazione(NumTavoliOccupati - 1) = Convert.ToInt32(minutiOcc)
                IndiceTavoloOccupato(NumTavoliOccupati - 1) = Convert.ToInt32(Risorsa(NumRisorse).Tag)
             End If
 
@@ -2637,7 +2650,7 @@ Public Class frmVCTavoli
 
          Risorsa(indiceTavoloSel).ColorBottom = TAVOLO_DEVE_ORDINARE
 
-         modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(indiceTavoloSel).Name, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), coperti)
+         modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(indiceTavoloSel).Name, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), "0", coperti)
 
          AggiornaDisplay()
 
@@ -2664,7 +2677,7 @@ Public Class frmVCTavoli
 
          OraOccupazione(NumTavoliOccupati - 1) = New DateTime(Today.Year, Today.Month, Today.Day, Today.Now.Hour, Today.Now.Minute, Today.Now.Second)
 
-         modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, id, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), coperti)
+         modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, id, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), "0", coperti)
 
          AggiornaDisplay()
 
@@ -2704,7 +2717,7 @@ Public Class frmVCTavoli
          Risorsa(indiceTavoloSel).TextButton = Risorsa(indiceTavoloSel).TextButton.Remove(Risorsa(indiceTavoloSel).TextButton.Length - LUNGHEZZA_ORA_BREVE, LUNGHEZZA_ORA_BREVE)
       End If
 
-      modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(indiceTavoloSel).Name, TAVOLO_LIBERO, "", "")
+      modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(indiceTavoloSel).Name, TAVOLO_LIBERO, "", "0", "")
       Risorsa(indiceTavoloSel).ColorBottom = TAVOLO_LIBERO
 
       AggiornaDisplay()
@@ -3173,7 +3186,7 @@ Public Class frmVCTavoli
       End Try
    End Function
 
-   Public Function ModificaStatoTavolo(ByVal tabella As String, ByVal codice As String, ByVal colore As Color, ByVal ora As String, ByVal coperti As String) As Boolean
+   Public Function ModificaStatoTavolo(ByVal tabella As String, ByVal codice As String, ByVal colore As Color, ByVal ora As String, ByVal minutiOcc As String, ByVal coperti As String) As Boolean
       Dim sql As String
 
       Try
@@ -3187,11 +3200,13 @@ Public Class frmVCTavoli
          sql = String.Format("UPDATE {0} " &
                              "SET Colore = {1}, " &
                              "OraOcc = '{2}', " &
-                             "Coperti = '{3}' " &
-                             "WHERE Id = {4}",
+                             "MinutiOcc = '{3}', " &
+                             "Coperti = '{4}' " &
+                             "WHERE Id = {5}",
                              tabella,
                              Convert.ToString(colore.ToArgb),
                              ora,
+                             minutiOcc,
                              coperti,
                              codice)
 
@@ -4408,7 +4423,7 @@ Public Class frmVCTavoli
             End If
 
             g_frmCoperti = New CopertiPOS
-               If g_frmCoperti.ShowDialog = DialogResult.OK Then
+            If g_frmCoperti.ShowDialog = DialogResult.OK Then
                If tavoloSelezionato = -1 Then
                   Exit Sub
                End If
@@ -4424,7 +4439,7 @@ Public Class frmVCTavoli
                Risorsa(tavoloSelezionato).ColorBottom = TAVOLO_DEVE_ORDINARE
 
                modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_DEVE_ORDINARE,
-                                          Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), g_frmCoperti.Tag)
+                                          Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), minutiTavolo.ToString, g_frmCoperti.Tag)
 
                netBtn_Timer.Visible = True
 
@@ -4435,9 +4450,9 @@ Public Class frmVCTavoli
                ' Registra loperazione effettuata dall'operatore identificato.
                g_frmMain.RegistraOperazione(TipoOperazione.OccupaTavolo, "(" & Risorsa(tavoloSelezionato).TextButton & ")", MODULO_TAVOLI)
 
-               End If
-            Else
-               MsgBox("Il tavolo selezionato è già occupato o da liberare.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
+            End If
+         Else
+            MsgBox("Il tavolo selezionato è già occupato o da liberare.", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, NOME_PRODOTTO)
          End If
 
          ' Modifica il cursore del mouse.
@@ -4500,7 +4515,7 @@ Public Class frmVCTavoli
 
                Risorsa(tavoloSelezionato).ColorBottom = TAVOLO_DEVE_ORDINARE
 
-               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), g_frmAsporto.Tag)
+               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_DEVE_ORDINARE, Convert.ToString(OraOccupazione(NumTavoliOccupati - 1)), "0", g_frmAsporto.Tag)
 
                ModificaStatoAsportoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, g_frmAsporto.dtpOraRitiroOrdine.Value.ToShortTimeString, g_frmAsporto.eui_txtNote.Text)
 
@@ -5160,35 +5175,80 @@ Public Class frmVCTavoli
             If IndiceTavoloOccupato(i) <> Nothing Then
                Dim ts As TimeSpan = Date.Now.Subtract(OraOccupazione(i))
 
-               If Risorsa(IndiceTavoloOccupato(i)).TextButton.Length > LUNGHEZZA_ORA Then
+               If Risorsa(IndiceTavoloOccupato(i)).TextButton.Contains("[") And Risorsa(IndiceTavoloOccupato(i)).TextButton.Contains("]") Then
                   nome = Risorsa(IndiceTavoloOccupato(i)).TextButton.Remove(Risorsa(IndiceTavoloOccupato(i)).TextButton.Length - LUNGHEZZA_ORA, LUNGHEZZA_ORA)
                Else
                   nome = Risorsa(IndiceTavoloOccupato(i)).TextButton
                End If
 
-               ' Gestione Timer sul tavolo.
-               If ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length = 1 Then
-                  Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
-               ElseIf ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length > 1 Then
-                  Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
-               ElseIf ts.Hours.ToString.Length > 1 And ts.Minutes.ToString.Length = 1 Then
-                  Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
+               Dim minutiDisponibili As Integer
+               If GestioneTavoliATempo = True Then
+                  ' Gestione del Timer sul tavolo a scalare.
+                  If TimerIncrementale = False Then
+                     Dim minutiTavoloTempo As Integer = (ts.Hours * 60) + ts.Minutes
+                     minutiDisponibili = TempoOccupazione(i) - minutiTavoloTempo
+
+                     If minutiDisponibili <= 0 Then
+                        Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[00:00]"
+                     Else
+                        Dim ts1 As TimeSpan = TimeSpan.FromMinutes(minutiDisponibili)
+
+                        If ts1.Hours.ToString.Length = 1 And ts1.Minutes.ToString.Length = 1 Then
+                           Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts1.Hours.ToString & sepOra & "0" & ts1.Minutes.ToString & "]"
+                        ElseIf ts1.Hours.ToString.Length = 1 And ts1.Minutes.ToString.Length > 1 Then
+                           Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts1.Hours.ToString & sepOra & ts1.Minutes.ToString & "]"
+                        ElseIf ts1.Hours.ToString.Length > 1 And ts1.Minutes.ToString.Length = 1 Then
+                           Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts1.Hours.ToString & sepOra & "0" & ts1.Minutes.ToString & "]"
+                        Else
+                           Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts1.Hours.ToString & sepOra & ts1.Minutes.ToString & "]"
+                        End If
+                     End If
+                  Else
+                     ' Gestione Timer sul tavolo.
+                     If ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length = 1 Then
+                        Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
+                     ElseIf ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length > 1 Then
+                        Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
+                     ElseIf ts.Hours.ToString.Length > 1 And ts.Minutes.ToString.Length = 1 Then
+                        Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
+                     Else
+                        Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
+                     End If
+                  End If
                Else
-                  Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
+                  ' Gestione Timer sul tavolo.
+                  If ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length = 1 Then
+                     Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
+                  ElseIf ts.Hours.ToString.Length = 1 And ts.Minutes.ToString.Length > 1 Then
+                     Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & "0" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
+                  ElseIf ts.Hours.ToString.Length > 1 And ts.Minutes.ToString.Length = 1 Then
+                     Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & "0" & ts.Minutes.ToString & "]"
+                  Else
+                     Risorsa(IndiceTavoloOccupato(i)).TextButton = nome & vbCrLf & "[" & ts.Hours.ToString & sepOra & ts.Minutes.ToString & "]"
+                  End If
                End If
 
                ' Gestione dei Tavoli a tempo.
                If GestioneTavoliATempo = True Then
-                  Dim minutiTavolo As Integer = (ts.Hours * 60) + ts.Minutes
-                  If minutiTavolo >= TempoOccupazione(i) Then
-                     If Risorsa(IndiceTavoloOccupato(i)).ColorBottom <> TAVOLO_LAMPEGGIO_A Then
-                        Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_A
-                     Else
-                        Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_B
+                  If TimerIncrementale = False Then
+                     If minutiDisponibili <= 0 Then
+                        If Risorsa(IndiceTavoloOccupato(i)).ColorBottom <> TAVOLO_LAMPEGGIO_A Then
+                           Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_A
+                        Else
+                           Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_B
+                        End If
+                     End If
+                  Else
+                     Dim minutiTavolo As Integer = (ts.Hours * 60) + ts.Minutes
+                     If minutiTavolo >= TempoOccupazione(i) Then
+                        If Risorsa(IndiceTavoloOccupato(i)).ColorBottom <> TAVOLO_LAMPEGGIO_A Then
+                           Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_A
+                        Else
+                           Risorsa(IndiceTavoloOccupato(i)).ColorBottom = TAVOLO_LAMPEGGIO_B
+                        End If
                      End If
                   End If
                End If
-
             End If
          Next
 
@@ -5374,12 +5434,12 @@ Public Class frmVCTavoli
                ' Elimina i dati del cliente del tavolo selezionato salvati nel conto.
                EliminaDatiClienteConto(TAB_CONTI_TAVOLI, Risorsa(tavoloSelezionato).Name)
 
-               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_LIBERO, "", "")
+               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_LIBERO, "", "0", "")
                Risorsa(tavoloSelezionato).ColorBottom = TAVOLO_LIBERO
 
                netBtn_Timer.Visible = False
 
-               AggiornaDisplay()
+               AggiornaVCTavoli()
 
                ' Registra loperazione effettuata dall'operatore identificato.
                g_frmMain.RegistraOperazione(TipoOperazione.LiberaTavolo, "(" & Risorsa(tavoloSelezionato).TextButton & ")", MODULO_TAVOLI)
@@ -5848,7 +5908,7 @@ Public Class frmVCTavoli
                IndiceTavoloOccupato(NumTavoliOccupati - 1) = tavoloSelezionato
                OraOccupazione(NumTavoliOccupati - 1) = New DateTime(Today.Year, Today.Month, Today.Day, Today.Now.Hour, Today.Now.Minute, Today.Now.Second)
                TempoOccupazione(NumTavoliOccupati - 1) = minutiTavolo
-               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_DEVE_ORDINARE, OraOccupazione(NumTavoliOccupati - 1), lblCoperti.Text)
+               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_DEVE_ORDINARE, OraOccupazione(NumTavoliOccupati - 1), minutiTavolo.ToString, lblCoperti.Text)
                Risorsa(tavoloSelezionato).ColorBottom = TAVOLO_DEVE_ORDINARE
 
                netBtn_Timer.TextButton = FERMA_TIMER
@@ -5864,7 +5924,7 @@ Public Class frmVCTavoli
                   End If
                Next
 
-               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_TIMER_FERMO, String.Empty, lblCoperti.Text)
+               modificatoStatoTavolo = ModificaStatoTavolo(ANAG_TAVOLI, Risorsa(tavoloSelezionato).Name, TAVOLO_TIMER_FERMO, String.Empty, "0", lblCoperti.Text)
                Risorsa(tavoloSelezionato).ColorBottom = TAVOLO_TIMER_FERMO
 
                netBtn_Timer.TextButton = ATTIVA_TIMER
@@ -5880,14 +5940,16 @@ Public Class frmVCTavoli
 
    Private Sub NetBtn_CambiaCameriere_Click(sender As Object, e As EventArgs) Handles netBtn_CambiaCameriere.Click
       Try
-         Dim frm As New CambiaCameriere(lblCameriere.Text)
+         Dim frm As New CambiaCameriere(lblCameriere.Text, Risorsa(tavoloSelezionato).Name)
 
          If frm.ShowDialog() = MsgBoxResult.Ok Then
-            lblCameriere.Text = frm.eui_cmbCameriere.Text
+            lblCameriere.Text = frm.Tag
 
-            CambiaCameriereTavolo("Tavoli", tavoloSelezionato, frm.eui_cmbCameriere.Text)
+            CambiaCameriereTavolo("Tavoli", Risorsa(tavoloSelezionato).Name, frm.Tag)
 
             frm.Close()
+
+            AggiornaVCTavoli()
          End If
 
       Catch ex As Exception

@@ -178,107 +178,107 @@ Public Class ContoPos
    Friend WithEvents colonnaIva As ColumnHeader
    Friend WithEvents Panel1 As Panel
    Friend WithEvents eui_cmdParcheggiaConto As Elegant.Ui.Button
-    Friend WithEvents eui_cmdServizio As Elegant.Ui.Button
-    Friend WithEvents eui_cmdSconto As Elegant.Ui.Button
-    Friend WithEvents ColumnHeader42 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents eui_cmdServizio As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSconto As Elegant.Ui.Button
+   Friend WithEvents ColumnHeader42 As System.Windows.Forms.ColumnHeader
 
 #Region " Codice generato da Progettazione Windows Form "
 
-    Public Sub New(ByVal val As Short, ByVal idTavolo As Integer, ByVal tavolo As String, ByVal cameriere As String)
-        MyBase.New()
+   Public Sub New(ByVal val As Short, ByVal idTavolo As Integer, ByVal tavolo As String, ByVal cameriere As String)
+      MyBase.New()
 
-        'Chiamata richiesta da Progettazione Windows Form.
-        InitializeComponent()
+      'Chiamata richiesta da Progettazione Windows Form.
+      InitializeComponent()
 
-        'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
-        tipoConto = val
-        nomeTavoloDoc = tavolo
-        nomeCameriereDoc = cameriere
+      'Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent()
+      tipoConto = val
+      nomeTavoloDoc = tavolo
+      nomeCameriereDoc = cameriere
 
-        If IsNothing(idTavolo) = False And idTavolo <> 0 Then
-            idTavoloDoc = idTavolo.ToString
-        Else
-            idTavoloDoc = String.Empty
-        End If
+      If IsNothing(idTavolo) = False And idTavolo <> 0 Then
+         idTavoloDoc = idTavolo.ToString
+      Else
+         idTavoloDoc = String.Empty
+      End If
 
-        ' Se il conto viene aperto da una prenotazione disattiva i pulsanti che non servono..
-        If g_frmPos.netBtn_Conferma.Enabled = False And g_frmPos.netBtn_ContiParcheggiati.Enabled = False Then
-            eui_cmdTipoConto.Enabled = False
-            eui_cmdCliente.Enabled = False
-            eui_cmdRicevuta.Enabled = False
-            eui_cmdFattura.Enabled = False
-            eui_cmdProforma.Enabled = False
-            eui_cmdScontrino.Enabled = False
-            eui_cmdParcheggiaConto.Enabled = False
-            eui_cmdContanti.Enabled = False
-            eui_cmdTipoPagamento.Enabled = False
-            eui_cmdBuoni.Enabled = False
-        End If
-    End Sub
+      ' Se il conto viene aperto da una prenotazione disattiva i pulsanti che non servono..
+      If g_frmPos.netBtn_Conferma.Enabled = False And g_frmPos.netBtn_ContiParcheggiati.Enabled = False Then
+         eui_cmdTipoConto.Enabled = False
+         eui_cmdCliente.Enabled = False
+         eui_cmdRicevuta.Enabled = False
+         eui_cmdFattura.Enabled = False
+         eui_cmdProforma.Enabled = False
+         eui_cmdScontrino.Enabled = False
+         eui_cmdParcheggiaConto.Enabled = False
+         eui_cmdContanti.Enabled = False
+         eui_cmdTipoPagamento.Enabled = False
+         eui_cmdBuoni.Enabled = False
+      End If
+   End Sub
 
-    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-    Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
-        If disposing Then
-            If Not (components Is Nothing) Then
-                components.Dispose()
-            End If
-        End If
-        MyBase.Dispose(disposing)
-    End Sub
+   'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
+   Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
+      If disposing Then
+         If Not (components Is Nothing) Then
+            components.Dispose()
+         End If
+      End If
+      MyBase.Dispose(disposing)
+   End Sub
 
-    'Richiesto da Progettazione Windows Form
-    Private components As System.ComponentModel.IContainer
+   'Richiesto da Progettazione Windows Form
+   Private components As System.ComponentModel.IContainer
 
-    'NOTA: la procedura che segue è richiesta da Progettazione Windows Form.
-    'Può essere modificata in Progettazione Windows Form.  
-    'Non modificarla nell'editor del codice.
-    Public WithEvents txtProv As System.Windows.Forms.TextBox
-    Public WithEvents txtCap As System.Windows.Forms.TextBox
-    Public WithEvents txtCittà As System.Windows.Forms.TextBox
-    Public WithEvents Label5 As System.Windows.Forms.Label
-    Public WithEvents Label4 As System.Windows.Forms.Label
-    Public WithEvents txtPIva As System.Windows.Forms.TextBox
-    Public WithEvents Label31 As System.Windows.Forms.Label
-    Public WithEvents txtIndirizzo As System.Windows.Forms.TextBox
-    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
-    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+   'NOTA: la procedura che segue è richiesta da Progettazione Windows Form.
+   'Può essere modificata in Progettazione Windows Form.  
+   'Non modificarla nell'editor del codice.
+   Public WithEvents txtProv As System.Windows.Forms.TextBox
+   Public WithEvents txtCap As System.Windows.Forms.TextBox
+   Public WithEvents txtCittà As System.Windows.Forms.TextBox
+   Public WithEvents Label5 As System.Windows.Forms.Label
+   Public WithEvents Label4 As System.Windows.Forms.Label
+   Public WithEvents txtPIva As System.Windows.Forms.TextBox
+   Public WithEvents Label31 As System.Windows.Forms.Label
+   Public WithEvents txtIndirizzo As System.Windows.Forms.TextBox
+   Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+   Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+   Friend WithEvents Label1 As System.Windows.Forms.Label
    Friend WithEvents Label6 As System.Windows.Forms.Label
    Friend WithEvents Label7 As System.Windows.Forms.Label
    Friend WithEvents Label8 As System.Windows.Forms.Label
    Friend WithEvents lstvDettagli As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colonnaQta As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colonnaDescrizione As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colonnaImporto As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colonnaPrezzo As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Public WithEvents Label11 As System.Windows.Forms.Label
-    Public WithEvents txtContanti As System.Windows.Forms.TextBox
-    Public WithEvents txtCartaCredito As System.Windows.Forms.TextBox
-    Public WithEvents txtTotaleConto As System.Windows.Forms.TextBox
-    Public WithEvents txtValSconto As System.Windows.Forms.TextBox
-    Public WithEvents txtServizio As System.Windows.Forms.TextBox
-    Public WithEvents txtSospeso As System.Windows.Forms.TextBox
-    Public WithEvents txtResto As System.Windows.Forms.TextBox
-    Public WithEvents txtIva As System.Windows.Forms.TextBox
-    Public WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents dtpData As System.Windows.Forms.DateTimePicker
-    Public WithEvents txtBuoni As System.Windows.Forms.TextBox
-    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader15 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader16 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader17 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents lstvDatiBuoni As System.Windows.Forms.ListView
-    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+   Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents colonnaQta As System.Windows.Forms.ColumnHeader
+   Friend WithEvents colonnaDescrizione As System.Windows.Forms.ColumnHeader
+   Friend WithEvents colonnaImporto As System.Windows.Forms.ColumnHeader
+   Friend WithEvents colonnaPrezzo As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents Label3 As System.Windows.Forms.Label
+   Public WithEvents Label11 As System.Windows.Forms.Label
+   Public WithEvents txtContanti As System.Windows.Forms.TextBox
+   Public WithEvents txtCartaCredito As System.Windows.Forms.TextBox
+   Public WithEvents txtTotaleConto As System.Windows.Forms.TextBox
+   Public WithEvents txtValSconto As System.Windows.Forms.TextBox
+   Public WithEvents txtServizio As System.Windows.Forms.TextBox
+   Public WithEvents txtSospeso As System.Windows.Forms.TextBox
+   Public WithEvents txtResto As System.Windows.Forms.TextBox
+   Public WithEvents txtIva As System.Windows.Forms.TextBox
+   Public WithEvents Timer1 As System.Windows.Forms.Timer
+   Friend WithEvents dtpData As System.Windows.Forms.DateTimePicker
+   Public WithEvents txtBuoni As System.Windows.Forms.TextBox
+   Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader15 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader16 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents ColumnHeader17 As System.Windows.Forms.ColumnHeader
+   Friend WithEvents lstvDatiBuoni As System.Windows.Forms.ListView
+   <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ContoPos))
       Me.txtProv = New System.Windows.Forms.TextBox()
@@ -304,1797 +304,1797 @@ Public Class ContoPos
       Me.txtSospeso = New System.Windows.Forms.TextBox()
       Me.txtResto = New System.Windows.Forms.TextBox()
       Me.lstvDettagli = New System.Windows.Forms.ListView()
-      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.colonnaQta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.colonnaDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.colonnaPrezzo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.colonnaImporto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.colonnaIva = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.txtIva = New System.Windows.Forms.TextBox()
-      Me.Label11 = New System.Windows.Forms.Label()
-      Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-      Me.dtpData = New System.Windows.Forms.DateTimePicker()
-      Me.txtBuoni = New System.Windows.Forms.TextBox()
-      Me.lstvDatiBuoni = New System.Windows.Forms.ListView()
-      Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.txtCoperto = New System.Windows.Forms.TextBox()
-      Me.Label12 = New System.Windows.Forms.Label()
-      Me.Label13 = New System.Windows.Forms.Label()
-      Me.Label14 = New System.Windows.Forms.Label()
-      Me.Label15 = New System.Windows.Forms.Label()
-      Me.lblQuotaPersona = New System.Windows.Forms.Label()
-      Me.txtTotDividere = New System.Windows.Forms.TextBox()
-      Me.txtQuotaPersona = New System.Windows.Forms.TextBox()
-      Me.lstvElencoDocAperti = New System.Windows.Forms.ListView()
-      Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader21 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.Label18 = New System.Windows.Forms.Label()
-      Me.txtNumDoc = New System.Windows.Forms.TextBox()
-      Me.lstvDettagliTemp = New System.Windows.Forms.ListView()
-      Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader23 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader24 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader25 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader26 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader27 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader28 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.lstvDettagliCompatto = New System.Windows.Forms.ListView()
-      Me.ColumnHeader29 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader30 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader31 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader32 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader33 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader34 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader35 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.lstvDettagliCopia = New System.Windows.Forms.ListView()
-      Me.ColumnHeader36 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader37 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader38 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader39 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader40 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader41 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader42 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.txtIdCliente = New System.Windows.Forms.TextBox()
-      Me.txtIdAzienda = New System.Windows.Forms.TextBox()
-      Me.Label16 = New System.Windows.Forms.Label()
-      Me.Label19 = New System.Windows.Forms.Label()
-      Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-      Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
-      Me.Label20 = New System.Windows.Forms.Label()
-      Me.txtCognome = New System.Windows.Forms.TextBox()
-      Me.Label21 = New System.Windows.Forms.Label()
-      Me.txtNome = New System.Windows.Forms.TextBox()
-      Me.Label22 = New System.Windows.Forms.Label()
-      Me.eui_cmdTipoConto = New Elegant.Ui.Button()
-      Me.eui_cmdTipoElenco = New Elegant.Ui.Button()
-      Me.eui_cmdCliente = New Elegant.Ui.Button()
-      Me.eui_cmdDivisioneAnalitica = New Elegant.Ui.Button()
-      Me.eui_cmdContanti = New Elegant.Ui.Button()
-      Me.eui_cmdTipoPagamento = New Elegant.Ui.Button()
-      Me.eui_cmdBuoni = New Elegant.Ui.Button()
-      Me.eui_cmdRicevuta = New Elegant.Ui.Button()
-      Me.eui_cmdFattura = New Elegant.Ui.Button()
-      Me.eui_cmdProforma = New Elegant.Ui.Button()
-      Me.eui_cmdScontrino = New Elegant.Ui.Button()
-      Me.eui_AddebitoSuRisorsa = New Elegant.Ui.Button()
-      Me.eui_cmdEsci = New Elegant.Ui.Button()
-      Me.netBtn_DaPagare = New Softgroup.NetButton.NetButton()
-      Me.netBtn_C = New Softgroup.NetButton.NetButton()
-      Me.netBtn_9 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_8 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_7 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_Ok = New Softgroup.NetButton.NetButton()
-      Me.netBtn_Percentuale = New Softgroup.NetButton.NetButton()
-      Me.netBtn_X = New Softgroup.NetButton.NetButton()
-      Me.netBtn_00 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_0 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_Virgola = New Softgroup.NetButton.NetButton()
-      Me.netBtn_3 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_2 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_1 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_6 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_5 = New Softgroup.NetButton.NetButton()
-      Me.netBtn_4 = New Softgroup.NetButton.NetButton()
-      Me.eui_cmdTastiera = New Elegant.Ui.Button()
-      Me.eui_cmdCancella = New Elegant.Ui.Button()
-      Me.eui_cmdDocApertiSu = New Elegant.Ui.Button()
-      Me.eui_cmdDocApertiGiù = New Elegant.Ui.Button()
-      Me.eui_cmdDettagliSu = New Elegant.Ui.Button()
-      Me.eui_cmdDettagliGiù = New Elegant.Ui.Button()
-      Me.Button10 = New Elegant.Ui.Button()
-      Me.Panel1 = New System.Windows.Forms.Panel()
-      Me.eui_cmdParcheggiaConto = New Elegant.Ui.Button()
-      Me.eui_cmdSconto = New Elegant.Ui.Button()
-      Me.eui_cmdServizio = New Elegant.Ui.Button()
-      Me.Panel1.SuspendLayout()
-      Me.SuspendLayout()
-      '
-      'txtProv
-      '
-      Me.txtProv.AcceptsReturn = True
-      Me.txtProv.BackColor = System.Drawing.SystemColors.Window
-      Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtProv.Location = New System.Drawing.Point(259, 42)
-      Me.txtProv.MaxLength = 2
-      Me.txtProv.Name = "txtProv"
-      Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtProv.Size = New System.Drawing.Size(32, 29)
-      Me.txtProv.TabIndex = 4
-      Me.txtProv.Visible = False
-      '
-      'txtCap
-      '
-      Me.txtCap.AcceptsReturn = True
-      Me.txtCap.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCap.Location = New System.Drawing.Point(145, 42)
-      Me.txtCap.MaxLength = 5
-      Me.txtCap.Name = "txtCap"
-      Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCap.Size = New System.Drawing.Size(51, 29)
-      Me.txtCap.TabIndex = 2
-      Me.txtCap.Visible = False
-      '
-      'txtCittà
-      '
-      Me.txtCittà.AcceptsReturn = True
-      Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCittà.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCittà.Location = New System.Drawing.Point(217, 42)
-      Me.txtCittà.MaxLength = 100
-      Me.txtCittà.Name = "txtCittà"
-      Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCittà.Size = New System.Drawing.Size(36, 29)
-      Me.txtCittà.TabIndex = 3
-      Me.txtCittà.Visible = False
-      '
-      'txtIndirizzo
-      '
-      Me.txtIndirizzo.AcceptsReturn = True
-      Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
-      Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtIndirizzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIndirizzo.Location = New System.Drawing.Point(145, 2)
-      Me.txtIndirizzo.MaxLength = 100
-      Me.txtIndirizzo.Name = "txtIndirizzo"
-      Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtIndirizzo.Size = New System.Drawing.Size(144, 29)
-      Me.txtIndirizzo.TabIndex = 1
-      Me.txtIndirizzo.Visible = False
-      '
-      'Label5
-      '
-      Me.Label5.BackColor = System.Drawing.Color.Transparent
-      Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label5.ForeColor = System.Drawing.Color.Black
-      Me.Label5.Location = New System.Drawing.Point(8, 51)
-      Me.Label5.Name = "Label5"
-      Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label5.Size = New System.Drawing.Size(144, 24)
-      Me.Label5.TabIndex = 179
-      Me.Label5.Text = "CAP/CITTA'/PROV.:"
-      Me.Label5.Visible = False
-      '
-      'Label4
-      '
-      Me.Label4.BackColor = System.Drawing.Color.Transparent
-      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(8, 2)
-      Me.Label4.Name = "Label4"
-      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label4.Size = New System.Drawing.Size(144, 24)
-      Me.Label4.TabIndex = 178
-      Me.Label4.Text = "INDIRIZZO:"
-      Me.Label4.Visible = False
-      '
-      'Label3
-      '
-      Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label3.BackColor = System.Drawing.Color.Transparent
-      Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(653, 16)
-      Me.Label3.Name = "Label3"
-      Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label3.Size = New System.Drawing.Size(88, 24)
-      Me.Label3.TabIndex = 177
-      Me.Label3.Text = "CLIENTE:"
-      '
-      'txtPIva
-      '
-      Me.txtPIva.AcceptsReturn = True
-      Me.txtPIva.BackColor = System.Drawing.SystemColors.Window
-      Me.txtPIva.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtPIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtPIva.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtPIva.Location = New System.Drawing.Point(145, 82)
-      Me.txtPIva.MaxLength = 11
-      Me.txtPIva.Name = "txtPIva"
-      Me.txtPIva.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtPIva.Size = New System.Drawing.Size(51, 29)
-      Me.txtPIva.TabIndex = 5
-      Me.txtPIva.Visible = False
-      '
-      'Label31
-      '
-      Me.Label31.BackColor = System.Drawing.Color.Transparent
-      Me.Label31.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label31.ForeColor = System.Drawing.Color.Black
-      Me.Label31.Location = New System.Drawing.Point(13, 86)
-      Me.Label31.Name = "Label31"
-      Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label31.Size = New System.Drawing.Size(144, 24)
-      Me.Label31.TabIndex = 184
-      Me.Label31.Text = "PARTIVA IVA:"
-      Me.Label31.Visible = False
-      '
-      'PrintDialog1
-      '
-      Me.PrintDialog1.Document = Me.PrintDocument1
-      '
-      'PrintDocument1
-      '
-      Me.PrintDocument1.DocumentName = "RFiscale.rpt"
-      '
-      'Label1
-      '
-      Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label1.BackColor = System.Drawing.Color.Transparent
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(653, 88)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(144, 16)
-      Me.Label1.TabIndex = 188
-      Me.Label1.Text = "TOTALE CONTO:"
-      '
-      'Label6
-      '
-      Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label6.BackColor = System.Drawing.Color.Transparent
-      Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(653, 208)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(144, 40)
-      Me.Label6.TabIndex = 190
-      Me.Label6.Text = "TOT. DA PAGARE:"
-      '
-      'Label7
-      '
-      Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label7.ForeColor = System.Drawing.Color.Black
-      Me.Label7.Location = New System.Drawing.Point(653, 436)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(144, 16)
-      Me.Label7.TabIndex = 193
-      Me.Label7.Text = "RESTO:"
-      '
-      'Label8
-      '
-      Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label8.ForeColor = System.Drawing.Color.Black
-      Me.Label8.Location = New System.Drawing.Point(653, 396)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(144, 16)
-      Me.Label8.TabIndex = 196
-      Me.Label8.Text = "SOSPESO:"
-      '
-      'txtTotaleConto
-      '
-      Me.txtTotaleConto.AcceptsReturn = True
-      Me.txtTotaleConto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtTotaleConto.BackColor = System.Drawing.Color.White
-      Me.txtTotaleConto.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotaleConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleConto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtTotaleConto.Location = New System.Drawing.Point(815, 79)
-      Me.txtTotaleConto.MaxLength = 100
-      Me.txtTotaleConto.Name = "txtTotaleConto"
-      Me.txtTotaleConto.ReadOnly = True
-      Me.txtTotaleConto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotaleConto.Size = New System.Drawing.Size(125, 29)
-      Me.txtTotaleConto.TabIndex = 13
-      Me.txtTotaleConto.TabStop = False
-      Me.txtTotaleConto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtValSconto
-      '
-      Me.txtValSconto.AcceptsReturn = True
-      Me.txtValSconto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtValSconto.BackColor = System.Drawing.SystemColors.Window
-      Me.txtValSconto.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtValSconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtValSconto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtValSconto.Location = New System.Drawing.Point(815, 119)
-      Me.txtValSconto.MaxLength = 100
-      Me.txtValSconto.Name = "txtValSconto"
-      Me.txtValSconto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtValSconto.Size = New System.Drawing.Size(125, 29)
-      Me.txtValSconto.TabIndex = 14
-      Me.txtValSconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtServizio
-      '
-      Me.txtServizio.AcceptsReturn = True
-      Me.txtServizio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtServizio.BackColor = System.Drawing.SystemColors.Window
-      Me.txtServizio.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtServizio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtServizio.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtServizio.Location = New System.Drawing.Point(815, 159)
-      Me.txtServizio.MaxLength = 100
-      Me.txtServizio.Name = "txtServizio"
-      Me.txtServizio.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtServizio.Size = New System.Drawing.Size(125, 29)
-      Me.txtServizio.TabIndex = 15
-      Me.txtServizio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtContanti
-      '
-      Me.txtContanti.AcceptsReturn = True
-      Me.txtContanti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtContanti.BackColor = System.Drawing.SystemColors.Window
-      Me.txtContanti.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtContanti.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtContanti.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtContanti.Location = New System.Drawing.Point(815, 267)
-      Me.txtContanti.MaxLength = 100
-      Me.txtContanti.Name = "txtContanti"
-      Me.txtContanti.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtContanti.Size = New System.Drawing.Size(125, 29)
-      Me.txtContanti.TabIndex = 17
-      Me.txtContanti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtCartaCredito
-      '
-      Me.txtCartaCredito.AcceptsReturn = True
-      Me.txtCartaCredito.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtCartaCredito.BackColor = System.Drawing.Color.White
-      Me.txtCartaCredito.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCartaCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCartaCredito.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCartaCredito.Location = New System.Drawing.Point(815, 307)
-      Me.txtCartaCredito.MaxLength = 100
-      Me.txtCartaCredito.Name = "txtCartaCredito"
-      Me.txtCartaCredito.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCartaCredito.Size = New System.Drawing.Size(125, 29)
-      Me.txtCartaCredito.TabIndex = 19
-      Me.txtCartaCredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtSospeso
-      '
-      Me.txtSospeso.AcceptsReturn = True
-      Me.txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtSospeso.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtSospeso.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtSospeso.ForeColor = System.Drawing.Color.Red
-      Me.txtSospeso.Location = New System.Drawing.Point(815, 387)
-      Me.txtSospeso.MaxLength = 100
-      Me.txtSospeso.Name = "txtSospeso"
-      Me.txtSospeso.ReadOnly = True
-      Me.txtSospeso.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtSospeso.Size = New System.Drawing.Size(125, 29)
-      Me.txtSospeso.TabIndex = 18
-      Me.txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtResto
-      '
-      Me.txtResto.AcceptsReturn = True
-      Me.txtResto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtResto.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtResto.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtResto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtResto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtResto.Location = New System.Drawing.Point(815, 427)
-      Me.txtResto.MaxLength = 100
-      Me.txtResto.Name = "txtResto"
-      Me.txtResto.ReadOnly = True
-      Me.txtResto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtResto.Size = New System.Drawing.Size(125, 29)
-      Me.txtResto.TabIndex = 19
-      Me.txtResto.TabStop = False
-      Me.txtResto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'lstvDettagli
-      '
-      Me.lstvDettagli.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colonnaQta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colonnaDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colonnaPrezzo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colonnaImporto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colonnaIva = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.txtIva = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.dtpData = New System.Windows.Forms.DateTimePicker()
+        Me.txtBuoni = New System.Windows.Forms.TextBox()
+        Me.lstvDatiBuoni = New System.Windows.Forms.ListView()
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+        Me.txtCoperto = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblQuotaPersona = New System.Windows.Forms.Label()
+        Me.txtTotDividere = New System.Windows.Forms.TextBox()
+        Me.txtQuotaPersona = New System.Windows.Forms.TextBox()
+        Me.lstvElencoDocAperti = New System.Windows.Forms.ListView()
+        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader21 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtNumDoc = New System.Windows.Forms.TextBox()
+        Me.lstvDettagliTemp = New System.Windows.Forms.ListView()
+        Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader23 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader24 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader25 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader26 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader27 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader28 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstvDettagliCompatto = New System.Windows.Forms.ListView()
+        Me.ColumnHeader29 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader30 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader31 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader32 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader33 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader34 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader35 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstvDettagliCopia = New System.Windows.Forms.ListView()
+        Me.ColumnHeader36 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader37 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader38 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader39 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader40 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader41 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader42 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.txtIdCliente = New System.Windows.Forms.TextBox()
+        Me.txtIdAzienda = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtCognome = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtNome = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.eui_cmdTipoConto = New Elegant.Ui.Button()
+        Me.eui_cmdTipoElenco = New Elegant.Ui.Button()
+        Me.eui_cmdCliente = New Elegant.Ui.Button()
+        Me.eui_cmdDivisioneAnalitica = New Elegant.Ui.Button()
+        Me.eui_cmdContanti = New Elegant.Ui.Button()
+        Me.eui_cmdTipoPagamento = New Elegant.Ui.Button()
+        Me.eui_cmdBuoni = New Elegant.Ui.Button()
+        Me.eui_cmdRicevuta = New Elegant.Ui.Button()
+        Me.eui_cmdFattura = New Elegant.Ui.Button()
+        Me.eui_cmdProforma = New Elegant.Ui.Button()
+        Me.eui_cmdScontrino = New Elegant.Ui.Button()
+        Me.eui_AddebitoSuRisorsa = New Elegant.Ui.Button()
+        Me.eui_cmdEsci = New Elegant.Ui.Button()
+        Me.netBtn_DaPagare = New Softgroup.NetButton.NetButton()
+        Me.netBtn_C = New Softgroup.NetButton.NetButton()
+        Me.netBtn_9 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_8 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_7 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_Ok = New Softgroup.NetButton.NetButton()
+        Me.netBtn_Percentuale = New Softgroup.NetButton.NetButton()
+        Me.netBtn_X = New Softgroup.NetButton.NetButton()
+        Me.netBtn_00 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_0 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_Virgola = New Softgroup.NetButton.NetButton()
+        Me.netBtn_3 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_2 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_1 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_6 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_5 = New Softgroup.NetButton.NetButton()
+        Me.netBtn_4 = New Softgroup.NetButton.NetButton()
+        Me.eui_cmdTastiera = New Elegant.Ui.Button()
+        Me.eui_cmdCancella = New Elegant.Ui.Button()
+        Me.eui_cmdDocApertiSu = New Elegant.Ui.Button()
+        Me.eui_cmdDocApertiGiù = New Elegant.Ui.Button()
+        Me.eui_cmdDettagliSu = New Elegant.Ui.Button()
+        Me.eui_cmdDettagliGiù = New Elegant.Ui.Button()
+        Me.Button10 = New Elegant.Ui.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.eui_cmdParcheggiaConto = New Elegant.Ui.Button()
+        Me.eui_cmdSconto = New Elegant.Ui.Button()
+        Me.eui_cmdServizio = New Elegant.Ui.Button()
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'txtProv
+        '
+        Me.txtProv.AcceptsReturn = True
+        Me.txtProv.BackColor = System.Drawing.SystemColors.Window
+        Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtProv.Location = New System.Drawing.Point(259, 42)
+        Me.txtProv.MaxLength = 2
+        Me.txtProv.Name = "txtProv"
+        Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtProv.Size = New System.Drawing.Size(32, 29)
+        Me.txtProv.TabIndex = 4
+        Me.txtProv.Visible = False
+        '
+        'txtCap
+        '
+        Me.txtCap.AcceptsReturn = True
+        Me.txtCap.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCap.Location = New System.Drawing.Point(145, 42)
+        Me.txtCap.MaxLength = 5
+        Me.txtCap.Name = "txtCap"
+        Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCap.Size = New System.Drawing.Size(51, 29)
+        Me.txtCap.TabIndex = 2
+        Me.txtCap.Visible = False
+        '
+        'txtCittà
+        '
+        Me.txtCittà.AcceptsReturn = True
+        Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCittà.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCittà.Location = New System.Drawing.Point(217, 42)
+        Me.txtCittà.MaxLength = 100
+        Me.txtCittà.Name = "txtCittà"
+        Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCittà.Size = New System.Drawing.Size(36, 29)
+        Me.txtCittà.TabIndex = 3
+        Me.txtCittà.Visible = False
+        '
+        'txtIndirizzo
+        '
+        Me.txtIndirizzo.AcceptsReturn = True
+        Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
+        Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtIndirizzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtIndirizzo.Location = New System.Drawing.Point(145, 2)
+        Me.txtIndirizzo.MaxLength = 100
+        Me.txtIndirizzo.Name = "txtIndirizzo"
+        Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtIndirizzo.Size = New System.Drawing.Size(144, 29)
+        Me.txtIndirizzo.TabIndex = 1
+        Me.txtIndirizzo.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(8, 51)
+        Me.Label5.Name = "Label5"
+        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label5.Size = New System.Drawing.Size(144, 24)
+        Me.Label5.TabIndex = 179
+        Me.Label5.Text = "CAP/CITTA'/PROV.:"
+        Me.Label5.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(8, 2)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label4.Size = New System.Drawing.Size(144, 24)
+        Me.Label4.TabIndex = 178
+        Me.Label4.Text = "INDIRIZZO:"
+        Me.Label4.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(632, 4)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(88, 24)
+        Me.Label3.TabIndex = 177
+        Me.Label3.Text = "CLIENTE:"
+        '
+        'txtPIva
+        '
+        Me.txtPIva.AcceptsReturn = True
+        Me.txtPIva.BackColor = System.Drawing.SystemColors.Window
+        Me.txtPIva.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPIva.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtPIva.Location = New System.Drawing.Point(145, 82)
+        Me.txtPIva.MaxLength = 11
+        Me.txtPIva.Name = "txtPIva"
+        Me.txtPIva.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtPIva.Size = New System.Drawing.Size(51, 29)
+        Me.txtPIva.TabIndex = 5
+        Me.txtPIva.Visible = False
+        '
+        'Label31
+        '
+        Me.Label31.BackColor = System.Drawing.Color.Transparent
+        Me.Label31.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.Black
+        Me.Label31.Location = New System.Drawing.Point(13, 86)
+        Me.Label31.Name = "Label31"
+        Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label31.Size = New System.Drawing.Size(144, 24)
+        Me.Label31.TabIndex = 184
+        Me.Label31.Text = "PARTIVA IVA:"
+        Me.Label31.Visible = False
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.Document = Me.PrintDocument1
+        '
+        'PrintDocument1
+        '
+        Me.PrintDocument1.DocumentName = "RFiscale.rpt"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(632, 76)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(144, 16)
+        Me.Label1.TabIndex = 188
+        Me.Label1.Text = "TOTALE CONTO:"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(632, 196)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(144, 40)
+        Me.Label6.TabIndex = 190
+        Me.Label6.Text = "TOT. DA PAGARE:"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(632, 424)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(144, 16)
+        Me.Label7.TabIndex = 193
+        Me.Label7.Text = "RESTO:"
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(632, 384)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(144, 16)
+        Me.Label8.TabIndex = 196
+        Me.Label8.Text = "SOSPESO:"
+        '
+        'txtTotaleConto
+        '
+        Me.txtTotaleConto.AcceptsReturn = True
+        Me.txtTotaleConto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtTotaleConto.BackColor = System.Drawing.Color.White
+        Me.txtTotaleConto.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTotaleConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotaleConto.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtTotaleConto.Location = New System.Drawing.Point(794, 67)
+        Me.txtTotaleConto.MaxLength = 100
+        Me.txtTotaleConto.Name = "txtTotaleConto"
+        Me.txtTotaleConto.ReadOnly = True
+        Me.txtTotaleConto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtTotaleConto.Size = New System.Drawing.Size(125, 29)
+        Me.txtTotaleConto.TabIndex = 13
+        Me.txtTotaleConto.TabStop = False
+        Me.txtTotaleConto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtValSconto
+        '
+        Me.txtValSconto.AcceptsReturn = True
+        Me.txtValSconto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtValSconto.BackColor = System.Drawing.SystemColors.Window
+        Me.txtValSconto.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtValSconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtValSconto.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtValSconto.Location = New System.Drawing.Point(794, 107)
+        Me.txtValSconto.MaxLength = 100
+        Me.txtValSconto.Name = "txtValSconto"
+        Me.txtValSconto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtValSconto.Size = New System.Drawing.Size(125, 29)
+        Me.txtValSconto.TabIndex = 14
+        Me.txtValSconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtServizio
+        '
+        Me.txtServizio.AcceptsReturn = True
+        Me.txtServizio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtServizio.BackColor = System.Drawing.SystemColors.Window
+        Me.txtServizio.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtServizio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtServizio.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtServizio.Location = New System.Drawing.Point(794, 147)
+        Me.txtServizio.MaxLength = 100
+        Me.txtServizio.Name = "txtServizio"
+        Me.txtServizio.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtServizio.Size = New System.Drawing.Size(125, 29)
+        Me.txtServizio.TabIndex = 15
+        Me.txtServizio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtContanti
+        '
+        Me.txtContanti.AcceptsReturn = True
+        Me.txtContanti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtContanti.BackColor = System.Drawing.SystemColors.Window
+        Me.txtContanti.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtContanti.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContanti.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtContanti.Location = New System.Drawing.Point(794, 255)
+        Me.txtContanti.MaxLength = 100
+        Me.txtContanti.Name = "txtContanti"
+        Me.txtContanti.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtContanti.Size = New System.Drawing.Size(125, 29)
+        Me.txtContanti.TabIndex = 17
+        Me.txtContanti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtCartaCredito
+        '
+        Me.txtCartaCredito.AcceptsReturn = True
+        Me.txtCartaCredito.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCartaCredito.BackColor = System.Drawing.Color.White
+        Me.txtCartaCredito.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCartaCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCartaCredito.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCartaCredito.Location = New System.Drawing.Point(794, 295)
+        Me.txtCartaCredito.MaxLength = 100
+        Me.txtCartaCredito.Name = "txtCartaCredito"
+        Me.txtCartaCredito.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCartaCredito.Size = New System.Drawing.Size(125, 29)
+        Me.txtCartaCredito.TabIndex = 19
+        Me.txtCartaCredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtSospeso
+        '
+        Me.txtSospeso.AcceptsReturn = True
+        Me.txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSospeso.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtSospeso.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSospeso.ForeColor = System.Drawing.Color.Red
+        Me.txtSospeso.Location = New System.Drawing.Point(794, 375)
+        Me.txtSospeso.MaxLength = 100
+        Me.txtSospeso.Name = "txtSospeso"
+        Me.txtSospeso.ReadOnly = True
+        Me.txtSospeso.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtSospeso.Size = New System.Drawing.Size(125, 29)
+        Me.txtSospeso.TabIndex = 18
+        Me.txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtResto
+        '
+        Me.txtResto.AcceptsReturn = True
+        Me.txtResto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtResto.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtResto.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtResto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtResto.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtResto.Location = New System.Drawing.Point(794, 415)
+        Me.txtResto.MaxLength = 100
+        Me.txtResto.Name = "txtResto"
+        Me.txtResto.ReadOnly = True
+        Me.txtResto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtResto.Size = New System.Drawing.Size(125, 29)
+        Me.txtResto.TabIndex = 19
+        Me.txtResto.TabStop = False
+        Me.txtResto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lstvDettagli
+        '
+        Me.lstvDettagli.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lstvDettagli.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvDettagli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvDettagli.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4, Me.colonnaQta, Me.colonnaDescrizione, Me.colonnaPrezzo, Me.colonnaImporto, Me.colonnaIva, Me.ColumnHeader6, Me.ColumnHeader7})
-      Me.lstvDettagli.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvDettagli.ForeColor = System.Drawing.Color.Black
-      Me.lstvDettagli.FullRowSelect = True
-      Me.lstvDettagli.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-      Me.lstvDettagli.HideSelection = False
-      Me.lstvDettagli.Location = New System.Drawing.Point(298, 80)
-      Me.lstvDettagli.MultiSelect = False
-      Me.lstvDettagli.Name = "lstvDettagli"
-      Me.lstvDettagli.Size = New System.Drawing.Size(347, 644)
-      Me.lstvDettagli.TabIndex = 9
-      Me.lstvDettagli.UseCompatibleStateImageBehavior = False
-      Me.lstvDettagli.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader4
-      '
-      Me.ColumnHeader4.Width = 0
-      '
-      'colonnaQta
-      '
-      Me.colonnaQta.Text = "Q.tà"
-      Me.colonnaQta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.colonnaQta.Width = 50
-      '
-      'colonnaDescrizione
-      '
-      Me.colonnaDescrizione.Text = "Descrizione"
-      Me.colonnaDescrizione.Width = 220
-      '
-      'colonnaPrezzo
-      '
-      Me.colonnaPrezzo.Text = "Prezzo"
-      Me.colonnaPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'colonnaImporto
-      '
-      Me.colonnaImporto.Text = "Importo"
-      Me.colonnaImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.colonnaImporto.Width = 70
-      '
-      'colonnaIva
-      '
-      Me.colonnaIva.Text = "IVA%"
-      Me.colonnaIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.colonnaIva.Width = 50
-      '
-      'ColumnHeader6
-      '
-      Me.ColumnHeader6.Width = 0
-      '
-      'ColumnHeader7
-      '
-      Me.ColumnHeader7.Width = 0
-      '
-      'txtIva
-      '
-      Me.txtIva.AcceptsReturn = True
-      Me.txtIva.BackColor = System.Drawing.SystemColors.Window
-      Me.txtIva.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtIva.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIva.Location = New System.Drawing.Point(259, 82)
-      Me.txtIva.MaxLength = 10
-      Me.txtIva.Name = "txtIva"
-      Me.txtIva.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtIva.Size = New System.Drawing.Size(34, 29)
-      Me.txtIva.TabIndex = 6
-      Me.txtIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.txtIva.Visible = False
-      '
-      'Label11
-      '
-      Me.Label11.BackColor = System.Drawing.Color.Transparent
-      Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label11.ForeColor = System.Drawing.Color.Black
-      Me.Label11.Location = New System.Drawing.Point(197, 87)
-      Me.Label11.Name = "Label11"
-      Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label11.Size = New System.Drawing.Size(56, 24)
-      Me.Label11.TabIndex = 229
-      Me.Label11.Text = "% IVA:"
-      Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
-      Me.Label11.Visible = False
-      '
-      'Timer1
-      '
-      Me.Timer1.Enabled = True
-      Me.Timer1.Interval = 1000
-      '
-      'dtpData
-      '
-      Me.dtpData.Location = New System.Drawing.Point(-600, 680)
-      Me.dtpData.Name = "dtpData"
-      Me.dtpData.Size = New System.Drawing.Size(258, 29)
-      Me.dtpData.TabIndex = 230
-      '
-      'txtBuoni
-      '
-      Me.txtBuoni.AcceptsReturn = True
-      Me.txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtBuoni.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtBuoni.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtBuoni.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtBuoni.Location = New System.Drawing.Point(815, 347)
-      Me.txtBuoni.MaxLength = 100
-      Me.txtBuoni.Name = "txtBuoni"
-      Me.txtBuoni.ReadOnly = True
-      Me.txtBuoni.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtBuoni.Size = New System.Drawing.Size(125, 29)
-      Me.txtBuoni.TabIndex = 21
-      Me.txtBuoni.TabStop = False
-      Me.txtBuoni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'lstvDatiBuoni
-      '
-      Me.lstvDatiBuoni.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvDatiBuoni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvDatiBuoni.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17})
-      Me.lstvDatiBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvDatiBuoni.ForeColor = System.Drawing.Color.Black
-      Me.lstvDatiBuoni.FullRowSelect = True
-      Me.lstvDatiBuoni.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-      Me.lstvDatiBuoni.HideSelection = False
-      Me.lstvDatiBuoni.Location = New System.Drawing.Point(301, 273)
-      Me.lstvDatiBuoni.MultiSelect = False
-      Me.lstvDatiBuoni.Name = "lstvDatiBuoni"
-      Me.lstvDatiBuoni.Size = New System.Drawing.Size(274, 45)
-      Me.lstvDatiBuoni.TabIndex = 231
-      Me.lstvDatiBuoni.UseCompatibleStateImageBehavior = False
-      Me.lstvDatiBuoni.View = System.Windows.Forms.View.Details
-      Me.lstvDatiBuoni.Visible = False
-      '
-      'ColumnHeader8
-      '
-      Me.ColumnHeader8.Width = 0
-      '
-      'ColumnHeader9
-      '
-      Me.ColumnHeader9.Text = "Quantità"
-      Me.ColumnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader9.Width = 0
-      '
-      'ColumnHeader10
-      '
-      Me.ColumnHeader10.Text = "Descrizione"
-      Me.ColumnHeader10.Width = 0
-      '
-      'ColumnHeader11
-      '
-      Me.ColumnHeader11.Text = "Valore"
-      Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader11.Width = 0
-      '
-      'ColumnHeader12
-      '
-      Me.ColumnHeader12.Text = "IdBuono"
-      Me.ColumnHeader12.Width = 0
-      '
-      'ColumnHeader13
-      '
-      Me.ColumnHeader13.Text = "IdAzienda"
-      Me.ColumnHeader13.Width = 0
-      '
-      'ColumnHeader14
-      '
-      Me.ColumnHeader14.Text = "QuantitàTot"
-      Me.ColumnHeader14.Width = 0
-      '
-      'ColumnHeader15
-      '
-      Me.ColumnHeader15.Text = "ValoreTotale"
-      Me.ColumnHeader15.Width = 0
-      '
-      'ColumnHeader16
-      '
-      Me.ColumnHeader16.Text = "QuantitàFatt"
-      Me.ColumnHeader16.Width = 0
-      '
-      'ColumnHeader17
-      '
-      Me.ColumnHeader17.Text = "ValoreFatt"
-      Me.ColumnHeader17.Width = 0
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'txtCoperto
-      '
-      Me.txtCoperto.AcceptsReturn = True
-      Me.txtCoperto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.txtCoperto.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtCoperto.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCoperto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCoperto.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCoperto.Location = New System.Drawing.Point(946, 159)
-      Me.txtCoperto.MaxLength = 100
-      Me.txtCoperto.Name = "txtCoperto"
-      Me.txtCoperto.ReadOnly = True
-      Me.txtCoperto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCoperto.Size = New System.Drawing.Size(129, 29)
-      Me.txtCoperto.TabIndex = 8
-      Me.txtCoperto.TabStop = False
-      Me.txtCoperto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label12
-      '
-      Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label12.BackColor = System.Drawing.Color.Transparent
-      Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label12.ForeColor = System.Drawing.Color.Black
-      Me.Label12.Location = New System.Drawing.Point(946, 128)
-      Me.Label12.Name = "Label12"
-      Me.Label12.Size = New System.Drawing.Size(88, 20)
-      Me.Label12.TabIndex = 233
-      Me.Label12.Text = "COPERTO:"
-      '
-      'Label13
-      '
-      Me.Label13.BackColor = System.Drawing.Color.Transparent
-      Me.Label13.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label13.ForeColor = System.Drawing.Color.Black
-      Me.Label13.Location = New System.Drawing.Point(10, 16)
-      Me.Label13.Name = "Label13"
-      Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label13.Size = New System.Drawing.Size(104, 24)
-      Me.Label13.TabIndex = 234
-      Me.Label13.Text = "TIPO CONTO:"
-      '
-      'Label14
-      '
-      Me.Label14.BackColor = System.Drawing.Color.Transparent
-      Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label14.ForeColor = System.Drawing.Color.Black
-      Me.Label14.Location = New System.Drawing.Point(8, 88)
-      Me.Label14.Name = "Label14"
-      Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label14.Size = New System.Drawing.Size(184, 24)
-      Me.Label14.TabIndex = 236
-      Me.Label14.Text = "NUMERO DOCUMENTI:"
-      '
-      'Label15
-      '
-      Me.Label15.BackColor = System.Drawing.Color.Transparent
-      Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label15.ForeColor = System.Drawing.Color.Black
-      Me.Label15.Location = New System.Drawing.Point(8, 128)
-      Me.Label15.Name = "Label15"
-      Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label15.Size = New System.Drawing.Size(176, 24)
-      Me.Label15.TabIndex = 237
-      Me.Label15.Text = "TOTALE DA DIVIDERE:"
-      '
-      'lblQuotaPersona
-      '
-      Me.lblQuotaPersona.BackColor = System.Drawing.Color.Transparent
-      Me.lblQuotaPersona.Cursor = System.Windows.Forms.Cursors.Default
-      Me.lblQuotaPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblQuotaPersona.ForeColor = System.Drawing.Color.Black
-      Me.lblQuotaPersona.Location = New System.Drawing.Point(8, 168)
-      Me.lblQuotaPersona.Name = "lblQuotaPersona"
-      Me.lblQuotaPersona.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lblQuotaPersona.Size = New System.Drawing.Size(168, 24)
-      Me.lblQuotaPersona.TabIndex = 238
-      Me.lblQuotaPersona.Text = "QUOTA A PERSONA:"
-      '
-      'txtTotDividere
-      '
-      Me.txtTotDividere.AcceptsReturn = True
-      Me.txtTotDividere.BackColor = System.Drawing.Color.White
-      Me.txtTotDividere.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtTotDividere.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotDividere.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtTotDividere.Location = New System.Drawing.Point(182, 119)
-      Me.txtTotDividere.MaxLength = 100
-      Me.txtTotDividere.Name = "txtTotDividere"
-      Me.txtTotDividere.ReadOnly = True
-      Me.txtTotDividere.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtTotDividere.Size = New System.Drawing.Size(106, 29)
-      Me.txtTotDividere.TabIndex = 2
-      Me.txtTotDividere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'txtQuotaPersona
-      '
-      Me.txtQuotaPersona.AcceptsReturn = True
-      Me.txtQuotaPersona.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtQuotaPersona.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtQuotaPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtQuotaPersona.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtQuotaPersona.Location = New System.Drawing.Point(182, 159)
-      Me.txtQuotaPersona.MaxLength = 100
-      Me.txtQuotaPersona.Name = "txtQuotaPersona"
-      Me.txtQuotaPersona.ReadOnly = True
-      Me.txtQuotaPersona.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtQuotaPersona.Size = New System.Drawing.Size(106, 29)
-      Me.txtQuotaPersona.TabIndex = 4
-      Me.txtQuotaPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'lstvElencoDocAperti
-      '
-      Me.lstvElencoDocAperti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lstvDettagli.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvDettagli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvDettagli.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4, Me.colonnaQta, Me.colonnaDescrizione, Me.colonnaPrezzo, Me.colonnaImporto, Me.colonnaIva, Me.ColumnHeader6, Me.ColumnHeader7})
+        Me.lstvDettagli.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvDettagli.ForeColor = System.Drawing.Color.Black
+        Me.lstvDettagli.FullRowSelect = True
+        Me.lstvDettagli.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.lstvDettagli.HideSelection = False
+        Me.lstvDettagli.Location = New System.Drawing.Point(293, 68)
+        Me.lstvDettagli.MultiSelect = False
+        Me.lstvDettagli.Name = "lstvDettagli"
+        Me.lstvDettagli.Size = New System.Drawing.Size(333, 591)
+        Me.lstvDettagli.TabIndex = 9
+        Me.lstvDettagli.UseCompatibleStateImageBehavior = False
+        Me.lstvDettagli.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Width = 0
+        '
+        'colonnaQta
+        '
+        Me.colonnaQta.Text = "Q.tà"
+        Me.colonnaQta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.colonnaQta.Width = 50
+        '
+        'colonnaDescrizione
+        '
+        Me.colonnaDescrizione.Text = "Descrizione"
+        Me.colonnaDescrizione.Width = 220
+        '
+        'colonnaPrezzo
+        '
+        Me.colonnaPrezzo.Text = "Prezzo"
+        Me.colonnaPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'colonnaImporto
+        '
+        Me.colonnaImporto.Text = "Importo"
+        Me.colonnaImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.colonnaImporto.Width = 70
+        '
+        'colonnaIva
+        '
+        Me.colonnaIva.Text = "IVA%"
+        Me.colonnaIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.colonnaIva.Width = 50
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Width = 0
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Width = 0
+        '
+        'txtIva
+        '
+        Me.txtIva.AcceptsReturn = True
+        Me.txtIva.BackColor = System.Drawing.SystemColors.Window
+        Me.txtIva.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIva.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtIva.Location = New System.Drawing.Point(259, 82)
+        Me.txtIva.MaxLength = 10
+        Me.txtIva.Name = "txtIva"
+        Me.txtIva.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtIva.Size = New System.Drawing.Size(34, 29)
+        Me.txtIva.TabIndex = 6
+        Me.txtIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtIva.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(197, 87)
+        Me.Label11.Name = "Label11"
+        Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label11.Size = New System.Drawing.Size(56, 24)
+        Me.Label11.TabIndex = 229
+        Me.Label11.Text = "% IVA:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label11.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'dtpData
+        '
+        Me.dtpData.Location = New System.Drawing.Point(-600, 680)
+        Me.dtpData.Name = "dtpData"
+        Me.dtpData.Size = New System.Drawing.Size(258, 29)
+        Me.dtpData.TabIndex = 230
+        '
+        'txtBuoni
+        '
+        Me.txtBuoni.AcceptsReturn = True
+        Me.txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtBuoni.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtBuoni.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuoni.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtBuoni.Location = New System.Drawing.Point(794, 335)
+        Me.txtBuoni.MaxLength = 100
+        Me.txtBuoni.Name = "txtBuoni"
+        Me.txtBuoni.ReadOnly = True
+        Me.txtBuoni.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtBuoni.Size = New System.Drawing.Size(125, 29)
+        Me.txtBuoni.TabIndex = 21
+        Me.txtBuoni.TabStop = False
+        Me.txtBuoni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lstvDatiBuoni
+        '
+        Me.lstvDatiBuoni.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvDatiBuoni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvDatiBuoni.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17})
+        Me.lstvDatiBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvDatiBuoni.ForeColor = System.Drawing.Color.Black
+        Me.lstvDatiBuoni.FullRowSelect = True
+        Me.lstvDatiBuoni.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+        Me.lstvDatiBuoni.HideSelection = False
+        Me.lstvDatiBuoni.Location = New System.Drawing.Point(296, 261)
+        Me.lstvDatiBuoni.MultiSelect = False
+        Me.lstvDatiBuoni.Name = "lstvDatiBuoni"
+        Me.lstvDatiBuoni.Size = New System.Drawing.Size(274, 45)
+        Me.lstvDatiBuoni.TabIndex = 231
+        Me.lstvDatiBuoni.UseCompatibleStateImageBehavior = False
+        Me.lstvDatiBuoni.View = System.Windows.Forms.View.Details
+        Me.lstvDatiBuoni.Visible = False
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Width = 0
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Quantità"
+        Me.ColumnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader9.Width = 0
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "Descrizione"
+        Me.ColumnHeader10.Width = 0
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Valore"
+        Me.ColumnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader11.Width = 0
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "IdBuono"
+        Me.ColumnHeader12.Width = 0
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "IdAzienda"
+        Me.ColumnHeader13.Width = 0
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "QuantitàTot"
+        Me.ColumnHeader14.Width = 0
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "ValoreTotale"
+        Me.ColumnHeader15.Width = 0
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "QuantitàFatt"
+        Me.ColumnHeader16.Width = 0
+        '
+        'ColumnHeader17
+        '
+        Me.ColumnHeader17.Text = "ValoreFatt"
+        Me.ColumnHeader17.Width = 0
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'txtCoperto
+        '
+        Me.txtCoperto.AcceptsReturn = True
+        Me.txtCoperto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCoperto.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtCoperto.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCoperto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCoperto.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCoperto.Location = New System.Drawing.Point(925, 147)
+        Me.txtCoperto.MaxLength = 100
+        Me.txtCoperto.Name = "txtCoperto"
+        Me.txtCoperto.ReadOnly = True
+        Me.txtCoperto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCoperto.Size = New System.Drawing.Size(129, 29)
+        Me.txtCoperto.TabIndex = 8
+        Me.txtCoperto.TabStop = False
+        Me.txtCoperto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(925, 116)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(88, 20)
+        Me.Label12.TabIndex = 233
+        Me.Label12.Text = "COPERTO:"
+        '
+        'Label13
+        '
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(10, 4)
+        Me.Label13.Name = "Label13"
+        Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label13.Size = New System.Drawing.Size(104, 24)
+        Me.Label13.TabIndex = 234
+        Me.Label13.Text = "TIPO CONTO:"
+        '
+        'Label14
+        '
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(8, 76)
+        Me.Label14.Name = "Label14"
+        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label14.Size = New System.Drawing.Size(184, 24)
+        Me.Label14.TabIndex = 236
+        Me.Label14.Text = "NUMERO DOCUMENTI:"
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(8, 116)
+        Me.Label15.Name = "Label15"
+        Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label15.Size = New System.Drawing.Size(176, 24)
+        Me.Label15.TabIndex = 237
+        Me.Label15.Text = "TOTALE DA DIVIDERE:"
+        '
+        'lblQuotaPersona
+        '
+        Me.lblQuotaPersona.BackColor = System.Drawing.Color.Transparent
+        Me.lblQuotaPersona.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblQuotaPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQuotaPersona.ForeColor = System.Drawing.Color.Black
+        Me.lblQuotaPersona.Location = New System.Drawing.Point(8, 156)
+        Me.lblQuotaPersona.Name = "lblQuotaPersona"
+        Me.lblQuotaPersona.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblQuotaPersona.Size = New System.Drawing.Size(168, 24)
+        Me.lblQuotaPersona.TabIndex = 238
+        Me.lblQuotaPersona.Text = "QUOTA A PERSONA:"
+        '
+        'txtTotDividere
+        '
+        Me.txtTotDividere.AcceptsReturn = True
+        Me.txtTotDividere.BackColor = System.Drawing.Color.White
+        Me.txtTotDividere.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTotDividere.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotDividere.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtTotDividere.Location = New System.Drawing.Point(182, 107)
+        Me.txtTotDividere.MaxLength = 100
+        Me.txtTotDividere.Name = "txtTotDividere"
+        Me.txtTotDividere.ReadOnly = True
+        Me.txtTotDividere.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtTotDividere.Size = New System.Drawing.Size(106, 29)
+        Me.txtTotDividere.TabIndex = 2
+        Me.txtTotDividere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtQuotaPersona
+        '
+        Me.txtQuotaPersona.AcceptsReturn = True
+        Me.txtQuotaPersona.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtQuotaPersona.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtQuotaPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuotaPersona.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtQuotaPersona.Location = New System.Drawing.Point(182, 147)
+        Me.txtQuotaPersona.MaxLength = 100
+        Me.txtQuotaPersona.Name = "txtQuotaPersona"
+        Me.txtQuotaPersona.ReadOnly = True
+        Me.txtQuotaPersona.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtQuotaPersona.Size = New System.Drawing.Size(106, 29)
+        Me.txtQuotaPersona.TabIndex = 4
+        Me.txtQuotaPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lstvElencoDocAperti
+        '
+        Me.lstvElencoDocAperti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-      Me.lstvElencoDocAperti.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvElencoDocAperti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvElencoDocAperti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader18, Me.ColumnHeader19, Me.ColumnHeader20, Me.ColumnHeader21})
-      Me.lstvElencoDocAperti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvElencoDocAperti.ForeColor = System.Drawing.Color.Black
-      Me.lstvElencoDocAperti.FullRowSelect = True
-      Me.lstvElencoDocAperti.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-      Me.lstvElencoDocAperti.HideSelection = False
-      Me.lstvElencoDocAperti.Location = New System.Drawing.Point(8, 195)
-      Me.lstvElencoDocAperti.MultiSelect = False
-      Me.lstvElencoDocAperti.Name = "lstvElencoDocAperti"
-      Me.lstvElencoDocAperti.Size = New System.Drawing.Size(280, 529)
-      Me.lstvElencoDocAperti.TabIndex = 5
-      Me.lstvElencoDocAperti.UseCompatibleStateImageBehavior = False
-      Me.lstvElencoDocAperti.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader18
-      '
-      Me.ColumnHeader18.Width = 0
-      '
-      'ColumnHeader19
-      '
-      Me.ColumnHeader19.Text = "Stato"
-      Me.ColumnHeader19.Width = 80
-      '
-      'ColumnHeader20
-      '
-      Me.ColumnHeader20.Text = "Totale da pagare"
-      Me.ColumnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader20.Width = 175
-      '
-      'ColumnHeader21
-      '
-      Me.ColumnHeader21.Width = 0
-      '
-      'Label18
-      '
-      Me.Label18.BackColor = System.Drawing.Color.Transparent
-      Me.Label18.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label18.ForeColor = System.Drawing.Color.Black
-      Me.Label18.Location = New System.Drawing.Point(298, 16)
-      Me.Label18.Name = "Label18"
-      Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label18.Size = New System.Drawing.Size(104, 24)
-      Me.Label18.TabIndex = 245
-      Me.Label18.Text = "VOCI CONTO:"
-      '
-      'txtNumDoc
-      '
-      Me.txtNumDoc.AcceptsReturn = True
-      Me.txtNumDoc.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.txtNumDoc.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNumDoc.Enabled = False
-      Me.txtNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtNumDoc.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtNumDoc.Location = New System.Drawing.Point(224, 80)
-      Me.txtNumDoc.MaxLength = 2
-      Me.txtNumDoc.Name = "txtNumDoc"
-      Me.txtNumDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNumDoc.Size = New System.Drawing.Size(64, 29)
-      Me.txtNumDoc.TabIndex = 1
-      Me.txtNumDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'lstvDettagliTemp
-      '
-      Me.lstvDettagliTemp.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvDettagliTemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvDettagliTemp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader22, Me.ColumnHeader23, Me.ColumnHeader24, Me.ColumnHeader25, Me.ColumnHeader26, Me.ColumnHeader27, Me.ColumnHeader28})
-      Me.lstvDettagliTemp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvDettagliTemp.ForeColor = System.Drawing.Color.Black
-      Me.lstvDettagliTemp.FullRowSelect = True
-      Me.lstvDettagliTemp.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-      Me.lstvDettagliTemp.HideSelection = False
-      Me.lstvDettagliTemp.Location = New System.Drawing.Point(301, 120)
-      Me.lstvDettagliTemp.MultiSelect = False
-      Me.lstvDettagliTemp.Name = "lstvDettagliTemp"
-      Me.lstvDettagliTemp.Size = New System.Drawing.Size(274, 45)
-      Me.lstvDettagliTemp.TabIndex = 252
-      Me.lstvDettagliTemp.UseCompatibleStateImageBehavior = False
-      Me.lstvDettagliTemp.View = System.Windows.Forms.View.Details
-      Me.lstvDettagliTemp.Visible = False
-      '
-      'ColumnHeader22
-      '
-      Me.ColumnHeader22.Width = 0
-      '
-      'ColumnHeader23
-      '
-      Me.ColumnHeader23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader23.Width = 33
-      '
-      'ColumnHeader24
-      '
-      Me.ColumnHeader24.Width = 190
-      '
-      'ColumnHeader25
-      '
-      Me.ColumnHeader25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader25.Width = 70
-      '
-      'ColumnHeader26
-      '
-      Me.ColumnHeader26.Width = 0
-      '
-      'ColumnHeader27
-      '
-      Me.ColumnHeader27.Width = 0
-      '
-      'ColumnHeader28
-      '
-      Me.ColumnHeader28.Width = 0
-      '
-      'lstvDettagliCompatto
-      '
-      Me.lstvDettagliCompatto.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvDettagliCompatto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvDettagliCompatto.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader29, Me.ColumnHeader30, Me.ColumnHeader31, Me.ColumnHeader32, Me.ColumnHeader33, Me.ColumnHeader34, Me.ColumnHeader35})
-      Me.lstvDettagliCompatto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvDettagliCompatto.ForeColor = System.Drawing.Color.Black
-      Me.lstvDettagliCompatto.FullRowSelect = True
-      Me.lstvDettagliCompatto.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-      Me.lstvDettagliCompatto.HideSelection = False
-      Me.lstvDettagliCompatto.Location = New System.Drawing.Point(301, 222)
-      Me.lstvDettagliCompatto.MultiSelect = False
-      Me.lstvDettagliCompatto.Name = "lstvDettagliCompatto"
-      Me.lstvDettagliCompatto.Size = New System.Drawing.Size(274, 45)
-      Me.lstvDettagliCompatto.TabIndex = 253
-      Me.lstvDettagliCompatto.UseCompatibleStateImageBehavior = False
-      Me.lstvDettagliCompatto.View = System.Windows.Forms.View.Details
-      Me.lstvDettagliCompatto.Visible = False
-      '
-      'ColumnHeader29
-      '
-      Me.ColumnHeader29.Width = 0
-      '
-      'ColumnHeader30
-      '
-      Me.ColumnHeader30.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader30.Width = 33
-      '
-      'ColumnHeader31
-      '
-      Me.ColumnHeader31.Width = 190
-      '
-      'ColumnHeader32
-      '
-      Me.ColumnHeader32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader32.Width = 70
-      '
-      'ColumnHeader33
-      '
-      Me.ColumnHeader33.Width = 0
-      '
-      'ColumnHeader34
-      '
-      Me.ColumnHeader34.Width = 0
-      '
-      'ColumnHeader35
-      '
-      Me.ColumnHeader35.Width = 0
-      '
-      'lstvDettagliCopia
-      '
-      Me.lstvDettagliCopia.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.lstvDettagliCopia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.lstvDettagliCopia.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader36, Me.ColumnHeader37, Me.ColumnHeader38, Me.ColumnHeader39, Me.ColumnHeader40, Me.ColumnHeader41, Me.ColumnHeader42})
-      Me.lstvDettagliCopia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstvDettagliCopia.ForeColor = System.Drawing.Color.Black
-      Me.lstvDettagliCopia.FullRowSelect = True
-      Me.lstvDettagliCopia.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-      Me.lstvDettagliCopia.HideSelection = False
-      Me.lstvDettagliCopia.Location = New System.Drawing.Point(301, 171)
-      Me.lstvDettagliCopia.MultiSelect = False
-      Me.lstvDettagliCopia.Name = "lstvDettagliCopia"
-      Me.lstvDettagliCopia.Size = New System.Drawing.Size(274, 45)
-      Me.lstvDettagliCopia.TabIndex = 254
-      Me.lstvDettagliCopia.UseCompatibleStateImageBehavior = False
-      Me.lstvDettagliCopia.View = System.Windows.Forms.View.Details
-      Me.lstvDettagliCopia.Visible = False
-      '
-      'ColumnHeader36
-      '
-      Me.ColumnHeader36.Width = 0
-      '
-      'ColumnHeader37
-      '
-      Me.ColumnHeader37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader37.Width = 33
-      '
-      'ColumnHeader38
-      '
-      Me.ColumnHeader38.Width = 190
-      '
-      'ColumnHeader39
-      '
-      Me.ColumnHeader39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.ColumnHeader39.Width = 70
-      '
-      'ColumnHeader40
-      '
-      Me.ColumnHeader40.Width = 0
-      '
-      'ColumnHeader41
-      '
-      Me.ColumnHeader41.Width = 0
-      '
-      'ColumnHeader42
-      '
-      Me.ColumnHeader42.Width = 0
-      '
-      'txtIdCliente
-      '
-      Me.txtIdCliente.AcceptsReturn = True
-      Me.txtIdCliente.BackColor = System.Drawing.SystemColors.Window
-      Me.txtIdCliente.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtIdCliente.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIdCliente.Location = New System.Drawing.Point(145, 122)
-      Me.txtIdCliente.MaxLength = 100
-      Me.txtIdCliente.Name = "txtIdCliente"
-      Me.txtIdCliente.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtIdCliente.Size = New System.Drawing.Size(51, 29)
-      Me.txtIdCliente.TabIndex = 255
-      Me.txtIdCliente.Visible = False
-      '
-      'txtIdAzienda
-      '
-      Me.txtIdAzienda.AcceptsReturn = True
-      Me.txtIdAzienda.BackColor = System.Drawing.SystemColors.Window
-      Me.txtIdAzienda.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtIdAzienda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtIdAzienda.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIdAzienda.Location = New System.Drawing.Point(145, 166)
-      Me.txtIdAzienda.MaxLength = 100
-      Me.txtIdAzienda.Name = "txtIdAzienda"
-      Me.txtIdAzienda.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtIdAzienda.Size = New System.Drawing.Size(51, 29)
-      Me.txtIdAzienda.TabIndex = 256
-      Me.txtIdAzienda.Visible = False
-      '
-      'Label16
-      '
-      Me.Label16.BackColor = System.Drawing.Color.Transparent
-      Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label16.ForeColor = System.Drawing.Color.Black
-      Me.Label16.Location = New System.Drawing.Point(13, 131)
-      Me.Label16.Name = "Label16"
-      Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label16.Size = New System.Drawing.Size(144, 24)
-      Me.Label16.TabIndex = 257
-      Me.Label16.Text = "ID CLIENTE:"
-      Me.Label16.Visible = False
-      '
-      'Label19
-      '
-      Me.Label19.BackColor = System.Drawing.Color.Transparent
-      Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label19.ForeColor = System.Drawing.Color.Black
-      Me.Label19.Location = New System.Drawing.Point(13, 166)
-      Me.Label19.Name = "Label19"
-      Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label19.Size = New System.Drawing.Size(112, 24)
-      Me.Label19.TabIndex = 258
-      Me.Label19.Text = "ID AZIENDA:"
-      Me.Label19.Visible = False
-      '
-      'Timer2
-      '
-      Me.Timer2.Interval = 1000
-      '
-      'txtCodiceFiscale
-      '
-      Me.txtCodiceFiscale.AcceptsReturn = True
-      Me.txtCodiceFiscale.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCodiceFiscale.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCodiceFiscale.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCodiceFiscale.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCodiceFiscale.Location = New System.Drawing.Point(145, 209)
-      Me.txtCodiceFiscale.MaxLength = 11
-      Me.txtCodiceFiscale.Name = "txtCodiceFiscale"
-      Me.txtCodiceFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCodiceFiscale.Size = New System.Drawing.Size(144, 29)
-      Me.txtCodiceFiscale.TabIndex = 260
-      Me.txtCodiceFiscale.Visible = False
-      '
-      'Label20
-      '
-      Me.Label20.BackColor = System.Drawing.Color.Transparent
-      Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label20.ForeColor = System.Drawing.Color.Black
-      Me.Label20.Location = New System.Drawing.Point(13, 214)
-      Me.Label20.Name = "Label20"
-      Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label20.Size = New System.Drawing.Size(171, 24)
-      Me.Label20.TabIndex = 261
-      Me.Label20.Text = "CODICE FISCALE:"
-      Me.Label20.Visible = False
-      '
-      'txtCognome
-      '
-      Me.txtCognome.AcceptsReturn = True
-      Me.txtCognome.BackColor = System.Drawing.SystemColors.Window
-      Me.txtCognome.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtCognome.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCognome.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCognome.Location = New System.Drawing.Point(145, 244)
-      Me.txtCognome.MaxLength = 11
-      Me.txtCognome.Name = "txtCognome"
-      Me.txtCognome.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCognome.Size = New System.Drawing.Size(144, 29)
-      Me.txtCognome.TabIndex = 262
-      Me.txtCognome.Visible = False
-      '
-      'Label21
-      '
-      Me.Label21.BackColor = System.Drawing.Color.Transparent
-      Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label21.ForeColor = System.Drawing.Color.Black
-      Me.Label21.Location = New System.Drawing.Point(13, 249)
-      Me.Label21.Name = "Label21"
-      Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label21.Size = New System.Drawing.Size(144, 24)
-      Me.Label21.TabIndex = 263
-      Me.Label21.Text = "COGNOME:"
-      Me.Label21.Visible = False
-      '
-      'txtNome
-      '
-      Me.txtNome.AcceptsReturn = True
-      Me.txtNome.BackColor = System.Drawing.SystemColors.Window
-      Me.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtNome.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtNome.Location = New System.Drawing.Point(145, 279)
-      Me.txtNome.MaxLength = 11
-      Me.txtNome.Name = "txtNome"
-      Me.txtNome.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNome.Size = New System.Drawing.Size(144, 29)
-      Me.txtNome.TabIndex = 264
-      Me.txtNome.Visible = False
-      '
-      'Label22
-      '
-      Me.Label22.BackColor = System.Drawing.Color.Transparent
-      Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label22.ForeColor = System.Drawing.Color.Black
-      Me.Label22.Location = New System.Drawing.Point(13, 284)
-      Me.Label22.Name = "Label22"
-      Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label22.Size = New System.Drawing.Size(144, 24)
-      Me.Label22.TabIndex = 265
-      Me.Label22.Text = "NOME:"
-      Me.Label22.Visible = False
-      '
-      'eui_cmdTipoConto
-      '
-      Me.eui_cmdTipoConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdTipoConto.Id = "bae94802-85c5-4a0a-9440-d6acf83b8576"
-      Me.eui_cmdTipoConto.Location = New System.Drawing.Point(8, 38)
-      Me.eui_cmdTipoConto.Name = "eui_cmdTipoConto"
-      Me.eui_cmdTipoConto.Size = New System.Drawing.Size(280, 34)
-      Me.eui_cmdTipoConto.TabIndex = 0
-      Me.eui_cmdTipoConto.Text = "Unico"
-      '
-      'eui_cmdTipoElenco
-      '
-      Me.eui_cmdTipoElenco.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.lstvElencoDocAperti.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvElencoDocAperti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvElencoDocAperti.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader18, Me.ColumnHeader19, Me.ColumnHeader20, Me.ColumnHeader21})
+        Me.lstvElencoDocAperti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvElencoDocAperti.ForeColor = System.Drawing.Color.Black
+        Me.lstvElencoDocAperti.FullRowSelect = True
+        Me.lstvElencoDocAperti.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.lstvElencoDocAperti.HideSelection = False
+        Me.lstvElencoDocAperti.Location = New System.Drawing.Point(8, 183)
+        Me.lstvElencoDocAperti.MultiSelect = False
+        Me.lstvElencoDocAperti.Name = "lstvElencoDocAperti"
+        Me.lstvElencoDocAperti.Size = New System.Drawing.Size(280, 476)
+        Me.lstvElencoDocAperti.TabIndex = 5
+        Me.lstvElencoDocAperti.UseCompatibleStateImageBehavior = False
+        Me.lstvElencoDocAperti.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader18
+        '
+        Me.ColumnHeader18.Width = 0
+        '
+        'ColumnHeader19
+        '
+        Me.ColumnHeader19.Text = "Stato"
+        Me.ColumnHeader19.Width = 80
+        '
+        'ColumnHeader20
+        '
+        Me.ColumnHeader20.Text = "Totale da pagare"
+        Me.ColumnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader20.Width = 175
+        '
+        'ColumnHeader21
+        '
+        Me.ColumnHeader21.Width = 0
+        '
+        'Label18
+        '
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(293, 4)
+        Me.Label18.Name = "Label18"
+        Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label18.Size = New System.Drawing.Size(104, 24)
+        Me.Label18.TabIndex = 245
+        Me.Label18.Text = "VOCI CONTO:"
+        '
+        'txtNumDoc
+        '
+        Me.txtNumDoc.AcceptsReturn = True
+        Me.txtNumDoc.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.txtNumDoc.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtNumDoc.Enabled = False
+        Me.txtNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumDoc.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtNumDoc.Location = New System.Drawing.Point(224, 68)
+        Me.txtNumDoc.MaxLength = 2
+        Me.txtNumDoc.Name = "txtNumDoc"
+        Me.txtNumDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtNumDoc.Size = New System.Drawing.Size(64, 29)
+        Me.txtNumDoc.TabIndex = 1
+        Me.txtNumDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lstvDettagliTemp
+        '
+        Me.lstvDettagliTemp.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvDettagliTemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvDettagliTemp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader22, Me.ColumnHeader23, Me.ColumnHeader24, Me.ColumnHeader25, Me.ColumnHeader26, Me.ColumnHeader27, Me.ColumnHeader28})
+        Me.lstvDettagliTemp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvDettagliTemp.ForeColor = System.Drawing.Color.Black
+        Me.lstvDettagliTemp.FullRowSelect = True
+        Me.lstvDettagliTemp.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+        Me.lstvDettagliTemp.HideSelection = False
+        Me.lstvDettagliTemp.Location = New System.Drawing.Point(296, 108)
+        Me.lstvDettagliTemp.MultiSelect = False
+        Me.lstvDettagliTemp.Name = "lstvDettagliTemp"
+        Me.lstvDettagliTemp.Size = New System.Drawing.Size(274, 45)
+        Me.lstvDettagliTemp.TabIndex = 252
+        Me.lstvDettagliTemp.UseCompatibleStateImageBehavior = False
+        Me.lstvDettagliTemp.View = System.Windows.Forms.View.Details
+        Me.lstvDettagliTemp.Visible = False
+        '
+        'ColumnHeader22
+        '
+        Me.ColumnHeader22.Width = 0
+        '
+        'ColumnHeader23
+        '
+        Me.ColumnHeader23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader23.Width = 33
+        '
+        'ColumnHeader24
+        '
+        Me.ColumnHeader24.Width = 190
+        '
+        'ColumnHeader25
+        '
+        Me.ColumnHeader25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader25.Width = 70
+        '
+        'ColumnHeader26
+        '
+        Me.ColumnHeader26.Width = 0
+        '
+        'ColumnHeader27
+        '
+        Me.ColumnHeader27.Width = 0
+        '
+        'ColumnHeader28
+        '
+        Me.ColumnHeader28.Width = 0
+        '
+        'lstvDettagliCompatto
+        '
+        Me.lstvDettagliCompatto.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvDettagliCompatto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvDettagliCompatto.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader29, Me.ColumnHeader30, Me.ColumnHeader31, Me.ColumnHeader32, Me.ColumnHeader33, Me.ColumnHeader34, Me.ColumnHeader35})
+        Me.lstvDettagliCompatto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvDettagliCompatto.ForeColor = System.Drawing.Color.Black
+        Me.lstvDettagliCompatto.FullRowSelect = True
+        Me.lstvDettagliCompatto.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+        Me.lstvDettagliCompatto.HideSelection = False
+        Me.lstvDettagliCompatto.Location = New System.Drawing.Point(296, 210)
+        Me.lstvDettagliCompatto.MultiSelect = False
+        Me.lstvDettagliCompatto.Name = "lstvDettagliCompatto"
+        Me.lstvDettagliCompatto.Size = New System.Drawing.Size(274, 45)
+        Me.lstvDettagliCompatto.TabIndex = 253
+        Me.lstvDettagliCompatto.UseCompatibleStateImageBehavior = False
+        Me.lstvDettagliCompatto.View = System.Windows.Forms.View.Details
+        Me.lstvDettagliCompatto.Visible = False
+        '
+        'ColumnHeader29
+        '
+        Me.ColumnHeader29.Width = 0
+        '
+        'ColumnHeader30
+        '
+        Me.ColumnHeader30.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader30.Width = 33
+        '
+        'ColumnHeader31
+        '
+        Me.ColumnHeader31.Width = 190
+        '
+        'ColumnHeader32
+        '
+        Me.ColumnHeader32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader32.Width = 70
+        '
+        'ColumnHeader33
+        '
+        Me.ColumnHeader33.Width = 0
+        '
+        'ColumnHeader34
+        '
+        Me.ColumnHeader34.Width = 0
+        '
+        'ColumnHeader35
+        '
+        Me.ColumnHeader35.Width = 0
+        '
+        'lstvDettagliCopia
+        '
+        Me.lstvDettagliCopia.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lstvDettagliCopia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstvDettagliCopia.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader36, Me.ColumnHeader37, Me.ColumnHeader38, Me.ColumnHeader39, Me.ColumnHeader40, Me.ColumnHeader41, Me.ColumnHeader42})
+        Me.lstvDettagliCopia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstvDettagliCopia.ForeColor = System.Drawing.Color.Black
+        Me.lstvDettagliCopia.FullRowSelect = True
+        Me.lstvDettagliCopia.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+        Me.lstvDettagliCopia.HideSelection = False
+        Me.lstvDettagliCopia.Location = New System.Drawing.Point(296, 159)
+        Me.lstvDettagliCopia.MultiSelect = False
+        Me.lstvDettagliCopia.Name = "lstvDettagliCopia"
+        Me.lstvDettagliCopia.Size = New System.Drawing.Size(274, 45)
+        Me.lstvDettagliCopia.TabIndex = 254
+        Me.lstvDettagliCopia.UseCompatibleStateImageBehavior = False
+        Me.lstvDettagliCopia.View = System.Windows.Forms.View.Details
+        Me.lstvDettagliCopia.Visible = False
+        '
+        'ColumnHeader36
+        '
+        Me.ColumnHeader36.Width = 0
+        '
+        'ColumnHeader37
+        '
+        Me.ColumnHeader37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader37.Width = 33
+        '
+        'ColumnHeader38
+        '
+        Me.ColumnHeader38.Width = 190
+        '
+        'ColumnHeader39
+        '
+        Me.ColumnHeader39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ColumnHeader39.Width = 70
+        '
+        'ColumnHeader40
+        '
+        Me.ColumnHeader40.Width = 0
+        '
+        'ColumnHeader41
+        '
+        Me.ColumnHeader41.Width = 0
+        '
+        'ColumnHeader42
+        '
+        Me.ColumnHeader42.Width = 0
+        '
+        'txtIdCliente
+        '
+        Me.txtIdCliente.AcceptsReturn = True
+        Me.txtIdCliente.BackColor = System.Drawing.SystemColors.Window
+        Me.txtIdCliente.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdCliente.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtIdCliente.Location = New System.Drawing.Point(145, 122)
+        Me.txtIdCliente.MaxLength = 100
+        Me.txtIdCliente.Name = "txtIdCliente"
+        Me.txtIdCliente.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtIdCliente.Size = New System.Drawing.Size(51, 29)
+        Me.txtIdCliente.TabIndex = 255
+        Me.txtIdCliente.Visible = False
+        '
+        'txtIdAzienda
+        '
+        Me.txtIdAzienda.AcceptsReturn = True
+        Me.txtIdAzienda.BackColor = System.Drawing.SystemColors.Window
+        Me.txtIdAzienda.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtIdAzienda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdAzienda.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtIdAzienda.Location = New System.Drawing.Point(145, 166)
+        Me.txtIdAzienda.MaxLength = 100
+        Me.txtIdAzienda.Name = "txtIdAzienda"
+        Me.txtIdAzienda.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtIdAzienda.Size = New System.Drawing.Size(51, 29)
+        Me.txtIdAzienda.TabIndex = 256
+        Me.txtIdAzienda.Visible = False
+        '
+        'Label16
+        '
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(13, 131)
+        Me.Label16.Name = "Label16"
+        Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label16.Size = New System.Drawing.Size(144, 24)
+        Me.Label16.TabIndex = 257
+        Me.Label16.Text = "ID CLIENTE:"
+        Me.Label16.Visible = False
+        '
+        'Label19
+        '
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(13, 166)
+        Me.Label19.Name = "Label19"
+        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label19.Size = New System.Drawing.Size(112, 24)
+        Me.Label19.TabIndex = 258
+        Me.Label19.Text = "ID AZIENDA:"
+        Me.Label19.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1000
+        '
+        'txtCodiceFiscale
+        '
+        Me.txtCodiceFiscale.AcceptsReturn = True
+        Me.txtCodiceFiscale.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCodiceFiscale.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCodiceFiscale.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodiceFiscale.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCodiceFiscale.Location = New System.Drawing.Point(145, 209)
+        Me.txtCodiceFiscale.MaxLength = 11
+        Me.txtCodiceFiscale.Name = "txtCodiceFiscale"
+        Me.txtCodiceFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCodiceFiscale.Size = New System.Drawing.Size(144, 29)
+        Me.txtCodiceFiscale.TabIndex = 260
+        Me.txtCodiceFiscale.Visible = False
+        '
+        'Label20
+        '
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(13, 214)
+        Me.Label20.Name = "Label20"
+        Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label20.Size = New System.Drawing.Size(171, 24)
+        Me.Label20.TabIndex = 261
+        Me.Label20.Text = "CODICE FISCALE:"
+        Me.Label20.Visible = False
+        '
+        'txtCognome
+        '
+        Me.txtCognome.AcceptsReturn = True
+        Me.txtCognome.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCognome.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCognome.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCognome.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtCognome.Location = New System.Drawing.Point(145, 244)
+        Me.txtCognome.MaxLength = 11
+        Me.txtCognome.Name = "txtCognome"
+        Me.txtCognome.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtCognome.Size = New System.Drawing.Size(144, 29)
+        Me.txtCognome.TabIndex = 262
+        Me.txtCognome.Visible = False
+        '
+        'Label21
+        '
+        Me.Label21.BackColor = System.Drawing.Color.Transparent
+        Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.Black
+        Me.Label21.Location = New System.Drawing.Point(13, 249)
+        Me.Label21.Name = "Label21"
+        Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label21.Size = New System.Drawing.Size(144, 24)
+        Me.Label21.TabIndex = 263
+        Me.Label21.Text = "COGNOME:"
+        Me.Label21.Visible = False
+        '
+        'txtNome
+        '
+        Me.txtNome.AcceptsReturn = True
+        Me.txtNome.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNome.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtNome.Location = New System.Drawing.Point(145, 279)
+        Me.txtNome.MaxLength = 11
+        Me.txtNome.Name = "txtNome"
+        Me.txtNome.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtNome.Size = New System.Drawing.Size(144, 29)
+        Me.txtNome.TabIndex = 264
+        Me.txtNome.Visible = False
+        '
+        'Label22
+        '
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.Black
+        Me.Label22.Location = New System.Drawing.Point(13, 284)
+        Me.Label22.Name = "Label22"
+        Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label22.Size = New System.Drawing.Size(144, 24)
+        Me.Label22.TabIndex = 265
+        Me.Label22.Text = "NOME:"
+        Me.Label22.Visible = False
+        '
+        'eui_cmdTipoConto
+        '
+        Me.eui_cmdTipoConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdTipoConto.Id = "bae94802-85c5-4a0a-9440-d6acf83b8576"
+        Me.eui_cmdTipoConto.Location = New System.Drawing.Point(8, 26)
+        Me.eui_cmdTipoConto.Name = "eui_cmdTipoConto"
+        Me.eui_cmdTipoConto.Size = New System.Drawing.Size(280, 34)
+        Me.eui_cmdTipoConto.TabIndex = 0
+        Me.eui_cmdTipoConto.Text = "Unico"
+        '
+        'eui_cmdTipoElenco
+        '
+        Me.eui_cmdTipoElenco.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdTipoElenco.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdTipoElenco.Id = "0c1154fa-f012-4871-b06b-f4c01a6df540"
-      Me.eui_cmdTipoElenco.Location = New System.Drawing.Point(298, 38)
-      Me.eui_cmdTipoElenco.Name = "eui_cmdTipoElenco"
-      Me.eui_cmdTipoElenco.Size = New System.Drawing.Size(348, 34)
-      Me.eui_cmdTipoElenco.TabIndex = 8
-      Me.eui_cmdTipoElenco.Text = "Elenco completo"
-      '
-      'eui_cmdCliente
-      '
-      Me.eui_cmdCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdCliente.Id = "91912e10-0af0-4b35-92c4-aac862f9b961"
-      Me.eui_cmdCliente.Location = New System.Drawing.Point(653, 38)
-      Me.eui_cmdCliente.Name = "eui_cmdCliente"
-      Me.eui_cmdCliente.Size = New System.Drawing.Size(422, 34)
-      Me.eui_cmdCliente.TabIndex = 12
-      Me.eui_cmdCliente.Text = "Seleziona cliente"
-      '
-      'eui_cmdDivisioneAnalitica
-      '
-      Me.eui_cmdDivisioneAnalitica.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdDivisioneAnalitica.Id = "b80c0482-b699-4044-9f7f-d20376b95d72"
-      Me.eui_cmdDivisioneAnalitica.Location = New System.Drawing.Point(8, 157)
-      Me.eui_cmdDivisioneAnalitica.Name = "eui_cmdDivisioneAnalitica"
-      Me.eui_cmdDivisioneAnalitica.Size = New System.Drawing.Size(280, 34)
-      Me.eui_cmdDivisioneAnalitica.TabIndex = 3
-      Me.eui_cmdDivisioneAnalitica.Text = "&Divisione analitica"
-      Me.eui_cmdDivisioneAnalitica.Visible = False
-      '
-      'eui_cmdContanti
-      '
-      Me.eui_cmdContanti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdContanti.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdContanti.Id = "a450c693-540f-480d-a0cc-85da140f5dbf"
-      Me.eui_cmdContanti.Location = New System.Drawing.Point(653, 267)
-      Me.eui_cmdContanti.Name = "eui_cmdContanti"
-      Me.eui_cmdContanti.Size = New System.Drawing.Size(159, 32)
-      Me.eui_cmdContanti.TabIndex = 16
-      Me.eui_cmdContanti.Text = "Contanti"
-      '
-      'eui_cmdTipoPagamento
-      '
-      Me.eui_cmdTipoPagamento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdTipoPagamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdTipoPagamento.Id = "68ed8e14-f2d2-4fcf-b7e9-b96a2ab95848"
-      Me.eui_cmdTipoPagamento.Location = New System.Drawing.Point(653, 307)
-      Me.eui_cmdTipoPagamento.Name = "eui_cmdTipoPagamento"
-      Me.eui_cmdTipoPagamento.Size = New System.Drawing.Size(159, 32)
-      Me.eui_cmdTipoPagamento.TabIndex = 18
-      Me.eui_cmdTipoPagamento.Text = "Carte di credito"
-      '
-      'eui_cmdBuoni
-      '
-      Me.eui_cmdBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdBuoni.Id = "b6adb7f7-858a-491f-ac6e-9ab0305a328f"
-      Me.eui_cmdBuoni.Location = New System.Drawing.Point(653, 347)
-      Me.eui_cmdBuoni.Name = "eui_cmdBuoni"
-      Me.eui_cmdBuoni.Size = New System.Drawing.Size(159, 32)
-      Me.eui_cmdBuoni.TabIndex = 20
-      Me.eui_cmdBuoni.Text = "Buoni pasto"
-      '
-      'eui_cmdRicevuta
-      '
-      Me.eui_cmdRicevuta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdRicevuta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdRicevuta.Id = "20a6a06b-510e-4f11-a302-4d5b6d963889"
-      Me.eui_cmdRicevuta.Location = New System.Drawing.Point(946, 267)
-      Me.eui_cmdRicevuta.Name = "eui_cmdRicevuta"
-      Me.eui_cmdRicevuta.Size = New System.Drawing.Size(129, 61)
-      Me.eui_cmdRicevuta.TabIndex = 41
-      Me.eui_cmdRicevuta.Text = "Ricevuta Fiscale"
-      Me.eui_cmdRicevuta.WordWrap = True
-      '
-      'eui_cmdFattura
-      '
-      Me.eui_cmdFattura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdFattura.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdFattura.Id = "4f3f9c86-b0d0-4431-8de4-e3873c4d7c55"
-      Me.eui_cmdFattura.Location = New System.Drawing.Point(946, 336)
-      Me.eui_cmdFattura.Name = "eui_cmdFattura"
-      Me.eui_cmdFattura.Size = New System.Drawing.Size(129, 61)
-      Me.eui_cmdFattura.TabIndex = 42
-      Me.eui_cmdFattura.Text = "Fattura"
-      '
-      'eui_cmdProforma
-      '
-      Me.eui_cmdProforma.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdProforma.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdProforma.Id = "2ea56b5e-671a-43b3-8ad8-7ab81a602bb2"
-      Me.eui_cmdProforma.Location = New System.Drawing.Point(946, 405)
-      Me.eui_cmdProforma.Name = "eui_cmdProforma"
-      Me.eui_cmdProforma.Size = New System.Drawing.Size(129, 61)
-      Me.eui_cmdProforma.TabIndex = 43
-      Me.eui_cmdProforma.Text = "Proforma"
-      '
-      'eui_cmdScontrino
-      '
-      Me.eui_cmdScontrino.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdScontrino.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdScontrino.Id = "7e04d4eb-5141-450a-80d8-a3bc5f3a6183"
-      Me.eui_cmdScontrino.Location = New System.Drawing.Point(946, 474)
-      Me.eui_cmdScontrino.Name = "eui_cmdScontrino"
-      Me.eui_cmdScontrino.Size = New System.Drawing.Size(129, 61)
-      Me.eui_cmdScontrino.TabIndex = 44
-      Me.eui_cmdScontrino.Text = "Scontrino"
-      '
-      'eui_AddebitoSuRisorsa
-      '
-      Me.eui_AddebitoSuRisorsa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_AddebitoSuRisorsa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_AddebitoSuRisorsa.Id = "6a87759a-b9e3-4a71-9907-e9f88099bbca"
-      Me.eui_AddebitoSuRisorsa.Location = New System.Drawing.Point(946, 612)
-      Me.eui_AddebitoSuRisorsa.Name = "eui_AddebitoSuRisorsa"
-      Me.eui_AddebitoSuRisorsa.Size = New System.Drawing.Size(129, 61)
-      Me.eui_AddebitoSuRisorsa.TabIndex = 45
-      Me.eui_AddebitoSuRisorsa.Text = "Addebita..."
-      Me.eui_AddebitoSuRisorsa.WordWrap = True
-      '
-      'eui_cmdEsci
-      '
-      Me.eui_cmdEsci.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
-      Me.eui_cmdEsci.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdEsci.Id = "142ec9f4-717a-4e39-89b3-e61402042ebe"
-      Me.eui_cmdEsci.Location = New System.Drawing.Point(946, 728)
-      Me.eui_cmdEsci.Name = "eui_cmdEsci"
-      Me.eui_cmdEsci.Size = New System.Drawing.Size(129, 51)
-      Me.eui_cmdEsci.TabIndex = 46
-      Me.eui_cmdEsci.Text = "Esci"
-      '
-      'netBtn_DaPagare
-      '
-      Me.netBtn_DaPagare.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_DaPagare.ColorBottom = System.Drawing.Color.Orange
-      Me.netBtn_DaPagare.ColorDisabled = System.Drawing.Color.LightSalmon
-      Me.netBtn_DaPagare.ColorLight = System.Drawing.SystemColors.HighlightText
-      Me.netBtn_DaPagare.ColorText = System.Drawing.SystemColors.ControlText
-      Me.netBtn_DaPagare.ColorTop = System.Drawing.SystemColors.ControlLightLight
-      Me.netBtn_DaPagare.CornerRadius = 2
-      Me.netBtn_DaPagare.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_DaPagare.Location = New System.Drawing.Point(815, 199)
-      Me.netBtn_DaPagare.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_DaPagare.Name = "netBtn_DaPagare"
-      Me.netBtn_DaPagare.Size = New System.Drawing.Size(260, 62)
-      Me.netBtn_DaPagare.TabIndex = 285
-      Me.netBtn_DaPagare.TextButton = "25,50"
-      Me.netBtn_DaPagare.TextButtonAlign = System.Drawing.ContentAlignment.MiddleRight
-      '
-      'netBtn_C
-      '
-      Me.netBtn_C.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_C.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.netBtn_C.ColorDisabled = System.Drawing.Color.Brown
-      Me.netBtn_C.ColorLight = System.Drawing.Color.MistyRose
-      Me.netBtn_C.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Red
-      Me.netBtn_C.ColorText = System.Drawing.Color.Black
-      Me.netBtn_C.ColorTop = System.Drawing.Color.White
-      Me.netBtn_C.CornerRadius = 2
-      Me.netBtn_C.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_C.Location = New System.Drawing.Point(869, 466)
-      Me.netBtn_C.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_C.Name = "netBtn_C"
-      Me.netBtn_C.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_C.TabIndex = 25
-      Me.netBtn_C.TextButton = "C"
-      '
-      'netBtn_9
-      '
-      Me.netBtn_9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_9.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_9.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_9.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_9.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_9.ColorText = System.Drawing.Color.Black
-      Me.netBtn_9.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_9.CornerRadius = 2
-      Me.netBtn_9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_9.Location = New System.Drawing.Point(797, 466)
-      Me.netBtn_9.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_9.Name = "netBtn_9"
-      Me.netBtn_9.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_9.TabIndex = 24
-      Me.netBtn_9.TextButton = "9"
-      '
-      'netBtn_8
-      '
-      Me.netBtn_8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_8.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_8.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_8.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_8.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_8.ColorText = System.Drawing.Color.Black
-      Me.netBtn_8.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_8.CornerRadius = 2
-      Me.netBtn_8.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_8.Location = New System.Drawing.Point(725, 466)
-      Me.netBtn_8.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_8.Name = "netBtn_8"
-      Me.netBtn_8.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_8.TabIndex = 23
-      Me.netBtn_8.TextButton = "8"
-      '
-      'netBtn_7
-      '
-      Me.netBtn_7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_7.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_7.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_7.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_7.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_7.ColorText = System.Drawing.Color.Black
-      Me.netBtn_7.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_7.CornerRadius = 2
-      Me.netBtn_7.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_7.Location = New System.Drawing.Point(653, 466)
-      Me.netBtn_7.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_7.Name = "netBtn_7"
-      Me.netBtn_7.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_7.TabIndex = 22
-      Me.netBtn_7.TextButton = "7"
-      '
-      'netBtn_Ok
-      '
-      Me.netBtn_Ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_Ok.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(40, Byte), Integer))
-      Me.netBtn_Ok.ColorDisabled = System.Drawing.Color.SeaGreen
-      Me.netBtn_Ok.ColorLight = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(189, Byte), Integer))
-      Me.netBtn_Ok.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Green
-      Me.netBtn_Ok.ColorText = System.Drawing.Color.Black
-      Me.netBtn_Ok.ColorTop = System.Drawing.Color.White
-      Me.netBtn_Ok.CornerRadius = 2
-      Me.netBtn_Ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Ok.Location = New System.Drawing.Point(869, 622)
-      Me.netBtn_Ok.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_Ok.Name = "netBtn_Ok"
-      Me.netBtn_Ok.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_Ok.TabIndex = 37
-      Me.netBtn_Ok.TextButton = "OK"
-      '
-      'netBtn_Percentuale
-      '
-      Me.netBtn_Percentuale.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_Percentuale.ColorBottom = System.Drawing.Color.Orange
-      Me.netBtn_Percentuale.ColorDisabled = System.Drawing.Color.LightSalmon
-      Me.netBtn_Percentuale.ColorLight = System.Drawing.SystemColors.HighlightText
-      Me.netBtn_Percentuale.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Custom
-      Me.netBtn_Percentuale.ColorText = System.Drawing.Color.Black
-      Me.netBtn_Percentuale.ColorTop = System.Drawing.Color.White
-      Me.netBtn_Percentuale.CornerRadius = 2
-      Me.netBtn_Percentuale.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Percentuale.Location = New System.Drawing.Point(869, 570)
-      Me.netBtn_Percentuale.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_Percentuale.Name = "netBtn_Percentuale"
-      Me.netBtn_Percentuale.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_Percentuale.TabIndex = 33
-      Me.netBtn_Percentuale.TextButton = "%"
-      '
-      'netBtn_X
-      '
-      Me.netBtn_X.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_X.ColorBottom = System.Drawing.Color.Orange
-      Me.netBtn_X.ColorDisabled = System.Drawing.Color.LightSalmon
-      Me.netBtn_X.ColorLight = System.Drawing.SystemColors.HighlightText
-      Me.netBtn_X.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Custom
-      Me.netBtn_X.ColorText = System.Drawing.Color.Black
-      Me.netBtn_X.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_X.CornerRadius = 2
-      Me.netBtn_X.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_X.Location = New System.Drawing.Point(869, 518)
-      Me.netBtn_X.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_X.Name = "netBtn_X"
-      Me.netBtn_X.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_X.TabIndex = 29
-      Me.netBtn_X.TextButton = "X"
-      '
-      'netBtn_00
-      '
-      Me.netBtn_00.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_00.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_00.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_00.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_00.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_00.ColorText = System.Drawing.Color.Black
-      Me.netBtn_00.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_00.CornerRadius = 2
-      Me.netBtn_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_00.Location = New System.Drawing.Point(797, 622)
-      Me.netBtn_00.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_00.Name = "netBtn_00"
-      Me.netBtn_00.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_00.TabIndex = 36
-      Me.netBtn_00.TextButton = "00"
-      '
-      'netBtn_0
-      '
-      Me.netBtn_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_0.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_0.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_0.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_0.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_0.ColorText = System.Drawing.Color.Black
-      Me.netBtn_0.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_0.CornerRadius = 2
-      Me.netBtn_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_0.Location = New System.Drawing.Point(725, 622)
-      Me.netBtn_0.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_0.Name = "netBtn_0"
-      Me.netBtn_0.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_0.TabIndex = 35
-      Me.netBtn_0.TextButton = "0"
-      '
-      'netBtn_Virgola
-      '
-      Me.netBtn_Virgola.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_Virgola.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_Virgola.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_Virgola.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_Virgola.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_Virgola.ColorText = System.Drawing.Color.Black
-      Me.netBtn_Virgola.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_Virgola.CornerRadius = 2
-      Me.netBtn_Virgola.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_Virgola.Location = New System.Drawing.Point(653, 622)
-      Me.netBtn_Virgola.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_Virgola.Name = "netBtn_Virgola"
-      Me.netBtn_Virgola.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_Virgola.TabIndex = 34
-      Me.netBtn_Virgola.TextButton = ","
-      '
-      'netBtn_3
-      '
-      Me.netBtn_3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_3.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_3.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_3.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_3.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_3.ColorText = System.Drawing.Color.Black
-      Me.netBtn_3.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_3.CornerRadius = 2
-      Me.netBtn_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_3.Location = New System.Drawing.Point(797, 570)
-      Me.netBtn_3.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_3.Name = "netBtn_3"
-      Me.netBtn_3.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_3.TabIndex = 32
-      Me.netBtn_3.TextButton = "3"
-      '
-      'netBtn_2
-      '
-      Me.netBtn_2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_2.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_2.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_2.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_2.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_2.ColorText = System.Drawing.Color.Black
-      Me.netBtn_2.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_2.CornerRadius = 2
-      Me.netBtn_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_2.Location = New System.Drawing.Point(725, 570)
-      Me.netBtn_2.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_2.Name = "netBtn_2"
-      Me.netBtn_2.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_2.TabIndex = 31
-      Me.netBtn_2.TextButton = "2"
-      '
-      'netBtn_1
-      '
-      Me.netBtn_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_1.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_1.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_1.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_1.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_1.ColorText = System.Drawing.Color.Black
-      Me.netBtn_1.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_1.CornerRadius = 2
-      Me.netBtn_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_1.Location = New System.Drawing.Point(653, 570)
-      Me.netBtn_1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_1.Name = "netBtn_1"
-      Me.netBtn_1.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_1.TabIndex = 30
-      Me.netBtn_1.TextButton = "1"
-      '
-      'netBtn_6
-      '
-      Me.netBtn_6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_6.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_6.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_6.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_6.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_6.ColorText = System.Drawing.Color.Black
-      Me.netBtn_6.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_6.CornerRadius = 2
-      Me.netBtn_6.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_6.Location = New System.Drawing.Point(797, 518)
-      Me.netBtn_6.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_6.Name = "netBtn_6"
-      Me.netBtn_6.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_6.TabIndex = 28
-      Me.netBtn_6.TextButton = "6"
-      '
-      'netBtn_5
-      '
-      Me.netBtn_5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_5.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_5.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_5.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_5.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_5.ColorText = System.Drawing.Color.Black
-      Me.netBtn_5.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_5.CornerRadius = 2
-      Me.netBtn_5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_5.Location = New System.Drawing.Point(725, 518)
-      Me.netBtn_5.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_5.Name = "netBtn_5"
-      Me.netBtn_5.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_5.TabIndex = 27
-      Me.netBtn_5.TextButton = "5"
-      '
-      'netBtn_4
-      '
-      Me.netBtn_4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.netBtn_4.ColorBottom = System.Drawing.Color.RoyalBlue
-      Me.netBtn_4.ColorDisabled = System.Drawing.Color.SteelBlue
-      Me.netBtn_4.ColorLight = System.Drawing.Color.LightCyan
-      Me.netBtn_4.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
-      Me.netBtn_4.ColorText = System.Drawing.Color.Black
-      Me.netBtn_4.ColorTop = System.Drawing.Color.AliceBlue
-      Me.netBtn_4.CornerRadius = 2
-      Me.netBtn_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.netBtn_4.Location = New System.Drawing.Point(653, 518)
-      Me.netBtn_4.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-      Me.netBtn_4.Name = "netBtn_4"
-      Me.netBtn_4.Size = New System.Drawing.Size(71, 51)
-      Me.netBtn_4.TabIndex = 26
-      Me.netBtn_4.TextButton = "4"
-      '
-      'eui_cmdTastiera
-      '
-      Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdTastiera.Id = "f72ccff9-cedc-4702-9eba-e3fa4d014db8"
-      Me.eui_cmdTastiera.Location = New System.Drawing.Point(653, 728)
-      Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
-      Me.eui_cmdTastiera.ScreenTip.Caption = "Tastiera virtuale"
-      Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
-      Me.eui_cmdTastiera.Size = New System.Drawing.Size(80, 51)
-      Me.eui_cmdTastiera.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdTastiera.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdTastiera.TabIndex = 38
-      Me.eui_cmdTastiera.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-      '
-      'eui_cmdCancella
-      '
-      Me.eui_cmdCancella.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdCancella.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdCancella.Id = "ccec8484-50d6-4bb7-8a65-30c6a2687fd7"
-      Me.eui_cmdCancella.Location = New System.Drawing.Point(734, 728)
-      Me.eui_cmdCancella.Name = "eui_cmdCancella"
-      Me.eui_cmdCancella.Size = New System.Drawing.Size(206, 51)
-      Me.eui_cmdCancella.TabIndex = 39
-      Me.eui_cmdCancella.Text = "Cancella tutto"
-      '
-      'eui_cmdDocApertiSu
-      '
-      Me.eui_cmdDocApertiSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdDocApertiSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdDocApertiSu.Id = "6b059eae-beb8-459f-9f21-2d487ed272aa"
-      Me.eui_cmdDocApertiSu.Location = New System.Drawing.Point(148, 728)
-      Me.eui_cmdDocApertiSu.Name = "eui_cmdDocApertiSu"
-      Me.eui_cmdDocApertiSu.ScreenTip.Caption = "Tastiera virtuale"
-      Me.eui_cmdDocApertiSu.ScreenTip.Text = "Apre la tastiera virtuale."
-      Me.eui_cmdDocApertiSu.Size = New System.Drawing.Size(140, 51)
-      Me.eui_cmdDocApertiSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDocApertiSu.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdDocApertiSu.TabIndex = 7
-      '
-      'eui_cmdDocApertiGiù
-      '
-      Me.eui_cmdDocApertiGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdDocApertiGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdDocApertiGiù.Id = "3ebac6e2-30eb-41ab-a4a7-bae15468f153"
-      Me.eui_cmdDocApertiGiù.Location = New System.Drawing.Point(8, 728)
-      Me.eui_cmdDocApertiGiù.Name = "eui_cmdDocApertiGiù"
-      Me.eui_cmdDocApertiGiù.ScreenTip.Caption = "Tastiera virtuale"
-      Me.eui_cmdDocApertiGiù.ScreenTip.Text = "Apre la tastiera virtuale."
-      Me.eui_cmdDocApertiGiù.Size = New System.Drawing.Size(139, 51)
-      Me.eui_cmdDocApertiGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDocApertiGiù.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdDocApertiGiù.TabIndex = 6
-      '
-      'eui_cmdDettagliSu
-      '
-      Me.eui_cmdDettagliSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdDettagliSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdDettagliSu.Id = "fe8d24ea-75aa-4e10-a4cb-ce858d8dbf12"
-      Me.eui_cmdDettagliSu.Location = New System.Drawing.Point(517, 728)
-      Me.eui_cmdDettagliSu.Name = "eui_cmdDettagliSu"
-      Me.eui_cmdDettagliSu.ScreenTip.Caption = "Tastiera virtuale"
-      Me.eui_cmdDettagliSu.ScreenTip.Text = "Apre la tastiera virtuale."
-      Me.eui_cmdDettagliSu.Size = New System.Drawing.Size(128, 51)
-      Me.eui_cmdDettagliSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDettagliSu.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdDettagliSu.TabIndex = 11
-      '
-      'eui_cmdDettagliGiù
-      '
-      Me.eui_cmdDettagliGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdDettagliGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdDettagliGiù.Id = "36f1cf5e-85e8-4af3-993a-3ef9d4016630"
-      Me.eui_cmdDettagliGiù.Location = New System.Drawing.Point(298, 728)
-      Me.eui_cmdDettagliGiù.Name = "eui_cmdDettagliGiù"
-      Me.eui_cmdDettagliGiù.ScreenTip.Caption = "Tastiera virtuale"
-      Me.eui_cmdDettagliGiù.ScreenTip.Text = "Apre la tastiera virtuale."
-      Me.eui_cmdDettagliGiù.Size = New System.Drawing.Size(128, 51)
-      Me.eui_cmdDettagliGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDettagliGiù.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdDettagliGiù.TabIndex = 10
-      '
-      'Button10
-      '
-      Me.Button10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.eui_cmdTipoElenco.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdTipoElenco.Id = "0c1154fa-f012-4871-b06b-f4c01a6df540"
+        Me.eui_cmdTipoElenco.Location = New System.Drawing.Point(293, 26)
+        Me.eui_cmdTipoElenco.Name = "eui_cmdTipoElenco"
+        Me.eui_cmdTipoElenco.Size = New System.Drawing.Size(334, 34)
+        Me.eui_cmdTipoElenco.TabIndex = 8
+        Me.eui_cmdTipoElenco.Text = "Elenco completo"
+        '
+        'eui_cmdCliente
+        '
+        Me.eui_cmdCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdCliente.Id = "91912e10-0af0-4b35-92c4-aac862f9b961"
+        Me.eui_cmdCliente.Location = New System.Drawing.Point(632, 26)
+        Me.eui_cmdCliente.Name = "eui_cmdCliente"
+        Me.eui_cmdCliente.Size = New System.Drawing.Size(422, 34)
+        Me.eui_cmdCliente.TabIndex = 12
+        Me.eui_cmdCliente.Text = "Seleziona cliente"
+        '
+        'eui_cmdDivisioneAnalitica
+        '
+        Me.eui_cmdDivisioneAnalitica.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdDivisioneAnalitica.Id = "b80c0482-b699-4044-9f7f-d20376b95d72"
+        Me.eui_cmdDivisioneAnalitica.Location = New System.Drawing.Point(8, 145)
+        Me.eui_cmdDivisioneAnalitica.Name = "eui_cmdDivisioneAnalitica"
+        Me.eui_cmdDivisioneAnalitica.Size = New System.Drawing.Size(280, 34)
+        Me.eui_cmdDivisioneAnalitica.TabIndex = 3
+        Me.eui_cmdDivisioneAnalitica.Text = "&Divisione analitica"
+        Me.eui_cmdDivisioneAnalitica.Visible = False
+        '
+        'eui_cmdContanti
+        '
+        Me.eui_cmdContanti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdContanti.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdContanti.Id = "a450c693-540f-480d-a0cc-85da140f5dbf"
+        Me.eui_cmdContanti.Location = New System.Drawing.Point(632, 255)
+        Me.eui_cmdContanti.Name = "eui_cmdContanti"
+        Me.eui_cmdContanti.Size = New System.Drawing.Size(159, 32)
+        Me.eui_cmdContanti.TabIndex = 16
+        Me.eui_cmdContanti.Text = "Contanti"
+        '
+        'eui_cmdTipoPagamento
+        '
+        Me.eui_cmdTipoPagamento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdTipoPagamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdTipoPagamento.Id = "68ed8e14-f2d2-4fcf-b7e9-b96a2ab95848"
+        Me.eui_cmdTipoPagamento.Location = New System.Drawing.Point(632, 295)
+        Me.eui_cmdTipoPagamento.Name = "eui_cmdTipoPagamento"
+        Me.eui_cmdTipoPagamento.Size = New System.Drawing.Size(159, 32)
+        Me.eui_cmdTipoPagamento.TabIndex = 18
+        Me.eui_cmdTipoPagamento.Text = "Carte di credito"
+        '
+        'eui_cmdBuoni
+        '
+        Me.eui_cmdBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdBuoni.Id = "b6adb7f7-858a-491f-ac6e-9ab0305a328f"
+        Me.eui_cmdBuoni.Location = New System.Drawing.Point(632, 335)
+        Me.eui_cmdBuoni.Name = "eui_cmdBuoni"
+        Me.eui_cmdBuoni.Size = New System.Drawing.Size(159, 32)
+        Me.eui_cmdBuoni.TabIndex = 20
+        Me.eui_cmdBuoni.Text = "Buoni pasto"
+        '
+        'eui_cmdRicevuta
+        '
+        Me.eui_cmdRicevuta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdRicevuta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdRicevuta.Id = "20a6a06b-510e-4f11-a302-4d5b6d963889"
+        Me.eui_cmdRicevuta.Location = New System.Drawing.Point(925, 255)
+        Me.eui_cmdRicevuta.Name = "eui_cmdRicevuta"
+        Me.eui_cmdRicevuta.Size = New System.Drawing.Size(129, 61)
+        Me.eui_cmdRicevuta.TabIndex = 41
+        Me.eui_cmdRicevuta.Text = "Ricevuta Fiscale"
+        Me.eui_cmdRicevuta.WordWrap = True
+        '
+        'eui_cmdFattura
+        '
+        Me.eui_cmdFattura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdFattura.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdFattura.Id = "4f3f9c86-b0d0-4431-8de4-e3873c4d7c55"
+        Me.eui_cmdFattura.Location = New System.Drawing.Point(925, 324)
+        Me.eui_cmdFattura.Name = "eui_cmdFattura"
+        Me.eui_cmdFattura.Size = New System.Drawing.Size(129, 61)
+        Me.eui_cmdFattura.TabIndex = 42
+        Me.eui_cmdFattura.Text = "Fattura"
+        '
+        'eui_cmdProforma
+        '
+        Me.eui_cmdProforma.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdProforma.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdProforma.Id = "2ea56b5e-671a-43b3-8ad8-7ab81a602bb2"
+        Me.eui_cmdProforma.Location = New System.Drawing.Point(925, 393)
+        Me.eui_cmdProforma.Name = "eui_cmdProforma"
+        Me.eui_cmdProforma.Size = New System.Drawing.Size(129, 61)
+        Me.eui_cmdProforma.TabIndex = 43
+        Me.eui_cmdProforma.Text = "Proforma"
+        '
+        'eui_cmdScontrino
+        '
+        Me.eui_cmdScontrino.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdScontrino.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdScontrino.Id = "7e04d4eb-5141-450a-80d8-a3bc5f3a6183"
+        Me.eui_cmdScontrino.Location = New System.Drawing.Point(925, 462)
+        Me.eui_cmdScontrino.Name = "eui_cmdScontrino"
+        Me.eui_cmdScontrino.Size = New System.Drawing.Size(129, 61)
+        Me.eui_cmdScontrino.TabIndex = 44
+        Me.eui_cmdScontrino.Text = "Scontrino"
+        '
+        'eui_AddebitoSuRisorsa
+        '
+        Me.eui_AddebitoSuRisorsa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_AddebitoSuRisorsa.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_AddebitoSuRisorsa.Id = "6a87759a-b9e3-4a71-9907-e9f88099bbca"
+        Me.eui_AddebitoSuRisorsa.Location = New System.Drawing.Point(925, 600)
+        Me.eui_AddebitoSuRisorsa.Name = "eui_AddebitoSuRisorsa"
+        Me.eui_AddebitoSuRisorsa.Size = New System.Drawing.Size(129, 61)
+        Me.eui_AddebitoSuRisorsa.TabIndex = 45
+        Me.eui_AddebitoSuRisorsa.Text = "Addebita..."
+        Me.eui_AddebitoSuRisorsa.WordWrap = True
+        '
+        'eui_cmdEsci
+        '
+        Me.eui_cmdEsci.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdEsci.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.eui_cmdEsci.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdEsci.Id = "142ec9f4-717a-4e39-89b3-e61402042ebe"
+        Me.eui_cmdEsci.Location = New System.Drawing.Point(925, 663)
+        Me.eui_cmdEsci.Name = "eui_cmdEsci"
+        Me.eui_cmdEsci.Size = New System.Drawing.Size(129, 51)
+        Me.eui_cmdEsci.TabIndex = 46
+        Me.eui_cmdEsci.Text = "Esci"
+        '
+        'netBtn_DaPagare
+        '
+        Me.netBtn_DaPagare.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_DaPagare.ColorBottom = System.Drawing.Color.Orange
+        Me.netBtn_DaPagare.ColorDisabled = System.Drawing.Color.LightSalmon
+        Me.netBtn_DaPagare.ColorLight = System.Drawing.SystemColors.HighlightText
+        Me.netBtn_DaPagare.ColorText = System.Drawing.SystemColors.ControlText
+        Me.netBtn_DaPagare.ColorTop = System.Drawing.SystemColors.ControlLightLight
+        Me.netBtn_DaPagare.CornerRadius = 2
+        Me.netBtn_DaPagare.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_DaPagare.Location = New System.Drawing.Point(794, 187)
+        Me.netBtn_DaPagare.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_DaPagare.Name = "netBtn_DaPagare"
+        Me.netBtn_DaPagare.Size = New System.Drawing.Size(260, 62)
+        Me.netBtn_DaPagare.TabIndex = 285
+        Me.netBtn_DaPagare.TextButton = "25,50"
+        Me.netBtn_DaPagare.TextButtonAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'netBtn_C
+        '
+        Me.netBtn_C.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_C.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.netBtn_C.ColorDisabled = System.Drawing.Color.Brown
+        Me.netBtn_C.ColorLight = System.Drawing.Color.MistyRose
+        Me.netBtn_C.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Red
+        Me.netBtn_C.ColorText = System.Drawing.Color.Black
+        Me.netBtn_C.ColorTop = System.Drawing.Color.White
+        Me.netBtn_C.CornerRadius = 2
+        Me.netBtn_C.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_C.Location = New System.Drawing.Point(848, 454)
+        Me.netBtn_C.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_C.Name = "netBtn_C"
+        Me.netBtn_C.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_C.TabIndex = 25
+        Me.netBtn_C.TextButton = "C"
+        '
+        'netBtn_9
+        '
+        Me.netBtn_9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_9.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_9.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_9.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_9.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_9.ColorText = System.Drawing.Color.Black
+        Me.netBtn_9.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_9.CornerRadius = 2
+        Me.netBtn_9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_9.Location = New System.Drawing.Point(776, 454)
+        Me.netBtn_9.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_9.Name = "netBtn_9"
+        Me.netBtn_9.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_9.TabIndex = 24
+        Me.netBtn_9.TextButton = "9"
+        '
+        'netBtn_8
+        '
+        Me.netBtn_8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_8.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_8.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_8.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_8.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_8.ColorText = System.Drawing.Color.Black
+        Me.netBtn_8.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_8.CornerRadius = 2
+        Me.netBtn_8.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_8.Location = New System.Drawing.Point(704, 454)
+        Me.netBtn_8.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_8.Name = "netBtn_8"
+        Me.netBtn_8.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_8.TabIndex = 23
+        Me.netBtn_8.TextButton = "8"
+        '
+        'netBtn_7
+        '
+        Me.netBtn_7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_7.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_7.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_7.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_7.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_7.ColorText = System.Drawing.Color.Black
+        Me.netBtn_7.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_7.CornerRadius = 2
+        Me.netBtn_7.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_7.Location = New System.Drawing.Point(632, 454)
+        Me.netBtn_7.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_7.Name = "netBtn_7"
+        Me.netBtn_7.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_7.TabIndex = 22
+        Me.netBtn_7.TextButton = "7"
+        '
+        'netBtn_Ok
+        '
+        Me.netBtn_Ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_Ok.ColorBottom = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.netBtn_Ok.ColorDisabled = System.Drawing.Color.SeaGreen
+        Me.netBtn_Ok.ColorLight = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.netBtn_Ok.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Green
+        Me.netBtn_Ok.ColorText = System.Drawing.Color.Black
+        Me.netBtn_Ok.ColorTop = System.Drawing.Color.White
+        Me.netBtn_Ok.CornerRadius = 2
+        Me.netBtn_Ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_Ok.Location = New System.Drawing.Point(848, 610)
+        Me.netBtn_Ok.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_Ok.Name = "netBtn_Ok"
+        Me.netBtn_Ok.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_Ok.TabIndex = 37
+        Me.netBtn_Ok.TextButton = "OK"
+        '
+        'netBtn_Percentuale
+        '
+        Me.netBtn_Percentuale.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_Percentuale.ColorBottom = System.Drawing.Color.Orange
+        Me.netBtn_Percentuale.ColorDisabled = System.Drawing.Color.LightSalmon
+        Me.netBtn_Percentuale.ColorLight = System.Drawing.SystemColors.HighlightText
+        Me.netBtn_Percentuale.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Custom
+        Me.netBtn_Percentuale.ColorText = System.Drawing.Color.Black
+        Me.netBtn_Percentuale.ColorTop = System.Drawing.Color.White
+        Me.netBtn_Percentuale.CornerRadius = 2
+        Me.netBtn_Percentuale.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_Percentuale.Location = New System.Drawing.Point(848, 558)
+        Me.netBtn_Percentuale.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_Percentuale.Name = "netBtn_Percentuale"
+        Me.netBtn_Percentuale.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_Percentuale.TabIndex = 33
+        Me.netBtn_Percentuale.TextButton = "%"
+        '
+        'netBtn_X
+        '
+        Me.netBtn_X.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_X.ColorBottom = System.Drawing.Color.Orange
+        Me.netBtn_X.ColorDisabled = System.Drawing.Color.LightSalmon
+        Me.netBtn_X.ColorLight = System.Drawing.SystemColors.HighlightText
+        Me.netBtn_X.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Custom
+        Me.netBtn_X.ColorText = System.Drawing.Color.Black
+        Me.netBtn_X.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_X.CornerRadius = 2
+        Me.netBtn_X.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_X.Location = New System.Drawing.Point(848, 506)
+        Me.netBtn_X.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_X.Name = "netBtn_X"
+        Me.netBtn_X.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_X.TabIndex = 29
+        Me.netBtn_X.TextButton = "X"
+        '
+        'netBtn_00
+        '
+        Me.netBtn_00.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_00.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_00.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_00.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_00.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_00.ColorText = System.Drawing.Color.Black
+        Me.netBtn_00.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_00.CornerRadius = 2
+        Me.netBtn_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_00.Location = New System.Drawing.Point(776, 610)
+        Me.netBtn_00.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_00.Name = "netBtn_00"
+        Me.netBtn_00.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_00.TabIndex = 36
+        Me.netBtn_00.TextButton = "00"
+        '
+        'netBtn_0
+        '
+        Me.netBtn_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_0.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_0.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_0.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_0.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_0.ColorText = System.Drawing.Color.Black
+        Me.netBtn_0.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_0.CornerRadius = 2
+        Me.netBtn_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_0.Location = New System.Drawing.Point(704, 610)
+        Me.netBtn_0.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_0.Name = "netBtn_0"
+        Me.netBtn_0.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_0.TabIndex = 35
+        Me.netBtn_0.TextButton = "0"
+        '
+        'netBtn_Virgola
+        '
+        Me.netBtn_Virgola.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_Virgola.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_Virgola.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_Virgola.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_Virgola.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_Virgola.ColorText = System.Drawing.Color.Black
+        Me.netBtn_Virgola.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_Virgola.CornerRadius = 2
+        Me.netBtn_Virgola.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_Virgola.Location = New System.Drawing.Point(632, 610)
+        Me.netBtn_Virgola.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_Virgola.Name = "netBtn_Virgola"
+        Me.netBtn_Virgola.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_Virgola.TabIndex = 34
+        Me.netBtn_Virgola.TextButton = ","
+        '
+        'netBtn_3
+        '
+        Me.netBtn_3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_3.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_3.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_3.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_3.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_3.ColorText = System.Drawing.Color.Black
+        Me.netBtn_3.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_3.CornerRadius = 2
+        Me.netBtn_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_3.Location = New System.Drawing.Point(776, 558)
+        Me.netBtn_3.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_3.Name = "netBtn_3"
+        Me.netBtn_3.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_3.TabIndex = 32
+        Me.netBtn_3.TextButton = "3"
+        '
+        'netBtn_2
+        '
+        Me.netBtn_2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_2.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_2.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_2.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_2.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_2.ColorText = System.Drawing.Color.Black
+        Me.netBtn_2.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_2.CornerRadius = 2
+        Me.netBtn_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_2.Location = New System.Drawing.Point(704, 558)
+        Me.netBtn_2.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_2.Name = "netBtn_2"
+        Me.netBtn_2.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_2.TabIndex = 31
+        Me.netBtn_2.TextButton = "2"
+        '
+        'netBtn_1
+        '
+        Me.netBtn_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_1.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_1.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_1.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_1.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_1.ColorText = System.Drawing.Color.Black
+        Me.netBtn_1.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_1.CornerRadius = 2
+        Me.netBtn_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_1.Location = New System.Drawing.Point(632, 558)
+        Me.netBtn_1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_1.Name = "netBtn_1"
+        Me.netBtn_1.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_1.TabIndex = 30
+        Me.netBtn_1.TextButton = "1"
+        '
+        'netBtn_6
+        '
+        Me.netBtn_6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_6.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_6.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_6.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_6.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_6.ColorText = System.Drawing.Color.Black
+        Me.netBtn_6.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_6.CornerRadius = 2
+        Me.netBtn_6.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_6.Location = New System.Drawing.Point(776, 506)
+        Me.netBtn_6.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_6.Name = "netBtn_6"
+        Me.netBtn_6.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_6.TabIndex = 28
+        Me.netBtn_6.TextButton = "6"
+        '
+        'netBtn_5
+        '
+        Me.netBtn_5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_5.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_5.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_5.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_5.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_5.ColorText = System.Drawing.Color.Black
+        Me.netBtn_5.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_5.CornerRadius = 2
+        Me.netBtn_5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_5.Location = New System.Drawing.Point(704, 506)
+        Me.netBtn_5.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_5.Name = "netBtn_5"
+        Me.netBtn_5.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_5.TabIndex = 27
+        Me.netBtn_5.TextButton = "5"
+        '
+        'netBtn_4
+        '
+        Me.netBtn_4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.netBtn_4.ColorBottom = System.Drawing.Color.RoyalBlue
+        Me.netBtn_4.ColorDisabled = System.Drawing.Color.SteelBlue
+        Me.netBtn_4.ColorLight = System.Drawing.Color.LightCyan
+        Me.netBtn_4.ColorStyle = Softgroup.NetButton.NetButton.ColorStyleEnum.Blue
+        Me.netBtn_4.ColorText = System.Drawing.Color.Black
+        Me.netBtn_4.ColorTop = System.Drawing.Color.AliceBlue
+        Me.netBtn_4.CornerRadius = 2
+        Me.netBtn_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.netBtn_4.Location = New System.Drawing.Point(632, 506)
+        Me.netBtn_4.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.netBtn_4.Name = "netBtn_4"
+        Me.netBtn_4.Size = New System.Drawing.Size(71, 51)
+        Me.netBtn_4.TabIndex = 26
+        Me.netBtn_4.TextButton = "4"
+        '
+        'eui_cmdTastiera
+        '
+        Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdTastiera.Id = "f72ccff9-cedc-4702-9eba-e3fa4d014db8"
+        Me.eui_cmdTastiera.Location = New System.Drawing.Point(632, 663)
+        Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
+        Me.eui_cmdTastiera.ScreenTip.Caption = "Tastiera virtuale"
+        Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
+        Me.eui_cmdTastiera.Size = New System.Drawing.Size(80, 51)
+        Me.eui_cmdTastiera.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdTastiera.SmallImages.Images"), System.Drawing.Image))})
+        Me.eui_cmdTastiera.TabIndex = 38
+        Me.eui_cmdTastiera.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'eui_cmdCancella
+        '
+        Me.eui_cmdCancella.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdCancella.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdCancella.Id = "ccec8484-50d6-4bb7-8a65-30c6a2687fd7"
+        Me.eui_cmdCancella.Location = New System.Drawing.Point(713, 663)
+        Me.eui_cmdCancella.Name = "eui_cmdCancella"
+        Me.eui_cmdCancella.Size = New System.Drawing.Size(206, 51)
+        Me.eui_cmdCancella.TabIndex = 39
+        Me.eui_cmdCancella.Text = "Cancella tutto"
+        '
+        'eui_cmdDocApertiSu
+        '
+        Me.eui_cmdDocApertiSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdDocApertiSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdDocApertiSu.Id = "6b059eae-beb8-459f-9f21-2d487ed272aa"
+        Me.eui_cmdDocApertiSu.Location = New System.Drawing.Point(148, 663)
+        Me.eui_cmdDocApertiSu.Name = "eui_cmdDocApertiSu"
+        Me.eui_cmdDocApertiSu.ScreenTip.Caption = "Tastiera virtuale"
+        Me.eui_cmdDocApertiSu.ScreenTip.Text = "Apre la tastiera virtuale."
+        Me.eui_cmdDocApertiSu.Size = New System.Drawing.Size(140, 51)
+        Me.eui_cmdDocApertiSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDocApertiSu.SmallImages.Images"), System.Drawing.Image))})
+        Me.eui_cmdDocApertiSu.TabIndex = 7
+        '
+        'eui_cmdDocApertiGiù
+        '
+        Me.eui_cmdDocApertiGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdDocApertiGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdDocApertiGiù.Id = "3ebac6e2-30eb-41ab-a4a7-bae15468f153"
+        Me.eui_cmdDocApertiGiù.Location = New System.Drawing.Point(8, 663)
+        Me.eui_cmdDocApertiGiù.Name = "eui_cmdDocApertiGiù"
+        Me.eui_cmdDocApertiGiù.ScreenTip.Caption = "Tastiera virtuale"
+        Me.eui_cmdDocApertiGiù.ScreenTip.Text = "Apre la tastiera virtuale."
+        Me.eui_cmdDocApertiGiù.Size = New System.Drawing.Size(139, 51)
+        Me.eui_cmdDocApertiGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDocApertiGiù.SmallImages.Images"), System.Drawing.Image))})
+        Me.eui_cmdDocApertiGiù.TabIndex = 6
+        '
+        'eui_cmdDettagliSu
+        '
+        Me.eui_cmdDettagliSu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdDettagliSu.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdDettagliSu.Id = "fe8d24ea-75aa-4e10-a4cb-ce858d8dbf12"
+        Me.eui_cmdDettagliSu.Location = New System.Drawing.Point(498, 663)
+        Me.eui_cmdDettagliSu.Name = "eui_cmdDettagliSu"
+        Me.eui_cmdDettagliSu.ScreenTip.Caption = "Tastiera virtuale"
+        Me.eui_cmdDettagliSu.ScreenTip.Text = "Apre la tastiera virtuale."
+        Me.eui_cmdDettagliSu.Size = New System.Drawing.Size(128, 51)
+        Me.eui_cmdDettagliSu.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDettagliSu.SmallImages.Images"), System.Drawing.Image))})
+        Me.eui_cmdDettagliSu.TabIndex = 11
+        '
+        'eui_cmdDettagliGiù
+        '
+        Me.eui_cmdDettagliGiù.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdDettagliGiù.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdDettagliGiù.Id = "36f1cf5e-85e8-4af3-993a-3ef9d4016630"
+        Me.eui_cmdDettagliGiù.Location = New System.Drawing.Point(293, 663)
+        Me.eui_cmdDettagliGiù.Name = "eui_cmdDettagliGiù"
+        Me.eui_cmdDettagliGiù.ScreenTip.Caption = "Tastiera virtuale"
+        Me.eui_cmdDettagliGiù.ScreenTip.Text = "Apre la tastiera virtuale."
+        Me.eui_cmdDettagliGiù.Size = New System.Drawing.Size(128, 51)
+        Me.eui_cmdDettagliGiù.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdDettagliGiù.SmallImages.Images"), System.Drawing.Image))})
+        Me.eui_cmdDettagliGiù.TabIndex = 10
+        '
+        'Button10
+        '
+        Me.Button10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Button10.Id = "c3060643-24dd-41c0-ba02-8d7a62780804"
-      Me.Button10.Location = New System.Drawing.Point(427, 728)
-      Me.Button10.Name = "Button10"
-      Me.Button10.Size = New System.Drawing.Size(89, 51)
-      Me.Button10.TabIndex = 311
-      '
-      'Panel1
-      '
-      Me.Panel1.Controls.Add(Me.txtNome)
-      Me.Panel1.Controls.Add(Me.txtCognome)
-      Me.Panel1.Controls.Add(Me.Label11)
-      Me.Panel1.Controls.Add(Me.txtIndirizzo)
-      Me.Panel1.Controls.Add(Me.txtCittà)
-      Me.Panel1.Controls.Add(Me.txtCap)
-      Me.Panel1.Controls.Add(Me.txtProv)
-      Me.Panel1.Controls.Add(Me.txtPIva)
-      Me.Panel1.Controls.Add(Me.txtIva)
-      Me.Panel1.Controls.Add(Me.txtIdCliente)
-      Me.Panel1.Controls.Add(Me.txtIdAzienda)
-      Me.Panel1.Controls.Add(Me.Label19)
-      Me.Panel1.Controls.Add(Me.txtCodiceFiscale)
-      Me.Panel1.Controls.Add(Me.Label4)
-      Me.Panel1.Controls.Add(Me.Label16)
-      Me.Panel1.Controls.Add(Me.Label22)
-      Me.Panel1.Controls.Add(Me.Label20)
-      Me.Panel1.Controls.Add(Me.Label21)
-      Me.Panel1.Controls.Add(Me.Label5)
-      Me.Panel1.Controls.Add(Me.Label31)
-      Me.Panel1.Location = New System.Drawing.Point(301, 324)
-      Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(274, 318)
-      Me.Panel1.TabIndex = 316
-      Me.Panel1.Visible = False
-      '
-      'eui_cmdParcheggiaConto
-      '
-      Me.eui_cmdParcheggiaConto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdParcheggiaConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdParcheggiaConto.Id = "2d6cfcc8-f5e7-4f05-9936-774797ba8423"
-      Me.eui_cmdParcheggiaConto.Location = New System.Drawing.Point(945, 543)
-      Me.eui_cmdParcheggiaConto.Name = "eui_cmdParcheggiaConto"
-      Me.eui_cmdParcheggiaConto.Size = New System.Drawing.Size(129, 61)
-      Me.eui_cmdParcheggiaConto.TabIndex = 40
-      Me.eui_cmdParcheggiaConto.Text = "Parcheggia"
-      Me.eui_cmdParcheggiaConto.WordWrap = True
-      '
-      'eui_cmdSconto
-      '
-      Me.eui_cmdSconto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdSconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdSconto.Id = "af624721-0eba-4ecf-9887-41bd67ac3498"
-      Me.eui_cmdSconto.Location = New System.Drawing.Point(653, 118)
-      Me.eui_cmdSconto.Name = "eui_cmdSconto"
-      Me.eui_cmdSconto.Size = New System.Drawing.Size(159, 32)
-      Me.eui_cmdSconto.TabIndex = 47
-      Me.eui_cmdSconto.Text = "Sconto"
-      '
-      'eui_cmdServizio
-      '
-      Me.eui_cmdServizio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdServizio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdServizio.Id = "0d2509f2-ce52-40bd-9707-78fed2a54d27"
-      Me.eui_cmdServizio.Location = New System.Drawing.Point(653, 158)
-      Me.eui_cmdServizio.Name = "eui_cmdServizio"
-      Me.eui_cmdServizio.Size = New System.Drawing.Size(159, 32)
-      Me.eui_cmdServizio.TabIndex = 48
-      Me.eui_cmdServizio.Text = "Servizio"
-      '
-      'ContoPos
-      '
-      Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
-      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(1122, 828)
-      Me.Controls.Add(Me.eui_cmdServizio)
-      Me.Controls.Add(Me.eui_cmdSconto)
-      Me.Controls.Add(Me.eui_cmdParcheggiaConto)
-      Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.lstvDettagliTemp)
-      Me.Controls.Add(Me.lstvDettagliCopia)
-      Me.Controls.Add(Me.Button10)
-      Me.Controls.Add(Me.eui_cmdDettagliSu)
-      Me.Controls.Add(Me.eui_cmdDettagliGiù)
-      Me.Controls.Add(Me.eui_cmdDocApertiSu)
-      Me.Controls.Add(Me.eui_cmdDocApertiGiù)
-      Me.Controls.Add(Me.eui_cmdCancella)
-      Me.Controls.Add(Me.eui_cmdTastiera)
-      Me.Controls.Add(Me.netBtn_C)
-      Me.Controls.Add(Me.netBtn_9)
-      Me.Controls.Add(Me.netBtn_8)
-      Me.Controls.Add(Me.netBtn_7)
-      Me.Controls.Add(Me.netBtn_Ok)
-      Me.Controls.Add(Me.netBtn_Percentuale)
-      Me.Controls.Add(Me.netBtn_X)
-      Me.Controls.Add(Me.netBtn_00)
-      Me.Controls.Add(Me.netBtn_0)
-      Me.Controls.Add(Me.netBtn_Virgola)
-      Me.Controls.Add(Me.netBtn_3)
-      Me.Controls.Add(Me.netBtn_2)
-      Me.Controls.Add(Me.netBtn_1)
-      Me.Controls.Add(Me.netBtn_6)
-      Me.Controls.Add(Me.netBtn_5)
-      Me.Controls.Add(Me.netBtn_4)
-      Me.Controls.Add(Me.netBtn_DaPagare)
-      Me.Controls.Add(Me.eui_cmdEsci)
-      Me.Controls.Add(Me.eui_AddebitoSuRisorsa)
-      Me.Controls.Add(Me.eui_cmdScontrino)
-      Me.Controls.Add(Me.eui_cmdProforma)
-      Me.Controls.Add(Me.eui_cmdFattura)
-      Me.Controls.Add(Me.eui_cmdRicevuta)
-      Me.Controls.Add(Me.eui_cmdBuoni)
-      Me.Controls.Add(Me.eui_cmdTipoPagamento)
-      Me.Controls.Add(Me.eui_cmdContanti)
-      Me.Controls.Add(Me.eui_cmdCliente)
-      Me.Controls.Add(Me.eui_cmdTipoElenco)
-      Me.Controls.Add(Me.eui_cmdTipoConto)
-      Me.Controls.Add(Me.lstvDettagliCompatto)
-      Me.Controls.Add(Me.Label18)
-      Me.Controls.Add(Me.lstvElencoDocAperti)
-      Me.Controls.Add(Me.txtQuotaPersona)
-      Me.Controls.Add(Me.txtTotDividere)
-      Me.Controls.Add(Me.txtNumDoc)
-      Me.Controls.Add(Me.lblQuotaPersona)
-      Me.Controls.Add(Me.Label15)
-      Me.Controls.Add(Me.Label14)
-      Me.Controls.Add(Me.Label13)
-      Me.Controls.Add(Me.txtCoperto)
-      Me.Controls.Add(Me.Label12)
-      Me.Controls.Add(Me.lstvDatiBuoni)
-      Me.Controls.Add(Me.txtBuoni)
-      Me.Controls.Add(Me.txtResto)
-      Me.Controls.Add(Me.txtSospeso)
-      Me.Controls.Add(Me.txtCartaCredito)
-      Me.Controls.Add(Me.txtContanti)
-      Me.Controls.Add(Me.txtServizio)
-      Me.Controls.Add(Me.txtValSconto)
-      Me.Controls.Add(Me.txtTotaleConto)
-      Me.Controls.Add(Me.lstvDettagli)
-      Me.Controls.Add(Me.dtpData)
-      Me.Controls.Add(Me.Label8)
-      Me.Controls.Add(Me.Label7)
-      Me.Controls.Add(Me.Label6)
-      Me.Controls.Add(Me.Label1)
-      Me.Controls.Add(Me.Label3)
-      Me.Controls.Add(Me.eui_cmdDivisioneAnalitica)
-      Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.MinimizeBox = False
-      Me.Name = "ContoPos"
-      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      Me.Text = "DETTAGLI CONTO"
-      Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-      Me.Panel1.ResumeLayout(False)
-      Me.Panel1.PerformLayout()
-      Me.ResumeLayout(False)
-      Me.PerformLayout()
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Id = "c3060643-24dd-41c0-ba02-8d7a62780804"
+        Me.Button10.Location = New System.Drawing.Point(422, 663)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(75, 51)
+        Me.Button10.TabIndex = 311
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtNome)
+        Me.Panel1.Controls.Add(Me.txtCognome)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.txtIndirizzo)
+        Me.Panel1.Controls.Add(Me.txtCittà)
+        Me.Panel1.Controls.Add(Me.txtCap)
+        Me.Panel1.Controls.Add(Me.txtProv)
+        Me.Panel1.Controls.Add(Me.txtPIva)
+        Me.Panel1.Controls.Add(Me.txtIva)
+        Me.Panel1.Controls.Add(Me.txtIdCliente)
+        Me.Panel1.Controls.Add(Me.txtIdAzienda)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.txtCodiceFiscale)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label22)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label31)
+        Me.Panel1.Location = New System.Drawing.Point(296, 312)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(274, 318)
+        Me.Panel1.TabIndex = 316
+        Me.Panel1.Visible = False
+        '
+        'eui_cmdParcheggiaConto
+        '
+        Me.eui_cmdParcheggiaConto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdParcheggiaConto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdParcheggiaConto.Id = "2d6cfcc8-f5e7-4f05-9936-774797ba8423"
+        Me.eui_cmdParcheggiaConto.Location = New System.Drawing.Point(924, 531)
+        Me.eui_cmdParcheggiaConto.Name = "eui_cmdParcheggiaConto"
+        Me.eui_cmdParcheggiaConto.Size = New System.Drawing.Size(129, 61)
+        Me.eui_cmdParcheggiaConto.TabIndex = 40
+        Me.eui_cmdParcheggiaConto.Text = "Parcheggia"
+        Me.eui_cmdParcheggiaConto.WordWrap = True
+        '
+        'eui_cmdSconto
+        '
+        Me.eui_cmdSconto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdSconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdSconto.Id = "af624721-0eba-4ecf-9887-41bd67ac3498"
+        Me.eui_cmdSconto.Location = New System.Drawing.Point(632, 106)
+        Me.eui_cmdSconto.Name = "eui_cmdSconto"
+        Me.eui_cmdSconto.Size = New System.Drawing.Size(159, 32)
+        Me.eui_cmdSconto.TabIndex = 47
+        Me.eui_cmdSconto.Text = "Sconto"
+        '
+        'eui_cmdServizio
+        '
+        Me.eui_cmdServizio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmdServizio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdServizio.Id = "0d2509f2-ce52-40bd-9707-78fed2a54d27"
+        Me.eui_cmdServizio.Location = New System.Drawing.Point(632, 146)
+        Me.eui_cmdServizio.Name = "eui_cmdServizio"
+        Me.eui_cmdServizio.Size = New System.Drawing.Size(159, 32)
+        Me.eui_cmdServizio.TabIndex = 48
+        Me.eui_cmdServizio.Text = "Servizio"
+        '
+        'ContoPos
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(9, 22)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ClientSize = New System.Drawing.Size(1062, 720)
+        Me.Controls.Add(Me.eui_cmdServizio)
+        Me.Controls.Add(Me.eui_cmdSconto)
+        Me.Controls.Add(Me.eui_cmdParcheggiaConto)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.lstvDettagliTemp)
+        Me.Controls.Add(Me.lstvDettagliCopia)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.eui_cmdDettagliSu)
+        Me.Controls.Add(Me.eui_cmdDettagliGiù)
+        Me.Controls.Add(Me.eui_cmdDocApertiSu)
+        Me.Controls.Add(Me.eui_cmdDocApertiGiù)
+        Me.Controls.Add(Me.eui_cmdCancella)
+        Me.Controls.Add(Me.eui_cmdTastiera)
+        Me.Controls.Add(Me.netBtn_C)
+        Me.Controls.Add(Me.netBtn_9)
+        Me.Controls.Add(Me.netBtn_8)
+        Me.Controls.Add(Me.netBtn_7)
+        Me.Controls.Add(Me.netBtn_Ok)
+        Me.Controls.Add(Me.netBtn_Percentuale)
+        Me.Controls.Add(Me.netBtn_X)
+        Me.Controls.Add(Me.netBtn_00)
+        Me.Controls.Add(Me.netBtn_0)
+        Me.Controls.Add(Me.netBtn_Virgola)
+        Me.Controls.Add(Me.netBtn_3)
+        Me.Controls.Add(Me.netBtn_2)
+        Me.Controls.Add(Me.netBtn_1)
+        Me.Controls.Add(Me.netBtn_6)
+        Me.Controls.Add(Me.netBtn_5)
+        Me.Controls.Add(Me.netBtn_4)
+        Me.Controls.Add(Me.netBtn_DaPagare)
+        Me.Controls.Add(Me.eui_cmdEsci)
+        Me.Controls.Add(Me.eui_AddebitoSuRisorsa)
+        Me.Controls.Add(Me.eui_cmdScontrino)
+        Me.Controls.Add(Me.eui_cmdProforma)
+        Me.Controls.Add(Me.eui_cmdFattura)
+        Me.Controls.Add(Me.eui_cmdRicevuta)
+        Me.Controls.Add(Me.eui_cmdBuoni)
+        Me.Controls.Add(Me.eui_cmdTipoPagamento)
+        Me.Controls.Add(Me.eui_cmdContanti)
+        Me.Controls.Add(Me.eui_cmdCliente)
+        Me.Controls.Add(Me.eui_cmdTipoElenco)
+        Me.Controls.Add(Me.eui_cmdTipoConto)
+        Me.Controls.Add(Me.lstvDettagliCompatto)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.lstvElencoDocAperti)
+        Me.Controls.Add(Me.txtQuotaPersona)
+        Me.Controls.Add(Me.txtTotDividere)
+        Me.Controls.Add(Me.txtNumDoc)
+        Me.Controls.Add(Me.lblQuotaPersona)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.txtCoperto)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.lstvDatiBuoni)
+        Me.Controls.Add(Me.txtBuoni)
+        Me.Controls.Add(Me.txtResto)
+        Me.Controls.Add(Me.txtSospeso)
+        Me.Controls.Add(Me.txtCartaCredito)
+        Me.Controls.Add(Me.txtContanti)
+        Me.Controls.Add(Me.txtServizio)
+        Me.Controls.Add(Me.txtValSconto)
+        Me.Controls.Add(Me.txtTotaleConto)
+        Me.Controls.Add(Me.lstvDettagli)
+        Me.Controls.Add(Me.dtpData)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.eui_cmdDivisioneAnalitica)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimizeBox = False
+        Me.Name = "ContoPos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "DETTAGLI CONTO"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-   End Sub
+    End Sub
 
 #End Region
 
-   Public Function CreaFileScontrinoWPOS1() As Boolean
+    Public Function CreaFileScontrinoWPOS1() As Boolean
       Try
          Dim SR_DATI_TEST As String = "SR_DATI_TEST.TXT"
          Dim SR_DATI As String = "SR_DATI."
@@ -4862,6 +4862,10 @@ Public Class ContoPos
 
             ' Salva i dati per la moltiplicazione.
             If moltiplica = False Then
+               If ctrl.Text = VALORE_ZERO Then
+                  ctrl.Text = String.Empty
+               End If
+
                ctrl.Text = ctrl.Text & net_Btn.TextButton
                op1 = Convert.ToDouble(ctrl.Text)
             Else
@@ -4872,6 +4876,8 @@ Public Class ContoPos
                ctrl.Text = ctrl.Text & net_Btn.TextButton
                op2 = Convert.ToDouble(ctrl.Text)
             End If
+
+            formatta = False
 
             ctrl.Focus()
          End If
@@ -6962,4 +6968,5 @@ Public Class ContoPos
       End Try
 
    End Sub
+
 End Class

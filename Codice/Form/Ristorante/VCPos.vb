@@ -3987,58 +3987,96 @@ Public Class frmPos
    End Function
 
    Private Sub SalvaStatistiche(ByVal rifDoc As Boolean)
-
       Try
-         Dim i As Integer
-         For i = 0 To lstvDettagli.Items.Count - 1
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         Dim IdCameriere As Integer
+         Dim NomeCameriere As String
+         Dim Spettanza As String
+         Dim Gruppo As Short
 
-            With Stat
-               ' TODO: Modifcare procedure della Classe e rimuovere FormattApici.
+         cn.Open()
 
-               ' Assegna i dati dei campi della classe alle caselle di testo.
-               .Data = CStr(dtpData.Value.Date)
-               If rifDoc = True Then
-                  ' Salva un riferimento Id del documento per il comando Annulla documento.
-                  .IdCategoria = LeggiUltimoRecord("Documenti").ToString ' Salva un riferimento Id del documento.
-               Else
-                  .IdCategoria = "0"
-               End If
+         Dim cmd As New OleDbCommand("SELECT * FROM CamerieriTavolo WHERE IdTavolo = " & idTavolo, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-               ' Se non esiste un valore per il campo Descrizione Categoria.
-               If lstvDettagli.Items(i).SubItems(6).Text = String.Empty Then
-                  .DesCategoria = VALORE_NESSUNA
-               Else
-                  .DesCategoria = FormattaApici(lstvDettagli.Items(i).SubItems(6).Text)
-               End If
+         Do While dr.Read()
+            ' IdCameriere.
+            If IsDBNull(dr.Item("IdCameriere")) = False Then
+               IdCameriere = dr.Item("IdCameriere").ToString
+            Else
+               IdCameriere = 0
+            End If
+            ' Nome Cameriere.
+            If IsDBNull(dr.Item("Nome")) = False Then
+               NomeCameriere = dr.Item("Nome").ToString
+            Else
+               NomeCameriere = String.Empty
+            End If
+            ' Spettanza.
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               Spettanza = dr.Item("Spettanza").ToString
+            Else
+               Spettanza = VALORE_ZERO
+            End If
+            ' Gruppo.
+            If IsDBNull(dr.Item("Gruppo")) = False Then
+               Gruppo = dr.Item("Gruppo").ToString
+            Else
+               Gruppo = GruppoCamerieri.Altri
+            End If
 
-               .IdPiatto = lstvDettagli.Items(i).SubItems(5).Text
-               .DesPiatto = FormattaApici(lstvDettagli.Items(i).SubItems(2).Text)
-               .IdTavolo = idTavolo.ToString
-               .DesTavolo = nomeTavolo
-               .IdCameriere = LeggiIdCameriere(TAB_CAMERIERI, nomeCameriereDoc)
-               .DesCameriere = nomeCameriereDoc
+            Dim i As Integer
+            For i = 0 To lstvDettagli.Items.Count - 1
+               With Stat
+                  ' TODO: Modifcare procedure della Classe e rimuovere FormattApici.
 
-               If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
-                  .Quantità = Convert.ToDouble(lstvDettagli.Items(i).SubItems(1).Text)
-               Else
-                  .Quantità = 1
-               End If
+                  ' Assegna i dati dei campi della classe alle caselle di testo.
+                  .Data = CStr(dtpData.Value.Date)
+                  If rifDoc = True Then
+                     ' Salva un riferimento Id del documento per il comando Annulla documento.
+                     .IdCategoria = LeggiUltimoRecord("Documenti").ToString ' Salva un riferimento Id del documento.
+                  Else
+                     .IdCategoria = "0"
+                  End If
 
-               .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
-               .Importo = lstvDettagli.Items(i).SubItems(3).Text
-               .SpettanzaCameriere = CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text))
-               .Contabilizzata = "No"
+                  ' Se non esiste un valore per il campo Descrizione Categoria.
+                  If lstvDettagli.Items(i).SubItems(6).Text = String.Empty Then
+                     .DesCategoria = VALORE_NESSUNA
+                  Else
+                     .DesCategoria = FormattaApici(lstvDettagli.Items(i).SubItems(6).Text)
+                  End If
 
-               .InserisciDati(TAB_STATISTICHE)
+                  .IdPiatto = lstvDettagli.Items(i).SubItems(5).Text
+                  .DesPiatto = FormattaApici(lstvDettagli.Items(i).SubItems(2).Text)
+                  .IdTavolo = idTavolo.ToString
+                  .DesTavolo = nomeTavolo
+                  .IdCameriere = IdCameriere 'LeggiIdCameriere(TAB_CAMERIERI, nomeCameriereDoc)
+                  .DesCameriere = NomeCameriere 'nomeCameriereDoc
 
-               ' B_TODO: Modifica per Retail.
-               If IsNothing(g_frmStatistiche) = False Then
-                  ' Aggiorna la griglia dati.
-                  g_frmStatistiche.AggiornaDati()
-               End If
+                  If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
+                     .Quantità = Convert.ToDouble(lstvDettagli.Items(i).SubItems(1).Text)
+                  Else
+                     .Quantità = 1
+                  End If
 
-            End With
-         Next
+                  .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
+                  .Importo = lstvDettagli.Items(i).SubItems(3).Text
+                  .SpettanzaCameriere = Spettanza 'CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text))
+                  .GruppoCameriere = Gruppo
+                  .Contabilizzata = "No"
+
+                  .InserisciDati(TAB_STATISTICHE)
+
+                  ' B_TODO: Modifica per Retail.
+                  If IsNothing(g_frmStatistiche) = False Then
+                     ' Aggiorna la griglia dati.
+                     g_frmStatistiche.AggiornaDati()
+                  End If
+
+               End With
+            Next
+         Loop
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -4679,7 +4717,7 @@ Public Class frmPos
 
          ' Modifica lo stato del tavolo nel database. 
          g_frmVCTavoli.modificatoStatoTavolo = g_frmVCTavoli.ModificaStatoTavolo(g_frmVCTavoli.ANAG_TAVOLI, g_frmVCTavoli.Risorsa(g_frmVCTavoli.tavoloSelezionato).Name,
-                                               g_frmVCTavoli.TAVOLO_DA_LIBERARE, String.Empty, String.Empty)
+                                               g_frmVCTavoli.TAVOLO_DA_LIBERARE, String.Empty, "0", String.Empty)
 
          ' Elimina le comande del tavolo nel database.
          g_frmVCTavoli.EliminaComandeTavolo(g_frmVCTavoli.Risorsa(g_frmVCTavoli.tavoloSelezionato).Name)

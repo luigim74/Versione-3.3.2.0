@@ -10744,6 +10744,9 @@ Friend Class frmMain
          Else
             ' Visualizza le varie funzionalità in base ai moduli installati.
             ImpostaModuli()
+
+            ' TODO_A: NIGHT_CLUB x Namar Srl - DA RIMUOVERE!
+            moduloAttivo.NightClub = True
          End If
 
          DatiConfig = New AppConfig

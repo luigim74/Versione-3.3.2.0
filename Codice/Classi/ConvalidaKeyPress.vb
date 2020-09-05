@@ -67,6 +67,23 @@ Public Class ConvalidaKeyPress
       End Try
    End Function
 
+   Public Function DigitaSoloNumeriTelefono(ByVal carattere As String) As Boolean
+      ' Accetta solo numeri o punteggiatura
+      Try
+         If Not (Char.IsDigit(carattere)) Then
+            If Not Char.IsControl(carattere) Then
+               If Not carattere = "+" Then
+                  Return True
+               End If
+            End If
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Function
+
    Public Function KeyReturn(ByVal carattere As String) As Boolean
       ' Verifica se è stato premuto il tasto INVIO.
       Try
