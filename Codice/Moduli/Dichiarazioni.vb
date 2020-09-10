@@ -367,6 +367,7 @@ Module Dichiarazioni
    Public Const CAR_ANAG_TAVOLI As String = "Attendere prego. Caricamento dell'elenco Tavoli in corso..."
    Public Const CAR_ANAG_CAT_PIATTI As String = "Attendere prego. Caricamento dell'elenco Categorie piatti in corso..."
    Public Const CAR_ANAG_CAMERIERI As String = "Attendere prego. Caricamento dell'elenco Camerieri in corso..."
+   Public Const CAR_ANAG_AGENZIE_CAMERIERI As String = "Attendere prego. Caricamento dell'elenco Agenzie camerieri in corso..."
    Public Const CAR_ANAG_SALE As String = "Attendere prego. Caricamento dell'elenco Sale in corso..."
    Public Const CAR_SITUAZIONE_SCORTE As String = "Attendere prego. Caricamento dell'elenco Situazione Scorte in corso..."
    Public Const CAR_MOV_MAG As String = "Attendere prego. Caricamento dell'elenco Movimenti di magazzino in corso..."
@@ -673,6 +674,7 @@ Module Dichiarazioni
       Public Amministratore As String
       Public AnagAziende As String
       Public AnagCamerieri As String
+      Public AnagAgenzieCamerieri As String
       Public AnagCatPiatti As String
       Public AnagClienti As String
       Public AnagDatiAzienda As String
@@ -1181,11 +1183,6 @@ Module Dichiarazioni
       Privato = 2
    End Enum
 
-   Public Enum GruppoCamerieri As Short
-      Predefinito = 1
-      Altri = 2
-   End Enum
-
    ' Tipologia di Planning per le Risorse Sportive.
    Public Const PLANNING_1 As String = "Planning 1 - (Inizio ore: 6:00 - Prenotazione minima mezz'ora)"
    Public Const PLANNING_2 As String = "Planning 2 - (Inizio ore: 6:45 - Prenotazione minima un'ora)"
@@ -1210,7 +1207,11 @@ Module Dichiarazioni
    Public GestioneTavoliATempo As Boolean = False
    Public MinutiOccupazioneTavolo As Integer = MINUTI_TAVOLO
    Public DenominazioneCamerieri As String = DENOMINAZIONE_CAMERIERI
+
    ' TODO: NIGHT_CLUB
    Public TimerIncrementale As Boolean = False
+
+   Public Const CAMERIERE_PREDEFINITO As String = "Predefinito"
+   Public Const CAMERIERE_ALTRI As String = "Altri"
 
 End Module

@@ -782,41 +782,6 @@ Module Procedure
       End Try
    End Sub
 
-   Public Function LeggiSpettanzaCameriere(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String) As Double
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idPiatto, cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-         Dim spettanza As Double
-         Dim totaleSpettanza As Double
-
-         Do While dr.Read()
-            If IsDBNull(dr.Item("Spettanza")) = False Then
-               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
-               totaleSpettanza = spettanza * quantità
-
-               Return totaleSpettanza
-            Else
-               Return 0
-            End If
-         Loop
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return 0
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
    Public Function LeggiDescrizioneCamera(ByVal numero As String, ByVal tabella As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
@@ -868,6 +833,81 @@ Module Procedure
 
       End Try
    End Function
+
+   Public Function LeggiSpettanzaCameriere(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String) As Double
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idPiatto, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim spettanza As Double
+         Dim totaleSpettanza As Double
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
+               totaleSpettanza = spettanza * quantità
+
+               Return totaleSpettanza
+            Else
+               Return 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function CalcolaSpettanzaCamerieri(ByVal idTavolo As Integer, ByVal numCamerieri As Integer, ByVal Optional lista As ListView = Nothing) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim valSpettanza As Double
+      Dim totaleSpettanza As Double
+
+      Try
+         If IsNothing(lista) = True Then
+            cn.Open()
+
+            Dim cmd As New OleDbCommand("SELECT * FROM Comande WHERE IdRisorsa = " & idTavolo, cn)
+            Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+            Do While dr.Read()
+               valSpettanza = LeggiSpettanzaCameriere("Piatti", dr.Item("IdPiatto").ToString, dr.Item("Quantità").ToString)
+               totaleSpettanza = totaleSpettanza + valSpettanza
+            Loop
+         Else
+            Dim i As Integer
+            For i = 0 To lista.Items.Count - 1
+               valSpettanza = LeggiSpettanzaCameriere("Piatti", lista.Items(i).SubItems(5).Text, lista.Items(i).SubItems(1).Text)
+               totaleSpettanza = totaleSpettanza + valSpettanza
+            Next
+         End If
+
+         totaleSpettanza = totaleSpettanza / numCamerieri
+
+         Return CFormatta.FormattaNumeroDouble(totaleSpettanza)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
 
    Public Function LeggiProvinciaComune(ByVal comune As String) As String
       ' Dichiara un oggetto connessione.

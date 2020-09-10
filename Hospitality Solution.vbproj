@@ -592,6 +592,9 @@
     <Compile Include="Codice\Form\Hospitality\Acquisti.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Form\Ristorante\AgenzieCamerieri.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Hospitality\App.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -1846,6 +1849,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\Acquisti.resx">
       <DependentUpon>Acquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Ristorante\AgenzieCamerieri.resx">
+      <DependentUpon>AgenzieCamerieri.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\App.resx">
       <DependentUpon>App.vb</DependentUpon>

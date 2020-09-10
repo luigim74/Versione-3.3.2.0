@@ -479,6 +479,7 @@ Friend Class frmMain
    Friend WithEvents eui_Strumenti_Documenti_Scontrino As Button
    Friend WithEvents eui_Strumenti_Documenti_Sep2 As Separator
    Friend WithEvents eui_cmdArchiviTabelleSconti As Button
+   Friend WithEvents eui_cmdArchiviAnagraficheAgenzieCamerieri As Button
    Friend WithEvents eui_cmdGestionePrenRisorse As Elegant.Ui.Button
 
    <System.Diagnostics.DebuggerStepThrough()>
@@ -767,6 +768,7 @@ Friend Class frmMain
       Me.sepReparti = New Elegant.Ui.Separator()
       Me.eui_cmdArchiviTabelleCausaliDoc = New Elegant.Ui.Button()
       Me.eui_cmdArchiviTabellePagamenti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleSconti = New Elegant.Ui.Button()
       Me.Separator8 = New Elegant.Ui.Separator()
       Me.eui_cmdArchiviTabelleListini = New Elegant.Ui.Button()
       Me.eui_cmdArchiviTabelleStagioni = New Elegant.Ui.Button()
@@ -930,7 +932,7 @@ Friend Class frmMain
       Me.RibbonTabPage1 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage4 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage5 = New Elegant.Ui.RibbonTabPage()
-      Me.eui_cmdArchiviTabelleSconti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri = New Elegant.Ui.Button()
       themeSelector = New Elegant.Ui.ThemeSelector(Me.components)
       CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit
       CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit
@@ -1272,12 +1274,12 @@ Friend Class frmMain
       Me.eui_cmdGestionePosCassa.Id = "2a0132b8-0107-4236-8d6f-397ae32b3f0c"
       Me.eui_cmdGestionePosCassa.KeyTip = "PC"
       Me.eui_cmdGestionePosCassa.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestionePosCassa.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestionePosCassa.Location = New System.Drawing.Point(4, 2)
+      Me.eui_cmdGestionePosCassa.Location = New System.Drawing.Point(9, 2)
       Me.eui_cmdGestionePosCassa.Name = "eui_cmdGestionePosCassa"
       Me.eui_cmdGestionePosCassa.ScreenTip.Caption = "Punto cassa (F2)"
       Me.eui_cmdGestionePosCassa.ScreenTip.Text = "Apre il Punto cassa per la vendita dei piatti con gestione del Conto immediato."
       Me.eui_GruppoPos.SetShortcutKeys(Me.eui_cmdGestionePosCassa, System.Windows.Forms.Keys.F2)
-      Me.eui_cmdGestionePosCassa.Size = New System.Drawing.Size(42, 72)
+      Me.eui_cmdGestionePosCassa.Size = New System.Drawing.Size(68, 0)
       Me.eui_cmdGestionePosCassa.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestionePosCassa.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestionePosCassa.TabIndex = 0
       Me.eui_cmdGestionePosCassa.Text = "Punto cassa"
@@ -1309,7 +1311,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1006, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1014, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -1616,7 +1618,7 @@ Friend Class frmMain
       Me.Label9.ForeColor = System.Drawing.Color.DimGray
       Me.Label9.Location = New System.Drawing.Point(144, 544)
       Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(206, 16)
+      Me.Label9.Size = New System.Drawing.Size(201, 16)
       Me.Label9.TabIndex = 14
       Me.Label9.Text = "Compatta e ripristina archivi"
       '
@@ -1636,7 +1638,7 @@ Friend Class frmMain
       Me.Label7.ForeColor = System.Drawing.Color.DimGray
       Me.Label7.Location = New System.Drawing.Point(144, 408)
       Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(146, 16)
+      Me.Label7.Size = New System.Drawing.Size(143, 16)
       Me.Label7.TabIndex = 12
       Me.Label7.Text = "Pulizia degli archivi"
       '
@@ -1656,7 +1658,7 @@ Friend Class frmMain
       Me.Label5.ForeColor = System.Drawing.Color.DimGray
       Me.Label5.Location = New System.Drawing.Point(144, 280)
       Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(119, 16)
+      Me.Label5.Size = New System.Drawing.Size(116, 16)
       Me.Label5.TabIndex = 10
       Me.Label5.Text = "Backup dei dati"
       '
@@ -1721,7 +1723,7 @@ Friend Class frmMain
       Me.Label2.ForeColor = System.Drawing.Color.DimGray
       Me.Label2.Location = New System.Drawing.Point(144, 128)
       Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(241, 16)
+      Me.Label2.Size = New System.Drawing.Size(232, 16)
       Me.Label2.TabIndex = 4
       Me.Label2.Text = "Che cosa è Hospitality Solution?"
       '
@@ -1962,7 +1964,7 @@ Friend Class frmMain
       Me.Label24.ForeColor = System.Drawing.Color.DimGray
       Me.Label24.Location = New System.Drawing.Point(416, 464)
       Me.Label24.Name = "Label24"
-      Me.Label24.Size = New System.Drawing.Size(255, 16)
+      Me.Label24.Size = New System.Drawing.Size(249, 16)
       Me.Label24.TabIndex = 36
       Me.Label24.Text = "Informazioni su Hospitality Solution"
       '
@@ -1983,7 +1985,7 @@ Friend Class frmMain
       Me.Label26.ForeColor = System.Drawing.Color.DimGray
       Me.Label26.Location = New System.Drawing.Point(416, 339)
       Me.Label26.Name = "Label26"
-      Me.Label26.Size = New System.Drawing.Size(126, 16)
+      Me.Label26.Size = New System.Drawing.Size(124, 16)
       Me.Label26.TabIndex = 34
       Me.Label26.Text = "Dettagli prodotto"
       '
@@ -2021,7 +2023,7 @@ Friend Class frmMain
       Me.Label23.ForeColor = System.Drawing.Color.DimGray
       Me.Label23.Location = New System.Drawing.Point(416, 88)
       Me.Label23.Name = "Label23"
-      Me.Label23.Size = New System.Drawing.Size(200, 16)
+      Me.Label23.Size = New System.Drawing.Size(193, 16)
       Me.Label23.TabIndex = 29
       Me.Label23.Text = "Hospitality Solution Suite 3"
       '
@@ -2041,7 +2043,7 @@ Friend Class frmMain
       Me.Label22.ForeColor = System.Drawing.Color.DimGray
       Me.Label22.Location = New System.Drawing.Point(416, 132)
       Me.Label22.Name = "Label22"
-      Me.Label22.Size = New System.Drawing.Size(114, 16)
+      Me.Label22.Size = New System.Drawing.Size(112, 16)
       Me.Label22.TabIndex = 27
       Me.Label22.Text = "Prodotti attivati"
       '
@@ -2101,7 +2103,7 @@ Friend Class frmMain
       Me.Label21.ForeColor = System.Drawing.Color.DimGray
       Me.Label21.Location = New System.Drawing.Point(24, 361)
       Me.Label21.Name = "Label21"
-      Me.Label21.Size = New System.Drawing.Size(321, 16)
+      Me.Label21.Size = New System.Drawing.Size(313, 16)
       Me.Label21.TabIndex = 7
       Me.Label21.Text = "Strumenti per l'utilizzo di Hospitality Solution"
       '
@@ -2112,7 +2114,7 @@ Friend Class frmMain
       Me.Label20.ForeColor = System.Drawing.Color.DimGray
       Me.Label20.Location = New System.Drawing.Point(24, 24)
       Me.Label20.Name = "Label20"
-      Me.Label20.Size = New System.Drawing.Size(72, 16)
+      Me.Label20.Size = New System.Drawing.Size(71, 16)
       Me.Label20.TabIndex = 6
       Me.Label20.Text = "Supporto"
       '
@@ -3741,7 +3743,7 @@ Friend Class frmMain
       Me.eui_Archivi.KeyTip = "A"
       Me.eui_Archivi.Location = New System.Drawing.Point(0, 0)
       Me.eui_Archivi.Name = "eui_Archivi"
-      Me.eui_Archivi.Size = New System.Drawing.Size(1006, 99)
+      Me.eui_Archivi.Size = New System.Drawing.Size(1014, 99)
       Me.eui_Archivi.TabIndex = 0
       Me.eui_Archivi.Text = "Archivi"
       '
@@ -3772,7 +3774,7 @@ Friend Class frmMain
       '
       'PopupMenu1
       '
-      Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviAnagraficheClienti, Me.eui_cmdArchiviAnagraficheFornitori, Me.eui_cmdArchiviAnagraficheCamerieri, Me.eui_cmdArchiviAnagraficheAziende, Me.Separator1, Me.eui_cmdArchiviAnagraficheCamere, Me.sepCamere, Me.eui_cmdArchiviAnagraficheSale, Me.eui_cmdArchiviAnagraficheTavoli, Me.sepRistorante, Me.eui_cmdArchiviAnagrafichePiatti, Me.eui_cmdArchiviAnagraficheCategoriePiatti, Me.sepBar, Me.eui_cmdArchiviAnagraficheRisorse, Me.eui_cmdArchiviAnagraficheUtilizzoRisorse, Me.eui_cmdArchiviAnagraficheAccServ, Me.sepRisorse, Me.eui_cmdArchiviAnagraficheDatiAzienda})
+      Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviAnagraficheClienti, Me.eui_cmdArchiviAnagraficheFornitori, Me.eui_cmdArchiviAnagraficheCamerieri, Me.eui_cmdArchiviAnagraficheAgenzieCamerieri, Me.eui_cmdArchiviAnagraficheAziende, Me.Separator1, Me.eui_cmdArchiviAnagraficheCamere, Me.sepCamere, Me.eui_cmdArchiviAnagraficheSale, Me.eui_cmdArchiviAnagraficheTavoli, Me.sepRistorante, Me.eui_cmdArchiviAnagrafichePiatti, Me.eui_cmdArchiviAnagraficheCategoriePiatti, Me.sepBar, Me.eui_cmdArchiviAnagraficheRisorse, Me.eui_cmdArchiviAnagraficheUtilizzoRisorse, Me.eui_cmdArchiviAnagraficheAccServ, Me.sepRisorse, Me.eui_cmdArchiviAnagraficheDatiAzienda})
       Me.PopupMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
       Me.PopupMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
       Me.PopupMenu1.Size = New System.Drawing.Size(100, 100)
@@ -3787,7 +3789,7 @@ Friend Class frmMain
       Me.eui_cmdArchiviAnagraficheClienti.ScreenTip.Text = "Apre l'anagrafica clienti."
       Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheClienti, "F7")
       Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheClienti, System.Windows.Forms.Keys.F7)
-      Me.eui_cmdArchiviAnagraficheClienti.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheClienti.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheClienti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheClienti.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviAnagraficheClienti.TabIndex = 7
       Me.eui_cmdArchiviAnagraficheClienti.Text = "Clienti"
@@ -3802,7 +3804,7 @@ Friend Class frmMain
       Me.eui_cmdArchiviAnagraficheFornitori.ScreenTip.Text = "Apre l'anagrafica fornitori."
       Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheFornitori, "F8")
       Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheFornitori, System.Windows.Forms.Keys.F8)
-      Me.eui_cmdArchiviAnagraficheFornitori.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheFornitori.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheFornitori.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheFornitori.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviAnagraficheFornitori.TabIndex = 8
       Me.eui_cmdArchiviAnagraficheFornitori.Text = "Fornitori"
@@ -3815,7 +3817,7 @@ Friend Class frmMain
       Me.eui_cmdArchiviAnagraficheCamerieri.Name = "eui_cmdArchiviAnagraficheCamerieri"
       Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Caption = "Camerieri"
       Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Text = "Apre l'anagrafica camerieri."
-      Me.eui_cmdArchiviAnagraficheCamerieri.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheCamerieri.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviAnagraficheCamerieri.TabIndex = 9
       Me.eui_cmdArchiviAnagraficheCamerieri.Text = "Camerieri"
@@ -3824,23 +3826,23 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheAziende.Id = "d627c2b0-5c0b-4fbe-847b-2c76918e6099"
       Me.eui_cmdArchiviAnagraficheAziende.KeyTip = "A"
-      Me.eui_cmdArchiviAnagraficheAziende.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdArchiviAnagraficheAziende.Location = New System.Drawing.Point(2, 94)
       Me.eui_cmdArchiviAnagraficheAziende.Name = "eui_cmdArchiviAnagraficheAziende"
       Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Caption = "Aziende (F9)"
       Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Text = "Apre l'anagrafica aziende."
       Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheAziende, "F9")
       Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheAziende, System.Windows.Forms.Keys.F9)
-      Me.eui_cmdArchiviAnagraficheAziende.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheAziende.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheAziende.TabIndex = 10
       Me.eui_cmdArchiviAnagraficheAziende.Text = "Aziende"
       '
       'Separator1
       '
       Me.Separator1.Id = "ae1faf3f-271d-42bb-a5f7-a585aa02d3e4"
-      Me.Separator1.Location = New System.Drawing.Point(2, 94)
+      Me.Separator1.Location = New System.Drawing.Point(2, 117)
       Me.Separator1.Name = "Separator1"
       Me.Separator1.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator1.Size = New System.Drawing.Size(247, 5)
+      Me.Separator1.Size = New System.Drawing.Size(246, 5)
       Me.Separator1.TabIndex = 11
       Me.Separator1.Text = "Separator1"
       '
@@ -3848,11 +3850,11 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheCamere.Id = "2285335a-10a4-41b1-8c88-dd45f2c538b7"
       Me.eui_cmdArchiviAnagraficheCamere.KeyTip = "R"
-      Me.eui_cmdArchiviAnagraficheCamere.Location = New System.Drawing.Point(2, 99)
+      Me.eui_cmdArchiviAnagraficheCamere.Location = New System.Drawing.Point(2, 122)
       Me.eui_cmdArchiviAnagraficheCamere.Name = "eui_cmdArchiviAnagraficheCamere"
       Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Caption = "Camere"
       Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Text = "Apre l'anagrafica camere."
-      Me.eui_cmdArchiviAnagraficheCamere.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheCamere.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheCamere.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamere.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviAnagraficheCamere.TabIndex = 25
       Me.eui_cmdArchiviAnagraficheCamere.Text = "Camere"
@@ -3860,10 +3862,10 @@ Friend Class frmMain
       'sepCamere
       '
       Me.sepCamere.Id = "d1d7164d-8a39-4dca-8dc1-5152d362dd07"
-      Me.sepCamere.Location = New System.Drawing.Point(2, 122)
+      Me.sepCamere.Location = New System.Drawing.Point(2, 145)
       Me.sepCamere.Name = "sepCamere"
       Me.sepCamere.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepCamere.Size = New System.Drawing.Size(247, 5)
+      Me.sepCamere.Size = New System.Drawing.Size(246, 5)
       Me.sepCamere.TabIndex = 26
       Me.sepCamere.Text = "Separator2"
       '
@@ -3871,11 +3873,11 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheSale.Id = "c51d3ced-326d-4a9e-bcc1-2ff2e4b39f32"
       Me.eui_cmdArchiviAnagraficheSale.KeyTip = "S"
-      Me.eui_cmdArchiviAnagraficheSale.Location = New System.Drawing.Point(2, 127)
+      Me.eui_cmdArchiviAnagraficheSale.Location = New System.Drawing.Point(2, 150)
       Me.eui_cmdArchiviAnagraficheSale.Name = "eui_cmdArchiviAnagraficheSale"
       Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Caption = "Sale"
       Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Text = "Apre l'anagrafica sale."
-      Me.eui_cmdArchiviAnagraficheSale.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheSale.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheSale.TabIndex = 12
       Me.eui_cmdArchiviAnagraficheSale.Text = "Sale"
       '
@@ -3883,21 +3885,21 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheTavoli.Id = "bf3ffa0f-88e5-4346-82eb-8ee7ffae3059"
       Me.eui_cmdArchiviAnagraficheTavoli.KeyTip = "T"
-      Me.eui_cmdArchiviAnagraficheTavoli.Location = New System.Drawing.Point(2, 150)
+      Me.eui_cmdArchiviAnagraficheTavoli.Location = New System.Drawing.Point(2, 173)
       Me.eui_cmdArchiviAnagraficheTavoli.Name = "eui_cmdArchiviAnagraficheTavoli"
       Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Caption = "Tavoli"
       Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Text = "Apre l'anagrafica tavoli."
-      Me.eui_cmdArchiviAnagraficheTavoli.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheTavoli.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheTavoli.TabIndex = 13
       Me.eui_cmdArchiviAnagraficheTavoli.Text = "Tavoli"
       '
       'sepRistorante
       '
       Me.sepRistorante.Id = "f61803d6-e6a6-4be0-9028-0cfb5f804bac"
-      Me.sepRistorante.Location = New System.Drawing.Point(2, 173)
+      Me.sepRistorante.Location = New System.Drawing.Point(2, 196)
       Me.sepRistorante.Name = "sepRistorante"
       Me.sepRistorante.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepRistorante.Size = New System.Drawing.Size(247, 5)
+      Me.sepRistorante.Size = New System.Drawing.Size(246, 5)
       Me.sepRistorante.TabIndex = 14
       Me.sepRistorante.Text = "Separator2"
       '
@@ -3905,13 +3907,13 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagrafichePiatti.Id = "236f82b9-b53d-46a1-97cc-af70aa9927d8"
       Me.eui_cmdArchiviAnagrafichePiatti.KeyTip = "P"
-      Me.eui_cmdArchiviAnagrafichePiatti.Location = New System.Drawing.Point(2, 178)
+      Me.eui_cmdArchiviAnagrafichePiatti.Location = New System.Drawing.Point(2, 201)
       Me.eui_cmdArchiviAnagrafichePiatti.Name = "eui_cmdArchiviAnagrafichePiatti"
       Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Caption = "Piatti (F10)"
       Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Text = "Apre l'anagrafica piatti."
       Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagrafichePiatti, "F10")
       Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagrafichePiatti, System.Windows.Forms.Keys.F10)
-      Me.eui_cmdArchiviAnagrafichePiatti.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagrafichePiatti.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagrafichePiatti.TabIndex = 15
       Me.eui_cmdArchiviAnagrafichePiatti.Text = "Piatti"
       '
@@ -3919,21 +3921,21 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.Id = "73b8f15e-bf89-43b5-9664-fa35b7cd6174"
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.KeyTip = "G"
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Location = New System.Drawing.Point(2, 201)
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Location = New System.Drawing.Point(2, 224)
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.Name = "eui_cmdArchiviAnagraficheCategoriePiatti"
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Caption = "Categorie piatti"
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Text = "Apre l'anagrafica categorie piatti."
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.TabIndex = 16
       Me.eui_cmdArchiviAnagraficheCategoriePiatti.Text = "Categorie piatti"
       '
       'sepBar
       '
       Me.sepBar.Id = "8eefe9cb-b04f-472c-97cd-066be078c7e1"
-      Me.sepBar.Location = New System.Drawing.Point(2, 224)
+      Me.sepBar.Location = New System.Drawing.Point(2, 247)
       Me.sepBar.Name = "sepBar"
       Me.sepBar.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepBar.Size = New System.Drawing.Size(247, 5)
+      Me.sepBar.Size = New System.Drawing.Size(246, 5)
       Me.sepBar.TabIndex = 17
       Me.sepBar.Text = "Separator3"
       '
@@ -3941,11 +3943,11 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheRisorse.Id = "f4afaa9e-522d-4019-a285-029c6ecb50ca"
       Me.eui_cmdArchiviAnagraficheRisorse.KeyTip = "O"
-      Me.eui_cmdArchiviAnagraficheRisorse.Location = New System.Drawing.Point(2, 229)
+      Me.eui_cmdArchiviAnagraficheRisorse.Location = New System.Drawing.Point(2, 252)
       Me.eui_cmdArchiviAnagraficheRisorse.Name = "eui_cmdArchiviAnagraficheRisorse"
       Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Caption = "Risorse"
       Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Text = "Apre l'anagrafica risorse."
-      Me.eui_cmdArchiviAnagraficheRisorse.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheRisorse.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheRisorse.TabIndex = 20
       Me.eui_cmdArchiviAnagraficheRisorse.Text = "Risorse sportive"
       '
@@ -3953,11 +3955,11 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Id = "d0ff87ef-a533-4552-b5c3-56466108fb2d"
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.KeyTip = "U"
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Location = New System.Drawing.Point(2, 252)
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Location = New System.Drawing.Point(2, 275)
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Name = "eui_cmdArchiviAnagraficheUtilizzoRisorse"
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Caption = "Tipologie di utilizzo Risorse"
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Text = "Apre l'anagrafica tipologie di utilizzo risorse."
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.TabIndex = 28
       Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Text = "Tipologie di utilizzo Risorse sportive"
       '
@@ -3965,21 +3967,21 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheAccServ.Id = "8b4cd28c-31bb-4633-a134-990bf805937e"
       Me.eui_cmdArchiviAnagraficheAccServ.KeyTip = "E"
-      Me.eui_cmdArchiviAnagraficheAccServ.Location = New System.Drawing.Point(2, 275)
+      Me.eui_cmdArchiviAnagraficheAccServ.Location = New System.Drawing.Point(2, 298)
       Me.eui_cmdArchiviAnagraficheAccServ.Name = "eui_cmdArchiviAnagraficheAccServ"
       Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Caption = "Accessori e Servizi"
       Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Text = "Apre l'anagrafica accessori e servizi."
-      Me.eui_cmdArchiviAnagraficheAccServ.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheAccServ.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheAccServ.TabIndex = 23
       Me.eui_cmdArchiviAnagraficheAccServ.Text = "Accessori e Servizi"
       '
       'sepRisorse
       '
       Me.sepRisorse.Id = "62d476ca-61d8-43e2-bb9f-94c1dd1afe65"
-      Me.sepRisorse.Location = New System.Drawing.Point(2, 298)
+      Me.sepRisorse.Location = New System.Drawing.Point(2, 321)
       Me.sepRisorse.Name = "sepRisorse"
       Me.sepRisorse.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepRisorse.Size = New System.Drawing.Size(247, 5)
+      Me.sepRisorse.Size = New System.Drawing.Size(246, 5)
       Me.sepRisorse.TabIndex = 21
       Me.sepRisorse.Text = "Separator7"
       '
@@ -3987,11 +3989,11 @@ Friend Class frmMain
       '
       Me.eui_cmdArchiviAnagraficheDatiAzienda.Id = "bb85a2af-cff1-4ee8-aa72-90a4caeedcef"
       Me.eui_cmdArchiviAnagraficheDatiAzienda.KeyTip = "D"
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Location = New System.Drawing.Point(2, 303)
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Location = New System.Drawing.Point(2, 326)
       Me.eui_cmdArchiviAnagraficheDatiAzienda.Name = "eui_cmdArchiviAnagraficheDatiAzienda"
       Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Caption = "Dati generali azienda"
       Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Text = "Apre l'anagrafica dati generali azienda."
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Size = New System.Drawing.Size(247, 23)
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Size = New System.Drawing.Size(246, 23)
       Me.eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdArchiviAnagraficheDatiAzienda.TabIndex = 18
       Me.eui_cmdArchiviAnagraficheDatiAzienda.Text = "Dati generali azienda"
@@ -4229,6 +4231,19 @@ Friend Class frmMain
       Me.eui_cmdArchiviTabellePagamenti.TabIndex = 18
       Me.eui_cmdArchiviTabellePagamenti.Text = "Modalità di pagamento"
       '
+      'eui_cmdArchiviTabelleSconti
+      '
+      Me.eui_cmdArchiviTabelleSconti.Id = "082703c0-7ed2-449b-bc0e-bf61a9fddc0b"
+      Me.eui_cmdArchiviTabelleSconti.KeyTip = "SM"
+      Me.eui_cmdArchiviTabelleSconti.Location = New System.Drawing.Point(2, 339)
+      Me.eui_cmdArchiviTabelleSconti.Name = "eui_cmdArchiviTabelleSconti"
+      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Caption = "Sconti e Maggiorazioni"
+      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Text = "Apre la tabella dati Sconti e Maggiorazioni"
+      Me.eui_cmdArchiviTabelleSconti.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleSconti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleSconti.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleSconti.TabIndex = 44
+      Me.eui_cmdArchiviTabelleSconti.Text = "Sconti e Maggiorazioni"
+      '
       'Separator8
       '
       Me.Separator8.Id = "0ad3c5b2-6ac0-450d-a422-ae9a2232b901"
@@ -4338,7 +4353,7 @@ Friend Class frmMain
       Me.eui_cmdArchiviTabelleAgenzie.ScreenTip.Text = "Apre la tabella dati Agenzie"
       Me.eui_cmdArchiviTabelleAgenzie.Size = New System.Drawing.Size(193, 23)
       Me.eui_cmdArchiviTabelleAgenzie.TabIndex = 38
-      Me.eui_cmdArchiviTabelleAgenzie.Text = "Agenzie"
+      Me.eui_cmdArchiviTabelleAgenzie.Text = "Agenzie di viaggio"
       '
       'eui_cmdArchiviTabelleCanali
       '
@@ -4522,12 +4537,12 @@ Friend Class frmMain
       Me.eui_cmdGestionePosTavoli.Id = "b33f0d84-1a2a-4e9f-8868-227a991f1bae"
       Me.eui_cmdGestionePosTavoli.KeyTip = "T"
       Me.eui_cmdGestionePosTavoli.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestionePosTavoli.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestionePosTavoli.Location = New System.Drawing.Point(48, 2)
+      Me.eui_cmdGestionePosTavoli.Location = New System.Drawing.Point(9, 2)
       Me.eui_cmdGestionePosTavoli.Name = "eui_cmdGestionePosTavoli"
       Me.eui_cmdGestionePosTavoli.ScreenTip.Caption = "Tavoli e conto (F3)"
       Me.eui_cmdGestionePosTavoli.ScreenTip.Text = "Apre la gestione dei Tavoli per l'inserimento delle comande."
       Me.eui_GruppoPos.SetShortcutKeys(Me.eui_cmdGestionePosTavoli, System.Windows.Forms.Keys.F3)
-      Me.eui_cmdGestionePosTavoli.Size = New System.Drawing.Size(43, 72)
+      Me.eui_cmdGestionePosTavoli.Size = New System.Drawing.Size(77, 0)
       Me.eui_cmdGestionePosTavoli.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestionePosTavoli.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestionePosTavoli.TabIndex = 1
       Me.eui_cmdGestionePosTavoli.Text = "Tavoli e conto"
@@ -4550,9 +4565,9 @@ Friend Class frmMain
       Me.eui_ddwnGestioneQuadroGiornaliero.Id = "ac15bf3c-d7fa-400e-ab21-5f65e6ce572d"
       Me.eui_ddwnGestioneQuadroGiornaliero.KeyTip = "Q"
       Me.eui_ddwnGestioneQuadroGiornaliero.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestioneQuadroGiornaliero.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_ddwnGestioneQuadroGiornaliero.Location = New System.Drawing.Point(4, 2)
+      Me.eui_ddwnGestioneQuadroGiornaliero.Location = New System.Drawing.Point(53, 2)
       Me.eui_ddwnGestioneQuadroGiornaliero.Name = "eui_ddwnGestioneQuadroGiornaliero"
-      Me.eui_ddwnGestioneQuadroGiornaliero.Size = New System.Drawing.Size(71, 72)
+      Me.eui_ddwnGestioneQuadroGiornaliero.Size = New System.Drawing.Size(103, 0)
       Me.eui_ddwnGestioneQuadroGiornaliero.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestioneQuadroGiornaliero.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_ddwnGestioneQuadroGiornaliero.TabIndex = 2
       Me.eui_ddwnGestioneQuadroGiornaliero.Text = "Quadro giornaliero"
@@ -4563,10 +4578,10 @@ Friend Class frmMain
       Me.eui_ddwnGestionePlanningRisorse.Id = "f9eafe92-077d-443d-81f4-2ca05cc46188"
       Me.eui_ddwnGestionePlanningRisorse.KeyTip = "PR"
       Me.eui_ddwnGestionePlanningRisorse.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestionePlanningRisorse.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_ddwnGestionePlanningRisorse.Location = New System.Drawing.Point(77, 2)
+      Me.eui_ddwnGestionePlanningRisorse.Location = New System.Drawing.Point(53, 2)
       Me.eui_ddwnGestionePlanningRisorse.Name = "eui_ddwnGestionePlanningRisorse"
       Me.eui_ddwnGestionePlanningRisorse.Popup = Me.PopupMenu10
-      Me.eui_ddwnGestionePlanningRisorse.Size = New System.Drawing.Size(53, 72)
+      Me.eui_ddwnGestionePlanningRisorse.Size = New System.Drawing.Size(91, 0)
       Me.eui_ddwnGestionePlanningRisorse.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestionePlanningRisorse.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_ddwnGestionePlanningRisorse.TabIndex = 0
       Me.eui_ddwnGestionePlanningRisorse.Text = "Planning risorse"
@@ -4689,10 +4704,10 @@ Friend Class frmMain
       Me.eui_ddwnGestionePrenotazioni.Id = "2be97ba2-4420-48e6-8ef0-7304393a8afd"
       Me.eui_ddwnGestionePrenotazioni.KeyTip = "EP"
       Me.eui_ddwnGestionePrenotazioni.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", Global.Hospitality_Solution.My.Resources.Resources.NewContentPage_32x32)})
-      Me.eui_ddwnGestionePrenotazioni.Location = New System.Drawing.Point(132, 2)
+      Me.eui_ddwnGestionePrenotazioni.Location = New System.Drawing.Point(53, 2)
       Me.eui_ddwnGestionePrenotazioni.Name = "eui_ddwnGestionePrenotazioni"
       Me.eui_ddwnGestionePrenotazioni.Popup = Me.PopupMenu11
-      Me.eui_ddwnGestionePrenotazioni.Size = New System.Drawing.Size(80, 72)
+      Me.eui_ddwnGestionePrenotazioni.Size = New System.Drawing.Size(110, 0)
       Me.eui_ddwnGestionePrenotazioni.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", Global.Hospitality_Solution.My.Resources.Resources.NewContentPage_32x32)})
       Me.eui_ddwnGestionePrenotazioni.TabIndex = 3
       Me.eui_ddwnGestionePrenotazioni.Text = "Elenco prenotazioni"
@@ -4785,12 +4800,12 @@ Friend Class frmMain
       Me.eui_cmdGestioneClienti.Id = "fa565923-1751-4b9d-a00b-f164a1825198"
       Me.eui_cmdGestioneClienti.KeyTip = "EC"
       Me.eui_cmdGestioneClienti.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneClienti.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestioneClienti.Location = New System.Drawing.Point(4, 2)
+      Me.eui_cmdGestioneClienti.Location = New System.Drawing.Point(41, 2)
       Me.eui_cmdGestioneClienti.Name = "eui_cmdGestioneClienti"
       Me.eui_cmdGestioneClienti.ScreenTip.Caption = "Elenco Clienti (F7)"
       Me.eui_cmdGestioneClienti.ScreenTip.Text = "Apre l'elenco dei Clienti."
       Me.RibbonGroup15.SetShortcutKeys(Me.eui_cmdGestioneClienti, System.Windows.Forms.Keys.F7)
-      Me.eui_cmdGestioneClienti.Size = New System.Drawing.Size(42, 72)
+      Me.eui_cmdGestioneClienti.Size = New System.Drawing.Size(73, 0)
       Me.eui_cmdGestioneClienti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneClienti.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneClienti.TabIndex = 3
       Me.eui_cmdGestioneClienti.Text = "Elenco Clienti"
@@ -4800,11 +4815,11 @@ Friend Class frmMain
       Me.eui_cmdGestioneSchedine.Id = "a3b40708-6628-4d8d-b215-c2e9b652267b"
       Me.eui_cmdGestioneSchedine.KeyTip = "ES"
       Me.eui_cmdGestioneSchedine.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneSchedine.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestioneSchedine.Location = New System.Drawing.Point(48, 2)
+      Me.eui_cmdGestioneSchedine.Location = New System.Drawing.Point(41, 2)
       Me.eui_cmdGestioneSchedine.Name = "eui_cmdGestioneSchedine"
       Me.eui_cmdGestioneSchedine.ScreenTip.Caption = "Elenco schedine P.S."
       Me.eui_cmdGestioneSchedine.ScreenTip.Text = "Apre l'elenco delle schedine di pubbilica sicurezza."
-      Me.eui_cmdGestioneSchedine.Size = New System.Drawing.Size(73, 72)
+      Me.eui_cmdGestioneSchedine.Size = New System.Drawing.Size(111, 0)
       Me.eui_cmdGestioneSchedine.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneSchedine.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneSchedine.TabIndex = 2
       Me.eui_cmdGestioneSchedine.Text = "Elenco schedine P.S."
@@ -4812,7 +4827,7 @@ Friend Class frmMain
       'sepStatistiche
       '
       Me.sepStatistiche.Id = "bc90f9e6-ab1e-4515-b509-f81d2b2d32d6"
-      Me.sepStatistiche.Location = New System.Drawing.Point(124, 6)
+      Me.sepStatistiche.Location = New System.Drawing.Point(42, 6)
       Me.sepStatistiche.Name = "sepStatistiche"
       Me.sepStatistiche.Size = New System.Drawing.Size(3, 59)
       Me.sepStatistiche.TabIndex = 4
@@ -4823,12 +4838,12 @@ Friend Class frmMain
       Me.eui_ddwnGestioneStatistiche.Id = "9c8367a8-1b54-4729-ab2f-e1995c61b697"
       Me.eui_ddwnGestioneStatistiche.KeyTip = "S"
       Me.eui_ddwnGestioneStatistiche.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestioneStatistiche.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_ddwnGestioneStatistiche.Location = New System.Drawing.Point(130, 2)
+      Me.eui_ddwnGestioneStatistiche.Location = New System.Drawing.Point(41, 72)
       Me.eui_ddwnGestioneStatistiche.Name = "eui_ddwnGestioneStatistiche"
       Me.eui_ddwnGestioneStatistiche.Popup = Me.PopupMenu6
       Me.eui_ddwnGestioneStatistiche.ScreenTip.Caption = "Statistiche di vendita"
       Me.eui_ddwnGestioneStatistiche.ScreenTip.Text = "Consente di selezionare le statistiche di vendita."
-      Me.eui_ddwnGestioneStatistiche.Size = New System.Drawing.Size(66, 72)
+      Me.eui_ddwnGestioneStatistiche.Size = New System.Drawing.Size(115, 0)
       Me.eui_ddwnGestioneStatistiche.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_ddwnGestioneStatistiche.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_ddwnGestioneStatistiche.TabIndex = 1
       Me.eui_ddwnGestioneStatistiche.Text = "Statistiche di vendita"
@@ -4915,11 +4930,11 @@ Friend Class frmMain
       Me.eui_cmdGestioneOperatori.Id = "2002c084-f1a2-44a5-aa80-23e1a1dcfb97"
       Me.eui_cmdGestioneOperatori.KeyTip = "EO"
       Me.eui_cmdGestioneOperatori.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneOperatori.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestioneOperatori.Location = New System.Drawing.Point(4, 2)
+      Me.eui_cmdGestioneOperatori.Location = New System.Drawing.Point(38, 2)
       Me.eui_cmdGestioneOperatori.Name = "eui_cmdGestioneOperatori"
       Me.eui_cmdGestioneOperatori.ScreenTip.Caption = "Elenco operatori"
       Me.eui_cmdGestioneOperatori.ScreenTip.Text = "Apre l'elenco degli operatori che possono utilizzare il programma."
-      Me.eui_cmdGestioneOperatori.Size = New System.Drawing.Size(52, 72)
+      Me.eui_cmdGestioneOperatori.Size = New System.Drawing.Size(86, 0)
       Me.eui_cmdGestioneOperatori.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneOperatori.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneOperatori.TabIndex = 0
       Me.eui_cmdGestioneOperatori.Text = "Elenco operatori"
@@ -4929,11 +4944,11 @@ Friend Class frmMain
       Me.eui_cmdGestioneGruppiOp.Id = "1e718aec-97e3-4da8-82f3-27270827182c"
       Me.eui_cmdGestioneGruppiOp.KeyTip = "EG"
       Me.eui_cmdGestioneGruppiOp.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneGruppiOp.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestioneGruppiOp.Location = New System.Drawing.Point(58, 2)
+      Me.eui_cmdGestioneGruppiOp.Location = New System.Drawing.Point(38, 2)
       Me.eui_cmdGestioneGruppiOp.Name = "eui_cmdGestioneGruppiOp"
       Me.eui_cmdGestioneGruppiOp.ScreenTip.Caption = "Elenco gruppi"
       Me.eui_cmdGestioneGruppiOp.ScreenTip.Text = "Apre l'elenco dei gruppi a cui appartengono gli operatori del programma."
-      Me.eui_cmdGestioneGruppiOp.Size = New System.Drawing.Size(42, 72)
+      Me.eui_cmdGestioneGruppiOp.Size = New System.Drawing.Size(74, 0)
       Me.eui_cmdGestioneGruppiOp.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneGruppiOp.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneGruppiOp.TabIndex = 1
       Me.eui_cmdGestioneGruppiOp.Text = "Elenco gruppi"
@@ -4941,7 +4956,7 @@ Friend Class frmMain
       'Separator15
       '
       Me.Separator15.Id = "bf4d554f-4bed-4d42-ad8e-5444209a5a74"
-      Me.Separator15.Location = New System.Drawing.Point(103, 6)
+      Me.Separator15.Location = New System.Drawing.Point(39, 6)
       Me.Separator15.Name = "Separator15"
       Me.Separator15.Size = New System.Drawing.Size(3, 61)
       Me.Separator15.TabIndex = 3
@@ -4952,12 +4967,12 @@ Friend Class frmMain
       Me.eui_cmdGestioneCambiaOp.Id = "8aac62ec-ec67-4bad-a50c-526cba6998dc"
       Me.eui_cmdGestioneCambiaOp.KeyTip = "O"
       Me.eui_cmdGestioneCambiaOp.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneCambiaOp.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdGestioneCambiaOp.Location = New System.Drawing.Point(109, 2)
+      Me.eui_cmdGestioneCambiaOp.Location = New System.Drawing.Point(38, 74)
       Me.eui_cmdGestioneCambiaOp.Name = "eui_cmdGestioneCambiaOp"
       Me.eui_cmdGestioneCambiaOp.ScreenTip.Caption = "Cambia operatore"
       Me.eui_cmdGestioneCambiaOp.ScreenTip.Text = "Permette di effettuare il cambio dell'operatore che sta utilizzando il programma." &
     ""
-      Me.eui_cmdGestioneCambiaOp.Size = New System.Drawing.Size(55, 72)
+      Me.eui_cmdGestioneCambiaOp.Size = New System.Drawing.Size(92, 0)
       Me.eui_cmdGestioneCambiaOp.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneCambiaOp.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneCambiaOp.TabIndex = 2
       Me.eui_cmdGestioneCambiaOp.Text = "Cambia operatore"
@@ -4982,7 +4997,7 @@ Friend Class frmMain
       Me.eui_cmdGestioneOpzioni.Name = "eui_cmdGestioneOpzioni"
       Me.eui_cmdGestioneOpzioni.ScreenTip.Caption = "Opzioni di configurazione"
       Me.eui_cmdGestioneOpzioni.ScreenTip.Text = "Apre la finestra Opzioni per la configurazione del programma."
-      Me.eui_cmdGestioneOpzioni.Size = New System.Drawing.Size(83, 72)
+      Me.eui_cmdGestioneOpzioni.Size = New System.Drawing.Size(127, 0)
       Me.eui_cmdGestioneOpzioni.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneOpzioni.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneOpzioni.TabIndex = 0
       Me.eui_cmdGestioneOpzioni.Text = "Opzioni di configurazione"
@@ -5727,10 +5742,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 372)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 375)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1006, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1014, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5742,7 +5757,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(409, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(417, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5819,7 +5834,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(409, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(417, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -6121,24 +6136,23 @@ Friend Class frmMain
       Me.RibbonTabPage5.TabIndex = 0
       Me.RibbonTabPage5.Text = "RibbonTabPage5"
       '
-      'eui_cmdArchiviTabelleSconti
+      'eui_cmdArchiviAnagraficheAgenzieCamerieri
       '
-      Me.eui_cmdArchiviTabelleSconti.Id = "082703c0-7ed2-449b-bc0e-bf61a9fddc0b"
-      Me.eui_cmdArchiviTabelleSconti.KeyTip = "SM"
-      Me.eui_cmdArchiviTabelleSconti.Location = New System.Drawing.Point(2, 339)
-      Me.eui_cmdArchiviTabelleSconti.Name = "eui_cmdArchiviTabelleSconti"
-      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Caption = "Sconti e Maggiorazioni"
-      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Text = "Apre la tabella dati Sconti e Maggiorazioni"
-      Me.eui_cmdArchiviTabelleSconti.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleSconti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleSconti.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleSconti.TabIndex = 44
-      Me.eui_cmdArchiviTabelleSconti.Text = "Sconti e Maggiorazioni"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Id = "5023a6ac-3d20-4916-9b7c-43f82a18ca7a"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.KeyTip = "AC"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Name = "eui_cmdArchiviAnagraficheAgenzieCamerieri"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Caption = "Agenzie Camerieri"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Text = "Apre l'anagrafica agenzie camerieri."
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.TabIndex = 30
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Text = "Agenzie camerieri"
       '
       'frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1006, 394)
+      Me.ClientSize = New System.Drawing.Size(1014, 397)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -6531,7 +6545,7 @@ Friend Class frmMain
    End Function
 
    Private Function SalvaPrenTavoloso(ByVal idPren As String, ByVal cognomeCliente As String, ByVal nomeCliente As String, ByVal telefono As String, ByVal eMail As String,
-                               ByVal dataPren As String, ByVal oraPren As String, ByVal numPersone As String, ByVal note As String) As Boolean
+                                ByVal dataPren As String, ByVal oraPren As String, ByVal numPersone As String, ByVal note As String) As Boolean
       Try
          Dim IPren As New Prenotazione
 
@@ -7783,7 +7797,7 @@ Friend Class frmMain
 
          Do While dr.Read
             sw.WriteLine(dr.Item("Id") & ";" & dr.Item("Categoria") & ";" & dr.Item("DescrizionePos") & ";" &
-                             dr.Item("Listino1") & ";" & dr.Item("Listino2") & ";" & dr.Item("Listino3") & ";" & dr.Item("Listino4"))
+                                 dr.Item("Listino1") & ";" & dr.Item("Listino2") & ";" & dr.Item("Listino3") & ";" & dr.Item("Listino4"))
          Loop
 
       Catch ex As Exception
@@ -7810,7 +7824,7 @@ Friend Class frmMain
 
          Do While dr.Read
             sw.WriteLine(dr.Item("Id") & ";" & dr.Item("Categoria") & ";" & dr.Item("DescrizionePos") & ";" &
-                                     dr.Item("Listino1") & ";" & dr.Item("Listino2") & ";" & dr.Item("Listino3") & ";" & dr.Item("Listino4"))
+                                         dr.Item("Listino1") & ";" & dr.Item("Listino2") & ";" & dr.Item("Listino3") & ";" & dr.Item("Listino4"))
          Loop
 
       Catch ex As Exception
@@ -9075,6 +9089,41 @@ Friend Class frmMain
          err.GestisciErrore(ex.StackTrace, ex.Message)
       End Try
    End Sub
+
+   Public Sub ApriAgenzieCamerieri()
+      Try
+         ' Se il form non è aperto lo apre.
+         If IsNothing(g_frmAgenzieCamerieri) = True Then
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = CAR_ANAG_AGENZIE_CAMERIERI
+
+            ConnStringAnagrafiche = CreaConnString(PercorsoDB)
+
+            g_frmAgenzieCamerieri = New frmElencoDati(Elenco.AgenzieCamerieri)
+            g_frmAgenzieCamerieri.MdiParent = Me
+
+            ' Visualizza l'anagrafica clienti.
+            g_frmAgenzieCamerieri.Show()
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = LeggiDatiRivenditore()
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.Default
+         Else
+            ' Altrimenti lo attiva.
+            g_frmAgenzieCamerieri.Activate()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
 
    Public Sub ApriSale()
       Try
@@ -11178,7 +11227,7 @@ Friend Class frmMain
       Try
          Dim risposta As MsgBoxResult
          risposta = MessageBox.Show("Si desidera disconnettersi dal software e cambiare operatore? Tutte le finestre aperte verranno chiuse.",
-                                       NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+                                          NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 
          If risposta = MsgBoxResult.Yes Then
             ' Se ci sono finestre aperte le chiude.
@@ -11253,6 +11302,14 @@ Friend Class frmMain
    Private Sub eui_cmdArchiviAnagraficheCamerieri_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdArchiviAnagraficheCamerieri.Click
       ' Apre l'anagrafica Camerieri.
       ApriCamerieri()
+
+      ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
+      AggiungiFormMenuSeleziona()
+   End Sub
+
+   Private Sub eui_cmdArchiviAnagraficheAgenzieCamerieri_Click(sender As Object, e As EventArgs) Handles eui_cmdArchiviAnagraficheAgenzieCamerieri.Click
+      ' Apre l'anagrafica Camerieri.
+      ApriagenzieCamerieri()
 
       ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
       AggiungiFormMenuSeleziona()
@@ -11843,7 +11900,7 @@ Friend Class frmMain
       If IsNothing(g_frmVCTavoli) = False Then
          ' Aggiorna Visual POS
          MessageBox.Show("Non è possibile cambiare la disposizione dei tavoli perchè Visual POS è in esecuzione." & vbCrLf &
-                            "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                               "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          Exit Sub
       End If
 
@@ -13110,16 +13167,16 @@ Friend Class frmMain
       Try
          ' Genera il file Riepilogo prenotazione in formato PDF.
          Dim percorsoFilePDF As String = GeneraRiepilogoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda, LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda,
-                                                                    LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
-                                                                    LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
-                                                                    LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
-                                                                    LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
-                                                                    LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
-                                                                    Application.StartupPath & "\Documenti\Riepilogo prenotazione_" & LeggiNumPrenotazione() & ".pdf")
+                                                                       LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
+                                                                       LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
+                                                                       LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
+                                                                       LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
+                                                                       LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
+                                                                       Application.StartupPath & "\Documenti\Riepilogo prenotazione_" & LeggiNumPrenotazione() & ".pdf")
 
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
          Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiRiepilogoPrenotazione, CreaMessaggio, percorsoFilePDF,
-                                           LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
+                                              LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
 
@@ -13134,12 +13191,12 @@ Friend Class frmMain
       Try
          ' Genera il file Ricevuta Caparra confirmatoria in formato PDF.
          Dim percorsoFilePDF As String = GeneraRicevutaCaparraPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda,
-                                                                          LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda, LeggiNumPrenotazione, LeggiDataPrenotazione(True),
-                                                                          LeggiNomeCompletoDestinatario, LeggiArrivoPrenotazione(True), LeggiPartenzaPrenotazione(True), LeggiAccontoPrenotazione)
+                                                                             LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda, LeggiNumPrenotazione, LeggiDataPrenotazione(True),
+                                                                             LeggiNomeCompletoDestinatario, LeggiArrivoPrenotazione(True), LeggiPartenzaPrenotazione(True), LeggiAccontoPrenotazione)
 
          ' Invia un'e-mail al cliente con allegato un documento pdf della prenotazione camera.
          Dim frmEmail As New InvioEmail(LeggiEmailMittente, LeggiEmailDestinatario, LeggiDatiCaparraPrenotazione, CreaMessaggio, percorsoFilePDF,
-                                           LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
+                                              LeggiIdCliente, LeggiNomeDestinatario, LeggiCognomeDestinatario, CATEGORIA_PREN_CAMERE)
 
          frmEmail.ShowDialog()
 
@@ -13163,12 +13220,12 @@ Friend Class frmMain
 
             ' Genera il file.
             Dim percorsoFilePDF As String = GeneraRiepilogoPren_PDF(LeggiLogoAzienda, LeggiRagSocialeAzienda, LeggiIndirizzoAzienda, LeggiCapAzienda, LeggiPivaAzienda, LeggiTelFaxAzienda, LeggiEmailAzienda,
-                                                                     LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
-                                                                     LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
-                                                                     LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
-                                                                     LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
-                                                                     LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
-                                                                     SaveFileDialog1.FileName)
+                                                                         LeggiNumPrenotazione, LeggiDatiRiepilogoPrenotazione, LeggiNomeCompletoDestinatario, LeggiEmailDestinatario,
+                                                                         LeggiArrivoPrenotazione(False), LeggiPartenzaPrenotazione(False), LeggiNottiPrenotazione,
+                                                                         LeggiAdultiPrenotazione, LeggiNeonatiPrenotazione, LeggiBambiniPrenotazione, LeggiRagazziPrenotazione,
+                                                                         LeggiNumCameraPrenotazione, LeggiTipoCameraPrenotazione, LeggiArrangiamentoPrenotazione,
+                                                                         LeggiTotaleImportoPrenotazione, LeggiAccontoPrenotazione, LeggiSaldoPrenotazione, LeggiNotePrenotazione,
+                                                                         SaveFileDialog1.FileName)
          End If
 
       Catch ex As Exception
@@ -13331,7 +13388,7 @@ Friend Class frmMain
 #Region "Procedure per i Moduli "
 
    Public Function AttivaProdotto(ByVal chiaveAttivazione As String, ByVal codice1 As String, ByVal codice2 As String,
-                                    ByVal codice3 As String, ByVal codice4 As String, ByVal codice5 As String, ByVal nomeChiaveConfig As String) As Boolean
+                                     ByVal codice3 As String, ByVal codice4 As String, ByVal codice5 As String, ByVal nomeChiaveConfig As String) As Boolean
       Try
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
@@ -14295,7 +14352,7 @@ Friend Class frmMain
       ' HOSPITALITY.
       If item.Contains(Modulo.NOME_HOSPITALITY) = True Then
          eui_txtDettagliProdotto.Text = "Software per strutture turistiche composto da moduli specifici per soddisfare le esigenze di ogni singola attività." &
-                                           "Bar, Ristorante, Centro sportivo, Hotel, Campeggio, Centro balneare, Centro benessere e Vendita al detaglio."
+                                              "Bar, Ristorante, Centro sportivo, Hotel, Campeggio, Centro balneare, Centro benessere e Vendita al detaglio."
       End If
 
       ' MAGAZZINO.
@@ -14810,10 +14867,10 @@ Friend Class frmMain
                      Cursor.Current = Cursors.Default
 
                      MessageBox.Show("E' disponibile una nuova versione del software!" & vbNewLine & vbNewLine &
-                                            "Versione installata: " & Application.ProductVersion & vbNewLine & vbNewLine &
-                                            "Versione aggiornamento: " & valFile & vbNewLine & vbNewLine &
-                                            "E' possibile fare il download della nuova versione del programma dal sito Internet 'Http://www.montanasoftware.it'." & vbNewLine &
-                                            "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                                   "Versione installata: " & Application.ProductVersion & vbNewLine & vbNewLine &
+                                                   "Versione aggiornamento: " & valFile & vbNewLine & vbNewLine &
+                                                   "E' possibile fare il download della nuova versione del programma dal sito Internet 'Http://www.montanasoftware.it'." & vbNewLine &
+                                                   "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
                   End If
                Else
                   ' Visualizza la versione del software sulla barra di stato.
@@ -14825,7 +14882,7 @@ Friend Class frmMain
                      Cursor.Current = Cursors.Default
 
                      MessageBox.Show("Non ci sono nuove versioni del software!" & vbNewLine & vbNewLine &
-                                            "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                                   "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
                   End If
                End If
 
@@ -14912,11 +14969,11 @@ Friend Class frmMain
                      Cursor.Current = Cursors.Default
 
                      MessageBox.Show("Servizio di assistenza: NON ATTIVO!" & vbNewLine & vbNewLine &
-                                            "Data di inizio supporto: " & dataInizio.ToShortDateString & vbNewLine &
-                                            "Data di fine supporto: " & dataFine.ToShortDateString & vbNewLine & vbNewLine &
-                                            "Hai ancora a disposizione " & numGiorniLicenza.ToString & " giorni di assistenza." & vbNewLine & vbNewLine &
-                                            "Il servizio di assistenza ti garantisce il supporto tecnico da parte di un operatore in caso di problemi che non ti consentano l'utilizzo del software." & vbNewLine &
-                                            "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                                   "Data di inizio supporto: " & dataInizio.ToShortDateString & vbNewLine &
+                                                   "Data di fine supporto: " & dataFine.ToShortDateString & vbNewLine & vbNewLine &
+                                                   "Hai ancora a disposizione " & numGiorniLicenza.ToString & " giorni di assistenza." & vbNewLine & vbNewLine &
+                                                   "Il servizio di assistenza ti garantisce il supporto tecnico da parte di un operatore in caso di problemi che non ti consentano l'utilizzo del software." & vbNewLine &
+                                                   "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
                   End If
                Else
                   ' Visualizza i giorni rimanenti della Licenza sulla barra di stato.
@@ -14927,10 +14984,10 @@ Friend Class frmMain
                      Cursor.Current = Cursors.Default
 
                      MessageBox.Show("Servizio di assistenza: ATTIVO!" & vbNewLine & vbNewLine &
-                                            "Data di inizio supporto: " & dataInizio.ToShortDateString & vbNewLine &
-                                            "Data di fine supporto: " & dataFine.ToShortDateString & vbNewLine & vbNewLine &
-                                            "Hai ancora a disposizione " & numGiorniLicenza.ToString & " giorni di assistenza." & vbNewLine &
-                                            "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                                   "Data di inizio supporto: " & dataInizio.ToShortDateString & vbNewLine &
+                                                   "Data di fine supporto: " & dataFine.ToShortDateString & vbNewLine & vbNewLine &
+                                                   "Hai ancora a disposizione " & numGiorniLicenza.ToString & " giorni di assistenza." & vbNewLine &
+                                                   "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
                   End If
                End If
 
@@ -15066,40 +15123,40 @@ Friend Class frmMain
             Dim oggetto As String = "HOSPITALITY SOLUTION 3 - " & GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOSPITALITY)
 
             Dim corpoMessaggio As String = "DATI UTENTE: " & vbNewLine & vbNewLine &
-                                               "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSociale") & vbNewLine &
-                                               "NOME E COGNOME: " & DatiConfig.GetValue("Nome") & vbNewLine &
-                                               "VIA E NUMERO: " & DatiConfig.GetValue("Via") & vbNewLine &
-                                               "CITTA': " & DatiConfig.GetValue("Città") & vbNewLine &
-                                               "CAP: " & DatiConfig.GetValue("Cap") & vbNewLine &
-                                               "PROVINCIA: " & DatiConfig.GetValue("Provincia") & vbNewLine &
-                                               "TELEFONO: " & DatiConfig.GetValue("Telefono") & vbNewLine &
-                                               "FAX: " & DatiConfig.GetValue("Fax") & vbNewLine &
-                                               "E-MAIL: " & DatiConfig.GetValue("Email") & vbNewLine &
-                                               "PARTITA IVA: " & DatiConfig.GetValue("Piva") & vbNewLine & vbNewLine &
-                                               "DATI RIVENDITORE: " & vbNewLine & vbNewLine &
-                                               "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSocialeRiv") & vbNewLine &
-                                               "NOME E COGNOME: " & DatiConfig.GetValue("NomeRiv") & vbNewLine &
-                                               "TELEFONO: " & DatiConfig.GetValue("TelefonoRiv") & vbNewLine &
-                                               "E-MAIL: " & DatiConfig.GetValue("EmailRiv") & vbNewLine &
-                                               "PARTITA IVA: " & DatiConfig.GetValue("PivaRiv") & vbNewLine & vbNewLine &
-                                               "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine &
-                                               "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine & vbNewLine &
-                                               "MODULI ATTIVI: " & vbNewLine &
-                                               "MODULO HOSPITALITY: " & DatiConfig.GetValue(Modulo.NOME_HOSPITALITY_CONFIG) & vbNewLine &
-                                               "MODULO BAR: " & DatiConfig.GetValue(Modulo.NOME_BAR_CONFIG) & vbNewLine &
-                                               "MODULO RISTORANTE: " & DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG) & vbNewLine &
-                                               "MODULO CENTRO SPORTIVO: " & DatiConfig.GetValue(Modulo.NOME_SPORTING_CONFIG) & vbNewLine &
-                                               "MODULO HOTEL: " & DatiConfig.GetValue(Modulo.NOME_HOTEL_CONFIG) & vbNewLine &
-                                               "MODULO PALMARI: " & DatiConfig.GetValue(Modulo.NOME_PALMARI_CONFIG) & vbNewLine &
-                                               "MODULO PRENOTAZIONI ON-LINE: " & DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) & vbNewLine &
-                                               "MODULO MAGAZZINO: " & DatiConfig.GetValue(Modulo.NOME_MAGAZZINO_CONFIG) & vbNewLine &
-                                               "MODULO ETICHETTE: " & DatiConfig.GetValue(Modulo.NOME_ETICHETTE_CONFIG) & vbNewLine &
-                                               "MODULO PENDRIVE PORTABLE: " & DatiConfig.GetValue(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG) & vbNewLine &
-                                               "MODULO PENDRIVE RECOVERY: " & DatiConfig.GetValue(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG) & vbNewLine &
-                                               "MODULO REGISTRATORI DI CASSA: " & DatiConfig.GetValue(Modulo.NOME_REG_CASSA_CONFIG) & vbNewLine &
-                                               "MODULO FATTURAZIONE ELETTRONICA: " & DatiConfig.GetValue(Modulo.NOME_FATT_ELETTRONICA_CONFIG) & vbNewLine & vbNewLine &
-                                               "INFORMAZIONI DI SISTEMA: " & vbNewLine &
-                                               "SISTEMA OPERATIVO: " & My.Computer.Info.OSFullName & " (" & versioneOS & ") - " & My.Computer.Info.OSVersion & " - " & My.Computer.Info.OSPlatform & vbNewLine
+                                                   "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSociale") & vbNewLine &
+                                                   "NOME E COGNOME: " & DatiConfig.GetValue("Nome") & vbNewLine &
+                                                   "VIA E NUMERO: " & DatiConfig.GetValue("Via") & vbNewLine &
+                                                   "CITTA': " & DatiConfig.GetValue("Città") & vbNewLine &
+                                                   "CAP: " & DatiConfig.GetValue("Cap") & vbNewLine &
+                                                   "PROVINCIA: " & DatiConfig.GetValue("Provincia") & vbNewLine &
+                                                   "TELEFONO: " & DatiConfig.GetValue("Telefono") & vbNewLine &
+                                                   "FAX: " & DatiConfig.GetValue("Fax") & vbNewLine &
+                                                   "E-MAIL: " & DatiConfig.GetValue("Email") & vbNewLine &
+                                                   "PARTITA IVA: " & DatiConfig.GetValue("Piva") & vbNewLine & vbNewLine &
+                                                   "DATI RIVENDITORE: " & vbNewLine & vbNewLine &
+                                                   "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSocialeRiv") & vbNewLine &
+                                                   "NOME E COGNOME: " & DatiConfig.GetValue("NomeRiv") & vbNewLine &
+                                                   "TELEFONO: " & DatiConfig.GetValue("TelefonoRiv") & vbNewLine &
+                                                   "E-MAIL: " & DatiConfig.GetValue("EmailRiv") & vbNewLine &
+                                                   "PARTITA IVA: " & DatiConfig.GetValue("PivaRiv") & vbNewLine & vbNewLine &
+                                                   "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine &
+                                                   "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine & vbNewLine &
+                                                   "MODULI ATTIVI: " & vbNewLine &
+                                                   "MODULO HOSPITALITY: " & DatiConfig.GetValue(Modulo.NOME_HOSPITALITY_CONFIG) & vbNewLine &
+                                                   "MODULO BAR: " & DatiConfig.GetValue(Modulo.NOME_BAR_CONFIG) & vbNewLine &
+                                                   "MODULO RISTORANTE: " & DatiConfig.GetValue(Modulo.NOME_CHEF_CONFIG) & vbNewLine &
+                                                   "MODULO CENTRO SPORTIVO: " & DatiConfig.GetValue(Modulo.NOME_SPORTING_CONFIG) & vbNewLine &
+                                                   "MODULO HOTEL: " & DatiConfig.GetValue(Modulo.NOME_HOTEL_CONFIG) & vbNewLine &
+                                                   "MODULO PALMARI: " & DatiConfig.GetValue(Modulo.NOME_PALMARI_CONFIG) & vbNewLine &
+                                                   "MODULO PRENOTAZIONI ON-LINE: " & DatiConfig.GetValue(Modulo.NOME_PREN_ONLINE_CONFIG) & vbNewLine &
+                                                   "MODULO MAGAZZINO: " & DatiConfig.GetValue(Modulo.NOME_MAGAZZINO_CONFIG) & vbNewLine &
+                                                   "MODULO ETICHETTE: " & DatiConfig.GetValue(Modulo.NOME_ETICHETTE_CONFIG) & vbNewLine &
+                                                   "MODULO PENDRIVE PORTABLE: " & DatiConfig.GetValue(Modulo.NOME_PENDRIVE_PORTABLE_CONFIG) & vbNewLine &
+                                                   "MODULO PENDRIVE RECOVERY: " & DatiConfig.GetValue(Modulo.NOME_PENDRIVE_RECOVERY_CONFIG) & vbNewLine &
+                                                   "MODULO REGISTRATORI DI CASSA: " & DatiConfig.GetValue(Modulo.NOME_REG_CASSA_CONFIG) & vbNewLine &
+                                                   "MODULO FATTURAZIONE ELETTRONICA: " & DatiConfig.GetValue(Modulo.NOME_FATT_ELETTRONICA_CONFIG) & vbNewLine & vbNewLine &
+                                                   "INFORMAZIONI DI SISTEMA: " & vbNewLine &
+                                                   "SISTEMA OPERATIVO: " & My.Computer.Info.OSFullName & " (" & versioneOS & ") - " & My.Computer.Info.OSVersion & " - " & My.Computer.Info.OSPlatform & vbNewLine
 
             '"CODICI DI ATTIVAZIONE: " & vbNewLine &
             '"CHIAVE MODULO HOSPITALITY: " & hospitality & vbNewLine &
@@ -15166,31 +15223,31 @@ Friend Class frmMain
             Dim oggetto As String = "HOSPITALITY SOLUTION 3 - GIUDIZIO DEMO - " & GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_HOSPITALITY)
 
             Dim corpoMessaggio As String = "DATI UTENTE: " & vbNewLine & vbNewLine &
-                                               "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSociale") & vbNewLine &
-                                               "NOME E COGNOME: " & DatiConfig.GetValue("Nome") & vbNewLine &
-                                               "VIA E NUMERO: " & DatiConfig.GetValue("Via") & vbNewLine &
-                                               "CITTA': " & DatiConfig.GetValue("Città") & vbNewLine &
-                                               "CAP: " & DatiConfig.GetValue("Cap") & vbNewLine &
-                                               "PROVINCIA: " & DatiConfig.GetValue("Provincia") & vbNewLine &
-                                               "TELEFONO: " & DatiConfig.GetValue("Telefono") & vbNewLine &
-                                               "FAX: " & DatiConfig.GetValue("Fax") & vbNewLine &
-                                               "E-MAIL: " & DatiConfig.GetValue("Email") & vbNewLine &
-                                               "PARTITA IVA: " & DatiConfig.GetValue("Piva") & vbNewLine & vbNewLine &
-                                               "DATI RIVENDITORE: " & vbNewLine & vbNewLine &
-                                               "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSocialeRiv") & vbNewLine &
-                                               "NOME E COGNOME: " & DatiConfig.GetValue("NomeRiv") & vbNewLine &
-                                               "TELEFONO: " & DatiConfig.GetValue("TelefonoRiv") & vbNewLine &
-                                               "E-MAIL: " & DatiConfig.GetValue("EmailRiv") & vbNewLine &
-                                               "PARTITA IVA: " & DatiConfig.GetValue("PivaRiv") & vbNewLine & vbNewLine &
-                                               "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine &
-                                               "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine & vbNewLine &
-                                               "VALORI GIUDIZIO: " & vbNewLine &
-                                               "SEMPLICITA': " & votoSemplicità.ToString & vbNewLine &
-                                               "UTILITA': " & votoUtilità.ToString & vbNewLine &
-                                               "GRAFICA: " & votoGrafica.ToString & vbNewLine &
-                                               "COMMENTO: " & commento & vbNewLine & vbNewLine &
-                                               "INFORMAZIONI DI SISTEMA: " & vbNewLine &
-                                               "SISTEMA OPERATIVO: " & My.Computer.Info.OSFullName & " (" & versioneOS & ") - " & My.Computer.Info.OSVersion & " - " & My.Computer.Info.OSPlatform & vbNewLine
+                                                   "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSociale") & vbNewLine &
+                                                   "NOME E COGNOME: " & DatiConfig.GetValue("Nome") & vbNewLine &
+                                                   "VIA E NUMERO: " & DatiConfig.GetValue("Via") & vbNewLine &
+                                                   "CITTA': " & DatiConfig.GetValue("Città") & vbNewLine &
+                                                   "CAP: " & DatiConfig.GetValue("Cap") & vbNewLine &
+                                                   "PROVINCIA: " & DatiConfig.GetValue("Provincia") & vbNewLine &
+                                                   "TELEFONO: " & DatiConfig.GetValue("Telefono") & vbNewLine &
+                                                   "FAX: " & DatiConfig.GetValue("Fax") & vbNewLine &
+                                                   "E-MAIL: " & DatiConfig.GetValue("Email") & vbNewLine &
+                                                   "PARTITA IVA: " & DatiConfig.GetValue("Piva") & vbNewLine & vbNewLine &
+                                                   "DATI RIVENDITORE: " & vbNewLine & vbNewLine &
+                                                   "RAGIONE SOCIALE: " & DatiConfig.GetValue("RagioneSocialeRiv") & vbNewLine &
+                                                   "NOME E COGNOME: " & DatiConfig.GetValue("NomeRiv") & vbNewLine &
+                                                   "TELEFONO: " & DatiConfig.GetValue("TelefonoRiv") & vbNewLine &
+                                                   "E-MAIL: " & DatiConfig.GetValue("EmailRiv") & vbNewLine &
+                                                   "PARTITA IVA: " & DatiConfig.GetValue("PivaRiv") & vbNewLine & vbNewLine &
+                                                   "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine &
+                                                   "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine & vbNewLine &
+                                                   "VALORI GIUDIZIO: " & vbNewLine &
+                                                   "SEMPLICITA': " & votoSemplicità.ToString & vbNewLine &
+                                                   "UTILITA': " & votoUtilità.ToString & vbNewLine &
+                                                   "GRAFICA: " & votoGrafica.ToString & vbNewLine &
+                                                   "COMMENTO: " & commento & vbNewLine & vbNewLine &
+                                                   "INFORMAZIONI DI SISTEMA: " & vbNewLine &
+                                                   "SISTEMA OPERATIVO: " & My.Computer.Info.OSFullName & " (" & versioneOS & ") - " & My.Computer.Info.OSVersion & " - " & My.Computer.Info.OSPlatform & vbNewLine
 
             Dim messaggio As System.Net.Mail.MailMessage = New System.Net.Mail.MailMessage(eMailMittente, eMailDestinatario)
             messaggio.Subject = oggetto
@@ -15911,11 +15968,11 @@ Friend Class frmMain
             .LeggiDati(NOME_TABELLA_AZIENDA)
 
             Dim messaggio As String = "Gentile " & LeggiNomeCompletoDestinatario() & "," & vbNewLine & vbNewLine &
-                                          "Alleghiamo alla presente il documento in oggetto." & vbNewLine &
-                                          "Con l'occasione, porgiamo distinti saluti." & vbNewLine & vbNewLine &
-                                          .RagSociale & vbNewLine & vbNewLine &
-                                          "Telefono: " & .Telefono & vbNewLine &
-                                          "Internet: " & .Internet
+                                              "Alleghiamo alla presente il documento in oggetto." & vbNewLine &
+                                              "Con l'occasione, porgiamo distinti saluti." & vbNewLine & vbNewLine &
+                                              .RagSociale & vbNewLine & vbNewLine &
+                                              "Telefono: " & .Telefono & vbNewLine &
+                                              "Internet: " & .Internet
             Return messaggio
 
          End With
@@ -16821,7 +16878,7 @@ Friend Class frmMain
       ' Se il modulo Pen Drive Recovery è attivo
       If moduloAttivo.PenDriveRecovery = True Then
          PenDriveRecovery("Hospitality Solution Recovery\HsRecovery", "PercorsoRecovery", "DataRecovery", "AttivaRecovery",
-                             "Hospitality Solution 3.0.exe", "HsPack.msi", "Hospitality Solution Recovery.exe")
+                                "Hospitality Solution 3.0.exe", "HsPack.msi", "Hospitality Solution Recovery.exe")
       End If
    End Sub
 
@@ -17028,8 +17085,8 @@ Friend Class frmMain
          Else
             ' Visualizza i giorni rimanenti della Licenza.
             MessageBox.Show("Servizio di assistenza per la versione dimostativa: ATTIVO!" & vbNewLine & vbNewLine &
-                                "Hai ancora a disposizione " & giorniVerDemo & " giorni di assistenza." & vbNewLine &
-                                "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    "Hai ancora a disposizione " & giorniVerDemo & " giorni di assistenza." & vbNewLine &
+                                    "Per informazioni rivolgersi a: 'info@montanasoftware.it'", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          End If
 
       Catch ex As Exception

@@ -3993,7 +3993,10 @@ Public Class frmPos
          Dim IdCameriere As Integer
          Dim NomeCameriere As String
          Dim Spettanza As String
-         Dim Gruppo As Short
+         Dim Gruppo As String
+
+         Dim CCamerieriTavolo As New CamerieriTavolo
+         Dim numCamerieri As Integer = CCamerieriTavolo.LeggiNumRecord("CamerieriTavolo", idTavolo)
 
          cn.Open()
 
@@ -4023,7 +4026,7 @@ Public Class frmPos
             If IsDBNull(dr.Item("Gruppo")) = False Then
                Gruppo = dr.Item("Gruppo").ToString
             Else
-               Gruppo = GruppoCamerieri.Altri
+               Gruppo = CAMERIERE_ALTRI
             End If
 
             Dim i As Integer
@@ -4062,7 +4065,7 @@ Public Class frmPos
 
                   .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
                   .Importo = lstvDettagli.Items(i).SubItems(3).Text
-                  .SpettanzaCameriere = Spettanza 'CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text))
+                  .SpettanzaCameriere = CalcolaSpettanzaCamerieri(idTavolo, numCamerieri, lstvDettagli)
                   .GruppoCameriere = Gruppo
                   .Contabilizzata = "No"
 

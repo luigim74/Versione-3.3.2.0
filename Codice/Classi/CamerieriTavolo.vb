@@ -22,7 +22,7 @@ Public Class CamerieriTavolo
    Public Nome As String
    Public Spettanza As String
    Public CalcoloManualeSpettanza As Boolean
-   Public Gruppo As Short
+   Public Gruppo As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -76,7 +76,7 @@ Public Class CamerieriTavolo
             If IsDBNull(dr.Item("Gruppo")) = False Then
                Me.Gruppo = dr.Item("Gruppo")
             Else
-               Me.Gruppo = GruppoCamerieri.Altri
+               Me.Gruppo = CAMERIERE_ALTRI
             End If
          Loop
 
@@ -146,7 +146,7 @@ Public Class CamerieriTavolo
             If IsDBNull(dr.Item("Gruppo")) = False Then
                lst.Items(lst.Items.Count - 1).Group = lst.Groups.Item(dr.Item("Gruppo"))
             Else
-               lst.Items(i).SubItems.Add(GruppoCamerieri.Altri.ToString)
+               lst.Items(i).SubItems.Add(CAMERIERE_ALTRI)
             End If
 
             ' Contatore.
@@ -307,5 +307,37 @@ Public Class CamerieriTavolo
          cn.Close()
       End Try
    End Function
+
+   Public Function LeggiNumRecord(ByVal tabella As String, ByVal IdTavolo As Integer) As Integer
+      Dim closeOnExit As Boolean
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene il numero di record.
+         Dim cmd As New OleDbCommand("SELECT COUNT(*) FROM " & tabella & " WHERE IdTavolo = " & IdTavolo, cn)
+
+         Return CInt(cmd.ExecuteScalar())
+
+         ' Chiude la connessione se è da chiudere.
+         If closeOnExit Then cn.Close()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
 
 End Class

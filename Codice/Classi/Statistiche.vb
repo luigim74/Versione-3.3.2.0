@@ -30,7 +30,7 @@ Public Class Statistiche
    Public Importo As String
    Public Contabilizzata As String
    Public SpettanzaCameriere As String
-   Public GruppoCameriere As Short
+   Public GruppoCameriere As String
 
    ' Dichiara un oggetto connessione.
    Private cn As New OleDbConnection(ConnString)
@@ -139,7 +139,7 @@ Public Class Statistiche
          If IsDBNull(ds.Tables(tabella).Rows(0)("GruppoCameriere")) = False Then
             Me.GruppoCameriere = ds.Tables(tabella).Rows(0)("GruppoCameriere")
          Else
-            Me.GruppoCameriere = GruppoCamerieri.Predefinito
+            Me.GruppoCameriere = CAMERIERE_PREDEFINITO
          End If
 
       Catch ex As Exception

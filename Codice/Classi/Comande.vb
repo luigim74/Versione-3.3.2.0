@@ -321,6 +321,8 @@ Public Class Comande
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Return False
+
       Finally
          cn.Close()
 

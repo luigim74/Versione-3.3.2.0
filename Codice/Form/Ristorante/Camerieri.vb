@@ -206,6 +206,10 @@ Public Class frmCamerieri
       Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.tbpStatisticheVendita = New System.Windows.Forms.TabPage()
+      Me.txtTotaleGiorni = New System.Windows.Forms.TextBox()
+      Me.txtTotaleEuroGiorni = New System.Windows.Forms.TextBox()
+      Me.Label17 = New System.Windows.Forms.Label()
+      Me.Label18 = New System.Windows.Forms.Label()
       Me.txtTotaleSpettanza = New System.Windows.Forms.TextBox()
       Me.Label16 = New System.Windows.Forms.Label()
       Me.eui_ddwnFiltro = New Elegant.Ui.DropDown()
@@ -229,17 +233,13 @@ Public Class frmCamerieri
       Me.clnTotale = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.clnSpettanza = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.clnContabilizzata = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.clnIdTavolo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.TabPage6 = New System.Windows.Forms.TabPage()
       Me.txtNote = New System.Windows.Forms.TextBox()
       Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.clnIdTavolo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.txtTotaleEuroGiorni = New System.Windows.Forms.TextBox()
-      Me.Label17 = New System.Windows.Forms.Label()
-      Me.txtTotaleGiorni = New System.Windows.Forms.TextBox()
-      Me.Label18 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -316,7 +316,7 @@ Public Class frmCamerieri
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -367,7 +367,7 @@ Public Class frmCamerieri
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(772, 397)
+      Me.TabPage1.Size = New System.Drawing.Size(772, 432)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -483,7 +483,7 @@ Public Class frmCamerieri
       'EliminaImg
       '
       Me.EliminaImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.EliminaImg.Location = New System.Drawing.Point(498, 166)
+      Me.EliminaImg.Location = New System.Drawing.Point(683, 323)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
       Me.EliminaImg.TabIndex = 13
@@ -492,7 +492,7 @@ Public Class frmCamerieri
       'ApriImg
       '
       Me.ApriImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ApriImg.Location = New System.Drawing.Point(426, 166)
+      Me.ApriImg.Location = New System.Drawing.Point(611, 323)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(64, 24)
       Me.ApriImg.TabIndex = 12
@@ -502,9 +502,9 @@ Public Class frmCamerieri
       '
       Me.picFoto.BackColor = System.Drawing.Color.White
       Me.picFoto.Cursor = System.Windows.Forms.Cursors.Default
-      Me.picFoto.Location = New System.Drawing.Point(426, 22)
+      Me.picFoto.Location = New System.Drawing.Point(452, 22)
       Me.picFoto.Name = "picFoto"
-      Me.picFoto.Size = New System.Drawing.Size(136, 136)
+      Me.picFoto.Size = New System.Drawing.Size(295, 295)
       Me.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
       Me.picFoto.TabIndex = 178
       Me.picFoto.TabStop = False
@@ -716,7 +716,7 @@ Public Class frmCamerieri
       Me.TabPage3.Controls.Add(Me.Label11)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(772, 397)
+      Me.TabPage3.Size = New System.Drawing.Size(772, 432)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -873,14 +873,14 @@ Public Class frmCamerieri
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(772, 397)
+      Me.TabPage4.Size = New System.Drawing.Size(772, 432)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
       'cmdRimuovi
       '
       Me.cmdRimuovi.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdRimuovi.Location = New System.Drawing.Point(675, 365)
+      Me.cmdRimuovi.Location = New System.Drawing.Point(677, 400)
       Me.cmdRimuovi.Name = "cmdRimuovi"
       Me.cmdRimuovi.Size = New System.Drawing.Size(88, 24)
       Me.cmdRimuovi.TabIndex = 3
@@ -889,7 +889,7 @@ Public Class frmCamerieri
       'cmdModifica
       '
       Me.cmdModifica.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdModifica.Location = New System.Drawing.Point(579, 365)
+      Me.cmdModifica.Location = New System.Drawing.Point(581, 400)
       Me.cmdModifica.Name = "cmdModifica"
       Me.cmdModifica.Size = New System.Drawing.Size(88, 24)
       Me.cmdModifica.TabIndex = 2
@@ -898,7 +898,7 @@ Public Class frmCamerieri
       'cmdInserimento
       '
       Me.cmdInserimento.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdInserimento.Location = New System.Drawing.Point(491, 365)
+      Me.cmdInserimento.Location = New System.Drawing.Point(493, 400)
       Me.cmdInserimento.Name = "cmdInserimento"
       Me.cmdInserimento.Size = New System.Drawing.Size(80, 24)
       Me.cmdInserimento.TabIndex = 1
@@ -915,7 +915,7 @@ Public Class frmCamerieri
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(772, 359)
+      Me.lvwAllegati.Size = New System.Drawing.Size(772, 394)
       Me.lvwAllegati.StateImageList = Me.ImageList1
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
@@ -954,9 +954,9 @@ Public Class frmCamerieri
       'tbpStatisticheVendita
       '
       Me.tbpStatisticheVendita.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleGiorni)
       Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleEuroGiorni)
       Me.tbpStatisticheVendita.Controls.Add(Me.Label17)
-      Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleGiorni)
       Me.tbpStatisticheVendita.Controls.Add(Me.Label18)
       Me.tbpStatisticheVendita.Controls.Add(Me.txtTotaleSpettanza)
       Me.tbpStatisticheVendita.Controls.Add(Me.Label16)
@@ -973,6 +973,46 @@ Public Class frmCamerieri
       Me.tbpStatisticheVendita.Size = New System.Drawing.Size(772, 432)
       Me.tbpStatisticheVendita.TabIndex = 6
       Me.tbpStatisticheVendita.Text = "Statistiche di vendita"
+      '
+      'txtTotaleGiorni
+      '
+      Me.txtTotaleGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotaleGiorni.ForeColor = System.Drawing.Color.Black
+      Me.txtTotaleGiorni.Location = New System.Drawing.Point(443, 397)
+      Me.txtTotaleGiorni.Name = "txtTotaleGiorni"
+      Me.txtTotaleGiorni.ReadOnly = True
+      Me.txtTotaleGiorni.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotaleGiorni.TabIndex = 8
+      Me.txtTotaleGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'txtTotaleEuroGiorni
+      '
+      Me.txtTotaleEuroGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtTotaleEuroGiorni.ForeColor = System.Drawing.Color.Red
+      Me.txtTotaleEuroGiorni.Location = New System.Drawing.Point(655, 397)
+      Me.txtTotaleEuroGiorni.Name = "txtTotaleEuroGiorni"
+      Me.txtTotaleEuroGiorni.ReadOnly = True
+      Me.txtTotaleEuroGiorni.Size = New System.Drawing.Size(100, 20)
+      Me.txtTotaleEuroGiorni.TabIndex = 9
+      Me.txtTotaleEuroGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      '
+      'Label17
+      '
+      Me.Label17.AutoSize = True
+      Me.Label17.Location = New System.Drawing.Point(558, 400)
+      Me.Label17.Name = "Label17"
+      Me.Label17.Size = New System.Drawing.Size(78, 13)
+      Me.Label17.TabIndex = 10
+      Me.Label17.Text = "Importo Totale:"
+      '
+      'Label18
+      '
+      Me.Label18.AutoSize = True
+      Me.Label18.Location = New System.Drawing.Point(372, 400)
+      Me.Label18.Name = "Label18"
+      Me.Label18.Size = New System.Drawing.Size(73, 13)
+      Me.Label18.TabIndex = 7
+      Me.Label18.Text = "Giorni Lavoro:"
       '
       'txtTotaleSpettanza
       '
@@ -1059,7 +1099,7 @@ Public Class frmCamerieri
       'txtTotale
       '
       Me.txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotale.ForeColor = System.Drawing.Color.Red
+      Me.txtTotale.ForeColor = System.Drawing.Color.Black
       Me.txtTotale.Location = New System.Drawing.Point(443, 371)
       Me.txtTotale.Name = "txtTotale"
       Me.txtTotale.ReadOnly = True
@@ -1070,7 +1110,7 @@ Public Class frmCamerieri
       'txtTotaleQuantità
       '
       Me.txtTotaleQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleQuantità.ForeColor = System.Drawing.Color.Red
+      Me.txtTotaleQuantità.ForeColor = System.Drawing.Color.Black
       Me.txtTotaleQuantità.Location = New System.Drawing.Point(258, 371)
       Me.txtTotaleQuantità.Name = "txtTotaleQuantità"
       Me.txtTotaleQuantità.ReadOnly = True
@@ -1159,12 +1199,16 @@ Public Class frmCamerieri
       Me.clnContabilizzata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
       Me.clnContabilizzata.Width = 80
       '
+      'clnIdTavolo
+      '
+      Me.clnIdTavolo.Width = 0
+      '
       'TabPage6
       '
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(772, 397)
+      Me.TabPage6.Size = New System.Drawing.Size(772, 432)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1182,7 +1226,7 @@ Public Class frmCamerieri
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(772, 397)
+      Me.txtNote.Size = New System.Drawing.Size(772, 432)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1194,56 +1238,12 @@ Public Class frmCamerieri
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'clnIdTavolo
-      '
-      Me.clnIdTavolo.Width = 0
-      '
-      'txtTotaleEuroGiorni
-      '
-      Me.txtTotaleEuroGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleEuroGiorni.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleEuroGiorni.Location = New System.Drawing.Point(655, 397)
-      Me.txtTotaleEuroGiorni.Name = "txtTotaleEuroGiorni"
-      Me.txtTotaleEuroGiorni.ReadOnly = True
-      Me.txtTotaleEuroGiorni.Size = New System.Drawing.Size(100, 20)
-      Me.txtTotaleEuroGiorni.TabIndex = 9
-      Me.txtTotaleEuroGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label17
-      '
-      Me.Label17.AutoSize = True
-      Me.Label17.Location = New System.Drawing.Point(558, 400)
-      Me.Label17.Name = "Label17"
-      Me.Label17.Size = New System.Drawing.Size(94, 13)
-      Me.Label17.TabIndex = 10
-      Me.Label17.Text = "Totale euro Giorni:"
-      '
-      'txtTotaleGiorni
-      '
-      Me.txtTotaleGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtTotaleGiorni.ForeColor = System.Drawing.Color.Red
-      Me.txtTotaleGiorni.Location = New System.Drawing.Point(443, 397)
-      Me.txtTotaleGiorni.Name = "txtTotaleGiorni"
-      Me.txtTotaleGiorni.ReadOnly = True
-      Me.txtTotaleGiorni.Size = New System.Drawing.Size(100, 20)
-      Me.txtTotaleGiorni.TabIndex = 8
-      Me.txtTotaleGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label18
-      '
-      Me.Label18.AutoSize = True
-      Me.Label18.Location = New System.Drawing.Point(372, 400)
-      Me.Label18.Name = "Label18"
-      Me.Label18.Size = New System.Drawing.Size(70, 13)
-      Me.Label18.TabIndex = 7
-      Me.Label18.Text = "Totale Giorni:"
-      '
       'frmCamerieri
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(781, 507)
+      Me.ClientSize = New System.Drawing.Size(781, 504)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1286,7 +1286,7 @@ Public Class frmCamerieri
 
    Const TAB_CAP As String = "CAP"
    Const TAB_NAZIONI As String = "Nazioni"
-   Const TAB_AGENZIE As String = "Agenzie"
+   Const TAB_AGENZIE As String = "AgenzieCamerieri"
    Const TAB_ALLEGATI As String = "Ca_Allegati"
    Const TAB_PREN As String = "Prenotazioni"
    Const TAB_STATISTICHE As String = "Statistiche"
@@ -1428,6 +1428,8 @@ Public Class frmCamerieri
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim sql As String
+      Dim sqlGroupBy As String
+
       Try
          Select Case filtro
             Case FILTRO_TUTTE
@@ -1436,6 +1438,7 @@ Public Class frmCamerieri
 
                ' Crea la stringa sql di selezione dati.
                sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' ORDER BY Data ASC"
+               sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' GROUP BY Data"
 
             Case FILTRO_CONTABILIZZATE
                ' Aggiorna il pulsante filtro.
@@ -1443,6 +1446,7 @@ Public Class frmCamerieri
 
                ' Crea la stringa sql di selezione dati.
                sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'Sì' ORDER BY Data ASC"
+               sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'Sì' GROUP BY Data"
 
             Case FILTRO_DA_CONTABILIZZARE
                ' Aggiorna il pulsante filtro.
@@ -1450,6 +1454,7 @@ Public Class frmCamerieri
 
                ' Crea la stringa sql di selezione dati.
                sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'No' ORDER BY Data ASC"
+               sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'No' GROUP BY Data"
 
             Case FILTRO_DA_CONTABILIZZARE_SPETTANZA
                ' Aggiorna il pulsante filtro.
@@ -1457,6 +1462,7 @@ Public Class frmCamerieri
 
                ' Crea la stringa sql di selezione dati.
                sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND SpettanzaCameriere > 0 AND Contabilizzata = 'No' ORDER BY Data ASC"
+               sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND SpettanzaCameriere > 0 AND Contabilizzata = 'No' GROUP BY Data"
          End Select
 
          cn.Open()
@@ -1545,8 +1551,12 @@ Public Class frmCamerieri
          txtTotale.Text = "€ " & CFormatta.FormattaNumeroDouble(SommaColonna(lvwStatistiche, 6))
          txtTotaleSpettanza.Text = "€ " & CFormatta.FormattaNumeroDouble(SommaColonna(lvwStatistiche, 7))
 
-         txtTotaleGiorni.Text = TrovaNumeroGiorni(Me.Tag)
-         txtTotaleEuroGiorni.Text = txtTotaleGiorni.Text * txtCostoGiorno.Text
+         ' Ottiene il numero dei giorni lavorati e calcola il rispettivo importo.
+         Dim totaleGiorni As Integer = TrovaNumeroGiorni(sqlGroupBy)
+         Dim costoGiorno As Double = txtCostoGiorno.Text
+         Dim totaleImporto As Double = totaleGiorni * costoGiorno
+         txtTotaleGiorni.Text = totaleGiorni.ToString
+         txtTotaleEuroGiorni.Text = "€ " & CFormatta.FormattaNumeroDouble(totaleImporto)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1696,14 +1706,25 @@ Public Class frmCamerieri
       End Try
    End Function
 
-   Private Function TrovaNumeroGiorni(ByVal idCameriere As String) As Integer
+   Private Function TrovaNumeroGiorni(ByVal sql As String) As Integer
       Try
          cn.Open()
 
-         ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT COUNT(*) FROM Statistiche WHERE IdCameriere = '" & idCameriere & "' GROUP BY Data")
+         Dim cmd As New OleDbCommand(sql, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         Return CInt(cmd.ExecuteScalar())
+         Dim numGiorni As Integer = 0
+
+         Do While dr.Read
+            numGiorni += 1
+         Loop
+
+         ' Ottiene il numero di record.
+         'cmd.CommandText = sql
+
+         'Dim numGiorni As Integer = cmd.ExecuteScalar()
+
+         Return numGiorni
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1739,7 +1760,7 @@ Public Class frmCamerieri
          ' Carica le liste.
          CaricaLista(cmbCittà, TAB_CAP)
          CaricaLista(cmbNazione, TAB_NAZIONI)
-         CaricaLista(cmbAgenzia, TAB_AGENZIE)
+         CaricaListaFornitori(cmbAgenzia, TAB_AGENZIE)
 
          If Me.Tag <> String.Empty Then
             With ACamerieri
@@ -1790,12 +1811,6 @@ Public Class frmCamerieri
 
             ' Carica la lista delle degli allegati.
             ConvalidaAllegati()
-
-            ' Impostazioni per il modulo NightClub.
-            If moduloAttivo.NightClub = True Then
-               ' Carica le statistiche di vendita per il cameriere selezionato.
-               CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
-            End If
          Else
             ' In caso di nuovo inserimento dati imposta i valori di default.
             ' Per i nuovi camerieri che non sono nel database (con un id).
@@ -1892,6 +1907,16 @@ Public Class frmCamerieri
                cmdInserimento.NotifyDefault(True)
 
             Case 3
+               ' Impostazioni per il modulo NightClub.
+               If moduloAttivo.NightClub = True Then
+                  ' Carica le statistiche di vendita per il cameriere selezionato.
+                  CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
+               End If
+
+               ' Imposta lo stato attivo.
+               Me.lvwStatistiche.Focus()
+
+            Case 4
                ' Imposta lo stato attivo.
                Me.txtNote.Focus()
 
@@ -1934,6 +1959,8 @@ Public Class frmCamerieri
    Private Sub txtCostoOra_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCostoOra.LostFocus
       If IsNumeric(sender.Text) Then
          sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+      Else
+         sender.Text = VALORE_ZERO
       End If
    End Sub
 
@@ -1944,6 +1971,8 @@ Public Class frmCamerieri
    Private Sub txtCostoGiorno_LostFocus(sender As Object, e As EventArgs) Handles txtCostoGiorno.LostFocus
       If IsNumeric(sender.Text) Then
          sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+      Else
+         sender.Text = VALORE_ZERO
       End If
    End Sub
 
@@ -2200,7 +2229,7 @@ Public Class frmCamerieri
          Dim elencoCamerieri As String
 
          ' Crea la stringa sql di selezione dati.
-         sql = "SELECT * FROM " & TAB_STATISTICHE & " WHERE IdTavolo = '" & idTavolo & "' AND Data = #" & dataStat & "# ORDER BY GruppoCameriere ASC"
+         sql = "SELECT IdCameriere, DesCameriere FROM " & TAB_STATISTICHE & " WHERE IdTavolo = '" & idTavolo & "' AND Data = #" & dataStat & "# GROUP BY IdCameriere, DesCameriere"
 
          cn.Open()
 

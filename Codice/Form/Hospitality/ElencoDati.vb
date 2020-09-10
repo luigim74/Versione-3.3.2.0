@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 02/09/2020
+' Data ultima modifica: 08/09/2020
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -747,32 +747,31 @@ Public Class frmElencoDati
                End If
 
             Case Elenco.AgenzieCamerieri
-               ' todo: Modificare per AgenzieCamerieri
-               If DatiConfig.GetValue("WSCamerieri") = CStr(FormWindowState.Maximized) Then
+               If DatiConfig.GetValue("WSAgenzieCamerieri") = CStr(FormWindowState.Maximized) Then
                   Me.WindowState = FormWindowState.Maximized
                   Exit Sub
-               ElseIf DatiConfig.GetValue("WSCamerieri") = CStr(FormWindowState.Minimized) Then
+               ElseIf DatiConfig.GetValue("WSAgenzieCamerieri") = CStr(FormWindowState.Minimized) Then
                   Me.WindowState = FormWindowState.Minimized
                   Exit Sub
                Else
-                  If DatiConfig.GetValue("ACamerieri") <> "" Then
-                     Me.Height = CInt(DatiConfig.GetValue("ACamerieri"))
+                  If DatiConfig.GetValue("AAgenzieCamerieri") <> "" Then
+                     Me.Height = CInt(DatiConfig.GetValue("AAgenzieCamerieri"))
                   Else
                      Me.Height = FORM_ALTEZZA
                   End If
 
-                  If DatiConfig.GetValue("LCamerieri") <> "" Then
-                     Me.Width = CInt(DatiConfig.GetValue("LCamerieri"))
+                  If DatiConfig.GetValue("LAgenzieCamerieri") <> "" Then
+                     Me.Width = CInt(DatiConfig.GetValue("LAgenzieCamerieri"))
                   Else
                      Me.Width = FORM_LARGHEZZA
                   End If
 
-                  If DatiConfig.GetValue("CamerieriX") <> "" Then
-                     Me.Location = New Point(CInt(DatiConfig.GetValue("CamerieriX")), Me.Location.Y)
+                  If DatiConfig.GetValue("AgenzieCamerieriX") <> "" Then
+                     Me.Location = New Point(CInt(DatiConfig.GetValue("AgenzieCamerieriX")), Me.Location.Y)
                   End If
 
-                  If DatiConfig.GetValue("CamerieriY") <> "" Then
-                     Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("CamerieriY")))
+                  If DatiConfig.GetValue("AgenzieCamerieriY") <> "" Then
+                     Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("AgenzieCamerieriY")))
                   End If
 
                   Exit Sub
@@ -1122,12 +1121,11 @@ Public Class frmElencoDati
                DatiConfig.SetValue("LCamerieri", Me.Width)
 
             Case Elenco.AgenzieCamerieri
-               ' todo: Modificare per AgenzieCamerieri.
-               DatiConfig.SetValue("WSCamerieri", Me.WindowState)
-               DatiConfig.SetValue("CamerieriX", Me.Location.X)
-               DatiConfig.SetValue("CamerieriY", Me.Location.Y)
-               DatiConfig.SetValue("ACamerieri", Me.Height)
-               DatiConfig.SetValue("LCamerieri", Me.Width)
+               DatiConfig.SetValue("WSAgenzieCamerieri", Me.WindowState)
+               DatiConfig.SetValue("AgenzieCamerieriX", Me.Location.X)
+               DatiConfig.SetValue("AgenzieCamerieriY", Me.Location.Y)
+               DatiConfig.SetValue("AAgenzieCamerieri", Me.Height)
+               DatiConfig.SetValue("LAgenzieCamerieri", Me.Width)
 
             Case Elenco.Sale
                DatiConfig.SetValue("WSSale", Me.WindowState)
@@ -1270,16 +1268,15 @@ Public Class frmElencoDati
                End If
 
             Case Finestra.AgenzieCamerieri
-               ' TODO: Modificare per AgenzieCamerieri.
-               'If operatore.AnagCamerieri = VALORE_LETTURA Then
-               '   tbrNuovo.Enabled = False
-               '   tbrModifica.Enabled = False
-               '   tbrElimina.Enabled = False
-               'Else
-               '   tbrNuovo.Enabled = True
-               '   tbrModifica.Enabled = True
-               '   tbrElimina.Enabled = True
-               'End If
+               If operatore.AnagAgenzieCamerieri = VALORE_LETTURA Then
+                  tbrNuovo.Enabled = False
+                  tbrModifica.Enabled = False
+                  tbrElimina.Enabled = False
+               Else
+                  tbrNuovo.Enabled = True
+                  tbrModifica.Enabled = True
+                  tbrElimina.Enabled = True
+               End If
 
             Case Finestra.CatPiatti
                If operatore.AnagCatPiatti = VALORE_LETTURA Then
@@ -1686,7 +1683,7 @@ Public Class frmElencoDati
                strDescrizione = "(" & ragSoc & ")"
 
                ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
+               Risposta = MsgBox("Si desidera eliminare l'Agenzia " & ragSoc &
                                  """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
             Case Elenco.Sale
@@ -1935,6 +1932,11 @@ Public Class frmElencoDati
                ImpostaComandi()
             End If
 
+         Case Elenco.AgenzieCamerieri
+            If ImpostaFunzioniOperatore(Finestra.AgenzieCamerieri) = True Then
+               ImpostaComandi()
+            End If
+
          Case Elenco.Sale
             If ImpostaFunzioniOperatore(Finestra.Sale) = True Then
                ImpostaComandi()
@@ -2093,10 +2095,9 @@ Public Class frmElencoDati
                   End If
                End If
 
-               ' TODO: Modificare per AgenzieCamerieri.
-               'Dim frm As New frmCamerieri
-               'frm.Tag = val
-               'frm.ShowDialog()
+               Dim frm As New frmAgenzieCamerieri
+               frm.Tag = val
+               frm.ShowDialog()
 
             Case Elenco.Sale
                ' Per la versione demo.
@@ -2326,7 +2327,7 @@ Public Class frmElencoDati
                                                         DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
             End Select
          Else
-            DataGrid1.CaptionText = ""
+            DataGrid1.CaptionText = String.Empty
          End If
 
       Catch ex As Exception
@@ -2398,8 +2399,7 @@ Public Class frmElencoDati
                CreaColonneCamerieri(NomeTabella)
 
             Case Elenco.AgenzieCamerieri
-               ' TODO: Modificare per AgenzieCamerieri.
-               'CreaColonneCamerieri(NomeTabella)
+               CreaColonneAgenzieCamerieri(NomeTabella)
 
             Case Elenco.Sale
                CreaColonneSale(NomeTabella)
@@ -3225,6 +3225,136 @@ Public Class frmElencoDati
          agenziaStyle.NullText = ""
          agenziaStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(agenziaStyle)
+
+         DataGrid1.TableStyles.Clear()
+         DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
+      Try
+         Dim gridStyle As New DataGridTableStyle
+         gridStyle.MappingName = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         codiceStyle.MappingName = "Id"
+         codiceStyle.HeaderText = "Codice"
+         codiceStyle.Width = 75
+         codiceStyle.NullText = ""
+         codiceStyle.Alignment = HorizontalAlignment.Right
+         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         gridStyle.GridColumnStyles.Add(codiceStyle)
+
+         ' Ragione sociale
+         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         ragSocStyle.MappingName = "RagSociale"
+         ragSocStyle.HeaderText = "Ragione sociale"
+         ragSocStyle.Width = 150
+         ragSocStyle.NullText = ""
+         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(ragSocStyle)
+         ' Indirizzo1
+         Dim Indirizzo1Style As New DataGridTextBoxColumn
+         Indirizzo1Style.MappingName = "Indirizzo"
+         Indirizzo1Style.HeaderText = "Indirizzo"
+         Indirizzo1Style.Width = 150
+         Indirizzo1Style.NullText = ""
+         Indirizzo1Style.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
+         ' Cap
+         Dim capStyle As New DataGridTextBoxColumn
+         capStyle.MappingName = "Cap"
+         capStyle.HeaderText = "C.A.P."
+         capStyle.Width = 60
+         capStyle.NullText = ""
+         capStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(capStyle)
+         ' Citt‡
+         Dim citt‡Style As New DataGridTextBoxColumn
+         citt‡Style.MappingName = "Citt‡"
+         citt‡Style.HeaderText = "Citt‡"
+         citt‡Style.Width = 150
+         citt‡Style.NullText = ""
+         citt‡Style.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(citt‡Style)
+         ' Provincia
+         Dim provStyle As New DataGridTextBoxColumn
+         provStyle.MappingName = "Provincia"
+         provStyle.HeaderText = "Provincia"
+         provStyle.Width = 60
+         provStyle.NullText = ""
+         provStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(provStyle)
+         ' Regione
+         Dim regioneStyle As New DataGridTextBoxColumn
+         regioneStyle.MappingName = "Regione"
+         regioneStyle.HeaderText = "Regione"
+         regioneStyle.Width = 75
+         regioneStyle.NullText = ""
+         regioneStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(regioneStyle)
+         ' Nazione
+         Dim nazioneStyle As New DataGridTextBoxColumn
+         nazioneStyle.MappingName = "Nazione"
+         nazioneStyle.HeaderText = "Nazione"
+         nazioneStyle.Width = 75
+         nazioneStyle.NullText = ""
+         nazioneStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(nazioneStyle)
+         ' Contatto
+         Dim contattoStyle As New DataGridTextBoxColumn
+         contattoStyle.MappingName = "Contatto"
+         contattoStyle.HeaderText = "Contatto"
+         contattoStyle.Width = 75
+         contattoStyle.NullText = ""
+         contattoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(contattoStyle)
+         ' Attivit‡
+         'Dim attivit‡Style As New DataGridTextBoxColumn
+         'attivit‡Style.MappingName = "Attivit‡"
+         'attivit‡Style.HeaderText = "Attivit‡"
+         'attivit‡Style.Width = 75
+         'attivit‡Style.NullText = ""
+         'attivit‡Style.TextBox.BackColor = Color.White
+         'gridStyle.GridColumnStyles.Add(attivit‡Style)
+         ' Tel. ufficio
+         Dim telUfficioStyle As New DataGridTextBoxColumn
+         telUfficioStyle.MappingName = "TelUfficio"
+         telUfficioStyle.HeaderText = "Tel. ufficio"
+         telUfficioStyle.Width = 100
+         telUfficioStyle.NullText = ""
+         telUfficioStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(telUfficioStyle)
+         ' Fax
+         Dim faxStyle As New DataGridTextBoxColumn
+         faxStyle.MappingName = "Fax"
+         faxStyle.HeaderText = "Fax"
+         faxStyle.Width = 100
+         faxStyle.NullText = ""
+         faxStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(faxStyle)
+         ' Cell
+         Dim cellStyle As New DataGridTextBoxColumn
+         cellStyle.MappingName = "Cell"
+         cellStyle.HeaderText = "Cellulare"
+         cellStyle.Width = 100
+         cellStyle.NullText = ""
+         cellStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(cellStyle)
+         ' Email
+         Dim emailStyle As New DataGridTextBoxColumn
+         emailStyle.MappingName = "Email"
+         emailStyle.HeaderText = "E-mail"
+         emailStyle.Width = 150
+         emailStyle.NullText = ""
+         emailStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(emailStyle)
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
@@ -4075,7 +4205,6 @@ Public Class frmElencoDati
                CampoRicerca.Items.Add("Regione")
                CampoRicerca.Items.Add("Nazione")
                CampoRicerca.Items.Add("Contatto")
-               CampoRicerca.Items.Add("Attivit‡")
                CampoRicerca.Items.Add("Tel. ufficio")
                CampoRicerca.Items.Add("Fax")
                CampoRicerca.Items.Add("Cellulare")
@@ -4295,6 +4424,34 @@ Public Class frmElencoDati
 
       End Try
    End Sub
+
+   Private Sub AnteprimaDiStampaAgenzieCamerieri(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+      Try
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapter As New OleDbDataAdapter
+         oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
+
+         Dim ds As New CamerieriDataSet
+         ds.Clear()
+         oleAdapter.Fill(ds, tabella)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepCamerieri(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
 
    Private Sub AnteprimaDiStampaAziende(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
@@ -4651,6 +4808,34 @@ Public Class frmElencoDati
    End Sub
 
    Private Sub StampaElencoCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+      Try
+         'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim ds As New CamerieriDataSet
+         ds.Clear()
+
+         ' Carica i dati della tabella in un DataAdapter.
+         Dim oleAdapter1 As New OleDbDataAdapter
+         oleAdapter1.SelectCommand = New OleDbCommand(sqlRep, cn)
+         oleAdapter1.Fill(ds, TAB_CAMERIERI)
+
+         Dim stampa As New StampaReports(ds, nomeStampante, numCopie, FORMATO_REPORT_A4)
+         stampa.Avvia(Application.StartupPath & nomeDoc)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub StampaElencoAgenzieCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -5095,8 +5280,8 @@ Public Class frmElencoDati
             Case Elenco.AgenzieCamerieri
                CampoRicerca.SelectedIndex = 1
 
-               strDescrizione = STR_ANAGRAFICA_CAMERIERI
-               strModulo = MODULO_ANAGRAFICA_CAMERIERI
+               strDescrizione = STR_ANAGRAFICA_AGENZIE_CAMERIERI
+               strModulo = MODULO_ANAGRAFICA_AGENZIE_CAMERIERI
 
             Case Elenco.Sale
                CampoRicerca.SelectedIndex = 1
@@ -5455,6 +5640,9 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
+                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
+                     StampaElencoAgenzieCamerieri(repSql, PERCORSO_REP_CAMERIERI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
+                  End If
 
                Case Elenco.Sale
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -5529,6 +5717,7 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
+                  AnteprimaDiStampaAgenzieCamerieri(PERCORSO_REP_CAMERIERI_A4, TAB_CAMERIERI, repSql)
 
                Case Elenco.Sale
                   AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)

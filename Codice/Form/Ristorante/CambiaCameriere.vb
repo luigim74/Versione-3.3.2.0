@@ -70,44 +70,13 @@ Public Class CambiaCameriere
       End Try
    End Function
 
-   Private Function CalcolaSpettanzaCamerieri(ByVal numCamerieri As Integer) As String
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
-      Dim valSpettanza As Double
-      Dim totaleSpettanza As Double
-
-      Try
-         cn.Open()
-
-         Dim cmd As New OleDbCommand("SELECT * FROM Comande WHERE IdRisorsa = " & idTavolo, cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
-
-         Do While dr.Read()
-            valSpettanza = LeggiSpettanzaCameriere("Piatti", dr.Item("IdPiatto").ToString, dr.Item("Quantità").ToString)
-            totaleSpettanza = totaleSpettanza + valSpettanza
-         Loop
-
-         totaleSpettanza = totaleSpettanza / numCamerieri
-
-         Return CFormatta.FormattaNumeroDouble(totaleSpettanza)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         cn.Close()
-
-      End Try
-   End Function
-
    Private Sub AggiornaSpettanzaCamerieri()
       Try
          ' Aggiorna i valori delle spettanza in base al numero dei camerieri.
          If eui_ckdSpettanzaManuale.Checked = False Then
             Dim j As Integer
             For j = 0 To lvwCamerieri.Items.Count - 1
-               lvwCamerieri.Items(j).SubItems(1).Text = CalcolaSpettanzaCamerieri(lvwCamerieri.Items.Count)
+               lvwCamerieri.Items(j).SubItems(1).Text = CalcolaSpettanzaCamerieri(idTavolo, lvwCamerieri.Items.Count)
             Next
          End If
 
@@ -131,7 +100,7 @@ Public Class CambiaCameriere
          ' Nome cameriere.
          lvwCamerieri.Items.Add(selCameriere)
          ' Spettanza.
-         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(CalcolaSpettanzaCamerieri(lvwCamerieri.Items.Count))
+         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(CalcolaSpettanzaCamerieri(idTavolo, lvwCamerieri.Items.Count))
          ' IdTavolo.
          lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(idTavolo)
          ' IdCameriere.
@@ -140,7 +109,7 @@ Public Class CambiaCameriere
          lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(eui_ckdSpettanzaManuale.Checked.ToString)
 
          ' Stabilisce il gruppo di appartenenza.
-         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item("Predefinito")
+         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item(CAMERIERE_PREDEFINITO)
       End If
 
       eui_ckdSpettanzaManuale.Checked = Convert.ToBoolean(lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems(4).Text)
@@ -149,7 +118,7 @@ Public Class CambiaCameriere
       If eui_ckdSpettanzaManuale.Checked = False Then
          Dim i As Integer
          For i = 0 To lvwCamerieri.Items.Count - 1
-            lvwCamerieri.Items(i).SubItems(1).Text = CalcolaSpettanzaCamerieri(lvwCamerieri.Items.Count)
+            lvwCamerieri.Items(i).SubItems(1).Text = CalcolaSpettanzaCamerieri(idTavolo, lvwCamerieri.Items.Count)
          Next
       End If
 
@@ -173,12 +142,7 @@ Public Class CambiaCameriere
                Camerieri.IdTavolo = lvwCamerieri.Items(i).SubItems(2).Text
                Camerieri.IdCameriere = lvwCamerieri.Items(i).SubItems(3).Text
                Camerieri.CalcoloManualeSpettanza = lvwCamerieri.Items(i).SubItems(4).Text
-
-               If lvwCamerieri.Items(i).Group.ToString = "Predefinito" Then
-                  Camerieri.Gruppo = GruppoCamerieri.Predefinito
-               Else
-                  Camerieri.Gruppo = GruppoCamerieri.Altri
-               End If
+               Camerieri.Gruppo = lvwCamerieri.Items(i).Group.ToString
 
                Camerieri.InserisciDati("CamerieriTavolo")
             Next
@@ -218,7 +182,7 @@ Public Class CambiaCameriere
          lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(eui_ckdSpettanzaManuale.Checked.ToString)
 
          ' Stabilisce il gruppo di appartenenza.
-         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item("Altri")
+         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item(CAMERIERE_ALTRI)
 
          ' Aggiorna i valori delle spettanza in base al numero dei camerieri.
          AggiornaSpettanzaCamerieri()
@@ -234,7 +198,7 @@ Public Class CambiaCameriere
       Try
          lvwCamerieri.Focus()
 
-         If lvwCamerieri.Items(lvwCamerieri.FocusedItem.Index).Group.Name = "Predefinito" Then
+         If lvwCamerieri.Items(lvwCamerieri.FocusedItem.Index).Group.Name = CAMERIERE_PREDEFINITO Then
             MessageBox.Show("Il cameriere predefinito non può essere eliminato!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          Else
             lvwCamerieri.Items.Remove(lvwCamerieri.FocusedItem)
@@ -256,10 +220,10 @@ Public Class CambiaCameriere
 
          Dim i As Integer
          For i = 0 To lvwCamerieri.Items.Count - 1
-            lvwCamerieri.Items(i).Group = lvwCamerieri.Groups.Item("Altri")
+            lvwCamerieri.Items(i).Group = lvwCamerieri.Groups.Item(CAMERIERE_ALTRI)
          Next
 
-         lvwCamerieri.Items(lvwCamerieri.FocusedItem.Index).Group = lvwCamerieri.Groups.Item("Predefinito")
+         lvwCamerieri.Items(lvwCamerieri.FocusedItem.Index).Group = lvwCamerieri.Groups.Item(CAMERIERE_PREDEFINITO)
 
          Me.Tag = lvwCamerieri.FocusedItem.Text
 
