@@ -4425,6 +4425,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   ' TODO: Modificare per AgenzieCamerieri.
    Private Sub AnteprimaDiStampaAgenzieCamerieri(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
@@ -4835,6 +4836,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   ' TODO: Modificare per AgenzieCamerieri.
    Private Sub StampaElencoAgenzieCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 

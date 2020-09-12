@@ -89,6 +89,7 @@ Public Class CambiaCameriere
 
    Private Sub CambiaCameriere_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Me.Text = "Cambia " & DenominazioneCamerieri
+      lblNomeTavolo.Text = "CAMERIERI AL TAVOLO: " & g_frmVCTavoli.lblTavolo.Text
 
       CaricaListaCamerieri(eui_cmbCameriere, "Camerieri")
       eui_cmbCameriere.SelectedItem = selCameriere

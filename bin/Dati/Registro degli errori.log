@@ -266,3 +266,132 @@ Nome parametro: index"
    in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 334"
 "
 "
+"*** 12/09/2020 - 16:14:22 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:19:03 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:19:29 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 868"
+"
+"
+"*** 12/09/2020 - 16:22:52 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:23:22 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:24:17 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:25:16 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
+"
+"
+"*** 12/09/2020 - 16:36:24 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
+"
+"
+"*** 12/09/2020 - 16:36:48 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
+"
+"
+"*** 12/09/2020 - 16:42:05 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
+"
+"
+"*** 12/09/2020 - 16:49:35 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Monica Raspelli'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 880"
+"
+"
+"*** 12/09/2020 - 16:51:57 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Monica Raspelli'."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 880"
+"
+"
+"*** 12/09/2020 - 17:08:42 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"
+"
+"*** 12/09/2020 - 17:08:55 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"
+"
+"*** 12/09/2020 - 17:16:00 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"
+"
+"*** 12/09/2020 - 17:16:21 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 883"
+"
+"
