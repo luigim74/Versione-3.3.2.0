@@ -66,6 +66,9 @@ Public Class frmElencoDati
 
    Private DatiConfig As AppConfig
    Private strDescrizione As String
+   Friend WithEvents eui_txtTestoRicerca As Elegant.Ui.TextBox
+   Friend WithEvents eui_cmbCampoRicerca As Elegant.Ui.ComboBox
+   Friend WithEvents DataGridView1 As DataGridView
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
 
 #End Region
@@ -195,8 +198,6 @@ Public Class frmElencoDati
    Friend WithEvents Panel1 As System.Windows.Forms.Panel
    Friend WithEvents Label1 As System.Windows.Forms.Label
    Friend WithEvents Label2 As System.Windows.Forms.Label
-   Friend WithEvents CampoRicerca As System.Windows.Forms.ComboBox
-   Friend WithEvents TestoRicerca As System.Windows.Forms.TextBox
    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
    Friend WithEvents tbSep As System.Windows.Forms.ToolBarButton
@@ -218,6 +219,8 @@ Public Class frmElencoDati
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmElencoDati))
+      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.tbrNuovo = New System.Windows.Forms.ToolBarButton()
       Me.tbrModifica = New System.Windows.Forms.ToolBarButton()
@@ -241,15 +244,17 @@ Public Class frmElencoDati
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
       Me.DataGrid1 = New System.Windows.Forms.DataGrid()
       Me.Panel1 = New System.Windows.Forms.Panel()
-      Me.CampoRicerca = New System.Windows.Forms.ComboBox()
+      Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
+      Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.Label1 = New System.Windows.Forms.Label()
-      Me.TestoRicerca = New System.Windows.Forms.TextBox()
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.DataGridView1 = New System.Windows.Forms.DataGridView()
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel1.SuspendLayout()
+      CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'ToolBar1
@@ -262,8 +267,8 @@ Public Class frmElencoDati
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(608, 26)
-      Me.ToolBar1.TabIndex = 2
+      Me.ToolBar1.Size = New System.Drawing.Size(656, 26)
+      Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
       '
@@ -431,30 +436,43 @@ Public Class frmElencoDati
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(608, 285)
-      Me.DataGrid1.TabIndex = 1
+      Me.DataGrid1.Size = New System.Drawing.Size(656, 71)
+      Me.DataGrid1.TabIndex = 0
       '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
-      Me.Panel1.Controls.Add(Me.CampoRicerca)
+      Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
+      Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
       Me.Panel1.Controls.Add(Me.Label2)
       Me.Panel1.Controls.Add(Me.Label1)
-      Me.Panel1.Controls.Add(Me.TestoRicerca)
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(608, 30)
+      Me.Panel1.Size = New System.Drawing.Size(656, 30)
       Me.Panel1.TabIndex = 0
       '
-      'CampoRicerca
+      'eui_cmbCampoRicerca
       '
-      Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(466, 8)
-      Me.CampoRicerca.Name = "CampoRicerca"
-      Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
-      Me.CampoRicerca.TabIndex = 1
+      Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbCampoRicerca.FormattingEnabled = False
+      Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(515, 8)
+      Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
+      Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
+      Me.eui_cmbCampoRicerca.TabIndex = 1
+      Me.eui_cmbCampoRicerca.TextEditorWidth = 112
+      '
+      'eui_txtTestoRicerca
+      '
+      Me.eui_txtTestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
+      Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
+      Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(306, 21)
+      Me.eui_txtTestoRicerca.TabIndex = 0
+      Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
       'Label2
       '
@@ -462,7 +480,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(378, 8)
+      Me.Label2.Location = New System.Drawing.Point(426, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -479,15 +497,6 @@ Public Class frmElencoDati
       Me.Label1.TabIndex = 6
       Me.Label1.Text = "Testo di ricerca:"
       '
-      'TestoRicerca
-      '
-      Me.TestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.TestoRicerca.Location = New System.Drawing.Point(113, 8)
-      Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(254, 20)
-      Me.TestoRicerca.TabIndex = 0
-      '
       'PrintDialog1
       '
       Me.PrintDialog1.Document = Me.PrintDocument1
@@ -501,11 +510,39 @@ Public Class frmElencoDati
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'DataGridView1
+      '
+      Me.DataGridView1.AllowUserToAddRows = False
+      Me.DataGridView1.AllowUserToDeleteRows = False
+      DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+      Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+      DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+      Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+      Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
+      Me.DataGridView1.Location = New System.Drawing.Point(0, 75)
+      Me.DataGridView1.Name = "DataGridView1"
+      Me.DataGridView1.ReadOnly = True
+      Me.DataGridView1.Size = New System.Drawing.Size(656, 305)
+      Me.DataGridView1.TabIndex = 2
+      '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(608, 342)
+      Me.ClientSize = New System.Drawing.Size(656, 390)
+      Me.Controls.Add(Me.DataGridView1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
@@ -516,6 +553,7 @@ Public Class frmElencoDati
       CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.Panel1.ResumeLayout(False)
       Me.Panel1.PerformLayout()
+      CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -1525,7 +1563,7 @@ Public Class frmElencoDati
          ' Calcola il numero delle pagine da visualizzare.
          LeggiNumPagine(tabella)
 
-         DataGrid1.DataSource = dt
+         DataGridView1.DataSource = dt
 
          ' Visualizza la prima pagina di dati.
          VisualizzaPagina(1, sql)
@@ -1553,7 +1591,7 @@ Public Class frmElencoDati
          ' Chiude la connessione se Ë da chiudere.
          If closeOnExit Then cn.Close()
 
-         If TestoRicerca.Text <> "" Then
+         If eui_txtTestoRicerca.Text <> "" Then
             numPagine = 1
          Else
             ' Ottiene il numero di pagine.
@@ -1854,17 +1892,17 @@ Public Class frmElencoDati
 
    Public Sub AggiornaDati()
       Try
-         If TestoRicerca.Text <> "" Then
+         If eui_txtTestoRicerca.Text <> "" Then
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGrid1.DataSource = dt
+            DataGridView1.DataSource = dt
 
-            FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
+            FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
          Else
             ' Calcola il numero delle pagine da visualizzare.
             LeggiNumPagine(NomeTabella)
 
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGrid1.DataSource = dt
+            DataGridView1.DataSource = dt
 
             ' Visualizza la prima pagina di dati.
             VisualizzaPagina(pagCorrente, sql)
@@ -2438,6 +2476,319 @@ Public Class frmElencoDati
 
    End Sub
 
+   Private Sub CreaColonneFornitori_1(ByVal tabella As String)
+      Try
+         Dim gridStyle As New DataGridTableStyle
+         gridStyle.MappingName = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
+         codiceStyle.MappingName = "Id"
+         codiceStyle.HeaderText = "Codice"
+         codiceStyle.Width = 75
+         codiceStyle.NullText = ""
+         codiceStyle.Alignment = HorizontalAlignment.Right
+         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
+         gridStyle.GridColumnStyles.Add(codiceStyle)
+
+         ' Ragione sociale
+         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
+         ragSocStyle.MappingName = "RagSociale"
+         ragSocStyle.HeaderText = "Ragione sociale"
+         ragSocStyle.Width = 150
+         ragSocStyle.NullText = ""
+         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         gridStyle.GridColumnStyles.Add(ragSocStyle)
+         ' Indirizzo1
+         Dim Indirizzo1Style As New DataGridTextBoxColumn
+         Indirizzo1Style.MappingName = "Indirizzo"
+         Indirizzo1Style.HeaderText = "Indirizzo"
+         Indirizzo1Style.Width = 150
+         Indirizzo1Style.NullText = ""
+         Indirizzo1Style.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
+         ' Cap
+         Dim capStyle As New DataGridTextBoxColumn
+         capStyle.MappingName = "Cap"
+         capStyle.HeaderText = "C.A.P."
+         capStyle.Width = 60
+         capStyle.NullText = ""
+         capStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(capStyle)
+         ' Citt‡
+         Dim citt‡Style As New DataGridTextBoxColumn
+         citt‡Style.MappingName = "Citt‡"
+         citt‡Style.HeaderText = "Citt‡"
+         citt‡Style.Width = 150
+         citt‡Style.NullText = ""
+         citt‡Style.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(citt‡Style)
+         ' Provincia
+         Dim provStyle As New DataGridTextBoxColumn
+         provStyle.MappingName = "Provincia"
+         provStyle.HeaderText = "Provincia"
+         provStyle.Width = 60
+         provStyle.NullText = ""
+         provStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(provStyle)
+         ' Regione
+         Dim regioneStyle As New DataGridTextBoxColumn
+         regioneStyle.MappingName = "Regione"
+         regioneStyle.HeaderText = "Regione"
+         regioneStyle.Width = 75
+         regioneStyle.NullText = ""
+         regioneStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(regioneStyle)
+         ' Nazione
+         Dim nazioneStyle As New DataGridTextBoxColumn
+         nazioneStyle.MappingName = "Nazione"
+         nazioneStyle.HeaderText = "Nazione"
+         nazioneStyle.Width = 75
+         nazioneStyle.NullText = ""
+         nazioneStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(nazioneStyle)
+         ' Contatto
+         Dim contattoStyle As New DataGridTextBoxColumn
+         contattoStyle.MappingName = "Contatto"
+         contattoStyle.HeaderText = "Contatto"
+         contattoStyle.Width = 75
+         contattoStyle.NullText = ""
+         contattoStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(contattoStyle)
+         ' Attivit‡
+         Dim attivit‡Style As New DataGridTextBoxColumn
+         attivit‡Style.MappingName = "Attivit‡"
+         attivit‡Style.HeaderText = "Attivit‡"
+         attivit‡Style.Width = 75
+         attivit‡Style.NullText = ""
+         attivit‡Style.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(attivit‡Style)
+         ' Tel. ufficio
+         Dim telUfficioStyle As New DataGridTextBoxColumn
+         telUfficioStyle.MappingName = "TelUfficio"
+         telUfficioStyle.HeaderText = "Tel. ufficio"
+         telUfficioStyle.Width = 100
+         telUfficioStyle.NullText = ""
+         telUfficioStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(telUfficioStyle)
+         ' Fax
+         Dim faxStyle As New DataGridTextBoxColumn
+         faxStyle.MappingName = "Fax"
+         faxStyle.HeaderText = "Fax"
+         faxStyle.Width = 100
+         faxStyle.NullText = ""
+         faxStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(faxStyle)
+         ' Cell
+         Dim cellStyle As New DataGridTextBoxColumn
+         cellStyle.MappingName = "Cell"
+         cellStyle.HeaderText = "Cellulare"
+         cellStyle.Width = 100
+         cellStyle.NullText = ""
+         cellStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(cellStyle)
+         ' Email
+         Dim emailStyle As New DataGridTextBoxColumn
+         emailStyle.MappingName = "Email"
+         emailStyle.HeaderText = "E-mail"
+         emailStyle.Width = 150
+         emailStyle.NullText = ""
+         emailStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(emailStyle)
+
+         DataGrid1.TableStyles.Clear()
+         DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneFornitori(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Ragione sociale
+         Dim ragSocStyle As New DataGridViewTextBoxColumn()
+         With ragSocStyle
+            .DataPropertyName = "RagSociale"
+            .HeaderText = "Ragione sociale"
+            .Name = "RagSociale"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, ragSocStyle)
+
+         ' Indirizzo
+         Dim IndirizzoStyle As New DataGridViewTextBoxColumn()
+         With IndirizzoStyle
+            .DataPropertyName = "Indirizzo"
+            .HeaderText = "Indirizzo"
+            .Name = "Indirizzo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, IndirizzoStyle)
+
+         ' Cap
+         Dim capStyle As New DataGridViewTextBoxColumn()
+         With capStyle
+            .DataPropertyName = "Cap"
+            .HeaderText = "C.A.P."
+            .Name = "Cap"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, capStyle)
+
+         ' Citt‡
+         Dim citt‡Style As New DataGridViewTextBoxColumn()
+         With citt‡Style
+            .DataPropertyName = "Citt‡"
+            .HeaderText = "Citt‡"
+            .Name = "Citt‡"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, citt‡Style)
+
+         ' Provincia
+         Dim provStyle As New DataGridViewTextBoxColumn()
+         With provStyle
+            .DataPropertyName = "Provincia"
+            .HeaderText = "Provincia"
+            .Name = "Provincia"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, provStyle)
+
+         ' Regione
+         Dim regioneStyle As New DataGridViewTextBoxColumn()
+         With regioneStyle
+            .DataPropertyName = "Regione"
+            .HeaderText = "Regione"
+            .Name = "Regione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, regioneStyle)
+
+         ' Nazione
+         Dim nazioneStyle As New DataGridViewTextBoxColumn()
+         With nazioneStyle
+            .DataPropertyName = "Nazione"
+            .HeaderText = "Nazione"
+            .Name = "Nazione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, nazioneStyle)
+
+         ' Contatto
+         Dim contattoStyle As New DataGridViewTextBoxColumn()
+         With contattoStyle
+            .DataPropertyName = "Contatto"
+            .HeaderText = "Contatto"
+            .Name = "Contatto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, contattoStyle)
+
+         ' Attivit‡
+         Dim attivit‡Style As New DataGridViewTextBoxColumn()
+         With attivit‡Style
+            .DataPropertyName = "Attivit‡"
+            .HeaderText = "Attivit‡"
+            .Name = "Attivit‡"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, attivit‡Style)
+
+         ' Tel. ufficio
+         Dim telUfficioStyle As New DataGridViewTextBoxColumn()
+         With telUfficioStyle
+            .DataPropertyName = "TelUfficio"
+            .HeaderText = "Tel. ufficio"
+            .Name = "TelUfficio"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, telUfficioStyle)
+
+         ' Fax
+         Dim faxStyle As New DataGridViewTextBoxColumn()
+         With faxStyle
+            .DataPropertyName = "Fax"
+            .HeaderText = "Fax"
+            .Name = "Fax"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, faxStyle)
+
+         ' Cell
+         Dim cellStyle As New DataGridViewTextBoxColumn()
+         With cellStyle
+            .DataPropertyName = "Cell"
+            .HeaderText = "Cellulare"
+            .Name = "Cell"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, cellStyle)
+
+         ' Email
+         Dim emailStyle As New DataGridViewTextBoxColumn()
+         With emailStyle
+            .DataPropertyName = "Email"
+            .HeaderText = "E-mail"
+            .Name = "Email"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, emailStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub CreaColonneClienti(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
@@ -2605,136 +2956,6 @@ Public Class frmElencoDati
          codiceStyle.Alignment = HorizontalAlignment.Right
          codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
          gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Ragione sociale
-         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         ragSocStyle.MappingName = "RagSociale"
-         ragSocStyle.HeaderText = "Ragione sociale"
-         ragSocStyle.Width = 150
-         ragSocStyle.NullText = ""
-         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(ragSocStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Regione
-         Dim regioneStyle As New DataGridTextBoxColumn
-         regioneStyle.MappingName = "Regione"
-         regioneStyle.HeaderText = "Regione"
-         regioneStyle.Width = 75
-         regioneStyle.NullText = ""
-         regioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(regioneStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Contatto
-         Dim contattoStyle As New DataGridTextBoxColumn
-         contattoStyle.MappingName = "Contatto"
-         contattoStyle.HeaderText = "Contatto"
-         contattoStyle.Width = 75
-         contattoStyle.NullText = ""
-         contattoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(contattoStyle)
-         ' Attivit‡
-         Dim attivit‡Style As New DataGridTextBoxColumn
-         attivit‡Style.MappingName = "Attivit‡"
-         attivit‡Style.HeaderText = "Attivit‡"
-         attivit‡Style.Width = 75
-         attivit‡Style.NullText = ""
-         attivit‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(attivit‡Style)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub CreaColonneFornitori(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-
          ' Ragione sociale
          Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
          ragSocStyle.MappingName = "RagSociale"
@@ -3054,7 +3275,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
+   Private Sub CreaColonneCatPiatti_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3097,6 +3318,69 @@ Public Class frmElencoDati
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         ' Reparto
+         Dim repartoStyle As New DataGridViewTextBoxColumn()
+         With repartoStyle
+            .DataPropertyName = "Reparto"
+            .HeaderText = "Reparto"
+            .Name = "Reparto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, repartoStyle)
+
+         ' Colore
+         Dim coloreStyle As New DataGridViewTextBoxColumn
+         With coloreStyle
+            .DataPropertyName = "ColoreSfondo"
+            .HeaderText = "Colore"
+            .Name = "ColoreSfondo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3366,7 +3650,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneSale(ByVal tabella As String)
+   Private Sub CreaColonneSale_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3401,6 +3685,57 @@ Public Class frmElencoDati
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneSale(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         ' Colore
+         Dim coloreStyle As New DataGridViewTextBoxColumn
+         With coloreStyle
+            .DataPropertyName = "ColoreSfondo"
+            .HeaderText = "Colore"
+            .Name = "ColoreSfondo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3787,7 +4122,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneOperatori(ByVal tabella As String)
+   Private Sub CreaColonneOperatori_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3837,7 +4172,58 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneGruppi(ByVal tabella As String)
+   Private Sub CreaColonneOperatori(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Nome utente
+         Dim nomeUtenteStyle As New DataGridViewTextBoxColumn()
+         With nomeUtenteStyle
+            .DataPropertyName = "NomeUtente"
+            .HeaderText = "Nome utente"
+            .Name = "NomeUtente"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, nomeUtenteStyle)
+
+         ' Gruppo
+         Dim gruppoStyle As New DataGridViewTextBoxColumn
+         With gruppoStyle
+            .DataPropertyName = "Gruppo"
+            .HeaderText = "Gruppo"
+            .Name = "Gruppo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, gruppoStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneGruppi_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3871,7 +4257,46 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
+   Private Sub CreaColonneGruppi(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Nome gruppo
+         Dim nomeGruppoStyle As New DataGridViewTextBoxColumn()
+         With nomeGruppoStyle
+            .DataPropertyName = "NomeGruppo"
+            .HeaderText = "Nome gruppo"
+            .Name = "NomeGruppo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, nomeGruppoStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneCarattRisorse_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3913,7 +4338,61 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         ' Costo
+         Dim costoStyle As New DataGridViewTextBoxColumn()
+         With costoStyle
+            .DataPropertyName = "Costo"
+            .HeaderText = "Costo"
+            .Name = "Costo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneScontiMaggiorazioni_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3977,6 +4456,96 @@ Public Class frmElencoDati
 
          DataGrid1.TableStyles.Clear()
          DataGrid1.TableStyles.Add(gridStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         ' Tipologia
+         Dim tipologiaStyle As New DataGridViewTextBoxColumn()
+         With tipologiaStyle
+            .DataPropertyName = "Tipologia"
+            .HeaderText = "Tipologia"
+            .Name = "Tipologia"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipologiaStyle)
+
+         ' Tipo Importo
+         Dim tipoImportoStyle As New DataGridViewTextBoxColumn()
+         With tipoImportoStyle
+            .DataPropertyName = "TipoImporto"
+            .HeaderText = "Tipo Importo"
+            .Name = "TipoImporto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipoImportoStyle)
+
+         ' Valore
+         Dim valoreStyle As New DataGridViewTextBoxColumn()
+         With valoreStyle
+            .DataPropertyName = "Valore"
+            .HeaderText = "Valore"
+            .Name = "Valore"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, valoreStyle)
+
+         ' Colore
+         Dim coloreStyle As New DataGridViewTextBoxColumn()
+         With coloreStyle
+            .DataPropertyName = "Colore"
+            .HeaderText = "Colore"
+            .Name = "ColoreSfondo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -4087,175 +4656,175 @@ Public Class frmElencoDati
       Try
          Select Case TipoElenco
             Case Elenco.Clienti
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Rag. Soc. / Cognome")
-               CampoRicerca.Items.Add("Nome")
-               CampoRicerca.Items.Add("Tipo cliente")
-               CampoRicerca.Items.Add("Data di nascita")
-               CampoRicerca.Items.Add("Indirizzo")
-               CampoRicerca.Items.Add("C.A.P.")
-               CampoRicerca.Items.Add("Citt‡")
-               CampoRicerca.Items.Add("Provincia")
-               CampoRicerca.Items.Add("Regione")
-               CampoRicerca.Items.Add("Nazione")
-               CampoRicerca.Items.Add("Tel. ufficio")
-               CampoRicerca.Items.Add("Tel. casa")
-               CampoRicerca.Items.Add("Fax")
-               CampoRicerca.Items.Add("Cellulare")
-               CampoRicerca.Items.Add("E-mail")
-               CampoRicerca.Items.Add("Obsoleto")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Rag. Soc. / Cognome")
+               eui_cmbCampoRicerca.Items.Add("Nome")
+               eui_cmbCampoRicerca.Items.Add("Tipo cliente")
+               eui_cmbCampoRicerca.Items.Add("Data di nascita")
+               eui_cmbCampoRicerca.Items.Add("Indirizzo")
+               eui_cmbCampoRicerca.Items.Add("C.A.P.")
+               eui_cmbCampoRicerca.Items.Add("Citt‡")
+               eui_cmbCampoRicerca.Items.Add("Provincia")
+               eui_cmbCampoRicerca.Items.Add("Regione")
+               eui_cmbCampoRicerca.Items.Add("Nazione")
+               eui_cmbCampoRicerca.Items.Add("Tel. ufficio")
+               eui_cmbCampoRicerca.Items.Add("Tel. casa")
+               eui_cmbCampoRicerca.Items.Add("Fax")
+               eui_cmbCampoRicerca.Items.Add("Cellulare")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Obsoleto")
 
             Case Elenco.Aziende
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Ragione sociale")
-               CampoRicerca.Items.Add("Indirizzo")
-               CampoRicerca.Items.Add("C.A.P.")
-               CampoRicerca.Items.Add("Citt‡")
-               CampoRicerca.Items.Add("Provincia")
-               CampoRicerca.Items.Add("Regione")
-               CampoRicerca.Items.Add("Nazione")
-               CampoRicerca.Items.Add("Contatto")
-               CampoRicerca.Items.Add("Attivit‡")
-               CampoRicerca.Items.Add("Tel. ufficio")
-               CampoRicerca.Items.Add("Fax")
-               CampoRicerca.Items.Add("Cellulare")
-               CampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Ragione sociale")
+               eui_cmbCampoRicerca.Items.Add("Indirizzo")
+               eui_cmbCampoRicerca.Items.Add("C.A.P.")
+               eui_cmbCampoRicerca.Items.Add("Citt‡")
+               eui_cmbCampoRicerca.Items.Add("Provincia")
+               eui_cmbCampoRicerca.Items.Add("Regione")
+               eui_cmbCampoRicerca.Items.Add("Nazione")
+               eui_cmbCampoRicerca.Items.Add("Contatto")
+               eui_cmbCampoRicerca.Items.Add("Attivit‡")
+               eui_cmbCampoRicerca.Items.Add("Tel. ufficio")
+               eui_cmbCampoRicerca.Items.Add("Fax")
+               eui_cmbCampoRicerca.Items.Add("Cellulare")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
 
             Case Elenco.Fornitori
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Ragione sociale")
-               CampoRicerca.Items.Add("Indirizzo")
-               CampoRicerca.Items.Add("C.A.P.")
-               CampoRicerca.Items.Add("Citt‡")
-               CampoRicerca.Items.Add("Provincia")
-               CampoRicerca.Items.Add("Regione")
-               CampoRicerca.Items.Add("Nazione")
-               CampoRicerca.Items.Add("Contatto")
-               CampoRicerca.Items.Add("Attivit‡")
-               CampoRicerca.Items.Add("Tel. ufficio")
-               CampoRicerca.Items.Add("Fax")
-               CampoRicerca.Items.Add("Cellulare")
-               CampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Ragione sociale")
+               eui_cmbCampoRicerca.Items.Add("Indirizzo")
+               eui_cmbCampoRicerca.Items.Add("C.A.P.")
+               eui_cmbCampoRicerca.Items.Add("Citt‡")
+               eui_cmbCampoRicerca.Items.Add("Provincia")
+               eui_cmbCampoRicerca.Items.Add("Regione")
+               eui_cmbCampoRicerca.Items.Add("Nazione")
+               eui_cmbCampoRicerca.Items.Add("Contatto")
+               eui_cmbCampoRicerca.Items.Add("Attivit‡")
+               eui_cmbCampoRicerca.Items.Add("Tel. ufficio")
+               eui_cmbCampoRicerca.Items.Add("Fax")
+               eui_cmbCampoRicerca.Items.Add("Cellulare")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
 
             Case Elenco.Articoli
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Unit‡ di misura")
-               CampoRicerca.Items.Add("Giacenza")
-               CampoRicerca.Items.Add("Carico")
-               CampoRicerca.Items.Add("Scarico")
-               CampoRicerca.Items.Add("Prezzo di acquisto")
-               CampoRicerca.Items.Add("Categoria")
-               CampoRicerca.Items.Add("Fornitore")
-               CampoRicerca.Items.Add("Magazzino")
-               CampoRicerca.Items.Add("Codice a barre")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Unit‡ di misura")
+               eui_cmbCampoRicerca.Items.Add("Giacenza")
+               eui_cmbCampoRicerca.Items.Add("Carico")
+               eui_cmbCampoRicerca.Items.Add("Scarico")
+               eui_cmbCampoRicerca.Items.Add("Prezzo di acquisto")
+               eui_cmbCampoRicerca.Items.Add("Categoria")
+               eui_cmbCampoRicerca.Items.Add("Fornitore")
+               eui_cmbCampoRicerca.Items.Add("Magazzino")
+               eui_cmbCampoRicerca.Items.Add("Codice a barre")
 
             Case Elenco.Prenotazioni
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Data")
-               CampoRicerca.Items.Add("Cliente")
-               CampoRicerca.Items.Add("Tavolo")
-               CampoRicerca.Items.Add("Dalle ore")
-               CampoRicerca.Items.Add("Alle ore")
-               CampoRicerca.Items.Add("Telefono")
-               CampoRicerca.Items.Add("E-mail")
-               CampoRicerca.Items.Add("Stato prenotazione")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Data")
+               eui_cmbCampoRicerca.Items.Add("Cliente")
+               eui_cmbCampoRicerca.Items.Add("Tavolo")
+               eui_cmbCampoRicerca.Items.Add("Dalle ore")
+               eui_cmbCampoRicerca.Items.Add("Alle ore")
+               eui_cmbCampoRicerca.Items.Add("Telefono")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Stato prenotazione")
 
             Case Elenco.PrenSale
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Data")
-               CampoRicerca.Items.Add("Cliente")
-               CampoRicerca.Items.Add("Sala")
-               CampoRicerca.Items.Add("Dalle ore")
-               CampoRicerca.Items.Add("Alle ore")
-               CampoRicerca.Items.Add("Stato prenotazione")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Data")
+               eui_cmbCampoRicerca.Items.Add("Cliente")
+               eui_cmbCampoRicerca.Items.Add("Sala")
+               eui_cmbCampoRicerca.Items.Add("Dalle ore")
+               eui_cmbCampoRicerca.Items.Add("Alle ore")
+               eui_cmbCampoRicerca.Items.Add("Stato prenotazione")
 
             Case Elenco.Sale
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
 
             Case Elenco.CatPiatti
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Reparto")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Reparto")
 
             Case Elenco.Camerieri
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Nome")
-               CampoRicerca.Items.Add("Costo/Ora")
-               CampoRicerca.Items.Add("Indirizzo")
-               CampoRicerca.Items.Add("C.A.P.")
-               CampoRicerca.Items.Add("Citt‡")
-               CampoRicerca.Items.Add("Provincia")
-               CampoRicerca.Items.Add("Nazione")
-               CampoRicerca.Items.Add("Tel. ufficio")
-               CampoRicerca.Items.Add("Tel. casa")
-               CampoRicerca.Items.Add("Fax")
-               CampoRicerca.Items.Add("Cellulare")
-               CampoRicerca.Items.Add("E-mail")
-               CampoRicerca.Items.Add("Agenzia")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Nome")
+               eui_cmbCampoRicerca.Items.Add("Costo/Ora")
+               eui_cmbCampoRicerca.Items.Add("Indirizzo")
+               eui_cmbCampoRicerca.Items.Add("C.A.P.")
+               eui_cmbCampoRicerca.Items.Add("Citt‡")
+               eui_cmbCampoRicerca.Items.Add("Provincia")
+               eui_cmbCampoRicerca.Items.Add("Nazione")
+               eui_cmbCampoRicerca.Items.Add("Tel. ufficio")
+               eui_cmbCampoRicerca.Items.Add("Tel. casa")
+               eui_cmbCampoRicerca.Items.Add("Fax")
+               eui_cmbCampoRicerca.Items.Add("Cellulare")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Agenzia")
 
             Case Elenco.AgenzieCamerieri
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Ragione sociale")
-               CampoRicerca.Items.Add("Indirizzo")
-               CampoRicerca.Items.Add("C.A.P.")
-               CampoRicerca.Items.Add("Citt‡")
-               CampoRicerca.Items.Add("Provincia")
-               CampoRicerca.Items.Add("Regione")
-               CampoRicerca.Items.Add("Nazione")
-               CampoRicerca.Items.Add("Contatto")
-               CampoRicerca.Items.Add("Tel. ufficio")
-               CampoRicerca.Items.Add("Fax")
-               CampoRicerca.Items.Add("Cellulare")
-               CampoRicerca.Items.Add("E-mail")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Ragione sociale")
+               eui_cmbCampoRicerca.Items.Add("Indirizzo")
+               eui_cmbCampoRicerca.Items.Add("C.A.P.")
+               eui_cmbCampoRicerca.Items.Add("Citt‡")
+               eui_cmbCampoRicerca.Items.Add("Provincia")
+               eui_cmbCampoRicerca.Items.Add("Regione")
+               eui_cmbCampoRicerca.Items.Add("Nazione")
+               eui_cmbCampoRicerca.Items.Add("Contatto")
+               eui_cmbCampoRicerca.Items.Add("Tel. ufficio")
+               eui_cmbCampoRicerca.Items.Add("Fax")
+               eui_cmbCampoRicerca.Items.Add("Cellulare")
+               eui_cmbCampoRicerca.Items.Add("E-mail")
 
             Case Elenco.Tavoli
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Posti")
-               CampoRicerca.Items.Add("Cameriere")
-               CampoRicerca.Items.Add("Listino")
-               CampoRicerca.Items.Add("Sala")
-               CampoRicerca.Items.Add("Escludi")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Posti")
+               eui_cmbCampoRicerca.Items.Add("Cameriere")
+               eui_cmbCampoRicerca.Items.Add("Listino")
+               eui_cmbCampoRicerca.Items.Add("Sala")
+               eui_cmbCampoRicerca.Items.Add("Escludi")
 
             Case Elenco.Camere
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Numero")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Ubicazione")
-               CampoRicerca.Items.Add("Posizione")
-               CampoRicerca.Items.Add("Tipologia")
-               CampoRicerca.Items.Add("Posti letto")
-               CampoRicerca.Items.Add("Disponibile")
-               CampoRicerca.Items.Add("Escludi dal Planning")
-               CampoRicerca.Items.Add("Evidenzia Planning")
-               CampoRicerca.Items.Add("Listino")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Numero")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Ubicazione")
+               eui_cmbCampoRicerca.Items.Add("Posizione")
+               eui_cmbCampoRicerca.Items.Add("Tipologia")
+               eui_cmbCampoRicerca.Items.Add("Posti letto")
+               eui_cmbCampoRicerca.Items.Add("Disponibile")
+               eui_cmbCampoRicerca.Items.Add("Escludi dal Planning")
+               eui_cmbCampoRicerca.Items.Add("Evidenzia Planning")
+               eui_cmbCampoRicerca.Items.Add("Listino")
 
             Case Elenco.StatoPren
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
 
             Case Elenco.Operatori
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Nome utente")
-               CampoRicerca.Items.Add("Gruppo")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Nome utente")
+               eui_cmbCampoRicerca.Items.Add("Gruppo")
 
             Case Elenco.Gruppi
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Nome gruppo")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Nome gruppo")
 
             Case Elenco.CaratteristicheRisorse
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Costo")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Costo")
 
             Case Elenco.ScontiMaggiorazioni
-               CampoRicerca.Items.Add("Codice")
-               CampoRicerca.Items.Add("Descrizione")
-               CampoRicerca.Items.Add("Tipologia")
-               CampoRicerca.Items.Add("Tipo importo")
-               CampoRicerca.Items.Add("Valore")
+               eui_cmbCampoRicerca.Items.Add("Codice")
+               eui_cmbCampoRicerca.Items.Add("Descrizione")
+               eui_cmbCampoRicerca.Items.Add("Tipologia")
+               eui_cmbCampoRicerca.Items.Add("Tipo importo")
+               eui_cmbCampoRicerca.Items.Add("Valore")
 
          End Select
 
@@ -5250,104 +5819,104 @@ Public Class frmElencoDati
          ' Imposta l'elenco dei campi di ricerca sul valore predefinito.
          Select Case TipoElenco
             Case Elenco.Clienti
-               CampoRicerca.SelectedIndex = 2
+               eui_cmbCampoRicerca.SelectedIndex = 2
 
                strDescrizione = STR_ANAGRAFICA_CLIENTI
                strModulo = MODULO_ANAGRAFICA_CLIENTI
 
             Case Elenco.Aziende
-               CampoRicerca.SelectedIndex = 2
+               eui_cmbCampoRicerca.SelectedIndex = 2
 
                strDescrizione = STR_ANAGRAFICA_AZIENDE
                strModulo = MODULO_ANAGRAFICA_AZIENDE
 
             Case Elenco.Fornitori
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_FORNITORI
                strModulo = MODULO_ANAGRAFICA_FORNITORI
 
             Case Elenco.CatPiatti
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_CAT_PIATTI
                strModulo = MODULO_ANAGRAFICA_CAT_PIATTI
 
             Case Elenco.Camerieri
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_AGENZIE_CAMERIERI
                strModulo = MODULO_ANAGRAFICA_AGENZIE_CAMERIERI
 
             Case Elenco.AgenzieCamerieri
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_AGENZIE_CAMERIERI
                strModulo = MODULO_ANAGRAFICA_AGENZIE_CAMERIERI
 
             Case Elenco.Sale
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_SALE
                strModulo = MODULO_ANAGRAFICA_SALE
 
             Case Elenco.Tavoli
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_TAVOLI
                strModulo = MODULO_ANAGRAFICA_TAVOLI
 
             Case Elenco.Camere
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_ANAGRAFICA_CAMERE
                strModulo = MODULO_ANAGRAFICA_CAMERE
 
             Case Elenco.StatoPren
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_TABELLA_STATO_PREN
                strModulo = MODULO_TABELLA_STATO_PREN
 
             Case Elenco.Operatori
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_GESTIONE_OPERATORI
                strModulo = MODULO_GESTIONE_OPERATORI
 
             Case Elenco.Gruppi
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_GESTIONE_GRUPPI
                strModulo = MODULO_GESTIONE_GRUPPI
 
             Case Elenco.CaratteristicheRisorse
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                ' A_TODO: da gestire per Caratteristiche Risorse.
                strDescrizione = "l'elenco Caratteristiche di utilizzo Risorse." ' STR_GESTIONE_GRUPPI
                strModulo = "GESTIONE CARATTERISTICHE DI UTILIZZO RISORSE" ' MODULO_GESTIONE_GRUPPI
 
             Case Elenco.ScontiMaggiorazioni
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_TABELLA_STATO_PREN
                strModulo = MODULO_TABELLA_STATO_PREN
 
             Case Elenco.Prenotazioni
-               CampoRicerca.SelectedIndex = 2
+               eui_cmbCampoRicerca.SelectedIndex = 2
 
                strDescrizione = STR_GESTIONE_PREN_TAVOLI
                strModulo = MODULO_GESTIONE_PREN_TAVOLI
 
             Case Elenco.PrenSale
-               CampoRicerca.SelectedIndex = 2
+               eui_cmbCampoRicerca.SelectedIndex = 2
 
                strDescrizione = STR_GESTIONE_PREN_SALE
                strModulo = MODULO_GESTIONE_PREN_SALE
 
             Case Elenco.Articoli
-               CampoRicerca.SelectedIndex = 1
+               eui_cmbCampoRicerca.SelectedIndex = 1
 
                strDescrizione = STR_MAGAZZINO_ARTICOLI
                strModulo = MODULO_MAGAZZINO_ARTICOLI
@@ -5814,14 +6383,14 @@ Public Class frmElencoDati
       End Select
    End Sub
 
-   Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestoRicerca.TextChanged
+   Private Sub eui_txtTestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_txtTestoRicerca.TextChanged
       ' Filtra i dati in base al testo digitato.
-      FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
+      FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
    End Sub
 
-   Private Sub CampoRicerca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CampoRicerca.SelectedIndexChanged
+   Private Sub CampoRicerca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_cmbCampoRicerca.SelectedIndexChanged
       ' Filtra i dati in base al testo digitato.
-      FiltraDati(TestoRicerca.Text, CampoRicerca.Text)
+      FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
    End Sub
 
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
@@ -5834,4 +6403,29 @@ Public Class frmElencoDati
       End If
    End Sub
 
+   Private Sub frmElencoDati_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles Me.MouseDoubleClick
+
+   End Sub
+
+   Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+      Try
+         ' Imposta il colore per la cella in base al valore del campo ColoreSfondo.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "ColoreSfondo" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+            ' Colore di sfondo.
+            e.CellStyle.BackColor = Color.FromArgb(e.Value)
+
+            ' Colore testo.
+            e.CellStyle.ForeColor = Color.FromArgb(e.Value)
+
+            ' Non visualizza il valore del campo.
+            e.Value = String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
 End Class

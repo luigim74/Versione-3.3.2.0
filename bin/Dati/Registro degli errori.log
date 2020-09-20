@@ -395,3 +395,1183 @@ Nome parametro: index"
    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 883"
 "
 "
+"*** 14/09/2020 - 20:04:46 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.CambiaCameriere.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 144"
+"
+"
+"*** 14/09/2020 - 20:05:58 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"
+"
+"*** 19/09/2020 - 15:24:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 15:24:40 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:24:23 ***"
+"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
+"
+"
+"*** 19/09/2020 - 16:24:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:24:35 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:35:39 ***"
+"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
+"
+"
+"*** 19/09/2020 - 16:35:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:35:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:43:03 ***"
+"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
+"
+"
+"*** 19/09/2020 - 16:43:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:43:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:51:47 ***"
+"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2477"
+"
+"
+"*** 19/09/2020 - 16:51:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2347"
+"
+"
+"*** 19/09/2020 - 16:52:00 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2347"
+"
+"
+"*** 19/09/2020 - 16:56:53 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 16:57:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:00:51 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:00:55 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:02:07 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:02:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:04:38 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:04:40 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:06:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:06:15 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:06:20 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:06:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:08:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:08:11 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:11:20 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:11:22 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:11:46 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:11:47 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:17:10 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:17:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella)"
+"
+"
+"*** 19/09/2020 - 17:17:17 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:20:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:21:51 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2470"
+"
+"
+"*** 19/09/2020 - 17:21:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:23:40 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:24:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:34:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:34:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:36:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:36:13 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
+"
+"
+"*** 19/09/2020 - 17:45:04 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 17:45:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:03:55 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:03:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:11:46 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:11:47 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:17:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:17:03 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:21:31 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:21:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:24:36 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:24:38 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:26:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:26:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:30:48 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:30:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:32:24 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:32:25 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:37:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:37:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:39:40 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:39:42 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:41:19 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:41:21 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:42:56 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:42:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:45:36 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:45:37 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:48:39 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:48:41 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:50:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 19/09/2020 - 18:50:31 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:13:47 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:13:49 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:22:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:22:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:32:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:32:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:39:37 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:39:39 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:43:22 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:43:25 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:46:20 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:46:22 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:47:07 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:47:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:47:42 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:47:43 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:48:11 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 15:48:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:00:56 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:00:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:23:23 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:23:26 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:23:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:23:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:25:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:25:51 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:30:23 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:30:25 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:31:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.RegistraModifica()"
+"
+"
+"*** 20/09/2020 - 16:32:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:32:17 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:36:13 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:36:19 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:48:41 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:48:43 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:49:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:49:31 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:51:15 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:51:17 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:52:10 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:52:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 16:52:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:52:13 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 16:57:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:57:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:58:07 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:58:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:58:26 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:58:28 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 16:58:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 16:58:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:00:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:00:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:00:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:00:10 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:00:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:01:00 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:07:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:07:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:07:30 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:07:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:07:33 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:07:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:10:03 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:10:04 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:11:03 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:11:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:11:18 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:11:20 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:11:21 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:11:22 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
+"
+"
+"*** 20/09/2020 - 17:13:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:13:45 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:18:47 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:18:49 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:29:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:29:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:30:53 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:30:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:38:48 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:38:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:39:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:39:16 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:55:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:55:16 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:56:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 17:56:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 18:03:27 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 18:03:28 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 18:11:42 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 20/09/2020 - 18:11:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"

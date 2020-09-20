@@ -10794,7 +10794,7 @@ Friend Class frmMain
             ' Visualizza le varie funzionalità in base ai moduli installati.
             ImpostaModuli()
 
-            ' TODO_A: NIGHT_CLUB x Namar Srl - DA RIMUOVERE!
+            ' TODO: NIGHT_CLUB x Namar Srl - DA RIMUOVERE!
             moduloAttivo.NightClub = True
          End If
 

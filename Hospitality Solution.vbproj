@@ -968,6 +968,7 @@
     <Compile Include="Codice\ReportsViewer\RepTavoli.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Elenco Attività\ElencoAttività.vb" />
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="Codice\Form\Ristorante\NoteContiPos.vb">
       <SubType>Form</SubType>
