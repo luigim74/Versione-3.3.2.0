@@ -1575,3 +1575,240 @@ Nome parametro: index"
    in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
 "
 "
+"*** 24/09/2020 - 20:28:13 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:28:16 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:30:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:30:03 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:44:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:44:11 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:56:03 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:56:05 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:57:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 24/09/2020 - 20:57:02 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:31:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:31:36 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:04 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:07 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:09 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:38:24 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:44:51 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridView.get_Item(Int32 columnIndex, Int32 rowIndex)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:44:53 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 15:51:07 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2397"
+"
+"
+"*** 26/09/2020 - 16:11:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.RegistraModifica() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1490"
+"
+"
+"*** 26/09/2020 - 16:35:25 ***"
+"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
+    'Public Shared Function UCase(Value As String) As String':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
+    'Public Shared Function UCase(Value As Char) As Char':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 16:35:38 ***"
+"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
+    'Public Shared Function UCase(Value As String) As String':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
+    'Public Shared Function UCase(Value As Char) As Char':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 16:36:05 ***"
+"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
+    'Public Shared Function UCase(Value As String) As String':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
+    'Public Shared Function UCase(Value As Char) As Char':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 16:36:06 ***"
+"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
+    'Public Shared Function UCase(Value As String) As String':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
+    'Public Shared Function UCase(Value As Char) As Char':
+        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"
+"
+"*** 26/09/2020 - 16:57:27 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.RegistraModifica()"
+"
+"

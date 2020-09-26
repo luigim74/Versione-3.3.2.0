@@ -34,6 +34,21 @@
 
 #End Region
 
+#Region " 26/09/2020 "
+
+' 1. Modificata procedura CreaColonneClienti con nuovo controllo DataGridView.
+' 2. Modificata procedura CreaColonneAziende con nuovo controllo DataGridView.
+' 3. Modificata procedura CreaColonnePren con nuovo controllo DataGridView.
+' 4. Modificata procedura CreaColonnePrenSale con nuovo controllo DataGridView.
+' 5. Modificata procedura CreaColonneCamerieri con nuovo controllo DataGridView.
+' 6. Modificata procedura CreaColonneStatoPren con nuovo controllo DataGridView.
+' 7. Modificata procedura CreaColonneCarattRisorse con nuovo controllo DataGridView.
+
+#End Region
+
+
 #End Region
 
 #End Region
+
+

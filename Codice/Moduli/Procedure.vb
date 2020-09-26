@@ -5343,6 +5343,85 @@ Module Procedure
       'End Try
    End Sub
 
+   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
+      Try
+         'DataGridView1.AutoGenerateColumns = False
+         'DataGridView1.DataMember = tabella
+
+         '' Id - Codice
+         'Dim codiceStyle As New DataGridViewTextBoxColumn()
+         'With codiceStyle
+         '   .DataPropertyName = "Id"
+         '   .HeaderText = "Codice"
+         '   .Name = "Id"
+         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         '   .CellTemplate = New DataGridViewTextBoxCell()
+         '   .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+         '   .CellTemplate.Style.NullValue = String.Empty
+         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         'End With
+         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         '' Descrizione
+         'Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         'With descrizioneStyle
+         '   .DataPropertyName = "Descrizione"
+         '   .HeaderText = "Descrizione"
+         '   .Name = "Descrizione"
+         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         '   .CellTemplate = New DataGridViewTextBoxCell()
+         '   .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         '   .CellTemplate.Style.NullValue = String.Empty
+         'End With
+         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         '' Email
+         'Dim emailStyle As New DataGridViewLinkColumn()
+         'With emailStyle
+         '   .DataPropertyName = "Email"
+         '   .HeaderText = "E-mail"
+         '   .Name = "Email"
+         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         '   .CellTemplate = New DataGridViewLinkCell()
+         '   .CellTemplate.Style.NullValue = String.Empty
+         'End With
+         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, emailStyle)
+
+         '' Valore
+         'Dim valoreStyle As New DataGridViewTextBoxColumn()
+         'With valoreStyle
+         '   .DataPropertyName = "Valore"
+         '   .HeaderText = "Valore"
+         '   .Name = "Valore"
+         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         '   .CellTemplate = New DataGridViewTextBoxCell()
+         '   .CellTemplate.Style.ForeColor = Color.Red
+         '   .CellTemplate.Style.NullValue = String.Empty
+         '   .CellTemplate.Style.Format = "##,##0.00"
+         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         'End With
+         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, valoreStyle)
+
+         '' Colore
+         'Dim coloreStyle As New DataGridViewTextBoxColumn
+         'With coloreStyle
+         '   .DataPropertyName = "ColoreSfondo"
+         '   .HeaderText = "Colore"
+         '   .Name = "ColoreSfondo"
+         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         '   .CellTemplate = New DataGridViewTextBoxCell()
+         '   .CellTemplate.Style.NullValue = String.Empty
+         'End With
+         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
 #End Region
 
 End Module
