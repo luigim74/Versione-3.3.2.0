@@ -46,6 +46,16 @@
 
 #End Region
 
+#Region " 02/10/2020 "
+
+' 1. Modificata procedura CreaColonneAgenzieCamerieri con nuovo controllo DataGridView.
+' 2. Modificata procedura CreaColonneTavoli con nuovo controllo DataGridView.
+' 3. Modificata procedura CreaColonneCamere con nuovo controllo DataGridView.
+' 4. Modificata procedura CreaColonneArticoli con nuovo controllo DataGridView.
+' 5. Create procedure per Clienti per la barra degli strumenti Ribbon.
+
+#End Region
+
 
 #End Region
 

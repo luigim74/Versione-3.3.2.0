@@ -410,6 +410,9 @@ Module Dichiarazioni
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
 
+   ' ANAGRAFICHE.
+   Public Const TITOLO_FINESTRA_ELENCO_CLIENTI As String = "Elenco Clienti"
+
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"
    Public Const TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE As String = "Elenco Listini camere"

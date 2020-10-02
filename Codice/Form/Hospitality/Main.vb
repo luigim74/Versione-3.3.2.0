@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2005
-' Data ultima modifica: 25/04/2020
+' Data ultima modifica: 02/10/2020
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -12302,6 +12302,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.Nuovo()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.Nuovo()
 
@@ -12335,6 +12338,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.Modifica()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.Modifica()
 
@@ -12372,6 +12378,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.DuplicaDatiClienti()
+
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.DuplicaDati()
 
@@ -12400,6 +12409,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.EliminaDati(frmElencoDati.TAB_CLIENTI, g_frmClienti.DataGridView1.Item(0, g_frmClienti.DataGridView1.CurrentCell.RowIndex).Value)
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.EliminaDati(ElencoPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 0))
 
@@ -12458,6 +12470,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AggiornaDati()
 
@@ -12492,6 +12507,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, g_frmClienti.TAB_CLIENTI, g_frmClienti.repSql)
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
 
@@ -12520,7 +12538,6 @@ Friend Class frmMain
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub eui_Strumenti_Esporta_XML_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Esporta_XML.Click
@@ -12538,6 +12555,9 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               g_frmClienti.AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, g_frmClienti.TAB_CLIENTI, g_frmClienti.repSql)
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
 
@@ -12575,6 +12595,12 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_CLIENTI
+               If g_frmClienti.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmClienti.StampaElencoClienti(g_frmClienti.repSql, PERCORSO_REP_CLIENTI_A4, g_frmClienti.PrintDialog1.PrinterSettings.PrinterName, g_frmClienti.PrintDialog1.PrinterSettings.Copies)
+
+               End If
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                If g_frmPrenCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmPrenCamere.StampaElenco(g_frmPrenCamere.repSql, PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmPrenCamere.PrintDialog1.PrinterSettings.Copies)

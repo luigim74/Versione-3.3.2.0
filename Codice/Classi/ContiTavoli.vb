@@ -202,6 +202,11 @@ Public Class ContiTavoli
          End If
 
       Catch ex As Exception
+         ' Nel caso non sia stato occupato il tavolo con un cliente viene generata un'eccezione che non visualizziamo a video.
+         If ex.Message = "Nessuna riga alla posizione 0." Then
+            Exit Try
+         End If
+
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 

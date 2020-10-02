@@ -5460,7 +5460,7 @@ Public Class frmVCTavoli
 
                netBtn_Timer.Visible = False
 
-               AggiornaVCTavoli()
+               'AggiornaVCTavoli()
 
                ' Registra loperazione effettuata dall'operatore identificato.
                g_frmMain.RegistraOperazione(TipoOperazione.LiberaTavolo, "(" & Risorsa(tavoloSelezionato).TextButton & ")", MODULO_TAVOLI)
@@ -5969,8 +5969,6 @@ Public Class frmVCTavoli
             CambiaCameriereTavolo("Tavoli", Risorsa(tavoloSelezionato).Name, frm.Tag)
 
             frm.Close()
-
-            AggiornaVCTavoli()
          End If
 
       Catch ex As Exception
@@ -6002,8 +6000,6 @@ Public Class frmVCTavoli
             CambiaClienteTavolo("ContiTavoli", Risorsa(tavoloSelezionato).Name, frm.Tag)
 
             frm.Close()
-
-            AggiornaVCTavoli()
          End If
 
       Catch ex As Exception

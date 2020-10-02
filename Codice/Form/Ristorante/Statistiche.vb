@@ -646,11 +646,11 @@ Public Class frmStatistiche
 
          If lstCategorie.SelectedItem = ITEM_TUTTE Then
             ' Ottiene il numero di record.
-            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 1 AND Data BETWEEN #{1}# AND #{2}#",
+            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 'Predefinito' AND Data BETWEEN #{1}# AND #{2}#",
                                             tabella, dataDal, dataAl)
          Else
             ' Ottiene il numero di record.
-            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 1 AND DesCategoria = '{1}' " &
+            cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 'Predefinito' AND DesCategoria = '{1}' " &
                                             "AND Data BETWEEN #{2}# AND #{3}#", tabella, lstCategorie.SelectedItem, dataDal, dataAl)
          End If
 
@@ -981,12 +981,12 @@ Public Class frmStatistiche
          If testoRicerca <> "" Then
             If categoria = ITEM_TUTTE Then
                ' Crea la stringa sql.
-               sql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 1 AND {1} LIKE '" & testoRicerca & "%' " &
+               sql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 'Predefinito' AND {1} LIKE '" & testoRicerca & "%' " &
                                    "AND Data BETWEEN #{2}# AND #{3}# ORDER BY {4} ASC",
                                    TAB_STATISTICHE, campoRicerca, dataDal, dataAl, campoRicerca)
             Else
                ' Crea la stringa sql.
-               sql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 1 AND {1} LIKE '" & testoRicerca & "%' AND DesCategoria = '{2}' " &
+               sql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 'Predefinito' AND {1} LIKE '" & testoRicerca & "%' AND DesCategoria = '{2}' " &
                                    "AND Data BETWEEN #{3}# AND #{4}# ORDER BY {5} ASC",
                                    TAB_STATISTICHE, campoRicerca, categoria, dataDal, dataAl, campoRicerca)
             End If
@@ -998,17 +998,17 @@ Public Class frmStatistiche
 
          Else
             If categoria = ITEM_TUTTE Then
-               sql = String.Format("SELECT TOP {0} * FROM {1} WHERE GruppoCameriere = 1 AND Data BETWEEN #{2}# AND #{3}# ORDER BY {4} ASC",
+               sql = String.Format("SELECT TOP {0} * FROM {1} WHERE GruppoCameriere = 'Predefinito' AND Data BETWEEN #{2}# AND #{3}# ORDER BY {4} ASC",
                                    DIM_PAGINA_GRANDE, TAB_STATISTICHE, dataDal, dataAl, campoRicerca)
 
-               repSql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 1 AND Data BETWEEN #{1}# AND #{2}# ORDER BY {3} ASC",
+               repSql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 'Predefinito' AND Data BETWEEN #{1}# AND #{2}# ORDER BY {3} ASC",
                                       TAB_STATISTICHE, dataDal, dataAl, campoRicerca)
             Else
-               sql = String.Format("SELECT TOP {0} * FROM {1} WHERE GruppoCameriere = 1 AND DesCategoria = '{2}' " &
+               sql = String.Format("SELECT TOP {0} * FROM {1} WHERE GruppoCameriere = 'Predefinito' AND DesCategoria = '{2}' " &
                                    "AND Data BETWEEN #{3}# AND #{4}# ORDER BY {5} ASC",
                                    DIM_PAGINA_GRANDE, TAB_STATISTICHE, categoria, dataDal, dataAl, campoRicerca)
 
-               repSql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 1 AND DesCategoria = '{1}' " &
+               repSql = String.Format("SELECT * FROM {0} WHERE GruppoCameriere = 'Predefinito' AND DesCategoria = '{1}' " &
                                       "AND Data BETWEEN #{2}# AND #{3}# ORDER BY {4} ASC",
                                       TAB_STATISTICHE, categoria, dataDal, dataAl, campoRicerca)
             End If
@@ -1067,7 +1067,7 @@ Public Class frmStatistiche
          End If
 
          ' Ottiene il numero di record.
-         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 1", tabella)
+         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE GruppoCameriere = 'Predefinito'", tabella)
          numRec = CInt(cmd.ExecuteScalar())
 
          Return numRec

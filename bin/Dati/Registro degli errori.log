@@ -1,344 +1,26 @@
-"*** 05/09/2020 - 16:44:08 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi nella data nell'espressione della query 'IdTavolo = 'BAR' AND Data = #BAR#'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e)"
-"
-"
-"*** 05/09/2020 - 18:16:22 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Predefinito"" al tipo 'Short'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToShort(String Value)
-   in Hospitality_Solution.CambiaCameriere.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 176"
-"
-"
-"*** 05/09/2020 - 18:22:31 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Symbols.Container.InvokeMethod(Method TargetProcedure, Object[] Arguments, Boolean[] CopyBack, BindingFlags Flags)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.CamerieriTavolo.LeggiDati(ListView lst, String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\CamerieriTavolo.vb:riga 147"
-"
-"
-"*** 06/09/2020 - 15:34:16 ***"
-"- DESCRIZIONE ERRORE: Istruzione SQL non valida. Prevista 'DELETE', 'INSERT', 'PROCEDURE', 'SELECT' o 'UPDATE'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1712"
-"
-"
-"*** 06/09/2020 - 15:38:34 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Symbols.Container.InvokeMethod(Method TargetProcedure, Object[] Arguments, Boolean[] CopyBack, BindingFlags Flags)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.CamerieriTavolo.LeggiDati(ListView lst, String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\CamerieriTavolo.vb:riga 147"
-"
-"
-"*** 06/09/2020 - 15:39:30 ***"
+"*** 28/09/2020 - 18:19:17 ***"
 "- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
-"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
 "
 "
-"*** 06/09/2020 - 15:39:38 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Symbols.Container.InvokeMethod(Method TargetProcedure, Object[] Arguments, Boolean[] CopyBack, BindingFlags Flags)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.CamerieriTavolo.LeggiDati(ListView lst, String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\CamerieriTavolo.vb:riga 147"
-"
-"
-"*** 06/09/2020 - 16:01:40 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
-   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value)
-   in Hospitality_Solution.frmCamerieri.CaricaListaStatisticheVendita(ListView lstView, String idCameriere, String tabella, String filtro) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1556"
-"
-"
-"*** 06/09/2020 - 16:20:52 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'Date' al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 16:27:04 ***"
-"- DESCRIZIONE ERRORE: Impossibile raggruppare in base a campi selezionati con ""*""."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 16:28:33 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dal tipo 'Date' al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(Object Value)
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 16:37:40 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'COUNT(DISTINCT Data)'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 16:44:40 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'COUNT(DISTINCT Data)'."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 16:55:31 ***"
-"- DESCRIZIONE ERRORE: La sottoquery può restituire al massimo un record."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
-   in Hospitality_Solution.frmCamerieri.TrovaNumeroGiorni(String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 1716"
-"
-"
-"*** 06/09/2020 - 17:23:02 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Symbols.Container.InvokeMethod(Method TargetProcedure, Object[] Arguments, Boolean[] CopyBack, BindingFlags Flags)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.CamerieriTavolo.LeggiDati(ListView lst, String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\CamerieriTavolo.vb:riga 147"
-"
-"
-"*** 06/09/2020 - 17:23:40 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.CambiaCameriere.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 237"
-"
-"
-"*** 06/09/2020 - 17:23:46 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.CambiaCameriere.eui_cmdElimina_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 237"
-"
-"
-"*** 06/09/2020 - 17:58:35 ***"
-"- DESCRIZIONE ERRORE: Impossibile raggruppare in base a campi selezionati con ""*""."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 2238"
-"
-"
-"*** 06/09/2020 - 17:59:51 ***"
-"- DESCRIZIONE ERRORE: Impossibile eseguire una query che non include l'espressione ""IdCameriere"" specificata come parte di una funzione di aggregazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 2238"
-"
-"
-"*** 07/09/2020 - 20:30:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile eseguire una query che non include l'espressione ""IdCameriere"" specificata come parte di una funzione di aggregazione."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 2238"
-"
-"
-"*** 07/09/2020 - 20:35:23 ***"
-"- DESCRIZIONE ERRORE: DesCameriere"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmCamerieri.lvwStatistiche_SelectedIndexChanged(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Camerieri.vb:riga 2250"
-"
-"
-"*** 07/09/2020 - 20:46:32 ***"
+"*** 28/09/2020 - 20:16:20 ***"
 "- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
-"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
 "
 "
-"*** 07/09/2020 - 21:45:55 ***"
-"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
-"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
-"
-"
-"*** 08/09/2020 - 19:57:26 ***"
-"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
-"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
-"
-"
-"*** 09/09/2020 - 19:58:11 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Agenzie_Allegati'. Verificare che esista e che il nome sia stato digitato correttamente."
+"*** 28/09/2020 - 20:25:52 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Allegati.LeggiDati(ListView lst, String tabella, Int32 codCliente) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\Allegati.vb:riga 32"
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
 "
 "
-"*** 09/09/2020 - 19:59:48 ***"
-"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Agenzie_Allegati'. Verificare che esista e che il nome sia stato digitato correttamente."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Allegati.LeggiDati(ListView lst, String tabella, Int32 codCliente) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\Allegati.vb:riga 32"
-"
-"
-"*** 09/09/2020 - 20:19:59 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmElencoDati.LeggiDatiConfig() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 750"
-"
-"
-"*** 09/09/2020 - 20:28:30 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 334"
-"
-"
-"*** 09/09/2020 - 20:28:55 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 334"
-"
-"
-"*** 09/09/2020 - 20:29:08 ***"
-"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   in System.Data.OleDb.OleDbCommand.ExecuteReader()
-   in Hospitality_Solution.Procedure.CaricaLista(ComboBox cmb, String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 334"
-"
-"
-"*** 12/09/2020 - 16:14:22 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:19:03 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:19:29 ***"
-"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
-"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
-   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
-   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
-   in System.Data.OleDb.OleDbConnection.Open()
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 868"
-"
-"
-"*** 12/09/2020 - 16:22:52 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:23:22 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:24:17 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:25:16 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 46"
-"
-"
-"*** 12/09/2020 - 16:36:24 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
-"
-"
-"*** 12/09/2020 - 16:36:48 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
-"
-"
-"*** 12/09/2020 - 16:42:05 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
-   in Hospitality_Solution.CambiaCliente.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCliente.vb:riga 109"
-"
-"
-"*** 12/09/2020 - 16:49:35 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Monica Raspelli'."
+"*** 28/09/2020 - 20:25:55 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
@@ -347,13 +29,24 @@ Nome parametro: index"
    in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 880"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
 "
 "
-"*** 12/09/2020 - 16:51:57 ***"
-"- DESCRIZIONE ERRORE: Errore di sintassi (operatore mancante) nell'espressione della query 'Id = Monica Raspelli'."
+"*** 28/09/2020 - 20:25:56 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
+"
+"
+"*** 28/09/2020 - 20:25:57 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
@@ -362,1450 +55,432 @@ Nome parametro: index"
    in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 880"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
 "
 "
-"*** 12/09/2020 - 17:08:42 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"*** 28/09/2020 - 20:26:13 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
 "
 "
-"*** 12/09/2020 - 17:08:55 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"*** 28/09/2020 - 20:26:16 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
 "
 "
-"*** 12/09/2020 - 17:16:00 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"*** 28/09/2020 - 20:26:24 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
 "
 "
-"*** 12/09/2020 - 17:16:21 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\AnagTab.vb:riga 883"
+"*** 28/09/2020 - 20:26:25 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
 "
 "
-"*** 14/09/2020 - 20:04:46 ***"
+"*** 28/09/2020 - 20:26:38 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
+"
+"
+"*** 28/09/2020 - 20:26:40 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 28/09/2020 - 20:36:24 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"
+"*** 28/09/2020 - 20:42:34 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"
+"*** 28/09/2020 - 20:43:45 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
+"
+"
+"*** 28/09/2020 - 20:43:47 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 28/09/2020 - 20:43:48 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella)"
+"
+"
+"*** 28/09/2020 - 20:43:48 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 28/09/2020 - 20:48:50 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:49:04 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 20:49:17 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:49:19 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 20:51:18 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:51:49 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 20:52:45 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:52:53 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 20:53:52 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:53:55 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 20:53:58 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteScalar()
+   in Hospitality_Solution.frmStatistiche.LeggiNumPagine(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 657"
+"
+"
+"*** 28/09/2020 - 20:54:00 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmStatistiche.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\Statistiche.vb:riga 692"
+"
+"
+"*** 28/09/2020 - 21:14:58 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 28/09/2020 - 21:17:01 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 28/09/2020 - 21:18:04 ***"
 "- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
 "- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
    in Hospitality_Solution.CambiaCameriere.Eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 144"
 "
 "
-"*** 14/09/2020 - 20:05:58 ***"
-"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
-"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
-   in System.Data.DataRowCollection.get_Item(Int32 index)
-   in Hospitality_Solution.ContiTavoli.LeggiCodiceCliente(String tabella, String idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\ContiTavoli.vb:riga 143"
+"*** 28/09/2020 - 21:25:35 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
 "
 "
-"*** 19/09/2020 - 15:24:34 ***"
+"*** 02/10/2020 - 13:30:01 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
-"*** 19/09/2020 - 15:24:40 ***"
+"*** 02/10/2020 - 13:30:05 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
-"*** 19/09/2020 - 16:24:23 ***"
-"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
-"
-"
-"*** 19/09/2020 - 16:24:32 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:24:35 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:35:39 ***"
-"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
-"
-"
-"*** 19/09/2020 - 16:35:52 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:35:58 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:43:03 ***"
-"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneClienti(String tabella)"
-"
-"
-"*** 19/09/2020 - 16:43:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:43:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:51:47 ***"
-"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewTextBoxCell o derivare da esso."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewTextBoxColumn.set_CellTemplate(DataGridViewCell value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2477"
-"
-"
-"*** 19/09/2020 - 16:51:57 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2347"
-"
-"
-"*** 19/09/2020 - 16:52:00 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2347"
-"
-"
-"*** 19/09/2020 - 16:56:53 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 16:57:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:00:51 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:00:55 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:02:07 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:02:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:04:38 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:04:40 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:06:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:06:15 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:06:20 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:06:29 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:08:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:08:11 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:11:20 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:11:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:11:46 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:11:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:17:10 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:17:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
-"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
-   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
-   in System.Windows.Forms.DataGridView.set_DataMember(String value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella)"
-"
-"
-"*** 19/09/2020 - 17:17:17 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:20:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:21:51 ***"
-"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
-"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
-   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
-   in System.Windows.Forms.DataGridView.set_DataMember(String value)
-   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2470"
-"
-"
-"*** 19/09/2020 - 17:21:59 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:23:40 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:24:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:34:57 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:34:59 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:36:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:36:13 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2350"
-"
-"
-"*** 19/09/2020 - 17:45:04 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 17:45:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:03:55 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:03:57 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:11:46 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:11:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:17:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:17:03 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:21:31 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:21:32 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:24:36 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:24:38 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:26:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:26:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:30:48 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:30:50 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:32:24 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:32:25 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:37:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:37:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:39:40 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:39:42 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:41:19 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:41:21 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:42:56 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:42:58 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:45:36 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:45:37 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:48:39 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:48:41 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:50:29 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 19/09/2020 - 18:50:31 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:13:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:13:49 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:22:32 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:22:34 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:32:52 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:32:54 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:39:37 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:39:39 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:43:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:43:25 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:46:20 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:46:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:47:07 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:47:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:47:42 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:47:43 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:48:11 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 15:48:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:00:56 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:00:58 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:23:23 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:23:26 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:23:32 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:23:34 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:25:50 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:25:51 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:30:23 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:30:25 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:31:01 ***"
+"*** 02/10/2020 - 13:55:46 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
    in Hospitality_Solution.frmElencoDati.RegistraModifica()"
 "
 "
-"*** 20/09/2020 - 16:32:14 ***"
+"*** 02/10/2020 - 14:16:10 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+   in Hospitality_Solution.frmElencoDati.RegistraModifica()"
 "
 "
-"*** 20/09/2020 - 16:32:17 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"*** 02/10/2020 - 14:49:48 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
 "
 "
-"*** 20/09/2020 - 16:36:13 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:36:19 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:48:41 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:48:43 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:49:29 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:49:31 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:51:15 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:51:17 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:52:10 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:52:12 ***"
+"*** 02/10/2020 - 14:49:54 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
    in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
-"*** 20/09/2020 - 16:52:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+"*** 02/10/2020 - 14:49:56 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Camere."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneCamere(String tabella)
+   in Hospitality_Solution.frmElencoDati.CreaColonne()"
 "
 "
-"*** 20/09/2020 - 16:52:13 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 16:57:50 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:57:52 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:58:07 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:58:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:58:26 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:58:28 ***"
+"*** 02/10/2020 - 14:49:57 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
    in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
-"*** 20/09/2020 - 16:58:29 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 16:58:29 ***"
+"*** 02/10/2020 - 14:49:58 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
    in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
-"*** 20/09/2020 - 17:00:06 ***"
+"*** 02/10/2020 - 15:47:13 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 02/10/2020 - 15:47:15 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Articoli."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneArticoli(String tabella)"
+"
+"
+"*** 02/10/2020 - 15:58:46 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
+   in Hospitality_Solution.frmElencoDati.RegistraModifica()"
 "
 "
-"*** 20/09/2020 - 17:00:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:00:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:00:10 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:00:58 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:01:00 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:07:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:07:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:07:30 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:07:32 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:07:33 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:07:34 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:10:03 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:10:04 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:11:03 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:11:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:11:18 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:11:20 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:11:21 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:11:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.Procedure.SommaColonna(DataGrid DGrid, Int32 colonna, Int32 numRighe)"
-"
-"
-"*** 20/09/2020 - 17:13:44 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:13:45 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:18:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:18:49 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:29:50 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:29:52 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:30:53 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:30:57 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:38:48 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:38:52 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:39:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:39:16 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:55:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:55:16 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:56:12 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 17:56:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 18:03:27 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 18:03:28 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 18:11:42 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 20/09/2020 - 18:11:44 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:28:13 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:28:16 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:30:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:30:03 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:44:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:44:11 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:56:03 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:56:05 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:57:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 24/09/2020 - 20:57:02 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:31:34 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:31:36 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:04 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:07 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:09 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:14 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:38:24 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:44:51 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.Collections.ArrayList.get_Item(Int32 index)
-   in System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
-   in System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
-   in System.Windows.Forms.DataGridView.get_Item(Int32 columnIndex, Int32 rowIndex)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:44:53 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 15:51:07 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.AggIntGriglia() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 2397"
-"
-"
-"*** 26/09/2020 - 16:11:06 ***"
-"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
-"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
-   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
-   in Hospitality_Solution.frmElencoDati.RegistraModifica() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1490"
-"
-"
-"*** 26/09/2020 - 16:35:25 ***"
-"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
-    'Public Shared Function UCase(Value As String) As String':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
-    'Public Shared Function UCase(Value As Char) As Char':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 16:35:38 ***"
-"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
-    'Public Shared Function UCase(Value As String) As String':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
-    'Public Shared Function UCase(Value As Char) As Char':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 16:36:05 ***"
-"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
-    'Public Shared Function UCase(Value As String) As String':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
-    'Public Shared Function UCase(Value As Char) As Char':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 16:36:06 ***"
-"- DESCRIZIONE ERRORE: Risoluzione dell'overload non riuscita. Nessun elemento 'UCase' pubblico può essere chiamato con questi argomenti: 
-    'Public Shared Function UCase(Value As String) As String':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'String'.
-    'Public Shared Function UCase(Value As Char) As Char':
-        Il parametro 'Value' corrispondente all'argomento non può essere convertito da 'DBNull' a 'Char'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, List`1 Candidates, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.OverloadResolution.ResolveOverloadedCall(String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure, Container BaseReference)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ResolveCall(Container BaseReference, String MethodName, MemberInfo[] Members, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, BindingFlags LookupFlags, Boolean ReportErrors, ResolutionFailure& Failure)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.ObjectLateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
-   in Hospitality_Solution.frmElencoDati.AggIntGriglia()"
-"
-"
-"*** 26/09/2020 - 16:57:27 ***"
+"*** 02/10/2020 - 15:59:55 ***"
 "- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
 "- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
    in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)

@@ -23,23 +23,23 @@ Public Class frmElencoDati
 
 #Region "Dichiarazioni"
 
-   Const TAB_CLIENTI = "Clienti"
-   Const TAB_AZIENDE = "Aziende"
-   Const TAB_FORNITORI = "Fornitori"
-   Const TAB_ARTICOLI = "Articoli"
-   Const TAB_CAT_PIATTI = "CategoriePiatti"
-   Const TAB_PREN = "Prenotazioni"
-   Const TAB_PREN_SALE = "PrenSale"
-   Const TAB_CAMERIERI = "Camerieri"
-   Const TAB_AGENZIE_CAMERIERI = "AgenzieCamerieri"
-   Const TAB_SALE = "Sale"
-   Const TAB_TAVOLI = "Tavoli"
-   Const TAB_CAMERE = "Camere"
-   Const TAB_STATO_PREN = "StatoPren"
-   Const TAB_OPERATORI = "Operatori"
-   Const TAB_GRUPPI = "Gruppi"
-   Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
-   Const TAB_SCONTI_MAGGIORAZIONI = "ScontiMaggiorazioni"
+   Public Const TAB_CLIENTI = "Clienti"
+   Public Const TAB_AZIENDE = "Aziende"
+   Public Const TAB_FORNITORI = "Fornitori"
+   Public Const TAB_ARTICOLI = "Articoli"
+   Public Const TAB_CAT_PIATTI = "CategoriePiatti"
+   Public Const TAB_PREN = "Prenotazioni"
+   Public Const TAB_PREN_SALE = "PrenSale"
+   Public Const TAB_CAMERIERI = "Camerieri"
+   Public Const TAB_AGENZIE_CAMERIERI = "AgenzieCamerieri"
+   Public Const TAB_SALE = "Sale"
+   Public Const TAB_TAVOLI = "Tavoli"
+   Public Const TAB_CAMERE = "Camere"
+   Public Const TAB_STATO_PREN = "StatoPren"
+   Public Const TAB_OPERATORI = "Operatori"
+   Public Const TAB_GRUPPI = "Gruppi"
+   Public Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
+   Public Const TAB_SCONTI_MAGGIORAZIONI = "ScontiMaggiorazioni"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnStringAnagrafiche)
@@ -62,7 +62,7 @@ Public Class frmElencoDati
    Dim ds As New DataSet
    Dim dt As DataTable
    Dim sql As String
-   Dim repSql As String
+   Public repSql As String
 
    Private DatiConfig As AppConfig
    Private strDescrizione As String
@@ -220,8 +220,8 @@ Public Class frmElencoDati
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmElencoDati))
-      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.tbrNuovo = New System.Windows.Forms.ToolBarButton()
       Me.tbrModifica = New System.Windows.Forms.ToolBarButton()
@@ -269,7 +269,7 @@ Public Class frmElencoDati
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(672, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(688, 26)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -435,11 +435,12 @@ Public Class frmElencoDati
       Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 326)
+      Me.DataGrid1.Location = New System.Drawing.Point(5, 142)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(656, 71)
+      Me.DataGrid1.Size = New System.Drawing.Size(680, 56)
       Me.DataGrid1.TabIndex = 1
+      Me.DataGrid1.Visible = False
       '
       'Panel1
       '
@@ -452,7 +453,7 @@ Public Class frmElencoDati
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(672, 64)
+      Me.Panel1.Size = New System.Drawing.Size(688, 62)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -471,7 +472,7 @@ Public Class frmElencoDati
       Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(531, 8)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(547, 8)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -484,7 +485,7 @@ Public Class frmElencoDati
       Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(322, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(338, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
@@ -494,7 +495,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(442, 8)
+      Me.Label2.Location = New System.Drawing.Point(458, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -528,38 +529,38 @@ Public Class frmElencoDati
       '
       Me.DataGridView1.AllowUserToAddRows = False
       Me.DataGridView1.AllowUserToDeleteRows = False
-      DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
       Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-      DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-      DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-      DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+      DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(0, 91)
+      Me.DataGridView1.Location = New System.Drawing.Point(2, 90)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(672, 290)
+      Me.DataGridView1.Size = New System.Drawing.Size(686, 332)
       Me.DataGridView1.TabIndex = 0
       '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(672, 406)
-      Me.Controls.Add(Me.DataGridView1)
+      Me.ClientSize = New System.Drawing.Size(688, 422)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
+      Me.Controls.Add(Me.DataGridView1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.Name = "frmElencoDati"
       Me.ShowInTaskbar = False
@@ -1480,7 +1481,7 @@ Public Class frmElencoDati
 
    End Function
 
-   Public Sub RegistraModifica()
+   Public Sub RegistraModifica_1()
       Try
          Dim strDescrizione As String
 
@@ -1556,6 +1557,98 @@ Public Class frmElencoDati
             Case Elenco.Gruppi
                ' Registra l'operazione.
                Dim nomeGruppo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
+               strDescrizione = "(" & nomeGruppo & ")"
+
+               ' A_TODO: Inserire qui il codice per gestire la finestra Caratteristiche Risorse.
+
+         End Select
+
+         ' Registra loperazione effettuata dall'operatore identificato.
+         g_frmMain.RegistraOperazione(TipoOperazione.Modifica, strDescrizione, strModulo)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub RegistraModifica()
+      Try
+         Dim strDescrizione As String
+
+         Select Case TipoElenco
+            Case Elenco.Clienti
+               ' Registra l'operazione.
+               Dim Cognome As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim Nome As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & Cognome & " " & Nome & ")"
+
+            Case Elenco.Aziende
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & ragSoc & ")"
+
+            Case Elenco.Fornitori
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & ragSoc & ")"
+
+            Case Elenco.Prenotazioni, Elenco.PrenSale
+               ' Registra l'operazione.
+               Dim Cliente As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & Cliente & ")"
+
+            Case Elenco.CatPiatti
+               ' Registra l'operazione.
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & descrizione & ")"
+
+            Case Elenco.Camerieri
+               ' Registra l'operazione.
+               Dim Nome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & Nome & ")"
+
+            Case Elenco.AgenzieCamerieri
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & ragSoc & ")"
+
+            Case Elenco.Sale
+               ' Registra l'operazione.
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & descrizione & ")"
+
+            Case Elenco.Tavoli
+               ' Registra l'operazione.
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & descrizione & ")"
+
+            Case Elenco.Camere
+               ' Registra l'operazione.
+               Dim numero As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim descrizione As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & numero & " - " & descrizione & ")"
+
+            Case Elenco.StatoPren
+               ' Registra l'operazione.
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & descrizione & ")"
+
+            Case Elenco.Articoli
+               ' Registra l'operazione.
+               Dim codice As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim descrizione As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & codice & " - " & descrizione & ")"
+
+            Case Elenco.Operatori
+               ' Registra l'operazione.
+               Dim nomeUtente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & nomeUtente & ")"
+
+            Case Elenco.Gruppi
+               ' Registra l'operazione.
+               Dim nomeGruppo As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
                strDescrizione = "(" & nomeGruppo & ")"
 
                ' A_TODO: Inserire qui il codice per gestire la finestra Caratteristiche Risorse.
@@ -1657,7 +1750,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
+   Public Sub EliminaDati_1(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
          Dim sql As String
@@ -1903,6 +1996,254 @@ Public Class frmElencoDati
          ConvalidaDati()
       End Try
    End Sub
+
+   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
+      Try
+         Dim Risposta As Short
+         Dim sql As String
+         Dim strDescrizione As String
+
+         Select Case TipoElenco
+            Case Elenco.Clienti
+               Dim Cognome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim Nome As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & Cognome & " " & Nome & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la scheda di """ & Cognome & " " & Nome &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+            Case Elenco.Aziende
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & ragSoc & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati, incassare eventuali documenti Sospesi o fatturare eventuali Buoni pasto.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+            Case Elenco.Fornitori
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & ragSoc & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Prenotazioni, Elenco.PrenSale
+               Dim Cliente As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = " (" & DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString &
+                 " - Per " & DataGridView1.Item(4, DataGridView1.CurrentCell.RowIndex).Value.ToString &
+                 " il " & DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString &
+                 " alle " & DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value.ToString &
+                 " / " & DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value.ToString &
+                 " - " & DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la prenotazione del cliente """ & Cliente &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.CatPiatti
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la Categoria """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Camerieri
+               Dim Nome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & Nome & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare il cameriere """ & Nome &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.AgenzieCamerieri
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & ragSoc & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare l'Agenzia " & ragSoc &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Sale
+               If IsNothing(g_frmVCTavoli) = False Then
+                  ' Aggiorna Visual POS
+                  MessageBox.Show("Non è possibile eliminare una sala perchè Visual POS è in esecuzione." & vbCrLf &
+                                  "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                  Exit Sub
+               End If
+
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la Sala """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+            Case Elenco.Tavoli
+               If IsNothing(g_frmVCTavoli) = False Then
+                  ' Aggiorna Visual POS
+                  MessageBox.Show("Non è possibile eliminare un tavolo perchè Visual POS è in esecuzione." & vbCrLf &
+                                  "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                  Exit Sub
+               End If
+
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare il tavolo """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Camere
+               Dim numero As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim descrizione As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & numero & " " & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la camera numero """ & numero & " " & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.StatoPren
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare lo stato prenotazione """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Articoli
+               Dim descrizione As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare l'articolo """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Operatori
+               Dim nomeUtente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & nomeUtente & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la scheda di " & nomeUtente &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.Gruppi
+               Dim nomeGruppo As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & nomeGruppo & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare il gruppo " & nomeGruppo &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.CaratteristicheRisorse
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare la tipologia di utilizzo risorsa " & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+            Case Elenco.ScontiMaggiorazioni
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare lo Sconto / Maggiorazione '" & descrizione &
+                                 "'?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
+         End Select
+
+         If Risposta = MsgBoxResult.Yes Then
+            ' Apre la connessione.
+            cn.Open()
+
+            ' Avvia una transazione.
+            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+            'If TipoElenco = Elenco.Risorse Then
+            ' Crea la stringa di eliminazione.
+            'sql = String.Format("DELETE FROM {0} WHERE Numero = '{1}'", tabella, id)
+            'Else
+            ' Crea la stringa di eliminazione.
+            sql = String.Format("DELETE FROM {0} WHERE Id = {1}", tabella, id)
+            'End If
+
+            ' Crea il comando per la connessione corrente.
+            Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+            ' Esegue il comando.
+            Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+
+            If TipoElenco = Elenco.Aziende Then
+               ' Elimina i dati dei Buoni pasto relativi all'azienda.
+               ' Crea la stringa di eliminazione.
+               sql = String.Format("DELETE FROM BuoniPasto WHERE IdAzienda = {0}", id)
+
+               ' Crea il comando per la connessione corrente.
+               Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
+
+               ' Esegue il comando.
+               Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
+            End If
+
+            ' Conferma la transazione.
+            tr.Commit()
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            g_frmMain.RegistraOperazione(TipoOperazione.Elimina, strDescrizione, strModulo)
+
+         End If
+
+      Catch ex As Exception
+         ' Annulla la transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+         ' Aggiorna la griglia dati.
+         AggiornaDati()
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+      End Try
+   End Sub
+
 
    Public Sub AggiornaDati()
       Try
@@ -2409,9 +2750,13 @@ Public Class frmElencoDati
                Case Elenco.Prenotazioni, Elenco.PrenSale, Elenco.Articoli
                   lblIntestazione.Text = Strings.UCase(DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value)
 
+               Case Elenco.Articoli
+                  lblIntestazione.Text = Strings.UCase(DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value &
+                                                       " " & DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value)
+
                Case Elenco.Camere
-                  lblIntestazione.Text = Strings.UCase(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value &
-                                                       " " & DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value)
+                  lblIntestazione.Text = Strings.UCase(DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value &
+                                                       " " & DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value)
 
                Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.AgenzieCamerieri, Elenco.Sale,
                     Elenco.Tavoli, Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse,
@@ -2531,7 +2876,7 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub CreaColonneFornitori_1(ByVal tabella As String)
+   Private Sub CreaColonneFornitori(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -2661,7 +3006,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneFornitori(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneFornitori(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3217,7 +3562,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAziende_1(ByVal tabella As String)
+   Private Sub CreaColonneAziende(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3346,7 +3691,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAziende(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneAziende(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3529,7 +3874,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePren_1(ByVal tabella As String)
+   Private Sub CreaColonnePren(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3640,7 +3985,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePren(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonnePren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3791,7 +4136,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePrenSale_1(ByVal tabella As String)
+   Private Sub CreaColonnePrenSale(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3884,7 +4229,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePrenSale(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonnePrenSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4011,7 +4356,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCatPiatti_1(ByVal tabella As String)
+   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4062,7 +4407,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneCatPiatti(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4125,7 +4470,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamerieri_1(ByVal tabella As String)
+   Private Sub CreaColonneCamerieri(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4256,7 +4601,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamerieri(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4442,7 +4787,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
+   Private Sub CreaColonneAgenzieCamerieri_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4572,7 +4917,178 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneSale_1(ByVal tabella As String)
+   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Ragione sociale
+         Dim ragSocStyle As New DataGridViewTextBoxColumn()
+         With ragSocStyle
+            .DataPropertyName = "RagSociale"
+            .HeaderText = "Ragione sociale"
+            .Name = "RagSociale"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, ragSocStyle)
+
+         ' Indirizzo1
+         Dim Indirizzo1Style As New DataGridViewTextBoxColumn()
+         With Indirizzo1Style
+            .DataPropertyName = "Indirizzo"
+            .HeaderText = "Indirizzo"
+            .Name = "Indirizzo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, Indirizzo1Style)
+
+         ' Cap
+         Dim capStyle As New DataGridViewTextBoxColumn()
+         With capStyle
+            .DataPropertyName = "Cap"
+            .HeaderText = "C.A.P."
+            .Name = "Cap"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, capStyle)
+
+         ' Città
+         Dim cittàStyle As New DataGridViewTextBoxColumn()
+         With cittàStyle
+            .DataPropertyName = "Città"
+            .HeaderText = "Città"
+            .Name = "Città"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, cittàStyle)
+
+         ' Provincia
+         Dim provStyle As New DataGridViewTextBoxColumn()
+         With provStyle
+            .DataPropertyName = "Provincia"
+            .HeaderText = "Provincia"
+            .Name = "Provincia"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, provStyle)
+
+         ' Regione
+         Dim regioneStyle As New DataGridViewTextBoxColumn()
+         With regioneStyle
+            .DataPropertyName = "Regione"
+            .HeaderText = "Regione"
+            .Name = "Regione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, regioneStyle)
+
+         ' Nazione
+         Dim nazioneStyle As New DataGridViewTextBoxColumn()
+         With nazioneStyle
+            .DataPropertyName = "Nazione"
+            .HeaderText = "Nazione"
+            .Name = "Nazione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, nazioneStyle)
+
+         ' Contatto
+         Dim contattoStyle As New DataGridViewTextBoxColumn()
+         With contattoStyle
+            .DataPropertyName = "Contatto"
+            .HeaderText = "Contatto"
+            .Name = "Contatto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, contattoStyle)
+
+         ' Tel. ufficio
+         Dim telUfficioStyle As New DataGridViewTextBoxColumn()
+         With telUfficioStyle
+            .DataPropertyName = "TelUfficio"
+            .HeaderText = "Tel. ufficio"
+            .Name = "TelUfficio"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, telUfficioStyle)
+
+         ' Fax
+         Dim faxStyle As New DataGridViewTextBoxColumn()
+         With faxStyle
+            .DataPropertyName = "Fax"
+            .HeaderText = "Fax"
+            .Name = "Fax"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, faxStyle)
+
+         ' Cell
+         Dim cellStyle As New DataGridViewTextBoxColumn()
+         With cellStyle
+            .DataPropertyName = "Cell"
+            .HeaderText = "Cellulare"
+            .Name = "Cell"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, cellStyle)
+
+         ' Email
+         Dim emailStyle As New DataGridViewLinkColumn()
+         With emailStyle
+            .DataPropertyName = "Email"
+            .HeaderText = "E-mail"
+            .Name = "Email"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewLinkCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, emailStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneSale(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4615,7 +5131,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneSale(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4666,7 +5182,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneTavoli(ByVal tabella As String)
+   Private Sub CreaColonneTavoli_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4759,7 +5275,107 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamere(ByVal tabella As String)
+   Private Sub CreaColonneTavoli(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         'Posti
+         Dim postiStyle As New DataGridViewTextBoxColumn()
+         With postiStyle
+            .DataPropertyName = "Posti"
+            .HeaderText = "Posti"
+            .Name = "Posti"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, postiStyle)
+
+         ' Cameriere
+         Dim cameriereStyle As New DataGridViewTextBoxColumn()
+         With cameriereStyle
+            .DataPropertyName = "Cameriere"
+            .HeaderText = "Cameriere"
+            .Name = "Cameriere"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, cameriereStyle)
+
+         ' Listino
+         Dim listinoStyle As New DataGridViewTextBoxColumn()
+         With listinoStyle
+            .DataPropertyName = "Listino"
+            .HeaderText = "Listino"
+            .Name = "Listino"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, listinoStyle)
+
+         ' Sala
+         Dim salaStyle As New DataGridViewTextBoxColumn()
+         With salaStyle
+            .DataPropertyName = "Sala"
+            .HeaderText = "Sala"
+            .Name = "Sala"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, salaStyle)
+
+         ' Escludi
+         Dim escludiStyle As New DataGridViewTextBoxColumn()
+         With escludiStyle
+            .DataPropertyName = "Escludi"
+            .HeaderText = "Escludi dalla gestione"
+            .Name = "Escludi"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, escludiStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneCamere_1(ByVal tabella As String)
       Dim gridStyle As New DataGridTableStyle
       gridStyle.MappingName = tabella
 
@@ -4871,7 +5487,165 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub CreaColonneStatoPren_1(ByVal tabella As String)
+   Private Sub CreaColonneCamere(ByVal tabella As String)
+      DataGridView1.AutoGenerateColumns = False
+      DataGridView1.DataMember = tabella
+
+      ' Id - Codice
+      Dim codiceStyle As New DataGridViewTextBoxColumn()
+      With codiceStyle
+         .DataPropertyName = "Id"
+         .HeaderText = "Codice"
+         .Name = "Id"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+         .CellTemplate.Style.NullValue = String.Empty
+         .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+      ' Numero
+      Dim numeroStyle As New DataGridViewTextBoxColumn()
+      With numeroStyle
+         .DataPropertyName = "Numero"
+         .HeaderText = "Numero"
+         .Name = "Numero"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, numeroStyle)
+
+      ' Descrizione
+      Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+      With descrizioneStyle
+         .DataPropertyName = "Descrizione"
+         .HeaderText = "Descrizione"
+         .Name = "Descrizione"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+      ' Ubicazione
+      Dim ubicazioneStyle As New DataGridViewTextBoxColumn()
+      With ubicazioneStyle
+         .DataPropertyName = "Ubicazione"
+         .HeaderText = "Ubicazione"
+         .Name = "Ubicazione"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, ubicazioneStyle)
+
+      ' Posizione
+      Dim posizioneStyle As New DataGridViewTextBoxColumn()
+      With posizioneStyle
+         .DataPropertyName = "Posizione"
+         .HeaderText = "Posizione"
+         .Name = "Posizione"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, posizioneStyle)
+
+      ' Tipologia
+      Dim tipologiaStyle As New DataGridViewTextBoxColumn()
+      With tipologiaStyle
+         .DataPropertyName = "Tipologia"
+         .HeaderText = "Tipologia"
+         .Name = "Tipologia"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipologiaStyle)
+
+      ' Posti letto
+      Dim lettiAggStyle As New DataGridViewTextBoxColumn()
+      With lettiAggStyle
+         .DataPropertyName = "PostiLetto"
+         .HeaderText = "Posti letto"
+         .Name = "PostiLetto"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+         .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, lettiAggStyle)
+
+      ' Disponibile
+      Dim disponibileStyle As New DataGridViewTextBoxColumn()
+      With disponibileStyle
+         .DataPropertyName = "Disponibile"
+         .HeaderText = "Disponibile"
+         .Name = "Disponibile"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+         .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, disponibileStyle)
+
+      ' Escludi
+      Dim escludiStyle As New DataGridViewTextBoxColumn()
+      With escludiStyle
+         .DataPropertyName = "Escludi"
+         .HeaderText = "Escludi dal Planning"
+         .Name = "Escludi"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+         .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, escludiStyle)
+
+      ' Evidenzia
+      Dim evidenziaStyle As New DataGridViewTextBoxColumn()
+      With evidenziaStyle
+         .DataPropertyName = "Evidenzia"
+         .HeaderText = "Evidenzia Planning"
+         .Name = "Evidenzia"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+         .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, evidenziaStyle)
+
+      ' Listino
+      Dim listinoStyle As New DataGridViewTextBoxColumn()
+      With listinoStyle
+         .DataPropertyName = "Listino"
+         .HeaderText = "Listino"
+         .Name = "Listino"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, listinoStyle)
+
+      ' Colore
+      Dim coloreStyle As New DataGridViewTextBoxColumn
+      With coloreStyle
+         .DataPropertyName = "Colore"
+         .HeaderText = "Colore"
+         .Name = "ColoreSfondo"
+         .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+         .CellTemplate = New DataGridViewTextBoxCell()
+         .CellTemplate.Style.NullValue = String.Empty
+      End With
+      DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
+
+   End Sub
+
+   Private Sub CreaColonneStatoPren(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4914,7 +5688,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneStatoPren(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneStatoPren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4965,7 +5739,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneArticoli(ByVal tabella As String)
+   Private Sub CreaColonneArticoli_1(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5095,7 +5869,194 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneOperatori_1(ByVal tabella As String)
+   Private Sub CreaColonneArticoli(ByVal tabella As String)
+      Try
+         DataGridView1.AutoGenerateColumns = False
+         DataGridView1.DataMember = tabella
+
+         ' Id (non visibile)
+         Dim idStyle As New DataGridViewTextBoxColumn()
+         With idStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Id"
+            .Name = "Id"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, idStyle)
+
+         ' Scorta minima (non visibile)
+         Dim smStyle As New DataGridViewTextBoxColumn()
+         With smStyle
+            .DataPropertyName = "ScortaMin"
+            .HeaderText = "ScortaMin"
+            .Name = "ScortaMin"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, smStyle)
+
+         ' Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn()
+         With codiceStyle
+            .DataPropertyName = "Codice"
+            .HeaderText = "Codice"
+            .Name = "Codice"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
+
+         ' Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, descrizioneStyle)
+
+         ' Unità di misura
+         Dim umStyle As New DataGridViewTextBoxColumn()
+         With umStyle
+            .DataPropertyName = "UnitàMisura"
+            .HeaderText = "U.M."
+            .Name = "UnitàMisura"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, umStyle)
+
+         ' Giacenza
+         Dim giacenzaStyle As New DataGridViewTextBoxColumn()
+         With giacenzaStyle
+            .DataPropertyName = "Giacenza"
+            .HeaderText = "Giacenza"
+            .Name = "Giacenza"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Blue
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, giacenzaStyle)
+
+         ' Caricato
+         Dim caricatoStyle As New DataGridViewTextBoxColumn()
+         With caricatoStyle
+            .DataPropertyName = "Carico"
+            .HeaderText = "Carico"
+            .Name = "Carico"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, caricatoStyle)
+
+         ' Scaricato
+         Dim scaricatoStyle As New DataGridViewTextBoxColumn()
+         With scaricatoStyle
+            .DataPropertyName = "Scarico"
+            .HeaderText = "Scarico"
+            .Name = "Scarico"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, scaricatoStyle)
+
+         ' Prezzo Acquisto
+         Dim pAcquistoStyle As New DataGridViewTextBoxColumn()
+         With pAcquistoStyle
+            .DataPropertyName = "PrezzoAcquisto"
+            .HeaderText = "Prezzo di acquisto"
+            .Name = "PrezzoAcquisto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, pAcquistoStyle)
+
+         ' Categoria
+         Dim categoriaStyle As New DataGridViewTextBoxColumn()
+         With categoriaStyle
+            .DataPropertyName = "Categoria"
+            .HeaderText = "Categoria"
+            .Name = "Categoria"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, categoriaStyle)
+
+         ' Fornitore
+         Dim fornitoreStyle As New DataGridViewTextBoxColumn()
+         With fornitoreStyle
+            .DataPropertyName = "Fornitore"
+            .HeaderText = "Fornitore"
+            .Name = "Fornitore"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, fornitoreStyle)
+
+         ' Magazzino
+         Dim magazzinoStyle As New DataGridViewTextBoxColumn()
+         With magazzinoStyle
+            .DataPropertyName = "Magazzino"
+            .HeaderText = "Magazzino"
+            .Name = "Magazzino"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, magazzinoStyle)
+
+         ' Codice a barre
+         Dim barcodStyle As New DataGridViewTextBoxColumn()
+         With barcodStyle
+            .DataPropertyName = "CodBarre"
+            .HeaderText = "Codice a barre"
+            .Name = "CodBarre"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, barcodStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub CreaColonneOperatori(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5145,7 +6106,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneOperatori(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneOperatori(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5196,7 +6157,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneGruppi_1(ByVal tabella As String)
+   Private Sub CreaColonneGruppi(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5230,7 +6191,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneGruppi(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneGruppi(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5269,7 +6230,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCarattRisorse_1(ByVal tabella As String)
+   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5311,7 +6272,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneCarattRisorse(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5365,7 +6326,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneScontiMaggiorazioni_1(ByVal tabella As String)
+   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5437,7 +6398,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+   Private Sub DataGridView_CreaColonneScontiMaggiorazioni(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5886,7 +6847,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaClienti(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaClienti(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -6293,7 +7254,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoClienti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoClienti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -6759,9 +7720,104 @@ Public Class frmElencoDati
 
 #End Region
 
+#Region "Strumenti di Modifica - (Condivisa) "
+      ' Visualizza i comandi Strumenti di modifica sul Ribbon.
+      g_frmMain.rtgStrumentiModifica.Visible = True
+
+      Select Case TipoElenco
+         Case Elenco.Clienti
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+
+         Case Elenco.Aziende
+
+         Case Elenco.Fornitori
+
+         Case Elenco.CatPiatti
+
+         Case Elenco.Camerieri
+
+         Case Elenco.AgenzieCamerieri
+
+         Case Elenco.Sale
+
+         Case Elenco.Tavoli
+
+         Case Elenco.Camere
+
+         Case Elenco.StatoPren
+
+         Case Elenco.Operatori
+
+         Case Elenco.Gruppi
+
+         Case Elenco.CaratteristicheRisorse
+
+         Case Elenco.Prenotazioni
+
+         Case Elenco.PrenSale
+
+         Case Elenco.Articoli
+
+      End Select
+
+      ' Serve ad attivare/disattivare i vari comandi in base ai dati visualizzati.
+      AggiornaDati()
+
+#End Region
+
+
    End Sub
 
    Private Sub frmElencoDati_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+
+#Region "Strumenti di Modifica - (Condivisa) "
+
+      ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
+      g_frmMain.rtgStrumentiModifica.Visible = False
+
+#End Region
 
 #Region "Gestionale Amica - (Condivisa) "
 
@@ -6923,7 +7979,7 @@ Public Class frmElencoDati
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, strDescrizione, strModulo)
 
          ' Imposta lo stato attivo per la griglia dati.
-         DataGridView1.Focus()
+         DataGrid1.Focus()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -7378,10 +8434,6 @@ Public Class frmElencoDati
       End If
    End Sub
 
-   Private Sub frmElencoDati_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles Me.MouseDoubleClick
-
-   End Sub
-
    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
       Try
          ' Imposta il colore per la cella in base al valore del campo ColoreSfondo.
@@ -7394,6 +8446,20 @@ Public Class frmElencoDati
 
             ' Non visualizza il valore del campo.
             e.Value = String.Empty
+         End If
+
+         ' Imposta il colore per la cella in base al valore del campo Giacenza per Articoli.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "Giacenza" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+
+            Dim giacenza As Double = Convert.ToDouble(e.Value)
+
+            If giacenza <= 0 Then
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Red
+            Else
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Blue
+            End If
          End If
 
       Catch ex As Exception
@@ -7420,5 +8486,76 @@ Public Class frmElencoDati
          ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
       End If
    End Sub
+
+   Public Sub Nuovo()
+      Try
+         ' Registra loperazione efettuata dall'operatore identificato.
+         g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
+
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati("")
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub Modifica()
+      Try
+         ' Registra loperazione efettuata dall'operatore identificato.
+         RegistraModifica()
+
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiClienti()
+      Try
+         Dim Risposta As Short
+         Dim cliente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString & " " & DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per l'eliminazione.
+         Risposta = MsgBox("Si desidera duplicare il cliente '" & cliente & "'?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            Dim CClienti As New Anagrafiche.Cliente(ConnString)
+
+            With CClienti
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_CLIENTI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_CLIENTI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' TODO: Da sviluppare!
+            ' Registra loperazione effettuata dall'operatore identificato.
+            'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 
 End Class

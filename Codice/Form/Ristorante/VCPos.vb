@@ -4065,7 +4065,7 @@ Public Class frmPos
 
                   .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
                   .Importo = lstvDettagli.Items(i).SubItems(3).Text
-                  .SpettanzaCameriere = CalcolaSpettanzaCamerieri(idTavolo, numCamerieri, lstvDettagli)
+                  .SpettanzaCameriere = LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text) 'CalcolaSpettanzaCamerieri(idTavolo, numCamerieri, lstvDettagli)
                   .GruppoCameriere = Gruppo
                   .Contabilizzata = "No"
 
