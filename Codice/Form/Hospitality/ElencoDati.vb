@@ -220,8 +220,8 @@ Public Class frmElencoDati
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmElencoDati))
-      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.ToolBar1 = New System.Windows.Forms.ToolBar()
       Me.tbrNuovo = New System.Windows.Forms.ToolBarButton()
       Me.tbrModifica = New System.Windows.Forms.ToolBarButton()
@@ -269,7 +269,7 @@ Public Class frmElencoDati
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(688, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(696, 26)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -435,12 +435,11 @@ Public Class frmElencoDati
       Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(5, 142)
+      Me.DataGrid1.Location = New System.Drawing.Point(0, 61)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(680, 56)
+      Me.DataGrid1.Size = New System.Drawing.Size(696, 369)
       Me.DataGrid1.TabIndex = 1
-      Me.DataGrid1.Visible = False
       '
       'Panel1
       '
@@ -453,7 +452,7 @@ Public Class frmElencoDati
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(688, 62)
+      Me.Panel1.Size = New System.Drawing.Size(696, 35)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -466,13 +465,14 @@ Public Class frmElencoDati
       Me.lblIntestazione.Size = New System.Drawing.Size(213, 20)
       Me.lblIntestazione.TabIndex = 9
       Me.lblIntestazione.Text = "INTESTAZIONE ELENCO"
+      Me.lblIntestazione.Visible = False
       '
       'eui_cmbCampoRicerca
       '
       Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(547, 8)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(555, 8)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -485,7 +485,7 @@ Public Class frmElencoDati
       Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(338, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(346, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
@@ -495,7 +495,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(458, 8)
+      Me.Label2.Location = New System.Drawing.Point(466, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -529,34 +529,35 @@ Public Class frmElencoDati
       '
       Me.DataGridView1.AllowUserToAddRows = False
       Me.DataGridView1.AllowUserToDeleteRows = False
-      DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+      DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
       Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-      DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-      DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-      DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-      DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+      DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(2, 90)
+      Me.DataGridView1.Location = New System.Drawing.Point(2, 381)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(686, 332)
+      Me.DataGridView1.Size = New System.Drawing.Size(686, 41)
       Me.DataGridView1.TabIndex = 0
+      Me.DataGridView1.Visible = False
       '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(688, 422)
+      Me.ClientSize = New System.Drawing.Size(696, 430)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1481,7 +1482,7 @@ Public Class frmElencoDati
 
    End Function
 
-   Public Sub RegistraModifica_1()
+   Public Sub RegistraModifica()
       Try
          Dim strDescrizione As String
 
@@ -1573,7 +1574,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub RegistraModifica()
+   Public Sub DataGridView1_RegistraModifica()
       Try
          Dim strDescrizione As String
 
@@ -1670,7 +1671,7 @@ Public Class frmElencoDati
          ' Calcola il numero delle pagine da visualizzare.
          LeggiNumPagine(tabella)
 
-         DataGridView1.DataSource = dt
+         DataGrid1.DataSource = dt
 
          ' Visualizza la prima pagina di dati.
          VisualizzaPagina(1, sql)
@@ -1750,7 +1751,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub EliminaDati_1(ByVal tabella As String, ByVal id As Integer)
+   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
          Dim sql As String
@@ -1997,7 +1998,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
+   Public Sub DataGridView1_EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
          Dim sql As String
@@ -2244,12 +2245,11 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-
    Public Sub AggiornaDati()
       Try
          If eui_txtTestoRicerca.Text <> "" Then
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGridView1.DataSource = dt
+            DataGrid1.DataSource = dt
 
             FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
          Else
@@ -2257,7 +2257,7 @@ Public Class frmElencoDati
             LeggiNumPagine(NomeTabella)
 
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGridView1.DataSource = dt
+            DataGrid1.DataSource = dt
 
             ' Visualizza la prima pagina di dati.
             VisualizzaPagina(pagCorrente, sql)
@@ -2691,7 +2691,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub AggIntGriglia_1()
+   Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
             Select Case TipoElenco
@@ -2730,7 +2730,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub AggIntGriglia()
+   Public Sub DataGridView1_AggIntGriglia()
       Try
          ' Se le celle non sono ancora state caricate.
          If IsNothing(DataGridView1.CurrentCell) = True Then
@@ -3189,7 +3189,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneClienti_1(ByVal tabella As String)
+   Private Sub CreaColonneClienti(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3342,7 +3342,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneClienti(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneClienti(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4601,7 +4601,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneCamerieri(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4787,7 +4787,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAgenzieCamerieri_1(ByVal tabella As String)
+   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4917,7 +4917,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneAgenzieCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5182,7 +5182,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneTavoli_1(ByVal tabella As String)
+   Private Sub CreaColonneTavoli(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5275,7 +5275,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneTavoli(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneTavoli(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5375,7 +5375,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamere_1(ByVal tabella As String)
+   Private Sub CreaColonneCamere(ByVal tabella As String)
       Dim gridStyle As New DataGridTableStyle
       gridStyle.MappingName = tabella
 
@@ -5487,7 +5487,7 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub CreaColonneCamere(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneCamere(ByVal tabella As String)
       DataGridView1.AutoGenerateColumns = False
       DataGridView1.DataMember = tabella
 
@@ -5739,7 +5739,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneArticoli_1(ByVal tabella As String)
+   Private Sub CreaColonneArticoli(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5869,7 +5869,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneArticoli(ByVal tabella As String)
+   Private Sub DataGridView1_CreaColonneArticoli(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -7722,32 +7722,32 @@ Public Class frmElencoDati
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
-      g_frmMain.rtgStrumentiModifica.Visible = True
+      'g_frmMain.rtgStrumentiModifica.Visible = True
 
       Select Case TipoElenco
          Case Elenco.Clienti
 
 #Region "Modifica - (Condivisa) "
             ' TabPage.
-            g_frmMain.eui_StrumentiModifica.Visible = True
+            'g_frmMain.eui_StrumentiModifica.Visible = True
 
-            ' Dati.
-            g_frmMain.eui_Strumenti_Nuovo.Visible = True
-            g_frmMain.eui_Strumenti_Modifica.Visible = True
-            g_frmMain.eui_Strumenti_Duplica.Visible = True
-            g_frmMain.eui_Strumenti_Elimina.Visible = True
-            g_frmMain.eui_Strumenti_Annulla.Visible = False
-            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+            '' Dati.
+            'g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            'g_frmMain.eui_Strumenti_Modifica.Visible = True
+            'g_frmMain.eui_Strumenti_Duplica.Visible = True
+            'g_frmMain.eui_Strumenti_Elimina.Visible = True
+            'g_frmMain.eui_Strumenti_Annulla.Visible = False
+            'g_frmMain.eui_Strumenti_Aggiorna.Visible = True
 
-            ' Esporta.
-            g_frmMain.eui_Strumenti_Esporta.Visible = True
-            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
-            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
-            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+            '' Esporta.
+            'g_frmMain.eui_Strumenti_Esporta.Visible = True
+            'g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            'g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            'g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
-            ' Stampa.
-            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
-            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+            '' Stampa.
+            'g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            'g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
 
 #End Region
 
@@ -7803,7 +7803,7 @@ Public Class frmElencoDati
       End Select
 
       ' Serve ad attivare/disattivare i vari comandi in base ai dati visualizzati.
-      AggiornaDati()
+      'AggiornaDati()
 
 #End Region
 
@@ -7815,7 +7815,7 @@ Public Class frmElencoDati
 #Region "Strumenti di Modifica - (Condivisa) "
 
       ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
-      g_frmMain.rtgStrumentiModifica.Visible = False
+      'g_frmMain.rtgStrumentiModifica.Visible = False
 
 #End Region
 
@@ -8556,6 +8556,5 @@ Public Class frmElencoDati
 
       End Try
    End Sub
-
 
 End Class

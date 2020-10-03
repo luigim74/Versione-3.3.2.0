@@ -434,7 +434,7 @@ Public Class frmDocumento
 
                   .Prezzo = dgvDettagli.Rows(i).Cells(clnPrezzo.Name).Value.ToString
                   .Importo = dgvDettagli.Rows(i).Cells(clnImporto.Name).Value.ToString
-                  .SpettanzaCameriere = CFormatta.FormattaNumeroDouble(LeggiSpettanzaCameriere(TAB_PIATTI, dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString, dgvDettagli.Rows(i).Cells(clnQta.Name).Value.ToString))
+                  .SpettanzaCameriere = VALORE_ZERO 'CFormatta.FormattaNumeroDouble(LeggiSpettanzaPiatto(TAB_PIATTI, dgvDettagli.Rows(i).Cells(clnCodice.Name).Value.ToString, dgvDettagli.Rows(i).Cells(clnQta.Name).Value.ToString, "No"))
                   .Contabilizzata = "No"
 
                   .InserisciDati(TAB_STATISTICHE)

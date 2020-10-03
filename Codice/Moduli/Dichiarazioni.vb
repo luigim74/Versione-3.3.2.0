@@ -50,7 +50,7 @@ Module Dichiarazioni
 
    ' Dimensioni della finesta Camerieri.
    Public Const PIATTI_LARGHEZZA As Integer = 560
-   Public Const PIATTI_ALTEZZA As Integer = 440
+   Public Const PIATTI_ALTEZZA As Integer = 460
 
    ' Dimensioni del form Statistiche.
    Public Const STAT_LARGHEZZA As Integer = 750

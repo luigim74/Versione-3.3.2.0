@@ -92,8 +92,16 @@ Public Class CambiaCameriere
       lblNomeTavolo.Text = "CAMERIERI AL TAVOLO: " & g_frmVCTavoli.lblTavolo.Text
 
       CaricaListaCamerieri(eui_cmbCameriere, "Camerieri")
-      eui_cmbCameriere.SelectedItem = selCameriere
-      Me.Tag = selCameriere
+
+      ' Se esiste un cameriere predefnito carica i dati altrimenti esce dalla procedura.
+      If selCameriere <> String.Empty Then
+         eui_cmbCameriere.SelectedItem = selCameriere
+         Me.Tag = selCameriere
+      Else
+         eui_cmbCameriere.SelectedIndex = 0
+         Me.Tag = String.Empty
+         Exit Sub
+      End If
 
       Dim Camerieri As New CamerieriTavolo
 
@@ -183,7 +191,12 @@ Public Class CambiaCameriere
          lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).SubItems.Add(eui_ckdSpettanzaManuale.Checked.ToString)
 
          ' Stabilisce il gruppo di appartenenza.
-         lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item(CAMERIERE_ALTRI)
+         If lvwCamerieri.Items.Count = 1 Then
+            lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item(CAMERIERE_PREDEFINITO)
+            Me.Tag = lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Text
+         Else
+            lvwCamerieri.Items(lvwCamerieri.Items.Count - 1).Group = lvwCamerieri.Groups.Item(CAMERIERE_ALTRI)
+         End If
 
          ' Aggiorna i valori delle spettanza in base al numero dei camerieri.
          AggiornaSpettanzaCamerieri()

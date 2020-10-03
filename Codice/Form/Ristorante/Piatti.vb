@@ -116,6 +116,7 @@ Public Class frmPiatti
    Friend WithEvents Label16 As Elegant.Ui.Label
    Public WithEvents txtSpettanza As TextBox
    Public WithEvents Label21 As Label
+   Friend WithEvents chkNoDivisioneSpettanza As CheckBox
    Friend WithEvents cmdImmagine As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -187,6 +188,7 @@ Public Class frmPiatti
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.chkNoDivisioneSpettanza = New System.Windows.Forms.CheckBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
@@ -208,7 +210,7 @@ Public Class frmPiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(570, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(580, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -242,7 +244,7 @@ Public Class frmPiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(570, 20)
+      Me.Panel1.Size = New System.Drawing.Size(580, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -252,7 +254,7 @@ Public Class frmPiatti
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -266,12 +268,13 @@ Public Class frmPiatti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(570, 381)
+      Me.TabControl1.Size = New System.Drawing.Size(580, 391)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.chkNoDivisioneSpettanza)
       Me.TabPage1.Controls.Add(Me.txtSpettanza)
       Me.TabPage1.Controls.Add(Me.Label21)
       Me.TabPage1.Controls.Add(Me.Label19)
@@ -312,7 +315,7 @@ Public Class frmPiatti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(562, 355)
+      Me.TabPage1.Size = New System.Drawing.Size(572, 365)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       '
@@ -783,7 +786,7 @@ Public Class frmPiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(552, 345)
+      Me.TabPage2.Size = New System.Drawing.Size(572, 365)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -958,7 +961,7 @@ Public Class frmPiatti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(552, 345)
+      Me.TabPage6.Size = New System.Drawing.Size(572, 365)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -975,7 +978,7 @@ Public Class frmPiatti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(552, 345)
+      Me.txtNote.Size = New System.Drawing.Size(572, 365)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -987,12 +990,23 @@ Public Class frmPiatti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'chkNoDivisioneSpettanza
+      '
+      Me.chkNoDivisioneSpettanza.AutoSize = True
+      Me.chkNoDivisioneSpettanza.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+      Me.chkNoDivisioneSpettanza.Location = New System.Drawing.Point(15, 328)
+      Me.chkNoDivisioneSpettanza.Name = "chkNoDivisioneSpettanza"
+      Me.chkNoDivisioneSpettanza.Size = New System.Drawing.Size(362, 17)
+      Me.chkNoDivisioneSpettanza.TabIndex = 55786
+      Me.chkNoDivisioneSpettanza.Text = "Non dividere la spettanza per il numero dei camerieri presenti sul tavolo:"
+      Me.chkNoDivisioneSpettanza.UseVisualStyleBackColor = True
+      '
       'frmPiatti
       '
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(570, 427)
+      Me.ClientSize = New System.Drawing.Size(580, 437)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1103,6 +1117,12 @@ Public Class frmPiatti
                .Spettanza = CFormatta.FormattaNumeroDouble(Convert.ToDouble(txtSpettanza.Text))
             Else
                .Spettanza = VALORE_ZERO
+            End If
+
+            If chkNoDivisioneSpettanza.Checked = True Then
+               .NoDivisioneSpettanza = "Sì"
+            Else
+               .NoDivisioneSpettanza = "No"
             End If
 
             If .Immagine = String.Empty Then
@@ -1456,8 +1476,13 @@ Public Class frmPiatti
                txtListino4.Text = .Listino4
                txtSpettanza.Text = .Spettanza
                cmbAliquotaIva.Text = .AliquotaIva
-
                txtNote.Text = .Note
+
+               If .NoDivisioneSpettanza = "Sì" Then
+                  chkNoDivisioneSpettanza.Checked = True
+               Else
+                  chkNoDivisioneSpettanza.Checked = False
+               End If
 
                If .Variazione = "Sì" Then
                   chkVariazione.Checked = True
@@ -1655,5 +1680,6 @@ Public Class frmPiatti
          sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
+
 End Class
 

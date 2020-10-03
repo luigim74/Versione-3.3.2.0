@@ -834,14 +834,90 @@ Module Procedure
       End Try
    End Function
 
-   Public Function LeggiSpettanzaCameriere(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String) As Double
+   Public Function LeggiSpettanzaCameriere(ByVal idCameriere As String) As Double
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 
       Try
          cn.Open()
 
+         Dim cmd As New OleDbCommand("SELECT * FROM CamerieriTavolo WHERE IdCameriere = '" & idCameriere & "'", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim spettanza As Double
+         Dim totaleSpettanza As Double
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
+
+               Return spettanza
+            Else
+               Return 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiSpettanzaPiattoCamerieri(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String, ByVal numCamerieri As Integer) As Double
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim strSql As String
+
+      Try
+         cn.Open()
+
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & idPiatto, cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim spettanza As Double
+         Dim totaleSpettanza As Double
+
+         Do While dr.Read()
+            If IsDBNull(dr.Item("Spettanza")) = False Then
+               spettanza = Convert.ToDouble(dr.Item("Spettanza"))
+
+               If dr.Item("NoDivisioneSpettanza") = "No" Then
+                  totaleSpettanza = spettanza * quantità / numCamerieri
+               Else
+                  totaleSpettanza = spettanza * quantità
+               End If
+
+               Return totaleSpettanza
+            Else
+               Return 0
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+   Public Function LeggiSpettanzaPiatto(ByVal tabella As String, ByVal idPiatto As String, ByVal quantità As String, ByVal noDivisioneSpettanza As String) As Double
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+      Dim strSql As String
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE NoDivisioneSpettanza = '" & noDivisioneSpettanza & "' " & "And Id = " & idPiatto, cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
          Dim spettanza As Double
          Dim totaleSpettanza As Double
@@ -874,6 +950,7 @@ Module Procedure
       Dim cn As New OleDbConnection(ConnString)
       Dim valSpettanza As Double
       Dim totaleSpettanza As Double
+      Dim totaleSpettanzaNoDivisione As Double
 
       Try
          If IsNothing(lista) = True Then
@@ -883,18 +960,29 @@ Module Procedure
             Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
             Do While dr.Read()
-               valSpettanza = LeggiSpettanzaCameriere("Piatti", dr.Item("IdPiatto").ToString, dr.Item("Quantità").ToString)
+               ' Leggo la spettanza per i piatti da dividere con i camerieri.
+               valSpettanza = LeggiSpettanzaPiatto("Piatti", dr.Item("IdPiatto").ToString, dr.Item("Quantità").ToString, "No")
                totaleSpettanza = totaleSpettanza + valSpettanza
+
+               ' Leggo la spettanza per i piatti da non dividere con i camerieri.
+               valSpettanza = LeggiSpettanzaPiatto("Piatti", dr.Item("IdPiatto").ToString, dr.Item("Quantità").ToString, "Sì")
+               totaleSpettanzaNoDivisione = totaleSpettanzaNoDivisione + valSpettanza
             Loop
          Else
             Dim i As Integer
             For i = 0 To lista.Items.Count - 1
-               valSpettanza = LeggiSpettanzaCameriere("Piatti", lista.Items(i).SubItems(5).Text, lista.Items(i).SubItems(1).Text)
+               ' Leggo la spettanza per i piatti da dividere con i camerieri.
+               valSpettanza = LeggiSpettanzaPiatto("Piatti", lista.Items(i).SubItems(5).Text, lista.Items(i).SubItems(1).Text, "No")
                totaleSpettanza = totaleSpettanza + valSpettanza
+
+               ' Leggo la spettanza per i piatti da non dividere con i camerieri.
+               valSpettanza = LeggiSpettanzaPiatto("Piatti", lista.Items(i).SubItems(5).Text, lista.Items(i).SubItems(1).Text, "Sì")
+               totaleSpettanzaNoDivisione = totaleSpettanzaNoDivisione + valSpettanza
             Next
          End If
 
          totaleSpettanza = totaleSpettanza / numCamerieri
+         totaleSpettanza = totaleSpettanza + totaleSpettanzaNoDivisione
 
          Return CFormatta.FormattaNumeroDouble(totaleSpettanza)
 
@@ -907,7 +995,6 @@ Module Procedure
 
       End Try
    End Function
-
 
    Public Function LeggiProvinciaComune(ByVal comune As String) As String
       ' Dichiara un oggetto connessione.

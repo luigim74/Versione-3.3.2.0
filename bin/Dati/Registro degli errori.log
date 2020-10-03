@@ -487,3 +487,144 @@
    in Hospitality_Solution.frmElencoDati.RegistraModifica()"
 "
 "
+"*** 02/10/2020 - 21:15:17 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"
+"*** 02/10/2020 - 21:50:33 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 21:56:33 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 22:40:35 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 22:42:12 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.Procedure.LeggiSpettanzaCameriere(String idCameriere) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 845"
+"
+"
+"*** 02/10/2020 - 22:45:15 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.frmVCTavoli.EliminaDatiCamerieriTavolo(String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 4252"
+"
+"
+"*** 02/10/2020 - 22:48:53 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 22:58:28 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 22:58:54 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.frmVCTavoli.EliminaDatiCamerieriTavolo(String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 4252"
+"
+"
+"*** 02/10/2020 - 23:07:30 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 02/10/2020 - 23:07:59 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.frmVCTavoli.EliminaDatiCamerieriTavolo(String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 4252"
+"
+"
+"*** 03/10/2020 - 14:19:34 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 14:20:43 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.frmVCTavoli.EliminaDatiCamerieriTavolo(String tabella, Int32 idTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCTavoli.vb:riga 4252"
+"
+"
+"*** 03/10/2020 - 14:36:40 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 14:41:50 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 14:48:13 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 15:29:43 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.CambiaCameriere.eui_cmdInserisci_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\CambiaCameriere.vb:riga 196"
+"
+"
+"*** 03/10/2020 - 16:53:37 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 17:21:12 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 17:35:03 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 18:05:27 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 03/10/2020 - 18:11:46 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"

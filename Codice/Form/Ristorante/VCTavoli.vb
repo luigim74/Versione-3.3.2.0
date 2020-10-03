@@ -57,6 +57,7 @@ Public Class frmVCTavoli
 
    Public Const ANAG_TAVOLI As String = "Tavoli"
    Const TAB_CONTI_TAVOLI As String = "ContiTavoli"
+   Public Const TAB_CAMERIERI_TAVOLO As String = "CamerieriTavolo"
    Const TAB_SALE As String = "Sale"
    Const TAB_PREN As String = "Prenotazioni"
    Const TAB_COMANDE As String = "Comande"
@@ -4230,6 +4231,43 @@ Public Class frmVCTavoli
 
       End Try
    End Sub
+
+   Public Sub EliminaDatiCamerieriTavolo(ByVal tabella As String, ByVal idTavolo As Integer)
+      Try
+         Dim sql As String
+
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("DELETE FROM {0} WHERE IdTavolo = {1}", tabella, idTavolo)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
+
+         ' Conferma la transazione.
+         tr.Commit()
+
+      Catch ex As Exception
+         ' Annulla la transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Sub
+
 
    Private Function SpostamentoInCorso() As Boolean
       If ConfrontaColore(netBtn_Sposta.ColorBottom, Color.Red, Color.Red) = True Then

@@ -56,6 +56,13 @@
 
 #End Region
 
+#Region " 03/10/2020 "
+
+' 1. Corretto procedura CalcolaSpettanzaCamerieri (non divideva le spettanze).
+' 2. Aggiunto campo NoDivisioneSpettanza all'archivio.
+' 3. Inserito nella tabella Piatti il valore 'No' per il campo NoDivisioneSpettanza.
+
+#End Region
 
 #End Region
 

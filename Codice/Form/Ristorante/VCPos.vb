@@ -4032,8 +4032,6 @@ Public Class frmPos
             Dim i As Integer
             For i = 0 To lstvDettagli.Items.Count - 1
                With Stat
-                  ' TODO: Modifcare procedure della Classe e rimuovere FormattApici.
-
                   ' Assegna i dati dei campi della classe alle caselle di testo.
                   .Data = CStr(dtpData.Value.Date)
                   If rifDoc = True Then
@@ -4054,8 +4052,8 @@ Public Class frmPos
                   .DesPiatto = FormattaApici(lstvDettagli.Items(i).SubItems(2).Text)
                   .IdTavolo = idTavolo.ToString
                   .DesTavolo = nomeTavolo
-                  .IdCameriere = IdCameriere 'LeggiIdCameriere(TAB_CAMERIERI, nomeCameriereDoc)
-                  .DesCameriere = NomeCameriere 'nomeCameriereDoc
+                  .IdCameriere = IdCameriere
+                  .DesCameriere = NomeCameriere
 
                   If lstvDettagli.Items(i).SubItems(1).Text <> String.Empty Then
                      .Quantità = Convert.ToDouble(lstvDettagli.Items(i).SubItems(1).Text)
@@ -4065,7 +4063,9 @@ Public Class frmPos
 
                   .Prezzo = lstvDettagli.Items(i).SubItems(4).Text
                   .Importo = lstvDettagli.Items(i).SubItems(3).Text
-                  .SpettanzaCameriere = LeggiSpettanzaCameriere(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text) 'CalcolaSpettanzaCamerieri(idTavolo, numCamerieri, lstvDettagli)
+
+                  .SpettanzaCameriere = LeggiSpettanzaPiattoCamerieri(TAB_PIATTI, lstvDettagli.Items(i).SubItems(5).Text, lstvDettagli.Items(i).SubItems(1).Text, numCamerieri)
+
                   .GruppoCameriere = Gruppo
                   .Contabilizzata = "No"
 

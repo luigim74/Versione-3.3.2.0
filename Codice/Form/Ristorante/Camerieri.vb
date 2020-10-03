@@ -316,7 +316,7 @@ Public Class frmCamerieri
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
@@ -1243,7 +1243,7 @@ Public Class frmCamerieri
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(781, 504)
+      Me.ClientSize = New System.Drawing.Size(781, 505)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1437,7 +1437,7 @@ Public Class frmCamerieri
                eui_ddwnFiltro.Text = "VISTA - (" & FILTRO_TUTTE & ")"
 
                ' Crea la stringa sql di selezione dati.
-               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' ORDER BY Data ASC"
+               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' ORDER BY Id DESC"
                sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' GROUP BY Data"
 
             Case FILTRO_CONTABILIZZATE
@@ -1445,7 +1445,7 @@ Public Class frmCamerieri
                eui_ddwnFiltro.Text = "VISTA - (" & FILTRO_CONTABILIZZATE & ")"
 
                ' Crea la stringa sql di selezione dati.
-               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'Sì' ORDER BY Data ASC"
+               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'Sì' ORDER BY Id DESC"
                sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'Sì' GROUP BY Data"
 
             Case FILTRO_DA_CONTABILIZZARE
@@ -1453,7 +1453,7 @@ Public Class frmCamerieri
                eui_ddwnFiltro.Text = "VISTA - (" & FILTRO_DA_CONTABILIZZARE & ")"
 
                ' Crea la stringa sql di selezione dati.
-               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'No' ORDER BY Data ASC"
+               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'No' ORDER BY Id DESC"
                sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND Contabilizzata = 'No' GROUP BY Data"
 
             Case FILTRO_DA_CONTABILIZZARE_SPETTANZA
@@ -1461,7 +1461,7 @@ Public Class frmCamerieri
                eui_ddwnFiltro.Text = "VISTA - (" & FILTRO_DA_CONTABILIZZARE_SPETTANZA & ")"
 
                ' Crea la stringa sql di selezione dati.
-               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND SpettanzaCameriere > 0 AND Contabilizzata = 'No' ORDER BY Data ASC"
+               sql = "SELECT * FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND SpettanzaCameriere > 0 AND Contabilizzata = 'No' ORDER BY Id DESC"
                sqlGroupBy = "SELECT Data FROM " & tabella & " WHERE IdCameriere = '" & idCameriere & "' AND SpettanzaCameriere > 0 AND Contabilizzata = 'No' GROUP BY Data"
          End Select
 
