@@ -4287,6 +4287,7 @@ Public Class frmVCTavoli
       'Else
       '   Return False
       'End If
+
    End Function
 
    Public Sub ApriPiattiEsauriti()

@@ -2618,7 +2618,7 @@ Public Class frmPos
 
 #End Region
 
-   Public Function CaricaComandeConto(ByVal data As String, ByVal oraOcc As String, ByVal numeroConto As String, ByVal tavolo As String, ByVal cameriere As String) As Boolean
+   Public Function CaricaComandeConto(ByVal data As String, ByVal oraOcc As String, ByVal numeroConto As String, ByVal id_Tavolo As String, ByVal tavolo As String, ByVal cameriere As String) As Boolean
       Try
          ' Imposta il numero di un eventuale conto da modificare.
          numeroContoDoc = numeroConto
@@ -2631,7 +2631,7 @@ Public Class frmPos
             nomeCameriereDoc = "Cassa"
             infoTitolo = "Visual POS - CONTO NUMERO: " & numeroConto & " DEL " & data & " ORA: " & oraOcc
          Else
-            idTavolo = Nothing
+            idTavolo = id_Tavolo
             nomeTavolo = tavolo
             nomeTavoloDoc = tavolo
             nomeCameriereDoc = cameriere
@@ -4737,6 +4737,9 @@ Public Class frmPos
                End If
             End If
          Next
+
+      Catch ex As NullReferenceException
+         Exit Sub
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

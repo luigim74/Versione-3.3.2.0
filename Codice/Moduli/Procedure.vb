@@ -996,6 +996,33 @@ Module Procedure
       End Try
    End Function
 
+   Public Function LeggiIdTavolo(ByVal nomeTavolo As String) As String
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM Tavoli WHERE Descrizione = '" & nomeTavolo & "' ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            Return dr.Item("Id").ToString
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Function
+
+
    Public Function LeggiProvinciaComune(ByVal comune As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)

@@ -64,6 +64,24 @@
 
 #End Region
 
+#Region " 10/10/2020 "
+
+' 1. Aggiunto salvataggio spettanza camerieri anche dai Conti parcheggiati.
+
+#End Region
+
+#End Region
+
+#Region " Menu Builder.vb "
+
+#Region " 24/10/2020 "
+
+' 1. Modificata interfaccia grafica del form Formazione Menu.
+' 2. Creata Tabella FormazioneMenu per salvataggio dati.
+' 3. Creata classe FormazioneMenu per gestione dati.
+
+#End Region
+
 #End Region
 
 #End Region

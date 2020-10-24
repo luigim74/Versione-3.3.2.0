@@ -1213,7 +1213,7 @@ Public Class ElencoContiPos
             Exit Sub
          Else
             ' Carica la comanda del conto salvato nel punto cassa per essere modificata.
-            If g_frmPos.CaricaComandeConto(dataConto, oraOccConto, numConto, tavoloConto, cameriereConto) = True Then
+            If g_frmPos.CaricaComandeConto(dataConto, oraOccConto, numConto, LeggiIdTavolo(tavoloConto), tavoloConto, cameriereConto) = True Then
                Me.Close()
             Else
                Exit Sub

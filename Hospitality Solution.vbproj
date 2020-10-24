@@ -341,6 +341,7 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.vb" />
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Codice\Classi\FormazioneMenu.vb" />
     <Compile Include="Codice\Classi\StampaReports.vb" />
     <Compile Include="Codice\DataSet\AccessoriServiziDataSet.Designer.vb">
       <AutoGen>True</AutoGen>

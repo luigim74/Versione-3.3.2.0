@@ -628,3 +628,229 @@
 "- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
 "
 "
+"*** 10/10/2020 - 14:20:56 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 10/10/2020 - 14:26:16 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.TavoloDaLiberare() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCPos.vb:riga 4712"
+"
+"
+"*** 10/10/2020 - 15:23:22 ***"
+"- DESCRIZIONE ERRORE: Il modulo di gestione di database Microsoft Jet non è in grado di trovare la tabella o la query di input  'Tavolo'. Verificare che esista e che il nome sia stato digitato correttamente."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.Procedure.LeggiIdTavolo(String nomeTavolo) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Moduli\Procedure.vb:riga 1007"
+"
+"
+"*** 10/10/2020 - 15:23:32 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmPos.CaricaComandeConto(String data, String oraOcc, String numeroConto, String id_Tavolo, String tavolo, String cameriere) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCPos.vb:riga 2634"
+"
+"
+"*** 10/10/2020 - 15:25:29 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.TavoloDaLiberare() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCPos.vb:riga 4712"
+"
+"
+"*** 10/10/2020 - 15:30:56 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Classi\StampaReports.vb:riga 151"
+"
+"
+"*** 10/10/2020 - 15:34:34 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmPos.TavoloDaLiberare() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.4.0.0\Codice\Form\Ristorante\VCPos.vb:riga 4712"
+"
+"
+"*** 11/10/2020 - 15:48:02 ***"
+"- DESCRIZIONE ERRORE: Errore: impossibile trovare la stampante predefinita."
+"- NOME PROCEDURA:    in Hospitality_Solution.StampaReports.Stampa()"
+"
+"
+"*** 17/10/2020 - 16:52:16 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoSu(ListBox lstBox)"
+"
+"
+"*** 17/10/2020 - 17:10:35 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoSu(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 536"
+"
+"
+"*** 17/10/2020 - 17:11:05 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoGiù(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 565"
+"
+"
+"*** 17/10/2020 - 17:29:41 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.System.Collections.IList.Remove(Object value)
+   in Elegant.Ui.ListWithEvents`1.Remove(T item)
+   in Hospitality_Solution.Menu.SpostaElememtoSu(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 536"
+"
+"
+"*** 17/10/2020 - 17:29:55 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.System.Collections.IList.Remove(Object value)
+   in Elegant.Ui.ListWithEvents`1.Remove(T item)
+   in Hospitality_Solution.Menu.SpostaElememtoSu(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 536"
+"
+"
+"*** 17/10/2020 - 17:30:08 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoGiù(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 565"
+"
+"
+"*** 17/10/2020 - 17:44:08 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoSu(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 535"
+"
+"
+"*** 24/10/2020 - 14:50:06 ***"
+"- DESCRIZIONE ERRORE: Argomento specificato non compreso nell'intervallo.
+Nome parametro: itemIndex"
+"- NOME PROCEDURA:    in Elegant.Ui.ListBox.GetItemText(Int32 itemIndex)
+   in Elegant.Ui.ListBoxItemControl.GetPreferredSize(Size proposedSize)
+   in System.Windows.Forms.Control.get_PreferredSize()
+   in Elegant.Ui.ListBox.GetEffectiveItemControlSize(ListBoxItemControl itemControl)
+   in Elegant.Ui.ListBoxLayoutEngine.IsVerticalScrollbarRequired(ListBox listBox)
+   in Elegant.Ui.ListBoxLayoutEngine.Layout(Object container, LayoutEventArgs layoutEventArgs)
+   in System.Windows.Forms.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.Control.OnLayout(LayoutEventArgs levent)
+   in Elegant.Ui.ScrollableControl.OnLayout(LayoutEventArgs levent)
+   in System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)
+   in System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement.PerformLayout(IArrangedElement affectedElement, String affectedProperty)
+   in System.Windows.Forms.Control.ControlCollection.Remove(Control value)
+   in Elegant.Ui.ListBox.Items_Changed(Object sender, CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnChanged(CollectionWithEventsChangedEventArgs`1 e)
+   in Elegant.Ui.ListWithEvents`1.OnRemoveComplete(Int32 index, Object value)
+   in System.Collections.CollectionBase.RemoveAt(Int32 index)
+   in Hospitality_Solution.Menu.SpostaElememtoGiù(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 537"
+"
+"
