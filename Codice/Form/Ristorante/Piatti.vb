@@ -1406,23 +1406,24 @@ Public Class frmPiatti
                   End If
                End If
 
-               If IsNothing(g_frmMenu) = False Then
-                  Dim listino As String
-                  If g_frmMenu.tbListino1.Pushed = True Then
-                     listino = "1"
-                  End If
-                  If g_frmMenu.tbListino2.Pushed = True Then
-                     listino = "2"
-                  End If
-                  If g_frmMenu.tbListino3.Pushed = True Then
-                     listino = "3"
-                  End If
-                  If g_frmMenu.tbListino4.Pushed = True Then
-                     listino = "4"
-                  End If
+               ' TODO: Codice da verificare...
+               'If IsNothing(g_frmMenu) = False Then
+               '   Dim listino As String
+               '   If g_frmMenu.tbListino1.Pushed = True Then
+               '      listino = "1"
+               '   End If
+               '   If g_frmMenu.tbListino2.Pushed = True Then
+               '      listino = "2"
+               '   End If
+               '   If g_frmMenu.tbListino3.Pushed = True Then
+               '      listino = "3"
+               '   End If
+               '   If g_frmMenu.tbListino4.Pushed = True Then
+               '      listino = "4"
+               '   End If
 
-                  g_frmMenu.ApplicaListino(NOME_TABELLA, listino)
-               End If
+               '   g_frmMenu.ApplicaListino(NOME_TABELLA, listino)
+               'End If
 
                ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
                Me.Tag = "0"

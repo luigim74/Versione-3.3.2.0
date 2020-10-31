@@ -1005,7 +1005,7 @@ Public Class Fornitori
 
 #End Region
 
-    Private AFornitori As New Anagrafiche.AziendaCliente(ConnString)
+   Private AFornitori As New Anagrafiche.AziendaCliente(ConnString)
    Private IAllegati As New Allegati
    Private CConvalida As New ConvalidaKeyPress
 

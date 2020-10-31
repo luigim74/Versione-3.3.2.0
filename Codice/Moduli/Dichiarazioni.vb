@@ -1186,6 +1186,13 @@ Module Dichiarazioni
       Privato = 2
    End Enum
 
+   Public Enum Listino As Short
+      Listino1 = 1
+      Listino2 = 2
+      Listino3 = 3
+      Listino4 = 4
+   End Enum
+
    ' Tipologia di Planning per le Risorse Sportive.
    Public Const PLANNING_1 As String = "Planning 1 - (Inizio ore: 6:00 - Prenotazione minima mezz'ora)"
    Public Const PLANNING_2 As String = "Planning 2 - (Inizio ore: 6:45 - Prenotazione minima un'ora)"
@@ -1216,5 +1223,9 @@ Module Dichiarazioni
 
    Public Const CAMERIERE_PREDEFINITO As String = "Predefinito"
    Public Const CAMERIERE_ALTRI As String = "Altri"
+
+   ' Modulo Menu Builder - Formazione menu.
+   Public Const PERCORSO_IMMAGINE_CODICE_QR As String = "\Immagini\CodiceQR_Menu"
+
 
 End Module

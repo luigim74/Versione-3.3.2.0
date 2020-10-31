@@ -3,10 +3,13 @@ Option Explicit On
 
 Imports System.IO
 Imports System.Data.OleDb
+Imports ZXing
+
 
 Public Class Menu
    Inherits System.Windows.Forms.Form
 
+   Const TAB_FORMAZIONE_MENU As String = "FormazioneMenu"
    Const TAB_PIATTI As String = "Piatti"
    Const TAB_CATEGORIE As String = "CategoriePiatti"
 
@@ -20,6 +23,9 @@ Public Class Menu
    Dim dt As DataTable
    Dim sql As String
    Dim repSql As String
+   Dim percorsoReports As String = PERCORSO_REP_MENU_ARIAL
+   Private CMenu As New FormazioneMenu
+
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents eui_lstCategorie As Elegant.Ui.ListBox
    Friend WithEvents eui_cmdAnteprima As Elegant.Ui.Button
@@ -41,14 +47,28 @@ Public Class Menu
    Friend WithEvents eui_txtTitolo As Elegant.Ui.TextBox
    Friend WithEvents eui_cmdEliminaImmagine As Elegant.Ui.Button
    Friend WithEvents eui_cmdCaricaImmagine As Elegant.Ui.Button
-   Friend WithEvents DropDown1 As Elegant.Ui.DropDown
    Friend WithEvents picImmagine As PictureBox
-   Friend WithEvents PopupMenu2 As Elegant.Ui.PopupMenu
-   Friend WithEvents Button3 As Elegant.Ui.Button
    Friend WithEvents eui_cmdOK As Elegant.Ui.Button
-   Friend WithEvents Label3 As Label
+   Friend WithEvents eui_ApriModello As Elegant.Ui.Button
+   Friend WithEvents eui_cmdAnnulla As Elegant.Ui.Button
+   Friend WithEvents Label3 As Elegant.Ui.Label
+   Friend WithEvents eui_txtPercorsoDocumentoCodiceQR As Elegant.Ui.TextBox
+   Friend WithEvents picCodiceQR As PictureBox
+   Friend WithEvents eui_txtPercorsoReport As Elegant.Ui.TextBox
+   Friend WithEvents Label8 As Elegant.Ui.Label
+   Friend WithEvents Label7 As Elegant.Ui.Label
+   Friend WithEvents eui_cmdEliminaCodiceQR As Elegant.Ui.Button
+   Friend WithEvents eui_ddwnGeneraCodiceQR As Elegant.Ui.DropDown
+   Friend WithEvents PopupMenu2 As Elegant.Ui.PopupMenu
+   Friend WithEvents eui_cmdGeneraFileBmp As Elegant.Ui.Button
+   Friend WithEvents eui_cmdGeneraFileGif As Elegant.Ui.Button
+   Friend WithEvents eui_cmdGeneraFileJpeg As Elegant.Ui.Button
+   Friend WithEvents eui_cmdGeneraFilePng As Elegant.Ui.Button
+   Friend WithEvents eui_cmdGeneraFileTiff As Elegant.Ui.Button
+   Friend WithEvents eui_cmdGeneraFileWmf As Elegant.Ui.Button
+   Friend WithEvents eui_txtPercorsoImmagineCodiceQR As Elegant.Ui.TextBox
+   Friend WithEvents Label9 As Elegant.Ui.Label
    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-   Dim percorsoReports As String = PERCORSO_REP_MENU_ARIAL
 
 #Region " Codice generato da Progettazione Windows Form "
 
@@ -79,39 +99,11 @@ Public Class Menu
    'Può essere modificata in Progettazione Windows Form.  
    'Non modificarla nell'editor del codice.
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Public WithEvents ToolBar1 As System.Windows.Forms.ToolBar
    Friend WithEvents lstCategorie As System.Windows.Forms.ListBox
-   Friend WithEvents tbSu As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbGiu As System.Windows.Forms.ToolBarButton
-   Friend WithEvents ToolBarButton5 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents ToolBarButton6 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbListino1 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbListino2 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbListino3 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbListino4 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbAnteprima As System.Windows.Forms.ToolBarButton
-   Friend WithEvents ToolBarButton1 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbStile2 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbStile1 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbStile3 As System.Windows.Forms.ToolBarButton
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu))
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.ToolBar1 = New System.Windows.Forms.ToolBar()
-      Me.tbSu = New System.Windows.Forms.ToolBarButton()
-      Me.tbGiu = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton5 = New System.Windows.Forms.ToolBarButton()
-      Me.tbListino1 = New System.Windows.Forms.ToolBarButton()
-      Me.tbListino2 = New System.Windows.Forms.ToolBarButton()
-      Me.tbListino3 = New System.Windows.Forms.ToolBarButton()
-      Me.tbListino4 = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton6 = New System.Windows.Forms.ToolBarButton()
-      Me.tbStile1 = New System.Windows.Forms.ToolBarButton()
-      Me.tbStile2 = New System.Windows.Forms.ToolBarButton()
-      Me.tbStile3 = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton1 = New System.Windows.Forms.ToolBarButton()
-      Me.tbAnteprima = New System.Windows.Forms.ToolBarButton()
       Me.lstCategorie = New System.Windows.Forms.ListBox()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_lstCategorie = New Elegant.Ui.ListBox()
@@ -134,17 +126,33 @@ Public Class Menu
       Me.Label4 = New Elegant.Ui.Label()
       Me.Label5 = New Elegant.Ui.Label()
       Me.Label6 = New Elegant.Ui.Label()
-      Me.DropDown1 = New Elegant.Ui.DropDown()
-      Me.PopupMenu2 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.Button3 = New Elegant.Ui.Button()
       Me.picImmagine = New System.Windows.Forms.PictureBox()
       Me.eui_cmdOK = New Elegant.Ui.Button()
-      Me.Label3 = New System.Windows.Forms.Label()
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+      Me.eui_ApriModello = New Elegant.Ui.Button()
+      Me.eui_cmdAnnulla = New Elegant.Ui.Button()
+      Me.picCodiceQR = New System.Windows.Forms.PictureBox()
+      Me.Label3 = New Elegant.Ui.Label()
+      Me.eui_txtPercorsoDocumentoCodiceQR = New Elegant.Ui.TextBox()
+      Me.Label7 = New Elegant.Ui.Label()
+      Me.eui_txtPercorsoReport = New Elegant.Ui.TextBox()
+      Me.Label8 = New Elegant.Ui.Label()
+      Me.eui_cmdEliminaCodiceQR = New Elegant.Ui.Button()
+      Me.eui_ddwnGeneraCodiceQR = New Elegant.Ui.DropDown()
+      Me.PopupMenu2 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdGeneraFileBmp = New Elegant.Ui.Button()
+      Me.eui_cmdGeneraFileGif = New Elegant.Ui.Button()
+      Me.eui_cmdGeneraFileJpeg = New Elegant.Ui.Button()
+      Me.eui_cmdGeneraFilePng = New Elegant.Ui.Button()
+      Me.eui_cmdGeneraFileTiff = New Elegant.Ui.Button()
+      Me.eui_cmdGeneraFileWmf = New Elegant.Ui.Button()
+      Me.eui_txtPercorsoImmagineCodiceQR = New Elegant.Ui.TextBox()
+      Me.Label9 = New Elegant.Ui.Label()
       CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'ImageList1
@@ -158,142 +166,14 @@ Public Class Menu
       Me.ImageList1.Images.SetKeyName(4, "")
       Me.ImageList1.Images.SetKeyName(5, "")
       '
-      'ToolBar1
-      '
-      Me.ToolBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.ToolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
-      Me.ToolBar1.AutoSize = False
-      Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.tbSu, Me.tbGiu, Me.ToolBarButton5, Me.tbListino1, Me.tbListino2, Me.tbListino3, Me.tbListino4, Me.ToolBarButton6, Me.tbStile1, Me.tbStile2, Me.tbStile3, Me.ToolBarButton1, Me.tbAnteprima})
-      Me.ToolBar1.ButtonSize = New System.Drawing.Size(80, 22)
-      Me.ToolBar1.Divider = False
-      Me.ToolBar1.Dock = System.Windows.Forms.DockStyle.None
-      Me.ToolBar1.DropDownArrows = True
-      Me.ToolBar1.ImageList = Me.ImageList1
-      Me.ToolBar1.Location = New System.Drawing.Point(606, 25)
-      Me.ToolBar1.Name = "ToolBar1"
-      Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(88, 265)
-      Me.ToolBar1.TabIndex = 3
-      Me.ToolBar1.Tag = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
-      Me.ToolBar1.Visible = False
-      '
-      'tbSu
-      '
-      Me.tbSu.ImageIndex = 2
-      Me.tbSu.Name = "tbSu"
-      Me.tbSu.Tag = "Su"
-      Me.tbSu.Text = "Sposta su"
-      Me.tbSu.ToolTipText = "Sposta l'elemento selezionato verso l'alto"
-      '
-      'tbGiu
-      '
-      Me.tbGiu.ImageIndex = 3
-      Me.tbGiu.Name = "tbGiu"
-      Me.tbGiu.Tag = "Giù"
-      Me.tbGiu.Text = "Sposta giù"
-      Me.tbGiu.ToolTipText = "Sposta l'elemento selezionato verso il basso"
-      '
-      'ToolBarButton5
-      '
-      Me.ToolBarButton5.Name = "ToolBarButton5"
-      Me.ToolBarButton5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbListino1
-      '
-      Me.tbListino1.ImageIndex = 4
-      Me.tbListino1.Name = "tbListino1"
-      Me.tbListino1.Pushed = True
-      Me.tbListino1.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbListino1.Tag = "Listino1"
-      Me.tbListino1.Text = "Listino 1"
-      Me.tbListino1.ToolTipText = "Applica Listino1"
-      '
-      'tbListino2
-      '
-      Me.tbListino2.ImageIndex = 4
-      Me.tbListino2.Name = "tbListino2"
-      Me.tbListino2.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbListino2.Tag = "Listino2"
-      Me.tbListino2.Text = "Listino 2"
-      Me.tbListino2.ToolTipText = "Applica Listino 2"
-      '
-      'tbListino3
-      '
-      Me.tbListino3.ImageIndex = 4
-      Me.tbListino3.Name = "tbListino3"
-      Me.tbListino3.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbListino3.Tag = "Listino3"
-      Me.tbListino3.Text = "Listino 3"
-      Me.tbListino3.ToolTipText = "Applica Listino 3"
-      '
-      'tbListino4
-      '
-      Me.tbListino4.ImageIndex = 4
-      Me.tbListino4.Name = "tbListino4"
-      Me.tbListino4.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbListino4.Tag = "Listino4"
-      Me.tbListino4.Text = "Listino 4"
-      Me.tbListino4.ToolTipText = "Applica Listino 4"
-      '
-      'ToolBarButton6
-      '
-      Me.ToolBarButton6.Name = "ToolBarButton6"
-      Me.ToolBarButton6.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbStile1
-      '
-      Me.tbStile1.ImageIndex = 5
-      Me.tbStile1.Name = "tbStile1"
-      Me.tbStile1.Pushed = True
-      Me.tbStile1.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbStile1.Tag = "Stile1"
-      Me.tbStile1.Text = "Stile 1"
-      Me.tbStile1.ToolTipText = "Tipo di carattere utilizzato per il testo: Arial"
-      '
-      'tbStile2
-      '
-      Me.tbStile2.ImageIndex = 5
-      Me.tbStile2.Name = "tbStile2"
-      Me.tbStile2.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbStile2.Tag = "Stile2"
-      Me.tbStile2.Text = "Stile 2"
-      Me.tbStile2.ToolTipText = "Tipo di carattere utilizzato per il testo: Times New Roman"
-      '
-      'tbStile3
-      '
-      Me.tbStile3.ImageIndex = 5
-      Me.tbStile3.Name = "tbStile3"
-      Me.tbStile3.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton
-      Me.tbStile3.Tag = "Stile3"
-      Me.tbStile3.Text = "Stile 3"
-      Me.tbStile3.ToolTipText = "Tipo di carattere utilizzato per il testo: Comic Sans MS"
-      '
-      'ToolBarButton1
-      '
-      Me.ToolBarButton1.Name = "ToolBarButton1"
-      Me.ToolBarButton1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbAnteprima
-      '
-      Me.tbAnteprima.ImageIndex = 0
-      Me.tbAnteprima.Name = "tbAnteprima"
-      Me.tbAnteprima.Tag = "Anteprima"
-      Me.tbAnteprima.Text = "Anteprima"
-      Me.tbAnteprima.ToolTipText = "Anteprima di stampa"
-      '
       'lstCategorie
       '
-      Me.lstCategorie.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
       Me.lstCategorie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lstCategorie.Location = New System.Drawing.Point(604, 291)
+      Me.lstCategorie.Location = New System.Drawing.Point(580, 6)
       Me.lstCategorie.Name = "lstCategorie"
       Me.lstCategorie.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lstCategorie.Size = New System.Drawing.Size(88, 56)
-      Me.lstCategorie.TabIndex = 4
+      Me.lstCategorie.Size = New System.Drawing.Size(88, 17)
+      Me.lstCategorie.TabIndex = 14
       Me.lstCategorie.Visible = False
       '
       'formFrameSkinner
@@ -305,47 +185,47 @@ Public Class Menu
       '
       Me.eui_lstCategorie.AutoScroll = True
       Me.eui_lstCategorie.Id = "9d13a859-17af-4924-adf7-661d839888fc"
-      Me.eui_lstCategorie.Location = New System.Drawing.Point(245, 49)
+      Me.eui_lstCategorie.Location = New System.Drawing.Point(438, 26)
       Me.eui_lstCategorie.Name = "eui_lstCategorie"
-      Me.eui_lstCategorie.Size = New System.Drawing.Size(237, 394)
-      Me.eui_lstCategorie.TabIndex = 6
+      Me.eui_lstCategorie.Size = New System.Drawing.Size(230, 394)
+      Me.eui_lstCategorie.TabIndex = 5
       Me.eui_lstCategorie.Text = "ListBox1"
       '
       'eui_cmdSpostaAlto
       '
       Me.eui_cmdSpostaAlto.Id = "73125b18-c1a9-4177-8f8c-b7c005fc30a1"
-      Me.eui_cmdSpostaAlto.Location = New System.Drawing.Point(488, 49)
+      Me.eui_cmdSpostaAlto.Location = New System.Drawing.Point(677, 26)
       Me.eui_cmdSpostaAlto.Name = "eui_cmdSpostaAlto"
       Me.eui_cmdSpostaAlto.Size = New System.Drawing.Size(110, 45)
-      Me.eui_cmdSpostaAlto.TabIndex = 7
-      Me.eui_cmdSpostaAlto.Text = "Sposta in &alto"
+      Me.eui_cmdSpostaAlto.TabIndex = 6
+      Me.eui_cmdSpostaAlto.Text = "Sposta in alt&o"
       '
       'eui_cmdSpostaBasso
       '
       Me.eui_cmdSpostaBasso.Id = "44d27db8-ee46-471e-a878-b4864550aced"
-      Me.eui_cmdSpostaBasso.Location = New System.Drawing.Point(488, 102)
+      Me.eui_cmdSpostaBasso.Location = New System.Drawing.Point(677, 79)
       Me.eui_cmdSpostaBasso.Name = "eui_cmdSpostaBasso"
       Me.eui_cmdSpostaBasso.Size = New System.Drawing.Size(110, 45)
-      Me.eui_cmdSpostaBasso.TabIndex = 8
+      Me.eui_cmdSpostaBasso.TabIndex = 7
       Me.eui_cmdSpostaBasso.Text = "Sposta in &basso"
       '
       'eui_cmdAnteprima
       '
       Me.eui_cmdAnteprima.Id = "69312706-b4d7-40ed-9c2f-f3ced604d8a3"
-      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(489, 346)
+      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(678, 252)
       Me.eui_cmdAnteprima.Name = "eui_cmdAnteprima"
       Me.eui_cmdAnteprima.Size = New System.Drawing.Size(110, 45)
-      Me.eui_cmdAnteprima.TabIndex = 11
+      Me.eui_cmdAnteprima.TabIndex = 10
       Me.eui_cmdAnteprima.Text = "A&nteprima"
       '
       'eui_ddwnListino
       '
       Me.eui_ddwnListino.Id = "e0fc8ce9-0b1b-410a-9cbe-23cd3f800a5b"
-      Me.eui_ddwnListino.Location = New System.Drawing.Point(489, 294)
+      Me.eui_ddwnListino.Location = New System.Drawing.Point(678, 199)
       Me.eui_ddwnListino.Name = "eui_ddwnListino"
       Me.eui_ddwnListino.Popup = Me.PopupMenu1
       Me.eui_ddwnListino.Size = New System.Drawing.Size(110, 45)
-      Me.eui_ddwnListino.TabIndex = 10
+      Me.eui_ddwnListino.TabIndex = 9
       Me.eui_ddwnListino.Text = "Listino"
       '
       'PopupMenu1
@@ -394,60 +274,60 @@ Public Class Menu
       'eui_cmdCaricaImmagine
       '
       Me.eui_cmdCaricaImmagine.Id = "2b7c81f4-b99f-4c5f-a3ea-f1a795667673"
-      Me.eui_cmdCaricaImmagine.Location = New System.Drawing.Point(8, 408)
+      Me.eui_cmdCaricaImmagine.Location = New System.Drawing.Point(8, 385)
       Me.eui_cmdCaricaImmagine.Name = "eui_cmdCaricaImmagine"
-      Me.eui_cmdCaricaImmagine.Size = New System.Drawing.Size(110, 35)
-      Me.eui_cmdCaricaImmagine.TabIndex = 4
+      Me.eui_cmdCaricaImmagine.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdCaricaImmagine.TabIndex = 3
       Me.eui_cmdCaricaImmagine.Text = "&Carica"
       '
       'eui_cmdEliminaImmagine
       '
       Me.eui_cmdEliminaImmagine.Id = "f48679c1-9292-4764-b69c-d70b448032ce"
-      Me.eui_cmdEliminaImmagine.Location = New System.Drawing.Point(128, 408)
+      Me.eui_cmdEliminaImmagine.Location = New System.Drawing.Point(109, 385)
       Me.eui_cmdEliminaImmagine.Name = "eui_cmdEliminaImmagine"
-      Me.eui_cmdEliminaImmagine.Size = New System.Drawing.Size(110, 35)
-      Me.eui_cmdEliminaImmagine.TabIndex = 5
+      Me.eui_cmdEliminaImmagine.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdEliminaImmagine.TabIndex = 4
       Me.eui_cmdEliminaImmagine.Text = "&Elimina"
       '
       'eui_txtTitolo
       '
       Me.eui_txtTitolo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTitolo.Id = "164de92c-2c2c-4520-a019-af95b1da2179"
-      Me.eui_txtTitolo.Location = New System.Drawing.Point(8, 49)
+      Me.eui_txtTitolo.Location = New System.Drawing.Point(8, 26)
       Me.eui_txtTitolo.Name = "eui_txtTitolo"
-      Me.eui_txtTitolo.Size = New System.Drawing.Size(230, 21)
+      Me.eui_txtTitolo.Size = New System.Drawing.Size(416, 21)
       Me.eui_txtTitolo.TabIndex = 0
-      Me.eui_txtTitolo.TextEditorWidth = 224
+      Me.eui_txtTitolo.TextEditorWidth = 410
       '
       'eui_txtSottotitolo
       '
       Me.eui_txtSottotitolo.Id = "44365ba7-622a-492f-a845-933f2c0fbc46"
-      Me.eui_txtSottotitolo.Location = New System.Drawing.Point(8, 100)
+      Me.eui_txtSottotitolo.Location = New System.Drawing.Point(8, 77)
       Me.eui_txtSottotitolo.Name = "eui_txtSottotitolo"
-      Me.eui_txtSottotitolo.Size = New System.Drawing.Size(230, 21)
+      Me.eui_txtSottotitolo.Size = New System.Drawing.Size(416, 21)
       Me.eui_txtSottotitolo.TabIndex = 1
-      Me.eui_txtSottotitolo.TextEditorWidth = 224
+      Me.eui_txtSottotitolo.TextEditorWidth = 410
       '
       'eui_txtNote
       '
       Me.eui_txtNote.Id = "835c5301-f2fc-452c-b1a6-8b327fd2adbc"
-      Me.eui_txtNote.Location = New System.Drawing.Point(8, 150)
+      Me.eui_txtNote.Location = New System.Drawing.Point(8, 127)
       Me.eui_txtNote.Name = "eui_txtNote"
-      Me.eui_txtNote.Size = New System.Drawing.Size(230, 21)
+      Me.eui_txtNote.Size = New System.Drawing.Size(416, 21)
       Me.eui_txtNote.TabIndex = 2
-      Me.eui_txtNote.TextEditorWidth = 224
+      Me.eui_txtNote.TextEditorWidth = 410
       '
       'Label1
       '
-      Me.Label1.Location = New System.Drawing.Point(9, 198)
+      Me.Label1.Location = New System.Drawing.Point(9, 164)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(182, 16)
-      Me.Label1.TabIndex = 3
+      Me.Label1.TabIndex = 13
       Me.Label1.Text = "Immagine:"
       '
       'Label2
       '
-      Me.Label2.Location = New System.Drawing.Point(245, 31)
+      Me.Label2.Location = New System.Drawing.Point(438, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(182, 16)
       Me.Label2.TabIndex = 31
@@ -455,61 +335,34 @@ Public Class Menu
       '
       'Label4
       '
-      Me.Label4.Location = New System.Drawing.Point(8, 32)
+      Me.Label4.Location = New System.Drawing.Point(8, 9)
       Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(230, 15)
+      Me.Label4.Size = New System.Drawing.Size(416, 15)
       Me.Label4.TabIndex = 32
       Me.Label4.Text = "Titolo:"
       '
       'Label5
       '
-      Me.Label5.Location = New System.Drawing.Point(8, 85)
+      Me.Label5.Location = New System.Drawing.Point(8, 62)
       Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(231, 15)
+      Me.Label5.Size = New System.Drawing.Size(417, 15)
       Me.Label5.TabIndex = 33
       Me.Label5.Text = "Sotto titolo:"
       '
       'Label6
       '
-      Me.Label6.Location = New System.Drawing.Point(8, 135)
+      Me.Label6.Location = New System.Drawing.Point(8, 112)
       Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(230, 15)
+      Me.Label6.Size = New System.Drawing.Size(416, 15)
       Me.Label6.TabIndex = 34
       Me.Label6.Text = "Note:"
-      '
-      'DropDown1
-      '
-      Me.DropDown1.Id = "266d3c1d-d4fe-4830-98c6-24d6194e6b43"
-      Me.DropDown1.Location = New System.Drawing.Point(489, 242)
-      Me.DropDown1.Name = "DropDown1"
-      Me.DropDown1.Popup = Me.PopupMenu2
-      Me.DropDown1.Size = New System.Drawing.Size(110, 45)
-      Me.DropDown1.TabIndex = 9
-      Me.DropDown1.Text = "Modello"
-      '
-      'PopupMenu2
-      '
-      Me.PopupMenu2.Items.AddRange(New System.Windows.Forms.Control() {Me.Button3})
-      Me.PopupMenu2.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-      Me.PopupMenu2.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-      Me.PopupMenu2.Size = New System.Drawing.Size(100, 100)
-      '
-      'Button3
-      '
-      Me.Button3.Id = "a06705d2-873b-4021-8d04-874ecb236e4d"
-      Me.Button3.Location = New System.Drawing.Point(2, 2)
-      Me.Button3.Name = "Button3"
-      Me.Button3.Size = New System.Drawing.Size(126, 23)
-      Me.Button3.TabIndex = 3
-      Me.Button3.Text = "Standard"
       '
       'picImmagine
       '
       Me.picImmagine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-      Me.picImmagine.Image = CType(resources.GetObject("picImmagine.Image"), System.Drawing.Image)
-      Me.picImmagine.Location = New System.Drawing.Point(8, 216)
+      Me.picImmagine.Location = New System.Drawing.Point(8, 182)
       Me.picImmagine.Name = "picImmagine"
-      Me.picImmagine.Size = New System.Drawing.Size(230, 189)
+      Me.picImmagine.Size = New System.Drawing.Size(200, 200)
       Me.picImmagine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
       Me.picImmagine.TabIndex = 36
       Me.picImmagine.TabStop = False
@@ -517,38 +370,210 @@ Public Class Menu
       'eui_cmdOK
       '
       Me.eui_cmdOK.Id = "4c2e26a0-f512-4fc5-bf3b-a29251486399"
-      Me.eui_cmdOK.Location = New System.Drawing.Point(488, 398)
+      Me.eui_cmdOK.Location = New System.Drawing.Point(678, 321)
       Me.eui_cmdOK.Name = "eui_cmdOK"
       Me.eui_cmdOK.Size = New System.Drawing.Size(110, 45)
-      Me.eui_cmdOK.TabIndex = 12
+      Me.eui_cmdOK.TabIndex = 11
       Me.eui_cmdOK.Text = "&OK"
-      '
-      'Label3
-      '
-      Me.Label3.BackColor = System.Drawing.Color.Gray
-      Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
-      Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(0, 0)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(694, 22)
-      Me.Label3.TabIndex = 10
-      Me.Label3.Text = "Modello: [C:\Program Files (x86)\Menu_Standard_A4.rpt]"
-      Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
       '
       'OpenFileDialog1
       '
       Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+      '
+      'eui_ApriModello
+      '
+      Me.eui_ApriModello.Id = "40907598-0b08-4cbc-b831-5178036057b0"
+      Me.eui_ApriModello.Location = New System.Drawing.Point(677, 146)
+      Me.eui_ApriModello.Name = "eui_ApriModello"
+      Me.eui_ApriModello.Size = New System.Drawing.Size(110, 45)
+      Me.eui_ApriModello.TabIndex = 8
+      Me.eui_ApriModello.Text = "Apri &Modello"
+      '
+      'eui_cmdAnnulla
+      '
+      Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.eui_cmdAnnulla.Id = "93870fb6-defc-40c7-8379-9cecc8be6f8d"
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(678, 374)
+      Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
+      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdAnnulla.TabIndex = 12
+      Me.eui_cmdAnnulla.Text = "&Annulla"
+      '
+      'picCodiceQR
+      '
+      Me.picCodiceQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+      Me.picCodiceQR.Location = New System.Drawing.Point(224, 182)
+      Me.picCodiceQR.Name = "picCodiceQR"
+      Me.picCodiceQR.Size = New System.Drawing.Size(200, 200)
+      Me.picCodiceQR.TabIndex = 37
+      Me.picCodiceQR.TabStop = False
+      '
+      'Label3
+      '
+      Me.Label3.Location = New System.Drawing.Point(10, 524)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(200, 15)
+      Me.Label3.TabIndex = 39
+      Me.Label3.Text = "Percorso modello Report:"
+      '
+      'eui_txtPercorsoDocumentoCodiceQR
+      '
+      Me.eui_txtPercorsoDocumentoCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoDocumentoCodiceQR.Id = "4578039d-95bf-4e1a-8b6d-eb9312bddc73"
+      Me.eui_txtPercorsoDocumentoCodiceQR.Location = New System.Drawing.Point(10, 448)
+      Me.eui_txtPercorsoDocumentoCodiceQR.Name = "eui_txtPercorsoDocumentoCodiceQR"
+      Me.eui_txtPercorsoDocumentoCodiceQR.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoDocumentoCodiceQR.TabIndex = 38
+      Me.eui_txtPercorsoDocumentoCodiceQR.TextEditorWidth = 774
+      '
+      'Label7
+      '
+      Me.Label7.Location = New System.Drawing.Point(224, 163)
+      Me.Label7.Name = "Label7"
+      Me.Label7.Size = New System.Drawing.Size(182, 16)
+      Me.Label7.TabIndex = 41
+      Me.Label7.Text = "Codice QR:"
+      '
+      'eui_txtPercorsoReport
+      '
+      Me.eui_txtPercorsoReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoReport.Id = "c7b56a99-868f-4f3b-aa66-0b4022379a81"
+      Me.eui_txtPercorsoReport.Location = New System.Drawing.Point(10, 539)
+      Me.eui_txtPercorsoReport.Name = "eui_txtPercorsoReport"
+      Me.eui_txtPercorsoReport.ReadOnly = True
+      Me.eui_txtPercorsoReport.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoReport.TabIndex = 42
+      Me.eui_txtPercorsoReport.TextEditorWidth = 774
+      '
+      'Label8
+      '
+      Me.Label8.Location = New System.Drawing.Point(10, 433)
+      Me.Label8.Name = "Label8"
+      Me.Label8.Size = New System.Drawing.Size(200, 15)
+      Me.Label8.TabIndex = 43
+      Me.Label8.Text = "Codice QR - Percorso file documento:"
+      '
+      'eui_cmdEliminaCodiceQR
+      '
+      Me.eui_cmdEliminaCodiceQR.Id = "643f1cd3-76d9-4a31-862f-95acdc697b9e"
+      Me.eui_cmdEliminaCodiceQR.Location = New System.Drawing.Point(325, 385)
+      Me.eui_cmdEliminaCodiceQR.Name = "eui_cmdEliminaCodiceQR"
+      Me.eui_cmdEliminaCodiceQR.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdEliminaCodiceQR.TabIndex = 44
+      Me.eui_cmdEliminaCodiceQR.Text = "&Elimina"
+      '
+      'eui_ddwnGeneraCodiceQR
+      '
+      Me.eui_ddwnGeneraCodiceQR.Id = "a8e48fe3-3fdf-48b3-b83f-caa0f122ec9d"
+      Me.eui_ddwnGeneraCodiceQR.Location = New System.Drawing.Point(224, 384)
+      Me.eui_ddwnGeneraCodiceQR.Name = "eui_ddwnGeneraCodiceQR"
+      Me.eui_ddwnGeneraCodiceQR.Popup = Me.PopupMenu2
+      Me.eui_ddwnGeneraCodiceQR.Size = New System.Drawing.Size(99, 35)
+      Me.eui_ddwnGeneraCodiceQR.TabIndex = 45
+      Me.eui_ddwnGeneraCodiceQR.Text = "&Genera"
+      '
+      'PopupMenu2
+      '
+      Me.PopupMenu2.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdGeneraFileBmp, Me.eui_cmdGeneraFileGif, Me.eui_cmdGeneraFileJpeg, Me.eui_cmdGeneraFilePng, Me.eui_cmdGeneraFileTiff, Me.eui_cmdGeneraFileWmf})
+      Me.PopupMenu2.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu2.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu2.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdGeneraFileBmp
+      '
+      Me.eui_cmdGeneraFileBmp.Id = "05226779-7de0-4848-9f9f-4880be23e600"
+      Me.eui_cmdGeneraFileBmp.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdGeneraFileBmp.Name = "eui_cmdGeneraFileBmp"
+      Me.eui_cmdGeneraFileBmp.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileBmp.TabIndex = 3
+      Me.eui_cmdGeneraFileBmp.Text = "File (.bmp)"
+      '
+      'eui_cmdGeneraFileGif
+      '
+      Me.eui_cmdGeneraFileGif.Id = "6a8ed530-77c2-41fa-8af6-d49ced6b3d57"
+      Me.eui_cmdGeneraFileGif.Location = New System.Drawing.Point(2, 25)
+      Me.eui_cmdGeneraFileGif.Name = "eui_cmdGeneraFileGif"
+      Me.eui_cmdGeneraFileGif.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileGif.TabIndex = 4
+      Me.eui_cmdGeneraFileGif.Text = "File (.gif)"
+      '
+      'eui_cmdGeneraFileJpeg
+      '
+      Me.eui_cmdGeneraFileJpeg.Id = "429ece3a-7991-45b0-beb5-386afc24c047"
+      Me.eui_cmdGeneraFileJpeg.Location = New System.Drawing.Point(2, 48)
+      Me.eui_cmdGeneraFileJpeg.Name = "eui_cmdGeneraFileJpeg"
+      Me.eui_cmdGeneraFileJpeg.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileJpeg.TabIndex = 5
+      Me.eui_cmdGeneraFileJpeg.Text = "File (.jpeg)"
+      '
+      'eui_cmdGeneraFilePng
+      '
+      Me.eui_cmdGeneraFilePng.Id = "3409bbe5-f9a4-4cd2-bfbd-a903355feaf4"
+      Me.eui_cmdGeneraFilePng.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdGeneraFilePng.Name = "eui_cmdGeneraFilePng"
+      Me.eui_cmdGeneraFilePng.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFilePng.TabIndex = 6
+      Me.eui_cmdGeneraFilePng.Text = "File (.png)"
+      '
+      'eui_cmdGeneraFileTiff
+      '
+      Me.eui_cmdGeneraFileTiff.Id = "452a08ea-8776-4f70-8f93-46a68633eacd"
+      Me.eui_cmdGeneraFileTiff.Location = New System.Drawing.Point(2, 94)
+      Me.eui_cmdGeneraFileTiff.Name = "eui_cmdGeneraFileTiff"
+      Me.eui_cmdGeneraFileTiff.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileTiff.TabIndex = 7
+      Me.eui_cmdGeneraFileTiff.Text = "File (.tiff)"
+      '
+      'eui_cmdGeneraFileWmf
+      '
+      Me.eui_cmdGeneraFileWmf.Id = "c01d98c3-6dca-4a5c-b3bc-7d7cf4f9e581"
+      Me.eui_cmdGeneraFileWmf.Location = New System.Drawing.Point(2, 117)
+      Me.eui_cmdGeneraFileWmf.Name = "eui_cmdGeneraFileWmf"
+      Me.eui_cmdGeneraFileWmf.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileWmf.TabIndex = 8
+      Me.eui_cmdGeneraFileWmf.Text = "File (.wmf)"
+      '
+      'eui_txtPercorsoImmagineCodiceQR
+      '
+      Me.eui_txtPercorsoImmagineCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoImmagineCodiceQR.Id = "b1be1ac6-8160-4358-b91f-a1e1c98c9f60"
+      Me.eui_txtPercorsoImmagineCodiceQR.Location = New System.Drawing.Point(10, 493)
+      Me.eui_txtPercorsoImmagineCodiceQR.Name = "eui_txtPercorsoImmagineCodiceQR"
+      Me.eui_txtPercorsoImmagineCodiceQR.ReadOnly = True
+      Me.eui_txtPercorsoImmagineCodiceQR.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoImmagineCodiceQR.TabIndex = 47
+      Me.eui_txtPercorsoImmagineCodiceQR.TextEditorWidth = 774
+      '
+      'Label9
+      '
+      Me.Label9.Location = New System.Drawing.Point(10, 478)
+      Me.Label9.Name = "Label9"
+      Me.Label9.Size = New System.Drawing.Size(200, 15)
+      Me.Label9.TabIndex = 46
+      Me.Label9.Text = "Codice QR - Percorso file immagine:"
       '
       'Menu
       '
       Me.AcceptButton = Me.eui_cmdOK
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(694, 452)
+      Me.CancelButton = Me.eui_cmdAnnulla
+      Me.ClientSize = New System.Drawing.Size(800, 572)
+      Me.Controls.Add(Me.eui_txtPercorsoImmagineCodiceQR)
+      Me.Controls.Add(Me.Label9)
+      Me.Controls.Add(Me.eui_ddwnGeneraCodiceQR)
+      Me.Controls.Add(Me.eui_cmdEliminaCodiceQR)
+      Me.Controls.Add(Me.eui_txtPercorsoReport)
+      Me.Controls.Add(Me.Label8)
+      Me.Controls.Add(Me.Label7)
+      Me.Controls.Add(Me.eui_txtPercorsoDocumentoCodiceQR)
+      Me.Controls.Add(Me.Label3)
+      Me.Controls.Add(Me.picCodiceQR)
+      Me.Controls.Add(Me.lstCategorie)
+      Me.Controls.Add(Me.eui_cmdAnnulla)
+      Me.Controls.Add(Me.eui_ApriModello)
       Me.Controls.Add(Me.eui_cmdOK)
       Me.Controls.Add(Me.picImmagine)
-      Me.Controls.Add(Me.DropDown1)
       Me.Controls.Add(Me.Label6)
       Me.Controls.Add(Me.Label5)
       Me.Controls.Add(Me.Label4)
@@ -564,9 +589,6 @@ Public Class Menu
       Me.Controls.Add(Me.eui_cmdSpostaBasso)
       Me.Controls.Add(Me.eui_cmdSpostaAlto)
       Me.Controls.Add(Me.eui_lstCategorie)
-      Me.Controls.Add(Me.Label3)
-      Me.Controls.Add(Me.lstCategorie)
-      Me.Controls.Add(Me.ToolBar1)
       Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.MaximizeBox = False
@@ -577,14 +599,93 @@ Public Class Menu
       Me.Text = "Formazione Menu"
       CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
    End Sub
 
 #End Region
+
+
+   Private Function SalvaDati() As Boolean
+      Try
+         ' Assegna i dati dei campi della classe alle caselle di testo.
+         With CMenu
+            ' Carica i dati contenuti nel database.
+            .Titolo = eui_txtTitolo.Text
+            .Sottotitolo = eui_txtSottotitolo.Text
+            .Note = eui_txtNote.Text
+            .Documento = eui_txtPercorsoDocumentoCodiceQR.Text
+            .ImmagineQR = eui_txtPercorsoImmagineCodiceQR.Text
+            .Modello = eui_txtPercorsoReport.Text
+            .Listino = eui_ddwnListino.Text
+
+            Select Case CMenu.Listino
+               Case eui_cmdListino1.Text
+                  ApplicaListino(TAB_PIATTI, Listino.Listino1.ToString)
+
+               Case eui_cmdListino2.Text
+                  ApplicaListino(TAB_PIATTI, Listino.Listino2.ToString)
+
+               Case eui_cmdListino3.Text
+                  ApplicaListino(TAB_PIATTI, Listino.Listino3.ToString)
+
+               Case eui_cmdListino4.Text
+                  ApplicaListino(TAB_PIATTI, Listino.Listino4.ToString)
+            End Select
+
+            ' Carica l'immagine.
+            If .Immagine = Nothing Then
+               .Immagine = String.Empty
+            End If
+
+            ' Carica l'immagine.
+            If .ImmagineQR = Nothing Then
+               .ImmagineQR = String.Empty
+            End If
+
+            ' Salva i dati nel dadabase.
+            Return .ModificaDati(TAB_FORMAZIONE_MENU, .Codice)
+
+         End With
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Function
+
+   Private Sub GeneraCodiciBarre(ByVal indirizzo As String, ByVal formatoImg As String)
+      Try
+         If indirizzo <> String.Empty Then
+            Dim Testo As String = indirizzo
+
+            Dim GeneraBarcode As IBarcodeWriter = New BarcodeWriter() With {.Format = BarcodeFormat.QR_CODE}
+            GeneraBarcode.Options.Height = 200
+            GeneraBarcode.Options.Width = 200
+
+            Dim risultato As Bitmap = GeneraBarcode.Write(Testo)
+
+            Dim bitmapBarcode As Bitmap
+            bitmapBarcode = New Bitmap(risultato)
+
+            picCodiceQR.Image = bitmapBarcode
+            eui_txtPercorsoImmagineCodiceQR.Text = Application.StartupPath & PERCORSO_IMMAGINE_CODICE_QR & formatoImg
+            picCodiceQR.Image.Save(eui_txtPercorsoImmagineCodiceQR.Text)
+         Else
+            MessageBox.Show("Per generare il codice QR è necessario specificare il percorso del file contenete il Menu.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_txtPercorsoDocumentoCodiceQR.Focus()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
 
    Public Function ApplicaListino(ByVal tabella As String, ByVal listino As String) As Boolean
       Dim sql As String
@@ -782,14 +883,16 @@ Public Class Menu
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
+         OpenFileDialog1.FileName = RestituisciNomeFileDirectory(CMenu.Immagine)
+         OpenFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
          OpenFileDialog1.ShowDialog()
 
-         'AArticoli.Immagine = OpenFileDialog1.FileName
+         CMenu.Immagine = OpenFileDialog1.FileName
 
-         'If File.Exists(AArticoli.Immagine) = True Then
-         Dim bmp As New Bitmap(OpenFileDialog1.FileName)
-         picImmagine.Image = bmp
-         'End If
+         If File.Exists(CMenu.Immagine) = True Then
+            Dim bmp As New Bitmap(CMenu.Immagine)
+            picImmagine.Image = bmp
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -803,7 +906,23 @@ Public Class Menu
          If Not (picImmagine.Image Is Nothing) Then
             picImmagine.Image.Dispose()
             picImmagine.Image = Nothing
-            'AArticoli.Immagine = ""
+            CMenu.Immagine = String.Empty
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub EliminaImmagineCodiceQR()
+      Try
+         If Not (picCodiceQR.Image Is Nothing) Then
+            picCodiceQR.Image.Dispose()
+            picCodiceQR.Image = Nothing
+            CMenu.ImmagineQR = String.Empty
+            eui_txtPercorsoImmagineCodiceQR.Text = String.Empty
          End If
 
       Catch ex As Exception
@@ -815,6 +934,9 @@ Public Class Menu
 
    Private Sub Menu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
@@ -827,22 +949,54 @@ Public Class Menu
             eui_lstCategorie.SelectedItemIndex = 0
          End If
 
-         ' Imposta il primo listino per tutti i piatti.
-         ApplicaListino(TAB_PIATTI, "1")
+         ' Visualizza i dati nei rispettivi campi.
+         CMenu.LeggiDati(TAB_FORMAZIONE_MENU)
+
+         ' Carica i dati contenuti nel database.
+         eui_txtTitolo.Text = CMenu.Titolo
+         eui_txtSottotitolo.Text = CMenu.Sottotitolo
+         eui_txtNote.Text = CMenu.Note
+         eui_txtPercorsoDocumentoCodiceQR.Text = CMenu.Documento
+         eui_txtPercorsoImmagineCodiceQR.Text = CMenu.ImmagineQR
+         eui_txtPercorsoReport.Text = CMenu.Modello
+
+         ' Carica l'immagine.
+         If CMenu.Immagine <> Nothing Then
+            If File.Exists(CMenu.Immagine) = True Then
+               Dim bmp As New Bitmap(CMenu.Immagine)
+               picImmagine.Image = bmp
+            End If
+         End If
+
+         ' Carica l'immagine del Codice QR.
+         If CMenu.ImmagineQR <> Nothing Then
+            If File.Exists(CMenu.ImmagineQR) = True Then
+               Dim bmp As New Bitmap(CMenu.ImmagineQR)
+               picCodiceQR.Image = bmp
+            End If
+         End If
+
+         ' Carica e applica il Listino.
+         eui_ddwnListino.Text = CMenu.Listino
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_STRUMENTI_MENU, MODULO_STRUMENTI_MENU)
 
+         eui_txtTitolo.Focus()
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
       End Try
    End Sub
 
    Private Sub Menu_Closed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Closed
       Try
-         SalvaOrdine()
-
          If IsNothing(g_frmPiatti) = False Then
             ' Carica la lista delle categorie dei piatti.
             g_frmPiatti.lstCategorie.Items.Clear()
@@ -870,84 +1024,29 @@ Public Class Menu
       End Try
    End Sub
 
-   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
-      Dim strDescrizione As String
+   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
+      'Select Case e.Button.Tag
+      '   Case "Stile1"
+      '      tbStile1.Pushed = True
+      '      tbStile2.Pushed = False
+      '      tbStile3.Pushed = False
+      '      percorsoReports = PERCORSO_REP_MENU_ARIAL
+      '      strDescrizione = "(Stile 1)"
 
-      Select Case e.Button.Tag
-         Case "Su"
-            'SpostaElememtoSu(lstCategorie)
-            strDescrizione = "(Su)"
+      '   Case "Stile2"
+      '      tbStile1.Pushed = False
+      '      tbStile2.Pushed = True
+      '      tbStile3.Pushed = False
+      '      percorsoReports = PERCORSO_REP_MENU_TIMES
+      '      strDescrizione = "(Stile 2)"
 
-         Case "Giù"
-            'SpostaElememtoGiù(lstCategorie)
-            strDescrizione = "(Giù)"
-
-         Case "Listino1"
-            tbListino1.Pushed = True
-            tbListino2.Pushed = False
-            tbListino3.Pushed = False
-            tbListino4.Pushed = False
-            ApplicaListino(TAB_PIATTI, "1")
-            strDescrizione = "(Listino 1)"
-
-         Case "Listino2"
-            tbListino1.Pushed = False
-            tbListino2.Pushed = True
-            tbListino3.Pushed = False
-            tbListino4.Pushed = False
-            ApplicaListino(TAB_PIATTI, "2")
-            strDescrizione = "(Listino 2)"
-
-         Case "Listino3"
-            tbListino1.Pushed = False
-            tbListino2.Pushed = False
-            tbListino3.Pushed = True
-            tbListino4.Pushed = False
-            ApplicaListino(TAB_PIATTI, "3")
-            strDescrizione = "(Listino 3)"
-
-         Case "Listino4"
-            tbListino1.Pushed = False
-            tbListino2.Pushed = False
-            tbListino3.Pushed = False
-            tbListino4.Pushed = True
-            ApplicaListino(TAB_PIATTI, "4")
-            strDescrizione = "(Listino 4)"
-
-         Case "Stile1"
-            tbStile1.Pushed = True
-            tbStile2.Pushed = False
-            tbStile3.Pushed = False
-            percorsoReports = PERCORSO_REP_MENU_ARIAL
-            strDescrizione = "(Stile 1)"
-
-         Case "Stile2"
-            tbStile1.Pushed = False
-            tbStile2.Pushed = True
-            tbStile3.Pushed = False
-            percorsoReports = PERCORSO_REP_MENU_TIMES
-            strDescrizione = "(Stile 2)"
-
-         Case "Stile3"
-            tbStile1.Pushed = False
-            tbStile2.Pushed = False
-            tbStile3.Pushed = True
-            percorsoReports = PERCORSO_REP_MENU_COMIC
-            strDescrizione = "(Stile 3)"
-
-         Case "Anteprima"
-            SalvaOrdine()
-            VisAnteprima(percorsoReports)
-
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_STRUMENTI_MENU, MODULO_STRUMENTI_MENU)
-
-            Exit Sub
-      End Select
-
-      ' Registra loperazione effettuata dall'operatore identificato.
-      g_frmMain.RegistraOperazione(TipoOperazione.ModificaMenù, strDescrizione, MODULO_STRUMENTI_MENU)
-
+      '   Case "Stile3"
+      '      tbStile1.Pushed = False
+      '      tbStile2.Pushed = False
+      '      tbStile3.Pushed = True
+      '      percorsoReports = PERCORSO_REP_MENU_COMIC
+      '      strDescrizione = "(Stile 3)"
+      'End Select
    End Sub
 
    Private Sub eui_cmdSpostaAlto_Click(sender As Object, e As EventArgs) Handles eui_cmdSpostaAlto.Click
@@ -1003,11 +1102,9 @@ Public Class Menu
 
    Private Sub eui_cmdListino1_Click(sender As Object, e As EventArgs) Handles eui_cmdListino1.Click
       Try
-         Dim strDescrizione As String = "(Listino 1)"
+         Dim strDescrizione As String = "(" & sender.Text & ")"
 
          eui_ddwnListino.Text = sender.Text
-
-         ApplicaListino(TAB_PIATTI, "1")
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.ModificaMenù, strDescrizione, MODULO_STRUMENTI_MENU)
@@ -1022,11 +1119,9 @@ Public Class Menu
 
    Private Sub eui_cmdListino2_Click(sender As Object, e As EventArgs) Handles eui_cmdListino2.Click
       Try
-         Dim strDescrizione As String = "(Listino 2)"
+         Dim strDescrizione As String = "(" & sender.Text & ")"
 
          eui_ddwnListino.Text = sender.Text
-
-         ApplicaListino(TAB_PIATTI, "2")
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.ModificaMenù, strDescrizione, MODULO_STRUMENTI_MENU)
@@ -1040,11 +1135,9 @@ Public Class Menu
 
    Private Sub eui_cmdListino3_Click(sender As Object, e As EventArgs) Handles eui_cmdListino3.Click
       Try
-         Dim strDescrizione As String = "(Listino 3)"
+         Dim strDescrizione As String = "(" & sender.Text & ")"
 
          eui_ddwnListino.Text = sender.Text
-
-         ApplicaListino(TAB_PIATTI, "3")
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.ModificaMenù, strDescrizione, MODULO_STRUMENTI_MENU)
@@ -1058,11 +1151,9 @@ Public Class Menu
 
    Private Sub eui_cmdListino4_Click(sender As Object, e As EventArgs) Handles eui_cmdListino4.Click
       Try
-         Dim strDescrizione As String = "(Listino 4)"
+         Dim strDescrizione As String = "(" & sender.Text & ")"
 
          eui_ddwnListino.Text = sender.Text
-
-         ApplicaListino(TAB_PIATTI, "4")
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.ModificaMenù, strDescrizione, MODULO_STRUMENTI_MENU)
@@ -1076,8 +1167,13 @@ Public Class Menu
 
    Private Sub eui_cmdAnteprima_Click(sender As Object, e As EventArgs) Handles eui_cmdAnteprima.Click
       Try
+         ' Salva l'ordine per le categorie dei piatti.
          SalvaOrdine()
 
+         ' Salva tutti i dati nel database per essere caricati nel Report di stampa.
+         SalvaDati()
+
+         ' Visualizza l'anteprima del Report di stampa.
          VisAnteprima(percorsoReports)
 
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -1098,7 +1194,124 @@ Public Class Menu
       EliminaImmagine()
    End Sub
 
+   Private Sub eui_cmdEliminaCodiceQR_Click(sender As Object, e As EventArgs) Handles eui_cmdEliminaCodiceQR.Click
+      EliminaImmagineCodiceQR()
+   End Sub
+
    Private Sub eui_cmdOK_Click(sender As Object, e As EventArgs) Handles eui_cmdOK.Click
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         ' Salva l'ordine per le categorie dei piatti.
+         SalvaOrdine()
+
+         ' Salva tutti i dati nel database per essere caricati nel Report di stampa.
+         SalvaDati()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         Me.Close()
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdAnnulla_Click(sender As Object, e As EventArgs) Handles eui_cmdAnnulla.Click
       Me.Close()
    End Sub
+
+   Private Sub eui_ApriModello_Click(sender As Object, e As EventArgs) Handles eui_ApriModello.Click
+      Try
+         OpenFileDialog1.Filter = "File report |*.rdlc"
+
+         OpenFileDialog1.FilterIndex = 1
+         OpenFileDialog1.FileName = RestituisciNomeFileDirectory(CMenu.Modello)
+         OpenFileDialog1.InitialDirectory = Application.StartupPath & "\Reports"
+         OpenFileDialog1.ShowDialog()
+
+         CMenu.Modello = OpenFileDialog1.FileName
+
+         If File.Exists(CMenu.Modello) = True Then
+            eui_txtPercorsoReport.Text = CMenu.Modello
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFileBmp_Click_1(sender As Object, e As EventArgs) Handles eui_cmdGeneraFileBmp.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".bmp")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFileGif_Click(sender As Object, e As EventArgs) Handles eui_cmdGeneraFileGif.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".gif")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFileJpeg_Click(sender As Object, e As EventArgs) Handles eui_cmdGeneraFileJpeg.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".jpeg")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFilePng_Click(sender As Object, e As EventArgs) Handles eui_cmdGeneraFilePng.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".png")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFileTiff_Click(sender As Object, e As EventArgs) Handles eui_cmdGeneraFileTiff.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".tiff")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdGeneraFileWmf_Click(sender As Object, e As EventArgs) Handles eui_cmdGeneraFileWmf.Click
+      Try
+         GeneraCodiciBarre(eui_txtPercorsoDocumentoCodiceQR.Text, ".wmf")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 End Class

@@ -854,3 +854,67 @@ Nome parametro: itemIndex"
    in Hospitality_Solution.Menu.SpostaElememtoGiù(ListBox lstBox) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 537"
 "
 "
+"*** 26/10/2020 - 10:57:50 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.FormazioneMenu.LeggiDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Classi\FormazioneMenu.vb:riga 63"
+"
+"
+"*** 26/10/2020 - 11:00:52 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.FormazioneMenu.LeggiDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Classi\FormazioneMenu.vb:riga 63"
+"
+"
+"*** 26/10/2020 - 11:16:01 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.FormazioneMenu.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Classi\FormazioneMenu.vb:riga 133"
+"
+"
+"*** 26/10/2020 - 11:28:53 ***"
+"- DESCRIZIONE ERRORE: Errore di sintassi nell'istruzione UPDATE."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.FormazioneMenu.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Classi\FormazioneMenu.vb:riga 133"
+"
+"
+"*** 26/10/2020 - 15:15:17 ***"
+"- DESCRIZIONE ERRORE: Parametro non valido."
+"- NOME PROCEDURA:    in System.Drawing.Bitmap..ctor(String filename)
+   in Hospitality_Solution.Menu.InserisciImmagine() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 826"
+"
+"
+"*** 26/10/2020 - 15:16:36 ***"
+"- DESCRIZIONE ERRORE: Parametro non valido."
+"- NOME PROCEDURA:    in System.Drawing.Bitmap..ctor(String filename)
+   in Hospitality_Solution.Menu.InserisciImmagine() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 826"
+"
+"
+"*** 26/10/2020 - 16:05:25 ***"
+"- DESCRIZIONE ERRORE: Parametro non valido."
+"- NOME PROCEDURA:    in System.Drawing.Bitmap..ctor(String filename)
+   in Hospitality_Solution.Menu.InserisciImmagine() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 827"
+"
+"
+"*** 26/10/2020 - 16:11:19 ***"
+"- DESCRIZIONE ERRORE: Parametro non valido."
+"- NOME PROCEDURA:    in System.Drawing.Bitmap..ctor(String filename)
+   in Hospitality_Solution.Menu.InserisciImmagine() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.0.0\Codice\Form\Ristorante\MenuBuilder.vb:riga 827"
+"
+"

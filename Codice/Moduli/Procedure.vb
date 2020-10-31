@@ -1022,7 +1022,6 @@ Module Procedure
       End Try
    End Function
 
-
    Public Function LeggiProvinciaComune(ByVal comune As String) As String
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
@@ -1815,6 +1814,27 @@ Module Procedure
          Return ""
       End Try
    End Function
+
+   Public Function RestituisciNomeFileDirectory(ByVal percorso As String) As String
+      Try
+         Dim nomeFile As String
+
+         If percorso = String.Empty Then
+            nomeFile = percorso
+         Else
+            nomeFile = Dir(percorso)
+         End If
+
+         Return nomeFile
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return ""
+      End Try
+   End Function
+
 
 #End Region
 
@@ -5380,7 +5400,7 @@ Module Procedure
 
 #End Region
 
-#Region "Provvisorie"
+#Region "Provvisorie "
    Public Sub StampaComande()
       '' Dichiara un oggetto connessione.
       'Dim cn As New OleDbConnection(ConnString)

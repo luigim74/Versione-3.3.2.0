@@ -2,7 +2,7 @@
 ' ******************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       24/10/2020
-' Data ultima modifica: 24/10/2020
+' Data ultima modifica: 31/10/2020
 ' Descrizione:          Classe per la gestione dei dati del Modulo Formazione Menu
 ' Note:
 ' 
@@ -18,6 +18,8 @@ Public Class FormazioneMenu
    Public Sottotitolo As String
    Public Note As String
    Public Immagine As String
+   Public Documento As String
+   Public ImmagineQR As String
    Public Modello As String
    Public Listino As String
 
@@ -25,7 +27,7 @@ Public Class FormazioneMenu
    Private cn As New OleDbConnection(ConnString)
    Private tr As OleDbTransaction
 
-   Public Sub LeggiDati(ByVal tabella As String, ByVal codice As String)
+   Public Sub LeggiDati(ByVal tabella As String)
       ' Dichiara un oggetto DataAdapter.
       Dim da As OleDbDataAdapter
       ' Dichiara un oggetto DataSet
@@ -37,7 +39,7 @@ Public Class FormazioneMenu
          cn.Open()
 
          ' Crea la stringa.
-         sql = String.Format("SELECT * FROM {0} WHERE Id = {1}", tabella, codice)
+         sql = String.Format("SELECT * FROM {0}", tabella)
 
          ' Dichiara un oggetto DataAdapter.
          da = New OleDbDataAdapter(sql, cn)
@@ -60,7 +62,7 @@ Public Class FormazioneMenu
             Me.Titolo = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Sottotitolo")) = False Then
-            Me.Sottotitolo = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Sottotitolo"))
+            Me.Sottotitolo = ds.Tables(tabella).Rows(0)("Sottotitolo")
          Else
             Me.Sottotitolo = String.Empty
          End If
@@ -74,13 +76,23 @@ Public Class FormazioneMenu
          Else
             Me.Immagine = String.Empty
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Documento")) = False Then
+            Me.Documento = ds.Tables(tabella).Rows(0)("Documento").ToString
+         Else
+            Me.Documento = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("ImmagineQR")) = False Then
+            Me.ImmagineQR = ds.Tables(tabella).Rows(0)("ImmagineQR").ToString
+         Else
+            Me.ImmagineQR = String.Empty
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Modello")) = False Then
-            Me.Modello = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Modello"))
+            Me.Modello = ds.Tables(tabella).Rows(0)("Modello")
          Else
             Me.Modello = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Listino")) = False Then
-            Me.Listino = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Listino"))
+            Me.Listino = ds.Tables(tabella).Rows(0)("Listino")
          Else
             Me.Listino = String.Empty
          End If
@@ -111,9 +123,11 @@ Public Class FormazioneMenu
          sql = String.Format("UPDATE {0} " &
                              "SET Titolo = @Titolo, " &
                              "Sottotitolo = @Sottotitolo, " &
-                             "Note = @Note, " &
-                             "Immagine = @Immagine, " &
-                             "Modello = @Modello, " &
+                             "[Note] = @Note, " &
+                             "[Immagine] = @Immagine, " &
+                             "[Documento] = @Documento, " &
+                             "[ImmagineQR] = @ImmagineQR, " &
+                             "[Modello] = @Modello, " &
                              "Listino = @Listino " &
                              "WHERE Id = {1}",
                              tabella,
@@ -126,6 +140,8 @@ Public Class FormazioneMenu
          cmdUpdate.Parameters.AddWithValue("@Sottotitolo", Me.Sottotitolo)
          cmdUpdate.Parameters.AddWithValue("@Note", Me.Note)
          cmdUpdate.Parameters.AddWithValue("@Immagine", Me.Immagine)
+         cmdUpdate.Parameters.AddWithValue("@Documento", Me.Documento)
+         cmdUpdate.Parameters.AddWithValue("@ImmagineQR", Me.ImmagineQR)
          cmdUpdate.Parameters.AddWithValue("@Modello", Me.Modello)
          cmdUpdate.Parameters.AddWithValue("@Listino", Me.Listino)
 
