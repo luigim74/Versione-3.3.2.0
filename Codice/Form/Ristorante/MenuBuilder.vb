@@ -22,8 +22,8 @@ Public Class Menu
    Dim ds As New DataSet
    Dim dt As DataTable
    Dim sql As String
-   Dim repSql As String
-   Dim percorsoReports As String = PERCORSO_REP_MENU_ARIAL
+   Dim repSqlMenu As String
+   Dim repSqlPiatti As String
    Private CMenu As New FormazioneMenu
 
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
@@ -465,7 +465,7 @@ Public Class Menu
       'eui_ddwnGeneraCodiceQR
       '
       Me.eui_ddwnGeneraCodiceQR.Id = "a8e48fe3-3fdf-48b3-b83f-caa0f122ec9d"
-      Me.eui_ddwnGeneraCodiceQR.Location = New System.Drawing.Point(224, 384)
+      Me.eui_ddwnGeneraCodiceQR.Location = New System.Drawing.Point(224, 385)
       Me.eui_ddwnGeneraCodiceQR.Name = "eui_ddwnGeneraCodiceQR"
       Me.eui_ddwnGeneraCodiceQR.Popup = Me.PopupMenu2
       Me.eui_ddwnGeneraCodiceQR.Size = New System.Drawing.Size(99, 35)
@@ -558,7 +558,7 @@ Public Class Menu
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(800, 572)
+      Me.ClientSize = New System.Drawing.Size(810, 582)
       Me.Controls.Add(Me.eui_txtPercorsoImmagineCodiceQR)
       Me.Controls.Add(Me.Label9)
       Me.Controls.Add(Me.eui_ddwnGeneraCodiceQR)
@@ -815,16 +815,37 @@ Public Class Menu
       End Try
    End Sub
 
-   Public Sub VisAnteprima(ByVal percorsoRep As String)
+   Private Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabMenu As String, ByVal tabPiatti As String, ByVal sqlMenu As String, ByVal sqlPiatti As String)
       Try
-         repSql = String.Format("SELECT * FROM {0} WHERE EscludiMenu = 'No' ORDER BY OrdCategoria, Id ASC", TAB_PIATTI)
-         g_frmMain.ApriReports(repSql, TAB_PIATTI, percorsoRep, "Menu")
+         Dim cn As New OleDbConnection(ConnString)
+
+         cn.Open()
+
+         Dim oleAdapterMenu As New OleDbDataAdapter
+         oleAdapterMenu.SelectCommand = New OleDbCommand(sqlMenu, cn)
+
+         Dim oleAdapterPiatti As New OleDbDataAdapter
+         oleAdapterPiatti.SelectCommand = New OleDbCommand(sqlPiatti, cn)
+
+         Dim ds As New MenuDataSet
+         ds.Clear()
+         oleAdapterMenu.Fill(ds, tabMenu)
+         oleAdapterPiatti.Fill(ds, tabPiatti)
+
+         ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
+         Dim frm As New RepMenu(ds, nomeDoc, String.Empty)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
       End Try
    End Sub
+
 
    Public Sub CaricaListaCategorie(ByVal lstBox As Elegant.Ui.ListBox, ByVal tabella As String)
       ' Dichiara un oggetto connessione.
@@ -1174,7 +1195,10 @@ Public Class Menu
          SalvaDati()
 
          ' Visualizza l'anteprima del Report di stampa.
-         VisAnteprima(percorsoReports)
+         repSqlMenu = String.Format("SELECT * FROM {0}", TAB_FORMAZIONE_MENU)
+         repSqlPiatti = String.Format("SELECT * FROM {0} WHERE EscludiMenu = 'No' ORDER BY OrdCategoria ASC", TAB_PIATTI)
+
+         AnteprimaDiStampa(eui_txtPercorsoReport.Text, TAB_FORMAZIONE_MENU, TAB_PIATTI, repSqlMenu, repSqlPiatti)
 
          ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_STRUMENTI_MENU, MODULO_STRUMENTI_MENU)
