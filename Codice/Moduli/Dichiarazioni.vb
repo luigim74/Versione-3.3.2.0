@@ -925,6 +925,9 @@ Module Dichiarazioni
    ' Contatore per sapere il numero di finestre MDI aperte.
    Public NumFormMdiAperti As Integer
 
+   ' Codice Lotteria da stampare sullo scontrino.
+   Public CodiceLotteria As String
+
    Public err As New Varie.Errore
 
    ' Serve per aprire il form ElencoDati ed ElencoDatiSport con le rispettive tabelle Database.

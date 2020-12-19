@@ -2094,7 +2094,8 @@ Public Class ContoPos
 
 #End Region
 
-    Public Function CreaFileScontrinoWPOS1() As Boolean
+   Public Function CreaFileScontrinoWPOS1() As Boolean
+      ' Viene utilizzato il SAREMA Language.
       Try
          Dim SR_DATI_TEST As String = "SR_DATI_TEST.TXT"
          Dim SR_DATI As String = "SR_DATI."
@@ -2205,6 +2206,11 @@ Public Class ContoPos
                ' Sconto a valore.
                sw.WriteLine("COST,V" & RimuoviVirgola(txtValSconto.Text) & ";")
             End If
+         End If
+
+         ' Codice Lotteria.
+         If CodiceLotteria <> String.Empty Then
+            sw.WriteLine("LOTT,C[" & CodiceLotteria.ToUpper & "];")
          End If
 
          ' Istruzioni da verificare...non utilizzate perchè il registratore di cassa dovrebbe inserirle automaticamente.
@@ -6361,6 +6367,10 @@ Public Class ContoPos
       Try
          ' Riproduce un effetto sonoro.
          RiproduciEffettoSonoro(My.Resources.beep_Normale, EffettiSonoriPOS)
+
+         ' Chiede l'acquisizione del Codice lotteria.
+         Dim frmCodiceLotteria As New CodiceLotteriaPOS
+         frmCodiceLotteria.ShowDialog()
 
          If ImpostaNomeDoc(3) = String.Empty Then
             InfoScontrino()

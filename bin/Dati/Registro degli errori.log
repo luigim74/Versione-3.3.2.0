@@ -995,3 +995,57 @@ Nome parametro: index"
    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile)"
 "
 "
+"*** 08/12/2020 - 17:35:44 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.frmPos.SelezionaPiatto(String codice)"
+"
+"
+"*** 19/12/2020 - 15:18:39 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.CodiceLotteriaPOS.eui_cmdAnnulla_Click(Object sender, EventArgs e)
+   in System.Windows.Forms.Control.OnClick(EventArgs e)
+   in Elegant.Ui.Control.OnClick(EventArgs e)
+   in Elegant.Ui.Button.OnClick(EventArgs e)
+   in Elegant.Ui.ButtonBase.OnMouseUp(MouseEventArgs e)
+   in System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   in System.Windows.Forms.Control.WndProc(Message& m)
+   in Elegant.Ui.Control.WndProc(Message& m)
+   in System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   in System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   in System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   in System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   in System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   in System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   in System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   in System.Windows.Forms.Application.RunDialog(Form form)
+   in System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   in System.Windows.Forms.Form.ShowDialog()
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"
+"
+"*** 19/12/2020 - 15:35:23 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.CodiceLotteriaPOS.eui_cmdAnnulla_Click(Object sender, EventArgs e)
+   in System.Windows.Forms.Control.OnClick(EventArgs e)
+   in Elegant.Ui.Control.OnClick(EventArgs e)
+   in Elegant.Ui.Button.OnClick(EventArgs e)
+   in Elegant.Ui.ButtonBase.OnMouseUp(MouseEventArgs e)
+   in System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   in System.Windows.Forms.Control.WndProc(Message& m)
+   in Elegant.Ui.Control.WndProc(Message& m)
+   in System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   in System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   in System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   in System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   in System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   in System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   in System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   in System.Windows.Forms.Application.RunDialog(Form form)
+   in System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   in System.Windows.Forms.Form.ShowDialog()
+   in Hospitality_Solution.ContoPos.eui_cmdScontrino_Click(Object sender, EventArgs e)"
+"
+"
