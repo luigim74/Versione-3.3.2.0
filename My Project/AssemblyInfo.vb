@@ -31,6 +31,6 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescriptionAttribute("Alcune parti di questo programma sono soggette a Copyright © di Microsoft Corp.")> 
 <Assembly: AssemblyCompanyAttribute("Montana Software")> 
 <Assembly: AssemblyProductAttribute("Hospitality Solution 3")>
-<Assembly: AssemblyCopyright("Copyright © 2005-2020 Montana Software. Tutti i diritti riservati.")>
+<Assembly: AssemblyCopyright("Copyright © 2005-2021 Montana Software. Tutti i diritti riservati.")>
 <Assembly: AssemblyVersion("3.5.0.0")>
 <Assembly: Elegant.Ui.DefaultThemeAttribute(Elegant.Ui.EmbeddedTheme.Office2010Black)>

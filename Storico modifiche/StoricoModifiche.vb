@@ -72,6 +72,10 @@
 
 #End Region
 
+#End Region
+
+#Region " Hospitality Solution 3 Ver. 3.5.0.0 "
+
 #Region " Menu Builder.vb "
 
 #Region " 24/10/2020 "
@@ -84,6 +88,32 @@
 
 #End Region
 
+#Region " FatturaElettronica.vb "
+
+#Region " 12/12/2020 "
+
+' 1. Aggiornata procedura per creazione file Xml al nuovo tracciato Vers. 1.6.1.
+
 #End Region
+
+#End Region
+
+#Region " ContoPOS.vb "
+
+#Region " 19/12/2020 "
+
+' 1. Aggiunta form per l'inserimento del Codice Lotteria.
+' 2. Aggiornata procedura CreaFileScontrinoWPOS1 con comando per la stampa del Codice lotteria sullo scontrino.
+
+#End Region
+
+#End Region
+
+#End Region
+
+
+
+
+
 
 
