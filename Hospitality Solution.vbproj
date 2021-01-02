@@ -1859,7 +1859,12 @@
     <EmbeddedResource Include="bin\Reports\Fornitori.rdlc" />
     <EmbeddedResource Include="bin\Reports\GruppiOp.rdlc" />
     <EmbeddedResource Include="bin\Reports\Inventario.rdlc" />
-    <EmbeddedResource Include="bin\Reports\Menu_Standard_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_Calibri_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_Calibri_Centrato_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_Calibri_Immagini_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_MV_Boli_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_MV_Boli_Colorato_A4.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Menu_Script_MT_Bold_A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MessaggiReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />

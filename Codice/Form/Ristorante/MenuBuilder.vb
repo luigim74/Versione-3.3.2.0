@@ -148,469 +148,469 @@ Public Class Menu
       Me.eui_cmdGeneraFileWmf = New Elegant.Ui.Button()
       Me.eui_txtPercorsoImmagineCodiceQR = New Elegant.Ui.TextBox()
       Me.Label9 = New Elegant.Ui.Label()
-        CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "")
-        Me.ImageList1.Images.SetKeyName(1, "")
-        Me.ImageList1.Images.SetKeyName(2, "")
-        Me.ImageList1.Images.SetKeyName(3, "")
-        Me.ImageList1.Images.SetKeyName(4, "")
-        Me.ImageList1.Images.SetKeyName(5, "")
-        '
-        'lstCategorie
-        '
-        Me.lstCategorie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstCategorie.Location = New System.Drawing.Point(580, 6)
-        Me.lstCategorie.Name = "lstCategorie"
-        Me.lstCategorie.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lstCategorie.Size = New System.Drawing.Size(88, 17)
-        Me.lstCategorie.TabIndex = 14
-        Me.lstCategorie.Visible = False
-        '
-        'formFrameSkinner
-        '
-        Me.formFrameSkinner.AllowGlass = False
-        Me.formFrameSkinner.Form = Me
-        '
-        'eui_lstCategorie
-        '
-        Me.eui_lstCategorie.AutoScroll = True
-        Me.eui_lstCategorie.Id = "9d13a859-17af-4924-adf7-661d839888fc"
-        Me.eui_lstCategorie.Location = New System.Drawing.Point(438, 26)
-        Me.eui_lstCategorie.Name = "eui_lstCategorie"
-        Me.eui_lstCategorie.Size = New System.Drawing.Size(230, 394)
-        Me.eui_lstCategorie.TabIndex = 5
-        Me.eui_lstCategorie.Text = "ListBox1"
-        '
-        'eui_cmdSpostaAlto
-        '
-        Me.eui_cmdSpostaAlto.Id = "73125b18-c1a9-4177-8f8c-b7c005fc30a1"
-        Me.eui_cmdSpostaAlto.Location = New System.Drawing.Point(677, 26)
-        Me.eui_cmdSpostaAlto.Name = "eui_cmdSpostaAlto"
-        Me.eui_cmdSpostaAlto.Size = New System.Drawing.Size(110, 45)
-        Me.eui_cmdSpostaAlto.TabIndex = 6
-        Me.eui_cmdSpostaAlto.Text = "Sposta in alt&o"
-        '
-        'eui_cmdSpostaBasso
-        '
-        Me.eui_cmdSpostaBasso.Id = "44d27db8-ee46-471e-a878-b4864550aced"
-        Me.eui_cmdSpostaBasso.Location = New System.Drawing.Point(677, 79)
-        Me.eui_cmdSpostaBasso.Name = "eui_cmdSpostaBasso"
-        Me.eui_cmdSpostaBasso.Size = New System.Drawing.Size(110, 45)
-        Me.eui_cmdSpostaBasso.TabIndex = 7
-        Me.eui_cmdSpostaBasso.Text = "Sposta in &basso"
-        '
-        'eui_cmdAnteprima
-        '
-        Me.eui_cmdAnteprima.Id = "69312706-b4d7-40ed-9c2f-f3ced604d8a3"
-        Me.eui_cmdAnteprima.Location = New System.Drawing.Point(678, 252)
-        Me.eui_cmdAnteprima.Name = "eui_cmdAnteprima"
-        Me.eui_cmdAnteprima.Size = New System.Drawing.Size(110, 45)
-        Me.eui_cmdAnteprima.TabIndex = 10
-        Me.eui_cmdAnteprima.Text = "A&nteprima"
-        '
-        'eui_ddwnListino
-        '
-        Me.eui_ddwnListino.Id = "e0fc8ce9-0b1b-410a-9cbe-23cd3f800a5b"
-        Me.eui_ddwnListino.Location = New System.Drawing.Point(678, 199)
-        Me.eui_ddwnListino.Name = "eui_ddwnListino"
-        Me.eui_ddwnListino.Popup = Me.PopupMenu1
-        Me.eui_ddwnListino.Size = New System.Drawing.Size(110, 45)
-        Me.eui_ddwnListino.TabIndex = 9
-        Me.eui_ddwnListino.Text = "Listino"
-        '
-        'PopupMenu1
-        '
-        Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdListino1, Me.eui_cmdListino2, Me.eui_cmdListino3, Me.eui_cmdListino4})
-        Me.PopupMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-        Me.PopupMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-        Me.PopupMenu1.Size = New System.Drawing.Size(100, 100)
-        '
-        'eui_cmdListino1
-        '
-        Me.eui_cmdListino1.Id = "77a505a5-83c6-4986-82aa-aa47f858f4f8"
-        Me.eui_cmdListino1.Location = New System.Drawing.Point(2, 2)
-        Me.eui_cmdListino1.Name = "eui_cmdListino1"
-        Me.eui_cmdListino1.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdListino1.TabIndex = 3
-        Me.eui_cmdListino1.Text = "Listino &1"
-        '
-        'eui_cmdListino2
-        '
-        Me.eui_cmdListino2.Id = "c662c52e-2472-44a8-a9f6-11c6d9b62929"
-        Me.eui_cmdListino2.Location = New System.Drawing.Point(2, 25)
-        Me.eui_cmdListino2.Name = "eui_cmdListino2"
-        Me.eui_cmdListino2.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdListino2.TabIndex = 4
-        Me.eui_cmdListino2.Text = "Listino &2"
-        '
-        'eui_cmdListino3
-        '
-        Me.eui_cmdListino3.Id = "b65dcd20-d5e9-4af5-915b-2c31956fb926"
-        Me.eui_cmdListino3.Location = New System.Drawing.Point(2, 48)
-        Me.eui_cmdListino3.Name = "eui_cmdListino3"
-        Me.eui_cmdListino3.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdListino3.TabIndex = 5
-        Me.eui_cmdListino3.Text = "Listino &3"
-        '
-        'eui_cmdListino4
-        '
-        Me.eui_cmdListino4.Id = "a3e256ca-1967-4af5-91c6-ca37882a0327"
-        Me.eui_cmdListino4.Location = New System.Drawing.Point(2, 71)
-        Me.eui_cmdListino4.Name = "eui_cmdListino4"
-        Me.eui_cmdListino4.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdListino4.TabIndex = 6
-        Me.eui_cmdListino4.Text = "Listino &4"
-        '
-        'eui_cmdCaricaImmagine
-        '
-        Me.eui_cmdCaricaImmagine.Id = "2b7c81f4-b99f-4c5f-a3ea-f1a795667673"
-        Me.eui_cmdCaricaImmagine.Location = New System.Drawing.Point(8, 385)
-        Me.eui_cmdCaricaImmagine.Name = "eui_cmdCaricaImmagine"
-        Me.eui_cmdCaricaImmagine.Size = New System.Drawing.Size(99, 35)
-        Me.eui_cmdCaricaImmagine.TabIndex = 3
-        Me.eui_cmdCaricaImmagine.Text = "&Carica"
-        '
-        'eui_cmdEliminaImmagine
-        '
-        Me.eui_cmdEliminaImmagine.Id = "f48679c1-9292-4764-b69c-d70b448032ce"
-        Me.eui_cmdEliminaImmagine.Location = New System.Drawing.Point(109, 385)
-        Me.eui_cmdEliminaImmagine.Name = "eui_cmdEliminaImmagine"
-        Me.eui_cmdEliminaImmagine.Size = New System.Drawing.Size(99, 35)
-        Me.eui_cmdEliminaImmagine.TabIndex = 4
-        Me.eui_cmdEliminaImmagine.Text = "&Elimina"
-        '
-        'eui_txtTitolo
-        '
-        Me.eui_txtTitolo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtTitolo.Id = "164de92c-2c2c-4520-a019-af95b1da2179"
-        Me.eui_txtTitolo.Location = New System.Drawing.Point(8, 26)
-        Me.eui_txtTitolo.Name = "eui_txtTitolo"
-        Me.eui_txtTitolo.Size = New System.Drawing.Size(416, 21)
-        Me.eui_txtTitolo.TabIndex = 0
-        Me.eui_txtTitolo.TextEditorWidth = 410
-        '
-        'eui_txtSottotitolo
-        '
-        Me.eui_txtSottotitolo.Id = "44365ba7-622a-492f-a845-933f2c0fbc46"
-        Me.eui_txtSottotitolo.Location = New System.Drawing.Point(8, 77)
-        Me.eui_txtSottotitolo.Name = "eui_txtSottotitolo"
-        Me.eui_txtSottotitolo.Size = New System.Drawing.Size(416, 21)
-        Me.eui_txtSottotitolo.TabIndex = 1
-        Me.eui_txtSottotitolo.TextEditorWidth = 410
-        '
-        'eui_txtNote
-        '
-        Me.eui_txtNote.Id = "835c5301-f2fc-452c-b1a6-8b327fd2adbc"
-        Me.eui_txtNote.Location = New System.Drawing.Point(8, 127)
-        Me.eui_txtNote.Name = "eui_txtNote"
-        Me.eui_txtNote.Size = New System.Drawing.Size(416, 21)
-        Me.eui_txtNote.TabIndex = 2
-        Me.eui_txtNote.TextEditorWidth = 410
-        '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(9, 164)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(182, 16)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Immagine:"
-        '
-        'Label2
-        '
-        Me.Label2.Location = New System.Drawing.Point(438, 8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(182, 16)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Categorie:"
-        '
-        'Label4
-        '
-        Me.Label4.Location = New System.Drawing.Point(8, 9)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(416, 15)
-        Me.Label4.TabIndex = 32
-        Me.Label4.Text = "Titolo:"
-        '
-        'Label5
-        '
-        Me.Label5.Location = New System.Drawing.Point(8, 62)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(417, 15)
-        Me.Label5.TabIndex = 33
-        Me.Label5.Text = "Sotto titolo:"
-        '
-        'Label6
-        '
-        Me.Label6.Location = New System.Drawing.Point(8, 112)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(416, 15)
-        Me.Label6.TabIndex = 34
-        Me.Label6.Text = "Note:"
-        '
-        'picImmagine
-        '
-        Me.picImmagine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picImmagine.Location = New System.Drawing.Point(8, 182)
-        Me.picImmagine.Name = "picImmagine"
-        Me.picImmagine.Size = New System.Drawing.Size(200, 200)
-        Me.picImmagine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picImmagine.TabIndex = 36
-        Me.picImmagine.TabStop = False
-        '
-        'eui_cmdOK
-        '
-        Me.eui_cmdOK.Id = "4c2e26a0-f512-4fc5-bf3b-a29251486399"
-        Me.eui_cmdOK.Location = New System.Drawing.Point(678, 321)
-        Me.eui_cmdOK.Name = "eui_cmdOK"
-        Me.eui_cmdOK.Size = New System.Drawing.Size(110, 45)
-        Me.eui_cmdOK.TabIndex = 11
-        Me.eui_cmdOK.Text = "&OK"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'eui_ApriModello
-        '
-        Me.eui_ApriModello.Id = "40907598-0b08-4cbc-b831-5178036057b0"
-        Me.eui_ApriModello.Location = New System.Drawing.Point(677, 146)
-        Me.eui_ApriModello.Name = "eui_ApriModello"
-        Me.eui_ApriModello.Size = New System.Drawing.Size(110, 45)
-        Me.eui_ApriModello.TabIndex = 8
-        Me.eui_ApriModello.Text = "Apri &Modello"
-        '
-        'eui_cmdAnnulla
-        '
-        Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.eui_cmdAnnulla.Id = "93870fb6-defc-40c7-8379-9cecc8be6f8d"
-        Me.eui_cmdAnnulla.Location = New System.Drawing.Point(678, 374)
-        Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
-        Me.eui_cmdAnnulla.Size = New System.Drawing.Size(110, 45)
-        Me.eui_cmdAnnulla.TabIndex = 12
-        Me.eui_cmdAnnulla.Text = "&Annulla"
-        '
-        'picCodiceQR
-        '
-        Me.picCodiceQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picCodiceQR.Location = New System.Drawing.Point(224, 182)
-        Me.picCodiceQR.Name = "picCodiceQR"
-        Me.picCodiceQR.Size = New System.Drawing.Size(200, 200)
-        Me.picCodiceQR.TabIndex = 37
-        Me.picCodiceQR.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.Location = New System.Drawing.Point(10, 524)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(200, 15)
-        Me.Label3.TabIndex = 39
-        Me.Label3.Text = "Percorso modello Report:"
-        '
-        'eui_txtPercorsoDocumentoCodiceQR
-        '
-        Me.eui_txtPercorsoDocumentoCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtPercorsoDocumentoCodiceQR.Id = "4578039d-95bf-4e1a-8b6d-eb9312bddc73"
-        Me.eui_txtPercorsoDocumentoCodiceQR.Location = New System.Drawing.Point(10, 448)
-        Me.eui_txtPercorsoDocumentoCodiceQR.Name = "eui_txtPercorsoDocumentoCodiceQR"
-        Me.eui_txtPercorsoDocumentoCodiceQR.Size = New System.Drawing.Size(780, 21)
-        Me.eui_txtPercorsoDocumentoCodiceQR.TabIndex = 38
-        Me.eui_txtPercorsoDocumentoCodiceQR.TextEditorWidth = 774
-        '
-        'Label7
-        '
-        Me.Label7.Location = New System.Drawing.Point(224, 163)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(182, 16)
-        Me.Label7.TabIndex = 41
-        Me.Label7.Text = "Codice QR:"
-        '
-        'eui_txtPercorsoReport
-        '
-        Me.eui_txtPercorsoReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtPercorsoReport.Id = "c7b56a99-868f-4f3b-aa66-0b4022379a81"
-        Me.eui_txtPercorsoReport.Location = New System.Drawing.Point(10, 539)
-        Me.eui_txtPercorsoReport.Name = "eui_txtPercorsoReport"
-        Me.eui_txtPercorsoReport.ReadOnly = True
-        Me.eui_txtPercorsoReport.Size = New System.Drawing.Size(780, 21)
-        Me.eui_txtPercorsoReport.TabIndex = 42
-        Me.eui_txtPercorsoReport.TextEditorWidth = 774
-        '
-        'Label8
-        '
-        Me.Label8.Location = New System.Drawing.Point(10, 433)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(200, 15)
-        Me.Label8.TabIndex = 43
-        Me.Label8.Text = "Codice QR - Percorso file documento:"
-        '
-        'eui_cmdEliminaCodiceQR
-        '
-        Me.eui_cmdEliminaCodiceQR.Id = "643f1cd3-76d9-4a31-862f-95acdc697b9e"
-        Me.eui_cmdEliminaCodiceQR.Location = New System.Drawing.Point(325, 385)
-        Me.eui_cmdEliminaCodiceQR.Name = "eui_cmdEliminaCodiceQR"
-        Me.eui_cmdEliminaCodiceQR.Size = New System.Drawing.Size(99, 35)
-        Me.eui_cmdEliminaCodiceQR.TabIndex = 44
-        Me.eui_cmdEliminaCodiceQR.Text = "&Elimina"
-        '
-        'eui_ddwnGeneraCodiceQR
-        '
-        Me.eui_ddwnGeneraCodiceQR.Id = "a8e48fe3-3fdf-48b3-b83f-caa0f122ec9d"
-        Me.eui_ddwnGeneraCodiceQR.Location = New System.Drawing.Point(224, 385)
-        Me.eui_ddwnGeneraCodiceQR.Name = "eui_ddwnGeneraCodiceQR"
-        Me.eui_ddwnGeneraCodiceQR.Popup = Me.PopupMenu2
-        Me.eui_ddwnGeneraCodiceQR.Size = New System.Drawing.Size(99, 35)
-        Me.eui_ddwnGeneraCodiceQR.TabIndex = 45
-        Me.eui_ddwnGeneraCodiceQR.Text = "&Genera"
-        '
-        'PopupMenu2
-        '
-        Me.PopupMenu2.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdGeneraFileBmp, Me.eui_cmdGeneraFileGif, Me.eui_cmdGeneraFileJpeg, Me.eui_cmdGeneraFilePng, Me.eui_cmdGeneraFileTiff, Me.eui_cmdGeneraFileWmf})
-        Me.PopupMenu2.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-        Me.PopupMenu2.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-        Me.PopupMenu2.Size = New System.Drawing.Size(100, 100)
-        '
-        'eui_cmdGeneraFileBmp
-        '
-        Me.eui_cmdGeneraFileBmp.Id = "05226779-7de0-4848-9f9f-4880be23e600"
-        Me.eui_cmdGeneraFileBmp.Location = New System.Drawing.Point(2, 2)
-        Me.eui_cmdGeneraFileBmp.Name = "eui_cmdGeneraFileBmp"
-        Me.eui_cmdGeneraFileBmp.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFileBmp.TabIndex = 3
-        Me.eui_cmdGeneraFileBmp.Text = "File (.bmp)"
-        '
-        'eui_cmdGeneraFileGif
-        '
-        Me.eui_cmdGeneraFileGif.Id = "6a8ed530-77c2-41fa-8af6-d49ced6b3d57"
-        Me.eui_cmdGeneraFileGif.Location = New System.Drawing.Point(2, 25)
-        Me.eui_cmdGeneraFileGif.Name = "eui_cmdGeneraFileGif"
-        Me.eui_cmdGeneraFileGif.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFileGif.TabIndex = 4
-        Me.eui_cmdGeneraFileGif.Text = "File (.gif)"
-        '
-        'eui_cmdGeneraFileJpeg
-        '
-        Me.eui_cmdGeneraFileJpeg.Id = "429ece3a-7991-45b0-beb5-386afc24c047"
-        Me.eui_cmdGeneraFileJpeg.Location = New System.Drawing.Point(2, 48)
-        Me.eui_cmdGeneraFileJpeg.Name = "eui_cmdGeneraFileJpeg"
-        Me.eui_cmdGeneraFileJpeg.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFileJpeg.TabIndex = 5
-        Me.eui_cmdGeneraFileJpeg.Text = "File (.jpeg)"
-        '
-        'eui_cmdGeneraFilePng
-        '
-        Me.eui_cmdGeneraFilePng.Id = "3409bbe5-f9a4-4cd2-bfbd-a903355feaf4"
-        Me.eui_cmdGeneraFilePng.Location = New System.Drawing.Point(2, 71)
-        Me.eui_cmdGeneraFilePng.Name = "eui_cmdGeneraFilePng"
-        Me.eui_cmdGeneraFilePng.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFilePng.TabIndex = 6
-        Me.eui_cmdGeneraFilePng.Text = "File (.png)"
-        '
-        'eui_cmdGeneraFileTiff
-        '
-        Me.eui_cmdGeneraFileTiff.Id = "452a08ea-8776-4f70-8f93-46a68633eacd"
-        Me.eui_cmdGeneraFileTiff.Location = New System.Drawing.Point(2, 94)
-        Me.eui_cmdGeneraFileTiff.Name = "eui_cmdGeneraFileTiff"
-        Me.eui_cmdGeneraFileTiff.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFileTiff.TabIndex = 7
-        Me.eui_cmdGeneraFileTiff.Text = "File (.tiff)"
-        '
-        'eui_cmdGeneraFileWmf
-        '
-        Me.eui_cmdGeneraFileWmf.Id = "c01d98c3-6dca-4a5c-b3bc-7d7cf4f9e581"
-        Me.eui_cmdGeneraFileWmf.Location = New System.Drawing.Point(2, 117)
-        Me.eui_cmdGeneraFileWmf.Name = "eui_cmdGeneraFileWmf"
-        Me.eui_cmdGeneraFileWmf.Size = New System.Drawing.Size(126, 23)
-        Me.eui_cmdGeneraFileWmf.TabIndex = 8
-        Me.eui_cmdGeneraFileWmf.Text = "File (.wmf)"
-        '
-        'eui_txtPercorsoImmagineCodiceQR
-        '
-        Me.eui_txtPercorsoImmagineCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtPercorsoImmagineCodiceQR.Id = "b1be1ac6-8160-4358-b91f-a1e1c98c9f60"
-        Me.eui_txtPercorsoImmagineCodiceQR.Location = New System.Drawing.Point(10, 493)
-        Me.eui_txtPercorsoImmagineCodiceQR.Name = "eui_txtPercorsoImmagineCodiceQR"
-        Me.eui_txtPercorsoImmagineCodiceQR.ReadOnly = True
-        Me.eui_txtPercorsoImmagineCodiceQR.Size = New System.Drawing.Size(780, 21)
-        Me.eui_txtPercorsoImmagineCodiceQR.TabIndex = 47
-        Me.eui_txtPercorsoImmagineCodiceQR.TextEditorWidth = 774
-        '
-        'Label9
-        '
-        Me.Label9.Location = New System.Drawing.Point(10, 478)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(200, 15)
-        Me.Label9.TabIndex = 46
-        Me.Label9.Text = "Codice QR - Percorso file immagine:"
-        '
-        'Menu
-        '
-        Me.AcceptButton = Me.eui_cmdOK
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.CancelButton = Me.eui_cmdAnnulla
-        Me.ClientSize = New System.Drawing.Size(798, 574)
-        Me.Controls.Add(Me.eui_txtPercorsoImmagineCodiceQR)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.eui_ddwnGeneraCodiceQR)
-        Me.Controls.Add(Me.eui_cmdEliminaCodiceQR)
-        Me.Controls.Add(Me.eui_txtPercorsoReport)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.eui_txtPercorsoDocumentoCodiceQR)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.picCodiceQR)
-        Me.Controls.Add(Me.lstCategorie)
-        Me.Controls.Add(Me.eui_cmdAnnulla)
-        Me.Controls.Add(Me.eui_ApriModello)
-        Me.Controls.Add(Me.eui_cmdOK)
-        Me.Controls.Add(Me.picImmagine)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.eui_txtNote)
-        Me.Controls.Add(Me.eui_txtSottotitolo)
-        Me.Controls.Add(Me.eui_txtTitolo)
-        Me.Controls.Add(Me.eui_cmdEliminaImmagine)
-        Me.Controls.Add(Me.eui_cmdCaricaImmagine)
-        Me.Controls.Add(Me.eui_ddwnListino)
-        Me.Controls.Add(Me.eui_cmdAnteprima)
-        Me.Controls.Add(Me.eui_cmdSpostaBasso)
-        Me.Controls.Add(Me.eui_cmdSpostaAlto)
-        Me.Controls.Add(Me.eui_lstCategorie)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "Menu"
-        Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Formazione Menu"
-        CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+      CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.SuspendLayout()
+      '
+      'ImageList1
+      '
+      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+      Me.ImageList1.Images.SetKeyName(0, "")
+      Me.ImageList1.Images.SetKeyName(1, "")
+      Me.ImageList1.Images.SetKeyName(2, "")
+      Me.ImageList1.Images.SetKeyName(3, "")
+      Me.ImageList1.Images.SetKeyName(4, "")
+      Me.ImageList1.Images.SetKeyName(5, "")
+      '
+      'lstCategorie
+      '
+      Me.lstCategorie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lstCategorie.Location = New System.Drawing.Point(580, 6)
+      Me.lstCategorie.Name = "lstCategorie"
+      Me.lstCategorie.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.lstCategorie.Size = New System.Drawing.Size(88, 17)
+      Me.lstCategorie.TabIndex = 14
+      Me.lstCategorie.Visible = False
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
+      'eui_lstCategorie
+      '
+      Me.eui_lstCategorie.AutoScroll = True
+      Me.eui_lstCategorie.Id = "9d13a859-17af-4924-adf7-661d839888fc"
+      Me.eui_lstCategorie.Location = New System.Drawing.Point(438, 26)
+      Me.eui_lstCategorie.Name = "eui_lstCategorie"
+      Me.eui_lstCategorie.Size = New System.Drawing.Size(230, 394)
+      Me.eui_lstCategorie.TabIndex = 5
+      Me.eui_lstCategorie.Text = "ListBox1"
+      '
+      'eui_cmdSpostaAlto
+      '
+      Me.eui_cmdSpostaAlto.Id = "73125b18-c1a9-4177-8f8c-b7c005fc30a1"
+      Me.eui_cmdSpostaAlto.Location = New System.Drawing.Point(677, 26)
+      Me.eui_cmdSpostaAlto.Name = "eui_cmdSpostaAlto"
+      Me.eui_cmdSpostaAlto.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdSpostaAlto.TabIndex = 6
+      Me.eui_cmdSpostaAlto.Text = "Sposta in alt&o"
+      '
+      'eui_cmdSpostaBasso
+      '
+      Me.eui_cmdSpostaBasso.Id = "44d27db8-ee46-471e-a878-b4864550aced"
+      Me.eui_cmdSpostaBasso.Location = New System.Drawing.Point(677, 79)
+      Me.eui_cmdSpostaBasso.Name = "eui_cmdSpostaBasso"
+      Me.eui_cmdSpostaBasso.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdSpostaBasso.TabIndex = 7
+      Me.eui_cmdSpostaBasso.Text = "Sposta in &basso"
+      '
+      'eui_cmdAnteprima
+      '
+      Me.eui_cmdAnteprima.Id = "69312706-b4d7-40ed-9c2f-f3ced604d8a3"
+      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(678, 252)
+      Me.eui_cmdAnteprima.Name = "eui_cmdAnteprima"
+      Me.eui_cmdAnteprima.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdAnteprima.TabIndex = 10
+      Me.eui_cmdAnteprima.Text = "A&nteprima"
+      '
+      'eui_ddwnListino
+      '
+      Me.eui_ddwnListino.Id = "e0fc8ce9-0b1b-410a-9cbe-23cd3f800a5b"
+      Me.eui_ddwnListino.Location = New System.Drawing.Point(678, 199)
+      Me.eui_ddwnListino.Name = "eui_ddwnListino"
+      Me.eui_ddwnListino.Popup = Me.PopupMenu1
+      Me.eui_ddwnListino.Size = New System.Drawing.Size(110, 45)
+      Me.eui_ddwnListino.TabIndex = 9
+      Me.eui_ddwnListino.Text = "Listino"
+      '
+      'PopupMenu1
+      '
+      Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdListino1, Me.eui_cmdListino2, Me.eui_cmdListino3, Me.eui_cmdListino4})
+      Me.PopupMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu1.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdListino1
+      '
+      Me.eui_cmdListino1.Id = "77a505a5-83c6-4986-82aa-aa47f858f4f8"
+      Me.eui_cmdListino1.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdListino1.Name = "eui_cmdListino1"
+      Me.eui_cmdListino1.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdListino1.TabIndex = 3
+      Me.eui_cmdListino1.Text = "Listino 1"
+      '
+      'eui_cmdListino2
+      '
+      Me.eui_cmdListino2.Id = "c662c52e-2472-44a8-a9f6-11c6d9b62929"
+      Me.eui_cmdListino2.Location = New System.Drawing.Point(2, 25)
+      Me.eui_cmdListino2.Name = "eui_cmdListino2"
+      Me.eui_cmdListino2.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdListino2.TabIndex = 4
+      Me.eui_cmdListino2.Text = "Listino 2"
+      '
+      'eui_cmdListino3
+      '
+      Me.eui_cmdListino3.Id = "b65dcd20-d5e9-4af5-915b-2c31956fb926"
+      Me.eui_cmdListino3.Location = New System.Drawing.Point(2, 48)
+      Me.eui_cmdListino3.Name = "eui_cmdListino3"
+      Me.eui_cmdListino3.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdListino3.TabIndex = 5
+      Me.eui_cmdListino3.Text = "Listino 3"
+      '
+      'eui_cmdListino4
+      '
+      Me.eui_cmdListino4.Id = "a3e256ca-1967-4af5-91c6-ca37882a0327"
+      Me.eui_cmdListino4.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdListino4.Name = "eui_cmdListino4"
+      Me.eui_cmdListino4.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdListino4.TabIndex = 6
+      Me.eui_cmdListino4.Text = "Listino 4"
+      '
+      'eui_cmdCaricaImmagine
+      '
+      Me.eui_cmdCaricaImmagine.Id = "2b7c81f4-b99f-4c5f-a3ea-f1a795667673"
+      Me.eui_cmdCaricaImmagine.Location = New System.Drawing.Point(8, 385)
+      Me.eui_cmdCaricaImmagine.Name = "eui_cmdCaricaImmagine"
+      Me.eui_cmdCaricaImmagine.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdCaricaImmagine.TabIndex = 3
+      Me.eui_cmdCaricaImmagine.Text = "&Carica"
+      '
+      'eui_cmdEliminaImmagine
+      '
+      Me.eui_cmdEliminaImmagine.Id = "f48679c1-9292-4764-b69c-d70b448032ce"
+      Me.eui_cmdEliminaImmagine.Location = New System.Drawing.Point(109, 385)
+      Me.eui_cmdEliminaImmagine.Name = "eui_cmdEliminaImmagine"
+      Me.eui_cmdEliminaImmagine.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdEliminaImmagine.TabIndex = 4
+      Me.eui_cmdEliminaImmagine.Text = "&Elimina"
+      '
+      'eui_txtTitolo
+      '
+      Me.eui_txtTitolo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtTitolo.Id = "164de92c-2c2c-4520-a019-af95b1da2179"
+      Me.eui_txtTitolo.Location = New System.Drawing.Point(8, 26)
+      Me.eui_txtTitolo.Name = "eui_txtTitolo"
+      Me.eui_txtTitolo.Size = New System.Drawing.Size(416, 21)
+      Me.eui_txtTitolo.TabIndex = 0
+      Me.eui_txtTitolo.TextEditorWidth = 410
+      '
+      'eui_txtSottotitolo
+      '
+      Me.eui_txtSottotitolo.Id = "44365ba7-622a-492f-a845-933f2c0fbc46"
+      Me.eui_txtSottotitolo.Location = New System.Drawing.Point(8, 77)
+      Me.eui_txtSottotitolo.Name = "eui_txtSottotitolo"
+      Me.eui_txtSottotitolo.Size = New System.Drawing.Size(416, 21)
+      Me.eui_txtSottotitolo.TabIndex = 1
+      Me.eui_txtSottotitolo.TextEditorWidth = 410
+      '
+      'eui_txtNote
+      '
+      Me.eui_txtNote.Id = "835c5301-f2fc-452c-b1a6-8b327fd2adbc"
+      Me.eui_txtNote.Location = New System.Drawing.Point(8, 127)
+      Me.eui_txtNote.Name = "eui_txtNote"
+      Me.eui_txtNote.Size = New System.Drawing.Size(416, 21)
+      Me.eui_txtNote.TabIndex = 2
+      Me.eui_txtNote.TextEditorWidth = 410
+      '
+      'Label1
+      '
+      Me.Label1.Location = New System.Drawing.Point(9, 164)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(182, 16)
+      Me.Label1.TabIndex = 13
+      Me.Label1.Text = "Immagine:"
+      '
+      'Label2
+      '
+      Me.Label2.Location = New System.Drawing.Point(438, 8)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(182, 16)
+      Me.Label2.TabIndex = 31
+      Me.Label2.Text = "Categorie:"
+      '
+      'Label4
+      '
+      Me.Label4.Location = New System.Drawing.Point(8, 9)
+      Me.Label4.Name = "Label4"
+      Me.Label4.Size = New System.Drawing.Size(416, 15)
+      Me.Label4.TabIndex = 32
+      Me.Label4.Text = "Titolo:"
+      '
+      'Label5
+      '
+      Me.Label5.Location = New System.Drawing.Point(8, 62)
+      Me.Label5.Name = "Label5"
+      Me.Label5.Size = New System.Drawing.Size(417, 15)
+      Me.Label5.TabIndex = 33
+      Me.Label5.Text = "Sotto titolo:"
+      '
+      'Label6
+      '
+      Me.Label6.Location = New System.Drawing.Point(8, 112)
+      Me.Label6.Name = "Label6"
+      Me.Label6.Size = New System.Drawing.Size(416, 15)
+      Me.Label6.TabIndex = 34
+      Me.Label6.Text = "Note:"
+      '
+      'picImmagine
+      '
+      Me.picImmagine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+      Me.picImmagine.Location = New System.Drawing.Point(8, 182)
+      Me.picImmagine.Name = "picImmagine"
+      Me.picImmagine.Size = New System.Drawing.Size(200, 200)
+      Me.picImmagine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+      Me.picImmagine.TabIndex = 36
+      Me.picImmagine.TabStop = False
+      '
+      'eui_cmdOK
+      '
+      Me.eui_cmdOK.Id = "4c2e26a0-f512-4fc5-bf3b-a29251486399"
+      Me.eui_cmdOK.Location = New System.Drawing.Point(678, 321)
+      Me.eui_cmdOK.Name = "eui_cmdOK"
+      Me.eui_cmdOK.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdOK.TabIndex = 11
+      Me.eui_cmdOK.Text = "&OK"
+      '
+      'OpenFileDialog1
+      '
+      Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+      '
+      'eui_ApriModello
+      '
+      Me.eui_ApriModello.Id = "40907598-0b08-4cbc-b831-5178036057b0"
+      Me.eui_ApriModello.Location = New System.Drawing.Point(677, 146)
+      Me.eui_ApriModello.Name = "eui_ApriModello"
+      Me.eui_ApriModello.Size = New System.Drawing.Size(110, 45)
+      Me.eui_ApriModello.TabIndex = 8
+      Me.eui_ApriModello.Text = "Apri &Modello"
+      '
+      'eui_cmdAnnulla
+      '
+      Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
+      Me.eui_cmdAnnulla.Id = "93870fb6-defc-40c7-8379-9cecc8be6f8d"
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(678, 374)
+      Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
+      Me.eui_cmdAnnulla.Size = New System.Drawing.Size(110, 45)
+      Me.eui_cmdAnnulla.TabIndex = 12
+      Me.eui_cmdAnnulla.Text = "&Annulla"
+      '
+      'picCodiceQR
+      '
+      Me.picCodiceQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+      Me.picCodiceQR.Location = New System.Drawing.Point(224, 182)
+      Me.picCodiceQR.Name = "picCodiceQR"
+      Me.picCodiceQR.Size = New System.Drawing.Size(200, 200)
+      Me.picCodiceQR.TabIndex = 37
+      Me.picCodiceQR.TabStop = False
+      '
+      'Label3
+      '
+      Me.Label3.Location = New System.Drawing.Point(10, 524)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(200, 15)
+      Me.Label3.TabIndex = 39
+      Me.Label3.Text = "Percorso modello Report:"
+      '
+      'eui_txtPercorsoDocumentoCodiceQR
+      '
+      Me.eui_txtPercorsoDocumentoCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoDocumentoCodiceQR.Id = "4578039d-95bf-4e1a-8b6d-eb9312bddc73"
+      Me.eui_txtPercorsoDocumentoCodiceQR.Location = New System.Drawing.Point(10, 448)
+      Me.eui_txtPercorsoDocumentoCodiceQR.Name = "eui_txtPercorsoDocumentoCodiceQR"
+      Me.eui_txtPercorsoDocumentoCodiceQR.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoDocumentoCodiceQR.TabIndex = 38
+      Me.eui_txtPercorsoDocumentoCodiceQR.TextEditorWidth = 774
+      '
+      'Label7
+      '
+      Me.Label7.Location = New System.Drawing.Point(224, 163)
+      Me.Label7.Name = "Label7"
+      Me.Label7.Size = New System.Drawing.Size(182, 16)
+      Me.Label7.TabIndex = 41
+      Me.Label7.Text = "Codice QR:"
+      '
+      'eui_txtPercorsoReport
+      '
+      Me.eui_txtPercorsoReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoReport.Id = "c7b56a99-868f-4f3b-aa66-0b4022379a81"
+      Me.eui_txtPercorsoReport.Location = New System.Drawing.Point(10, 539)
+      Me.eui_txtPercorsoReport.Name = "eui_txtPercorsoReport"
+      Me.eui_txtPercorsoReport.ReadOnly = True
+      Me.eui_txtPercorsoReport.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoReport.TabIndex = 42
+      Me.eui_txtPercorsoReport.TextEditorWidth = 774
+      '
+      'Label8
+      '
+      Me.Label8.Location = New System.Drawing.Point(10, 433)
+      Me.Label8.Name = "Label8"
+      Me.Label8.Size = New System.Drawing.Size(200, 15)
+      Me.Label8.TabIndex = 43
+      Me.Label8.Text = "Codice QR - Percorso file documento:"
+      '
+      'eui_cmdEliminaCodiceQR
+      '
+      Me.eui_cmdEliminaCodiceQR.Id = "643f1cd3-76d9-4a31-862f-95acdc697b9e"
+      Me.eui_cmdEliminaCodiceQR.Location = New System.Drawing.Point(325, 385)
+      Me.eui_cmdEliminaCodiceQR.Name = "eui_cmdEliminaCodiceQR"
+      Me.eui_cmdEliminaCodiceQR.Size = New System.Drawing.Size(99, 35)
+      Me.eui_cmdEliminaCodiceQR.TabIndex = 44
+      Me.eui_cmdEliminaCodiceQR.Text = "&Elimina"
+      '
+      'eui_ddwnGeneraCodiceQR
+      '
+      Me.eui_ddwnGeneraCodiceQR.Id = "a8e48fe3-3fdf-48b3-b83f-caa0f122ec9d"
+      Me.eui_ddwnGeneraCodiceQR.Location = New System.Drawing.Point(224, 385)
+      Me.eui_ddwnGeneraCodiceQR.Name = "eui_ddwnGeneraCodiceQR"
+      Me.eui_ddwnGeneraCodiceQR.Popup = Me.PopupMenu2
+      Me.eui_ddwnGeneraCodiceQR.Size = New System.Drawing.Size(99, 35)
+      Me.eui_ddwnGeneraCodiceQR.TabIndex = 45
+      Me.eui_ddwnGeneraCodiceQR.Text = "&Genera"
+      '
+      'PopupMenu2
+      '
+      Me.PopupMenu2.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdGeneraFileBmp, Me.eui_cmdGeneraFileGif, Me.eui_cmdGeneraFileJpeg, Me.eui_cmdGeneraFilePng, Me.eui_cmdGeneraFileTiff, Me.eui_cmdGeneraFileWmf})
+      Me.PopupMenu2.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu2.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu2.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdGeneraFileBmp
+      '
+      Me.eui_cmdGeneraFileBmp.Id = "05226779-7de0-4848-9f9f-4880be23e600"
+      Me.eui_cmdGeneraFileBmp.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdGeneraFileBmp.Name = "eui_cmdGeneraFileBmp"
+      Me.eui_cmdGeneraFileBmp.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileBmp.TabIndex = 3
+      Me.eui_cmdGeneraFileBmp.Text = "File (.bmp)"
+      '
+      'eui_cmdGeneraFileGif
+      '
+      Me.eui_cmdGeneraFileGif.Id = "6a8ed530-77c2-41fa-8af6-d49ced6b3d57"
+      Me.eui_cmdGeneraFileGif.Location = New System.Drawing.Point(2, 25)
+      Me.eui_cmdGeneraFileGif.Name = "eui_cmdGeneraFileGif"
+      Me.eui_cmdGeneraFileGif.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileGif.TabIndex = 4
+      Me.eui_cmdGeneraFileGif.Text = "File (.gif)"
+      '
+      'eui_cmdGeneraFileJpeg
+      '
+      Me.eui_cmdGeneraFileJpeg.Id = "429ece3a-7991-45b0-beb5-386afc24c047"
+      Me.eui_cmdGeneraFileJpeg.Location = New System.Drawing.Point(2, 48)
+      Me.eui_cmdGeneraFileJpeg.Name = "eui_cmdGeneraFileJpeg"
+      Me.eui_cmdGeneraFileJpeg.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileJpeg.TabIndex = 5
+      Me.eui_cmdGeneraFileJpeg.Text = "File (.jpeg)"
+      '
+      'eui_cmdGeneraFilePng
+      '
+      Me.eui_cmdGeneraFilePng.Id = "3409bbe5-f9a4-4cd2-bfbd-a903355feaf4"
+      Me.eui_cmdGeneraFilePng.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdGeneraFilePng.Name = "eui_cmdGeneraFilePng"
+      Me.eui_cmdGeneraFilePng.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFilePng.TabIndex = 6
+      Me.eui_cmdGeneraFilePng.Text = "File (.png)"
+      '
+      'eui_cmdGeneraFileTiff
+      '
+      Me.eui_cmdGeneraFileTiff.Id = "452a08ea-8776-4f70-8f93-46a68633eacd"
+      Me.eui_cmdGeneraFileTiff.Location = New System.Drawing.Point(2, 94)
+      Me.eui_cmdGeneraFileTiff.Name = "eui_cmdGeneraFileTiff"
+      Me.eui_cmdGeneraFileTiff.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileTiff.TabIndex = 7
+      Me.eui_cmdGeneraFileTiff.Text = "File (.tiff)"
+      '
+      'eui_cmdGeneraFileWmf
+      '
+      Me.eui_cmdGeneraFileWmf.Id = "c01d98c3-6dca-4a5c-b3bc-7d7cf4f9e581"
+      Me.eui_cmdGeneraFileWmf.Location = New System.Drawing.Point(2, 117)
+      Me.eui_cmdGeneraFileWmf.Name = "eui_cmdGeneraFileWmf"
+      Me.eui_cmdGeneraFileWmf.Size = New System.Drawing.Size(126, 23)
+      Me.eui_cmdGeneraFileWmf.TabIndex = 8
+      Me.eui_cmdGeneraFileWmf.Text = "File (.wmf)"
+      '
+      'eui_txtPercorsoImmagineCodiceQR
+      '
+      Me.eui_txtPercorsoImmagineCodiceQR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtPercorsoImmagineCodiceQR.Id = "b1be1ac6-8160-4358-b91f-a1e1c98c9f60"
+      Me.eui_txtPercorsoImmagineCodiceQR.Location = New System.Drawing.Point(10, 493)
+      Me.eui_txtPercorsoImmagineCodiceQR.Name = "eui_txtPercorsoImmagineCodiceQR"
+      Me.eui_txtPercorsoImmagineCodiceQR.ReadOnly = True
+      Me.eui_txtPercorsoImmagineCodiceQR.Size = New System.Drawing.Size(780, 21)
+      Me.eui_txtPercorsoImmagineCodiceQR.TabIndex = 47
+      Me.eui_txtPercorsoImmagineCodiceQR.TextEditorWidth = 774
+      '
+      'Label9
+      '
+      Me.Label9.Location = New System.Drawing.Point(10, 478)
+      Me.Label9.Name = "Label9"
+      Me.Label9.Size = New System.Drawing.Size(200, 15)
+      Me.Label9.TabIndex = 46
+      Me.Label9.Text = "Codice QR - Percorso file immagine:"
+      '
+      'Menu
+      '
+      Me.AcceptButton = Me.eui_cmdOK
+      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.CancelButton = Me.eui_cmdAnnulla
+      Me.ClientSize = New System.Drawing.Size(808, 584)
+      Me.Controls.Add(Me.eui_txtPercorsoImmagineCodiceQR)
+      Me.Controls.Add(Me.Label9)
+      Me.Controls.Add(Me.eui_ddwnGeneraCodiceQR)
+      Me.Controls.Add(Me.eui_cmdEliminaCodiceQR)
+      Me.Controls.Add(Me.eui_txtPercorsoReport)
+      Me.Controls.Add(Me.Label8)
+      Me.Controls.Add(Me.Label7)
+      Me.Controls.Add(Me.eui_txtPercorsoDocumentoCodiceQR)
+      Me.Controls.Add(Me.Label3)
+      Me.Controls.Add(Me.picCodiceQR)
+      Me.Controls.Add(Me.lstCategorie)
+      Me.Controls.Add(Me.eui_cmdAnnulla)
+      Me.Controls.Add(Me.eui_ApriModello)
+      Me.Controls.Add(Me.eui_cmdOK)
+      Me.Controls.Add(Me.picImmagine)
+      Me.Controls.Add(Me.Label6)
+      Me.Controls.Add(Me.Label5)
+      Me.Controls.Add(Me.Label4)
+      Me.Controls.Add(Me.Label2)
+      Me.Controls.Add(Me.Label1)
+      Me.Controls.Add(Me.eui_txtNote)
+      Me.Controls.Add(Me.eui_txtSottotitolo)
+      Me.Controls.Add(Me.eui_txtTitolo)
+      Me.Controls.Add(Me.eui_cmdEliminaImmagine)
+      Me.Controls.Add(Me.eui_cmdCaricaImmagine)
+      Me.Controls.Add(Me.eui_ddwnListino)
+      Me.Controls.Add(Me.eui_cmdAnteprima)
+      Me.Controls.Add(Me.eui_cmdSpostaBasso)
+      Me.Controls.Add(Me.eui_cmdSpostaAlto)
+      Me.Controls.Add(Me.eui_lstCategorie)
+      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+      Me.MaximizeBox = False
+      Me.MinimizeBox = False
+      Me.Name = "Menu"
+      Me.ShowInTaskbar = False
+      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+      Me.Text = "Formazione Menu"
+      CType(Me.eui_lstCategorie, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.picImmagine, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.picCodiceQR, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.ResumeLayout(False)
+      Me.PerformLayout()
 
-    End Sub
+   End Sub
 
 #End Region
 
 
-    Private Function SalvaDati() As Boolean
+   Private Function SalvaDati() As Boolean
       Try
          ' Assegna i dati dei campi della classe alle caselle di testo.
          With CMenu

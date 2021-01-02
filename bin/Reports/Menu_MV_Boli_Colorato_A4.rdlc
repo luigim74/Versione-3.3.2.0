@@ -6,15 +6,15 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>15.07253cm</Width>
+              <Width>14.43753cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.11726cm</Width>
+              <Width>3.75226cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.06757cm</Height>
+              <Height>1.62319cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -28,7 +28,7 @@
                               <Value>=UCase(Fields!Categoria.Value)</Value>
                               <Style>
                                 <FontFamily>MV Boli</FontFamily>
-                                <FontSize>16pt</FontSize>
+                                <FontSize>20pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkGreen</Color>
                               </Style>
@@ -36,6 +36,22 @@
                           </TextRuns>
                           <Style>
                             <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>20pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>DarkGreen</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -84,7 +100,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.06757cm</Height>
+              <Height>1.62319cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -98,8 +114,9 @@
                               <Value>=UCase(Fields!Descrizione.Value)</Value>
                               <Style>
                                 <FontFamily>MV Boli</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>18pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -111,6 +128,7 @@
                               <Value>=LCase(Fields!Ingredienti.Value)</Value>
                               <Style>
                                 <FontFamily>MV Boli</FontFamily>
+                                <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
                               </Style>
@@ -141,11 +159,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format("€ " &amp; Fields!Listino1.Value)</Value>
+                              <Value>=Switch(First(Fields!Listino.Value, "MenuDataSet") = "Listino 1", Format("€ " &amp; Fields!Listino1.Value),
+        First(Fields!Listino.Value, "MenuDataSet") = "Listino 2", Format("€ " &amp; Fields!Listino2.Value),
+		First(Fields!Listino.Value, "MenuDataSet") = "Listino 3", Format("€ " &amp; Fields!Listino3.Value),
+		First(Fields!Listino.Value, "MenuDataSet") = "Listino 4", Format("€ " &amp; Fields!Listino4.Value))</Value>
                               <Style>
                                 <FontFamily>MV Boli</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>18pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -204,7 +226,7 @@
         <DataSetName>PiattiDataSet</DataSetName>
         <Top>0.00882cm</Top>
         <Left>0.57891cm</Left>
-        <Height>2.13514cm</Height>
+        <Height>3.24638cm</Height>
         <Width>18.18979cm</Width>
         <Style>
           <Border>
@@ -213,7 +235,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.91352in</Height>
+    <Height>1.30241in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -224,12 +246,13 @@
       <RightBorder>
         <Style>Solid</Style>
       </RightBorder>
+      <BackgroundColor>Black</BackgroundColor>
     </Style>
   </Body>
-  <Width>7.58184in</Width>
+  <Width>7.56633in</Width>
   <Page>
     <PageHeader>
-      <Height>4.90361cm</Height>
+      <Height>4.38037cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -243,7 +266,7 @@
                   <Value>=First(Fields!Titolo.Value, "MenuDataSet")</Value>
                   <Style>
                     <FontFamily>MV Boli</FontFamily>
-                    <FontSize>20pt</FontSize>
+                    <FontSize>26pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>DarkGreen</Color>
                   </Style>
@@ -259,7 +282,7 @@
                   <Value>=First(Fields!Sottotitolo.Value, "MenuDataSet")</Value>
                   <Style>
                     <FontFamily>MV Boli</FontFamily>
-                    <FontSize>12pt</FontSize>
+                    <FontSize>20pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>Maroon</Color>
                   </Style>
@@ -284,9 +307,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Titolo</rd:DefaultName>
-          <Top>3.19801cm</Top>
+          <Top>0.36697cm</Top>
           <Left>0.57891cm</Left>
-          <Height>1.7056cm</Height>
+          <Height>2.31414cm</Height>
           <Width>18.18979cm</Width>
           <Style>
             <Border>
@@ -298,21 +321,19 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image1">
-          <Source>Database</Source>
-          <Value>=First(Fields!Immagine.Value, "MenuDataSet")</Value>
-          <MIMEType>image/png</MIMEType>
-          <Top>0.41037cm</Top>
-          <Left>6.55849cm</Left>
-          <Height>2.61126cm</Height>
-          <Width>6.1777cm</Width>
+        <Line Name="Line1">
+          <Top>3.25148cm</Top>
+          <Left>0.57891cm</Left>
+          <Height>0cm</Height>
+          <Width>18.18979cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
-              <Style>None</Style>
+              <Color>White</Color>
+              <Style>Solid</Style>
             </Border>
           </Style>
-        </Image>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -327,10 +348,11 @@
         <RightBorder>
           <Style>Solid</Style>
         </RightBorder>
+        <BackgroundColor>Black</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.11125cm</Height>
+      <Height>1.61396cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -344,7 +366,9 @@
                   <Value>=First(Fields!Note.Value, "MenuDataSet")</Value>
                   <Style>
                     <FontFamily>MV Boli</FontFamily>
+                    <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -352,9 +376,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Note</rd:DefaultName>
-          <Top>0.17639cm</Top>
+          <Top>0.33514cm</Top>
           <Left>0.57891cm</Left>
-          <Height>0.6cm</Height>
+          <Height>0.99688cm</Height>
           <Width>18.18979cm</Width>
           <Style>
             <Border>
@@ -366,6 +390,19 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line2">
+          <Top>0.17639cm</Top>
+          <Left>0.57891cm</Left>
+          <Height>0cm</Height>
+          <Width>18.18979cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Color>White</Color>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -380,6 +417,7 @@
         <RightBorder>
           <Style>Solid</Style>
         </RightBorder>
+        <BackgroundColor>Black</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
