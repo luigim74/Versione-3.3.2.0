@@ -1119,7 +1119,7 @@ Public Class frmArticoli
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(542, 20)
+      Me.Panel1.Size = New System.Drawing.Size(552, 20)
       Me.Panel1.TabIndex = 10
       '
       'lblIntestazione
@@ -1144,7 +1144,7 @@ Public Class frmArticoli
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(542, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(552, 26)
       Me.ToolBar1.TabIndex = 9
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -1722,7 +1722,7 @@ Public Class frmArticoli
       Me.AcceptButton = Me.cmdApri
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(542, 366)
+      Me.ClientSize = New System.Drawing.Size(552, 376)
       Me.Controls.Add(Me.Label49)
       Me.Controls.Add(Me.Label50)
       Me.Controls.Add(Me.Label48)
@@ -1829,13 +1829,13 @@ Public Class frmArticoli
 
    Private Sub InserisciImmagine()
       Try
-         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" & _
-                                  "Bmp (Bitmap di Windows)|*.Bmp|" & _
-                                  "Gif |*.Gif|" & _
-                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" & _
-                                  "Png |*.Png|" & _
-                                  "Tga |*.Tga|" & _
-                                  "Tiff |*.Tiff|" & _
+         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" &
+                                  "Bmp (Bitmap di Windows)|*.Bmp|" &
+                                  "Gif |*.Gif|" &
+                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" &
+                                  "Png |*.Png|" &
+                                  "Tga |*.Tga|" &
+                                  "Tiff |*.Tiff|" &
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
@@ -2239,5 +2239,4 @@ Public Class frmArticoli
    Private Sub cmdCalcolaPrezzo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCalcolaPrezzo.Click
       AvviaWinCalc(Me.Handle)
    End Sub
-
 End Class

@@ -17,9 +17,11 @@ Public Class FormazioneMenu
    Public Titolo As String
    Public Sottotitolo As String
    Public Note As String
-   Public Immagine As String
+   Public Immagine() As Byte
+   Public PercorsoImg As String
    Public Documento As String
-   Public ImmagineQR As String
+   Public ImmagineQR() As Byte
+   Public PercorsoImgQR As String
    Public Modello As String
    Public Listino As String
 
@@ -72,9 +74,14 @@ Public Class FormazioneMenu
             Me.Note = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Immagine")) = False Then
-            Me.Immagine = ds.Tables(tabella).Rows(0)("Immagine").ToString
+            Me.Immagine = ds.Tables(tabella).Rows(0)("Immagine")
          Else
-            Me.Immagine = String.Empty
+            Me.Immagine = Nothing
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("PercorsoImg")) = False Then
+            Me.PercorsoImg = ds.Tables(tabella).Rows(0)("PercorsoImg").ToString
+         Else
+            Me.PercorsoImg = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Documento")) = False Then
             Me.Documento = ds.Tables(tabella).Rows(0)("Documento").ToString
@@ -82,9 +89,14 @@ Public Class FormazioneMenu
             Me.Documento = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("ImmagineQR")) = False Then
-            Me.ImmagineQR = ds.Tables(tabella).Rows(0)("ImmagineQR").ToString
+            Me.ImmagineQR = ds.Tables(tabella).Rows(0)("ImmagineQR")
          Else
-            Me.ImmagineQR = String.Empty
+            Me.ImmagineQR = Nothing
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("PercorsoImgQR")) = False Then
+            Me.PercorsoImgQR = ds.Tables(tabella).Rows(0)("PercorsoImgQR").ToString
+         Else
+            Me.PercorsoImgQR = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Modello")) = False Then
             Me.Modello = ds.Tables(tabella).Rows(0)("Modello")
@@ -124,9 +136,11 @@ Public Class FormazioneMenu
                              "SET Titolo = @Titolo, " &
                              "Sottotitolo = @Sottotitolo, " &
                              "[Note] = @Note, " &
-                             "[Immagine] = @Immagine, " &
+                             "Immagine = @Immagine, " &
+                             "[PercorsoImg] = @PercorsoImg, " &
                              "[Documento] = @Documento, " &
-                             "[ImmagineQR] = @ImmagineQR, " &
+                             "ImmagineQR = @ImmagineQR, " &
+                             "[PercorsoImgQR] = @PercorsoImgQR, " &
                              "[Modello] = @Modello, " &
                              "Listino = @Listino " &
                              "WHERE Id = {1}",
@@ -140,8 +154,10 @@ Public Class FormazioneMenu
          cmdUpdate.Parameters.AddWithValue("@Sottotitolo", Me.Sottotitolo)
          cmdUpdate.Parameters.AddWithValue("@Note", Me.Note)
          cmdUpdate.Parameters.AddWithValue("@Immagine", Me.Immagine)
+         cmdUpdate.Parameters.AddWithValue("@PercorsoImg", Me.PercorsoImg)
          cmdUpdate.Parameters.AddWithValue("@Documento", Me.Documento)
          cmdUpdate.Parameters.AddWithValue("@ImmagineQR", Me.ImmagineQR)
+         cmdUpdate.Parameters.AddWithValue("@PercorsoImgQR", Me.PercorsoImgQR)
          cmdUpdate.Parameters.AddWithValue("@Modello", Me.Modello)
          cmdUpdate.Parameters.AddWithValue("@Listino", Me.Listino)
 

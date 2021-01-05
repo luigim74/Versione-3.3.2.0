@@ -63,17 +63,13 @@ Public Class frmPiatti
    Public WithEvents txtNote As System.Windows.Forms.TextBox
    Friend WithEvents Salva As System.Windows.Forms.ToolBarButton
    Friend WithEvents Annulla As System.Windows.Forms.ToolBarButton
-   Public WithEvents picFoto As System.Windows.Forms.PictureBox
    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
-   Friend WithEvents EliminaImg As System.Windows.Forms.Button
-   Friend WithEvents ApriImg As System.Windows.Forms.Button
    Public WithEvents txtDescrizione As System.Windows.Forms.TextBox
    Public WithEvents txtNumero As System.Windows.Forms.TextBox
    Friend WithEvents cmbCategoria As System.Windows.Forms.ComboBox
    Friend WithEvents chkVariazione As System.Windows.Forms.CheckBox
-   Public WithEvents Label39 As System.Windows.Forms.Label
    Public WithEvents Label2 As System.Windows.Forms.Label
    Public WithEvents Label4 As System.Windows.Forms.Label
    Public WithEvents Label5 As System.Windows.Forms.Label
@@ -86,10 +82,6 @@ Public Class frmPiatti
    Public WithEvents txtListino1 As System.Windows.Forms.TextBox
    Public WithEvents txtValVenduto As System.Windows.Forms.TextBox
    Public WithEvents txtQVenduta As System.Windows.Forms.TextBox
-   Public WithEvents Label9 As System.Windows.Forms.Label
-   Public WithEvents txtIngredienti As System.Windows.Forms.TextBox
-   Friend WithEvents chkEscludiMenu As System.Windows.Forms.CheckBox
-   Public WithEvents Label10 As System.Windows.Forms.Label
    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
    Friend WithEvents cmdColoreSfondo As System.Windows.Forms.Button
    Public WithEvents Label11 As System.Windows.Forms.Label
@@ -117,6 +109,15 @@ Public Class frmPiatti
    Public WithEvents txtSpettanza As TextBox
    Public WithEvents Label21 As Label
    Friend WithEvents chkNoDivisioneSpettanza As CheckBox
+   Friend WithEvents TabPage3 As TabPage
+   Friend WithEvents EliminaImg As Button
+   Friend WithEvents ApriImg As Button
+   Public WithEvents picFoto As PictureBox
+   Friend WithEvents TabPage4 As TabPage
+   Public WithEvents txtIngredienti As TextBox
+   Public WithEvents Label9 As Label
+   Friend WithEvents chkEscludiMenu As CheckBox
+   Friend WithEvents chkEscludiPuntoCassa As CheckBox
    Friend WithEvents cmdImmagine As System.Windows.Forms.Button
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -129,6 +130,8 @@ Public Class frmPiatti
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.chkEscludiPuntoCassa = New System.Windows.Forms.CheckBox()
+      Me.chkNoDivisioneSpettanza = New System.Windows.Forms.CheckBox()
       Me.txtSpettanza = New System.Windows.Forms.TextBox()
       Me.Label21 = New System.Windows.Forms.Label()
       Me.Label19 = New Elegant.Ui.Label()
@@ -139,10 +142,6 @@ Public Class frmPiatti
       Me.Label15 = New System.Windows.Forms.Label()
       Me.txtCodiceBarre = New System.Windows.Forms.TextBox()
       Me.Label38 = New System.Windows.Forms.Label()
-      Me.chkEscludiMenu = New System.Windows.Forms.CheckBox()
-      Me.Label10 = New System.Windows.Forms.Label()
-      Me.txtIngredienti = New System.Windows.Forms.TextBox()
-      Me.Label9 = New System.Windows.Forms.Label()
       Me.txtListino4 = New System.Windows.Forms.TextBox()
       Me.Label8 = New System.Windows.Forms.Label()
       Me.txtListino3 = New System.Windows.Forms.TextBox()
@@ -156,16 +155,16 @@ Public Class frmPiatti
       Me.txtQVenduta = New System.Windows.Forms.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.chkVariazione = New System.Windows.Forms.CheckBox()
-      Me.Label39 = New System.Windows.Forms.Label()
-      Me.EliminaImg = New System.Windows.Forms.Button()
-      Me.ApriImg = New System.Windows.Forms.Button()
-      Me.picFoto = New System.Windows.Forms.PictureBox()
       Me.cmbCategoria = New System.Windows.Forms.ComboBox()
       Me.txtDescrizione = New System.Windows.Forms.TextBox()
       Me.label = New System.Windows.Forms.Label()
       Me.Label3 = New System.Windows.Forms.Label()
       Me.txtNumero = New System.Windows.Forms.TextBox()
       Me.Label20 = New System.Windows.Forms.Label()
+      Me.TabPage3 = New System.Windows.Forms.TabPage()
+      Me.EliminaImg = New System.Windows.Forms.Button()
+      Me.ApriImg = New System.Windows.Forms.Button()
+      Me.picFoto = New System.Windows.Forms.PictureBox()
       Me.TabPage2 = New System.Windows.Forms.TabPage()
       Me.cmdColoreTesto = New System.Windows.Forms.Button()
       Me.Label1 = New System.Windows.Forms.Label()
@@ -181,6 +180,10 @@ Public Class frmPiatti
       Me.Label12 = New System.Windows.Forms.Label()
       Me.cmdColoreSfondo = New System.Windows.Forms.Button()
       Me.Label11 = New System.Windows.Forms.Label()
+      Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.chkEscludiMenu = New System.Windows.Forms.CheckBox()
+      Me.txtIngredienti = New System.Windows.Forms.TextBox()
+      Me.Label9 = New System.Windows.Forms.Label()
       Me.TabPage6 = New System.Windows.Forms.TabPage()
       Me.txtNote = New System.Windows.Forms.TextBox()
       Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -188,13 +191,14 @@ Public Class frmPiatti
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.chkNoDivisioneSpettanza = New System.Windows.Forms.CheckBox()
       Me.Panel1.SuspendLayout()
       Me.TabControl1.SuspendLayout()
       Me.TabPage1.SuspendLayout()
+      Me.TabPage3.SuspendLayout()
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage2.SuspendLayout()
       Me.Panel2.SuspendLayout()
+      Me.TabPage4.SuspendLayout()
       Me.TabPage6.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
@@ -210,7 +214,7 @@ Public Class frmPiatti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(580, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(556, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -244,7 +248,7 @@ Public Class frmPiatti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(580, 20)
+      Me.Panel1.Size = New System.Drawing.Size(556, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -254,26 +258,29 @@ Public Class frmPiatti
       Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
       Me.lblIntestazione.Location = New System.Drawing.Point(4, 2)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(17, 16)
+      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
       Me.lblIntestazione.TabIndex = 0
       Me.lblIntestazione.Text = "#"
       '
       'TabControl1
       '
       Me.TabControl1.Controls.Add(Me.TabPage1)
+      Me.TabControl1.Controls.Add(Me.TabPage3)
       Me.TabControl1.Controls.Add(Me.TabPage2)
+      Me.TabControl1.Controls.Add(Me.TabPage4)
       Me.TabControl1.Controls.Add(Me.TabPage6)
       Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
       Me.TabControl1.Location = New System.Drawing.Point(0, 46)
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(580, 391)
+      Me.TabControl1.Size = New System.Drawing.Size(556, 398)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage1.Controls.Add(Me.chkEscludiPuntoCassa)
       Me.TabPage1.Controls.Add(Me.chkNoDivisioneSpettanza)
       Me.TabPage1.Controls.Add(Me.txtSpettanza)
       Me.TabPage1.Controls.Add(Me.Label21)
@@ -285,10 +292,6 @@ Public Class frmPiatti
       Me.TabPage1.Controls.Add(Me.Label15)
       Me.TabPage1.Controls.Add(Me.txtCodiceBarre)
       Me.TabPage1.Controls.Add(Me.Label38)
-      Me.TabPage1.Controls.Add(Me.chkEscludiMenu)
-      Me.TabPage1.Controls.Add(Me.Label10)
-      Me.TabPage1.Controls.Add(Me.txtIngredienti)
-      Me.TabPage1.Controls.Add(Me.Label9)
       Me.TabPage1.Controls.Add(Me.txtListino4)
       Me.TabPage1.Controls.Add(Me.Label8)
       Me.TabPage1.Controls.Add(Me.txtListino3)
@@ -302,10 +305,6 @@ Public Class frmPiatti
       Me.TabPage1.Controls.Add(Me.txtQVenduta)
       Me.TabPage1.Controls.Add(Me.Label2)
       Me.TabPage1.Controls.Add(Me.chkVariazione)
-      Me.TabPage1.Controls.Add(Me.Label39)
-      Me.TabPage1.Controls.Add(Me.EliminaImg)
-      Me.TabPage1.Controls.Add(Me.ApriImg)
-      Me.TabPage1.Controls.Add(Me.picFoto)
       Me.TabPage1.Controls.Add(Me.cmbCategoria)
       Me.TabPage1.Controls.Add(Me.txtDescrizione)
       Me.TabPage1.Controls.Add(Me.label)
@@ -315,9 +314,32 @@ Public Class frmPiatti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(572, 365)
+      Me.TabPage1.Size = New System.Drawing.Size(567, 372)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
+      '
+      'chkEscludiPuntoCassa
+      '
+      Me.chkEscludiPuntoCassa.AutoSize = True
+      Me.chkEscludiPuntoCassa.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+      Me.chkEscludiPuntoCassa.Location = New System.Drawing.Point(320, 38)
+      Me.chkEscludiPuntoCassa.Name = "chkEscludiPuntoCassa"
+      Me.chkEscludiPuntoCassa.Size = New System.Drawing.Size(207, 17)
+      Me.chkEscludiPuntoCassa.TabIndex = 3
+      Me.chkEscludiPuntoCassa.Text = "Escludi dalla gestione del Punto cassa"
+      Me.chkEscludiPuntoCassa.UseVisualStyleBackColor = True
+      Me.chkEscludiPuntoCassa.Visible = False
+      '
+      'chkNoDivisioneSpettanza
+      '
+      Me.chkNoDivisioneSpettanza.AutoSize = True
+      Me.chkNoDivisioneSpettanza.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+      Me.chkNoDivisioneSpettanza.Location = New System.Drawing.Point(16, 333)
+      Me.chkNoDivisioneSpettanza.Name = "chkNoDivisioneSpettanza"
+      Me.chkNoDivisioneSpettanza.Size = New System.Drawing.Size(362, 17)
+      Me.chkNoDivisioneSpettanza.TabIndex = 14
+      Me.chkNoDivisioneSpettanza.Text = "Non dividere la spettanza per il numero dei camerieri presenti sul tavolo:"
+      Me.chkNoDivisioneSpettanza.UseVisualStyleBackColor = True
       '
       'txtSpettanza
       '
@@ -331,7 +353,7 @@ Public Class frmPiatti
       Me.txtSpettanza.Name = "txtSpettanza"
       Me.txtSpettanza.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtSpettanza.Size = New System.Drawing.Size(136, 20)
-      Me.txtSpettanza.TabIndex = 14
+      Me.txtSpettanza.TabIndex = 13
       Me.txtSpettanza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label21
@@ -349,7 +371,7 @@ Public Class frmPiatti
       '
       'Label19
       '
-      Me.Label19.Location = New System.Drawing.Point(298, 196)
+      Me.Label19.Location = New System.Drawing.Point(280, 196)
       Me.Label19.Name = "Label19"
       Me.Label19.Size = New System.Drawing.Size(58, 15)
       Me.Label19.TabIndex = 55783
@@ -357,7 +379,7 @@ Public Class frmPiatti
       '
       'Label18
       '
-      Me.Label18.Location = New System.Drawing.Point(298, 172)
+      Me.Label18.Location = New System.Drawing.Point(280, 172)
       Me.Label18.Name = "Label18"
       Me.Label18.Size = New System.Drawing.Size(58, 15)
       Me.Label18.TabIndex = 55782
@@ -365,7 +387,7 @@ Public Class frmPiatti
       '
       'Label17
       '
-      Me.Label17.Location = New System.Drawing.Point(298, 148)
+      Me.Label17.Location = New System.Drawing.Point(280, 148)
       Me.Label17.Name = "Label17"
       Me.Label17.Size = New System.Drawing.Size(58, 15)
       Me.Label17.TabIndex = 55781
@@ -373,7 +395,7 @@ Public Class frmPiatti
       '
       'Label16
       '
-      Me.Label16.Location = New System.Drawing.Point(298, 124)
+      Me.Label16.Location = New System.Drawing.Point(280, 124)
       Me.Label16.Name = "Label16"
       Me.Label16.Size = New System.Drawing.Size(58, 15)
       Me.Label16.TabIndex = 55780
@@ -384,10 +406,10 @@ Public Class frmPiatti
       Me.cmbAliquotaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbAliquotaIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbAliquotaIva.Items.AddRange(New Object() {"", "Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
-      Me.cmbAliquotaIva.Location = New System.Drawing.Point(145, 221)
+      Me.cmbAliquotaIva.Location = New System.Drawing.Point(104, 221)
       Me.cmbAliquotaIva.Name = "cmbAliquotaIva"
-      Me.cmbAliquotaIva.Size = New System.Drawing.Size(144, 21)
-      Me.cmbAliquotaIva.TabIndex = 9
+      Me.cmbAliquotaIva.Size = New System.Drawing.Size(163, 21)
+      Me.cmbAliquotaIva.TabIndex = 10
       '
       'Label15
       '
@@ -405,9 +427,9 @@ Public Class frmPiatti
       'txtCodiceBarre
       '
       Me.txtCodiceBarre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCodiceBarre.Location = New System.Drawing.Point(145, 42)
+      Me.txtCodiceBarre.Location = New System.Drawing.Point(104, 42)
       Me.txtCodiceBarre.Name = "txtCodiceBarre"
-      Me.txtCodiceBarre.Size = New System.Drawing.Size(144, 20)
+      Me.txtCodiceBarre.Size = New System.Drawing.Size(163, 20)
       Me.txtCodiceBarre.TabIndex = 2
       '
       'Label38
@@ -420,55 +442,6 @@ Public Class frmPiatti
       Me.Label38.TabIndex = 55777
       Me.Label38.Text = "Codice a Barre:"
       '
-      'chkEscludiMenu
-      '
-      Me.chkEscludiMenu.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-      Me.chkEscludiMenu.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.chkEscludiMenu.Location = New System.Drawing.Point(511, 224)
-      Me.chkEscludiMenu.Name = "chkEscludiMenu"
-      Me.chkEscludiMenu.Size = New System.Drawing.Size(16, 16)
-      Me.chkEscludiMenu.TabIndex = 10
-      '
-      'Label10
-      '
-      Me.Label10.AutoSize = True
-      Me.Label10.BackColor = System.Drawing.Color.Transparent
-      Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label10.ForeColor = System.Drawing.Color.Black
-      Me.Label10.Location = New System.Drawing.Point(391, 224)
-      Me.Label10.Name = "Label10"
-      Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label10.Size = New System.Drawing.Size(112, 13)
-      Me.Label10.TabIndex = 198
-      Me.Label10.Text = "Escludi dalla gestione:"
-      '
-      'txtIngredienti
-      '
-      Me.txtIngredienti.AcceptsReturn = True
-      Me.txtIngredienti.BackColor = System.Drawing.SystemColors.Window
-      Me.txtIngredienti.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtIngredienti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtIngredienti.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIngredienti.Location = New System.Drawing.Point(145, 248)
-      Me.txtIngredienti.MaxLength = 0
-      Me.txtIngredienti.Name = "txtIngredienti"
-      Me.txtIngredienti.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtIngredienti.Size = New System.Drawing.Size(382, 20)
-      Me.txtIngredienti.TabIndex = 11
-      '
-      'Label9
-      '
-      Me.Label9.AutoSize = True
-      Me.Label9.BackColor = System.Drawing.Color.Transparent
-      Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label9.ForeColor = System.Drawing.Color.Black
-      Me.Label9.Location = New System.Drawing.Point(16, 248)
-      Me.Label9.Name = "Label9"
-      Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label9.Size = New System.Drawing.Size(116, 13)
-      Me.Label9.TabIndex = 196
-      Me.Label9.Text = "Descrizione ingredienti:"
-      '
       'txtListino4
       '
       Me.txtListino4.AcceptsReturn = True
@@ -476,12 +449,12 @@ Public Class frmPiatti
       Me.txtListino4.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino4.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino4.Location = New System.Drawing.Point(145, 195)
+      Me.txtListino4.Location = New System.Drawing.Point(104, 195)
       Me.txtListino4.MaxLength = 0
       Me.txtListino4.Name = "txtListino4"
       Me.txtListino4.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtListino4.Size = New System.Drawing.Size(144, 20)
-      Me.txtListino4.TabIndex = 8
+      Me.txtListino4.Size = New System.Drawing.Size(163, 20)
+      Me.txtListino4.TabIndex = 9
       Me.txtListino4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label8
@@ -504,12 +477,12 @@ Public Class frmPiatti
       Me.txtListino3.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino3.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino3.Location = New System.Drawing.Point(145, 171)
+      Me.txtListino3.Location = New System.Drawing.Point(104, 171)
       Me.txtListino3.MaxLength = 0
       Me.txtListino3.Name = "txtListino3"
       Me.txtListino3.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtListino3.Size = New System.Drawing.Size(144, 20)
-      Me.txtListino3.TabIndex = 7
+      Me.txtListino3.Size = New System.Drawing.Size(163, 20)
+      Me.txtListino3.TabIndex = 8
       Me.txtListino3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label7
@@ -532,12 +505,12 @@ Public Class frmPiatti
       Me.txtListino2.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino2.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino2.Location = New System.Drawing.Point(145, 147)
+      Me.txtListino2.Location = New System.Drawing.Point(104, 147)
       Me.txtListino2.MaxLength = 0
       Me.txtListino2.Name = "txtListino2"
       Me.txtListino2.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtListino2.Size = New System.Drawing.Size(144, 20)
-      Me.txtListino2.TabIndex = 6
+      Me.txtListino2.Size = New System.Drawing.Size(163, 20)
+      Me.txtListino2.TabIndex = 7
       Me.txtListino2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label6
@@ -560,12 +533,12 @@ Public Class frmPiatti
       Me.txtListino1.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtListino1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtListino1.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtListino1.Location = New System.Drawing.Point(145, 123)
+      Me.txtListino1.Location = New System.Drawing.Point(104, 123)
       Me.txtListino1.MaxLength = 0
       Me.txtListino1.Name = "txtListino1"
       Me.txtListino1.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtListino1.Size = New System.Drawing.Size(144, 20)
-      Me.txtListino1.TabIndex = 5
+      Me.txtListino1.Size = New System.Drawing.Size(163, 20)
+      Me.txtListino1.TabIndex = 6
       Me.txtListino1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label5
@@ -588,13 +561,13 @@ Public Class frmPiatti
       Me.txtValVenduto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtValVenduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtValVenduto.ForeColor = System.Drawing.Color.Red
-      Me.txtValVenduto.Location = New System.Drawing.Point(145, 274)
+      Me.txtValVenduto.Location = New System.Drawing.Point(104, 262)
       Me.txtValVenduto.MaxLength = 0
       Me.txtValVenduto.Name = "txtValVenduto"
       Me.txtValVenduto.ReadOnly = True
       Me.txtValVenduto.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtValVenduto.Size = New System.Drawing.Size(144, 20)
-      Me.txtValVenduto.TabIndex = 12
+      Me.txtValVenduto.Size = New System.Drawing.Size(163, 20)
+      Me.txtValVenduto.TabIndex = 11
       Me.txtValVenduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label4
@@ -603,7 +576,7 @@ Public Class frmPiatti
       Me.Label4.BackColor = System.Drawing.Color.Transparent
       Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(16, 274)
+      Me.Label4.Location = New System.Drawing.Point(16, 262)
       Me.Label4.Name = "Label4"
       Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label4.Size = New System.Drawing.Size(82, 13)
@@ -617,13 +590,13 @@ Public Class frmPiatti
       Me.txtQVenduta.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtQVenduta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtQVenduta.ForeColor = System.Drawing.Color.Red
-      Me.txtQVenduta.Location = New System.Drawing.Point(391, 274)
+      Me.txtQVenduta.Location = New System.Drawing.Point(391, 262)
       Me.txtQVenduta.MaxLength = 0
       Me.txtQVenduta.Name = "txtQVenduta"
       Me.txtQVenduta.ReadOnly = True
       Me.txtQVenduta.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtQVenduta.Size = New System.Drawing.Size(136, 20)
-      Me.txtQVenduta.TabIndex = 13
+      Me.txtQVenduta.TabIndex = 12
       Me.txtQVenduta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       '
       'Label2
@@ -632,7 +605,7 @@ Public Class frmPiatti
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(295, 274)
+      Me.Label2.Location = New System.Drawing.Point(286, 265)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(92, 13)
@@ -641,62 +614,22 @@ Public Class frmPiatti
       '
       'chkVariazione
       '
-      Me.chkVariazione.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+      Me.chkVariazione.AutoSize = True
+      Me.chkVariazione.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
       Me.chkVariazione.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.chkVariazione.Location = New System.Drawing.Point(369, 15)
+      Me.chkVariazione.Location = New System.Drawing.Point(360, 10)
       Me.chkVariazione.Name = "chkVariazione"
-      Me.chkVariazione.Size = New System.Drawing.Size(16, 16)
+      Me.chkVariazione.Size = New System.Drawing.Size(167, 18)
       Me.chkVariazione.TabIndex = 1
-      '
-      'Label39
-      '
-      Me.Label39.AutoSize = True
-      Me.Label39.BackColor = System.Drawing.Color.Transparent
-      Me.Label39.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label39.ForeColor = System.Drawing.Color.Black
-      Me.Label39.Location = New System.Drawing.Point(314, 16)
-      Me.Label39.Name = "Label39"
-      Me.Label39.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label39.Size = New System.Drawing.Size(49, 13)
-      Me.Label39.TabIndex = 182
-      Me.Label39.Text = "Variante:"
-      '
-      'EliminaImg
-      '
-      Me.EliminaImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.EliminaImg.Location = New System.Drawing.Point(466, 160)
-      Me.EliminaImg.Name = "EliminaImg"
-      Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
-      Me.EliminaImg.TabIndex = 15
-      Me.EliminaImg.Text = "&Elimina"
-      '
-      'ApriImg
-      '
-      Me.ApriImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ApriImg.Location = New System.Drawing.Point(394, 160)
-      Me.ApriImg.Name = "ApriImg"
-      Me.ApriImg.Size = New System.Drawing.Size(64, 24)
-      Me.ApriImg.TabIndex = 14
-      Me.ApriImg.Text = "&Apri"
-      '
-      'picFoto
-      '
-      Me.picFoto.BackColor = System.Drawing.Color.White
-      Me.picFoto.Cursor = System.Windows.Forms.Cursors.Default
-      Me.picFoto.Location = New System.Drawing.Point(394, 16)
-      Me.picFoto.Name = "picFoto"
-      Me.picFoto.Size = New System.Drawing.Size(136, 136)
-      Me.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-      Me.picFoto.TabIndex = 178
-      Me.picFoto.TabStop = False
+      Me.chkVariazione.Text = "Questo piatto è una Variante"
       '
       'cmbCategoria
       '
       Me.cmbCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.cmbCategoria.Location = New System.Drawing.Point(145, 96)
+      Me.cmbCategoria.Location = New System.Drawing.Point(104, 96)
       Me.cmbCategoria.Name = "cmbCategoria"
       Me.cmbCategoria.Size = New System.Drawing.Size(240, 21)
-      Me.cmbCategoria.TabIndex = 4
+      Me.cmbCategoria.TabIndex = 5
       '
       'txtDescrizione
       '
@@ -705,12 +638,12 @@ Public Class frmPiatti
       Me.txtDescrizione.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtDescrizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtDescrizione.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtDescrizione.Location = New System.Drawing.Point(145, 70)
+      Me.txtDescrizione.Location = New System.Drawing.Point(104, 70)
       Me.txtDescrizione.MaxLength = 0
       Me.txtDescrizione.Name = "txtDescrizione"
       Me.txtDescrizione.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtDescrizione.Size = New System.Drawing.Size(240, 20)
-      Me.txtDescrizione.TabIndex = 3
+      Me.txtDescrizione.TabIndex = 4
       '
       'label
       '
@@ -745,12 +678,12 @@ Public Class frmPiatti
       Me.txtNumero.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtNumero.ForeColor = System.Drawing.Color.Red
-      Me.txtNumero.Location = New System.Drawing.Point(145, 16)
+      Me.txtNumero.Location = New System.Drawing.Point(104, 16)
       Me.txtNumero.MaxLength = 5
       Me.txtNumero.Name = "txtNumero"
       Me.txtNumero.ReadOnly = True
       Me.txtNumero.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNumero.Size = New System.Drawing.Size(80, 20)
+      Me.txtNumero.Size = New System.Drawing.Size(98, 20)
       Me.txtNumero.TabIndex = 0
       Me.txtNumero.TabStop = False
       Me.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -767,6 +700,48 @@ Public Class frmPiatti
       Me.Label20.Size = New System.Drawing.Size(43, 13)
       Me.Label20.TabIndex = 153
       Me.Label20.Text = "Codice:"
+      '
+      'TabPage3
+      '
+      Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage3.Controls.Add(Me.EliminaImg)
+      Me.TabPage3.Controls.Add(Me.ApriImg)
+      Me.TabPage3.Controls.Add(Me.picFoto)
+      Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage3.Name = "TabPage3"
+      Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+      Me.TabPage3.Size = New System.Drawing.Size(548, 372)
+      Me.TabPage3.TabIndex = 7
+      Me.TabPage3.Text = "Immagine"
+      '
+      'EliminaImg
+      '
+      Me.EliminaImg.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.EliminaImg.Location = New System.Drawing.Point(463, 330)
+      Me.EliminaImg.Name = "EliminaImg"
+      Me.EliminaImg.Size = New System.Drawing.Size(64, 24)
+      Me.EliminaImg.TabIndex = 1
+      Me.EliminaImg.Text = "&Elimina"
+      '
+      'ApriImg
+      '
+      Me.ApriImg.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.ApriImg.Location = New System.Drawing.Point(391, 330)
+      Me.ApriImg.Name = "ApriImg"
+      Me.ApriImg.Size = New System.Drawing.Size(64, 24)
+      Me.ApriImg.TabIndex = 0
+      Me.ApriImg.Text = "&Apri"
+      '
+      'picFoto
+      '
+      Me.picFoto.BackColor = System.Drawing.Color.White
+      Me.picFoto.Cursor = System.Windows.Forms.Cursors.Default
+      Me.picFoto.Location = New System.Drawing.Point(8, 6)
+      Me.picFoto.Name = "picFoto"
+      Me.picFoto.Size = New System.Drawing.Size(529, 318)
+      Me.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+      Me.picFoto.TabIndex = 181
+      Me.picFoto.TabStop = False
       '
       'TabPage2
       '
@@ -786,7 +761,7 @@ Public Class frmPiatti
       Me.TabPage2.Controls.Add(Me.Label11)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(572, 365)
+      Me.TabPage2.Size = New System.Drawing.Size(557, 362)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Punto cassa"
       '
@@ -956,12 +931,65 @@ Public Class frmPiatti
       Me.Label11.TabIndex = 195
       Me.Label11.Text = "Colore sfondo:"
       '
+      'TabPage4
+      '
+      Me.TabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage4.Controls.Add(Me.chkEscludiMenu)
+      Me.TabPage4.Controls.Add(Me.txtIngredienti)
+      Me.TabPage4.Controls.Add(Me.Label9)
+      Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage4.Name = "TabPage4"
+      Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+      Me.TabPage4.Size = New System.Drawing.Size(548, 372)
+      Me.TabPage4.TabIndex = 8
+      Me.TabPage4.Text = "Menu"
+      '
+      'chkEscludiMenu
+      '
+      Me.chkEscludiMenu.AutoSize = True
+      Me.chkEscludiMenu.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+      Me.chkEscludiMenu.FlatStyle = System.Windows.Forms.FlatStyle.System
+      Me.chkEscludiMenu.Location = New System.Drawing.Point(22, 23)
+      Me.chkEscludiMenu.Name = "chkEscludiMenu"
+      Me.chkEscludiMenu.Size = New System.Drawing.Size(175, 18)
+      Me.chkEscludiMenu.TabIndex = 0
+      Me.chkEscludiMenu.Text = "Escludi dalla stampa del Menu"
+      '
+      'txtIngredienti
+      '
+      Me.txtIngredienti.AcceptsReturn = True
+      Me.txtIngredienti.BackColor = System.Drawing.SystemColors.Window
+      Me.txtIngredienti.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtIngredienti.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtIngredienti.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtIngredienti.Location = New System.Drawing.Point(22, 76)
+      Me.txtIngredienti.MaxLength = 0
+      Me.txtIngredienti.Multiline = True
+      Me.txtIngredienti.Name = "txtIngredienti"
+      Me.txtIngredienti.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtIngredienti.ScrollBars = System.Windows.Forms.ScrollBars.Both
+      Me.txtIngredienti.Size = New System.Drawing.Size(507, 263)
+      Me.txtIngredienti.TabIndex = 1
+      '
+      'Label9
+      '
+      Me.Label9.AutoSize = True
+      Me.Label9.BackColor = System.Drawing.Color.Transparent
+      Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label9.ForeColor = System.Drawing.Color.Black
+      Me.Label9.Location = New System.Drawing.Point(19, 60)
+      Me.Label9.Name = "Label9"
+      Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label9.Size = New System.Drawing.Size(153, 13)
+      Me.Label9.TabIndex = 198
+      Me.Label9.Text = "Descrizione piatto / ingredienti:"
+      '
       'TabPage6
       '
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(572, 365)
+      Me.TabPage6.Size = New System.Drawing.Size(557, 362)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       '
@@ -978,7 +1006,7 @@ Public Class frmPiatti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(572, 365)
+      Me.txtNote.Size = New System.Drawing.Size(557, 362)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -990,23 +1018,11 @@ Public Class frmPiatti
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'chkNoDivisioneSpettanza
-      '
-      Me.chkNoDivisioneSpettanza.AutoSize = True
-      Me.chkNoDivisioneSpettanza.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-      Me.chkNoDivisioneSpettanza.Location = New System.Drawing.Point(15, 328)
-      Me.chkNoDivisioneSpettanza.Name = "chkNoDivisioneSpettanza"
-      Me.chkNoDivisioneSpettanza.Size = New System.Drawing.Size(362, 17)
-      Me.chkNoDivisioneSpettanza.TabIndex = 55786
-      Me.chkNoDivisioneSpettanza.Text = "Non dividere la spettanza per il numero dei camerieri presenti sul tavolo:"
-      Me.chkNoDivisioneSpettanza.UseVisualStyleBackColor = True
-      '
       'frmPiatti
       '
-      Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(580, 437)
+      Me.ClientSize = New System.Drawing.Size(556, 444)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1023,10 +1039,13 @@ Public Class frmPiatti
       Me.TabControl1.ResumeLayout(False)
       Me.TabPage1.ResumeLayout(False)
       Me.TabPage1.PerformLayout()
+      Me.TabPage3.ResumeLayout(False)
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage2.ResumeLayout(False)
       Me.TabPage2.PerformLayout()
       Me.Panel2.ResumeLayout(False)
+      Me.TabPage4.ResumeLayout(False)
+      Me.TabPage4.PerformLayout()
       Me.TabPage6.ResumeLayout(False)
       Me.TabPage6.PerformLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1497,9 +1516,18 @@ Public Class frmPiatti
                   chkEscludiMenu.Checked = False
                End If
 
+               ' Immagine del Piatto da utilizzare anche nella stampa del Menu.
                If .Immagine <> Nothing Then
                   If File.Exists(.Immagine) = True Then
                      Dim bmp As New Bitmap(.Immagine)
+                     picFoto.Image = bmp
+                  End If
+               End If
+
+               ' Icona sul pulsante del punto cassa.
+               If .Icona <> Nothing Then
+                  If File.Exists(.Icona) = True Then
+                     Dim bmp As New Bitmap(.Icona)
                      netBtn_Anteprima.Image = bmp
                      netBtn_Anteprima.TextButtonAlign = ContentAlignment.BottomCenter
                   End If
