@@ -3699,6 +3699,7 @@ Public Class frmOpzioni
             chkSalvaBackup.Checked = True
          End If
 
+         ' TODO_A: Modificare dimensioni pagina
          cmbNumElementi.Text = DatiConfig.GetValue("NumElememti")
          If cmbNumElementi.Text = "" Then
             cmbNumElementi.Text = DIM_PAGINA
@@ -4307,8 +4308,9 @@ Public Class frmOpzioni
          DatiConfig.SetValue("SalvaBKP", chkSalvaBackup.Checked)
          SalvaBKP = chkSalvaBackup.Checked
 
+         ' TODO_A: Modificare dimensioni pagina
          DatiConfig.SetValue("NumElememti", cmbNumElementi.Text)
-         dimPagina = CInt(cmbNumElementi.Text)
+         dimPagina = DIM_PAGINA_GRANDE 'CInt(cmbNumElementi.Text)
 
          ' Percorso Gestionale Amica.
          If txtPercorsoAmica.Text.Length = 0 Then

@@ -1909,8 +1909,10 @@ Public Class frmCamerieri
             Case 3
                ' Impostazioni per il modulo NightClub.
                If moduloAttivo.NightClub = True Then
-                  ' Carica le statistiche di vendita per il cameriere selezionato.
-                  CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
+                  If Me.Tag <> String.Empty Then
+                     ' Carica le statistiche di vendita per il cameriere selezionato.
+                     CaricaListaStatisticheVendita(lvwStatistiche, Me.Tag, TAB_STATISTICHE, FILTRO_TUTTE)
+                  End If
                End If
 
                ' Imposta lo stato attivo.

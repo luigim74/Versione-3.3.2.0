@@ -412,6 +412,15 @@ Module Dichiarazioni
 
    ' ANAGRAFICHE.
    Public Const TITOLO_FINESTRA_ELENCO_CLIENTI As String = "Elenco Clienti"
+   Public Const TITOLO_FINESTRA_ELENCO_AZIENDE As String = "Elenco Aziende"
+   Public Const TITOLO_FINESTRA_ELENCO_FORNITORI As String = "Elenco Fornitori"
+   Public Const TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI As String = "Elenco Categorie piatti"
+   Public Const TITOLO_FINESTRA_ELENCO_CAMERIERI As String = "Elenco Camerieri"
+   Public Const TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI As String = "Elenco Agenzie Camerieri"
+   Public Const TITOLO_FINESTRA_ELENCO_SALE As String = "Elenco Sale"
+   Public Const TITOLO_FINESTRA_ELENCO_TAVOLI As String = "Elenco Tavoli"
+   Public Const TITOLO_FINESTRA_ELENCO_CAMERE As String = "Elenco Camere"
+
 
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"
@@ -1099,6 +1108,7 @@ Module Dichiarazioni
       Offerto = 49
       Parcheggia = 50
       Ristampa = 51
+      Duplica = 52
    End Enum
 
    ' Dati Moduli.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>TryCatchEndTry</Title>
+      <Author>Luigi Montana - Montana Software</Author>
+      <Description>Gestione degli errori su file di Log</Description>
+      <Keywords>
+      </Keywords>
+      <Shortcut>TryCatchEndTry</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="VB" Kind="method body">
+        <![CDATA[Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

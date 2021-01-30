@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2005
-' Data ultima modifica: 02/10/2020
+' Data ultima modifica: 30/01/2021
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -6656,7 +6656,8 @@ Friend Class frmMain
             SalvaBKP = True
          End If
 
-         dimPagina = CInt(DatiConfig.GetValue("NumElememti"))
+         ' TODO_A: Modificare dimensioni pagina
+         dimPagina = DIM_PAGINA_GRANDE 'CInt(DatiConfig.GetValue("NumElememti"))
 
          If DatiConfig.GetValue("WindowState") = CStr(FormWindowState.Maximized) Then
             Me.WindowState = FormWindowState.Maximized
@@ -7556,6 +7557,9 @@ Friend Class frmMain
 
             Case TipoOperazione.Modifica
                descrizioneOp = "Eseguito comando MODIFICA. " & descrizione
+
+            Case TipoOperazione.Duplica
+               descrizioneOp = "Eseguito comando DUPLICA. " & descrizione
 
             Case TipoOperazione.Elimina
                descrizioneOp = "Eseguito comando ELIMINA. " & descrizione
@@ -12305,6 +12309,30 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.Nuovo()
 
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               g_frmAgenzieCamerieri.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.Nuovo()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.Nuovo()
 
@@ -12340,6 +12368,30 @@ Friend Class frmMain
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               g_frmAgenzieCamerieri.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.Modifica()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.Modifica()
@@ -12381,6 +12433,30 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.DuplicaDatiClienti()
 
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.DuplicaDatiAziende()
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.DuplicaDatiFornitori()
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.DuplicaDatiCategoriePiatti()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.DuplicaDatiCamerieri()
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               g_frmAgenzieCamerieri.DuplicaDatiAgenzieCamerieri()
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.DuplicaDatiSale()
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.DuplicaDatiTavoli()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.DuplicaDatiCamere()
+
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.DuplicaDati()
 
@@ -12411,6 +12487,30 @@ Friend Class frmMain
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.EliminaDati(frmElencoDati.TAB_CLIENTI, g_frmClienti.DataGridView1.Item(0, g_frmClienti.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.EliminaDati(frmElencoDati.TAB_AZIENDE, g_frmAziende.DataGridView1.Item(0, g_frmAziende.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.EliminaDati(frmElencoDati.TAB_FORNITORI, g_frmFornitori.DataGridView1.Item(0, g_frmFornitori.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.EliminaDati(frmElencoDati.TAB_CAT_PIATTI, g_frmCatPiatti.DataGridView1.Item(0, g_frmCatPiatti.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.EliminaDati(frmElencoDati.TAB_CAMERIERI, g_frmCamerieri.DataGridView1.Item(0, g_frmCamerieri.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               g_frmAgenzieCamerieri.EliminaDati(frmElencoDati.TAB_AGENZIE_CAMERIERI, g_frmAgenzieCamerieri.DataGridView1.Item(0, g_frmAgenzieCamerieri.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.EliminaDati(frmElencoDati.TAB_SALE, g_frmSale.DataGridView1.Item(0, g_frmSale.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.EliminaDati(frmElencoDati.TAB_TAVOLI, g_frmTavoli.DataGridView1.Item(0, g_frmTavoli.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.EliminaDati(frmElencoDati.TAB_CAMERE, g_frmCamere.DataGridView1.Item(0, g_frmCamere.DataGridView1.CurrentCell.RowIndex).Value)
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.EliminaDati(ElencoPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 0))
@@ -12473,6 +12573,30 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.AggiornaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               g_frmAgenzieCamerieri.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AggiornaDati()
 
@@ -12509,6 +12633,31 @@ Friend Class frmMain
          Select Case frmAttivo
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, g_frmClienti.TAB_CLIENTI, g_frmClienti.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE_A4, g_frmAziende.TAB_AZIENDE, g_frmAziende.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI_A4, g_frmFornitori.TAB_FORNITORI, g_frmFornitori.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI_A4, g_frmCatPiatti.TAB_CAT_PIATTI, g_frmCatPiatti.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, g_frmCamerieri.TAB_CAMERIERI, g_frmCamerieri.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               ' TODO: Modificare per AgenzieCamerieri.
+               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, g_frmSale.TAB_SALE, g_frmSale.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI_A4, g_frmTavoli.TAB_TAVOLI, g_frmTavoli.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE_A4, g_frmCamere.TAB_CAMERE, g_frmCamere.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
@@ -12558,6 +12707,31 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                g_frmClienti.AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, g_frmClienti.TAB_CLIENTI, g_frmClienti.repSql)
 
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               g_frmAziende.AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE_A4, g_frmAziende.TAB_AZIENDE, g_frmAziende.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               g_frmFornitori.AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI_A4, g_frmFornitori.TAB_FORNITORI, g_frmFornitori.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               g_frmCatPiatti.AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI_A4, g_frmCatPiatti.TAB_CAT_PIATTI, g_frmCatPiatti.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               g_frmCamerieri.AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, g_frmCamerieri.TAB_CAMERIERI, g_frmCamerieri.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               ' TODO: Modificare per AgenzieCamerieri.
+               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               g_frmSale.AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, g_frmSale.TAB_SALE, g_frmSale.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               g_frmTavoli.AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI_A4, g_frmTavoli.TAB_TAVOLI, g_frmTavoli.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               g_frmCamere.AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE_A4, g_frmCamere.TAB_CAMERE, g_frmCamere.repSql)
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.AnteprimaDiStampa(PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.repSql)
 
@@ -12598,13 +12772,50 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_CLIENTI
                If g_frmClienti.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmClienti.StampaElencoClienti(g_frmClienti.repSql, PERCORSO_REP_CLIENTI_A4, g_frmClienti.PrintDialog1.PrinterSettings.PrinterName, g_frmClienti.PrintDialog1.PrinterSettings.Copies)
+               End If
 
+            Case TITOLO_FINESTRA_ELENCO_AZIENDE
+               If g_frmAziende.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmAziende.StampaElencoAziende(g_frmAziende.repSql, PERCORSO_REP_AZIENDE_A4, g_frmAziende.PrintDialog1.PrinterSettings.PrinterName, g_frmAziende.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_FORNITORI
+               If g_frmFornitori.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmFornitori.StampaElencoFornitori(g_frmFornitori.repSql, PERCORSO_REP_FORNITORI_A4, g_frmFornitori.PrintDialog1.PrinterSettings.PrinterName, g_frmFornitori.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_CATEGORIE_PIATTI
+               If g_frmCatPiatti.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmCatPiatti.StampaElencoCategoriePiatti(g_frmCatPiatti.repSql, PERCORSO_REP_CAT_PIATTI_A4, g_frmCatPiatti.PrintDialog1.PrinterSettings.PrinterName, g_frmCatPiatti.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERIERI
+               If g_frmCamerieri.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmCamerieri.StampaElencoCamerieri(g_frmCamerieri.repSql, PERCORSO_REP_CAMERIERI_A4, g_frmCamerieri.PrintDialog1.PrinterSettings.PrinterName, g_frmCamerieri.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
+               ' TODO: Modificare per AgenzieCamerieri.
+               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+            Case TITOLO_FINESTRA_ELENCO_SALE
+               If g_frmSale.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmSale.StampaElencoSale(g_frmSale.repSql, PERCORSO_REP_SALE_A4, g_frmSale.PrintDialog1.PrinterSettings.PrinterName, g_frmSale.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_TAVOLI
+               If g_frmTavoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmTavoli.StampaElencoTavoli(g_frmTavoli.repSql, PERCORSO_REP_TAVOLI_A4, g_frmTavoli.PrintDialog1.PrinterSettings.PrinterName, g_frmTavoli.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_CAMERE
+               If g_frmCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmCamere.StampaElencoCamere(g_frmCamere.repSql, PERCORSO_REP_CAMERE_A4, g_frmCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmCamere.PrintDialog1.PrinterSettings.Copies)
                End If
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                If g_frmPrenCamere.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmPrenCamere.StampaElenco(g_frmPrenCamere.repSql, PERCORSO_REP_PREN_CAMERE_A4, g_frmPrenCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmPrenCamere.PrintDialog1.PrinterSettings.Copies)
-
                End If
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS

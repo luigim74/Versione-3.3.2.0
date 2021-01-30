@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 08/09/2020
+' Data ultima modifica: 23/01/2021
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -106,7 +106,7 @@ Public Class frmElencoDati
          Case Elenco.CatPiatti
             TipoElenco = Elenco.CatPiatti
             NomeTabella = "CategoriePiatti"
-            TitoloFinestra = "Categorie piatti"
+            TitoloFinestra = "Elenco Categorie piatti"
 
          Case Elenco.Prenotazioni
             TipoElenco = Elenco.Prenotazioni
@@ -269,7 +269,7 @@ Public Class frmElencoDati
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(704, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(736, 26)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -426,20 +426,18 @@ Public Class frmElencoDati
       '
       'DataGrid1
       '
-      Me.DataGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGrid1.BackgroundColor = System.Drawing.Color.White
       Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGrid1.CaptionBackColor = System.Drawing.Color.Gray
       Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
       Me.DataGrid1.DataMember = ""
       Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 61)
+      Me.DataGrid1.Location = New System.Drawing.Point(5, 379)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(704, 379)
+      Me.DataGrid1.Size = New System.Drawing.Size(704, 40)
       Me.DataGrid1.TabIndex = 1
+      Me.DataGrid1.Visible = False
       '
       'Panel1
       '
@@ -452,7 +450,7 @@ Public Class frmElencoDati
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(704, 35)
+      Me.Panel1.Size = New System.Drawing.Size(736, 35)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -472,7 +470,7 @@ Public Class frmElencoDati
       Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(563, 8)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(595, 8)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -485,7 +483,7 @@ Public Class frmElencoDati
       Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(354, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(386, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
@@ -495,7 +493,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(474, 8)
+      Me.Label2.Location = New System.Drawing.Point(506, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -546,18 +544,17 @@ Public Class frmElencoDati
       Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(2, 381)
+      Me.DataGridView1.Location = New System.Drawing.Point(0, 63)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(686, 41)
+      Me.DataGridView1.Size = New System.Drawing.Size(734, 320)
       Me.DataGridView1.TabIndex = 0
-      Me.DataGridView1.Visible = False
       '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(704, 438)
+      Me.ClientSize = New System.Drawing.Size(736, 385)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1482,7 +1479,7 @@ Public Class frmElencoDati
 
    End Function
 
-   Public Sub RegistraModifica()
+   Public Sub _RegistraModifica()
       Try
          Dim strDescrizione As String
 
@@ -1574,20 +1571,20 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub DataGridView1_RegistraModifica()
+   Public Sub RegistraModifica()
       Try
          Dim strDescrizione As String
 
          Select Case TipoElenco
             Case Elenco.Clienti
                ' Registra l'operazione.
-               Dim Cognome As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
-               Dim Nome As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim Cognome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim Nome As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
                strDescrizione = "(" & Cognome & " " & Nome & ")"
 
             Case Elenco.Aziende
                ' Registra l'operazione.
-               Dim ragSoc As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
                strDescrizione = "(" & ragSoc & ")"
 
             Case Elenco.Fornitori
@@ -1666,12 +1663,104 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   Public Sub RegistraDuplica()
+      Try
+         Dim strDescrizione As String
+
+         Select Case TipoElenco
+            Case Elenco.Clienti
+               ' Registra l'operazione.
+               Dim Cognome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               Dim Nome As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & Cognome & " " & Nome & ")"
+
+            Case Elenco.Aziende
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & ragSoc & ")"
+
+            Case Elenco.Fornitori
+               ' Registra l'operazione.
+               Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & ragSoc & ")"
+
+               'Case Elenco.Prenotazioni, Elenco.PrenSale
+               '   ' Registra l'operazione.
+               '   Dim Cliente As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & Cliente & ")"
+
+               'Case Elenco.CatPiatti
+               '   ' Registra l'operazione.
+               '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & descrizione & ")"
+
+               'Case Elenco.Camerieri
+               '   ' Registra l'operazione.
+               '   Dim Nome As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & Nome & ")"
+
+               'Case Elenco.AgenzieCamerieri
+               '   ' Registra l'operazione.
+               '   Dim ragSoc As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & ragSoc & ")"
+
+               'Case Elenco.Sale
+               '   ' Registra l'operazione.
+               '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & descrizione & ")"
+
+               'Case Elenco.Tavoli
+               '   ' Registra l'operazione.
+               '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & descrizione & ")"
+
+               'Case Elenco.Camere
+               '   ' Registra l'operazione.
+               '   Dim numero As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   Dim descrizione As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & numero & " - " & descrizione & ")"
+
+               'Case Elenco.StatoPren
+               '   ' Registra l'operazione.
+               '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & descrizione & ")"
+
+               'Case Elenco.Articoli
+               '   ' Registra l'operazione.
+               '   Dim codice As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   Dim descrizione As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & codice & " - " & descrizione & ")"
+
+               'Case Elenco.Operatori
+               '   ' Registra l'operazione.
+               '   Dim nomeUtente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & nomeUtente & ")"
+
+               'Case Elenco.Gruppi
+               '   ' Registra l'operazione.
+               '   Dim nomeGruppo As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & nomeGruppo & ")"
+
+               ' A_TODO: Inserire qui il codice per gestire la finestra Caratteristiche Risorse.
+
+         End Select
+
+         ' Registra loperazione effettuata dall'operatore identificato.
+         g_frmMain.RegistraOperazione(TipoOperazione.Duplica, strDescrizione, strModulo)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Public Sub LeggiDati(ByVal tabella As String, ByVal sql As String)
       Try
          ' Calcola il numero delle pagine da visualizzare.
          LeggiNumPagine(tabella)
 
-         DataGrid1.DataSource = dt
+         DataGridView1.DataSource = dt
 
          ' Visualizza la prima pagina di dati.
          VisualizzaPagina(1, sql)
@@ -1751,7 +1840,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
+   Public Sub _EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
          Dim sql As String
@@ -1998,7 +2087,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub DataGridView1_EliminaDati(ByVal tabella As String, ByVal id As Integer)
+   Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
          Dim sql As String
@@ -2076,7 +2165,7 @@ Public Class frmElencoDati
                strDescrizione = "(" & ragSoc & ")"
 
                ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare l'Agenzia " & ragSoc &
+               Risposta = MsgBox("Si desidera eliminare l'Agenzia """ & ragSoc &
                                  """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
             Case Elenco.Sale
@@ -2249,7 +2338,7 @@ Public Class frmElencoDati
       Try
          If eui_txtTestoRicerca.Text <> "" Then
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGrid1.DataSource = dt
+            DataGridView1.DataSource = dt
 
             FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
          Else
@@ -2257,7 +2346,7 @@ Public Class frmElencoDati
             LeggiNumPagine(NomeTabella)
 
             ' Collega la tabella clienti al controllo griglia dati.
-            DataGrid1.DataSource = dt
+            DataGridView1.DataSource = dt
 
             ' Visualizza la prima pagina di dati.
             VisualizzaPagina(pagCorrente, sql)
@@ -2276,6 +2365,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
@@ -2691,7 +2781,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub AggIntGriglia()
+   Public Sub _AggIntGriglia()
       Try
          If numRecord <> 0 Then
             Select Case TipoElenco
@@ -2730,7 +2820,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub DataGridView1_AggIntGriglia()
+   Public Sub AggIntGriglia()
       Try
          ' Se le celle non sono ancora state caricate.
          If IsNothing(DataGridView1.CurrentCell) = True Then
@@ -2775,6 +2865,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Private Sub ImpostaComandoElimina()
       Try
          Select Case NomeTabella
@@ -2799,7 +2890,7 @@ Public Class frmElencoDati
       Try
          ' Imposta il titolo della finestra.
          If TipoElenco = Elenco.Camere Then
-            Dim val As Decimal = SommaColonna(DataGrid1, 6, numRecord)
+            Dim val As Integer = SommaColonna(DataGridView1, 6, numRecord)
             Me.Text = titolo & " (n° totale: " & numRecord & " camere - " & val.ToString & " posti letto)"
          Else
             Me.Text = titolo & " (n° totale: " & numRecord & ")"
@@ -2876,7 +2967,7 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub CreaColonneFornitori(ByVal tabella As String)
+   Private Sub _CreaColonneFornitori(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3006,7 +3097,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneFornitori(ByVal tabella As String)
+   Private Sub CreaColonneFornitori(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3189,7 +3280,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneClienti(ByVal tabella As String)
+   Private Sub _CreaColonneClienti(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3342,7 +3433,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView1_CreaColonneClienti(ByVal tabella As String)
+   Private Sub CreaColonneClienti(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3562,7 +3653,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAziende(ByVal tabella As String)
+   Private Sub _CreaColonneAziende(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3691,7 +3782,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneAziende(ByVal tabella As String)
+   Private Sub CreaColonneAziende(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -3874,7 +3965,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePren(ByVal tabella As String)
+   Private Sub _CreaColonnePren(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -3985,7 +4076,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonnePren(ByVal tabella As String)
+   Private Sub CreaColonnePren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4136,7 +4227,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonnePrenSale(ByVal tabella As String)
+   Private Sub _CreaColonnePrenSale(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4229,7 +4320,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonnePrenSale(ByVal tabella As String)
+   Private Sub CreaColonnePrenSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4356,7 +4447,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
+   Private Sub _CreaColonneCatPiatti(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4407,7 +4498,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneCatPiatti(ByVal tabella As String)
+   Private Sub CreaColonneCatPiatti(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4470,7 +4561,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamerieri(ByVal tabella As String)
+   Private Sub _CreaColonneCamerieri(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4601,7 +4692,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView1_CreaColonneCamerieri(ByVal tabella As String)
+   Private Sub CreaColonneCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -4787,7 +4878,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
+   Private Sub _CreaColonneAgenzieCamerieri(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -4917,7 +5008,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView1_CreaColonneAgenzieCamerieri(ByVal tabella As String)
+   Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5088,7 +5179,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneSale(ByVal tabella As String)
+   Private Sub _CreaColonneSale(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5131,7 +5222,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneSale(ByVal tabella As String)
+   Private Sub CreaColonneSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5182,7 +5273,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneTavoli(ByVal tabella As String)
+   Private Sub _CreaColonneTavoli(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5275,7 +5366,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView1_CreaColonneTavoli(ByVal tabella As String)
+   Private Sub CreaColonneTavoli(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5375,7 +5466,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCamere(ByVal tabella As String)
+   Private Sub _CreaColonneCamere(ByVal tabella As String)
       Dim gridStyle As New DataGridTableStyle
       gridStyle.MappingName = tabella
 
@@ -5487,7 +5578,7 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub DataGridView1_CreaColonneCamere(ByVal tabella As String)
+   Private Sub CreaColonneCamere(ByVal tabella As String)
       DataGridView1.AutoGenerateColumns = False
       DataGridView1.DataMember = tabella
 
@@ -5645,7 +5736,7 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub CreaColonneStatoPren(ByVal tabella As String)
+   Private Sub _CreaColonneStatoPren(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5688,7 +5779,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneStatoPren(ByVal tabella As String)
+   Private Sub CreaColonneStatoPren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -5739,7 +5830,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneArticoli(ByVal tabella As String)
+   Private Sub _CreaColonneArticoli(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -5869,7 +5960,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView1_CreaColonneArticoli(ByVal tabella As String)
+   Private Sub CreaColonneArticoli(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -6056,7 +6147,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneOperatori(ByVal tabella As String)
+   Private Sub _CreaColonneOperatori(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -6106,7 +6197,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneOperatori(ByVal tabella As String)
+   Private Sub CreaColonneOperatori(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -6157,7 +6248,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneGruppi(ByVal tabella As String)
+   Private Sub _CreaColonneGruppi(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -6191,7 +6282,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneGruppi(ByVal tabella As String)
+   Private Sub CreaColonneGruppi(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -6230,7 +6321,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
+   Private Sub _CreaColonneCarattRisorse(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -6272,7 +6363,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneCarattRisorse(ByVal tabella As String)
+   Private Sub CreaColonneCarattRisorse(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -6326,7 +6417,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+   Private Sub _CreaColonneScontiMaggiorazioni(ByVal tabella As String)
       Try
          Dim gridStyle As New DataGridTableStyle
          gridStyle.MappingName = tabella
@@ -6398,7 +6489,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub DataGridView_CreaColonneScontiMaggiorazioni(ByVal tabella As String)
+   Private Sub CreaColonneScontiMaggiorazioni(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
          DataGridView1.DataMember = tabella
@@ -6820,7 +6911,7 @@ Public Class frmElencoDati
       End Try
    End Function
 
-   Private Sub AnteprimaDiStampaCamere(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaCamere(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -6874,7 +6965,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaFornitori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaFornitori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -6901,7 +6992,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaCamerieri(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaCamerieri(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -6956,7 +7047,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaAziende(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaAziende(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -6983,7 +7074,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaCategoriePiatti(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaCategoriePiatti(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7010,7 +7101,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaSale(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaSale(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7037,7 +7128,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaTavoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaTavoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7226,7 +7317,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoCamere(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoCamere(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7282,7 +7373,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoFornitori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoFornitori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7310,7 +7401,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoCamerieri(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7367,7 +7458,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoAziende(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoAziende(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7395,7 +7486,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoCategoriePiatti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoCategoriePiatti(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7423,7 +7514,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7451,7 +7542,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7647,6 +7738,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
+   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Private Sub frmElencoDati_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
 #Region "Gestionale Amica - (Condivisa) "
@@ -7722,32 +7814,384 @@ Public Class frmElencoDati
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
-      'g_frmMain.rtgStrumentiModifica.Visible = True
+      g_frmMain.rtgStrumentiModifica.Visible = True
 
       Select Case TipoElenco
          Case Elenco.Clienti
 
 #Region "Modifica - (Condivisa) "
             ' TabPage.
-            'g_frmMain.eui_StrumentiModifica.Visible = True
+            g_frmMain.eui_StrumentiModifica.Visible = True
 
-            '' Dati.
-            'g_frmMain.eui_Strumenti_Nuovo.Visible = True
-            'g_frmMain.eui_Strumenti_Modifica.Visible = True
-            'g_frmMain.eui_Strumenti_Duplica.Visible = True
-            'g_frmMain.eui_Strumenti_Elimina.Visible = True
-            'g_frmMain.eui_Strumenti_Annulla.Visible = False
-            'g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
 
-            '' Esporta.
-            'g_frmMain.eui_Strumenti_Esporta.Visible = True
-            'g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
-            'g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
-            'g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
-            '' Stampa.
-            'g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
-            'g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Aziende
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Fornitori
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.CatPiatti
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Camerieri
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.AgenzieCamerieri
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Sale
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Tavoli
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
+         Case Elenco.Camere
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
 
 #End Region
 
@@ -7770,23 +8214,9 @@ Public Class frmElencoDati
 #End Region
 
 
-         Case Elenco.Aziende
-
-         Case Elenco.Fornitori
-
-         Case Elenco.CatPiatti
-
-         Case Elenco.Camerieri
-
-         Case Elenco.AgenzieCamerieri
-
-         Case Elenco.Sale
-
-         Case Elenco.Tavoli
-
-         Case Elenco.Camere
-
          Case Elenco.StatoPren
+
+            ' TODO_A: Ripartire da qui!
 
          Case Elenco.Operatori
 
@@ -7803,7 +8233,7 @@ Public Class frmElencoDati
       End Select
 
       ' Serve ad attivare/disattivare i vari comandi in base ai dati visualizzati.
-      'AggiornaDati()
+      AggiornaDati()
 
 #End Region
 
@@ -7815,7 +8245,7 @@ Public Class frmElencoDati
 #Region "Strumenti di Modifica - (Condivisa) "
 
       ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
-      'g_frmMain.rtgStrumentiModifica.Visible = False
+      g_frmMain.rtgStrumentiModifica.Visible = False
 
 #End Region
 
@@ -7979,7 +8409,7 @@ Public Class frmElencoDati
          g_frmMain.RegistraOperazione(TipoOperazione.Apri, strDescrizione, strModulo)
 
          ' Imposta lo stato attivo per la griglia dati.
-         DataGrid1.Focus()
+         DataGridView1.Focus()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -8153,57 +8583,67 @@ Public Class frmElencoDati
    Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
       Select Case e.Button.Tag
          Case "Nuovo"
-            ' Registra loperazione efettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
+            '' Registra loperazione efettuata dall'operatore identificato.
+            'g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
 
-            ' Apre la finestra per l'inserimento di nuovi dati.
-            ApriDati("")
+            '' Apre la finestra per l'inserimento di nuovi dati.
+            'ApriDati("")
 
-            ' Se nella tabella non ci sono record disattiva i pulsanti.
-            ConvalidaDati()
+            '' Se nella tabella non ci sono record disattiva i pulsanti.
+            'ConvalidaDati()
+
+            Nuovo()
 
          Case "Modifica"
-            ' Registra loperazione efettuata dall'operatore identificato.
-            RegistraModifica()
+            '' Registra loperazione efettuata dall'operatore identificato.
+            'RegistraModifica()
 
-            ' Apre la finestra per l'inserimento di nuovi dati.
-            ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+            '' Apre la finestra per l'inserimento di nuovi dati.
+            'ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+
+            Modifica()
 
          Case "Elimina"
-            ' Elimina il valore selezionato.
-            EliminaDati(NomeTabella, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
+            '' Elimina il valore selezionato.
+            'EliminaDati(NomeTabella, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
 
-            If TipoElenco = Elenco.Prenotazioni Then
-               Dim nomeTavolo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
+            'If TipoElenco = Elenco.Prenotazioni Then
+            '   Dim nomeTavolo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
 
-               ' Cancella il colore di eventuali prenotazioni non più valide.
-               ModificaStatoColoreTavolo(TAB_TAVOLI, LeggiIdRisorsa(TAB_TAVOLI, nomeTavolo), Color.MediumSeaGreen)
-            End If
+            '   ' Cancella il colore di eventuali prenotazioni non più valide.
+            '   ModificaStatoColoreTavolo(TAB_TAVOLI, LeggiIdRisorsa(TAB_TAVOLI, nomeTavolo), Color.MediumSeaGreen)
+            'End If
+
+            Elimina()
 
          Case "Carico"
-            Dim frm As New CaricoScarico("Carico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 10),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
-            frm.ShowDialog()
+            'Dim frm As New CaricoScarico("Carico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 10),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
+            'frm.ShowDialog()
+
+            CaricoMagazzino()
 
          Case "Scarico"
-            Dim frm As New CaricoScarico("Scarico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8), ,
-                                                   DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
-            frm.ShowDialog()
+            'Dim frm As New CaricoScarico("Scarico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8), ,
+            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
+            'frm.ShowDialog()
+
+            ScaricoMagazzino()
 
          Case "Stampa"
             ' Registra loperazione efettuata dall'operatore identificato.
@@ -8242,9 +8682,7 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoAgenzieCamerieri(repSql, PERCORSO_REP_CAMERIERI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
+                  MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
                Case Elenco.Sale
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -8319,7 +8757,7 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
-                  AnteprimaDiStampaAgenzieCamerieri(PERCORSO_REP_CAMERIERI_A4, TAB_CAMERIERI, repSql)
+                  MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
                Case Elenco.Sale
                   AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)
@@ -8474,7 +8912,7 @@ Public Class frmElencoDati
       ' Visualizza un'intestazione per la griglia dati.
       AggIntGriglia()
 
-      'ImpostaComandoElimina()
+      ImpostaComandoElimina()
    End Sub
 
    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
@@ -8483,7 +8921,7 @@ Public Class frmElencoDati
          RegistraModifica()
 
          ' Apre la finestra Cliente per la modifica dei dati.
-         ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
+         ApriDati(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
       End If
    End Sub
 
@@ -8507,11 +8945,72 @@ Public Class frmElencoDati
 
    Public Sub Modifica()
       Try
-         ' Registra loperazione efettuata dall'operatore identificato.
+         ' Registra loperazione effettuata dall'operatore identificato.
          RegistraModifica()
 
          ' Apre la finestra per l'inserimento di nuovi dati.
          ApriDati(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub Elimina()
+      Try
+         ' Elimina il valore selezionato.
+         EliminaDati(NomeTabella, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value)
+
+         If TipoElenco = Elenco.Prenotazioni Then
+            Dim nomeTavolo As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            ' Cancella il colore di eventuali prenotazioni non più valide.
+            ModificaStatoColoreTavolo(TAB_TAVOLI, LeggiIdRisorsa(TAB_TAVOLI, nomeTavolo), Color.MediumSeaGreen)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub CaricoMagazzino()
+      Try
+         Dim frm As New CaricoScarico("Carico", DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(10, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value)
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub ScaricoMagazzino()
+      Try
+         Dim frm As New CaricoScarico("Scarico", DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(10, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value)
+         frm.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -8525,10 +9024,13 @@ Public Class frmElencoDati
          Dim Risposta As Short
          Dim cliente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString & " " & DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-         ' Chiede conferma per l'eliminazione.
-         Risposta = MsgBox("Si desidera duplicare il cliente '" & cliente & "'?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare il cliente '" & cliente & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
 
          If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
 
             Dim CClienti As New Anagrafiche.Cliente(ConnString)
 
@@ -8544,10 +9046,311 @@ Public Class frmElencoDati
             AggiornaDati()
 
             MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
 
-            ' TODO: Da sviluppare!
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiAziende()
+      Try
+         Dim Risposta As Short
+         Dim azienda As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare l'azienda '" & azienda & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
             ' Registra loperazione effettuata dall'operatore identificato.
-            'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+            RegistraDuplica()
+
+            Dim CAzienda As New Anagrafiche.AziendaCliente(ConnString)
+
+            With CAzienda
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_AZIENDE, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_AZIENDE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiFornitori()
+      Try
+         Dim Risposta As Short
+         Dim fornitore As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare il fornitore '" & fornitore & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CFornitore As New Anagrafiche.AziendaCliente(ConnString)
+
+            With CFornitore
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_FORNITORI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_FORNITORI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiCategoriePiatti()
+      Try
+         Dim Risposta As Short
+         Dim catPiatti As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_CAT_PIATTI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la categoria Piatti '" & catPiatti & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CCatPiatti As New CategoriePiatti()
+
+            With CCatPiatti
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_CAT_PIATTI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_CAT_PIATTI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiCamerieri()
+      Try
+         Dim Risposta As Short
+         Dim cameriere As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare il cameriere '" & cameriere & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CCameriere As New Cameriere(ConnStringAnagrafiche)
+
+            With CCameriere
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_CAMERIERI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_CAMERIERI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiAgenzieCamerieri()
+      Try
+         Dim Risposta As Short
+         Dim agenzia As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare l'agenzia '" & agenzia & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CAgenzia As New Anagrafiche.AziendaCliente(ConnString)
+
+            With CAgenzia
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_AGENZIE_CAMERIERI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_AGENZIE_CAMERIERI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiSale()
+      Try
+         Dim Risposta As Short
+         Dim sala As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_SALE)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la Sala '" & sala & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CSala As New Sale()
+
+            With CSala
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_SALE, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_SALE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiTavoli()
+      Try
+         Dim Risposta As Short
+         Dim tavolo As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_TAVOLI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare il Tavolo '" & tavolo & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CTavolo As New Tavoli()
+
+            With CTavolo
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_TAVOLI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_TAVOLI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiCamere()
+      Try
+         Dim Risposta As Short
+         Dim numero As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim camera As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_CAMERE)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la Camera '" & numero & " " & camera & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CCamera As New Camera()
+
+            With CCamera
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_CAMERE, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Numero = "Copia" & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_CAMERE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          End If
 
       Catch ex As Exception

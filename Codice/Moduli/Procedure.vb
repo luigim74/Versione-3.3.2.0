@@ -1468,6 +1468,29 @@ Module Procedure
       End Try
    End Function
 
+   Public Function SommaColonna(ByVal DGrid As DataGridView, ByVal colonna As Integer, ByVal numRighe As Integer) As Integer
+      Try
+         Dim i As Integer = 0
+         Dim val As Integer
+         Dim totVal As Integer
+
+         For i = 0 To numRighe - 1
+            If IsNumeric(DGrid.Item(colonna, i).Value) = True Then
+               val = Convert.ToInt32(DGrid.Item(colonna, i).Value)
+               totVal = totVal + val
+            End If
+         Next
+
+         Return totVal
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+
    Public Function SommaColonna(ByVal lst As ListView, ByVal colonna As Integer) As Double
       Try
          Dim val As Double

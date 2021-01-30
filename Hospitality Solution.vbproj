@@ -1691,6 +1691,9 @@
     <None Include="Codice\DataSet\StatisticheCentroSportivoDataSet.xss">
       <DependentUpon>StatisticheCentroSportivoDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\Frammenti di Codice\CicloForNext.snippet" />
+    <None Include="Codice\Frammenti di Codice\TryCatchEndTry.snippet" />
+    <None Include="Codice\Frammenti di Codice\MessageBox.snippet" />
     <None Include="HsKey.pfx" />
     <None Include="Codice\DataSet\OperatoriDataSet.xsc">
       <DependentUpon>OperatoriDataSet.xsd</DependentUpon>
@@ -1774,8 +1777,6 @@
     <None Include="bin\Android\CHS_ANAG.DB" />
     <None Include="bin\Android\CHS_CMD.DB" />
     <None Include="bin\Android\CHS_TAVOLI.DB" />
-    <None Include="Codice\Code Snippets\CicloForNext.snippet" />
-    <None Include="Codice\Code Snippets\MessageBox.snippet" />
     <None Include="Resources\Windows Notify Messaging.wav" />
     <None Include="Resources\button-50.wav" />
     <None Include="Resources\button-49.wav" />
