@@ -12342,11 +12342,32 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.Nuovo()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               g_frmStatoPren.Nuovo()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.Nuovo()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               g_frmCaratteristicheRisorse.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.Nuovo()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12402,6 +12423,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.Modifica()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               g_frmStatoPren.Modifica()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Modifica il cursore del mouse.
                Cursor.Current = Cursors.AppStarting
@@ -12411,6 +12435,24 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               g_frmCaratteristicheRisorse.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.Modifica()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12463,8 +12505,29 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                g_frmPrenCamere.DuplicaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               g_frmStatoPren.DuplicaDatiStatoPren()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.DuplicaDocumento()
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.DuplicaDatiOperatori()
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.DuplicaDatiGruppi()
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               g_frmCaratteristicheRisorse.DuplicaCaratteristicheRisorse()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.DuplicaDatiPrenTavoli()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.DuplicaDatiPrenSale()
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.DuplicaDatiArticoli()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12513,19 +12576,44 @@ Friend Class frmMain
                g_frmCamere.EliminaDati(frmElencoDati.TAB_CAMERE, g_frmCamere.DataGridView1.Item(0, g_frmCamere.DataGridView1.CurrentCell.RowIndex).Value)
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenCamere.EliminaDati(ElencoPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmSchedinePS.EliminaDati(ElencoSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.DataGrid1.Item(g_frmSchedinePS.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmListiniCamere.EliminaDati(ElencoListiniCamere.TAB_LISTINI, g_frmListiniCamere.DataGrid1.Item(g_frmListiniCamere.DataGrid1.CurrentCell.RowNumber, 0))
+
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               g_frmStatoPren.EliminaDati(frmElencoDati.TAB_STATO_PREN, g_frmStatoPren.DataGridView1.Item(0, g_frmStatoPren.DataGridView1.CurrentCell.RowIndex).Value)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.EliminaDatiDocumento()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmEmail.EliminaDati(ElencoEmail.TAB_EMAIL, g_frmEmail.DataGrid1.Item(g_frmEmail.DataGrid1.CurrentCell.RowNumber, 0))
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.EliminaDati(frmElencoDati.TAB_OPERATORI, g_frmOperatori.DataGridView1.Item(0, g_frmOperatori.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.EliminaDati(frmElencoDati.TAB_GRUPPI, g_frmGruppi.DataGridView1.Item(0, g_frmGruppi.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               g_frmCaratteristicheRisorse.EliminaDati(frmElencoDati.TAB_CARATT_RISORSE, g_frmCaratteristicheRisorse.DataGridView1.Item(0, g_frmCaratteristicheRisorse.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.EliminaDati(frmElencoDati.TAB_PREN, g_frmPren.DataGridView1.Item(0, g_frmPren.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.EliminaDati(frmElencoDati.TAB_PREN_SALE, g_frmPrenSale.DataGridView1.Item(0, g_frmPrenSale.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.EliminaDati(frmElencoDati.TAB_ARTICOLI, g_frmArticoli.DataGridView1.Item(0, g_frmArticoli.DataGridView1.CurrentCell.RowIndex).Value)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12606,11 +12694,32 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.AggiornaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               g_frmStatoPren.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               g_frmCaratteristicheRisorse.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.AggiornaDati()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12648,7 +12757,7 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
                ' TODO: Modificare per AgenzieCamerieri.
-               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
                g_frmSale.AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, g_frmSale.TAB_SALE, g_frmSale.repSql)
@@ -12668,6 +12777,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
@@ -12677,6 +12789,24 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI_A4, g_frmOperatori.TAB_OPERATORI, g_frmOperatori.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI_A4, g_frmGruppi.TAB_GRUPPI, g_frmGruppi.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN_A4, g_frmPren.TAB_PREN, g_frmPren.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE_A4, g_frmPrenSale.TAB_PREN_SALE, g_frmPrenSale.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12721,7 +12851,7 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
                ' TODO: Modificare per AgenzieCamerieri.
-               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
                g_frmSale.AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, g_frmSale.TAB_SALE, g_frmSale.repSql)
@@ -12741,6 +12871,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
                RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
@@ -12750,6 +12883,24 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.AnteprimaDiStampa(PERCORSO_REP_EMAIL_A4, g_frmEmail.TAB_EMAIL, g_frmEmail.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               g_frmOperatori.AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI_A4, g_frmOperatori.TAB_OPERATORI, g_frmOperatori.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               g_frmGruppi.AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI_A4, g_frmGruppi.TAB_GRUPPI, g_frmGruppi.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               g_frmPren.AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN_A4, g_frmPren.TAB_PREN, g_frmPren.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               g_frmPrenSale.AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE_A4, g_frmPrenSale.TAB_PREN_SALE, g_frmPrenSale.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -12796,7 +12947,7 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
                ' TODO: Modificare per AgenzieCamerieri.
-               MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
                If g_frmSale.PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -12828,6 +12979,9 @@ Friend Class frmMain
                   g_frmListiniCamere.StampaElenco(g_frmListiniCamere.repSql, PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmListiniCamere.PrintDialog1.PrinterSettings.Copies)
                End If
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Registra loperazione effettuata dall'operatore identificato.
                RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
@@ -12840,6 +12994,34 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                If g_frmEmail.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmEmail.StampaElenco(g_frmEmail.repSql, PERCORSO_REP_EMAIL_A4, g_frmEmail.PrintDialog1.PrinterSettings.PrinterName, g_frmEmail.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_OPERATORI
+               If g_frmOperatori.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmOperatori.StampaElencoOperatori(g_frmOperatori.repSql, PERCORSO_REP_OPERATORI_A4, g_frmOperatori.PrintDialog1.PrinterSettings.PrinterName, g_frmOperatori.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_GRUPPI
+               If g_frmGruppi.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmGruppi.StampaElencoGruppiOp(g_frmGruppi.repSql, PERCORSO_REP_GRUPPI_A4, g_frmGruppi.PrintDialog1.PrinterSettings.PrinterName, g_frmGruppi.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE
+               MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               If g_frmPren.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmPren.StampaElencoPrenTavoli(g_frmPren.repSql, PERCORSO_REP_PREN_A4, g_frmPren.PrintDialog1.PrinterSettings.PrinterName, g_frmPren.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               If g_frmPrenSale.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmPrenSale.StampaElencoPrenSale(g_frmPrenSale.repSql, PERCORSO_REP_PREN_SALE_A4, g_frmPrenSale.PrintDialog1.PrinterSettings.PrinterName, g_frmPrenSale.PrintDialog1.PrinterSettings.Copies)
+               End If
+
+            Case TITOLO_FINESTRA_ELENCO_ARTICOLI
+               If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
                End If
 
                ' Inserire qui il codice per gestire le altre finestre.
@@ -12864,6 +13046,28 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPrenSale.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
 
                sender.Pressed = True
@@ -12925,6 +13129,26 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPrenSale.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False
@@ -12982,6 +13206,26 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPrenSale.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False
@@ -13039,6 +13283,24 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Terminate.Pressed = False
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPrenSale.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False
@@ -13048,7 +13310,6 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Partenza.Pressed = False
                eui_Strumenti_Periodo_NonAssegnate.Pressed = False
                eui_Strumenti_Periodo_Terminate.Pressed = False
-
                g_frmPrenCamere.AggiornaDatiPeriodo()
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
@@ -13186,6 +13447,26 @@ Friend Class frmMain
 
          ' Richiama la procedura per la modifica dei dati del form attivo.
          Select Case frmAttivo
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPren.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               g_frmPrenSale.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
                sender.Pressed = True
                eui_Strumenti_Periodo_Tutte.Pressed = False

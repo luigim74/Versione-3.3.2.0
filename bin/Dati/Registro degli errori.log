@@ -267,3 +267,276 @@ Nome parametro: index"
    in Hospitality_Solution.Procedure.SommaColonna(DataGridView DGrid, Int32 colonna, Int32 numRighe)"
 "
 "
+"*** 01/02/2021 - 20:35:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:35:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:35:52 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 01/02/2021 - 20:35:56 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:35:57 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:35:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:36:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 20:36:14 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 01/02/2021 - 21:06:13 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e)"
+"
+"
+"*** 01/02/2021 - 21:06:21 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e)"
+"
+"
+"*** 01/02/2021 - 21:06:25 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmMain.eui_Strumenti_Elimina_Click(Object sender, EventArgs e)"
+"
+"
+"*** 02/02/2021 - 19:30:21 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:30:29 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:30:31 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 02/02/2021 - 19:30:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:30:34 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:30:35 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:31:06 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:31:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:31:09 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 02/02/2021 - 19:31:10 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:31:11 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:31:12 ***"
+"- DESCRIZIONE ERRORE: Impossibile leggere dati da un DataGrid non associato a un DataTable."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGrid.EnsureBound()
+   in System.Windows.Forms.DataGrid.get_Item(Int32 rowIndex, Int32 columnIndex)
+   in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:40:38 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:40:43 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:40:44 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:41:36 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:42:24 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:42:59 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:46:55 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:47:00 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 02/02/2021 - 19:47:03 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmElencoDati.ImpostaComandoElimina()"
+"
+"
+"*** 06/02/2021 - 16:11:35 ***"
+"- DESCRIZIONE ERRORE: Il valore specificato per CellTemplate deve essere di tipo System.Windows.Forms.DataGridViewLinkCell o derivare da esso."
+"- NOME PROCEDURA:    in System.Windows.Forms.DataGridViewLinkColumn.set_CellTemplate(DataGridViewCell value)
+   in Hospitality_Solution.frmElencoDati.CreaColonnePren(String tabella)"
+"
+"
+"*** 06/02/2021 - 16:11:42 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 06/02/2021 - 18:04:38 ***"
+"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Articoli.InserisciDati(String tabella)"
+"
+"
+"*** 06/02/2021 - 18:07:02 ***"
+"- DESCRIZIONE ERRORE: L'apporto modifiche non è riuscito perché si è cercato di duplicare i valori nell'indice, nella chiave primaria o nella relazione. Modificare i dati nel campo o nei campi che contengono dati duplicati, rimuovere l'indice o ridefinire l'indice per consentire l'inserimento di voci duplicate, quindi ritentare l'operazione."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Articoli.ModificaDati(String tabella, String codice)"
+"
+"

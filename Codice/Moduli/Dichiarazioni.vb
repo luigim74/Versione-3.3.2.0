@@ -420,7 +420,13 @@ Module Dichiarazioni
    Public Const TITOLO_FINESTRA_ELENCO_SALE As String = "Elenco Sale"
    Public Const TITOLO_FINESTRA_ELENCO_TAVOLI As String = "Elenco Tavoli"
    Public Const TITOLO_FINESTRA_ELENCO_CAMERE As String = "Elenco Camere"
-
+   Public Const TITOLO_FINESTRA_ELENCO_STATO_PREN As String = "Elenco Stato prenotazione"
+   Public Const TITOLO_FINESTRA_ELENCO_OPERATORI As String = "Elenco Operatori"
+   Public Const TITOLO_FINESTRA_ELENCO_GRUPPI As String = "Elenco Gruppi operatori"
+   Public Const TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE As String = "Elenco Tipologie di utilizzo Risorse"
+   Public Const TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI As String = "Elenco prenotazioni Tavoli"
+   Public Const TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE As String = "Elenco prenotazioni Sale"
+   Public Const TITOLO_FINESTRA_ELENCO_ARTICOLI As String = "Elenco Articoli e Ingredienti"
 
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"

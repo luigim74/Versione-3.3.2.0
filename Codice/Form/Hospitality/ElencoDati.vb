@@ -111,12 +111,12 @@ Public Class frmElencoDati
          Case Elenco.Prenotazioni
             TipoElenco = Elenco.Prenotazioni
             NomeTabella = "Prenotazioni"
-            TitoloFinestra = "Elenco prenotazione Tavoli"
+            TitoloFinestra = "Elenco prenotazioni Tavoli"
 
          Case Elenco.PrenSale
             TipoElenco = Elenco.PrenSale
             NomeTabella = "PrenSale"
-            TitoloFinestra = "Elenco prenotazione Sale"
+            TitoloFinestra = "Elenco prenotazioni Sale"
 
          Case Elenco.Camerieri
             TipoElenco = Elenco.Camerieri
@@ -2865,20 +2865,23 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Private Sub ImpostaComandoElimina()
       Try
          Select Case NomeTabella
             Case TAB_OPERATORI, TAB_GRUPPI
-               Dim idUtente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)
+
+               Dim idUtente As String = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
                If idUtente = "1" Then
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
                Else
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
                End If
 
          End Select
+
+      Catch ex As NullReferenceException
+         Exit Sub
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -4197,13 +4200,13 @@ Public Class frmElencoDati
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, emailStyle)
 
          ' Stato prenotazione
-         Dim statoStyle As New DataGridViewLinkColumn()
+         Dim statoStyle As New DataGridViewTextBoxColumn()
          With statoStyle
             .DataPropertyName = "Stato"
             .HeaderText = "Stato prenotazione"
             .Name = "Stato"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-            .CellTemplate = New DataGridViewLinkCell()
+            .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
@@ -4417,13 +4420,13 @@ Public Class frmElencoDati
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, oraFineStyle)
 
          ' Stato prenotazione
-         Dim statoStyle As New DataGridViewLinkColumn()
+         Dim statoStyle As New DataGridViewTextBoxColumn()
          With statoStyle
             .DataPropertyName = "Stato"
             .HeaderText = "Stato prenotazione"
             .Name = "Stato"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-            .CellTemplate = New DataGridViewLinkCell()
+            .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
@@ -7155,7 +7158,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaPrenTavoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaPrenTavoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7182,7 +7185,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaPrenSale(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaPrenSale(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7209,7 +7212,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaGruppiOp(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaGruppiOp(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7236,7 +7239,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaOperatori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaOperatori(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7263,7 +7266,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub AnteprimaDiStampaArticoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
+   Public Sub AnteprimaDiStampaArticoli(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
 
@@ -7570,7 +7573,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoPrenTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoPrenTavoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7598,7 +7601,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoPrenSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoPrenSale(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7626,7 +7629,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoGruppiOp(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoGruppiOp(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7654,7 +7657,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoOperatori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoOperatori(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -7682,7 +7685,7 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub StampaElencoArticoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
+   Public Sub StampaElencoArticoli(ByVal sqlRep As String, ByVal nomeDoc As String, ByVal nomeStampante As String, ByVal numCopie As Short)
       Try
          'Utilizzare il modello di oggetti ADO .NET per impostare le informazioni di connessione. 
          Dim cn As New OleDbConnection(ConnString)
@@ -8213,22 +8216,345 @@ Public Class frmElencoDati
 
 #End Region
 
-
          Case Elenco.StatoPren
 
-            ' TODO_A: Ripartire da qui!
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
 
          Case Elenco.Operatori
 
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
          Case Elenco.Gruppi
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
 
          Case Elenco.CaratteristicheRisorse
 
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
          Case Elenco.Prenotazioni
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = True
+
+            ' Periodo.
+            g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
+
+            ' Visualizza.
+            g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
+            g_frmMain.eui_rib_Visualizza.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
 
          Case Elenco.PrenSale
 
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = True
+
+            ' Periodo.
+            g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
+            g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+            g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
+
+            ' Visualizza.
+            g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
+            g_frmMain.eui_rib_Visualizza.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
+
          Case Elenco.Articoli
+
+#Region "Modifica - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiModifica.Visible = True
+
+            ' Dati.
+            g_frmMain.eui_Strumenti_Nuovo.Visible = True
+            g_frmMain.eui_Strumenti_Modifica.Visible = True
+            g_frmMain.eui_Strumenti_Duplica.Visible = True
+            g_frmMain.eui_Strumenti_Elimina.Visible = True
+            g_frmMain.eui_Strumenti_Annulla.Visible = False
+            g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+            ' Esporta.
+            g_frmMain.eui_Strumenti_Esporta.Visible = True
+            g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+            g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Stampa.
+            g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
+            g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
+
+#End Region
+
+#Region "Periodo - (Condivisa) "
+            ' TabPage.
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
+
+#End Region
+
+#Region "Documenti "
+            ' TabPage.
+            g_frmMain.eui_StrumentiDocumenti.Visible = False
+
+#End Region
+
+#Region "Sospesi / Buoni pasto "
+            ' TabPage.
+            g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
+
+#End Region
 
       End Select
 
@@ -8682,7 +9008,7 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
-                  MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Sale
                   If PrintDialog1.ShowDialog() = DialogResult.OK Then
@@ -8757,7 +9083,7 @@ Public Class frmElencoDati
 
                Case Elenco.AgenzieCamerieri
                   ' TODO: Modificare per AgenzieCamerieri.
-                  MessageBox.Show("Report non disponibile!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                Case Elenco.Sale
                   AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)
@@ -9345,6 +9671,280 @@ Public Class frmElencoDati
 
                ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
                .InserisciDati(TAB_CAMERE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiStatoPren()
+      Try
+         Dim Risposta As Short
+         Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_STATO_PREN)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare lo Stato prenotazione '" & descrizione & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CStatoPren As New StatoPren()
+
+            With CStatoPren
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_STATO_PREN, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_STATO_PREN)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiOperatori()
+      Try
+         Dim Risposta As Short
+         Dim nomeUtente As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_OPERATORI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare l'operatore '" & nomeUtente & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim COperatori As New Operatori()
+
+            With COperatori
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_OPERATORI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .NomeUtente = .NomeUtente & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_OPERATORI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiGruppi()
+      Try
+         Dim Risposta As Short
+         Dim nomeGruppo As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_GRUPPI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare il Gruppo '" & nomeGruppo & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CGruppi As New Gruppi()
+
+            With CGruppi
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_GRUPPI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .NomeGruppo = .NomeGruppo & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_GRUPPI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaCaratteristicheRisorse()
+      Try
+         Dim Risposta As Short
+         Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_CARATT_RISORSE)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la Tipologia di utillizzo Risorsa '" & descrizione & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CCaratteristicheRisorse As New CaratteristicheRisorse()
+
+            With CCaratteristicheRisorse
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_CARATT_RISORSE, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_CARATT_RISORSE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiPrenTavoli()
+      Try
+         Dim Risposta As Short
+         Dim numero As String = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim cliente As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la prenotazione N. " & numero & " del cliente '" & cliente & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CPrenTavoli As New Prenotazione()
+
+            With CPrenTavoli
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_PREN, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_PREN)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiPrenSale()
+      Try
+         Dim Risposta As Short
+         Dim numero As String = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim cliente As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare la prenotazione N. " & numero & " del cliente '" & cliente & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CPrenSale As New PrenSale()
+
+            With CPrenSale
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_PREN_SALE, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_PREN_SALE)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub DuplicaDatiArticoli()
+      Try
+         Dim Risposta As Short
+         Dim descrizione As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_ARTICOLI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare l'articolo '" & descrizione & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CArticolo As New Articoli()
+
+            With CArticolo
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_ARTICOLI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               .Codice = .Codice & " - Copia " & (ultimoCodice + 1).ToString
+               .CodBarre = String.Empty
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_ARTICOLI)
             End With
 
             ' Aggiorna l'elenco dati con il record nuovo.
