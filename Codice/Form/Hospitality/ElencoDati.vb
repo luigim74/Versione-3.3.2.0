@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 23/01/2021
+' Data ultima modifica: 13/02/2021
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -191,59 +191,17 @@ Public Class frmElencoDati
    'PuÚ essere modificata in Progettazione Windows Form.  
    'Non modificarla nell'editor del codice.
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Friend WithEvents ToolBarButton4 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents ToolBarButton7 As System.Windows.Forms.ToolBarButton
-   Public WithEvents ToolBar1 As System.Windows.Forms.ToolBar
-   Public WithEvents DataGrid1 As System.Windows.Forms.DataGrid
-   Friend WithEvents ToolBarButton1 As System.Windows.Forms.ToolBarButton
    Friend WithEvents Panel1 As System.Windows.Forms.Panel
    Friend WithEvents Label1 As System.Windows.Forms.Label
    Friend WithEvents Label2 As System.Windows.Forms.Label
    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-   Friend WithEvents tbSep As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbSep1 As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrNuovo As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrModifica As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrElimina As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrCarico As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrScarico As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrEtichette As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrPrimo As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrPrecedente As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrSuccessivo As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrUltimo As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrAggiorna As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrAnteprima As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrStampa As System.Windows.Forms.ToolBarButton
-   Friend WithEvents tbrInserisci As System.Windows.Forms.ToolBarButton
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmElencoDati))
       Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Me.ToolBar1 = New System.Windows.Forms.ToolBar()
-      Me.tbrNuovo = New System.Windows.Forms.ToolBarButton()
-      Me.tbrModifica = New System.Windows.Forms.ToolBarButton()
-      Me.tbrElimina = New System.Windows.Forms.ToolBarButton()
-      Me.tbSep = New System.Windows.Forms.ToolBarButton()
-      Me.tbrCarico = New System.Windows.Forms.ToolBarButton()
-      Me.tbrScarico = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton4 = New System.Windows.Forms.ToolBarButton()
-      Me.tbrPrimo = New System.Windows.Forms.ToolBarButton()
-      Me.tbrPrecedente = New System.Windows.Forms.ToolBarButton()
-      Me.tbrSuccessivo = New System.Windows.Forms.ToolBarButton()
-      Me.tbrUltimo = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton7 = New System.Windows.Forms.ToolBarButton()
-      Me.tbrAggiorna = New System.Windows.Forms.ToolBarButton()
-      Me.ToolBarButton1 = New System.Windows.Forms.ToolBarButton()
-      Me.tbrAnteprima = New System.Windows.Forms.ToolBarButton()
-      Me.tbrStampa = New System.Windows.Forms.ToolBarButton()
-      Me.tbSep1 = New System.Windows.Forms.ToolBarButton()
-      Me.tbrEtichette = New System.Windows.Forms.ToolBarButton()
-      Me.tbrInserisci = New System.Windows.Forms.ToolBarButton()
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.DataGrid1 = New System.Windows.Forms.DataGrid()
       Me.Panel1 = New System.Windows.Forms.Panel()
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
@@ -254,157 +212,9 @@ Public Class frmElencoDati
       Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel1.SuspendLayout()
       CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
-      '
-      'ToolBar1
-      '
-      Me.ToolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
-      Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.tbrNuovo, Me.tbrModifica, Me.tbrElimina, Me.tbSep, Me.tbrCarico, Me.tbrScarico, Me.ToolBarButton4, Me.tbrPrimo, Me.tbrPrecedente, Me.tbrSuccessivo, Me.tbrUltimo, Me.ToolBarButton7, Me.tbrAggiorna, Me.ToolBarButton1, Me.tbrAnteprima, Me.tbrStampa, Me.tbSep1, Me.tbrEtichette, Me.tbrInserisci})
-      Me.ToolBar1.Divider = False
-      Me.ToolBar1.DropDownArrows = True
-      Me.ToolBar1.ImageList = Me.ImageList1
-      Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
-      Me.ToolBar1.Name = "ToolBar1"
-      Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(736, 26)
-      Me.ToolBar1.TabIndex = 1
-      Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
-      Me.ToolBar1.Wrappable = False
-      '
-      'tbrNuovo
-      '
-      Me.tbrNuovo.ImageIndex = 0
-      Me.tbrNuovo.Name = "tbrNuovo"
-      Me.tbrNuovo.Tag = "Nuovo"
-      Me.tbrNuovo.Text = "Nuovo"
-      Me.tbrNuovo.ToolTipText = "Nuovo"
-      '
-      'tbrModifica
-      '
-      Me.tbrModifica.ImageIndex = 1
-      Me.tbrModifica.Name = "tbrModifica"
-      Me.tbrModifica.Tag = "Modifica"
-      Me.tbrModifica.Text = "Apri"
-      Me.tbrModifica.ToolTipText = "Apri"
-      '
-      'tbrElimina
-      '
-      Me.tbrElimina.ImageIndex = 2
-      Me.tbrElimina.Name = "tbrElimina"
-      Me.tbrElimina.Tag = "Elimina"
-      Me.tbrElimina.Text = "Elimina"
-      Me.tbrElimina.ToolTipText = "Elimina"
-      '
-      'tbSep
-      '
-      Me.tbSep.Name = "tbSep"
-      Me.tbSep.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      Me.tbSep.Visible = False
-      '
-      'tbrCarico
-      '
-      Me.tbrCarico.ImageIndex = 10
-      Me.tbrCarico.Name = "tbrCarico"
-      Me.tbrCarico.Tag = "Carico"
-      Me.tbrCarico.Text = "Carico"
-      Me.tbrCarico.ToolTipText = "Carico"
-      Me.tbrCarico.Visible = False
-      '
-      'tbrScarico
-      '
-      Me.tbrScarico.ImageIndex = 11
-      Me.tbrScarico.Name = "tbrScarico"
-      Me.tbrScarico.Tag = "Scarico"
-      Me.tbrScarico.Text = "Scarico"
-      Me.tbrScarico.ToolTipText = "Scarico"
-      Me.tbrScarico.Visible = False
-      '
-      'ToolBarButton4
-      '
-      Me.ToolBarButton4.Name = "ToolBarButton4"
-      Me.ToolBarButton4.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbrPrimo
-      '
-      Me.tbrPrimo.ImageIndex = 3
-      Me.tbrPrimo.Name = "tbrPrimo"
-      Me.tbrPrimo.Tag = "Primo"
-      Me.tbrPrimo.ToolTipText = "Prima pagina"
-      '
-      'tbrPrecedente
-      '
-      Me.tbrPrecedente.ImageIndex = 4
-      Me.tbrPrecedente.Name = "tbrPrecedente"
-      Me.tbrPrecedente.Tag = "Precedente"
-      Me.tbrPrecedente.ToolTipText = "Pagina precedente "
-      '
-      'tbrSuccessivo
-      '
-      Me.tbrSuccessivo.ImageIndex = 5
-      Me.tbrSuccessivo.Name = "tbrSuccessivo"
-      Me.tbrSuccessivo.Tag = "Successivo"
-      Me.tbrSuccessivo.ToolTipText = "Pagina successiva"
-      '
-      'tbrUltimo
-      '
-      Me.tbrUltimo.ImageIndex = 6
-      Me.tbrUltimo.Name = "tbrUltimo"
-      Me.tbrUltimo.Tag = "Ultimo"
-      Me.tbrUltimo.ToolTipText = "Ultima pagina"
-      '
-      'ToolBarButton7
-      '
-      Me.ToolBarButton7.Name = "ToolBarButton7"
-      Me.ToolBarButton7.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbrAggiorna
-      '
-      Me.tbrAggiorna.ImageIndex = 7
-      Me.tbrAggiorna.Name = "tbrAggiorna"
-      Me.tbrAggiorna.Tag = "Aggiorna"
-      Me.tbrAggiorna.ToolTipText = "Aggiorna"
-      '
-      'ToolBarButton1
-      '
-      Me.ToolBarButton1.Name = "ToolBarButton1"
-      Me.ToolBarButton1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      '
-      'tbrAnteprima
-      '
-      Me.tbrAnteprima.ImageIndex = 8
-      Me.tbrAnteprima.Name = "tbrAnteprima"
-      Me.tbrAnteprima.Tag = "Anteprima"
-      Me.tbrAnteprima.ToolTipText = "Anteprima di stampa"
-      '
-      'tbrStampa
-      '
-      Me.tbrStampa.ImageIndex = 9
-      Me.tbrStampa.Name = "tbrStampa"
-      Me.tbrStampa.Tag = "Stampa"
-      Me.tbrStampa.ToolTipText = "Stampa"
-      '
-      'tbSep1
-      '
-      Me.tbSep1.Name = "tbSep1"
-      Me.tbSep1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      Me.tbSep1.Visible = False
-      '
-      'tbrEtichette
-      '
-      Me.tbrEtichette.ImageIndex = 12
-      Me.tbrEtichette.Name = "tbrEtichette"
-      Me.tbrEtichette.Tag = "Etichette"
-      Me.tbrEtichette.ToolTipText = "Etichette indirizzi per spedizione"
-      Me.tbrEtichette.Visible = False
-      '
-      'tbrInserisci
-      '
-      Me.tbrInserisci.Name = "tbrInserisci"
-      Me.tbrInserisci.Tag = ""
-      Me.tbrInserisci.Visible = False
       '
       'ImageList1
       '
@@ -424,21 +234,6 @@ Public Class frmElencoDati
       Me.ImageList1.Images.SetKeyName(11, "")
       Me.ImageList1.Images.SetKeyName(12, "")
       '
-      'DataGrid1
-      '
-      Me.DataGrid1.BackgroundColor = System.Drawing.Color.White
-      Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
-      Me.DataGrid1.CaptionBackColor = System.Drawing.Color.Gray
-      Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
-      Me.DataGrid1.DataMember = ""
-      Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(5, 379)
-      Me.DataGrid1.Name = "DataGrid1"
-      Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(704, 40)
-      Me.DataGrid1.TabIndex = 1
-      Me.DataGrid1.Visible = False
-      '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
@@ -448,9 +243,9 @@ Public Class frmElencoDati
       Me.Panel1.Controls.Add(Me.Label2)
       Me.Panel1.Controls.Add(Me.Label1)
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-      Me.Panel1.Location = New System.Drawing.Point(0, 26)
+      Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(736, 35)
+      Me.Panel1.Size = New System.Drawing.Size(752, 37)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -470,7 +265,7 @@ Public Class frmElencoDati
       Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(595, 8)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(611, 8)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -483,7 +278,7 @@ Public Class frmElencoDati
       Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(386, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(402, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
@@ -493,7 +288,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(506, 8)
+      Me.Label2.Location = New System.Drawing.Point(522, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -529,9 +324,6 @@ Public Class frmElencoDati
       Me.DataGridView1.AllowUserToDeleteRows = False
       DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
       Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-      Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
       DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -543,32 +335,29 @@ Public Class frmElencoDati
       DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
       Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+      Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(0, 63)
+      Me.DataGridView1.Location = New System.Drawing.Point(0, 41)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(734, 320)
+      Me.DataGridView1.Size = New System.Drawing.Size(752, 360)
       Me.DataGridView1.TabIndex = 0
       '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(736, 385)
+      Me.ClientSize = New System.Drawing.Size(752, 401)
       Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.DataGrid1)
-      Me.Controls.Add(Me.ToolBar1)
       Me.Controls.Add(Me.DataGridView1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.Name = "frmElencoDati"
       Me.ShowInTaskbar = False
       Me.Text = "Elenco"
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.Panel1.ResumeLayout(False)
       Me.Panel1.PerformLayout()
       CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
-      Me.PerformLayout()
 
    End Sub
 
@@ -1298,177 +1087,207 @@ Public Class frmElencoDati
          Select Case wnd
             Case Finestra.Aziende
                If operatore.AnagAziende = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Camerieri
                If operatore.AnagCamerieri = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.AgenzieCamerieri
                If operatore.AnagAgenzieCamerieri = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.CatPiatti
                If operatore.AnagCatPiatti = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Clienti
                If operatore.AnagClienti = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Fornitori
                If operatore.AnagFornitori = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Sale
                If operatore.AnagSale = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Tavoli
                If operatore.AnagTavoli = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Camere
                If operatore.AnagCamere = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.StatoPren
                If operatore.TabStatoPren = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Articoli
                If operatore.MagArticoli = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
-                  tbrCarico.Enabled = False
-                  tbrScarico.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
+                  g_frmMain.eui_Strumenti_Magazzino_Carico.Enabled = False
+                  g_frmMain.eui_Strumenti_Magazzino_Scarico.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
-                  tbrCarico.Enabled = True
-                  tbrScarico.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
+                  g_frmMain.eui_Strumenti_Magazzino_Carico.Enabled = True
+                  g_frmMain.eui_Strumenti_Magazzino_Scarico.Enabled = True
                End If
 
             Case Finestra.PrenTavoli
                If operatore.GestPrenTavoli = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.PrenSale
                If operatore.GestPrenSale = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Operatori
                If operatore.GestOperatori = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
             Case Finestra.Gruppi
                If operatore.GestGruppi = VALORE_LETTURA Then
-                  tbrNuovo.Enabled = False
-                  tbrModifica.Enabled = False
-                  tbrElimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
                Else
-                  tbrNuovo.Enabled = True
-                  tbrModifica.Enabled = True
-                  tbrElimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
                ' A_TODO: Inserire qui il codice per gestire la finestra Caratteristiche Risorse.
          End Select
 
-         Return tbrNuovo.Enabled
+         Return g_frmMain.eui_Strumenti_Nuovo.Enabled
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1478,98 +1297,6 @@ Public Class frmElencoDati
       End Try
 
    End Function
-
-   Public Sub _RegistraModifica()
-      Try
-         Dim strDescrizione As String
-
-         Select Case TipoElenco
-            Case Elenco.Clienti
-               ' Registra l'operazione.
-               Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
-               strDescrizione = "(" & Cognome & " " & Nome & ")"
-
-            Case Elenco.Aziende
-               ' Registra l'operazione.
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               strDescrizione = "(" & ragSoc & ")"
-
-            Case Elenco.Fornitori
-               ' Registra l'operazione.
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & ragSoc & ")"
-
-            Case Elenco.Prenotazioni, Elenco.PrenSale
-               ' Registra l'operazione.
-               Dim Cliente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               strDescrizione = "(" & Cliente & ")"
-
-            Case Elenco.CatPiatti
-               ' Registra l'operazione.
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & descrizione & ")"
-
-            Case Elenco.Camerieri
-               ' Registra l'operazione.
-               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & Nome & ")"
-
-            Case Elenco.AgenzieCamerieri
-               ' Registra l'operazione.
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & ragSoc & ")"
-
-            Case Elenco.Sale
-               ' Registra l'operazione.
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & descrizione & ")"
-
-            Case Elenco.Tavoli
-               ' Registra l'operazione.
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & descrizione & ")"
-
-            Case Elenco.Camere
-               ' Registra l'operazione.
-               Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               strDescrizione = "(" & numero & " - " & descrizione & ")"
-
-            Case Elenco.StatoPren
-               ' Registra l'operazione.
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & descrizione & ")"
-
-            Case Elenco.Articoli
-               ' Registra l'operazione.
-               Dim codice As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
-               strDescrizione = "(" & codice & " - " & descrizione & ")"
-
-            Case Elenco.Operatori
-               ' Registra l'operazione.
-               Dim nomeUtente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & nomeUtente & ")"
-
-            Case Elenco.Gruppi
-               ' Registra l'operazione.
-               Dim nomeGruppo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               strDescrizione = "(" & nomeGruppo & ")"
-
-               ' A_TODO: Inserire qui il codice per gestire la finestra Caratteristiche Risorse.
-
-         End Select
-
-         ' Registra loperazione effettuata dall'operatore identificato.
-         g_frmMain.RegistraOperazione(TipoOperazione.Modifica, strDescrizione, strModulo)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
 
    Public Sub RegistraModifica()
       Try
@@ -1823,11 +1550,11 @@ Public Class frmElencoDati
          ' Salva il numero di pagina corrente.
          pagCorrente = n
 
-         ' Abilita/disabilita i pulsanti.
-         tbrPrimo.Enabled = (n > 1)
-         tbrPrecedente.Enabled = (n > 1)
-         tbrSuccessivo.Enabled = (n < numPagine)
-         tbrUltimo.Enabled = (n < numPagine)
+         ' Abilita/disabilita i pulsanti. Utilizzato nelle vecchia versione.
+         'tbrPrimo.Enabled = (n > 1)
+         'tbrPrecedente.Enabled = (n > 1)
+         'tbrSuccessivo.Enabled = (n < numPagine)
+         'tbrUltimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1837,253 +1564,6 @@ Public Class frmElencoDati
          ' Chiude la connessione.
          cn.Close()
 
-      End Try
-   End Sub
-
-   Public Sub _EliminaDati(ByVal tabella As String, ByVal id As Integer)
-      Try
-         Dim Risposta As Short
-         Dim sql As String
-         Dim strDescrizione As String
-
-         Select Case TipoElenco
-            Case Elenco.Clienti
-               Dim Cognome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & Cognome & " " & Nome & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la scheda di """ & Cognome & " " & Nome &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-            Case Elenco.Aziende
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & ragSoc & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati, incassare eventuali documenti Sospesi o fatturare eventuali Buoni pasto.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-            Case Elenco.Fornitori
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & ragSoc & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la scheda di " & ragSoc &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Prenotazioni, Elenco.PrenSale
-               Dim Cliente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-
-               ' Registra l'operazione.
-               strDescrizione = " (" & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) &
-                 " - Per " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4) &
-                 " il " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) &
-                 " alle " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5) &
-                 " / " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6) &
-                 " - " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3) & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la prenotazione del cliente """ & Cliente &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.CatPiatti
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la Categoria """ & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Camerieri
-               Dim Nome As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & Nome & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare il cameriere """ & Nome &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.AgenzieCamerieri
-               Dim ragSoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & ragSoc & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare l'Agenzia " & ragSoc &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Sale
-               If IsNothing(g_frmVCTavoli) = False Then
-                  ' Aggiorna Visual POS
-                  MessageBox.Show("Non Ë possibile eliminare una sala perchË Visual POS Ë in esecuzione." & vbCrLf &
-                                  "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                  Exit Sub
-               End If
-
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la Sala """ & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-            Case Elenco.Tavoli
-               If IsNothing(g_frmVCTavoli) = False Then
-                  ' Aggiorna Visual POS
-                  MessageBox.Show("Non Ë possibile eliminare un tavolo perchË Visual POS Ë in esecuzione." & vbCrLf &
-                                  "Si consiglia di chiudere Visual POS e ripetere l'operazione.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                  Exit Sub
-               End If
-
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare il tavolo """ & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Camere
-               Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & numero & " " & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la camera numero """ & numero & " " & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.StatoPren
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare lo stato prenotazione """ & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Articoli
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare l'articolo """ & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Operatori
-               Dim nomeUtente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & nomeUtente & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la scheda di " & nomeUtente &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.Gruppi
-               Dim nomeGruppo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & nomeGruppo & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare il gruppo " & nomeGruppo &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.CaratteristicheRisorse
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare la tipologia di utilizzo risorsa " & descrizione &
-                                 """?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-            Case Elenco.ScontiMaggiorazioni
-               Dim descrizione As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-
-               ' Registra l'operazione.
-               strDescrizione = "(" & descrizione & ")"
-
-               ' Chiede conferma per l'eliminazione.
-               Risposta = MsgBox("Si desidera eliminare lo Sconto / Maggiorazione '" & descrizione &
-                                 "'?" & vbCrLf & vbCrLf & "Non sar‡ pi˘ possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
-
-         End Select
-
-         If Risposta = MsgBoxResult.Yes Then
-            ' Apre la connessione.
-            cn.Open()
-
-            ' Avvia una transazione.
-            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-            'If TipoElenco = Elenco.Risorse Then
-            ' Crea la stringa di eliminazione.
-            'sql = String.Format("DELETE FROM {0} WHERE Numero = '{1}'", tabella, id)
-            'Else
-            ' Crea la stringa di eliminazione.
-            sql = String.Format("DELETE FROM {0} WHERE Id = {1}", tabella, id)
-            'End If
-
-            ' Crea il comando per la connessione corrente.
-            Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-            ' Esegue il comando.
-            Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-            If TipoElenco = Elenco.Aziende Then
-               ' Elimina i dati dei Buoni pasto relativi all'azienda.
-               ' Crea la stringa di eliminazione.
-               sql = String.Format("DELETE FROM BuoniPasto WHERE IdAzienda = {0}", id)
-
-               ' Crea il comando per la connessione corrente.
-               Dim cmdDelete1 As New OleDbCommand(sql, cn, tr)
-
-               ' Esegue il comando.
-               Dim Record1 As Integer = cmdDelete1.ExecuteNonQuery()
-            End If
-
-            ' Conferma la transazione.
-            tr.Commit()
-
-            ' Registra loperazione effettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Elimina, strDescrizione, strModulo)
-
-         End If
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-         ' Aggiorna la griglia dati.
-         AggiornaDati()
-
-         ' Se nella tabella non ci sono record disattiva i pulsanti.
-         ConvalidaDati()
       End Try
    End Sub
 
@@ -2365,26 +1845,37 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
-         tbrModifica.Enabled = False
-         tbrElimina.Enabled = False
-         tbrCarico.Enabled = False
-         tbrScarico.Enabled = False
-         tbrPrimo.Enabled = False
-         tbrPrecedente.Enabled = False
-         tbrSuccessivo.Enabled = False
-         tbrUltimo.Enabled = False
-         tbrAggiorna.Enabled = False
+
+         ' Strumenti di Modifica.
+         g_frmMain.eui_Strumenti_Modifica.Enabled = False
+         g_frmMain.eui_Strumenti_Elimina.Enabled = False
+         g_frmMain.eui_Strumenti_Duplica.Enabled = False
+         g_frmMain.eui_Strumenti_Annulla.Enabled = False
+         g_frmMain.eui_Strumenti_Aggiorna.Enabled = False
+         g_frmMain.eui_Strumenti_Esporta.Enabled = False
+         g_frmMain.eui_Strumenti_Magazzino_Carico.Enabled = False
+         g_frmMain.eui_Strumenti_Magazzino_Scarico.Enabled = False
+         g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
+         g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = False
+
       Else
          ' Attiva i pulsanti appropriati.
-         tbrModifica.Enabled = True
-         tbrElimina.Enabled = True
-         tbrCarico.Enabled = True
-         tbrScarico.Enabled = True
-         tbrAggiorna.Enabled = True
+
+         ' Strumenti di Modifica.
+         g_frmMain.eui_Strumenti_Modifica.Enabled = True
+         g_frmMain.eui_Strumenti_Elimina.Enabled = True
+         g_frmMain.eui_Strumenti_Duplica.Enabled = True
+         g_frmMain.eui_Strumenti_Annulla.Enabled = True
+         g_frmMain.eui_Strumenti_Aggiorna.Enabled = True
+         g_frmMain.eui_Strumenti_Esporta.Enabled = True
+         g_frmMain.eui_Strumenti_Magazzino_Carico.Enabled = True
+         g_frmMain.eui_Strumenti_Magazzino_Scarico.Enabled = True
+         g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
+         g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = True
+
       End If
    End Sub
 
@@ -2781,45 +2272,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Public Sub _AggIntGriglia()
-      Try
-         If numRecord <> 0 Then
-            Select Case TipoElenco
-               Case Elenco.Clienti
-                  DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
-                                                        DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2) &
-                                                        " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3))
-
-               Case Elenco.Aziende
-                  DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
-                                                        DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
-
-               Case Elenco.Prenotazioni, Elenco.PrenSale, Elenco.Articoli
-                  DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
-                                                        DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3))
-
-               Case Elenco.Camere
-                  DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
-                                                        DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) &
-                                                        " " & DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
-
-               Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.AgenzieCamerieri, Elenco.Sale, Elenco.Tavoli,
-                    Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse,
-                    Elenco.ScontiMaggiorazioni
-                  DataGrid1.CaptionText = Strings.UCase("Pagina " & pagCorrente.ToString & " di " & numPagine.ToString & " - " &
-                                                        DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1))
-            End Select
-         Else
-            DataGrid1.CaptionText = String.Empty
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Public Sub AggIntGriglia()
       Try
          ' Se le celle non sono ancora state caricate.
@@ -2968,136 +2420,6 @@ Public Class frmElencoDati
 
       End Try
 
-   End Sub
-
-   Private Sub _CreaColonneFornitori(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-
-         ' Ragione sociale
-         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         ragSocStyle.MappingName = "RagSociale"
-         ragSocStyle.HeaderText = "Ragione sociale"
-         ragSocStyle.Width = 150
-         ragSocStyle.NullText = ""
-         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(ragSocStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Regione
-         Dim regioneStyle As New DataGridTextBoxColumn
-         regioneStyle.MappingName = "Regione"
-         regioneStyle.HeaderText = "Regione"
-         regioneStyle.Width = 75
-         regioneStyle.NullText = ""
-         regioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(regioneStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Contatto
-         Dim contattoStyle As New DataGridTextBoxColumn
-         contattoStyle.MappingName = "Contatto"
-         contattoStyle.HeaderText = "Contatto"
-         contattoStyle.Width = 75
-         contattoStyle.NullText = ""
-         contattoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(contattoStyle)
-         ' Attivit‡
-         Dim attivit‡Style As New DataGridTextBoxColumn
-         attivit‡Style.MappingName = "Attivit‡"
-         attivit‡Style.HeaderText = "Attivit‡"
-         attivit‡Style.Width = 75
-         attivit‡Style.NullText = ""
-         attivit‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(attivit‡Style)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
    End Sub
 
    Private Sub CreaColonneFornitori(ByVal tabella As String)
@@ -3275,159 +2597,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, emailStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneClienti(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Cognome
-         Dim cognomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         cognomeStyle.MappingName = "Cognome"
-         cognomeStyle.HeaderText = "Rag. Soc. / Cognome"
-         cognomeStyle.Width = 150
-         cognomeStyle.NullText = ""
-         cognomeStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(cognomeStyle)
-         ' Nome
-         Dim nomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomeStyle.MappingName = "Nome"
-         nomeStyle.HeaderText = "Nome"
-         nomeStyle.Width = 100
-         nomeStyle.NullText = ""
-         nomeStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(nomeStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Regione
-         Dim regioneStyle As New DataGridTextBoxColumn
-         regioneStyle.MappingName = "Regione"
-         regioneStyle.HeaderText = "Regione"
-         regioneStyle.Width = 75
-         regioneStyle.NullText = ""
-         regioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(regioneStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Data di nascita
-         Dim dataNascitaStyle As New DataGridTextBoxColumn
-         dataNascitaStyle.MappingName = "DataNascita"
-         dataNascitaStyle.HeaderText = "Data di nascita"
-         dataNascitaStyle.Width = 85
-         dataNascitaStyle.NullText = ""
-         dataNascitaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataNascitaStyle)
-         ' Tipo Alloggiato
-         Dim tipoAlloggiatoStyle As New DataGridTextBoxColumn
-         tipoAlloggiatoStyle.MappingName = "TipoAlloggiato"
-         tipoAlloggiatoStyle.HeaderText = "Tipo cliente"
-         tipoAlloggiatoStyle.Width = 100
-         tipoAlloggiatoStyle.NullText = ""
-         tipoAlloggiatoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoAlloggiatoStyle)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Tel. casa
-         Dim telCasaStyle As New DataGridTextBoxColumn
-         telCasaStyle.MappingName = "TelCasa"
-         telCasaStyle.HeaderText = "Tel. casa"
-         telCasaStyle.Width = 100
-         telCasaStyle.NullText = ""
-         telCasaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telCasaStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-         ' Obsoleto
-         Dim obsoletoStyle As New DataGridTextBoxColumn
-         obsoletoStyle.MappingName = "Obsoleto"
-         obsoletoStyle.HeaderText = "Obsoleto"
-         obsoletoStyle.Width = 80
-         obsoletoStyle.NullText = ""
-         obsoletoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(obsoletoStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3656,135 +2825,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneAziende(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Ragione sociale
-         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         ragSocStyle.MappingName = "RagSociale"
-         ragSocStyle.HeaderText = "Ragione sociale"
-         ragSocStyle.Width = 150
-         ragSocStyle.NullText = ""
-         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(ragSocStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Regione
-         Dim regioneStyle As New DataGridTextBoxColumn
-         regioneStyle.MappingName = "Regione"
-         regioneStyle.HeaderText = "Regione"
-         regioneStyle.Width = 75
-         regioneStyle.NullText = ""
-         regioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(regioneStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Contatto
-         Dim contattoStyle As New DataGridTextBoxColumn
-         contattoStyle.MappingName = "Contatto"
-         contattoStyle.HeaderText = "Contatto"
-         contattoStyle.Width = 75
-         contattoStyle.NullText = ""
-         contattoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(contattoStyle)
-         ' Attivit‡
-         Dim attivit‡Style As New DataGridTextBoxColumn
-         attivit‡Style.MappingName = "Attivit‡"
-         attivit‡Style.HeaderText = "Attivit‡"
-         attivit‡Style.Width = 75
-         attivit‡Style.NullText = ""
-         attivit‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(attivit‡Style)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneAziende(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -3968,117 +3008,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonnePren(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Data
-         Dim dataStyle As New DataGridTextBoxColumn
-         dataStyle.MappingName = "Data"
-         dataStyle.HeaderText = "Data"
-         dataStyle.Width = 80
-         dataStyle.NullText = ""
-         dataStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataStyle)
-         ' Cliente
-         Dim clienteStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         clienteStyle.MappingName = "Cliente"
-         clienteStyle.HeaderText = "Cliente"
-         clienteStyle.Width = 200
-         clienteStyle.NullText = ""
-         clienteStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(clienteStyle)
-         ' Risorsa
-         Dim risorsaStyle As New DataGridTextBoxColumn
-         risorsaStyle.MappingName = "DescrizioneRisorsa"
-         risorsaStyle.HeaderText = "Tavolo"
-         risorsaStyle.Width = 100
-         risorsaStyle.NullText = ""
-         risorsaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(risorsaStyle)
-         ' Persone
-         Dim personeStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         personeStyle.MappingName = "Persone"
-         personeStyle.HeaderText = "Persone"
-         personeStyle.Width = 80
-         personeStyle.NullText = ""
-         personeStyle.Alignment = HorizontalAlignment.Right
-         personeStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(personeStyle)
-         ' OraInizio
-         Dim oraInizioStyle As New DataGridTextBoxColumn
-         oraInizioStyle.MappingName = "OraInizio"
-         oraInizioStyle.HeaderText = "Dalle ore"
-         oraInizioStyle.Width = 75
-         oraInizioStyle.NullText = ""
-         'oraInizioStyle.Format = "HH:mm"
-         oraInizioStyle.Alignment = HorizontalAlignment.Right
-         oraInizioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(oraInizioStyle)
-         ' OraFine
-         Dim oraFineStyle As New DataGridTextBoxColumn
-         oraFineStyle.MappingName = "OraFine"
-         oraFineStyle.HeaderText = "Alle ore"
-         oraFineStyle.Width = 75
-         oraFineStyle.NullText = ""
-         'oraFineStyle.Format = "HH:mm"
-         oraFineStyle.Alignment = HorizontalAlignment.Right
-         oraFineStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(oraFineStyle)
-         ' Telefono
-         Dim telefonoStyle As New DataGridTextBoxColumn
-         telefonoStyle.MappingName = "Telefono"
-         telefonoStyle.HeaderText = "Telefono"
-         telefonoStyle.Width = 100
-         telefonoStyle.NullText = ""
-         telefonoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telefonoStyle)
-         ' E-mail
-         Dim eMailStyle As New DataGridTextBoxColumn
-         eMailStyle.MappingName = "eMail"
-         eMailStyle.HeaderText = "eMail"
-         eMailStyle.Width = 200
-         eMailStyle.NullText = ""
-         eMailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(eMailStyle)
-         ' Stato prenotazione
-         Dim statoStyle As New DataGridTextBoxColumn
-         statoStyle.MappingName = "Stato"
-         statoStyle.HeaderText = "Stato prenotazione"
-         statoStyle.Width = 150
-         statoStyle.NullText = ""
-         statoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(statoStyle)
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "Colore"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonnePren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -4230,99 +3159,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonnePrenSale(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Data
-         Dim dataStyle As New DataGridTextBoxColumn
-         dataStyle.MappingName = "Data"
-         dataStyle.HeaderText = "Data"
-         dataStyle.Width = 80
-         dataStyle.NullText = ""
-         dataStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataStyle)
-         ' Cliente
-         Dim clienteStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         clienteStyle.MappingName = "Cliente"
-         clienteStyle.HeaderText = "Cliente"
-         clienteStyle.Width = 200
-         clienteStyle.NullText = ""
-         clienteStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(clienteStyle)
-         ' Risorsa
-         Dim risorsaStyle As New DataGridTextBoxColumn
-         risorsaStyle.MappingName = "DescrizioneRisorsa"
-         risorsaStyle.HeaderText = "Sala"
-         risorsaStyle.Width = 100
-         risorsaStyle.NullText = ""
-         risorsaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(risorsaStyle)
-         ' Persone
-         Dim personeStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         personeStyle.MappingName = "Persone"
-         personeStyle.HeaderText = "Persone"
-         personeStyle.Width = 80
-         personeStyle.NullText = ""
-         personeStyle.Alignment = HorizontalAlignment.Right
-         personeStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(personeStyle)
-         ' OraInizio
-         Dim oraInizioStyle As New DataGridTextBoxColumn
-         oraInizioStyle.MappingName = "OraInizio"
-         oraInizioStyle.HeaderText = "Dalle ore"
-         oraInizioStyle.Width = 75
-         oraInizioStyle.NullText = ""
-         oraInizioStyle.Alignment = HorizontalAlignment.Right
-         oraInizioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(oraInizioStyle)
-         ' OraFine
-         Dim oraFineStyle As New DataGridTextBoxColumn
-         oraFineStyle.MappingName = "OraFine"
-         oraFineStyle.HeaderText = "Alle ore"
-         oraFineStyle.Width = 75
-         oraFineStyle.NullText = ""
-         oraFineStyle.Alignment = HorizontalAlignment.Right
-         oraFineStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(oraFineStyle)
-         ' Stato prenotazione
-         Dim statoStyle As New DataGridTextBoxColumn
-         statoStyle.MappingName = "Stato"
-         statoStyle.HeaderText = "Stato prenotazione"
-         statoStyle.Width = 150
-         statoStyle.NullText = ""
-         statoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(statoStyle)
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "Colore"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonnePrenSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -4450,57 +3286,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneCatPiatti(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 300
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-         ' Reparto
-         Dim repartoStyle As New DataGridTextBoxColumn
-         repartoStyle.MappingName = "Reparto"
-         repartoStyle.HeaderText = "Reparto"
-         repartoStyle.Width = 100
-         repartoStyle.NullText = ""
-         repartoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(repartoStyle)
-
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "ColoreSfondo"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneCatPiatti(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -4556,137 +3341,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneCamerieri(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 60
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Nome
-         Dim nomeStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomeStyle.MappingName = "Nome"
-         nomeStyle.HeaderText = "Nome"
-         nomeStyle.Width = 100
-         nomeStyle.NullText = ""
-         nomeStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(nomeStyle)
-         ' Costo ora
-         Dim costoOraStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         costoOraStyle.MappingName = "CostoOra"
-         costoOraStyle.HeaderText = "Costo/Ora"
-         costoOraStyle.Width = 80
-         costoOraStyle.NullText = ""
-         costoOraStyle.Format = "##,##0.00"
-         costoOraStyle.Alignment = HorizontalAlignment.Right
-         costoOraStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(costoOraStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Tel. casa
-         Dim telCasaStyle As New DataGridTextBoxColumn
-         telCasaStyle.MappingName = "TelCasa"
-         telCasaStyle.HeaderText = "Tel. casa"
-         telCasaStyle.Width = 100
-         telCasaStyle.NullText = ""
-         telCasaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telCasaStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-         ' Agenzia
-         Dim agenziaStyle As New DataGridTextBoxColumn
-         agenziaStyle.MappingName = "Agenzia"
-         agenziaStyle.HeaderText = "Agenzia"
-         agenziaStyle.Width = 150
-         agenziaStyle.NullText = ""
-         agenziaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(agenziaStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -4881,136 +3535,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneAgenzieCamerieri(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-
-         ' Ragione sociale
-         Dim ragSocStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         ragSocStyle.MappingName = "RagSociale"
-         ragSocStyle.HeaderText = "Ragione sociale"
-         ragSocStyle.Width = 150
-         ragSocStyle.NullText = ""
-         ragSocStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(ragSocStyle)
-         ' Indirizzo1
-         Dim Indirizzo1Style As New DataGridTextBoxColumn
-         Indirizzo1Style.MappingName = "Indirizzo"
-         Indirizzo1Style.HeaderText = "Indirizzo"
-         Indirizzo1Style.Width = 150
-         Indirizzo1Style.NullText = ""
-         Indirizzo1Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(Indirizzo1Style)
-         ' Cap
-         Dim capStyle As New DataGridTextBoxColumn
-         capStyle.MappingName = "Cap"
-         capStyle.HeaderText = "C.A.P."
-         capStyle.Width = 60
-         capStyle.NullText = ""
-         capStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(capStyle)
-         ' Citt‡
-         Dim citt‡Style As New DataGridTextBoxColumn
-         citt‡Style.MappingName = "Citt‡"
-         citt‡Style.HeaderText = "Citt‡"
-         citt‡Style.Width = 150
-         citt‡Style.NullText = ""
-         citt‡Style.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(citt‡Style)
-         ' Provincia
-         Dim provStyle As New DataGridTextBoxColumn
-         provStyle.MappingName = "Provincia"
-         provStyle.HeaderText = "Provincia"
-         provStyle.Width = 60
-         provStyle.NullText = ""
-         provStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(provStyle)
-         ' Regione
-         Dim regioneStyle As New DataGridTextBoxColumn
-         regioneStyle.MappingName = "Regione"
-         regioneStyle.HeaderText = "Regione"
-         regioneStyle.Width = 75
-         regioneStyle.NullText = ""
-         regioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(regioneStyle)
-         ' Nazione
-         Dim nazioneStyle As New DataGridTextBoxColumn
-         nazioneStyle.MappingName = "Nazione"
-         nazioneStyle.HeaderText = "Nazione"
-         nazioneStyle.Width = 75
-         nazioneStyle.NullText = ""
-         nazioneStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(nazioneStyle)
-         ' Contatto
-         Dim contattoStyle As New DataGridTextBoxColumn
-         contattoStyle.MappingName = "Contatto"
-         contattoStyle.HeaderText = "Contatto"
-         contattoStyle.Width = 75
-         contattoStyle.NullText = ""
-         contattoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(contattoStyle)
-         ' Attivit‡
-         'Dim attivit‡Style As New DataGridTextBoxColumn
-         'attivit‡Style.MappingName = "Attivit‡"
-         'attivit‡Style.HeaderText = "Attivit‡"
-         'attivit‡Style.Width = 75
-         'attivit‡Style.NullText = ""
-         'attivit‡Style.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(attivit‡Style)
-         ' Tel. ufficio
-         Dim telUfficioStyle As New DataGridTextBoxColumn
-         telUfficioStyle.MappingName = "TelUfficio"
-         telUfficioStyle.HeaderText = "Tel. ufficio"
-         telUfficioStyle.Width = 100
-         telUfficioStyle.NullText = ""
-         telUfficioStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(telUfficioStyle)
-         ' Fax
-         Dim faxStyle As New DataGridTextBoxColumn
-         faxStyle.MappingName = "Fax"
-         faxStyle.HeaderText = "Fax"
-         faxStyle.Width = 100
-         faxStyle.NullText = ""
-         faxStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(faxStyle)
-         ' Cell
-         Dim cellStyle As New DataGridTextBoxColumn
-         cellStyle.MappingName = "Cell"
-         cellStyle.HeaderText = "Cellulare"
-         cellStyle.Width = 100
-         cellStyle.NullText = ""
-         cellStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cellStyle)
-         ' Email
-         Dim emailStyle As New DataGridTextBoxColumn
-         emailStyle.MappingName = "Email"
-         emailStyle.HeaderText = "E-mail"
-         emailStyle.Width = 150
-         emailStyle.NullText = ""
-         emailStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(emailStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneAgenzieCamerieri(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -5182,49 +3706,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneSale(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 300
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "ColoreSfondo"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneSale(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -5268,99 +3749,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneTavoli(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 100
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-         ' Posti
-         Dim postiStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         postiStyle.MappingName = "Posti"
-         postiStyle.HeaderText = "Posti"
-         postiStyle.Width = 40
-         postiStyle.NullText = ""
-         postiStyle.Alignment = HorizontalAlignment.Right
-         postiStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(postiStyle)
-         ' Cameriere
-         Dim cameriereStyle As New DataGridTextBoxColumn
-         cameriereStyle.MappingName = "Cameriere"
-         cameriereStyle.HeaderText = "Cameriere"
-         cameriereStyle.Width = 100
-         cameriereStyle.NullText = ""
-         cameriereStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(cameriereStyle)
-         ' Listino
-         Dim listinoStyle As New DataGridTextBoxColumn
-         listinoStyle.MappingName = "Listino"
-         listinoStyle.HeaderText = "Listino"
-         listinoStyle.Width = 50
-         listinoStyle.NullText = ""
-         listinoStyle.Alignment = HorizontalAlignment.Right
-         listinoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(listinoStyle)
-         ' Sala
-         Dim salaStyle As New DataGridTextBoxColumn
-         salaStyle.MappingName = "Sala"
-         salaStyle.HeaderText = "Sala"
-         salaStyle.Width = 100
-         salaStyle.NullText = ""
-         salaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(salaStyle)
-         ' Escludi
-         Dim escludiStyle As New DataGridTextBoxColumn
-         escludiStyle.MappingName = "Escludi"
-         escludiStyle.HeaderText = "Escludi dalla gestione"
-         escludiStyle.Width = 120
-         escludiStyle.Alignment = HorizontalAlignment.Center
-         escludiStyle.NullText = ""
-         escludiStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(escludiStyle)
-         ' Tipologia
-         'Dim tipologiaStyle As New DataGridTextBoxColumn
-         'tipologiaStyle.MappingName = "Tipologia"
-         'tipologiaStyle.HeaderText = "Tipologia"
-         'tipologiaStyle.Width = 100
-         'tipologiaStyle.NullText = ""
-         'tipologiaStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(tipologiaStyle)
-         ' Disponibile
-         'Dim disponibileStyle As New DataGridTextBoxColumn
-         'disponibileStyle.MappingName = "Disponibile"
-         'disponibileStyle.HeaderText = "Disponibile"
-         'disponibileStyle.Width = 60
-         'disponibileStyle.Alignment = HorizontalAlignment.Center
-         'disponibileStyle.NullText = ""
-         'disponibileStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(disponibileStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -5467,118 +3855,6 @@ Public Class frmElencoDati
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   Private Sub _CreaColonneCamere(ByVal tabella As String)
-      Dim gridStyle As New DataGridTableStyle
-      gridStyle.MappingName = tabella
-
-      ' Codice
-      Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-      codiceStyle.MappingName = "Id"
-      codiceStyle.HeaderText = "Codice"
-      codiceStyle.Width = 50
-      codiceStyle.NullText = ""
-      codiceStyle.Alignment = HorizontalAlignment.Right
-      codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-      gridStyle.GridColumnStyles.Add(codiceStyle)
-      ' Numero
-      Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-      numeroStyle.MappingName = "Numero"
-      numeroStyle.HeaderText = "Numero"
-      numeroStyle.Width = 50
-      numeroStyle.NullText = ""
-      numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-      gridStyle.GridColumnStyles.Add(numeroStyle)
-      ' Descrizione
-      Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-      descrizioneStyle.MappingName = "Descrizione"
-      descrizioneStyle.HeaderText = "Descrizione"
-      descrizioneStyle.Width = 150
-      descrizioneStyle.NullText = ""
-      descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-      gridStyle.GridColumnStyles.Add(descrizioneStyle)
-      ' Ubicazione
-      Dim ubicazioneStyle As New DataGridTextBoxColumn
-      ubicazioneStyle.MappingName = "Ubicazione"
-      ubicazioneStyle.HeaderText = "Ubicazione"
-      ubicazioneStyle.Width = 100
-      ubicazioneStyle.NullText = ""
-      ubicazioneStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(ubicazioneStyle)
-      ' Posizione
-      Dim posizioneStyle As New DataGridTextBoxColumn
-      posizioneStyle.MappingName = "Posizione"
-      posizioneStyle.HeaderText = "Posizione"
-      posizioneStyle.Width = 100
-      posizioneStyle.NullText = ""
-      posizioneStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(posizioneStyle)
-      ' Tipologia
-      Dim tipologiaStyle As New DataGridTextBoxColumn
-      tipologiaStyle.MappingName = "Tipologia"
-      tipologiaStyle.HeaderText = "Tipologia"
-      tipologiaStyle.Width = 100
-      tipologiaStyle.NullText = ""
-      tipologiaStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(tipologiaStyle)
-      ' Posti letto
-      Dim lettiAggStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-      lettiAggStyle.MappingName = "PostiLetto"
-      lettiAggStyle.HeaderText = "Posti letto"
-      lettiAggStyle.Width = 60
-      lettiAggStyle.Alignment = HorizontalAlignment.Right
-      lettiAggStyle.NullText = ""
-      lettiAggStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(lettiAggStyle)
-      ' Disponibile
-      Dim disponibileStyle As New DataGridTextBoxColumn
-      disponibileStyle.MappingName = "Disponibile"
-      disponibileStyle.HeaderText = "Disponibile"
-      disponibileStyle.Width = 70
-      disponibileStyle.Alignment = HorizontalAlignment.Center
-      disponibileStyle.NullText = ""
-      disponibileStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(disponibileStyle)
-      ' Escludi
-      Dim escludiStyle As New DataGridTextBoxColumn
-      escludiStyle.MappingName = "Escludi"
-      escludiStyle.HeaderText = "Escludi dal Planning"
-      escludiStyle.Width = 120
-      escludiStyle.Alignment = HorizontalAlignment.Center
-      escludiStyle.NullText = ""
-      escludiStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(escludiStyle)
-      ' Evidenzia
-      Dim evidenziaStyle As New DataGridTextBoxColumn
-      evidenziaStyle.MappingName = "Evidenzia"
-      evidenziaStyle.HeaderText = "Evidenzia Planning"
-      evidenziaStyle.Width = 120
-      evidenziaStyle.Alignment = HorizontalAlignment.Center
-      evidenziaStyle.NullText = ""
-      evidenziaStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(evidenziaStyle)
-      ' Listino
-      Dim listinoStyle As New DataGridTextBoxColumn
-      listinoStyle.MappingName = "Listino"
-      listinoStyle.HeaderText = "Listino"
-      listinoStyle.Width = 100
-      listinoStyle.NullText = ""
-      listinoStyle.TextBox.BackColor = Color.White
-      gridStyle.GridColumnStyles.Add(listinoStyle)
-      ' Colore
-      Dim coloreStyle As New CellaColorata(DataGrid1)
-      coloreStyle.MappingName = "Colore"
-      coloreStyle.HeaderText = "Colore"
-      coloreStyle.Width = 50
-      coloreStyle.NullText = ""
-      coloreStyle.TextBox.BackColor = Color.White
-      coloreStyle.TextBox.ForeColor = Color.White
-      gridStyle.GridColumnStyles.Add(coloreStyle)
-
-      DataGrid1.TableStyles.Clear()
-      DataGrid1.TableStyles.Add(gridStyle)
-
    End Sub
 
    Private Sub CreaColonneCamere(ByVal tabella As String)
@@ -5739,49 +4015,6 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub _CreaColonneStatoPren(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 300
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "Colore"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneStatoPren(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -5825,136 +4058,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneArticoli(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-         ' Id (non visibile)
-         Dim idStyle As New DataGridTextBoxColumn
-         idStyle.MappingName = "Id"
-         idStyle.HeaderText = "Id"
-         idStyle.Width = 0
-         idStyle.NullText = ""
-         idStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(idStyle)
-         ' Scorta minima (non visibile)
-         Dim smStyle As New DataGridTextBoxColumn
-         smStyle.MappingName = "ScortaMin"
-         smStyle.HeaderText = "Sm"
-         smStyle.Width = 0
-         smStyle.NullText = ""
-         smStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(smStyle)
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Codice"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 70
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 200
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-         ' Unit‡ di misura
-         Dim umStyle As New DataGridTextBoxColumn
-         umStyle.MappingName = "Unit‡Misura"
-         umStyle.HeaderText = "U.M."
-         umStyle.Width = 50
-         umStyle.NullText = ""
-         umStyle.Alignment = HorizontalAlignment.Center
-         umStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(umStyle)
-         ' Giacenza
-         Dim giacenzaStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         giacenzaStyle.MappingName = "Giacenza"
-         giacenzaStyle.HeaderText = "Giacenza"
-         giacenzaStyle.Width = 60
-         giacenzaStyle.NullText = ""
-         giacenzaStyle.Format = "##,##0.000"
-         giacenzaStyle.Alignment = HorizontalAlignment.Right
-         giacenzaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(giacenzaStyle)
-         ' Caricato
-         Dim caricatoStyle As New DataGridTextBoxColumn
-         caricatoStyle.MappingName = "Carico"
-         caricatoStyle.HeaderText = "Carico"
-         caricatoStyle.Width = 60
-         caricatoStyle.NullText = ""
-         caricatoStyle.Format = "##,##0.000"
-         caricatoStyle.Alignment = HorizontalAlignment.Right
-         caricatoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(caricatoStyle)
-         ' Scaricato
-         Dim scaricatoStyle As New DataGridTextBoxColumn
-         scaricatoStyle.MappingName = "Scarico"
-         scaricatoStyle.HeaderText = "Scarico"
-         scaricatoStyle.Width = 60
-         scaricatoStyle.NullText = ""
-         scaricatoStyle.Format = "##,##0.000"
-         scaricatoStyle.Alignment = HorizontalAlignment.Right
-         scaricatoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(scaricatoStyle)
-         ' Prezzo Acquisto
-         Dim pAcquistoStyle As New DataGridTextBoxColumn
-         pAcquistoStyle.MappingName = "PrezzoAcquisto"
-         pAcquistoStyle.HeaderText = "Prezzo di acquisto"
-         pAcquistoStyle.Width = 110
-         pAcquistoStyle.NullText = ""
-         pAcquistoStyle.Format = "##,##0.00"
-         pAcquistoStyle.Alignment = HorizontalAlignment.Right
-         pAcquistoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(pAcquistoStyle)
-         ' Categoria
-         Dim categoriaStyle As New DataGridTextBoxColumn
-         categoriaStyle.MappingName = "Categoria"
-         categoriaStyle.HeaderText = "Categoria"
-         categoriaStyle.Width = 100
-         categoriaStyle.NullText = ""
-         categoriaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(categoriaStyle)
-         ' Fornitore
-         Dim fornitoreStyle As New DataGridTextBoxColumn
-         fornitoreStyle.MappingName = "Fornitore"
-         fornitoreStyle.HeaderText = "Fornitore"
-         fornitoreStyle.Width = 150
-         fornitoreStyle.NullText = ""
-         fornitoreStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(fornitoreStyle)
-         ' Magazzino
-         Dim magazzinoStyle As New DataGridTextBoxColumn
-         magazzinoStyle.MappingName = "Magazzino"
-         magazzinoStyle.HeaderText = "Magazzino"
-         magazzinoStyle.Width = 100
-         magazzinoStyle.NullText = ""
-         magazzinoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(magazzinoStyle)
-         ' Codice a barre
-         Dim barcodStyle As New DataGridTextBoxColumn
-         barcodStyle.MappingName = "CodBarre"
-         barcodStyle.HeaderText = "Codice a barre"
-         barcodStyle.Width = 90
-         barcodStyle.NullText = ""
-         barcodStyle.Alignment = HorizontalAlignment.Right
-         barcodStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(barcodStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -6150,56 +4253,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneOperatori(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-
-         ' Nome utente
-         Dim nomeUtenteStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomeUtenteStyle.MappingName = "NomeUtente"
-         nomeUtenteStyle.HeaderText = "Nome utente"
-         nomeUtenteStyle.Width = 200
-         nomeUtenteStyle.NullText = ""
-         nomeUtenteStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(nomeUtenteStyle)
-         ' Password
-         'Dim pwdStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         'pwdStyle.MappingName = "Password"
-         'pwdStyle.HeaderText = "Password"
-         'pwdStyle.Width = 100
-         'pwdStyle.NullText = ""
-         'pwdStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         'gridStyle.GridColumnStyles.Add(pwdStyle)
-         ' Gruppo
-         Dim gruppoStyle As New DataGridTextBoxColumn
-         gruppoStyle.MappingName = "Gruppo"
-         gruppoStyle.HeaderText = "Gruppo"
-         gruppoStyle.Width = 200
-         gruppoStyle.NullText = ""
-         gruppoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(gruppoStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneOperatori(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -6251,40 +4304,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   Private Sub _CreaColonneGruppi(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Id - Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 75
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-
-         ' Nome gruppo
-         Dim nomeGruppoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         nomeGruppoStyle.MappingName = "NomeGruppo"
-         nomeGruppoStyle.HeaderText = "Nome gruppo"
-         nomeGruppoStyle.Width = 200
-         nomeGruppoStyle.NullText = ""
-         nomeGruppoStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(nomeGruppoStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonneGruppi(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -6316,48 +4335,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, nomeGruppoStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneCarattRisorse(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 300
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-         ' Costo
-         Dim costoStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         costoStyle.MappingName = "Costo"
-         costoStyle.HeaderText = "Costo"
-         costoStyle.Width = 80
-         costoStyle.NullText = ""
-         costoStyle.Format = "##,##0.00"
-         costoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(costoStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -6412,78 +4389,6 @@ Public Class frmElencoDati
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Private Sub _CreaColonneScontiMaggiorazioni(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' Codice
-         Dim codiceStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 50
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' Descrizione
-         Dim descrizioneStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         descrizioneStyle.MappingName = "Descrizione"
-         descrizioneStyle.HeaderText = "Descrizione"
-         descrizioneStyle.Width = 300
-         descrizioneStyle.NullText = ""
-         descrizioneStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(descrizioneStyle)
-
-         ' Tipologia
-         Dim tipologiaStyle As New DataGridTextBoxColumn
-         tipologiaStyle.MappingName = "Tipologia"
-         tipologiaStyle.HeaderText = "Tipologia"
-         tipologiaStyle.Width = 100
-         tipologiaStyle.NullText = ""
-         tipologiaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipologiaStyle)
-
-         ' TipoImporto
-         Dim tipoImportoStyle As New DataGridTextBoxColumn
-         tipoImportoStyle.MappingName = "TipoImporto"
-         tipoImportoStyle.HeaderText = "Tipo Importo"
-         tipoImportoStyle.Width = 100
-         tipoImportoStyle.NullText = ""
-         tipoImportoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoImportoStyle)
-
-         ' Valore
-         Dim valoreStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         valoreStyle.MappingName = "Valore"
-         valoreStyle.HeaderText = "Valore"
-         valoreStyle.Width = 100
-         valoreStyle.NullText = ""
-         valoreStyle.Format = "##,##0.00"
-         valoreStyle.Alignment = HorizontalAlignment.Right
-         valoreStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(valoreStyle)
-
-         ' Colore
-         Dim coloreStyle As New CellaColorata(DataGrid1)
-         coloreStyle.MappingName = "Colore"
-         coloreStyle.HeaderText = "Colore"
-         coloreStyle.Width = 50
-         coloreStyle.NullText = ""
-         coloreStyle.TextBox.BackColor = Color.White
-         coloreStyle.TextBox.ForeColor = Color.White
-         gridStyle.GridColumnStyles.Add(coloreStyle)
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -7741,7 +5646,6 @@ Public Class frmElencoDati
       End Try
    End Sub
 
-   ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
    Private Sub frmElencoDati_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
 #Region "Gestionale Amica - (Condivisa) "
@@ -7840,6 +5744,10 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -7883,6 +5791,10 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -7928,6 +5840,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -7971,6 +5886,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -8016,6 +5934,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8059,6 +5980,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -8104,6 +6028,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8147,6 +6074,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -8192,6 +6122,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8235,6 +6168,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -8280,6 +6216,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8323,6 +6262,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -8368,6 +6310,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8412,6 +6357,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8419,24 +6367,25 @@ Public Class frmElencoDati
 #End Region
 
 #Region "Periodo - (Condivisa) "
+            ' TODO_A: Per Elenco prenotazioni Tavoli e Sale implementare comandi Filtro periodo sul Ribbon.
             ' TabPage.
-            g_frmMain.eui_StrumentiPeriodo.Visible = True
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
 
-            ' Periodo.
-            g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
+            '' Periodo.
+            'g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
 
-            ' Visualizza.
-            g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
-            g_frmMain.eui_rib_Visualizza.Visible = False
+            '' Visualizza.
+            'g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
+            'g_frmMain.eui_rib_Visualizza.Visible = False
 
 #End Region
 
@@ -8472,6 +6421,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8479,24 +6431,25 @@ Public Class frmElencoDati
 #End Region
 
 #Region "Periodo - (Condivisa) "
+            ' TODO_A: Per Elenco prenotazioni Tavoli e Sale implementare comandi Filtro periodo sul Ribbon.
             ' TabPage.
-            g_frmMain.eui_StrumentiPeriodo.Visible = True
+            g_frmMain.eui_StrumentiPeriodo.Visible = False
 
-            ' Periodo.
-            g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
-            g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
-            g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
+            '' Periodo.
+            'g_frmMain.eui_Strumenti_Periodo_Tutte.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Anno.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Mese.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_DalAl.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Sep1.Visible = True
+            'g_frmMain.eui_Strumenti_Periodo_Arrivo.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Partenza.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Sep2.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_NonAssegnate.Visible = False
+            'g_frmMain.eui_Strumenti_Periodo_Terminate.Visible = True
 
-            ' Visualizza.
-            g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
-            g_frmMain.eui_rib_Visualizza.Visible = False
+            '' Visualizza.
+            'g_frmMain.eui_Strumenti_Visualizza_Presenze.Visible = False
+            'g_frmMain.eui_rib_Visualizza.Visible = False
 
 #End Region
 
@@ -8532,6 +6485,9 @@ Public Class frmElencoDati
             g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
             g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+            ' Magazzino.
+            g_frmMain.eui_Strumenti_Magazzino.Visible = True
+
             ' Stampa.
             g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
             g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
@@ -8562,7 +6518,6 @@ Public Class frmElencoDati
       AggiornaDati()
 
 #End Region
-
 
    End Sub
 
@@ -8705,11 +6660,6 @@ Public Class frmElencoDati
                strDescrizione = STR_MAGAZZINO_ARTICOLI
                strModulo = MODULO_MAGAZZINO_ARTICOLI
 
-               ' Visualizza ulteriori pulsanti sulla ToolBar.
-               tbSep.Visible = True
-               tbrCarico.Visible = True
-               tbrScarico.Visible = True
-
                ' Inserire qui il codice per gestire ulteriori tabelle dati.
          End Select
 
@@ -8728,7 +6678,7 @@ Public Class frmElencoDati
 
          ' Rende impossibile eliminare il primo record.
          If TipoElenco = Elenco.Gruppi Or TipoElenco = Elenco.Operatori Then
-            tbrElimina.Enabled = False
+            g_frmMain.eui_Strumenti_Elimina.Enabled = False
          End If
 
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -8899,285 +6849,6 @@ Public Class frmElencoDati
 
    End Sub
 
-   Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGrid1.CurrentCellChanged
-      ' Visualizza un'intestazione per la griglia dati.
-      AggIntGriglia()
-
-      ImpostaComandoElimina()
-   End Sub
-
-   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
-      Select Case e.Button.Tag
-         Case "Nuovo"
-            '' Registra loperazione efettuata dall'operatore identificato.
-            'g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
-
-            '' Apre la finestra per l'inserimento di nuovi dati.
-            'ApriDati("")
-
-            '' Se nella tabella non ci sono record disattiva i pulsanti.
-            'ConvalidaDati()
-
-            Nuovo()
-
-         Case "Modifica"
-            '' Registra loperazione efettuata dall'operatore identificato.
-            'RegistraModifica()
-
-            '' Apre la finestra per l'inserimento di nuovi dati.
-            'ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
-
-            Modifica()
-
-         Case "Elimina"
-            '' Elimina il valore selezionato.
-            'EliminaDati(NomeTabella, DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
-
-            'If TipoElenco = Elenco.Prenotazioni Then
-            '   Dim nomeTavolo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3)
-
-            '   ' Cancella il colore di eventuali prenotazioni non pi˘ valide.
-            '   ModificaStatoColoreTavolo(TAB_TAVOLI, LeggiIdRisorsa(TAB_TAVOLI, nomeTavolo), Color.MediumSeaGreen)
-            'End If
-
-            Elimina()
-
-         Case "Carico"
-            'Dim frm As New CaricoScarico("Carico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 10),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
-            'frm.ShowDialog()
-
-            CaricoMagazzino()
-
-         Case "Scarico"
-            'Dim frm As New CaricoScarico("Scarico", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 3),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 6),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8), ,
-            '                                       DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 11))
-            'frm.ShowDialog()
-
-            ScaricoMagazzino()
-
-         Case "Stampa"
-            ' Registra loperazione efettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Stampa, strDescrizione, strModulo)
-
-            Select Case TipoElenco
-               Case Elenco.Clienti
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoClienti(repSql, PERCORSO_REP_CLIENTI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Aziende
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoAziende(repSql, PERCORSO_REP_AZIENDE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Fornitori
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoFornitori(repSql, PERCORSO_REP_FORNITORI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.CatPiatti
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoCategoriePiatti(repSql, PERCORSO_REP_CAT_PIATTI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Articoli
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoArticoli(repSql, PERCORSO_REP_ARTICOLI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Camerieri
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoCamerieri(repSql, PERCORSO_REP_CAMERIERI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.AgenzieCamerieri
-                  ' TODO: Modificare per AgenzieCamerieri.
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-               Case Elenco.Sale
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoSale(repSql, PERCORSO_REP_SALE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Tavoli
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoTavoli(repSql, PERCORSO_REP_TAVOLI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Camere
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoCamere(repSql, PERCORSO_REP_CAMERE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.StatoPren
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-               Case Elenco.Prenotazioni
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoPrenTavoli(repSql, PERCORSO_REP_PREN_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.PrenSale
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoPrenSale(repSql, PERCORSO_REP_PREN_SALE_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Gruppi
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoGruppiOp(repSql, PERCORSO_REP_GRUPPI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.Operatori
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoOperatori(repSql, PERCORSO_REP_OPERATORI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.ScontiMaggiorazioni
-                  If PrintDialog1.ShowDialog() = DialogResult.OK Then
-                     StampaElencoScontiMaggiorazioni(repSql, PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4, PrintDialog1.PrinterSettings.PrinterName, PrintDialog1.PrinterSettings.Copies)
-                  End If
-
-               Case Elenco.CaratteristicheRisorse
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            End Select
-
-         Case "Anteprima"
-            ' Registra loperazione efettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, strDescrizione, strModulo)
-
-            Select Case TipoElenco
-               Case Elenco.Clienti
-                  AnteprimaDiStampaClienti(PERCORSO_REP_CLIENTI_A4, TAB_CLIENTI, repSql)
-
-               Case Elenco.Aziende
-                  AnteprimaDiStampaAziende(PERCORSO_REP_AZIENDE_A4, TAB_AZIENDE, repSql)
-
-               Case Elenco.Fornitori
-                  AnteprimaDiStampaFornitori(PERCORSO_REP_FORNITORI_A4, TAB_FORNITORI, repSql)
-
-               Case Elenco.CatPiatti
-                  AnteprimaDiStampaCategoriePiatti(PERCORSO_REP_CAT_PIATTI_A4, TAB_CAT_PIATTI, repSql)
-
-               Case Elenco.Articoli
-                  AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, TAB_ARTICOLI, repSql)
-
-               Case Elenco.Camerieri
-                  AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, TAB_CAMERIERI, repSql)
-
-               Case Elenco.AgenzieCamerieri
-                  ' TODO: Modificare per AgenzieCamerieri.
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-               Case Elenco.Sale
-                  AnteprimaDiStampaSale(PERCORSO_REP_SALE_A4, TAB_SALE, repSql)
-
-               Case Elenco.Tavoli
-                  AnteprimaDiStampaTavoli(PERCORSO_REP_TAVOLI_A4, TAB_TAVOLI, repSql)
-
-               Case Elenco.Camere
-                  AnteprimaDiStampaCamere(PERCORSO_REP_CAMERE_A4, TAB_CAMERE, repSql)
-
-               Case Elenco.StatoPren
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-               Case Elenco.Prenotazioni
-                  AnteprimaDiStampaPrenTavoli(PERCORSO_REP_PREN_A4, TAB_PREN, repSql)
-
-               Case Elenco.PrenSale
-                  AnteprimaDiStampaPrenSale(PERCORSO_REP_PREN_SALE_A4, TAB_PREN_SALE, repSql)
-
-               Case Elenco.Gruppi
-                  AnteprimaDiStampaGruppiOp(PERCORSO_REP_GRUPPI_A4, TAB_GRUPPI, repSql)
-
-               Case Elenco.Operatori
-                  AnteprimaDiStampaOperatori(PERCORSO_REP_OPERATORI_A4, TAB_OPERATORI, repSql)
-
-               Case Elenco.ScontiMaggiorazioni
-                  AnteprimaDiStampaScontiMaggiorazioni(PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4, TAB_SCONTI_MAGGIORAZIONI, repSql)
-
-               Case Elenco.CaratteristicheRisorse
-                  MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            End Select
-
-         Case "Primo"
-            ' Crea la stringa sql.
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id", dimPagina, NomeTabella)
-
-            ' Visualizza la prima pagina di dati.
-            VisualizzaPagina(1, sql)
-
-            ' Visualizza un'intestazione per la griglia dati.
-            AggIntGriglia()
-
-         Case "Precedente"
-            ' Crea la stringa sql.
-            sql = String.Format("SELECT * FROM {0} WHERE Id IN (SELECT TOP {1} Id FROM {2} WHERE Id < {3} ORDER BY Id DESC) ORDER BY Id", NomeTabella, dimPagina, NomeTabella, dt.Rows(0)("Id"))
-
-            ' Visualizza la pagina di dati precedente.
-            VisualizzaPagina(pagCorrente - 1, sql)
-
-            ' Visualizza un'intestazione per la griglia dati.
-            AggIntGriglia()
-
-         Case "Successivo"
-            ' Crea la stringa sql.
-            sql = String.Format("SELECT TOP {0} * FROM {1} WHERE Id > {2} ORDER BY Id", dimPagina, NomeTabella, dt.Rows(dt.Rows.Count - 1)("Id"))
-
-            ' Visualizza la pagina di dati successiva.
-            VisualizzaPagina(pagCorrente + 1, sql)
-
-            ' Visualizza un'intestazione per la griglia dati.
-            AggIntGriglia()
-
-         Case "Ultimo"
-            Dim num As Integer = numRecord - dimPagina * (numPagine - 1)
-
-            ' Crea la stringa sql.
-            sql = String.Format("SELECT * FROM {0} WHERE Id IN (SELECT TOP {1} Id FROM {2} ORDER BY Id DESC) ORDER BY Id", NomeTabella, num, NomeTabella)
-
-            ' Visualizza l'ultima pagina di dati.
-            VisualizzaPagina(numPagine, sql)
-
-            ' Visualizza un'intestazione per la griglia dati.
-            AggIntGriglia()
-
-         Case "Aggiorna"
-            ' Registra loperazione efettuata dall'operatore identificato.
-            g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, strDescrizione, strModulo)
-
-            ' Se il modulo Prenotazioni On-line Ë attivo, verifica la presenza di eventuali prenotazioni arrivate da internet. (www.tavoloso.it)
-            If moduloAttivo.PrenOnLine = True Then
-               ' Legge eventuali file di prenotazioni per Tavoloso.
-               g_frmMain.LeggiFilePrenTavoloso(True)
-            End If
-
-            ' Aggiorna la griglia dati.
-            AggiornaDati()
-
-            ' Visualizza un'intestazione per la griglia dati.
-            AggIntGriglia()
-
-      End Select
-   End Sub
-
    Private Sub eui_txtTestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_txtTestoRicerca.TextChanged
       ' Filtra i dati in base al testo digitato.
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
@@ -9186,16 +6857,6 @@ Public Class frmElencoDati
    Private Sub CampoRicerca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_cmbCampoRicerca.SelectedIndexChanged
       ' Filtra i dati in base al testo digitato.
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
-   End Sub
-
-   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
-      If tbrModifica.Enabled = True Then
-         ' Registra loperazione efettuata dall'operatore identificato.
-         RegistraModifica()
-
-         ' Apre la finestra Cliente per la modifica dei dati.
-         ApriDati(CStr(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
-      End If
    End Sub
 
    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
@@ -9242,7 +6903,7 @@ Public Class frmElencoDati
    End Sub
 
    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
-      If tbrModifica.Enabled = True Then
+      If g_frmMain.eui_Strumenti_Modifica.Enabled = True Then
          ' Registra loperazione efettuata dall'operatore identificato.
          RegistraModifica()
 

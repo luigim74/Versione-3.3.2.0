@@ -1157,6 +1157,9 @@ Public Class ElencoSchedinePS
       g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
       g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
+      ' Magazzino.
+      g_frmMain.eui_Strumenti_Magazzino.Visible = False
+
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
       g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True

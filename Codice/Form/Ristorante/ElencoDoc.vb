@@ -3,7 +3,7 @@
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 11/04/2020
+' Data ultima modifica: 13/02/2021
 ' Descrizione:          Elenco documenti emessi..
 ' Note:
 
@@ -77,11 +77,12 @@ Public Class ElencoDoc
    Friend WithEvents eui_txtBuoni As Elegant.Ui.TextBox
    Friend WithEvents eui_txtSospeso As Elegant.Ui.TextBox
    Friend WithEvents eui_txtTotale As Elegant.Ui.TextBox
-   Public filtroDati As String
+    Friend WithEvents DataGridView1 As DataGridView
+    Public filtroDati As String
 
 #Region " Codice generato da Progettazione Windows Form "
 
-   Public Sub New()
+    Public Sub New()
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
@@ -125,379 +126,410 @@ Public Class ElencoDoc
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElencoDoc))
-      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.DataGrid1 = New System.Windows.Forms.DataGrid()
-      Me.Panel1 = New System.Windows.Forms.Panel()
-      Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
-      Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
-      Me.dtpAl = New System.Windows.Forms.DateTimePicker()
-      Me.dtpDal = New System.Windows.Forms.DateTimePicker()
-      Me.lblAl = New System.Windows.Forms.Label()
-      Me.lblDal = New System.Windows.Forms.Label()
-      Me.lblCampo = New System.Windows.Forms.Label()
-      Me.lblTesto = New System.Windows.Forms.Label()
-      Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-      Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-      Me.Panel2 = New System.Windows.Forms.Panel()
-      Me.eui_txtBuoni = New Elegant.Ui.TextBox()
-      Me.eui_txtSospeso = New Elegant.Ui.TextBox()
-      Me.eui_txtTotale = New Elegant.Ui.TextBox()
-      Me.eui_txtImposta = New Elegant.Ui.TextBox()
-      Me.eui_txtImponibile = New Elegant.Ui.TextBox()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.Label4 = New System.Windows.Forms.Label()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.Label3 = New System.Windows.Forms.Label()
-      Me.Label6 = New System.Windows.Forms.Label()
-      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.Panel1.SuspendLayout()
-      Me.Panel2.SuspendLayout()
-      Me.SuspendLayout()
-      '
-      'ImageList1
-      '
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-      Me.ImageList1.Images.SetKeyName(0, "")
-      Me.ImageList1.Images.SetKeyName(1, "")
-      Me.ImageList1.Images.SetKeyName(2, "")
-      Me.ImageList1.Images.SetKeyName(3, "")
-      Me.ImageList1.Images.SetKeyName(4, "")
-      Me.ImageList1.Images.SetKeyName(5, "")
-      Me.ImageList1.Images.SetKeyName(6, "")
-      Me.ImageList1.Images.SetKeyName(7, "")
-      Me.ImageList1.Images.SetKeyName(8, "")
-      Me.ImageList1.Images.SetKeyName(9, "")
-      Me.ImageList1.Images.SetKeyName(10, "")
-      Me.ImageList1.Images.SetKeyName(11, "")
-      Me.ImageList1.Images.SetKeyName(12, "")
-      Me.ImageList1.Images.SetKeyName(13, "")
-      Me.ImageList1.Images.SetKeyName(14, "")
-      Me.ImageList1.Images.SetKeyName(15, "")
-      Me.ImageList1.Images.SetKeyName(16, "")
-      Me.ImageList1.Images.SetKeyName(17, "")
-      '
-      'DataGrid1
-      '
-      Me.DataGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.DataGrid1 = New System.Windows.Forms.DataGrid()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
+        Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
+        Me.dtpAl = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDal = New System.Windows.Forms.DateTimePicker()
+        Me.lblAl = New System.Windows.Forms.Label()
+        Me.lblDal = New System.Windows.Forms.Label()
+        Me.lblCampo = New System.Windows.Forms.Label()
+        Me.lblTesto = New System.Windows.Forms.Label()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.eui_txtBuoni = New Elegant.Ui.TextBox()
+        Me.eui_txtSospeso = New Elegant.Ui.TextBox()
+        Me.eui_txtTotale = New Elegant.Ui.TextBox()
+        Me.eui_txtImposta = New Elegant.Ui.TextBox()
+        Me.eui_txtImponibile = New Elegant.Ui.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "")
+        Me.ImageList1.Images.SetKeyName(1, "")
+        Me.ImageList1.Images.SetKeyName(2, "")
+        Me.ImageList1.Images.SetKeyName(3, "")
+        Me.ImageList1.Images.SetKeyName(4, "")
+        Me.ImageList1.Images.SetKeyName(5, "")
+        Me.ImageList1.Images.SetKeyName(6, "")
+        Me.ImageList1.Images.SetKeyName(7, "")
+        Me.ImageList1.Images.SetKeyName(8, "")
+        Me.ImageList1.Images.SetKeyName(9, "")
+        Me.ImageList1.Images.SetKeyName(10, "")
+        Me.ImageList1.Images.SetKeyName(11, "")
+        Me.ImageList1.Images.SetKeyName(12, "")
+        Me.ImageList1.Images.SetKeyName(13, "")
+        Me.ImageList1.Images.SetKeyName(14, "")
+        Me.ImageList1.Images.SetKeyName(15, "")
+        Me.ImageList1.Images.SetKeyName(16, "")
+        Me.ImageList1.Images.SetKeyName(17, "")
+        '
+        'DataGrid1
+        '
+        Me.DataGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.DataGrid1.BackgroundColor = System.Drawing.Color.White
-      Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
-      Me.DataGrid1.CaptionBackColor = System.Drawing.Color.Gray
-      Me.DataGrid1.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
-      Me.DataGrid1.DataMember = ""
-      Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 34)
-      Me.DataGrid1.Name = "DataGrid1"
-      Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(650, 313)
-      Me.DataGrid1.TabIndex = 0
-      '
-      'Panel1
-      '
-      Me.Panel1.BackColor = System.Drawing.Color.Gray
-      Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
-      Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
-      Me.Panel1.Controls.Add(Me.dtpAl)
-      Me.Panel1.Controls.Add(Me.dtpDal)
-      Me.Panel1.Controls.Add(Me.lblAl)
-      Me.Panel1.Controls.Add(Me.lblDal)
-      Me.Panel1.Controls.Add(Me.lblCampo)
-      Me.Panel1.Controls.Add(Me.lblTesto)
-      Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-      Me.Panel1.Location = New System.Drawing.Point(0, 0)
-      Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(650, 34)
-      Me.Panel1.TabIndex = 0
-      '
-      'eui_cmbCampoRicerca
-      '
-      Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmbCampoRicerca.Editable = False
-      Me.eui_cmbCampoRicerca.FormattingEnabled = False
-      Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(506, 7)
-      Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
-      Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
-      Me.eui_cmbCampoRicerca.TabIndex = 1
-      Me.eui_cmbCampoRicerca.TextEditorWidth = 115
-      '
-      'eui_txtTestoRicerca
-      '
-      Me.eui_txtTestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.DataGrid1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGrid1.CaptionBackColor = System.Drawing.Color.Gray
+        Me.DataGrid1.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
+        Me.DataGrid1.DataMember = ""
+        Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGrid1.Location = New System.Drawing.Point(0, 34)
+        Me.DataGrid1.Name = "DataGrid1"
+        Me.DataGrid1.ReadOnly = True
+        Me.DataGrid1.Size = New System.Drawing.Size(655, 38)
+        Me.DataGrid1.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
+        Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
+        Me.Panel1.Controls.Add(Me.dtpAl)
+        Me.Panel1.Controls.Add(Me.dtpDal)
+        Me.Panel1.Controls.Add(Me.lblAl)
+        Me.Panel1.Controls.Add(Me.lblDal)
+        Me.Panel1.Controls.Add(Me.lblCampo)
+        Me.Panel1.Controls.Add(Me.lblTesto)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(658, 34)
+        Me.Panel1.TabIndex = 0
+        '
+        'eui_cmbCampoRicerca
+        '
+        Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_cmbCampoRicerca.Editable = False
+        Me.eui_cmbCampoRicerca.FormattingEnabled = False
+        Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
+        Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(514, 7)
+        Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
+        Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
+        Me.eui_cmbCampoRicerca.TabIndex = 1
+        Me.eui_cmbCampoRicerca.TextEditorWidth = 115
+        '
+        'eui_txtTestoRicerca
+        '
+        Me.eui_txtTestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
-      Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
-      Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(289, 21)
-      Me.eui_txtTestoRicerca.TabIndex = 0
-      Me.eui_txtTestoRicerca.TextEditorWidth = 529
-      '
-      'dtpAl
-      '
-      Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(466, 40)
-      Me.dtpAl.Name = "dtpAl"
-      Me.dtpAl.Size = New System.Drawing.Size(174, 20)
-      Me.dtpAl.TabIndex = 55670
-      Me.dtpAl.Tag = ""
-      Me.dtpAl.Visible = False
-      '
-      'dtpDal
-      '
-      Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(250, 40)
-      Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
-      Me.dtpDal.Name = "dtpDal"
-      Me.dtpDal.Size = New System.Drawing.Size(174, 20)
-      Me.dtpDal.TabIndex = 55669
-      Me.dtpDal.Tag = ""
-      Me.dtpDal.Visible = False
-      '
-      'lblAl
-      '
-      Me.lblAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblAl.AutoSize = True
-      Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblAl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblAl.Location = New System.Drawing.Point(442, 40)
-      Me.lblAl.Name = "lblAl"
-      Me.lblAl.Size = New System.Drawing.Size(23, 15)
-      Me.lblAl.TabIndex = 55672
-      Me.lblAl.Tag = ""
-      Me.lblAl.Text = "Al:"
-      Me.lblAl.Visible = False
-      '
-      'lblDal
-      '
-      Me.lblDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblDal.AutoSize = True
-      Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblDal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblDal.Location = New System.Drawing.Point(218, 40)
-      Me.lblDal.Name = "lblDal"
-      Me.lblDal.Size = New System.Drawing.Size(33, 15)
-      Me.lblDal.TabIndex = 55671
-      Me.lblDal.Tag = ""
-      Me.lblDal.Text = "Dal:"
-      Me.lblDal.Visible = False
-      '
-      'lblCampo
-      '
-      Me.lblCampo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblCampo.AutoSize = True
-      Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(417, 8)
-      Me.lblCampo.Name = "lblCampo"
-      Me.lblCampo.Size = New System.Drawing.Size(85, 15)
-      Me.lblCampo.TabIndex = 8
-      Me.lblCampo.Text = "Ricerca per:"
-      '
-      'lblTesto
-      '
-      Me.lblTesto.AutoSize = True
-      Me.lblTesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblTesto.ForeColor = System.Drawing.Color.White
-      Me.lblTesto.Location = New System.Drawing.Point(2, 8)
-      Me.lblTesto.Name = "lblTesto"
-      Me.lblTesto.Size = New System.Drawing.Size(110, 15)
-      Me.lblTesto.TabIndex = 6
-      Me.lblTesto.Text = "Testo di ricerca:"
-      '
-      'PrintDialog1
-      '
-      Me.PrintDialog1.Document = Me.PrintDocument1
-      '
-      'PrintDocument1
-      '
-      Me.PrintDocument1.DocumentName = "Risorse.rpt"
-      '
-      'Panel2
-      '
-      Me.Panel2.BackColor = System.Drawing.Color.Gray
-      Me.Panel2.Controls.Add(Me.eui_txtBuoni)
-      Me.Panel2.Controls.Add(Me.eui_txtSospeso)
-      Me.Panel2.Controls.Add(Me.eui_txtTotale)
-      Me.Panel2.Controls.Add(Me.eui_txtImposta)
-      Me.Panel2.Controls.Add(Me.eui_txtImponibile)
-      Me.Panel2.Controls.Add(Me.Label1)
-      Me.Panel2.Controls.Add(Me.Label4)
-      Me.Panel2.Controls.Add(Me.Label2)
-      Me.Panel2.Controls.Add(Me.Label3)
-      Me.Panel2.Controls.Add(Me.Label6)
-      Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 348)
-      Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(650, 50)
-      Me.Panel2.TabIndex = 13
-      '
-      'eui_txtBuoni
-      '
-      Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
-      Me.eui_txtBuoni.Location = New System.Drawing.Point(538, 20)
-      Me.eui_txtBuoni.Name = "eui_txtBuoni"
-      Me.eui_txtBuoni.ReadOnly = True
-      Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
-      Me.eui_txtBuoni.TabIndex = 4
-      Me.eui_txtBuoni.Text = "1.000"
-      Me.eui_txtBuoni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtBuoni.TextEditorWidth = 96
-      '
-      'eui_txtSospeso
-      '
-      Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
-      Me.eui_txtSospeso.Location = New System.Drawing.Point(226, 20)
-      Me.eui_txtSospeso.Name = "eui_txtSospeso"
-      Me.eui_txtSospeso.ReadOnly = True
-      Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
-      Me.eui_txtSospeso.TabIndex = 1
-      Me.eui_txtSospeso.Text = "1.000"
-      Me.eui_txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtSospeso.TextEditorWidth = 96
-      '
-      'eui_txtTotale
-      '
-      Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(122, 20)
-      Me.eui_txtTotale.Name = "eui_txtTotale"
-      Me.eui_txtTotale.ReadOnly = True
-      Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
-      Me.eui_txtTotale.TabIndex = 0
-      Me.eui_txtTotale.Text = "1.000"
-      Me.eui_txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtTotale.TextEditorWidth = 96
-      '
-      'eui_txtImposta
-      '
-      Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
-      Me.eui_txtImposta.Location = New System.Drawing.Point(434, 20)
-      Me.eui_txtImposta.Name = "eui_txtImposta"
-      Me.eui_txtImposta.ReadOnly = True
-      Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
-      Me.eui_txtImposta.TabIndex = 3
-      Me.eui_txtImposta.Text = "1.300.000.000"
-      Me.eui_txtImposta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtImposta.TextEditorWidth = 96
-      '
-      'eui_txtImponibile
-      '
-      Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
-      Me.eui_txtImponibile.Location = New System.Drawing.Point(330, 20)
-      Me.eui_txtImponibile.Name = "eui_txtImponibile"
-      Me.eui_txtImponibile.ReadOnly = True
-      Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
-      Me.eui_txtImponibile.TabIndex = 2
-      Me.eui_txtImponibile.Text = "1.000"
-      Me.eui_txtImponibile.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtImponibile.TextEditorWidth = 96
-      '
-      'Label1
-      '
-      Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label1.AutoSize = True
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(535, 5)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(87, 15)
-      Me.Label1.TabIndex = 238
-      Me.Label1.Text = "Buoni pasto:"
-      '
-      'Label4
-      '
-      Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label4.AutoSize = True
-      Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(431, 5)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(62, 15)
-      Me.Label4.TabIndex = 242
-      Me.Label4.Text = "Imposta:"
-      '
-      'Label2
-      '
-      Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label2.AutoSize = True
-      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(327, 5)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(79, 15)
-      Me.Label2.TabIndex = 240
-      Me.Label2.Text = "Imponibile:"
-      '
-      'Label3
-      '
-      Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label3.AutoSize = True
-      Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(223, 5)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(66, 15)
-      Me.Label3.TabIndex = 236
-      Me.Label3.Text = "Sospeso:"
-      '
-      'Label6
-      '
-      Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label6.AutoSize = True
-      Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(119, 5)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(51, 15)
-      Me.Label6.TabIndex = 16
-      Me.Label6.Text = "Totale:"
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'ElencoDoc
-      '
-      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(650, 398)
-      Me.Controls.Add(Me.Panel2)
-      Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.DataGrid1)
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.Name = "ElencoDoc"
-      Me.ShowInTaskbar = False
-      Me.Text = "Elenco documenti di Vendita"
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.Panel1.ResumeLayout(False)
-      Me.Panel1.PerformLayout()
-      Me.Panel2.ResumeLayout(False)
-      Me.Panel2.PerformLayout()
-      Me.ResumeLayout(False)
+        Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
+        Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
+        Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
+        Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(297, 21)
+        Me.eui_txtTestoRicerca.TabIndex = 0
+        Me.eui_txtTestoRicerca.TextEditorWidth = 529
+        '
+        'dtpAl
+        '
+        Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpAl.Location = New System.Drawing.Point(474, 40)
+        Me.dtpAl.Name = "dtpAl"
+        Me.dtpAl.Size = New System.Drawing.Size(174, 20)
+        Me.dtpAl.TabIndex = 55670
+        Me.dtpAl.Tag = ""
+        Me.dtpAl.Visible = False
+        '
+        'dtpDal
+        '
+        Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDal.Location = New System.Drawing.Point(258, 40)
+        Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
+        Me.dtpDal.Name = "dtpDal"
+        Me.dtpDal.Size = New System.Drawing.Size(174, 20)
+        Me.dtpDal.TabIndex = 55669
+        Me.dtpDal.Tag = ""
+        Me.dtpDal.Visible = False
+        '
+        'lblAl
+        '
+        Me.lblAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAl.AutoSize = True
+        Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAl.Location = New System.Drawing.Point(450, 40)
+        Me.lblAl.Name = "lblAl"
+        Me.lblAl.Size = New System.Drawing.Size(23, 15)
+        Me.lblAl.TabIndex = 55672
+        Me.lblAl.Tag = ""
+        Me.lblAl.Text = "Al:"
+        Me.lblAl.Visible = False
+        '
+        'lblDal
+        '
+        Me.lblDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDal.AutoSize = True
+        Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDal.Location = New System.Drawing.Point(226, 40)
+        Me.lblDal.Name = "lblDal"
+        Me.lblDal.Size = New System.Drawing.Size(33, 15)
+        Me.lblDal.TabIndex = 55671
+        Me.lblDal.Tag = ""
+        Me.lblDal.Text = "Dal:"
+        Me.lblDal.Visible = False
+        '
+        'lblCampo
+        '
+        Me.lblCampo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCampo.AutoSize = True
+        Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCampo.ForeColor = System.Drawing.Color.White
+        Me.lblCampo.Location = New System.Drawing.Point(425, 8)
+        Me.lblCampo.Name = "lblCampo"
+        Me.lblCampo.Size = New System.Drawing.Size(85, 15)
+        Me.lblCampo.TabIndex = 8
+        Me.lblCampo.Text = "Ricerca per:"
+        '
+        'lblTesto
+        '
+        Me.lblTesto.AutoSize = True
+        Me.lblTesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTesto.ForeColor = System.Drawing.Color.White
+        Me.lblTesto.Location = New System.Drawing.Point(2, 8)
+        Me.lblTesto.Name = "lblTesto"
+        Me.lblTesto.Size = New System.Drawing.Size(110, 15)
+        Me.lblTesto.TabIndex = 6
+        Me.lblTesto.Text = "Testo di ricerca:"
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.Document = Me.PrintDocument1
+        '
+        'PrintDocument1
+        '
+        Me.PrintDocument1.DocumentName = "Risorse.rpt"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Gray
+        Me.Panel2.Controls.Add(Me.eui_txtBuoni)
+        Me.Panel2.Controls.Add(Me.eui_txtSospeso)
+        Me.Panel2.Controls.Add(Me.eui_txtTotale)
+        Me.Panel2.Controls.Add(Me.eui_txtImposta)
+        Me.Panel2.Controls.Add(Me.eui_txtImponibile)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 356)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(658, 50)
+        Me.Panel2.TabIndex = 13
+        '
+        'eui_txtBuoni
+        '
+        Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
+        Me.eui_txtBuoni.Location = New System.Drawing.Point(546, 20)
+        Me.eui_txtBuoni.Name = "eui_txtBuoni"
+        Me.eui_txtBuoni.ReadOnly = True
+        Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
+        Me.eui_txtBuoni.TabIndex = 4
+        Me.eui_txtBuoni.Text = "1.000"
+        Me.eui_txtBuoni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtBuoni.TextEditorWidth = 96
+        '
+        'eui_txtSospeso
+        '
+        Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
+        Me.eui_txtSospeso.Location = New System.Drawing.Point(234, 20)
+        Me.eui_txtSospeso.Name = "eui_txtSospeso"
+        Me.eui_txtSospeso.ReadOnly = True
+        Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
+        Me.eui_txtSospeso.TabIndex = 1
+        Me.eui_txtSospeso.Text = "1.000"
+        Me.eui_txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtSospeso.TextEditorWidth = 96
+        '
+        'eui_txtTotale
+        '
+        Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
+        Me.eui_txtTotale.Location = New System.Drawing.Point(130, 20)
+        Me.eui_txtTotale.Name = "eui_txtTotale"
+        Me.eui_txtTotale.ReadOnly = True
+        Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
+        Me.eui_txtTotale.TabIndex = 0
+        Me.eui_txtTotale.Text = "1.000"
+        Me.eui_txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtTotale.TextEditorWidth = 96
+        '
+        'eui_txtImposta
+        '
+        Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
+        Me.eui_txtImposta.Location = New System.Drawing.Point(442, 20)
+        Me.eui_txtImposta.Name = "eui_txtImposta"
+        Me.eui_txtImposta.ReadOnly = True
+        Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
+        Me.eui_txtImposta.TabIndex = 3
+        Me.eui_txtImposta.Text = "1.300.000.000"
+        Me.eui_txtImposta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtImposta.TextEditorWidth = 96
+        '
+        'eui_txtImponibile
+        '
+        Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
+        Me.eui_txtImponibile.Location = New System.Drawing.Point(338, 20)
+        Me.eui_txtImponibile.Name = "eui_txtImponibile"
+        Me.eui_txtImponibile.ReadOnly = True
+        Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
+        Me.eui_txtImponibile.TabIndex = 2
+        Me.eui_txtImponibile.Text = "1.000"
+        Me.eui_txtImponibile.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtImponibile.TextEditorWidth = 96
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(543, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 15)
+        Me.Label1.TabIndex = 238
+        Me.Label1.Text = "Buoni pasto:"
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(439, 5)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 15)
+        Me.Label4.TabIndex = 242
+        Me.Label4.Text = "Imposta:"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(335, 5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(79, 15)
+        Me.Label2.TabIndex = 240
+        Me.Label2.Text = "Imponibile:"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(231, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 15)
+        Me.Label3.TabIndex = 236
+        Me.Label3.Text = "Sospeso:"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(127, 5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(51, 15)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Totale:"
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 78)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(658, 278)
+        Me.DataGridView1.TabIndex = 14
+        '
+        'ElencoDoc
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ClientSize = New System.Drawing.Size(658, 406)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.DataGrid1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "ElencoDoc"
+        Me.ShowInTaskbar = False
+        Me.Text = "Elenco documenti di Vendita"
+        CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
 
-   End Sub
+    End Sub
 
 #End Region
 
 #Region "Scarico ingredienti"
 
-   Private Function SalvaDati(ByVal tabella As String, ByVal id As Integer, ByVal giacenza As Double,
+    Private Function SalvaDati(ByVal tabella As String, ByVal id As Integer, ByVal giacenza As Double,
                               ByVal carico As Double, ByVal scarico As Double,
                               ByVal situazione As Double, ByVal prezzo As String,
                               ByVal valCarico As Double, ByVal valScarico As Double, ByVal valAttuale As Double) As Boolean
@@ -2665,6 +2697,9 @@ Public Class ElencoDoc
       g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = True
       g_frmMain.eui_Strumenti_Esporta_XML.Visible = moduloAttivo.FattElettronica
       g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
+
+      ' Magazzino.
+      g_frmMain.eui_Strumenti_Magazzino.Visible = False
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
