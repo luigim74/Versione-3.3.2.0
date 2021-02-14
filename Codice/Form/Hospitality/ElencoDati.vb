@@ -245,27 +245,26 @@ Public Class frmElencoDati
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(752, 37)
+      Me.Panel1.Size = New System.Drawing.Size(760, 63)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
       '
       Me.lblIntestazione.AutoSize = True
-      Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblIntestazione.ForeColor = System.Drawing.Color.White
       Me.lblIntestazione.Location = New System.Drawing.Point(2, 38)
       Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(213, 20)
+      Me.lblIntestazione.Size = New System.Drawing.Size(182, 16)
       Me.lblIntestazione.TabIndex = 9
       Me.lblIntestazione.Text = "INTESTAZIONE ELENCO"
-      Me.lblIntestazione.Visible = False
       '
       'eui_cmbCampoRicerca
       '
       Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "d43a4748-fb7c-4a92-b314-e99dd371f091"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(611, 8)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(619, 8)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(131, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -278,7 +277,7 @@ Public Class frmElencoDati
       Me.eui_txtTestoRicerca.Id = "d11254da-9c61-45ed-96c7-2e47ad041e41"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(116, 8)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(402, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(410, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 268
       '
@@ -288,7 +287,7 @@ Public Class frmElencoDati
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(522, 8)
+      Me.Label2.Location = New System.Drawing.Point(530, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -324,6 +323,9 @@ Public Class frmElencoDati
       Me.DataGridView1.AllowUserToDeleteRows = False
       DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
       Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
       DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -335,19 +337,18 @@ Public Class frmElencoDati
       DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
       Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-      Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(0, 41)
+      Me.DataGridView1.Location = New System.Drawing.Point(2, 65)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(752, 360)
+      Me.DataGridView1.Size = New System.Drawing.Size(756, 342)
       Me.DataGridView1.TabIndex = 0
       '
       'frmElencoDati
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(752, 401)
+      Me.ClientSize = New System.Drawing.Size(760, 409)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGridView1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1557,6 +1558,11 @@ Public Class frmElencoDati
          'tbrUltimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
+         ' Si verifica quando la griglia viene aperta in modalità Massima o Minima.
+         If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
+            Exit Try
+         End If
+
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
@@ -2289,7 +2295,7 @@ Public Class frmElencoDati
                Case Elenco.Aziende
                   lblIntestazione.Text = Strings.UCase(DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value)
 
-               Case Elenco.Prenotazioni, Elenco.PrenSale, Elenco.Articoli
+               Case Elenco.Prenotazioni, Elenco.PrenSale
                   lblIntestazione.Text = Strings.UCase(DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value)
 
                Case Elenco.Articoli
@@ -6544,13 +6550,14 @@ Public Class frmElencoDati
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
-         DatiConfig = New AppConfig
-         DatiConfig.ConfigType = ConfigFileType.AppConfig
-         ' Imposta le dimensioni del form.
-         LeggiDatiConfig()
-
          ' Crea le colonne della griglia dati.
          CreaColonne()
+
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         ' Imposta le dimensioni del form.
+         LeggiDatiConfig()
 
          ' Carica l'elenco dei campi di ricerca.
          CaricaCampiRic()

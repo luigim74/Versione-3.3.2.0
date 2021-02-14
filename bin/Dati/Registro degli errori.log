@@ -540,3 +540,255 @@ Nome parametro: index"
    in Hospitality_Solution.Articoli.ModificaDati(String tabella, String codice)"
 "
 "
+"*** 14/02/2021 - 15:46:54 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 15:46:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Articoli."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneArticoli(String tabella)"
+"
+"
+"*** 14/02/2021 - 15:48:14 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 15:48:18 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Articoli."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneArticoli(String tabella)"
+"
+"
+"*** 14/02/2021 - 15:51:44 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 15:51:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Articoli."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneArticoli(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:16:10 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:16:16 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:16:52 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:16:55 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Fornitori."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneFornitori(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:18:27 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:18:36 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo CategoriePiatti."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneCatPiatti(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:23:23 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:23:32 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Gruppi."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneGruppi(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:24:36 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:24:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Gruppi."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneGruppi(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:28:15 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:28:19 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Articoli."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.frmElencoDati.CreaColonneArticoli(String tabella)"
+"
+"
+"*** 14/02/2021 - 16:35:42 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:36:07 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 14/02/2021 - 16:37:11 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"

@@ -23,7 +23,7 @@ Imports System.Runtime.InteropServices
 ' È possibile specificare tutti i valori oppure impostare valori predefiniti per i numeri relativi alla revisione e alla build 
 ' utilizzando l'asterisco (*) come descritto di seguito:
 
-<Assembly: AssemblyFileVersion("3.5.1.0")>
+<Assembly: AssemblyFileVersion("3.5.2.0")>
 
 <Assembly: NeutralResourcesLanguageAttribute("it")> 
 
@@ -32,5 +32,5 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompanyAttribute("Montana Software")> 
 <Assembly: AssemblyProductAttribute("Hospitality Solution 3")>
 <Assembly: AssemblyCopyright("Copyright © 2005-2021 Montana Software. Tutti i diritti riservati.")>
-<Assembly: AssemblyVersion("3.5.1.0")>
+<Assembly: AssemblyVersion("3.5.2.0")>
 <Assembly: Elegant.Ui.DefaultThemeAttribute(Elegant.Ui.EmbeddedTheme.Office2010Black)>
