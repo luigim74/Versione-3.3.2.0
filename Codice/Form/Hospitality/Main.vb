@@ -12482,7 +12482,8 @@ Friend Class frmMain
                ' Modifica il cursore del mouse.
                Cursor.Current = Cursors.AppStarting
 
-               g_frmDocumento = New frmDocumento("ElencoDoc", g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 4), g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 0))
+               g_frmDocumento = New frmDocumento("ElencoDoc", g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_TIPO_DOC, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                                              g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_ID_DOC, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value.ToString)
                g_frmDocumento.ShowDialog()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
@@ -13927,7 +13928,7 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Annulla l'importo sospeso del documento selezionato.
-               g_frmDocumenti.AnnullaSospeso(g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 0))
+               g_frmDocumenti.AnnullaSospeso(g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_ID_DOC, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13951,7 +13952,8 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Passa l'importo del documento selezionato in sospeso.
-               g_frmDocumenti.PassaSospeso(g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 0), g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, 9))
+               g_frmDocumenti.PassaSospeso(g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_ID_DOC, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value,
+                                           g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_IMPORTO_TOTALE, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value.ToString)
 
                ' Inserire qui il codice per gestire le altre finestre.
 

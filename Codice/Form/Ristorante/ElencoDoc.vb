@@ -3,7 +3,7 @@
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 13/02/2021
+' Data ultima modifica: 20/02/2021
 ' Descrizione:          Elenco documenti emessi..
 ' Note:
 
@@ -27,10 +27,10 @@ Public Class ElencoDoc
    Public Const COLONNA_ID_DOC As Short = 0
    Const COLONNA_NUMERO_DOC As Short = 1
    Const COLONNA_DATA_DOC As Short = 2
-   Const COLONNA_TIPO_DOC As Short = 4
+   Public Const COLONNA_TIPO_DOC As Short = 4
    Const COLONNA_INTESTATARIO As Short = 5
    Const COLONNA_STATO_DOC As Short = 6
-   Const COLONNA_IMPORTO_TOTALE As Short = 9
+   Public Const COLONNA_IMPORTO_TOTALE As Short = 9
    Const COLONNA_IMPORTO_SOSPESO As Short = 10
    Const COLONNA_IMPORTO_IMPONIBILE As Short = 11
    Const COLONNA_IMPORTO_IMPOSTA As Short = 12
@@ -78,11 +78,12 @@ Public Class ElencoDoc
    Friend WithEvents eui_txtSospeso As Elegant.Ui.TextBox
    Friend WithEvents eui_txtTotale As Elegant.Ui.TextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Public filtroDati As String
+   Friend WithEvents lblIntestazione As Label
+   Public filtroDati As String
 
 #Region " Codice generato da Progettazione Windows Form "
 
-    Public Sub New()
+   Public Sub New()
       MyBase.New()
 
       'Chiamata richiesta da Progettazione Windows Form.
@@ -109,7 +110,6 @@ Public Class ElencoDoc
    'Può essere modificata in Progettazione Windows Form.  
    'Non modificarla nell'editor del codice.
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Public WithEvents DataGrid1 As System.Windows.Forms.DataGrid
    Friend WithEvents Panel1 As System.Windows.Forms.Panel
    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
@@ -129,8 +129,8 @@ Public Class ElencoDoc
       Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-      Me.DataGrid1 = New System.Windows.Forms.DataGrid()
       Me.Panel1 = New System.Windows.Forms.Panel()
+      Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
       Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
       Me.dtpAl = New System.Windows.Forms.DateTimePicker()
@@ -154,7 +154,6 @@ Public Class ElencoDoc
       Me.Label6 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.Panel1.SuspendLayout()
       Me.Panel2.SuspendLayout()
       CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,28 +182,10 @@ Public Class ElencoDoc
       Me.ImageList1.Images.SetKeyName(16, "")
       Me.ImageList1.Images.SetKeyName(17, "")
       '
-      'DataGrid1
-      '
-      Me.DataGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.DataGrid1.BackgroundColor = System.Drawing.Color.White
-      Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
-      Me.DataGrid1.CaptionBackColor = System.Drawing.Color.Gray
-      Me.DataGrid1.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.DataGrid1.CaptionForeColor = System.Drawing.Color.White
-      Me.DataGrid1.DataMember = ""
-      Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-      Me.DataGrid1.Location = New System.Drawing.Point(0, 34)
-      Me.DataGrid1.Name = "DataGrid1"
-      Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(655, 38)
-      Me.DataGrid1.TabIndex = 0
-      Me.DataGrid1.Visible = False
-      '
       'Panel1
       '
       Me.Panel1.BackColor = System.Drawing.Color.Gray
+      Me.Panel1.Controls.Add(Me.lblIntestazione)
       Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
       Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
       Me.Panel1.Controls.Add(Me.dtpAl)
@@ -216,8 +197,19 @@ Public Class ElencoDoc
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(666, 34)
+      Me.Panel1.Size = New System.Drawing.Size(682, 63)
       Me.Panel1.TabIndex = 0
+      '
+      'lblIntestazione
+      '
+      Me.lblIntestazione.AutoSize = True
+      Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblIntestazione.ForeColor = System.Drawing.Color.White
+      Me.lblIntestazione.Location = New System.Drawing.Point(2, 39)
+      Me.lblIntestazione.Name = "lblIntestazione"
+      Me.lblIntestazione.Size = New System.Drawing.Size(182, 16)
+      Me.lblIntestazione.TabIndex = 55673
+      Me.lblIntestazione.Text = "INTESTAZIONE ELENCO"
       '
       'eui_cmbCampoRicerca
       '
@@ -225,7 +217,7 @@ Public Class ElencoDoc
       Me.eui_cmbCampoRicerca.Editable = False
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(522, 7)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(538, 7)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -238,7 +230,7 @@ Public Class ElencoDoc
       Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(305, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(321, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 529
       '
@@ -246,7 +238,7 @@ Public Class ElencoDoc
       '
       Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(482, 40)
+      Me.dtpAl.Location = New System.Drawing.Point(498, 40)
       Me.dtpAl.Name = "dtpAl"
       Me.dtpAl.Size = New System.Drawing.Size(174, 20)
       Me.dtpAl.TabIndex = 55670
@@ -257,7 +249,7 @@ Public Class ElencoDoc
       '
       Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(266, 40)
+      Me.dtpDal.Location = New System.Drawing.Point(282, 40)
       Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.dtpDal.Name = "dtpDal"
       Me.dtpDal.Size = New System.Drawing.Size(174, 20)
@@ -271,7 +263,7 @@ Public Class ElencoDoc
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblAl.Location = New System.Drawing.Point(458, 40)
+      Me.lblAl.Location = New System.Drawing.Point(474, 40)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(23, 15)
       Me.lblAl.TabIndex = 55672
@@ -285,7 +277,7 @@ Public Class ElencoDoc
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblDal.Location = New System.Drawing.Point(234, 40)
+      Me.lblDal.Location = New System.Drawing.Point(250, 40)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(33, 15)
       Me.lblDal.TabIndex = 55671
@@ -299,7 +291,7 @@ Public Class ElencoDoc
       Me.lblCampo.AutoSize = True
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(433, 8)
+      Me.lblCampo.Location = New System.Drawing.Point(449, 8)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -338,9 +330,9 @@ Public Class ElencoDoc
       Me.Panel2.Controls.Add(Me.Label3)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 364)
+      Me.Panel2.Location = New System.Drawing.Point(0, 380)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(666, 50)
+      Me.Panel2.Size = New System.Drawing.Size(682, 50)
       Me.Panel2.TabIndex = 13
       '
       'eui_txtBuoni
@@ -348,7 +340,7 @@ Public Class ElencoDoc
       Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
-      Me.eui_txtBuoni.Location = New System.Drawing.Point(554, 20)
+      Me.eui_txtBuoni.Location = New System.Drawing.Point(570, 20)
       Me.eui_txtBuoni.Name = "eui_txtBuoni"
       Me.eui_txtBuoni.ReadOnly = True
       Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
@@ -362,7 +354,7 @@ Public Class ElencoDoc
       Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
-      Me.eui_txtSospeso.Location = New System.Drawing.Point(242, 20)
+      Me.eui_txtSospeso.Location = New System.Drawing.Point(258, 20)
       Me.eui_txtSospeso.Name = "eui_txtSospeso"
       Me.eui_txtSospeso.ReadOnly = True
       Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
@@ -376,7 +368,7 @@ Public Class ElencoDoc
       Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(138, 20)
+      Me.eui_txtTotale.Location = New System.Drawing.Point(154, 20)
       Me.eui_txtTotale.Name = "eui_txtTotale"
       Me.eui_txtTotale.ReadOnly = True
       Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
@@ -390,7 +382,7 @@ Public Class ElencoDoc
       Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
-      Me.eui_txtImposta.Location = New System.Drawing.Point(450, 20)
+      Me.eui_txtImposta.Location = New System.Drawing.Point(466, 20)
       Me.eui_txtImposta.Name = "eui_txtImposta"
       Me.eui_txtImposta.ReadOnly = True
       Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
@@ -404,7 +396,7 @@ Public Class ElencoDoc
       Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
-      Me.eui_txtImponibile.Location = New System.Drawing.Point(346, 20)
+      Me.eui_txtImponibile.Location = New System.Drawing.Point(362, 20)
       Me.eui_txtImponibile.Name = "eui_txtImponibile"
       Me.eui_txtImponibile.ReadOnly = True
       Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
@@ -419,7 +411,7 @@ Public Class ElencoDoc
       Me.Label1.AutoSize = True
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(551, 5)
+      Me.Label1.Location = New System.Drawing.Point(567, 5)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(87, 15)
       Me.Label1.TabIndex = 238
@@ -431,7 +423,7 @@ Public Class ElencoDoc
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(447, 5)
+      Me.Label4.Location = New System.Drawing.Point(463, 5)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(62, 15)
       Me.Label4.TabIndex = 242
@@ -443,7 +435,7 @@ Public Class ElencoDoc
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(343, 5)
+      Me.Label2.Location = New System.Drawing.Point(359, 5)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(79, 15)
       Me.Label2.TabIndex = 240
@@ -455,7 +447,7 @@ Public Class ElencoDoc
       Me.Label3.AutoSize = True
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(239, 5)
+      Me.Label3.Location = New System.Drawing.Point(255, 5)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(66, 15)
       Me.Label3.TabIndex = 236
@@ -467,7 +459,7 @@ Public Class ElencoDoc
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(135, 5)
+      Me.Label6.Location = New System.Drawing.Point(151, 5)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(51, 15)
       Me.Label6.TabIndex = 16
@@ -484,6 +476,9 @@ Public Class ElencoDoc
       Me.DataGridView1.AllowUserToDeleteRows = False
       DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
       Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
       DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -495,28 +490,25 @@ Public Class ElencoDoc
       DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
       Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
       Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-      Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-      Me.DataGridView1.Location = New System.Drawing.Point(0, 86)
+      Me.DataGridView1.Location = New System.Drawing.Point(2, 65)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(666, 278)
+      Me.DataGridView1.Size = New System.Drawing.Size(678, 313)
       Me.DataGridView1.TabIndex = 14
       '
       'ElencoDoc
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(666, 414)
+      Me.ClientSize = New System.Drawing.Size(682, 430)
       Me.Controls.Add(Me.DataGridView1)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.DataGrid1)
       Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
       Me.Name = "ElencoDoc"
       Me.ShowInTaskbar = False
       Me.Text = "Elenco documenti di Vendita"
-      CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.Panel1.ResumeLayout(False)
       Me.Panel1.PerformLayout()
       Me.Panel2.ResumeLayout(False)
@@ -679,7 +671,7 @@ Public Class ElencoDoc
          Dim listaIngredienti As New ListBox
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          cn.Open()
 
@@ -956,7 +948,7 @@ Public Class ElencoDoc
          Dim rifDoc As String
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
          ' Apre la connessione.
          cn.Open()
@@ -1011,7 +1003,7 @@ Public Class ElencoDoc
          Dim listaBuoniFatt As New ListBox
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
          ' Apre la connessione.
          cn.Open()
@@ -1081,7 +1073,9 @@ Public Class ElencoDoc
          ' Elimina i Buoni pasto da fatturare contenuti nel documento annullato.
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
          cn.Open()
@@ -1119,7 +1113,9 @@ Public Class ElencoDoc
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
          cn.Open()
@@ -1157,7 +1153,9 @@ Public Class ElencoDoc
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+
+         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
          cn.Open()
@@ -1194,10 +1192,15 @@ Public Class ElencoDoc
    End Sub
 
    Public Sub EliminaDatiDocumento()
-      Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2)
-      Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4)
-      Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1)
-      Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 7)
+      'Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
+      'Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+      'Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
+      'Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE)
+
+      Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Importo As String = DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
       ' Chiede conferma per l'eliminazione.
       Dim risposta As Integer
@@ -1225,10 +1228,15 @@ Public Class ElencoDoc
    Public Sub DuplicaDocumento()
       Try
          Dim Risposta As Short
-         Dim id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)
-         Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-         Dim data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-         Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+         'Dim id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         'Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
+         'Dim data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
+         'Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+
+         Dim id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
          ' Chiede conferma per l'eliminazione.
          Risposta = MessageBox.Show("Si desidera duplicare il documento """ & tipoDoc & " N. " & numero & " del " & data & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -1645,28 +1653,20 @@ Public Class ElencoDoc
 
    Private Sub SommaImporti()
       Try
-         'Dim importo As Decimal = SommaColonna(DataGrid1, COLONNA_IMPORTO_TOTALE, numRecord)
-         'Dim sospeso As Decimal = SommaColonna(DataGrid1, COLONNA_IMPORTO_SOSPESO, numRecord)
-         'Dim buoni As Decimal = SommaColonna(DataGrid1, COLONNA_IMPORTO_BUONI, numRecord)
-
-         ' Sottrae dal totale dei documenti i valori sospesi e i buoni non fatturati.
-         'Dim totImporto As Decimal = importo - sospeso - buoni
-
          ' Somma i valori della colonna Totale.
-         'eui_txtTotale.Text = CFormatta.FormattaEuro(totImporto)
-         eui_txtTotale.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_TOTALE, numRecord))
+         eui_txtTotale.Text = CFormatta.FormattaNumeroDouble(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_TOTALE, numRecord))
 
          ' Somma i valori della colonna Sospeso.
-         eui_txtSospeso.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_SOSPESO_INC, numRecord))
+         eui_txtSospeso.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_SOSPESO_INC, numRecord))
 
          ' Somma i valori della colonna Imponibile.
-         eui_txtImponibile.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_IMPONIBILE, numRecord))
+         eui_txtImponibile.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_IMPONIBILE, numRecord))
 
          ' Somma i valori della colonna Imposta.
-         eui_txtImposta.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_IMPOSTA, numRecord))
+         eui_txtImposta.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_IMPOSTA, numRecord))
 
          ' Somma i valori della colonna Buoni pasto.
-         eui_txtBuoni.Text = CFormatta.FormattaEuro(SommaColonna(DataGrid1, COLONNA_IMPORTO_BUONI_INC, numRecord))
+         eui_txtBuoni.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_BUONI, numRecord))
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1724,13 +1724,16 @@ Public Class ElencoDoc
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            DataGrid1.CaptionText = Strings.UCase(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5) & " - " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4) & " n. " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1) & " del " &
-                                                  DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2))
+            lblIntestazione.Text = Strings.UCase(DataGridView1.Item(COLONNA_INTESTATARIO, DataGridView1.CurrentCell.RowIndex).Value.ToString & " - " &
+                                                 DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " n. " &
+                                                 DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " del " &
+                                                 DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
          Else
-            DataGrid1.CaptionText = ""
+            lblIntestazione.Text = String.Empty
          End If
+
+      Catch ex As NullReferenceException
+         Exit Try
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1743,11 +1746,11 @@ Public Class ElencoDoc
       Try
          ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
          If numRecord <> 0 Then
-            Select Case DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_SOSPESO_INC) = VALORE_ZERO Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
                      g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = True
@@ -1762,6 +1765,9 @@ Public Class ElencoDoc
             g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
          End If
 
+      Catch ex As NullReferenceException
+         Exit Try
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1773,11 +1779,11 @@ Public Class ElencoDoc
       Try
          ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
          If numRecord <> 0 Then
-            Select Case DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_SOSPESO_INC) = VALORE_ZERO Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
                      g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = True
@@ -1792,6 +1798,9 @@ Public Class ElencoDoc
             g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
          End If
 
+      Catch ex As NullReferenceException
+         Exit Try
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1803,11 +1812,11 @@ Public Class ElencoDoc
       Try
          ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
          If numRecord <> 0 Then
-            Select Case DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE) = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_SOSPESO_INC) Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString = DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString Then
                      g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = True
@@ -1822,6 +1831,9 @@ Public Class ElencoDoc
             g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
          End If
 
+      Catch ex As NullReferenceException
+         Exit Try
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1833,7 +1845,7 @@ Public Class ElencoDoc
       Try
          If numRecord <> 0 Then
             ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_BUONI_INC) = VALORE_ZERO Then
+            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
 
                g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
             Else
@@ -1842,6 +1854,9 @@ Public Class ElencoDoc
          Else
             g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
          End If
+
+      Catch ex As NullReferenceException
+         Exit Try
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1855,8 +1870,8 @@ Public Class ElencoDoc
          ' Attiva/disattiva il pulsante per annullare un documento.
          If numRecord <> 0 Then
 
-            Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-            Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO_DOC)
+            Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
             Select Case tipoDoc
                Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
@@ -1876,6 +1891,9 @@ Public Class ElencoDoc
             End Select
          End If
 
+      Catch ex As NullReferenceException
+         Exit Try
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1887,8 +1905,8 @@ Public Class ElencoDoc
       Try
          ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
          If numRecord <> 0 Then
-            Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-            Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO_DOC)
+            Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
             Select Case tipoDoc
                Case TIPO_DOC_FF
@@ -1908,6 +1926,9 @@ Public Class ElencoDoc
             End Select
          End If
 
+      Catch ex As NullReferenceException
+         Exit Try
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1917,11 +1938,12 @@ Public Class ElencoDoc
 
    Public Sub AnnullaDocumento()
       Try
-         Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-         Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-         Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-         Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-         Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE)
+         Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
+
 
          ' Chiede conferma per l'annullamento.
          Dim risposta As Integer
@@ -1934,7 +1956,7 @@ Public Class ElencoDoc
             RipristinaStatistiche()
 
             ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_BUONI_INC) <> VALORE_ZERO Then
+            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString <> VALORE_ZERO Then
                If RipristinaBuoniPasto() = True Then
                   EliminaBuoniPasto()
                End If
@@ -2102,204 +2124,6 @@ Public Class ElencoDoc
       Me.Text = titolo & " (n° totale: " & numRecord & ")"
    End Sub
 
-   Private Sub _CreaColonne(ByVal tabella As String)
-      Try
-         Dim gridStyle As New DataGridTableStyle
-         gridStyle.MappingName = tabella
-
-         ' 0 Id - Codice
-         Dim codiceStyle As New DataGridTextBoxColumn
-         codiceStyle.MappingName = "Id"
-         codiceStyle.HeaderText = "Codice"
-         codiceStyle.Width = 0
-         codiceStyle.NullText = ""
-         codiceStyle.Alignment = HorizontalAlignment.Right
-         codiceStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(codiceStyle)
-         ' 1 Numero documento
-         Dim numeroStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         numeroStyle.MappingName = "NumDoc"
-         numeroStyle.HeaderText = "Numero."
-         numeroStyle.Width = 50
-         numeroStyle.NullText = ""
-         numeroStyle.Format = "##,##0"
-         numeroStyle.Alignment = HorizontalAlignment.Right
-         numeroStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(numeroStyle)
-         ' 2 Data documento
-         Dim dataStyle As New DataGridTextBoxColumn
-         dataStyle.MappingName = "DataDoc"
-         dataStyle.HeaderText = "Data"
-         dataStyle.Width = 75
-         dataStyle.NullText = ""
-         dataStyle.Alignment = HorizontalAlignment.Center
-         dataStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(dataStyle)
-         ' 3 Ora documento
-         Dim oraStyle As New DataGridTextBoxColumn
-         oraStyle.MappingName = "OraDoc"
-         oraStyle.HeaderText = "Ora"
-         oraStyle.Width = 50
-         oraStyle.NullText = ""
-         oraStyle.Alignment = HorizontalAlignment.Left
-         oraStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(oraStyle)
-         ' 4 Documento
-         Dim documentoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         documentoStyle.MappingName = "TipoDoc"
-         documentoStyle.HeaderText = "Tipo documento"
-         documentoStyle.Width = 150
-         documentoStyle.NullText = ""
-         documentoStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         gridStyle.GridColumnStyles.Add(documentoStyle)
-         ' 5 Cliente
-         Dim clienteStyle As New DataGridTextBoxColumn
-         clienteStyle.MappingName = "Cliente"
-         clienteStyle.HeaderText = "Intestatario"
-         clienteStyle.Width = 150
-         clienteStyle.NullText = ""
-         clienteStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(clienteStyle)
-         ' 6 Stato
-         Dim statoStyle As New DataGridTextBoxColumn
-         statoStyle.MappingName = "StatoDoc"
-         statoStyle.HeaderText = "Stato"
-         statoStyle.Width = 120
-         statoStyle.NullText = ""
-         statoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(statoStyle)
-         ' 7 Causale
-         Dim causaleStyle As New DataGridTextBoxColumn
-         causaleStyle.MappingName = "CausaleDoc"
-         causaleStyle.HeaderText = "Causale"
-         causaleStyle.Width = 120
-         causaleStyle.NullText = ""
-         causaleStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(causaleStyle)
-         ' 8 Tipo pagamento
-         Dim tipoPagStyle As New DataGridTextBoxColumn
-         tipoPagStyle.MappingName = "TipoPagamento"
-         tipoPagStyle.HeaderText = "Tipo pagamento"
-         tipoPagStyle.Width = 100
-         tipoPagStyle.NullText = ""
-         tipoPagStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(tipoPagStyle)
-         ' 9 Totale documento
-         Dim totDocStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         totDocStyle.MappingName = "TotDoc"
-         totDocStyle.HeaderText = "Totale."
-         totDocStyle.Width = 80
-         totDocStyle.NullText = ""
-         totDocStyle.Format = "##,##0.00"
-         totDocStyle.Alignment = HorizontalAlignment.Right
-         totDocStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(totDocStyle)
-         ' 10 Sospeso
-         Dim sospesoStyle As New DataGridTextBoxColumn
-         sospesoStyle.MappingName = "Sospeso"
-         sospesoStyle.HeaderText = "Sospeso."
-         sospesoStyle.Width = 80
-         sospesoStyle.NullText = ""
-         sospesoStyle.Format = "##,##0.00"
-         sospesoStyle.Alignment = HorizontalAlignment.Right
-         sospesoStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(sospesoStyle)
-         ' 11 Imponibile
-         Dim imponibileStyle As New DataGridTextBoxColumn
-         imponibileStyle.MappingName = "Imponibile"
-         imponibileStyle.HeaderText = "Imponibile."
-         imponibileStyle.Width = 80
-         imponibileStyle.NullText = ""
-         imponibileStyle.Format = "##,##0.00"
-         imponibileStyle.Alignment = HorizontalAlignment.Right
-         imponibileStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(imponibileStyle)
-         ' 12 Imposta
-         Dim impostaStyle As New DataGridTextBoxColumn
-         impostaStyle.MappingName = "Imposta"
-         impostaStyle.HeaderText = "Imposta. "
-         impostaStyle.Width = 80
-         impostaStyle.NullText = ""
-         impostaStyle.Format = "##,##0.00"
-         impostaStyle.Alignment = HorizontalAlignment.Right
-         impostaStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(impostaStyle)
-         ' 13 Buoni pasto
-         Dim buoniStyle As New DataGridTextBoxColumn
-         buoniStyle.MappingName = "BuoniPasto"
-         buoniStyle.HeaderText = "Buoni pasto."
-         buoniStyle.Width = 80
-         buoniStyle.NullText = ""
-         buoniStyle.Format = "##,##0.00"
-         buoniStyle.Alignment = HorizontalAlignment.Right
-         buoniStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(buoniStyle)
-         ' 14 Chiuso.
-         Dim chiusoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         chiusoStyle.MappingName = "Chiuso"
-         chiusoStyle.HeaderText = "Contabilizzato"
-         chiusoStyle.Width = 100
-         chiusoStyle.NullText = ""
-         chiusoStyle.Alignment = HorizontalAlignment.Center
-         chiusoStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         gridStyle.GridColumnStyles.Add(chiusoStyle)
-         ' 15 Sospeso da incassare
-         Dim sospesoIncStyle As New DataGridTextBoxColumn
-         sospesoIncStyle.MappingName = "SospesoIncassare"
-         sospesoIncStyle.HeaderText = ""
-         sospesoIncStyle.Width = 0
-         sospesoIncStyle.NullText = ""
-         sospesoIncStyle.Alignment = HorizontalAlignment.Right
-         sospesoIncStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(sospesoIncStyle)
-         ' 16 Buoni pasto da incassare
-         Dim buoniIncStyle As New DataGridTextBoxColumn
-         buoniIncStyle.MappingName = "BuoniPastoIncassare"
-         buoniIncStyle.HeaderText = ""
-         buoniIncStyle.Width = 0
-         buoniIncStyle.NullText = ""
-         buoniIncStyle.Alignment = HorizontalAlignment.Right
-         buoniIncStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(buoniIncStyle)
-         ' 17 Id Cliente.
-         Dim idClienteStyle As New DataGridTextBoxColumn
-         idClienteStyle.MappingName = "idCliente"
-         idClienteStyle.HeaderText = ""
-         idClienteStyle.Width = 0
-         idClienteStyle.NullText = ""
-         idClienteStyle.Alignment = HorizontalAlignment.Right
-         idClienteStyle.TextBox.BackColor = Color.White
-         gridStyle.GridColumnStyles.Add(idClienteStyle)
-
-         '' Tavolo
-         'Dim tavoloStyle As New DataGridTextBoxColumn
-         'tavoloStyle.MappingName = "Tavolo"
-         'tavoloStyle.HeaderText = "Tavolo"
-         'tavoloStyle.Width = 70
-         'tavoloStyle.NullText = ""
-         'tavoloStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(tavoloStyle)
-
-         '' Cameriere
-         'Dim cameriereStyle As New DataGridTextBoxColumn
-         'cameriereStyle.MappingName = "Cameriere"
-         'cameriereStyle.HeaderText = "Cameriere"
-         'cameriereStyle.Width = 150
-         'cameriereStyle.NullText = ""
-         'cameriereStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(cameriereStyle)
-         ' Sospeso da incassare
-
-         DataGrid1.TableStyles.Clear()
-         DataGrid1.TableStyles.Add(gridStyle)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Private Sub CreaColonne(ByVal tabella As String)
       Try
          DataGridView1.AutoGenerateColumns = False
@@ -2333,169 +2157,246 @@ Public Class ElencoDoc
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, numeroStyle)
 
-         '' 2 Data documento
-         'Dim dataStyle As New DataGridTextBoxColumn
-         'dataStyle.MappingName = "DataDoc"
-         'dataStyle.HeaderText = "Data"
-         'dataStyle.Width = 75
-         'dataStyle.NullText = ""
-         'dataStyle.Alignment = HorizontalAlignment.Center
-         'dataStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(dataStyle)
-         '' 3 Ora documento
-         'Dim oraStyle As New DataGridTextBoxColumn
-         'oraStyle.MappingName = "OraDoc"
-         'oraStyle.HeaderText = "Ora"
-         'oraStyle.Width = 50
-         'oraStyle.NullText = ""
-         'oraStyle.Alignment = HorizontalAlignment.Left
-         'oraStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(oraStyle)
-         '' 4 Documento
-         'Dim documentoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_AZZURRO), Color.Black)
-         'documentoStyle.MappingName = "TipoDoc"
-         'documentoStyle.HeaderText = "Tipo documento"
-         'documentoStyle.Width = 150
-         'documentoStyle.NullText = ""
-         'documentoStyle.TextBox.BackColor = Color.FromArgb(COLORE_AZZURRO)
-         'gridStyle.GridColumnStyles.Add(documentoStyle)
-         '' 5 Cliente
-         'Dim clienteStyle As New DataGridTextBoxColumn
-         'clienteStyle.MappingName = "Cliente"
-         'clienteStyle.HeaderText = "Intestatario"
-         'clienteStyle.Width = 150
-         'clienteStyle.NullText = ""
-         'clienteStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(clienteStyle)
-         '' 6 Stato
-         'Dim statoStyle As New DataGridTextBoxColumn
-         'statoStyle.MappingName = "StatoDoc"
-         'statoStyle.HeaderText = "Stato"
-         'statoStyle.Width = 120
-         'statoStyle.NullText = ""
-         'statoStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(statoStyle)
-         '' 7 Causale
-         'Dim causaleStyle As New DataGridTextBoxColumn
-         'causaleStyle.MappingName = "CausaleDoc"
-         'causaleStyle.HeaderText = "Causale"
-         'causaleStyle.Width = 120
-         'causaleStyle.NullText = ""
-         'causaleStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(causaleStyle)
-         '' 8 Tipo pagamento
-         'Dim tipoPagStyle As New DataGridTextBoxColumn
-         'tipoPagStyle.MappingName = "TipoPagamento"
-         'tipoPagStyle.HeaderText = "Tipo pagamento"
-         'tipoPagStyle.Width = 100
-         'tipoPagStyle.NullText = ""
-         'tipoPagStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(tipoPagStyle)
-         '' 9 Totale documento
-         'Dim totDocStyle As New ColonnaColorata(DataGrid1, Color.White, Color.Red)
-         'totDocStyle.MappingName = "TotDoc"
-         'totDocStyle.HeaderText = "Totale."
-         'totDocStyle.Width = 80
-         'totDocStyle.NullText = ""
-         'totDocStyle.Format = "##,##0.00"
-         'totDocStyle.Alignment = HorizontalAlignment.Right
-         'totDocStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(totDocStyle)
-         '' 10 Sospeso
-         'Dim sospesoStyle As New DataGridTextBoxColumn
-         'sospesoStyle.MappingName = "Sospeso"
-         'sospesoStyle.HeaderText = "Sospeso."
-         'sospesoStyle.Width = 80
-         'sospesoStyle.NullText = ""
-         'sospesoStyle.Format = "##,##0.00"
-         'sospesoStyle.Alignment = HorizontalAlignment.Right
-         'sospesoStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(sospesoStyle)
-         '' 11 Imponibile
-         'Dim imponibileStyle As New DataGridTextBoxColumn
-         'imponibileStyle.MappingName = "Imponibile"
-         'imponibileStyle.HeaderText = "Imponibile."
-         'imponibileStyle.Width = 80
-         'imponibileStyle.NullText = ""
-         'imponibileStyle.Format = "##,##0.00"
-         'imponibileStyle.Alignment = HorizontalAlignment.Right
-         'imponibileStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(imponibileStyle)
-         '' 12 Imposta
-         'Dim impostaStyle As New DataGridTextBoxColumn
-         'impostaStyle.MappingName = "Imposta"
-         'impostaStyle.HeaderText = "Imposta. "
-         'impostaStyle.Width = 80
-         'impostaStyle.NullText = ""
-         'impostaStyle.Format = "##,##0.00"
-         'impostaStyle.Alignment = HorizontalAlignment.Right
-         'impostaStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(impostaStyle)
-         '' 13 Buoni pasto
-         'Dim buoniStyle As New DataGridTextBoxColumn
-         'buoniStyle.MappingName = "BuoniPasto"
-         'buoniStyle.HeaderText = "Buoni pasto."
-         'buoniStyle.Width = 80
-         'buoniStyle.NullText = ""
-         'buoniStyle.Format = "##,##0.00"
-         'buoniStyle.Alignment = HorizontalAlignment.Right
-         'buoniStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(buoniStyle)
-         '' 14 Chiuso.
-         'Dim chiusoStyle As New ColonnaColorata(DataGrid1, Color.FromArgb(COLORE_ROSA), Color.Black)
-         'chiusoStyle.MappingName = "Chiuso"
-         'chiusoStyle.HeaderText = "Contabilizzato"
-         'chiusoStyle.Width = 100
-         'chiusoStyle.NullText = ""
-         'chiusoStyle.Alignment = HorizontalAlignment.Center
-         'chiusoStyle.TextBox.BackColor = Color.FromArgb(COLORE_ROSA)
-         'gridStyle.GridColumnStyles.Add(chiusoStyle)
-         '' 15 Sospeso da incassare
-         'Dim sospesoIncStyle As New DataGridTextBoxColumn
-         'sospesoIncStyle.MappingName = "SospesoIncassare"
-         'sospesoIncStyle.HeaderText = ""
-         'sospesoIncStyle.Width = 0
-         'sospesoIncStyle.NullText = ""
-         'sospesoIncStyle.Alignment = HorizontalAlignment.Right
-         'sospesoIncStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(sospesoIncStyle)
-         '' 16 Buoni pasto da incassare
-         'Dim buoniIncStyle As New DataGridTextBoxColumn
-         'buoniIncStyle.MappingName = "BuoniPastoIncassare"
-         'buoniIncStyle.HeaderText = ""
-         'buoniIncStyle.Width = 0
-         'buoniIncStyle.NullText = ""
-         'buoniIncStyle.Alignment = HorizontalAlignment.Right
-         'buoniIncStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(buoniIncStyle)
-         '' 17 Id Cliente.
-         'Dim idClienteStyle As New DataGridTextBoxColumn
-         'idClienteStyle.MappingName = "idCliente"
-         'idClienteStyle.HeaderText = ""
-         'idClienteStyle.Width = 0
-         'idClienteStyle.NullText = ""
-         'idClienteStyle.Alignment = HorizontalAlignment.Right
-         'idClienteStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(idClienteStyle)
+         ' 2 Data documento
+         Dim dataStyle As New DataGridViewTextBoxColumn()
+         With dataStyle
+            .DataPropertyName = "DataDoc"
+            .HeaderText = "Data"
+            .Name = "DataDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, dataStyle)
 
-         '' Tavolo
-         'Dim tavoloStyle As New DataGridTextBoxColumn
-         'tavoloStyle.MappingName = "Tavolo"
-         'tavoloStyle.HeaderText = "Tavolo"
-         'tavoloStyle.Width = 70
-         'tavoloStyle.NullText = ""
-         'tavoloStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(tavoloStyle)
+         ' 3 Ora documento
+         Dim oraStyle As New DataGridViewTextBoxColumn()
+         With oraStyle
+            .DataPropertyName = "OraDoc"
+            .HeaderText = "Ora"
+            .Name = "OraDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, oraStyle)
 
-         '' Cameriere
-         'Dim cameriereStyle As New DataGridTextBoxColumn
-         'cameriereStyle.MappingName = "Cameriere"
-         'cameriereStyle.HeaderText = "Cameriere"
-         'cameriereStyle.Width = 150
-         'cameriereStyle.NullText = ""
-         'cameriereStyle.TextBox.BackColor = Color.White
-         'gridStyle.GridColumnStyles.Add(cameriereStyle)
-         ' Sospeso da incassare
+         ' 4 Documento
+         Dim documentoStyle As New DataGridViewTextBoxColumn()
+         With documentoStyle
+            .DataPropertyName = "TipoDoc"
+            .HeaderText = "Tipo documento"
+            .Name = "TipoDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, documentoStyle)
+
+         ' Cliente
+         Dim clienteStyle As New DataGridViewTextBoxColumn()
+         With clienteStyle
+            .DataPropertyName = "Cliente"
+            .HeaderText = "Intestatario"
+            .Name = "Cliente"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, clienteStyle)
+
+         ' 6 Stato
+         Dim statoStyle As New DataGridViewTextBoxColumn()
+         With statoStyle
+            .DataPropertyName = "StatoDoc"
+            .HeaderText = "Stato"
+            .Name = "StatoDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
+
+         ' 7 Causale
+         Dim causaleStyle As New DataGridViewTextBoxColumn()
+         With causaleStyle
+            .DataPropertyName = "CausaleDoc"
+            .HeaderText = "Causale"
+            .Name = "CausaleDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, causaleStyle)
+
+         ' 8 Tipo pagamento
+         Dim tipoPagStyle As New DataGridViewTextBoxColumn()
+         With tipoPagStyle
+            .DataPropertyName = "TipoPagamento"
+            .HeaderText = "Tipo pagamento"
+            .Name = "TipoPagamento"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipoPagStyle)
+
+         ' 9 Totale documento
+         Dim totDocStyle As New DataGridViewTextBoxColumn()
+         With totDocStyle
+            .DataPropertyName = "TotDoc"
+            .HeaderText = "Totale"
+            .Name = "TotDoc"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Blue
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totDocStyle)
+
+         ' 10 Sospeso
+         Dim sospesoStyle As New DataGridViewTextBoxColumn()
+         With sospesoStyle
+            .DataPropertyName = "Sospeso"
+            .HeaderText = "Sospeso"
+            .Name = "Sospeso"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, sospesoStyle)
+
+         ' 11 Imponibile
+         Dim imponibileStyle As New DataGridViewTextBoxColumn()
+         With imponibileStyle
+            .DataPropertyName = "Imponibile"
+            .HeaderText = "Imponibile"
+            .Name = "Imponibile"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Blue
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, imponibileStyle)
+
+         ' 12 Imposta
+         Dim impostaStyle As New DataGridViewTextBoxColumn()
+         With impostaStyle
+            .DataPropertyName = "Imposta"
+            .HeaderText = "Imposta"
+            .Name = "Imposta"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, impostaStyle)
+
+         ' 13 Buoni pasto
+         Dim buoniStyle As New DataGridViewTextBoxColumn()
+         With buoniStyle
+            .DataPropertyName = "BuoniPasto"
+            .HeaderText = "Buoni pasto"
+            .Name = "BuoniPasto"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Green
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, buoniStyle)
+
+         ' 14 Chiuso.
+         Dim chiusoStyle As New DataGridViewTextBoxColumn()
+         With chiusoStyle
+            .DataPropertyName = "Chiuso"
+            .HeaderText = "Contabilizzato"
+            .Name = "Chiuso"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, chiusoStyle)
+
+         ' 15 Sospeso da incassare
+         Dim sospesoIncStyle As New DataGridViewTextBoxColumn()
+         With sospesoIncStyle
+            .DataPropertyName = "SospesoIncassare"
+            .HeaderText = "SospesoIncassare"
+            .Name = "SospesoIncassare"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, sospesoIncStyle)
+
+         ' 16 Buoni pasto da incassare
+         Dim buoniIncStyle As New DataGridViewTextBoxColumn()
+         With buoniIncStyle
+            .DataPropertyName = "BuoniPastoIncassare"
+            .HeaderText = "BuoniPastoIncassare"
+            .Name = "BuoniPastoIncassare"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, buoniIncStyle)
+
+         ' 17 Id Cliente.
+         Dim idClienteStyle As New DataGridViewTextBoxColumn()
+         With idClienteStyle
+            .DataPropertyName = "idCliente"
+            .HeaderText = "idCliente"
+            .Name = "idCliente"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, idClienteStyle)
+
+         ' 18 Tavolo
+         Dim tavoloStyle As New DataGridViewTextBoxColumn()
+         With tavoloStyle
+            .DataPropertyName = "Tavolo"
+            .HeaderText = "Tavolo"
+            .Name = "Tavolo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tavoloStyle)
+
+         ' 18 Cameriere
+         Dim cameriereStyle As New DataGridViewTextBoxColumn()
+         With cameriereStyle
+            .DataPropertyName = "Cameriere"
+            .HeaderText = "Cameriere"
+            .Name = "Cameriere"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, cameriereStyle)
+
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2503,7 +2404,6 @@ Public Class ElencoDoc
 
       End Try
    End Sub
-
 
    Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
@@ -2701,12 +2601,12 @@ Public Class ElencoDoc
    Public Sub IncassaSospeso()
       Try
          ' Apre la finestra per l'incasso del sospeso.
-         Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_INTESTATARIO),
-                                          DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_SOSPESO))
+         Dim frm As New IncassaSospeso(DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value,
+                                          DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                          DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                          DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                          DataGridView1.Item(COLONNA_INTESTATARIO, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                          DataGridView1.Item(COLONNA_IMPORTO_SOSPESO, DataGridView1.CurrentCell.RowIndex).Value.ToString)
          frm.ShowDialog()
 
       Catch ex As Exception
@@ -2744,10 +2644,10 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-            Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-            Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-            Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-            Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
+            Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
 
             ' Registra loperazione effettuata dall'operatore identificato.
             Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
@@ -2817,10 +2717,10 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-            Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-            Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-            Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-            Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
+            Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
 
             ' Registra loperazione effettuata dall'operatore identificato.
             Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
@@ -2873,7 +2773,7 @@ Public Class ElencoDoc
          Dim frm As New ElencoBuoni
 
          ' Visualizza l'anagrafica clienti.
-         frm.Tag = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         frm.Tag = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
          frm.ShowDialog()
 
          ' Modifica il cursore del mouse.
@@ -3099,7 +2999,7 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-   Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGrid1.CurrentCellChanged
+   Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
       ' Visualizza un'intestazione per la griglia dati.
       AggIntGriglia()
 
@@ -3128,7 +3028,7 @@ Public Class ElencoDoc
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
    End Sub
 
-   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
+   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
       ' Apre la finestra Documento per la modifica dei dati.
       Modifica()
    End Sub
@@ -3162,7 +3062,8 @@ Public Class ElencoDoc
          Cursor.Current = Cursors.AppStarting
 
          ' Apre la finestra Documento per la modifica dei dati.
-         g_frmDocumento = New frmDocumento("ElencoDoc", DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4), DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0))
+         g_frmDocumento = New frmDocumento("ElencoDoc", DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                                        DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
          g_frmDocumento.ShowDialog()
 
       Catch ex As Exception
@@ -3177,8 +3078,8 @@ Public Class ElencoDoc
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         g_frmFatturaElettronica = New frmFatturaElettronica(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC).ToString,
-                                                             DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_CLIENTE).ToString)
+         g_frmFatturaElettronica = New frmFatturaElettronica(DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+                                                             DataGridView1.Item(COLONNA_ID_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString)
          g_frmFatturaElettronica.ShowDialog()
 
       Catch ex As Exception
@@ -3232,5 +3133,65 @@ Public Class ElencoDoc
       End Try
    End Function
 
+   Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+      Try
+         ' Imposta il colore per la cella in base al valore del campo Sospeso.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "Sospeso" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
 
+            Dim sospeso As Double = Convert.ToDouble(e.Value)
+
+            If sospeso > 0 Then
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Red
+            Else
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Black
+            End If
+         End If
+
+         ' Imposta il colore per la cella in base al valore del campo Buoni pasto.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "BuoniPasto" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+
+            Dim buoniPasto As Double = Convert.ToDouble(e.Value)
+
+            If buoniPasto > 0 Then
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Green
+            Else
+               ' Colore testo.
+               e.CellStyle.ForeColor = Color.Black
+            End If
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Private Sub DataGridView1_CurrentCellChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellChanged
+      ' Visualizza un'intestazione per la griglia dati.
+      AggIntGriglia()
+
+      ' Attiva/disattiva il pulsante per annullare un documento.
+      AttivaDisattivaAnnullaDoc()
+
+      ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
+      AttivaDisattivaEsportaFatturaElettronica()
+
+      ' Attiva/disattiva i pulsanti per i sospesi.
+      AttivaDisattivaSospeso()
+      AttivaDisattivaPassaSospeso()
+      AttivaDisattivaAnnullaSospeso()
+
+      ' Attiva/Disattiva il pulsante per i Buoni.
+      AttivaDisattivaBuoni()
+   End Sub
+
+   Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
+      ' Apre la finestra Documento per la modifica dei dati.
+      Modifica()
+   End Sub
 End Class

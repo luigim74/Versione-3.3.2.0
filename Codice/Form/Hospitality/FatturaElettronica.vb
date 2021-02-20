@@ -2039,7 +2039,7 @@ Public Class frmFatturaElettronica
             ' Esegue la convalida del file xml.
             If EseguiConvalidaFileXML() = True Then
                ' Modifica lo stato del documento selezionato.
-               Dim Id As String = g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, g_frmDocumenti.COLONNA_ID_DOC)
+               Dim Id As String = g_frmDocumenti.DataGridView1.Item(g_frmDocumenti.COLONNA_ID_DOC, g_frmDocumenti.DataGridView1.CurrentCell.RowIndex).Value.ToString
                g_frmDocumenti.ModificaStatoDocumento(TAB_DOCUMENTI, Id, g_frmDocumenti.STATO_DOC_EMESSO_XML)
 
                ' Aggiorna la lista dei documenti.
