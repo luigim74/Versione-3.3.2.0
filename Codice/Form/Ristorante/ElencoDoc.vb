@@ -3,7 +3,7 @@
 ' Nome form:            frmElencoDoc
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 20/02/2021
+' Data ultima modifica: 21/02/2021
 ' Descrizione:          Elenco documenti emessi..
 ' Note:
 
@@ -116,10 +116,6 @@ Public Class ElencoDoc
    Friend WithEvents Panel2 As System.Windows.Forms.Panel
    Friend WithEvents Label6 As System.Windows.Forms.Label
    Friend WithEvents Label3 As System.Windows.Forms.Label
-   Friend WithEvents dtpAl As System.Windows.Forms.DateTimePicker
-   Friend WithEvents dtpDal As System.Windows.Forms.DateTimePicker
-   Friend WithEvents lblAl As System.Windows.Forms.Label
-   Friend WithEvents lblDal As System.Windows.Forms.Label
    Friend WithEvents lblCampo As System.Windows.Forms.Label
    Friend WithEvents lblTesto As System.Windows.Forms.Label
    Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -133,10 +129,6 @@ Public Class ElencoDoc
       Me.lblIntestazione = New System.Windows.Forms.Label()
       Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
       Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
-      Me.dtpAl = New System.Windows.Forms.DateTimePicker()
-      Me.dtpDal = New System.Windows.Forms.DateTimePicker()
-      Me.lblAl = New System.Windows.Forms.Label()
-      Me.lblDal = New System.Windows.Forms.Label()
       Me.lblCampo = New System.Windows.Forms.Label()
       Me.lblTesto = New System.Windows.Forms.Label()
       Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
@@ -188,16 +180,12 @@ Public Class ElencoDoc
       Me.Panel1.Controls.Add(Me.lblIntestazione)
       Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
       Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
-      Me.Panel1.Controls.Add(Me.dtpAl)
-      Me.Panel1.Controls.Add(Me.dtpDal)
-      Me.Panel1.Controls.Add(Me.lblAl)
-      Me.Panel1.Controls.Add(Me.lblDal)
       Me.Panel1.Controls.Add(Me.lblCampo)
       Me.Panel1.Controls.Add(Me.lblTesto)
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(682, 63)
+      Me.Panel1.Size = New System.Drawing.Size(690, 63)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -217,7 +205,7 @@ Public Class ElencoDoc
       Me.eui_cmbCampoRicerca.Editable = False
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(538, 7)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(546, 7)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -230,60 +218,9 @@ Public Class ElencoDoc
       Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(321, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(329, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 529
-      '
-      'dtpAl
-      '
-      Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(498, 40)
-      Me.dtpAl.Name = "dtpAl"
-      Me.dtpAl.Size = New System.Drawing.Size(174, 20)
-      Me.dtpAl.TabIndex = 55670
-      Me.dtpAl.Tag = ""
-      Me.dtpAl.Visible = False
-      '
-      'dtpDal
-      '
-      Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(282, 40)
-      Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
-      Me.dtpDal.Name = "dtpDal"
-      Me.dtpDal.Size = New System.Drawing.Size(174, 20)
-      Me.dtpDal.TabIndex = 55669
-      Me.dtpDal.Tag = ""
-      Me.dtpDal.Visible = False
-      '
-      'lblAl
-      '
-      Me.lblAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblAl.AutoSize = True
-      Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblAl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblAl.Location = New System.Drawing.Point(474, 40)
-      Me.lblAl.Name = "lblAl"
-      Me.lblAl.Size = New System.Drawing.Size(23, 15)
-      Me.lblAl.TabIndex = 55672
-      Me.lblAl.Tag = ""
-      Me.lblAl.Text = "Al:"
-      Me.lblAl.Visible = False
-      '
-      'lblDal
-      '
-      Me.lblDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblDal.AutoSize = True
-      Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblDal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblDal.Location = New System.Drawing.Point(250, 40)
-      Me.lblDal.Name = "lblDal"
-      Me.lblDal.Size = New System.Drawing.Size(33, 15)
-      Me.lblDal.TabIndex = 55671
-      Me.lblDal.Tag = ""
-      Me.lblDal.Text = "Dal:"
-      Me.lblDal.Visible = False
       '
       'lblCampo
       '
@@ -291,7 +228,7 @@ Public Class ElencoDoc
       Me.lblCampo.AutoSize = True
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(449, 8)
+      Me.lblCampo.Location = New System.Drawing.Point(457, 8)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -330,9 +267,9 @@ Public Class ElencoDoc
       Me.Panel2.Controls.Add(Me.Label3)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 380)
+      Me.Panel2.Location = New System.Drawing.Point(0, 388)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(682, 50)
+      Me.Panel2.Size = New System.Drawing.Size(690, 50)
       Me.Panel2.TabIndex = 13
       '
       'eui_txtBuoni
@@ -340,7 +277,7 @@ Public Class ElencoDoc
       Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
-      Me.eui_txtBuoni.Location = New System.Drawing.Point(570, 20)
+      Me.eui_txtBuoni.Location = New System.Drawing.Point(578, 20)
       Me.eui_txtBuoni.Name = "eui_txtBuoni"
       Me.eui_txtBuoni.ReadOnly = True
       Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
@@ -354,7 +291,7 @@ Public Class ElencoDoc
       Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
-      Me.eui_txtSospeso.Location = New System.Drawing.Point(258, 20)
+      Me.eui_txtSospeso.Location = New System.Drawing.Point(266, 20)
       Me.eui_txtSospeso.Name = "eui_txtSospeso"
       Me.eui_txtSospeso.ReadOnly = True
       Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
@@ -368,7 +305,7 @@ Public Class ElencoDoc
       Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(154, 20)
+      Me.eui_txtTotale.Location = New System.Drawing.Point(162, 20)
       Me.eui_txtTotale.Name = "eui_txtTotale"
       Me.eui_txtTotale.ReadOnly = True
       Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
@@ -382,7 +319,7 @@ Public Class ElencoDoc
       Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
-      Me.eui_txtImposta.Location = New System.Drawing.Point(466, 20)
+      Me.eui_txtImposta.Location = New System.Drawing.Point(474, 20)
       Me.eui_txtImposta.Name = "eui_txtImposta"
       Me.eui_txtImposta.ReadOnly = True
       Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
@@ -396,7 +333,7 @@ Public Class ElencoDoc
       Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
-      Me.eui_txtImponibile.Location = New System.Drawing.Point(362, 20)
+      Me.eui_txtImponibile.Location = New System.Drawing.Point(370, 20)
       Me.eui_txtImponibile.Name = "eui_txtImponibile"
       Me.eui_txtImponibile.ReadOnly = True
       Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
@@ -411,7 +348,7 @@ Public Class ElencoDoc
       Me.Label1.AutoSize = True
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(567, 5)
+      Me.Label1.Location = New System.Drawing.Point(575, 5)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(87, 15)
       Me.Label1.TabIndex = 238
@@ -423,7 +360,7 @@ Public Class ElencoDoc
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(463, 5)
+      Me.Label4.Location = New System.Drawing.Point(471, 5)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(62, 15)
       Me.Label4.TabIndex = 242
@@ -435,7 +372,7 @@ Public Class ElencoDoc
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(359, 5)
+      Me.Label2.Location = New System.Drawing.Point(367, 5)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(79, 15)
       Me.Label2.TabIndex = 240
@@ -447,7 +384,7 @@ Public Class ElencoDoc
       Me.Label3.AutoSize = True
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(255, 5)
+      Me.Label3.Location = New System.Drawing.Point(263, 5)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(66, 15)
       Me.Label3.TabIndex = 236
@@ -459,7 +396,7 @@ Public Class ElencoDoc
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(151, 5)
+      Me.Label6.Location = New System.Drawing.Point(159, 5)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(51, 15)
       Me.Label6.TabIndex = 16
@@ -494,14 +431,14 @@ Public Class ElencoDoc
       Me.DataGridView1.Location = New System.Drawing.Point(2, 65)
       Me.DataGridView1.Name = "DataGridView1"
       Me.DataGridView1.ReadOnly = True
-      Me.DataGridView1.Size = New System.Drawing.Size(678, 313)
+      Me.DataGridView1.Size = New System.Drawing.Size(686, 321)
       Me.DataGridView1.TabIndex = 14
       '
       'ElencoDoc
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(682, 430)
+      Me.ClientSize = New System.Drawing.Size(690, 438)
       Me.Controls.Add(Me.DataGridView1)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
@@ -1073,8 +1010,6 @@ Public Class ElencoDoc
          ' Elimina i Buoni pasto da fatturare contenuti nel documento annullato.
 
          ' Legge il numero dell'ultimo documento creato.
-         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-
          rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
@@ -1113,8 +1048,6 @@ Public Class ElencoDoc
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-
          rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
@@ -1153,8 +1086,6 @@ Public Class ElencoDoc
          Dim rifDoc As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         'rifDoc = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-
          rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
@@ -1192,12 +1123,7 @@ Public Class ElencoDoc
    End Sub
 
    Public Sub EliminaDatiDocumento()
-      'Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-      'Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-      'Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-      'Dim Importo As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE)
-
-      Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
       Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
       Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
       Dim Importo As String = DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -1228,14 +1154,9 @@ Public Class ElencoDoc
    Public Sub DuplicaDocumento()
       Try
          Dim Risposta As Short
-         'Dim id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-         'Dim numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-         'Dim data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-         'Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-
          Dim id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
          Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
          Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
          ' Chiede conferma per l'eliminazione.
@@ -1727,7 +1648,7 @@ Public Class ElencoDoc
             lblIntestazione.Text = Strings.UCase(DataGridView1.Item(COLONNA_INTESTATARIO, DataGridView1.CurrentCell.RowIndex).Value.ToString & " - " &
                                                  DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " n. " &
                                                  DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " del " &
-                                                 DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+                                                 Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString)
          Else
             lblIntestazione.Text = String.Empty
          End If
@@ -1750,7 +1671,7 @@ Public Class ElencoDoc
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
                      g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = True
@@ -1783,7 +1704,7 @@ Public Class ElencoDoc
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
                      g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = True
@@ -1816,7 +1737,7 @@ Public Class ElencoDoc
 
                Case TIPO_DOC_RF, TIPO_DOC_FF
 
-                  If DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString = DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString Then
+                  If DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value = DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value Then
                      g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
                   Else
                      g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = True
@@ -1845,7 +1766,7 @@ Public Class ElencoDoc
       Try
          If numRecord <> 0 Then
             ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString = VALORE_ZERO Then
+            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
 
                g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
             Else
@@ -1939,7 +1860,7 @@ Public Class ElencoDoc
    Public Sub AnnullaDocumento()
       Try
          Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
          Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
          Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
          Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
@@ -1956,7 +1877,7 @@ Public Class ElencoDoc
             RipristinaStatistiche()
 
             ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value.ToString <> VALORE_ZERO Then
+            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value <> 0 Then
                If RipristinaBuoniPasto() = True Then
                   EliminaBuoniPasto()
                End If
@@ -2644,7 +2565,7 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-            Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
             Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
             Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
             Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
@@ -2717,7 +2638,7 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-            Dim Data As String = DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
             Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
             Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
             Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
@@ -2999,25 +2920,6 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-   Private Sub DataGrid1_CurrentCellChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-      ' Visualizza un'intestazione per la griglia dati.
-      AggIntGriglia()
-
-      ' Attiva/disattiva il pulsante per annullare un documento.
-      AttivaDisattivaAnnullaDoc()
-
-      ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
-      AttivaDisattivaEsportaFatturaElettronica()
-
-      ' Attiva/disattiva i pulsanti per i sospesi.
-      AttivaDisattivaSospeso()
-      AttivaDisattivaPassaSospeso()
-      AttivaDisattivaAnnullaSospeso()
-
-      ' Attiva/Disattiva il pulsante per i Buoni.
-      AttivaDisattivaBuoni()
-   End Sub
-
    Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_txtTestoRicerca.TextChanged
       ' Filtra i dati in base al testo digitato.
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
@@ -3026,19 +2928,6 @@ Public Class ElencoDoc
    Private Sub CampoRicerca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_cmbCampoRicerca.SelectedIndexChanged
       ' Filtra i dati in base al testo digitato.
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
-   End Sub
-
-   Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
-      ' Apre la finestra Documento per la modifica dei dati.
-      Modifica()
-   End Sub
-
-   Private Sub dtpDal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpDal.ValueChanged
-      AggiornaDatiPeriodo()
-   End Sub
-
-   Private Sub dtpAl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpAl.ValueChanged
-      AggiornaDatiPeriodo()
    End Sub
 
    Public Sub Nuovo()
@@ -3194,4 +3083,5 @@ Public Class ElencoDoc
       ' Apre la finestra Documento per la modifica dei dati.
       Modifica()
    End Sub
+
 End Class
