@@ -250,3 +250,233 @@
    in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
 "
 "
+"*** 24/02/2021 - 20:51:24 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 20:51:33 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 20:51:35 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 20:51:37 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 20:51:38 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Documenti."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.ElencoDoc.CreaColonne(String tabella)"
+"
+"
+"*** 24/02/2021 - 21:10:08 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:10:26 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:10:32 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:10:50 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:10:59 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Documenti."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.ElencoDoc.CreaColonne(String tabella)"
+"
+"
+"*** 24/02/2021 - 21:11:15 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:11:16 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:11:42 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:11:50 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:11:51 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:11:51 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:11:52 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Documenti."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.ElencoDoc.CreaColonne(String tabella)"
+"
+"
+"*** 24/02/2021 - 21:12:22 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:12:24 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:12:25 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Double'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Operators.CompareObject2(Object Left, Object Right, Boolean TextCompare)
+   in Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(Object Left, Object Right, Boolean TextCompare)
+   in Hospitality_Solution.ElencoDoc.AttivaDisattivaBuoni()"
+"
+"
+"*** 24/02/2021 - 21:12:26 ***"
+"- DESCRIZIONE ERRORE: Stringa non riconosciuta come valore DateTime valido."
+"- NOME PROCEDURA:    in System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   in System.Convert.ToDateTime(String value, IFormatProvider provider)
+   in System.String.System.IConvertible.ToDateTime(IFormatProvider provider)
+   in System.Convert.ToDateTime(Object value)
+   in Hospitality_Solution.ElencoDoc.AggIntGriglia()"
+"
+"
+"*** 24/02/2021 - 21:12:26 ***"
+"- DESCRIZIONE ERRORE: Impossibile creare un elenco di elementi figlio per il campo Documenti."
+"- NOME PROCEDURA:    in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in Hospitality_Solution.ElencoDoc.CreaColonne(String tabella)"
+"
+"
+"*** 27/02/2021 - 18:45:48 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoNoleggi.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 27/02/2021 - 18:45:52 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoNoleggi.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 27/02/2021 - 18:45:53 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.ElencoNoleggi.VisualizzaPagina(Int32 n, String sql)"
+"
+"

@@ -229,486 +229,486 @@ Public Class frmPlanningP
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.Panel3.SuspendLayout()
-      Me.Panel4.SuspendLayout()
-      Me.Panel1.SuspendLayout()
-      Me.SuspendLayout()
-      '
-      'Panel3
-      '
-      Me.Panel3.BackColor = System.Drawing.Color.Gray
-      Me.Panel3.Controls.Add(Me.lblAbbonamento1)
-      Me.Panel3.Controls.Add(Me.lblTorneo)
-      Me.Panel3.Controls.Add(Me.lblAbbonamento3)
-      Me.Panel3.Controls.Add(Me.lblAbbonamento2)
-      Me.Panel3.Controls.Add(Me.lblInCorso)
-      Me.Panel3.Controls.Add(Me.lblScaduta)
-      Me.Panel3.Controls.Add(Me.lblVostraCanc)
-      Me.Panel3.Controls.Add(Me.lblNostraCanc)
-      Me.Panel3.Controls.Add(Me.lblSospesa)
-      Me.Panel3.Controls.Add(Me.lblConfermata)
-      Me.Panel3.Controls.Add(Me.Label1)
-      Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel3.Location = New System.Drawing.Point(0, 523)
-      Me.Panel3.Name = "Panel3"
-      Me.Panel3.Size = New System.Drawing.Size(893, 19)
-      Me.Panel3.TabIndex = 11
-      '
-      'lblAbbonamento1
-      '
-      Me.lblAbbonamento1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-      Me.lblAbbonamento1.Location = New System.Drawing.Point(582, 0)
-      Me.lblAbbonamento1.Name = "lblAbbonamento1"
-      Me.lblAbbonamento1.Size = New System.Drawing.Size(116, 19)
-      Me.lblAbbonamento1.TabIndex = 7
-      Me.lblAbbonamento1.Text = "Abbonamento 1"
-      Me.lblAbbonamento1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblAbbonamento1, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblTorneo
-      '
-      Me.lblTorneo.BackColor = System.Drawing.Color.Green
-      Me.lblTorneo.Location = New System.Drawing.Point(930, 0)
-      Me.lblTorneo.Name = "lblTorneo"
-      Me.lblTorneo.Size = New System.Drawing.Size(116, 19)
-      Me.lblTorneo.TabIndex = 10
-      Me.lblTorneo.Text = "Torneo"
-      Me.lblTorneo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblTorneo, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblAbbonamento3
-      '
-      Me.lblAbbonamento3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-      Me.lblAbbonamento3.Location = New System.Drawing.Point(814, 0)
-      Me.lblAbbonamento3.Name = "lblAbbonamento3"
-      Me.lblAbbonamento3.Size = New System.Drawing.Size(116, 19)
-      Me.lblAbbonamento3.TabIndex = 9
-      Me.lblAbbonamento3.Text = "Abbonamento 3"
-      Me.lblAbbonamento3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblAbbonamento3, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblAbbonamento2
-      '
-      Me.lblAbbonamento2.BackColor = System.Drawing.Color.Magenta
-      Me.lblAbbonamento2.Location = New System.Drawing.Point(698, 0)
-      Me.lblAbbonamento2.Name = "lblAbbonamento2"
-      Me.lblAbbonamento2.Size = New System.Drawing.Size(116, 19)
-      Me.lblAbbonamento2.TabIndex = 8
-      Me.lblAbbonamento2.Text = "Abbonamento 2"
-      Me.lblAbbonamento2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblAbbonamento2, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblInCorso
-      '
-      Me.lblInCorso.BackColor = System.Drawing.Color.LightCoral
-      Me.lblInCorso.Location = New System.Drawing.Point(1106, 0)
-      Me.lblInCorso.Name = "lblInCorso"
-      Me.lblInCorso.Size = New System.Drawing.Size(51, 19)
-      Me.lblInCorso.TabIndex = 6
-      Me.lblInCorso.Text = "In corso"
-      Me.lblInCorso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblInCorso, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      Me.lblInCorso.Visible = False
-      '
-      'lblScaduta
-      '
-      Me.lblScaduta.BackColor = System.Drawing.Color.PeachPuff
-      Me.lblScaduta.ForeColor = System.Drawing.Color.Black
-      Me.lblScaduta.ImageAlign = System.Drawing.ContentAlignment.TopRight
-      Me.lblScaduta.Location = New System.Drawing.Point(1050, 0)
-      Me.lblScaduta.Name = "lblScaduta"
-      Me.lblScaduta.Size = New System.Drawing.Size(51, 19)
-      Me.lblScaduta.TabIndex = 5
-      Me.lblScaduta.Text = "Scaduta"
-      Me.lblScaduta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblScaduta, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      Me.lblScaduta.Visible = False
-      '
-      'lblVostraCanc
-      '
-      Me.lblVostraCanc.BackColor = System.Drawing.Color.DarkCyan
-      Me.lblVostraCanc.Location = New System.Drawing.Point(466, 0)
-      Me.lblVostraCanc.Name = "lblVostraCanc"
-      Me.lblVostraCanc.Size = New System.Drawing.Size(116, 19)
-      Me.lblVostraCanc.TabIndex = 4
-      Me.lblVostraCanc.Text = "Vostra cancellazione"
-      Me.lblVostraCanc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblVostraCanc, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblNostraCanc
-      '
-      Me.lblNostraCanc.BackColor = System.Drawing.Color.Salmon
-      Me.lblNostraCanc.Location = New System.Drawing.Point(350, 0)
-      Me.lblNostraCanc.Name = "lblNostraCanc"
-      Me.lblNostraCanc.Size = New System.Drawing.Size(116, 19)
-      Me.lblNostraCanc.TabIndex = 3
-      Me.lblNostraCanc.Text = "Nostra cancellazione"
-      Me.lblNostraCanc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblNostraCanc, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblSospesa
-      '
-      Me.lblSospesa.BackColor = System.Drawing.Color.Silver
-      Me.lblSospesa.Location = New System.Drawing.Point(234, 0)
-      Me.lblSospesa.Name = "lblSospesa"
-      Me.lblSospesa.Size = New System.Drawing.Size(116, 19)
-      Me.lblSospesa.TabIndex = 2
-      Me.lblSospesa.Text = "Sospesa"
-      Me.lblSospesa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblSospesa, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'lblConfermata
-      '
-      Me.lblConfermata.BackColor = System.Drawing.Color.DodgerBlue
-      Me.lblConfermata.ForeColor = System.Drawing.Color.Black
-      Me.lblConfermata.ImageAlign = System.Drawing.ContentAlignment.TopRight
-      Me.lblConfermata.Location = New System.Drawing.Point(118, 0)
-      Me.lblConfermata.Name = "lblConfermata"
-      Me.lblConfermata.Size = New System.Drawing.Size(116, 19)
-      Me.lblConfermata.TabIndex = 1
-      Me.lblConfermata.Text = "Confermata"
-      Me.lblConfermata.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      Me.ToolTip1.SetToolTip(Me.lblConfermata, "Fare doppio click per cambiare il colore di stato della prenotazione")
-      '
-      'Label1
-      '
-      Me.Label1.BackColor = System.Drawing.Color.Gray
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label1.ForeColor = System.Drawing.SystemColors.Window
-      Me.Label1.Location = New System.Drawing.Point(0, 0)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(116, 19)
-      Me.Label1.TabIndex = 0
-      Me.Label1.Text = "Legenda:"
-      Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      '
-      'ImageList1
-      '
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-      Me.ImageList1.Images.SetKeyName(0, "")
-      Me.ImageList1.Images.SetKeyName(1, "")
-      Me.ImageList1.Images.SetKeyName(2, "")
-      Me.ImageList1.Images.SetKeyName(3, "")
-      Me.ImageList1.Images.SetKeyName(4, "")
-      '
-      'ToolBar2
-      '
-      Me.ToolBar2.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
-      Me.ToolBar2.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.tbbNuovo, Me.tbbModifica, Me.tbbElimina, Me.ToolBarButton5, Me.tbbProprietà, Me.ToolBarButton3, Me.ToolBarButton8, Me.ToolBarButton7})
-      Me.ToolBar2.Divider = False
-      Me.ToolBar2.DropDownArrows = True
-      Me.ToolBar2.ImageList = Me.ImageList1
-      Me.ToolBar2.Location = New System.Drawing.Point(0, 0)
-      Me.ToolBar2.Name = "ToolBar2"
-      Me.ToolBar2.ShowToolTips = True
-      Me.ToolBar2.Size = New System.Drawing.Size(893, 26)
-      Me.ToolBar2.TabIndex = 15
-      Me.ToolBar2.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
-      '
-      'tbbNuovo
-      '
-      Me.tbbNuovo.Enabled = False
-      Me.tbbNuovo.ImageIndex = 1
-      Me.tbbNuovo.Name = "tbbNuovo"
-      Me.tbbNuovo.Tag = "Nuovo"
-      Me.tbbNuovo.Text = "Nuova"
-      Me.tbbNuovo.ToolTipText = "Nuova prenotazione"
-      '
-      'tbbModifica
-      '
-      Me.tbbModifica.Enabled = False
-      Me.tbbModifica.ImageIndex = 2
-      Me.tbbModifica.Name = "tbbModifica"
-      Me.tbbModifica.Tag = "Modifica"
-      Me.tbbModifica.Text = "Apri"
-      Me.tbbModifica.ToolTipText = "Modifica prenotazione"
-      '
-      'tbbElimina
-      '
-      Me.tbbElimina.Enabled = False
-      Me.tbbElimina.ImageIndex = 3
-      Me.tbbElimina.Name = "tbbElimina"
-      Me.tbbElimina.Tag = "Elimina"
-      Me.tbbElimina.Text = "Elimina"
-      Me.tbbElimina.ToolTipText = "Elimina prenotazione"
-      '
-      'ToolBarButton5
-      '
-      Me.ToolBarButton5.Name = "ToolBarButton5"
-      Me.ToolBarButton5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      Me.ToolBarButton5.Text = "Filtri"
-      '
-      'tbbProprietà
-      '
-      Me.tbbProprietà.Enabled = False
-      Me.tbbProprietà.ImageIndex = 4
-      Me.tbbProprietà.Name = "tbbProprietà"
-      Me.tbbProprietà.Tag = "Proprietà"
-      Me.tbbProprietà.Text = "Proprietà"
-      Me.tbbProprietà.ToolTipText = "Proprietà risorse"
-      '
-      'ToolBarButton3
-      '
-      Me.ToolBarButton3.Name = "ToolBarButton3"
-      Me.ToolBarButton3.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
-      Me.ToolBarButton3.Visible = False
-      '
-      'ToolBarButton8
-      '
-      Me.ToolBarButton8.Name = "ToolBarButton8"
-      Me.ToolBarButton8.Tag = "Anteprima"
-      Me.ToolBarButton8.Text = "Anteprima"
-      Me.ToolBarButton8.ToolTipText = "Anteprima di stampa"
-      Me.ToolBarButton8.Visible = False
-      '
-      'ToolBarButton7
-      '
-      Me.ToolBarButton7.Name = "ToolBarButton7"
-      Me.ToolBarButton7.Text = "Stampa"
-      Me.ToolBarButton7.Visible = False
-      '
-      'Panel4
-      '
-      Me.Panel4.BackColor = System.Drawing.Color.Gray
-      Me.Panel4.Controls.Add(Me.Altezza)
-      Me.Panel4.Controls.Add(Me.Label8)
-      Me.Panel4.Controls.Add(Me.ckbVisCosto)
-      Me.Panel4.Controls.Add(Me.Label9)
-      Me.Panel4.Controls.Add(Me.Larghezza)
-      Me.Panel4.Controls.Add(Me.Label7)
-      Me.Panel4.Controls.Add(Me.dtpData)
-      Me.Panel4.Controls.Add(Me.lblDettagliPren)
-      Me.Panel4.Controls.Add(Me.lblRisorsaOra)
-      Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-      Me.Panel4.Location = New System.Drawing.Point(0, 26)
-      Me.Panel4.Name = "Panel4"
-      Me.Panel4.Size = New System.Drawing.Size(893, 70)
-      Me.Panel4.TabIndex = 16
-      '
-      'Altezza
-      '
-      Me.Altezza.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Altezza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.Altezza.Items.AddRange(New Object() {"40", "50", "60", "70", "80"})
-      Me.Altezza.Location = New System.Drawing.Point(520, 21)
-      Me.Altezza.Name = "Altezza"
-      Me.Altezza.Size = New System.Drawing.Size(72, 21)
-      Me.Altezza.TabIndex = 10
-      Me.ToolTip1.SetToolTip(Me.Altezza, "Altezza righe")
-      Me.Altezza.Visible = False
-      '
-      'Label8
-      '
-      Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label8.AutoSize = True
-      Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.Label8.Location = New System.Drawing.Point(520, 2)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(57, 15)
-      Me.Label8.TabIndex = 12
-      Me.Label8.Text = "Altezza:"
-      Me.Label8.Visible = False
-      '
-      'ckbVisCosto
-      '
-      Me.ckbVisCosto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.ckbVisCosto.AutoSize = True
-      Me.ckbVisCosto.BackColor = System.Drawing.Color.Transparent
-      Me.ckbVisCosto.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-      Me.ckbVisCosto.Enabled = False
-      Me.ckbVisCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.ckbVisCosto.ForeColor = System.Drawing.SystemColors.HighlightText
-      Me.ckbVisCosto.Location = New System.Drawing.Point(696, 48)
-      Me.ckbVisCosto.Name = "ckbVisCosto"
-      Me.ckbVisCosto.Size = New System.Drawing.Size(177, 19)
-      Me.ckbVisCosto.TabIndex = 14
-      Me.ckbVisCosto.Text = "Visualizza costo risorse"
-      Me.ckbVisCosto.UseVisualStyleBackColor = False
-      '
-      'Label9
-      '
-      Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label9.AutoSize = True
-      Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.Label9.Location = New System.Drawing.Point(800, 5)
-      Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(78, 15)
-      Me.Label9.TabIndex = 13
-      Me.Label9.Text = "Larghezza:"
-      '
-      'Larghezza
-      '
-      Me.Larghezza.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Larghezza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.Larghezza.Enabled = False
-      Me.Larghezza.Items.AddRange(New Object() {"150", "160", "170", "180", "190", "200", "210", "220", "230", "240", "250"})
-      Me.Larghezza.Location = New System.Drawing.Point(800, 24)
-      Me.Larghezza.Name = "Larghezza"
-      Me.Larghezza.Size = New System.Drawing.Size(72, 21)
-      Me.Larghezza.TabIndex = 1
-      Me.ToolTip1.SetToolTip(Me.Larghezza, "Larghezza colonne")
-      '
-      'Label7
-      '
-      Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Label7.AutoSize = True
-      Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.Label7.Location = New System.Drawing.Point(600, 5)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(41, 15)
-      Me.Label7.TabIndex = 7
-      Me.Label7.Text = "Data:"
-      '
-      'dtpData
-      '
-      Me.dtpData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.dtpData.Enabled = False
-      Me.dtpData.Location = New System.Drawing.Point(600, 24)
-      Me.dtpData.Name = "dtpData"
-      Me.dtpData.Size = New System.Drawing.Size(192, 20)
-      Me.dtpData.TabIndex = 0
-      '
-      'lblDettagliPren
-      '
-      Me.lblDettagliPren.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Gray
+        Me.Panel3.Controls.Add(Me.lblAbbonamento1)
+        Me.Panel3.Controls.Add(Me.lblTorneo)
+        Me.Panel3.Controls.Add(Me.lblAbbonamento3)
+        Me.Panel3.Controls.Add(Me.lblAbbonamento2)
+        Me.Panel3.Controls.Add(Me.lblInCorso)
+        Me.Panel3.Controls.Add(Me.lblScaduta)
+        Me.Panel3.Controls.Add(Me.lblVostraCanc)
+        Me.Panel3.Controls.Add(Me.lblNostraCanc)
+        Me.Panel3.Controls.Add(Me.lblSospesa)
+        Me.Panel3.Controls.Add(Me.lblConfermata)
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 531)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(901, 19)
+        Me.Panel3.TabIndex = 11
+        '
+        'lblAbbonamento1
+        '
+        Me.lblAbbonamento1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblAbbonamento1.Location = New System.Drawing.Point(582, 0)
+        Me.lblAbbonamento1.Name = "lblAbbonamento1"
+        Me.lblAbbonamento1.Size = New System.Drawing.Size(116, 19)
+        Me.lblAbbonamento1.TabIndex = 7
+        Me.lblAbbonamento1.Text = "Abbonamento 1"
+        Me.lblAbbonamento1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblAbbonamento1, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblTorneo
+        '
+        Me.lblTorneo.BackColor = System.Drawing.Color.Green
+        Me.lblTorneo.Location = New System.Drawing.Point(930, 0)
+        Me.lblTorneo.Name = "lblTorneo"
+        Me.lblTorneo.Size = New System.Drawing.Size(116, 19)
+        Me.lblTorneo.TabIndex = 10
+        Me.lblTorneo.Text = "Torneo"
+        Me.lblTorneo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblTorneo, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblAbbonamento3
+        '
+        Me.lblAbbonamento3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblAbbonamento3.Location = New System.Drawing.Point(814, 0)
+        Me.lblAbbonamento3.Name = "lblAbbonamento3"
+        Me.lblAbbonamento3.Size = New System.Drawing.Size(116, 19)
+        Me.lblAbbonamento3.TabIndex = 9
+        Me.lblAbbonamento3.Text = "Abbonamento 3"
+        Me.lblAbbonamento3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblAbbonamento3, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblAbbonamento2
+        '
+        Me.lblAbbonamento2.BackColor = System.Drawing.Color.Magenta
+        Me.lblAbbonamento2.Location = New System.Drawing.Point(698, 0)
+        Me.lblAbbonamento2.Name = "lblAbbonamento2"
+        Me.lblAbbonamento2.Size = New System.Drawing.Size(116, 19)
+        Me.lblAbbonamento2.TabIndex = 8
+        Me.lblAbbonamento2.Text = "Abbonamento 2"
+        Me.lblAbbonamento2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblAbbonamento2, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblInCorso
+        '
+        Me.lblInCorso.BackColor = System.Drawing.Color.LightCoral
+        Me.lblInCorso.Location = New System.Drawing.Point(1106, 0)
+        Me.lblInCorso.Name = "lblInCorso"
+        Me.lblInCorso.Size = New System.Drawing.Size(51, 19)
+        Me.lblInCorso.TabIndex = 6
+        Me.lblInCorso.Text = "In corso"
+        Me.lblInCorso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblInCorso, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        Me.lblInCorso.Visible = False
+        '
+        'lblScaduta
+        '
+        Me.lblScaduta.BackColor = System.Drawing.Color.PeachPuff
+        Me.lblScaduta.ForeColor = System.Drawing.Color.Black
+        Me.lblScaduta.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lblScaduta.Location = New System.Drawing.Point(1050, 0)
+        Me.lblScaduta.Name = "lblScaduta"
+        Me.lblScaduta.Size = New System.Drawing.Size(51, 19)
+        Me.lblScaduta.TabIndex = 5
+        Me.lblScaduta.Text = "Scaduta"
+        Me.lblScaduta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblScaduta, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        Me.lblScaduta.Visible = False
+        '
+        'lblVostraCanc
+        '
+        Me.lblVostraCanc.BackColor = System.Drawing.Color.DarkCyan
+        Me.lblVostraCanc.Location = New System.Drawing.Point(466, 0)
+        Me.lblVostraCanc.Name = "lblVostraCanc"
+        Me.lblVostraCanc.Size = New System.Drawing.Size(116, 19)
+        Me.lblVostraCanc.TabIndex = 4
+        Me.lblVostraCanc.Text = "Vostra cancellazione"
+        Me.lblVostraCanc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblVostraCanc, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblNostraCanc
+        '
+        Me.lblNostraCanc.BackColor = System.Drawing.Color.Salmon
+        Me.lblNostraCanc.Location = New System.Drawing.Point(350, 0)
+        Me.lblNostraCanc.Name = "lblNostraCanc"
+        Me.lblNostraCanc.Size = New System.Drawing.Size(116, 19)
+        Me.lblNostraCanc.TabIndex = 3
+        Me.lblNostraCanc.Text = "Nostra cancellazione"
+        Me.lblNostraCanc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblNostraCanc, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblSospesa
+        '
+        Me.lblSospesa.BackColor = System.Drawing.Color.Silver
+        Me.lblSospesa.Location = New System.Drawing.Point(234, 0)
+        Me.lblSospesa.Name = "lblSospesa"
+        Me.lblSospesa.Size = New System.Drawing.Size(116, 19)
+        Me.lblSospesa.TabIndex = 2
+        Me.lblSospesa.Text = "Sospesa"
+        Me.lblSospesa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblSospesa, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'lblConfermata
+        '
+        Me.lblConfermata.BackColor = System.Drawing.Color.DodgerBlue
+        Me.lblConfermata.ForeColor = System.Drawing.Color.Black
+        Me.lblConfermata.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lblConfermata.Location = New System.Drawing.Point(118, 0)
+        Me.lblConfermata.Name = "lblConfermata"
+        Me.lblConfermata.Size = New System.Drawing.Size(116, 19)
+        Me.lblConfermata.TabIndex = 1
+        Me.lblConfermata.Text = "Confermata"
+        Me.lblConfermata.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolTip1.SetToolTip(Me.lblConfermata, "Fare doppio click per cambiare il colore di stato della prenotazione")
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Gray
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(116, 19)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Legenda:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "")
+        Me.ImageList1.Images.SetKeyName(1, "")
+        Me.ImageList1.Images.SetKeyName(2, "")
+        Me.ImageList1.Images.SetKeyName(3, "")
+        Me.ImageList1.Images.SetKeyName(4, "")
+        '
+        'ToolBar2
+        '
+        Me.ToolBar2.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
+        Me.ToolBar2.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.tbbNuovo, Me.tbbModifica, Me.tbbElimina, Me.ToolBarButton5, Me.tbbProprietà, Me.ToolBarButton3, Me.ToolBarButton8, Me.ToolBarButton7})
+        Me.ToolBar2.Divider = False
+        Me.ToolBar2.DropDownArrows = True
+        Me.ToolBar2.ImageList = Me.ImageList1
+        Me.ToolBar2.Location = New System.Drawing.Point(0, 0)
+        Me.ToolBar2.Name = "ToolBar2"
+        Me.ToolBar2.ShowToolTips = True
+        Me.ToolBar2.Size = New System.Drawing.Size(901, 26)
+        Me.ToolBar2.TabIndex = 15
+        Me.ToolBar2.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
+        '
+        'tbbNuovo
+        '
+        Me.tbbNuovo.Enabled = False
+        Me.tbbNuovo.ImageIndex = 1
+        Me.tbbNuovo.Name = "tbbNuovo"
+        Me.tbbNuovo.Tag = "Nuovo"
+        Me.tbbNuovo.Text = "Nuova"
+        Me.tbbNuovo.ToolTipText = "Nuova prenotazione"
+        '
+        'tbbModifica
+        '
+        Me.tbbModifica.Enabled = False
+        Me.tbbModifica.ImageIndex = 2
+        Me.tbbModifica.Name = "tbbModifica"
+        Me.tbbModifica.Tag = "Modifica"
+        Me.tbbModifica.Text = "Apri"
+        Me.tbbModifica.ToolTipText = "Modifica prenotazione"
+        '
+        'tbbElimina
+        '
+        Me.tbbElimina.Enabled = False
+        Me.tbbElimina.ImageIndex = 3
+        Me.tbbElimina.Name = "tbbElimina"
+        Me.tbbElimina.Tag = "Elimina"
+        Me.tbbElimina.Text = "Elimina"
+        Me.tbbElimina.ToolTipText = "Elimina prenotazione"
+        '
+        'ToolBarButton5
+        '
+        Me.ToolBarButton5.Name = "ToolBarButton5"
+        Me.ToolBarButton5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
+        Me.ToolBarButton5.Text = "Filtri"
+        '
+        'tbbProprietà
+        '
+        Me.tbbProprietà.Enabled = False
+        Me.tbbProprietà.ImageIndex = 4
+        Me.tbbProprietà.Name = "tbbProprietà"
+        Me.tbbProprietà.Tag = "Proprietà"
+        Me.tbbProprietà.Text = "Proprietà"
+        Me.tbbProprietà.ToolTipText = "Proprietà risorse"
+        '
+        'ToolBarButton3
+        '
+        Me.ToolBarButton3.Name = "ToolBarButton3"
+        Me.ToolBarButton3.Style = System.Windows.Forms.ToolBarButtonStyle.Separator
+        Me.ToolBarButton3.Visible = False
+        '
+        'ToolBarButton8
+        '
+        Me.ToolBarButton8.Name = "ToolBarButton8"
+        Me.ToolBarButton8.Tag = "Anteprima"
+        Me.ToolBarButton8.Text = "Anteprima"
+        Me.ToolBarButton8.ToolTipText = "Anteprima di stampa"
+        Me.ToolBarButton8.Visible = False
+        '
+        'ToolBarButton7
+        '
+        Me.ToolBarButton7.Name = "ToolBarButton7"
+        Me.ToolBarButton7.Text = "Stampa"
+        Me.ToolBarButton7.Visible = False
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Gray
+        Me.Panel4.Controls.Add(Me.Altezza)
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.ckbVisCosto)
+        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.Larghezza)
+        Me.Panel4.Controls.Add(Me.Label7)
+        Me.Panel4.Controls.Add(Me.dtpData)
+        Me.Panel4.Controls.Add(Me.lblDettagliPren)
+        Me.Panel4.Controls.Add(Me.lblRisorsaOra)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 26)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(901, 70)
+        Me.Panel4.TabIndex = 16
+        '
+        'Altezza
+        '
+        Me.Altezza.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Altezza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Altezza.Items.AddRange(New Object() {"40", "50", "60", "70", "80"})
+        Me.Altezza.Location = New System.Drawing.Point(528, 21)
+        Me.Altezza.Name = "Altezza"
+        Me.Altezza.Size = New System.Drawing.Size(72, 21)
+        Me.Altezza.TabIndex = 10
+        Me.ToolTip1.SetToolTip(Me.Altezza, "Altezza righe")
+        Me.Altezza.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(528, 2)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(57, 15)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Altezza:"
+        Me.Label8.Visible = False
+        '
+        'ckbVisCosto
+        '
+        Me.ckbVisCosto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ckbVisCosto.AutoSize = True
+        Me.ckbVisCosto.BackColor = System.Drawing.Color.Transparent
+        Me.ckbVisCosto.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ckbVisCosto.Enabled = False
+        Me.ckbVisCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ckbVisCosto.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.ckbVisCosto.Location = New System.Drawing.Point(704, 48)
+        Me.ckbVisCosto.Name = "ckbVisCosto"
+        Me.ckbVisCosto.Size = New System.Drawing.Size(177, 19)
+        Me.ckbVisCosto.TabIndex = 14
+        Me.ckbVisCosto.Text = "Visualizza costo risorse"
+        Me.ckbVisCosto.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(808, 5)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(78, 15)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Larghezza:"
+        '
+        'Larghezza
+        '
+        Me.Larghezza.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Larghezza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Larghezza.Enabled = False
+        Me.Larghezza.Items.AddRange(New Object() {"150", "160", "170", "180", "190", "200", "210", "220", "230", "240", "250"})
+        Me.Larghezza.Location = New System.Drawing.Point(808, 24)
+        Me.Larghezza.Name = "Larghezza"
+        Me.Larghezza.Size = New System.Drawing.Size(72, 21)
+        Me.Larghezza.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.Larghezza, "Larghezza colonne")
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(608, 5)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(41, 15)
+        Me.Label7.TabIndex = 7
+        Me.Label7.Text = "Data:"
+        '
+        'dtpData
+        '
+        Me.dtpData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpData.Enabled = False
+        Me.dtpData.Location = New System.Drawing.Point(608, 24)
+        Me.dtpData.Name = "dtpData"
+        Me.dtpData.Size = New System.Drawing.Size(192, 20)
+        Me.dtpData.TabIndex = 0
+        '
+        'lblDettagliPren
+        '
+        Me.lblDettagliPren.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblDettagliPren.BackColor = System.Drawing.Color.Transparent
-      Me.lblDettagliPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblDettagliPren.ForeColor = System.Drawing.SystemColors.Window
-      Me.lblDettagliPren.Location = New System.Drawing.Point(16, 40)
-      Me.lblDettagliPren.Name = "lblDettagliPren"
-      Me.lblDettagliPren.Size = New System.Drawing.Size(576, 16)
-      Me.lblDettagliPren.TabIndex = 9
-      '
-      'lblRisorsaOra
-      '
-      Me.lblRisorsaOra.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.lblDettagliPren.BackColor = System.Drawing.Color.Transparent
+        Me.lblDettagliPren.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDettagliPren.ForeColor = System.Drawing.SystemColors.Window
+        Me.lblDettagliPren.Location = New System.Drawing.Point(16, 40)
+        Me.lblDettagliPren.Name = "lblDettagliPren"
+        Me.lblDettagliPren.Size = New System.Drawing.Size(584, 16)
+        Me.lblDettagliPren.TabIndex = 9
+        '
+        'lblRisorsaOra
+        '
+        Me.lblRisorsaOra.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.lblRisorsaOra.BackColor = System.Drawing.Color.Transparent
-      Me.lblRisorsaOra.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblRisorsaOra.ForeColor = System.Drawing.SystemColors.Window
-      Me.lblRisorsaOra.Location = New System.Drawing.Point(11, 13)
-      Me.lblRisorsaOra.Name = "lblRisorsaOra"
-      Me.lblRisorsaOra.Size = New System.Drawing.Size(581, 18)
-      Me.lblRisorsaOra.TabIndex = 8
-      '
-      'Ore
-      '
-      Me.Ore.BackColor = System.Drawing.SystemColors.Control
-      Me.Ore.Location = New System.Drawing.Point(0, 136)
-      Me.Ore.Name = "Ore"
-      Me.Ore.Size = New System.Drawing.Size(64, 1320)
-      Me.Ore.TabIndex = 21
-      '
-      'Panel1
-      '
-      Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lblRisorsaOra.BackColor = System.Drawing.Color.Transparent
+        Me.lblRisorsaOra.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRisorsaOra.ForeColor = System.Drawing.SystemColors.Window
+        Me.lblRisorsaOra.Location = New System.Drawing.Point(11, 13)
+        Me.lblRisorsaOra.Name = "lblRisorsaOra"
+        Me.lblRisorsaOra.Size = New System.Drawing.Size(589, 18)
+        Me.lblRisorsaOra.TabIndex = 8
+        '
+        'Ore
+        '
+        Me.Ore.BackColor = System.Drawing.SystemColors.Control
+        Me.Ore.Location = New System.Drawing.Point(0, 136)
+        Me.Ore.Name = "Ore"
+        Me.Ore.Size = New System.Drawing.Size(64, 1320)
+        Me.Ore.TabIndex = 21
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Panel1.BackColor = System.Drawing.SystemColors.Window
-      Me.Panel1.Controls.Add(Me.Risorse)
-      Me.Panel1.Controls.Add(Me.Griglia)
-      Me.Panel1.Location = New System.Drawing.Point(64, 104)
-      Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(813, 400)
-      Me.Panel1.TabIndex = 62
-      '
-      'Risorse
-      '
-      Me.Risorse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Window
+        Me.Panel1.Controls.Add(Me.Risorse)
+        Me.Panel1.Controls.Add(Me.Griglia)
+        Me.Panel1.Location = New System.Drawing.Point(64, 104)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(821, 408)
+        Me.Panel1.TabIndex = 62
+        '
+        'Risorse
+        '
+        Me.Risorse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Risorse.BackColor = System.Drawing.Color.Gray
-      Me.Risorse.Location = New System.Drawing.Point(0, -1)
-      Me.Risorse.Name = "Risorse"
-      Me.Risorse.Size = New System.Drawing.Size(10093, 33)
-      Me.Risorse.TabIndex = 63
-      '
-      'Griglia
-      '
-      Me.Griglia.BackColor = System.Drawing.SystemColors.Window
-      Me.Griglia.Enabled = False
-      Me.Griglia.Location = New System.Drawing.Point(0, 40)
-      Me.Griglia.Name = "Griglia"
-      Me.Griglia.Size = New System.Drawing.Size(616, 296)
-      Me.Griglia.TabIndex = 62
-      '
-      'HScrollBar1
-      '
-      Me.HScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Risorse.BackColor = System.Drawing.Color.Gray
+        Me.Risorse.Location = New System.Drawing.Point(0, -1)
+        Me.Risorse.Name = "Risorse"
+        Me.Risorse.Size = New System.Drawing.Size(10101, 33)
+        Me.Risorse.TabIndex = 63
+        '
+        'Griglia
+        '
+        Me.Griglia.BackColor = System.Drawing.SystemColors.Window
+        Me.Griglia.Enabled = False
+        Me.Griglia.Location = New System.Drawing.Point(0, 40)
+        Me.Griglia.Name = "Griglia"
+        Me.Griglia.Size = New System.Drawing.Size(616, 296)
+        Me.Griglia.TabIndex = 62
+        '
+        'HScrollBar1
+        '
+        Me.HScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.HScrollBar1.LargeChange = 80
-      Me.HScrollBar1.Location = New System.Drawing.Point(64, 504)
-      Me.HScrollBar1.Name = "HScrollBar1"
-      Me.HScrollBar1.Size = New System.Drawing.Size(812, 18)
-      Me.HScrollBar1.SmallChange = 40
-      Me.HScrollBar1.TabIndex = 1
-      '
-      'VScrollBar1
-      '
-      Me.VScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.HScrollBar1.LargeChange = 80
+        Me.HScrollBar1.Location = New System.Drawing.Point(64, 512)
+        Me.HScrollBar1.Name = "HScrollBar1"
+        Me.HScrollBar1.Size = New System.Drawing.Size(820, 18)
+        Me.HScrollBar1.SmallChange = 40
+        Me.HScrollBar1.TabIndex = 1
+        '
+        'VScrollBar1
+        '
+        Me.VScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.VScrollBar1.LargeChange = 80
-      Me.VScrollBar1.Location = New System.Drawing.Point(875, 136)
-      Me.VScrollBar1.Name = "VScrollBar1"
-      Me.VScrollBar1.Size = New System.Drawing.Size(18, 368)
-      Me.VScrollBar1.SmallChange = 40
-      Me.VScrollBar1.TabIndex = 0
-      '
-      'Panel5
-      '
-      Me.Panel5.BackColor = System.Drawing.Color.Gray
-      Me.Panel5.Location = New System.Drawing.Point(0, 96)
-      Me.Panel5.Name = "Panel5"
-      Me.Panel5.Size = New System.Drawing.Size(64, 40)
-      Me.Panel5.TabIndex = 67
-      '
-      'Panel6
-      '
-      Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-      Me.Panel6.BackColor = System.Drawing.SystemColors.Control
-      Me.Panel6.Location = New System.Drawing.Point(0, 505)
-      Me.Panel6.Name = "Panel6"
-      Me.Panel6.Size = New System.Drawing.Size(64, 18)
-      Me.Panel6.TabIndex = 68
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'frmPlanningP
-      '
-      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-      Me.BackColor = System.Drawing.Color.Gray
-      Me.ClientSize = New System.Drawing.Size(893, 542)
-      Me.Controls.Add(Me.Panel5)
-      Me.Controls.Add(Me.Panel6)
-      Me.Controls.Add(Me.VScrollBar1)
-      Me.Controls.Add(Me.HScrollBar1)
-      Me.Controls.Add(Me.Panel4)
-      Me.Controls.Add(Me.ToolBar2)
-      Me.Controls.Add(Me.Panel3)
-      Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.Ore)
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.Name = "frmPlanningP"
-      Me.Text = "Plannig giornaliero"
-      Me.Panel3.ResumeLayout(False)
-      Me.Panel4.ResumeLayout(False)
-      Me.Panel4.PerformLayout()
-      Me.Panel1.ResumeLayout(False)
-      Me.ResumeLayout(False)
-      Me.PerformLayout()
+        Me.VScrollBar1.LargeChange = 80
+        Me.VScrollBar1.Location = New System.Drawing.Point(883, 136)
+        Me.VScrollBar1.Name = "VScrollBar1"
+        Me.VScrollBar1.Size = New System.Drawing.Size(18, 376)
+        Me.VScrollBar1.SmallChange = 40
+        Me.VScrollBar1.TabIndex = 0
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Gray
+        Me.Panel5.Location = New System.Drawing.Point(0, 96)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(64, 40)
+        Me.Panel5.TabIndex = 67
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel6.Location = New System.Drawing.Point(0, 513)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(64, 18)
+        Me.Panel6.TabIndex = 68
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'frmPlanningP
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.BackColor = System.Drawing.Color.Gray
+        Me.ClientSize = New System.Drawing.Size(901, 550)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.VScrollBar1)
+        Me.Controls.Add(Me.HScrollBar1)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.ToolBar2)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Ore)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "frmPlanningP"
+        Me.Text = "Plannig giornaliero"
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-   End Sub
+    End Sub
 
 #End Region
 
-   Private Sub LeggiDatiConfig()
+    Private Sub LeggiDatiConfig()
       Try
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath

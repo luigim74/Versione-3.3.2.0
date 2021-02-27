@@ -407,6 +407,7 @@ Module Dichiarazioni
    Public Const LEGGI_BKP As String = "Attendere prego. Apertura e importazione dati degli archivi in corso..."
    Public Const CAR_OPZIONI As String = "Attendere prego. Caricamento della finestra Opzioni di configurazione in corso..."
    Public Const CAR_TAB_SCONTI_MAGGIORAZIONI As String = "Attendere prego. Caricamento dell'elenco Sconti e Maggiorazioni in corso..."
+   Public Const CAR_NOLEGGI As String = "Attendere prego. Caricamento dell'elenco Noleggi in corso..."
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
 
@@ -427,6 +428,7 @@ Module Dichiarazioni
    Public Const TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_TAVOLI As String = "Elenco prenotazioni Tavoli"
    Public Const TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE As String = "Elenco prenotazioni Sale"
    Public Const TITOLO_FINESTRA_ELENCO_ARTICOLI As String = "Elenco Articoli e Ingredienti"
+   Public Const TITOLO_FINESTRA_ELENCO_NOLEGGI As String = "Elenco Noleggi"
 
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"
@@ -682,6 +684,7 @@ Module Dichiarazioni
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
    Public g_frmEmail As ElencoEmail
+   Public g_frmNoleggi As ElencoNoleggi
 
    ' Dati di accesso dell'operatore.
    Public Structure strOperatore
