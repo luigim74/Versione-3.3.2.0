@@ -1,3 +1,17 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
+' Nome form:            Documenti
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       04/01/2006
+' Data ultima modifica: 21/02/2021
+' Descrizione:          Classe documenti.
+' Note:
+
+' Elenco Attivita:
+
+' ******************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Public Class Documenti
@@ -465,46 +479,6 @@ Public Class Documenti
       End Try
    End Function
 
-   Public Function EliminaDati(ByVal tabella As String, ByVal numDoc As Integer) As Boolean
-      Dim sql As String
-
-      Try
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-         ' Crea la stringa di eliminazione.
-
-         sql = String.Format("DELETE FROM {0} WHERE NumDoc = {1}", tabella, numDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma transazione.
-         tr.Commit()
-
-         Return True
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return False
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-
-   End Function
-
    Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
       Dim sql As String
 
@@ -631,6 +605,46 @@ Public Class Documenti
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+
+         ' Conferma transazione.
+         tr.Commit()
+
+         Return True
+
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
+
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+
+   End Function
+
+   Public Function EliminaDati(ByVal tabella As String, ByVal numDoc As Integer) As Boolean
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+
+         sql = String.Format("DELETE FROM {0} WHERE NumDoc = {1}", tabella, numDoc)
+
+         ' Crea il comando per la connessione corrente.
+         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
+
+         ' Esegue il comando.
+         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
 
          ' Conferma transazione.
          tr.Commit()
