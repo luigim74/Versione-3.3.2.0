@@ -94,9 +94,9 @@ Public Class DettagliDocumenti
             Me.AliquotaIva = VALORE_ZERO
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Categoria")) = False Then
-            Me.Unit‡Misura = ds.Tables(tabella).Rows(0)("Categoria").ToString
+            Me.Categoria = ds.Tables(tabella).Rows(0)("Categoria").ToString
          Else
-            Me.Unit‡Misura = String.Empty
+            Me.Categoria = String.Empty
          End If
 
       Catch ex As Exception

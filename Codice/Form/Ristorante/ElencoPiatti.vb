@@ -1741,6 +1741,7 @@ Public Class frmElencoPiatti
       ' Visualizza un'intestazione per la griglia dati.
       AggIntGriglia()
 
+      ' Visualizza i dati di dettaglio.
       If numRecord <> 0 Then
          FiltraDatiIngredienti(CInt(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0)))
       Else

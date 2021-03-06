@@ -1558,10 +1558,10 @@ Public Class frmElencoDati
          'tbrUltimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
-         ' Si verifica quando la griglia viene aperta in modalità Massima o Minima.
-         If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
-            Exit Try
-         End If
+         '' Si verifica quando la griglia viene aperta in modalità Massima o Minima.
+         'If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
+         '   Exit Try
+         'End If
 
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)

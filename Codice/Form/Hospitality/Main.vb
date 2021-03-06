@@ -13591,6 +13591,18 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiTutte()
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+
+               sender.Pressed = True
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Sospesi_Filtra.Pressed = False
+               g_frmNoleggi.filtroDati = "Tutti"
+               g_frmNoleggi.eui_txtTestoRicerca.Text = String.Empty
+               g_frmNoleggi.FiltraDati(g_frmNoleggi.eui_txtTestoRicerca.Text, g_frmNoleggi.eui_cmbCampoRicerca.Text)
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13667,6 +13679,17 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiAnno()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Sospesi_Filtra.Pressed = False
+               g_frmNoleggi.filtroDati = "Anno"
+               g_frmNoleggi.eui_txtTestoRicerca.Text = String.Empty
+               g_frmNoleggi.AggiornaDatiAnno()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13745,6 +13768,17 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                g_frmEmail.AggiornaDatiMese()
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_DalAl.Pressed = False
+               eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Sospesi_Filtra.Pressed = False
+               g_frmNoleggi.filtroDati = "Mese"
+               g_frmNoleggi.eui_txtTestoRicerca.Text = String.Empty
+               g_frmNoleggi.AggiornaDatiMese()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13815,6 +13849,16 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Anno.Pressed = False
                eui_Strumenti_Periodo_Mese.Pressed = False
                g_frmEmail.AggiornaDatiPeriodo()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               sender.Pressed = True
+               eui_Strumenti_Periodo_Tutte.Pressed = False
+               eui_Strumenti_Periodo_Mese.Pressed = False
+               eui_Strumenti_Periodo_Anno.Pressed = False
+               eui_Strumenti_Sospesi_Filtra.Pressed = False
+               g_frmNoleggi.filtroDati = "Periodo"
+               g_frmNoleggi.eui_txtTestoRicerca.Text = String.Empty
+               g_frmNoleggi.AggiornaDatiPeriodo()
 
                ' Inserire qui il codice per gestire le altre finestre.
 

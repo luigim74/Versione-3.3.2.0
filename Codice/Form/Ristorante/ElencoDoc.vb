@@ -1357,10 +1357,10 @@ Public Class ElencoDoc
          'Ultimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
-         ' Si verifica quando la griglia viene aperta in modalità Massima o Minima.
-         If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
-            Exit Try
-         End If
+         '' Si verifica quando la griglia viene aperta in modalità Massima o Minima.
+         'If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
+         '   Exit Try
+         'End If
 
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -2818,13 +2818,13 @@ Public Class ElencoDoc
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
+         ' Crea le colonne della griglia dati.
+         CreaColonne(TAB_DOCUMENTI)
+
          DatiConfig = New AppConfig
          DatiConfig.ConfigType = ConfigFileType.AppConfig
          ' Imposta le dimensioni del form.
          LeggiDatiConfig()
-
-         ' Crea le colonne della griglia dati.
-         CreaColonne(TAB_DOCUMENTI)
 
          ' Carica l'elenco dei campi di ricerca.
          CaricaCampiRic()

@@ -40,7 +40,7 @@ Public Class ContoPos
    Public tipoDocumento As String = TIPO_DOC_RF
 
    Private Doc As New Documenti
-   Private DettagliDoc As New DettagliDocumenti
+   Private DettagliDoc As New DettagliNoleggi
    Dim DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress

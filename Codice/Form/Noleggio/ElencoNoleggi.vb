@@ -3,7 +3,7 @@
 ' Nome form:            ElencoNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 27/02/2021
+' Data ultima modifica: 06/03/2021
 ' Descrizione:          Elenco Noleggi.
 ' Note:
 
@@ -25,22 +25,17 @@ Public Class ElencoNoleggi
    Const TAB_DETTAGLI_NOLEGGI As String = "DettagliNoleggi"
    Const TITOLO_FINESTRA As String = "Elenco Noleggi"
 
-   ' TODO_A: Modificare.
    Public Const COLONNA_ID_DOC As Short = 0
-   Const COLONNA_NUMERO_DOC As Short = 1
-   Const COLONNA_DATA_DOC As Short = 2
-   Public Const COLONNA_TIPO_DOC As Short = 4
-   Const COLONNA_INTESTATARIO As Short = 5
-   Const COLONNA_STATO_DOC As Short = 6
-   Public Const COLONNA_IMPORTO_TOTALE As Short = 9
-   Const COLONNA_IMPORTO_SOSPESO As Short = 10
-   Const COLONNA_IMPORTO_IMPONIBILE As Short = 11
-   Const COLONNA_IMPORTO_IMPOSTA As Short = 12
-   Const COLONNA_IMPORTO_BUONI As Short = 13
-   Const COLONNA_CONTABILIZZATO As Short = 14
-   Const COLONNA_IMPORTO_SOSPESO_INC As Short = 15
-   Const COLONNA_IMPORTO_BUONI_INC As Short = 16
-   Const COLONNA_ID_CLIENTE As Short = 17
+   Const COLONNA_CLIENTE As Short = 1
+   Const COLONNA_CAUSALE As Short = 2
+   Const COLONNA_DATA_INIZIO As Short = 3
+   Const COLONNA_DATA_FINE As Short = 4
+   Const COLONNA_TOTALE_GIORNI As Short = 5
+   Const COLONNA_STATO As Short = 6
+   Const COLONNA_TOTALE As Short = 7
+   Const COLONNA_CODICE_BARRE As Short = 8
+   Const COLONNA_CONTABILIZZATO As Short = 9
+   Const COLONNA_ID_CLIENTE As Short = 10
 
    ' TODO_A: Modificare.
    Const STATO_DOC_EMESSO As String = "Emesso"
@@ -57,6 +52,7 @@ Public Class ElencoNoleggi
 
    ' Numero di record.
    Dim numRecord As Integer
+   Dim numRecordArticoli As Integer
    ' Numero di pagine.
    Dim numPagine As Integer
    ' Pagina corrente.
@@ -64,6 +60,7 @@ Public Class ElencoNoleggi
 
    Dim ds As New DataSet
    Dim dt As DataTable
+   Dim dtArticoli As DataTable
    Dim sql As String
    Public repSql As String
 
@@ -76,15 +73,14 @@ Public Class ElencoNoleggi
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents eui_txtTestoRicerca As Elegant.Ui.TextBox
    Friend WithEvents eui_cmbCampoRicerca As Elegant.Ui.ComboBox
-   Friend WithEvents Label4 As Label
-   Friend WithEvents eui_txtImposta As Elegant.Ui.TextBox
-   Friend WithEvents Label2 As Label
-   Friend WithEvents eui_txtImponibile As Elegant.Ui.TextBox
-   Friend WithEvents eui_txtBuoni As Elegant.Ui.TextBox
-   Friend WithEvents eui_txtSospeso As Elegant.Ui.TextBox
    Friend WithEvents eui_txtTotale As Elegant.Ui.TextBox
    Friend WithEvents DataGridView1 As DataGridView
    Friend WithEvents lblIntestazione As Label
+   Friend WithEvents DataGridView2 As DataGridView
+   Friend WithEvents Panel1 As Panel
+   Friend WithEvents Panel2 As Panel
+   Friend WithEvents Panel3 As Panel
+   Friend WithEvents Label1 As Label
    Public filtroDati As String
 
 #Region " Codice generato da Progettazione Windows Form "
@@ -96,6 +92,7 @@ Public Class ElencoNoleggi
       InitializeComponent()
 
       dt = ds.Tables.Add(TAB_NOLEGGI)
+      dtArticoli = ds.Tables.Add(TAB_DETTAGLI_NOLEGGI)
 
    End Sub
 
@@ -116,350 +113,286 @@ Public Class ElencoNoleggi
    'PuÚ essere modificata in Progettazione Windows Form.  
    'Non modificarla nell'editor del codice.
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Friend WithEvents Panel1 As System.Windows.Forms.Panel
    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-   Friend WithEvents Panel2 As System.Windows.Forms.Panel
    Friend WithEvents Label6 As System.Windows.Forms.Label
-   Friend WithEvents Label3 As System.Windows.Forms.Label
    Friend WithEvents lblCampo As System.Windows.Forms.Label
    Friend WithEvents lblTesto As System.Windows.Forms.Label
-   Friend WithEvents Label1 As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElencoNoleggi))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblIntestazione = New System.Windows.Forms.Label()
-        Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
-        Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
-        Me.lblCampo = New System.Windows.Forms.Label()
-        Me.lblTesto = New System.Windows.Forms.Label()
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.eui_txtBuoni = New Elegant.Ui.TextBox()
-        Me.eui_txtSospeso = New Elegant.Ui.TextBox()
-        Me.eui_txtTotale = New Elegant.Ui.TextBox()
-        Me.eui_txtImposta = New Elegant.Ui.TextBox()
-        Me.eui_txtImponibile = New Elegant.Ui.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "")
-        Me.ImageList1.Images.SetKeyName(1, "")
-        Me.ImageList1.Images.SetKeyName(2, "")
-        Me.ImageList1.Images.SetKeyName(3, "")
-        Me.ImageList1.Images.SetKeyName(4, "")
-        Me.ImageList1.Images.SetKeyName(5, "")
-        Me.ImageList1.Images.SetKeyName(6, "")
-        Me.ImageList1.Images.SetKeyName(7, "")
-        Me.ImageList1.Images.SetKeyName(8, "")
-        Me.ImageList1.Images.SetKeyName(9, "")
-        Me.ImageList1.Images.SetKeyName(10, "")
-        Me.ImageList1.Images.SetKeyName(11, "")
-        Me.ImageList1.Images.SetKeyName(12, "")
-        Me.ImageList1.Images.SetKeyName(13, "")
-        Me.ImageList1.Images.SetKeyName(14, "")
-        Me.ImageList1.Images.SetKeyName(15, "")
-        Me.ImageList1.Images.SetKeyName(16, "")
-        Me.ImageList1.Images.SetKeyName(17, "")
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.lblIntestazione)
-        Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
-        Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
-        Me.Panel1.Controls.Add(Me.lblCampo)
-        Me.Panel1.Controls.Add(Me.lblTesto)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(698, 63)
-        Me.Panel1.TabIndex = 0
-        '
-        'lblIntestazione
-        '
-        Me.lblIntestazione.AutoSize = True
-        Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntestazione.ForeColor = System.Drawing.Color.White
-        Me.lblIntestazione.Location = New System.Drawing.Point(2, 39)
-        Me.lblIntestazione.Name = "lblIntestazione"
-        Me.lblIntestazione.Size = New System.Drawing.Size(182, 16)
-        Me.lblIntestazione.TabIndex = 55673
-        Me.lblIntestazione.Text = "INTESTAZIONE ELENCO"
-        '
-        'eui_cmbCampoRicerca
-        '
-        Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_cmbCampoRicerca.Editable = False
-        Me.eui_cmbCampoRicerca.FormattingEnabled = False
-        Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-        Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(554, 7)
-        Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
-        Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
-        Me.eui_cmbCampoRicerca.TabIndex = 1
-        Me.eui_cmbCampoRicerca.TextEditorWidth = 115
-        '
-        'eui_txtTestoRicerca
-        '
-        Me.eui_txtTestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElencoNoleggi))
+      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+      Me.Panel1 = New System.Windows.Forms.Panel()
+      Me.lblIntestazione = New System.Windows.Forms.Label()
+      Me.eui_cmbCampoRicerca = New Elegant.Ui.ComboBox()
+      Me.eui_txtTestoRicerca = New Elegant.Ui.TextBox()
+      Me.lblCampo = New System.Windows.Forms.Label()
+      Me.lblTesto = New System.Windows.Forms.Label()
+      Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+      Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+      Me.Panel2 = New System.Windows.Forms.Panel()
+      Me.eui_txtTotale = New Elegant.Ui.TextBox()
+      Me.Label6 = New System.Windows.Forms.Label()
+      Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+      Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+      Me.Panel3 = New System.Windows.Forms.Panel()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.Panel1.SuspendLayout()
+      Me.Panel2.SuspendLayout()
+      CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.Panel3.SuspendLayout()
+      Me.SuspendLayout()
+      '
+      'ImageList1
+      '
+      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+      Me.ImageList1.Images.SetKeyName(0, "")
+      Me.ImageList1.Images.SetKeyName(1, "")
+      Me.ImageList1.Images.SetKeyName(2, "")
+      Me.ImageList1.Images.SetKeyName(3, "")
+      Me.ImageList1.Images.SetKeyName(4, "")
+      Me.ImageList1.Images.SetKeyName(5, "")
+      Me.ImageList1.Images.SetKeyName(6, "")
+      Me.ImageList1.Images.SetKeyName(7, "")
+      Me.ImageList1.Images.SetKeyName(8, "")
+      Me.ImageList1.Images.SetKeyName(9, "")
+      Me.ImageList1.Images.SetKeyName(10, "")
+      Me.ImageList1.Images.SetKeyName(11, "")
+      Me.ImageList1.Images.SetKeyName(12, "")
+      Me.ImageList1.Images.SetKeyName(13, "")
+      Me.ImageList1.Images.SetKeyName(14, "")
+      Me.ImageList1.Images.SetKeyName(15, "")
+      Me.ImageList1.Images.SetKeyName(16, "")
+      Me.ImageList1.Images.SetKeyName(17, "")
+      '
+      'Panel1
+      '
+      Me.Panel1.BackColor = System.Drawing.Color.Gray
+      Me.Panel1.Controls.Add(Me.lblIntestazione)
+      Me.Panel1.Controls.Add(Me.eui_cmbCampoRicerca)
+      Me.Panel1.Controls.Add(Me.eui_txtTestoRicerca)
+      Me.Panel1.Controls.Add(Me.lblCampo)
+      Me.Panel1.Controls.Add(Me.lblTesto)
+      Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+      Me.Panel1.Location = New System.Drawing.Point(0, 0)
+      Me.Panel1.Name = "Panel1"
+      Me.Panel1.Size = New System.Drawing.Size(714, 63)
+      Me.Panel1.TabIndex = 0
+      '
+      'lblIntestazione
+      '
+      Me.lblIntestazione.AutoSize = True
+      Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblIntestazione.ForeColor = System.Drawing.Color.White
+      Me.lblIntestazione.Location = New System.Drawing.Point(2, 39)
+      Me.lblIntestazione.Name = "lblIntestazione"
+      Me.lblIntestazione.Size = New System.Drawing.Size(182, 16)
+      Me.lblIntestazione.TabIndex = 55673
+      Me.lblIntestazione.Text = "INTESTAZIONE ELENCO"
+      '
+      'eui_cmbCampoRicerca
+      '
+      Me.eui_cmbCampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmbCampoRicerca.Editable = False
+      Me.eui_cmbCampoRicerca.FormattingEnabled = False
+      Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(570, 7)
+      Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
+      Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
+      Me.eui_cmbCampoRicerca.TabIndex = 1
+      Me.eui_cmbCampoRicerca.TextEditorWidth = 115
+      '
+      'eui_txtTestoRicerca
+      '
+      Me.eui_txtTestoRicerca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
-        Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
-        Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-        Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(337, 21)
-        Me.eui_txtTestoRicerca.TabIndex = 0
-        Me.eui_txtTestoRicerca.TextEditorWidth = 529
-        '
-        'lblCampo
-        '
-        Me.lblCampo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCampo.AutoSize = True
-        Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCampo.ForeColor = System.Drawing.Color.White
-        Me.lblCampo.Location = New System.Drawing.Point(465, 8)
-        Me.lblCampo.Name = "lblCampo"
-        Me.lblCampo.Size = New System.Drawing.Size(85, 15)
-        Me.lblCampo.TabIndex = 8
-        Me.lblCampo.Text = "Ricerca per:"
-        '
-        'lblTesto
-        '
-        Me.lblTesto.AutoSize = True
-        Me.lblTesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTesto.ForeColor = System.Drawing.Color.White
-        Me.lblTesto.Location = New System.Drawing.Point(2, 8)
-        Me.lblTesto.Name = "lblTesto"
-        Me.lblTesto.Size = New System.Drawing.Size(110, 15)
-        Me.lblTesto.TabIndex = 6
-        Me.lblTesto.Text = "Testo di ricerca:"
-        '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.Document = Me.PrintDocument1
-        '
-        'PrintDocument1
-        '
-        Me.PrintDocument1.DocumentName = "Risorse.rpt"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Gray
-        Me.Panel2.Controls.Add(Me.eui_txtBuoni)
-        Me.Panel2.Controls.Add(Me.eui_txtSospeso)
-        Me.Panel2.Controls.Add(Me.eui_txtTotale)
-        Me.Panel2.Controls.Add(Me.eui_txtImposta)
-        Me.Panel2.Controls.Add(Me.eui_txtImponibile)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 396)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(698, 50)
-        Me.Panel2.TabIndex = 13
-        '
-        'eui_txtBuoni
-        '
-        Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
-        Me.eui_txtBuoni.Location = New System.Drawing.Point(586, 20)
-        Me.eui_txtBuoni.Name = "eui_txtBuoni"
-        Me.eui_txtBuoni.ReadOnly = True
-        Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
-        Me.eui_txtBuoni.TabIndex = 4
-        Me.eui_txtBuoni.Text = "1.000"
-        Me.eui_txtBuoni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.eui_txtBuoni.TextEditorWidth = 96
-        '
-        'eui_txtSospeso
-        '
-        Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
-        Me.eui_txtSospeso.Location = New System.Drawing.Point(274, 20)
-        Me.eui_txtSospeso.Name = "eui_txtSospeso"
-        Me.eui_txtSospeso.ReadOnly = True
-        Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
-        Me.eui_txtSospeso.TabIndex = 1
-        Me.eui_txtSospeso.Text = "1.000"
-        Me.eui_txtSospeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.eui_txtSospeso.TextEditorWidth = 96
-        '
-        'eui_txtTotale
-        '
-        Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-        Me.eui_txtTotale.Location = New System.Drawing.Point(170, 20)
-        Me.eui_txtTotale.Name = "eui_txtTotale"
-        Me.eui_txtTotale.ReadOnly = True
-        Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
-        Me.eui_txtTotale.TabIndex = 0
-        Me.eui_txtTotale.Text = "1.000"
-        Me.eui_txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.eui_txtTotale.TextEditorWidth = 96
-        '
-        'eui_txtImposta
-        '
-        Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
-        Me.eui_txtImposta.Location = New System.Drawing.Point(482, 20)
-        Me.eui_txtImposta.Name = "eui_txtImposta"
-        Me.eui_txtImposta.ReadOnly = True
-        Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
-        Me.eui_txtImposta.TabIndex = 3
-        Me.eui_txtImposta.Text = "1.300.000.000"
-        Me.eui_txtImposta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.eui_txtImposta.TextEditorWidth = 96
-        '
-        'eui_txtImponibile
-        '
-        Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
-        Me.eui_txtImponibile.Location = New System.Drawing.Point(378, 20)
-        Me.eui_txtImponibile.Name = "eui_txtImponibile"
-        Me.eui_txtImponibile.ReadOnly = True
-        Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
-        Me.eui_txtImponibile.TabIndex = 2
-        Me.eui_txtImponibile.Text = "1.000"
-        Me.eui_txtImponibile.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.eui_txtImponibile.TextEditorWidth = 96
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(583, 5)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 15)
-        Me.Label1.TabIndex = 238
-        Me.Label1.Text = "Buoni pasto:"
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(479, 5)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 15)
-        Me.Label4.TabIndex = 242
-        Me.Label4.Text = "Imposta:"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(375, 5)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 15)
-        Me.Label2.TabIndex = 240
-        Me.Label2.Text = "Imponibile:"
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(271, 5)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 15)
-        Me.Label3.TabIndex = 236
-        Me.Label3.Text = "Sospeso:"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(167, 5)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 15)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = "Totale:"
-        '
-        'formFrameSkinner
-        '
-        Me.formFrameSkinner.AllowGlass = False
-        Me.formFrameSkinner.Form = Me
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+      Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
+      Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
+      Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(353, 21)
+      Me.eui_txtTestoRicerca.TabIndex = 0
+      Me.eui_txtTestoRicerca.TextEditorWidth = 529
+      '
+      'lblCampo
+      '
+      Me.lblCampo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.lblCampo.AutoSize = True
+      Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblCampo.ForeColor = System.Drawing.Color.White
+      Me.lblCampo.Location = New System.Drawing.Point(481, 8)
+      Me.lblCampo.Name = "lblCampo"
+      Me.lblCampo.Size = New System.Drawing.Size(85, 15)
+      Me.lblCampo.TabIndex = 8
+      Me.lblCampo.Text = "Ricerca per:"
+      '
+      'lblTesto
+      '
+      Me.lblTesto.AutoSize = True
+      Me.lblTesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.lblTesto.ForeColor = System.Drawing.Color.White
+      Me.lblTesto.Location = New System.Drawing.Point(2, 8)
+      Me.lblTesto.Name = "lblTesto"
+      Me.lblTesto.Size = New System.Drawing.Size(110, 15)
+      Me.lblTesto.TabIndex = 6
+      Me.lblTesto.Text = "Testo di ricerca:"
+      '
+      'PrintDialog1
+      '
+      Me.PrintDialog1.Document = Me.PrintDocument1
+      '
+      'PrintDocument1
+      '
+      Me.PrintDocument1.DocumentName = "Risorse.rpt"
+      '
+      'Panel2
+      '
+      Me.Panel2.BackColor = System.Drawing.Color.Gray
+      Me.Panel2.Controls.Add(Me.eui_txtTotale)
+      Me.Panel2.Controls.Add(Me.Label6)
+      Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+      Me.Panel2.Location = New System.Drawing.Point(0, 422)
+      Me.Panel2.Name = "Panel2"
+      Me.Panel2.Size = New System.Drawing.Size(714, 40)
+      Me.Panel2.TabIndex = 13
+      '
+      'eui_txtTotale
+      '
+      Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
+      Me.eui_txtTotale.Location = New System.Drawing.Point(570, 10)
+      Me.eui_txtTotale.Name = "eui_txtTotale"
+      Me.eui_txtTotale.ReadOnly = True
+      Me.eui_txtTotale.Size = New System.Drawing.Size(134, 21)
+      Me.eui_txtTotale.TabIndex = 0
+      Me.eui_txtTotale.Text = "1.000"
+      Me.eui_txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.eui_txtTotale.TextEditorWidth = 128
+      '
+      'Label6
+      '
+      Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Label6.AutoSize = True
+      Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label6.ForeColor = System.Drawing.Color.White
+      Me.Label6.Location = New System.Drawing.Point(410, 12)
+      Me.Label6.Name = "Label6"
+      Me.Label6.Size = New System.Drawing.Size(156, 15)
+      Me.Label6.TabIndex = 16
+      Me.Label6.Text = "Totale importo noleggi:"
+      '
+      'formFrameSkinner
+      '
+      Me.formFrameSkinner.AllowGlass = False
+      Me.formFrameSkinner.Form = Me
+      '
+      'DataGridView1
+      '
+      Me.DataGridView1.AllowUserToAddRows = False
+      Me.DataGridView1.AllowUserToDeleteRows = False
+      DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+      Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+      Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.Location = New System.Drawing.Point(2, 65)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(686, 321)
-        Me.DataGridView1.TabIndex = 14
-        '
-        'ElencoNoleggi
-        '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(698, 446)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "ElencoNoleggi"
-        Me.ShowInTaskbar = False
-        Me.Text = "Elenco Noleggi"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+      Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+      Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+      DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+      Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+      Me.DataGridView1.GridColor = System.Drawing.Color.LightGray
+      Me.DataGridView1.Location = New System.Drawing.Point(0, 63)
+      Me.DataGridView1.Name = "DataGridView1"
+      Me.DataGridView1.ReadOnly = True
+      Me.DataGridView1.Size = New System.Drawing.Size(714, 162)
+      Me.DataGridView1.TabIndex = 14
+      '
+      'DataGridView2
+      '
+      Me.DataGridView2.AllowUserToAddRows = False
+      Me.DataGridView2.AllowUserToDeleteRows = False
+      DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+      Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+      Me.DataGridView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
+      Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+      DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+      DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+      DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+      DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+      DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+      Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+      Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+      Me.DataGridView2.GridColor = System.Drawing.Color.LightGray
+      Me.DataGridView2.Location = New System.Drawing.Point(0, 255)
+      Me.DataGridView2.Name = "DataGridView2"
+      Me.DataGridView2.ReadOnly = True
+      Me.DataGridView2.Size = New System.Drawing.Size(714, 165)
+      Me.DataGridView2.TabIndex = 15
+      '
+      'Panel3
+      '
+      Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.Panel3.BackColor = System.Drawing.Color.Gray
+      Me.Panel3.Controls.Add(Me.Label1)
+      Me.Panel3.Location = New System.Drawing.Point(0, 227)
+      Me.Panel3.Name = "Panel3"
+      Me.Panel3.Size = New System.Drawing.Size(714, 26)
+      Me.Panel3.TabIndex = 16
+      '
+      'Label1
+      '
+      Me.Label1.AutoSize = True
+      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label1.ForeColor = System.Drawing.Color.White
+      Me.Label1.Location = New System.Drawing.Point(3, 6)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(170, 16)
+      Me.Label1.TabIndex = 55674
+      Me.Label1.Text = "ARTICOLI NOLEGGIATI"
+      '
+      'ElencoNoleggi
+      '
+      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.ClientSize = New System.Drawing.Size(714, 462)
+      Me.Controls.Add(Me.Panel3)
+      Me.Controls.Add(Me.DataGridView2)
+      Me.Controls.Add(Me.DataGridView1)
+      Me.Controls.Add(Me.Panel2)
+      Me.Controls.Add(Me.Panel1)
+      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+      Me.Name = "ElencoNoleggi"
+      Me.ShowInTaskbar = False
+      Me.Text = "Elenco Noleggi"
+      Me.Panel1.ResumeLayout(False)
+      Me.Panel1.PerformLayout()
+      Me.Panel2.ResumeLayout(False)
+      Me.Panel2.PerformLayout()
+      CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.Panel3.ResumeLayout(False)
+      Me.Panel3.PerformLayout()
+      Me.ResumeLayout(False)
 
-    End Sub
+   End Sub
 
 #End Region
 
@@ -764,47 +697,65 @@ Public Class ElencoNoleggi
 
 #End Region
 
-   ' TODO_A: Modificare.
    Private Sub LeggiDatiConfig()
       Try
          ' Nel caso la directory corrente venga cambiata.
          Environment.CurrentDirectory = Application.StartupPath
 
-         If DatiConfig.GetValue("FiltroDoc") <> "" Then
-            filtroDati = DatiConfig.GetValue("FiltroDoc")
+         If DatiConfig.GetValue("FiltroNoleggi") <> "" Then
+            filtroDati = DatiConfig.GetValue("FiltroNoleggi")
          Else
             filtroDati = "Tutti"
          End If
 
-         If DatiConfig.GetValue("WSDocumenti") = CStr(FormWindowState.Maximized) Then
+         If DatiConfig.GetValue("WSNoleggi") = CStr(FormWindowState.Maximized) Then
             Me.WindowState = FormWindowState.Maximized
             Exit Sub
-         ElseIf DatiConfig.GetValue("WSDocumenti") = CStr(FormWindowState.Minimized) Then
+         ElseIf DatiConfig.GetValue("WSNoleggi") = CStr(FormWindowState.Minimized) Then
             Me.WindowState = FormWindowState.Minimized
             Exit Sub
          Else
-            If DatiConfig.GetValue("ADocumenti") <> "" Then
-               Me.Height = CInt(DatiConfig.GetValue("ADocumenti"))
+            If DatiConfig.GetValue("ANoleggi") <> "" Then
+               Me.Height = CInt(DatiConfig.GetValue("ANoleggi"))
             Else
                Me.Height = FORM_ALTEZZA
             End If
 
-            If DatiConfig.GetValue("LDocumenti") <> "" Then
-               Me.Width = CInt(DatiConfig.GetValue("LDocumenti"))
+            If DatiConfig.GetValue("LNoleggi") <> "" Then
+               Me.Width = CInt(DatiConfig.GetValue("LNoleggi"))
             Else
                Me.Width = FORM_LARGHEZZA
             End If
 
-            If DatiConfig.GetValue("DocumentiX") <> "" Then
-               Me.Location = New Point(CInt(DatiConfig.GetValue("DocumentiX")), Me.Location.Y)
+            If DatiConfig.GetValue("NoleggiX") <> "" Then
+               Me.Location = New Point(CInt(DatiConfig.GetValue("NoleggiX")), Me.Location.Y)
             End If
 
-            If DatiConfig.GetValue("DocumentiY") <> "" Then
-               Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("DocumentiY")))
+            If DatiConfig.GetValue("NoleggiY") <> "" Then
+               Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("NoleggiY")))
             End If
 
             Exit Sub
          End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub SalvaDatiConfig()
+      Try
+         ' Nel caso la directory corrente venga cambiata.
+         Environment.CurrentDirectory = Application.StartupPath
+
+         DatiConfig.SetValue("FiltroNoleggi", filtroDati)
+         DatiConfig.SetValue("WSNoleggi", Me.WindowState)
+         DatiConfig.SetValue("NoleggiX", Me.Location.X)
+         DatiConfig.SetValue("NoleggiY", Me.Location.Y)
+         DatiConfig.SetValue("ANoleggi", Me.Height)
+         DatiConfig.SetValue("LNoleggi", Me.Width)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -814,25 +765,6 @@ Public Class ElencoNoleggi
    End Sub
 
    ' TODO_A: Modificare.
-   Private Sub SalvaDatiConfig()
-      Try
-         ' Nel caso la directory corrente venga cambiata.
-         Environment.CurrentDirectory = Application.StartupPath
-
-         DatiConfig.SetValue("FiltroDoc", filtroDati)
-         DatiConfig.SetValue("WSDocumenti", Me.WindowState)
-         DatiConfig.SetValue("DocumentiX", Me.Location.X)
-         DatiConfig.SetValue("DocumentiY", Me.Location.Y)
-         DatiConfig.SetValue("ADocumenti", Me.Height)
-         DatiConfig.SetValue("LDocumenti", Me.Width)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
    Public Function ImpostaFunzioniOperatore(ByVal wnd As String) As Boolean
       Try
          Select Case wnd
@@ -888,6 +820,7 @@ Public Class ElencoNoleggi
 
    End Function
 
+   ' TODO_A: Modificare.
    Private Sub RipristinaStatistiche()
       Try
          Dim sql As String
@@ -939,119 +872,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Private Function RipristinaBuoniPasto() As Boolean
-      Try
-         Dim sql As String
-         Dim rifDoc As String
-         Dim idBuono As Integer
-         Dim qt‡Buono As Double
-         Dim valoreTotBuono As Double
-         Dim listaBuoniFatt As New ListBox
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Legge i dati dei Buoni da fatturare.
-         Dim cmdBuoniFatt As New OleDbCommand("SELECT * FROM BuoniPastoFatt WHERE IdDoc = " & rifDoc & " ORDER BY Id ASC", cn)
-         Dim drBuoniFatt As OleDbDataReader = cmdBuoniFatt.ExecuteReader()
-         Do While drBuoniFatt.Read
-            idBuono = Convert.ToInt32(drBuoniFatt.Item("IdBuono"))
-            qt‡Buono = Convert.ToDouble(drBuoniFatt.Item("Quantit‡"))
-            valoreTotBuono = Convert.ToDouble(drBuoniFatt.Item("ValoreTotale"))
-            listaBuoniFatt.Items.Add(idBuono & "/" & qt‡Buono & "/" & valoreTotBuono)
-         Loop
-
-         cmdBuoniFatt.Dispose()
-         drBuoniFatt.Close()
-
-         ' Legge i dati dei Buoni pasto.
-         Dim i As Integer
-         For i = 0 To listaBuoniFatt.Items.Count - 1
-            Dim buoniFatt As String = listaBuoniFatt.Items.Item(i)
-            Dim datiBuoniFatt As String()
-            datiBuoniFatt = buoniFatt.Split("/")
-
-            Dim CBuoniPasto As New Buoni
-            With CBuoniPasto
-               Dim cmdBuoni As New OleDbCommand("SELECT * FROM BuoniPasto WHERE Id = " & datiBuoniFatt(0) & " ORDER BY Id ASC", cn)
-               Dim drBuoni As OleDbDataReader = cmdBuoni.ExecuteReader()
-               Do While drBuoni.Read
-                  .IdAzienda = Convert.ToInt32(drBuoni.Item("IdAzienda"))
-                  .Descrizione = drBuoni.Item("Descrizione")
-                  .ValoreUnitario = Convert.ToDouble(drBuoni.Item("ValoreUnitario"))
-                  .Quantit‡ = Convert.ToDouble(drBuoni.Item("Quantit‡"))
-                  .ValoreTotale = Convert.ToDouble(drBuoni.Item("ValoreTotale"))
-                  .Quantit‡Fatt = Convert.ToDouble(drBuoni.Item("Quantit‡Fatt"))
-                  .ValoreFatt = Convert.ToDouble(drBuoni.Item("ValoreFatt"))
-               Loop
-
-               ' Sottrae i valori per ripristinare i dati.
-               .Quantit‡ = .Quantit‡ - qt‡Buono
-               .ValoreTotale = .ValoreTotale - valoreTotBuono
-               .Quantit‡Fatt = .Quantit‡Fatt - qt‡Buono
-               .ValoreFatt = .ValoreFatt - valoreTotBuono
-
-               .ModificaDati("BuoniPasto", idBuono)
-            End With
-         Next
-
-         Return True
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-         Return (False)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Function
-
-   Private Sub EliminaBuoniPasto()
-      Try
-         Dim rifDoc As Integer
-
-         ' Elimina i Buoni pasto da fatturare contenuti nel documento annullato.
-
-         ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
-
-         ' Apre la connessione.
-         cn.Open()
-
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE IdDoc = {1}", "BuoniPastoFatt", rifDoc)
-
-         ' Crea il comando per la connessione corrente.
-         Dim cmdDelete As New OleDbCommand(sql, cn, tr)
-
-         ' Esegue il comando.
-         Dim Record As Integer = cmdDelete.ExecuteNonQuery()
-
-         ' Conferma la transazione.
-         tr.Commit()
-
-      Catch ex As Exception
-         ' Annulla la transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Sub
-
+   ' TODO_A: Modificare.
    Private Sub EliminaDettagliDocumento()
       Try
          Dim rifDoc As Integer
@@ -1090,6 +911,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Private Sub EliminaDocumento()
       Try
          Dim rifDoc As Integer
@@ -1131,45 +953,47 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub EliminaDatiDocumento()
-      Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-      Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-      Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-      Dim Importo As String = DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      'Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
+      'Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      'Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      'Dim Importo As String = DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-      ' Chiede conferma per l'eliminazione.
-      Dim risposta As Integer
-      risposta = MessageBox.Show("Si desidera eliminare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " &
-                                 "Confermando l'operazione Non sar‡ pi˘ possibile recuperare i dati.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-      If risposta = vbYes Then
-         EliminaDettagliDocumento()
-         EliminaDocumento()
+      '' Chiede conferma per l'eliminazione.
+      'Dim risposta As Integer
+      'risposta = MessageBox.Show("Si desidera eliminare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " &
+      '                           "Confermando l'operazione Non sar‡ pi˘ possibile recuperare i dati.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+      'If risposta = vbYes Then
+      '   EliminaDettagliDocumento()
+      '   EliminaDocumento()
 
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
-         AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
+      '   ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+      '   AttivaDisattivaSospeso()
+      '   AttivaDisattivaPassaSospeso()
+      '   AttivaDisattivaAnnullaSospeso()
+      '   AttivaDisattivaBuoni()
+      '   AttivaDisattivaAnnullaDoc()
+      '   AttivaDisattivaEsportaFatturaElettronica()
 
-         ' Registra loperazione effettuata dall'operatore identificato.
-         Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & CFormatta.FormattaEuro(Importo) & ")"
-         g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+      '   ' Registra loperazione effettuata dall'operatore identificato.
+      '   Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & CFormatta.FormattaEuro(Importo) & ")"
+      '   g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
-      End If
+      'End If
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub DuplicaDocumento()
       Try
          Dim Risposta As Short
          Dim id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-         Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         'Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         'Dim data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
+         'Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-         ' Chiede conferma per l'eliminazione.
-         Risposta = MessageBox.Show("Si desidera duplicare il documento """ & tipoDoc & " N. " & numero & " del " & data & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         '' Chiede conferma per l'eliminazione.
+         'Risposta = MessageBox.Show("Si desidera duplicare il documento """ & tipoDoc & " N. " & numero & " del " & data & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
          If Risposta = MsgBoxResult.Yes Then
 
@@ -1191,7 +1015,7 @@ Public Class ElencoNoleggi
             Dim ultimoId As Integer = LeggiUltimoRecord(TAB_NOLEGGI)
 
             ' Dati dettagli documento.
-            Dim DettagliDoc As New DettagliDocumenti
+            Dim DettagliDoc As New DettagliNoleggi
             With DettagliDoc
                ' Dichiara un oggetto connessione.
                Dim cn As New OleDbConnection(ConnString)
@@ -1202,7 +1026,7 @@ Public Class ElencoNoleggi
 
                ' Legge i dati del record selezionato nella lista.
                Do While dr.Read()
-                  .RifDoc = ultimoId
+                  .RifNoleggio = ultimoId
 
                   ' Codice.
                   If IsDBNull(dr.Item("CodiceArticolo")) = False Then
@@ -1237,13 +1061,6 @@ Public Class ElencoNoleggi
                      .ValoreUnitario = dr.Item("ValoreUnitario")
                   Else
                      .ValoreUnitario = VALORE_ZERO
-                  End If
-
-                  ' Sconto %.
-                  If IsDBNull(dr.Item("Sconto")) = False Then
-                     .Sconto = dr.Item("Sconto")
-                  Else
-                     .Sconto = VALORE_ZERO
                   End If
 
                   ' Importo.
@@ -1366,10 +1183,10 @@ Public Class ElencoNoleggi
          'Ultimo.Enabled = (n < numPagine)
 
       Catch ex As Exception
-         ' Si verifica quando la griglia viene aperta in modalit‡ Massima o Minima.
-         If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
-            Exit Try
-         End If
+         '' Si verifica quando la griglia viene aperta in modalit‡ Massima o Minima.
+         'If ex.Message = "Testo del comando non impostato per l'oggetto comando." Then
+         '   Exit Try
+         'End If
 
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1381,6 +1198,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub AggiornaDati()
       Try
          If eui_txtTestoRicerca.Text <> "" Then
@@ -1414,7 +1232,7 @@ Public Class ElencoNoleggi
 
                Case "Sospesi"
                   ' Aggiorna la griglia dati.
-                  AggiornaDatiSospesi()
+                  'AggiornaDatiSospesi()
             End Select
          End If
 
@@ -1425,40 +1243,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Public Sub AggiornaDatiSospesi()
-      Try
-         ' Crea la stringa di selezione dei dati..
-         sql = String.Format("Select TOP {0} * FROM {1} WHERE SospesoIncassare <> 0 ORDER BY DataDoc", DIM_PAGINA_GRANDE, TAB_NOLEGGI)
-         repSql = sql
-         LeggiDati("(" & sql & ")", sql)
-
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
-         AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
-
-         ' Se nella tabella non ci sono record disattiva i pulsanti.
-         ConvalidaDati()
-
-         ' Aggiorna l'intestazione della griglia dati.
-         AggIntGriglia()
-
-         ' Aggiorna il titolo della finestra.
-         AggTitoloFinestra(TITOLO_FINESTRA)
-
-         ' Somma i valori della colonna Importo.
-         SommaImporti()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
+   ' TODO_A: Modificare.
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1470,7 +1255,7 @@ Public Class ElencoNoleggi
             ' Crea la stringa di selezione dei dati.
             Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
             Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
-            sql = String.Format("Select TOP {0} * FROM {1} WHERE DataDoc BETWEEN #{2}# And #{3}# ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, dataDal, dataAl)
+            sql = String.Format("Select TOP {0} * FROM {1} WHERE DataInizio BETWEEN #{2}# And #{3}# ORDER BY DataInizio ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, dataDal, dataAl)
             repSql = sql
             LeggiDati("(" & sql & ")", sql)
 
@@ -1478,12 +1263,7 @@ Public Class ElencoNoleggi
             ConvalidaDati()
 
             ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-            AttivaDisattivaSospeso()
-            AttivaDisattivaPassaSospeso()
-            AttivaDisattivaAnnullaSospeso()
-            AttivaDisattivaBuoni()
-            AttivaDisattivaAnnullaDoc()
-            AttivaDisattivaEsportaFatturaElettronica()
+            'AttivaDisattivaAnnullaDoc()
 
             ' Aggiorna l'intestazione della griglia dati.
             AggIntGriglia()
@@ -1502,15 +1282,16 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub AggiornaDatiMese()
       Try
          ' Crea la stringa di selezione dei dati.
          Dim Anno As String = Year(Now)
          Dim Mese As String = Month(Now)
-         Dim Appo1 As String = CFormatta.FormattaData("01/" & Mese & "/" & Anno)
-         Dim UltimoGiornoAnno As String = DateTime.DaysInMonth(Anno, Mese)
-         Dim Appo2 As String = CFormatta.FormattaData(UltimoGiornoAnno & "/" & Mese & "/" & Anno)
-         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataDoc BETWEEN #{2}# And #{3}# ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, Appo1, Appo2)
+         Dim InizioMese As String = CFormatta.FormattaData("01/" & Mese & "/" & Anno)
+         Dim UltimoGiornoMese As String = DateTime.DaysInMonth(Anno, Mese)
+         Dim FineMese As String = CFormatta.FormattaData(UltimoGiornoMese & "/" & Mese & "/" & Anno)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataInizio BETWEEN #{2}# And #{3}# ORDER BY DataInizio ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, InizioMese, FineMese)
 
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
@@ -1519,12 +1300,7 @@ Public Class ElencoNoleggi
          ConvalidaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
-         AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
+         'AttivaDisattivaAnnullaDoc()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1542,14 +1318,15 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub AggiornaDatiAnno()
       Try
          ' Crea la stringa di selezione dei dati.
          Dim Anno As String = Year(Now)
-         Dim Appo1 As String = CFormatta.FormattaData("01/01/" & Anno)
+         Dim InizioAnno As String = CFormatta.FormattaData("01/01/" & Anno)
          Dim UltimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
-         Dim Appo2 As String = CFormatta.FormattaData(UltimoGiornoAnno & "/12/" & Anno)
-         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataDoc BETWEEN #{2}# And #{3}# ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, Appo1, Appo2)
+         Dim FineAnno As String = CFormatta.FormattaData(UltimoGiornoAnno & "/12/" & Anno)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataInizio BETWEEN #{2}# And #{3}# ORDER BY DataInizio ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, InizioAnno, FineAnno)
 
          repSql = sql
          LeggiDati("(" & sql & ")", sql)
@@ -1558,12 +1335,7 @@ Public Class ElencoNoleggi
          ConvalidaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
-         AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
+         'AttivaDisattivaAnnullaDoc()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1584,19 +1356,7 @@ Public Class ElencoNoleggi
    Private Sub SommaImporti()
       Try
          ' Somma i valori della colonna Totale.
-         eui_txtTotale.Text = CFormatta.FormattaNumeroDouble(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_TOTALE, numRecord))
-
-         ' Somma i valori della colonna Sospeso.
-         eui_txtSospeso.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_SOSPESO_INC, numRecord))
-
-         ' Somma i valori della colonna Imponibile.
-         eui_txtImponibile.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_IMPONIBILE, numRecord))
-
-         ' Somma i valori della colonna Imposta.
-         eui_txtImposta.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_IMPOSTA, numRecord))
-
-         ' Somma i valori della colonna Buoni pasto.
-         eui_txtBuoni.Text = CFormatta.FormattaEuro(SommaColonnaDouble(DataGridView1, COLONNA_IMPORTO_BUONI, numRecord))
+         eui_txtTotale.Text = CFormatta.FormattaNumeroDouble(SommaColonnaDouble(DataGridView1, COLONNA_TOTALE, numRecord))
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1605,6 +1365,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
@@ -1645,19 +1406,19 @@ Public Class ElencoNoleggi
       End If
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub ConvalidaDati()
       If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
          ImpostaComandi()
       End If
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
-            lblIntestazione.Text = Strings.UCase(DataGridView1.Item(COLONNA_INTESTATARIO, DataGridView1.CurrentCell.RowIndex).Value.ToString & " - " &
-                                                 DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " n. " &
-                                                 DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString & " del " &
-                                                 Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString)
+            lblIntestazione.Text = Strings.UCase(DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString & " - " &
+                                                 DataGridView1.Item(COLONNA_CAUSALE, DataGridView1.CurrentCell.RowIndex).Value.ToString)
          Else
             lblIntestazione.Text = String.Empty
          End If
@@ -1672,225 +1433,69 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Public Sub AttivaDisattivaSospeso()
-      Try
-         ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
-         If numRecord <> 0 Then
-            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-               Case TIPO_DOC_RF, TIPO_DOC_FF
-
-                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
-                     g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
-                  Else
-                     g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = True
-                  End If
-
-               Case TIPO_DOC_CO, TIPO_DOC_PF, TIPO_DOC_SF
-
-                  g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
-
-            End Select
-         Else
-            g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
-         End If
-
-      Catch ex As NullReferenceException
-         Exit Try
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Sub AttivaDisattivaAnnullaSospeso()
-      Try
-         ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
-         If numRecord <> 0 Then
-            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-               Case TIPO_DOC_RF, TIPO_DOC_FF
-
-                  If DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
-                     g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
-                  Else
-                     g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = True
-                  End If
-
-               Case TIPO_DOC_CO, TIPO_DOC_PF, TIPO_DOC_SF
-
-                  g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
-
-            End Select
-         Else
-            g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
-         End If
-
-      Catch ex As NullReferenceException
-         Exit Try
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Sub AttivaDisattivaPassaSospeso()
-      Try
-         ' Attiva/disattiva il pulsante per l'incasso dei sospesi.
-         If numRecord <> 0 Then
-            Select Case DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-               Case TIPO_DOC_RF, TIPO_DOC_FF
-
-                  If DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value = DataGridView1.Item(COLONNA_IMPORTO_SOSPESO_INC, DataGridView1.CurrentCell.RowIndex).Value Then
-                     g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
-                  Else
-                     g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = True
-                  End If
-
-               Case TIPO_DOC_CO, TIPO_DOC_PF, TIPO_DOC_SF
-
-                  g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
-
-            End Select
-         Else
-            g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
-         End If
-
-      Catch ex As NullReferenceException
-         Exit Try
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Sub AttivaDisattivaBuoni()
-      Try
-         If numRecord <> 0 Then
-            ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value = 0 Then
-
-               g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
-            Else
-               g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = True
-            End If
-         Else
-            g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
-         End If
-
-      Catch ex As NullReferenceException
-         Exit Try
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
+   ' TODO_A: Modificare.
    Public Sub AttivaDisattivaAnnullaDoc()
-      Try
-         ' Attiva/disattiva il pulsante per annullare un documento.
-         If numRecord <> 0 Then
+      'Try
+      '   ' Attiva/disattiva il pulsante per annullare un documento.
+      '   If numRecord <> 0 Then
 
-            Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      '      Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      '      Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-            Select Case tipoDoc
-               Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
+      '      Select Case tipoDoc
+      '         Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
 
-                  Select Case statoDoc
-                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_EMESSO_XML
-                        g_frmMain.eui_Strumenti_Annulla.Enabled = True
+      '            Select Case statoDoc
+      '               Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_EMESSO_XML
+      '                  g_frmMain.eui_Strumenti_Annulla.Enabled = True
 
-                     Case Else
-                        g_frmMain.eui_Strumenti_Annulla.Enabled = False
+      '               Case Else
+      '                  g_frmMain.eui_Strumenti_Annulla.Enabled = False
 
-                  End Select
+      '            End Select
 
-               Case Else
-                  g_frmMain.eui_Strumenti_Annulla.Enabled = False
+      '         Case Else
+      '            g_frmMain.eui_Strumenti_Annulla.Enabled = False
 
-            End Select
-         End If
+      '      End Select
+      '   End If
 
-      Catch ex As NullReferenceException
-         Exit Try
+      'Catch ex As NullReferenceException
+      '   Exit Try
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'End Try
    End Sub
 
-   Public Sub AttivaDisattivaEsportaFatturaElettronica()
-      Try
-         ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
-         If numRecord <> 0 Then
-            Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-            Select Case tipoDoc
-               Case TIPO_DOC_FF
-
-                  Select Case statoDoc
-                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO
-                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = True
-
-                     Case Else
-                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
-
-                  End Select
-
-               Case Else
-                  g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
-
-            End Select
-         End If
-
-      Catch ex As NullReferenceException
-         Exit Try
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
+   ' TODO_A: Modificare.
    Public Sub AnnullaDocumento()
       Try
          Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-         Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
+         'Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
+         'Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         'Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         'Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
 
 
          ' Chiede conferma per l'annullamento.
          Dim risposta As Integer
-         risposta = MessageBox.Show("Si desidera annullare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " & vbCrLf & vbCrLf &
-                                    "Confermando l'operazione verranno ripristinati i valori per le " &
-                                    "giacenze di magazzino degli Articoli e le Statistiche di vendita. Eventuali Buoni pasto contenuti " &
-                                    "nel documento non ancora fatturati verranno annullati. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         'risposta = MessageBox.Show("Si desidera annullare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " & vbCrLf & vbCrLf &
+         '                           "Confermando l'operazione verranno ripristinati i valori per le " &
+         '                           "giacenze di magazzino degli Articoli e le Statistiche di vendita. Eventuali Buoni pasto contenuti " &
+         '                           "nel documento non ancora fatturati verranno annullati. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
          If risposta = vbYes Then
             RipristinaIngredientiScaricati()
             RipristinaStatistiche()
 
             ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value <> 0 Then
-               If RipristinaBuoniPasto() = True Then
-                  EliminaBuoniPasto()
-               End If
-            End If
+            'If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value <> 0 Then
+            '   If RipristinaBuoniPasto() = True Then
+            '      EliminaBuoniPasto()
+            '   End If
+            'End If
 
             ' TODO_B: Se il documento da annullare Ë uno scontrino.
             'If Documento = TIPO_DOC_SF Then
@@ -1902,8 +1507,8 @@ Public Class ElencoNoleggi
          End If
 
          ' Chiede conferma per l'eliminazione.
-         risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ Ë stato annullato! " & vbCrLf & vbCrLf &
-                              "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         'risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ Ë stato annullato! " & vbCrLf & vbCrLf &
+         '                     "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
          If risposta = vbNo Then
             EliminaDettagliDocumento()
             EliminaDocumento()
@@ -1920,16 +1525,11 @@ Public Class ElencoNoleggi
          g_frmDocumenti.AggiornaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Registra loperazione effettuata dall'operatore identificato.
-         Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & CFormatta.FormattaEuro(Importo) & ")"
-         g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & CFormatta.FormattaEuro(Importo) & ")"
+         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1938,6 +1538,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Function ModificaStatoDocumento(ByVal tabella As String, ByVal codice As String, ByVal stato As String) As Boolean
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
@@ -1983,6 +1584,7 @@ Public Class ElencoNoleggi
 
    End Function
 
+   ' TODO_A: Modificare.
    Private Sub RipristinaNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String, ByVal numDoc As Integer)
       Try
          Dim DatiConfig As AppConfig
@@ -2008,6 +1610,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Private Function LeggiNumeroMax(ByVal tabella As String, ByVal tipoDoc As String) As Integer
       Dim closeOnExit As Boolean
       Dim numRec As Integer
@@ -2068,6 +1671,7 @@ Public Class ElencoNoleggi
             .Visible = True
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codiceStyle)
@@ -2080,6 +1684,7 @@ Public Class ElencoNoleggi
             .Name = "Cliente"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, clienteStyle)
@@ -2104,6 +1709,7 @@ Public Class ElencoNoleggi
             .Name = "DataInizio"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Green
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, dataInizioStyle)
@@ -2116,6 +1722,7 @@ Public Class ElencoNoleggi
             .Name = "DataFine"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Green
             .CellTemplate.Style.NullValue = String.Empty
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, dataFineStyle)
@@ -2128,7 +1735,9 @@ Public Class ElencoNoleggi
             .Name = "TotaleGiorni"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
             .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleGiorniStyle)
 
@@ -2160,66 +1769,33 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleStyle)
 
-         '' 10 Sospeso
-         'Dim sospesoStyle As New DataGridViewTextBoxColumn()
-         'With sospesoStyle
-         '   .DataPropertyName = "Sospeso"
-         '   .HeaderText = "Sospeso"
-         '   .Name = "Sospeso"
-         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-         '   .CellTemplate = New DataGridViewTextBoxCell()
-         '   .CellTemplate.Style.ForeColor = Color.Black
-         '   .CellTemplate.Style.NullValue = String.Empty
-         '   .CellTemplate.Style.Format = "##,##0.00"
-         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
-         'End With
-         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, sospesoStyle)
+         ' 8 Codice a barre
+         Dim codBarreStyle As New DataGridViewTextBoxColumn()
+         With codBarreStyle
+            .DataPropertyName = "CodiceBarre"
+            .HeaderText = "Codice a barre"
+            .Name = "CodiceBarre"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codBarreStyle)
 
-         '' 11 Imponibile
-         'Dim imponibileStyle As New DataGridViewTextBoxColumn()
-         'With imponibileStyle
-         '   .DataPropertyName = "Imponibile"
-         '   .HeaderText = "Imponibile"
-         '   .Name = "Imponibile"
-         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-         '   .CellTemplate = New DataGridViewTextBoxCell()
-         '   .CellTemplate.Style.ForeColor = Color.Blue
-         '   .CellTemplate.Style.NullValue = String.Empty
-         '   .CellTemplate.Style.Format = "##,##0.00"
-         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
-         'End With
-         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, imponibileStyle)
+         ' 9 Chiuso.
+         Dim chiusoStyle As New DataGridViewTextBoxColumn()
+         With chiusoStyle
+            .DataPropertyName = "Chiuso"
+            .HeaderText = "Contabilizzato"
+            .Name = "Chiuso"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, chiusoStyle)
 
-         '' 12 Imposta
-         'Dim impostaStyle As New DataGridViewTextBoxColumn()
-         'With impostaStyle
-         '   .DataPropertyName = "Imposta"
-         '   .HeaderText = "Imposta"
-         '   .Name = "Imposta"
-         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-         '   .CellTemplate = New DataGridViewTextBoxCell()
-         '   .CellTemplate.Style.ForeColor = Color.Red
-         '   .CellTemplate.Style.NullValue = String.Empty
-         '   .CellTemplate.Style.Format = "##,##0.00"
-         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
-         'End With
-         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, impostaStyle)
-
-         '' 14 Chiuso.
-         'Dim chiusoStyle As New DataGridViewTextBoxColumn()
-         'With chiusoStyle
-         '   .DataPropertyName = "Chiuso"
-         '   .HeaderText = "Contabilizzato"
-         '   .Name = "Chiuso"
-         '   .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-         '   .CellTemplate = New DataGridViewTextBoxCell()
-         '   .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
-         '   .CellTemplate.Style.NullValue = String.Empty
-         '   .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-         'End With
-         'DataGridView1.Columns.Insert(DataGridView1.ColumnCount, chiusoStyle)
-
-         ' 17 Id Cliente.
+         ' 10 Id Cliente.
          Dim idClienteStyle As New DataGridViewTextBoxColumn()
          With idClienteStyle
             .DataPropertyName = "idCliente"
@@ -2240,6 +1816,87 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   Private Sub CreaColonneArticoli(ByVal tabella As String)
+      Try
+         DataGridView2.AutoGenerateColumns = False
+         DataGridView2.DataMember = tabella
+
+         ' 0 Id - Codice
+         Dim codiceStyle As New DataGridViewTextBoxColumn
+         With codiceStyle
+            .DataPropertyName = "Id"
+            .HeaderText = "Codice"
+            .Name = "Id"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, codiceStyle)
+
+         ' 1 Codice Articolo
+         Dim codiceArticoloStyle As New DataGridViewTextBoxColumn
+         With codiceArticoloStyle
+            .DataPropertyName = "CodiceArticolo"
+            .HeaderText = "Codice"
+            .Name = "CodiceArticolo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_ROSA)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, codiceArticoloStyle)
+
+         ' 2 Descrizione
+         Dim descrizioneStyle As New DataGridViewTextBoxColumn()
+         With descrizioneStyle
+            .DataPropertyName = "Descrizione"
+            .HeaderText = "Descrizione"
+            .Name = "Descrizione"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.BackColor = Color.FromArgb(COLORE_AZZURRO)
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, descrizioneStyle)
+
+         ' 3 Quantit‡
+         Dim quantit‡Style As New DataGridViewTextBoxColumn()
+         With quantit‡Style
+            .DataPropertyName = "Quantit‡"
+            .HeaderText = "Quantit‡"
+            .Name = "Quantit‡"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, quantit‡Style)
+
+         ' 4 Rif. Noleggio
+         Dim rifNoleggioStyle As New DataGridViewTextBoxColumn()
+         With rifNoleggioStyle
+            .DataPropertyName = "RifNoleggio"
+            .HeaderText = "RifNoleggio"
+            .Name = "RifNoleggio"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, rifNoleggioStyle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
+   ' TODO_A: Modificare.
    Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -2247,26 +1904,24 @@ Public Class ElencoNoleggi
          testoRicerca = FormattaApici(testoRicerca)
 
          Select Case campoRicerca
-            Case "Numero"
-               campoRicerca = "NumDoc"
-            Case "Data"
-               campoRicerca = "DataDoc"
-            Case "Ora"
-               campoRicerca = "OraDoc"
-            Case "Tipo documento"
-               campoRicerca = "TipoDoc"
-            Case "Intestatario"
+            Case "Codice"
+               campoRicerca = "Id"
+            Case "Cliente"
                campoRicerca = "Cliente"
-            Case "Stato documento"
-               campoRicerca = "StatoDoc"
             Case "Causale"
-               campoRicerca = "CausaleDoc"
+               campoRicerca = "Causale"
+            Case "Data inizio"
+               campoRicerca = "DataInizio"
+            Case "Data fine"
+               campoRicerca = "DataFine"
+            Case "Totale giorni"
+               campoRicerca = "TotaleGiorni"
+            Case "Stato noleggio"
+               campoRicerca = "Stato"
             Case "Totale"
-               campoRicerca = "TotDoc"
-            Case "Buoni pasto"
-               campoRicerca = "BuoniPasto"
-            Case "Tipo pagamento"
-               campoRicerca = "TipoPagamento"
+               campoRicerca = "Totale"
+            Case "Codice a barre"
+               campoRicerca = "CodiceBarre"
             Case "Contabilizzato"
                campoRicerca = "Chiuso"
          End Select
@@ -2293,8 +1948,8 @@ Public Class ElencoNoleggi
             g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
             g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
 
-            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY DataDoc ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI)
-            repSql = String.Format("SELECT * FROM {0} ORDER BY DataDoc ASC", TAB_NOLEGGI)
+            sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI)
+            repSql = String.Format("SELECT * FROM {0} ORDER BY Id ASC", TAB_NOLEGGI)
 
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati(TAB_NOLEGGI, sql)
@@ -2307,12 +1962,12 @@ Public Class ElencoNoleggi
          ConvalidaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaSospeso()
-         AttivaDisattivaPassaSospeso()
-         AttivaDisattivaAnnullaSospeso()
-         AttivaDisattivaBuoni()
-         AttivaDisattivaAnnullaDoc()
-         AttivaDisattivaEsportaFatturaElettronica()
+         'AttivaDisattivaSospeso()
+         'AttivaDisattivaPassaSospeso()
+         'AttivaDisattivaAnnullaSospeso()
+         'AttivaDisattivaBuoni()
+         'AttivaDisattivaAnnullaDoc()
+         'AttivaDisattivaEsportaFatturaElettronica()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -2327,21 +1982,50 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   Private Sub FiltraDatiArticoli(ByVal rif_noleggio As Integer)
+      Try
+         Dim sqlArticoli As String = String.Format("SELECT * FROM {0} WHERE RifNoleggio = {1} ORDER BY Id ASC", TAB_DETTAGLI_NOLEGGI, rif_noleggio)
+
+         DataGridView2.DataSource = dtArticoli
+
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+         End If
+
+         ' Crea un nuovo oggetto DataAdapter.
+         Dim da As New OleDbDataAdapter(sqlArticoli, cn)
+
+         ' Pulisce la tabella da precedenti dati.
+         dtArticoli.Clear()
+
+         ' Visualizza la pagina dati.
+         da.Fill(dtArticoli)
+
+         numRecordArticoli = LeggiNumRecordIngredienti(TAB_DETTAGLI_NOLEGGI, rif_noleggio)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+
    Private Sub CaricaCampiRic()
       Try
-         eui_cmbCampoRicerca.Items.Add("Numero")
-         eui_cmbCampoRicerca.Items.Add("Data")
-         eui_cmbCampoRicerca.Items.Add("Ora")
-         eui_cmbCampoRicerca.Items.Add("Tipo documento")
-         eui_cmbCampoRicerca.Items.Add("Intestatario")
-         eui_cmbCampoRicerca.Items.Add("Stato documento")
+         eui_cmbCampoRicerca.Items.Add("Codice")
+         eui_cmbCampoRicerca.Items.Add("Cliente")
          eui_cmbCampoRicerca.Items.Add("Causale")
-         eui_cmbCampoRicerca.Items.Add("Tipo pagamento")
+         eui_cmbCampoRicerca.Items.Add("Data inizio")
+         eui_cmbCampoRicerca.Items.Add("Data fine")
+         eui_cmbCampoRicerca.Items.Add("Totale giorni")
+         eui_cmbCampoRicerca.Items.Add("Stato noleggio")
          eui_cmbCampoRicerca.Items.Add("Totale")
-         eui_cmbCampoRicerca.Items.Add("Sospeso")
-         eui_cmbCampoRicerca.Items.Add("Imponibile")
-         eui_cmbCampoRicerca.Items.Add("Imposta")
-         eui_cmbCampoRicerca.Items.Add("Buoni pasto")
+         eui_cmbCampoRicerca.Items.Add("Codice a barre")
          eui_cmbCampoRicerca.Items.Add("Contabilizzato")
 
       Catch ex As Exception
@@ -2377,6 +2061,35 @@ Public Class ElencoNoleggi
 
       End Try
    End Function
+
+   Private Function LeggiNumRecordIngredienti(ByVal tabella As String, ByVal rif_noleggio As Integer) As Integer
+      Dim closeOnExit As Boolean
+      Dim numRec As Integer
+
+      Try
+         ' Se necessario apre la connessione.
+         If cn.State = ConnectionState.Closed Then
+            cn.Open()
+            closeOnExit = True
+         End If
+
+         ' Ottiene il numero di record.
+         cmd.CommandText = String.Format("SELECT COUNT(*) FROM {0} WHERE RifNoleggio = {1}", tabella, rif_noleggio)
+         numRec = CInt(cmd.ExecuteScalar())
+
+         Return numRec
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
+
+      End Try
+   End Function
+
 
    Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
@@ -2433,194 +2146,8 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Public Sub IncassaSospeso()
-      Try
-         ' Apre la finestra per l'incasso del sospeso.
-         Dim frm As New IncassaSospeso(DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value,
-                                          DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                          DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                          DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                          DataGridView1.Item(COLONNA_INTESTATARIO, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                          DataGridView1.Item(COLONNA_IMPORTO_SOSPESO, DataGridView1.CurrentCell.RowIndex).Value.ToString)
-         frm.ShowDialog()
-
-      Catch ex As Exception
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
-   Public Sub PassaSospeso(ByVal id As Integer, ByVal totale As String)
-      Try
-         Dim risposta As Integer
-         risposta = MsgBox("Il totale del documento verr‡ passato in sospeso. Procedere?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, NOME_PRODOTTO)
-         If risposta = vbNo Then
-            Exit Sub
-         Else
-            Dim sql As String
-            ' Apre la connessione.
-            cn.Open()
-
-            ' Avvia una transazione.
-            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-            ' Crea la stringa.
-            sql = String.Format("UPDATE {0} SET Sospeso = @Sospeso, SospesoIncassare = @SospesoIncassare WHERE Id = {1}", TAB_NOLEGGI, id)
-
-            ' Crea il comando per la connessione corrente.
-            Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
-
-            cmdUpdate.Parameters.Add("@Sospeso", totale)
-            cmdUpdate.Parameters.Add("@SospesoIncassare", totale)
-
-            ' Esegue il comando.
-            Dim Record1 As Integer = cmdUpdate.ExecuteNonQuery()
-            ' Conferma transazione.
-            tr.Commit()
-
-            Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-            Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
-
-            ' Registra loperazione effettuata dall'operatore identificato.
-            Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & Importo & ")"
-            g_frmMain.RegistraOperazione(TipoOperazione.PassaSospeso, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
-
-            If g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiSospesi()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiMese()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiAnno()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiPeriodo()
-               Exit Sub
-            Else
-               ' Aggiorna la griglia dati.
-               AggiornaDati()
-               Exit Sub
-            End If
-         End If
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Sub
-
-   Public Sub AnnullaSospeso(ByVal id As Integer)
-      Try
-         Dim risposta As Integer
-         risposta = MsgBox("Il valore sospeso del documento verr‡ azzerato. Procedere?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, NOME_PRODOTTO)
-         If risposta = vbNo Then
-            Exit Sub
-         Else
-            Dim sql As String
-            ' Apre la connessione.
-            cn.Open()
-
-            ' Avvia una transazione.
-            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-            ' Crea la stringa.
-            sql = String.Format("UPDATE {0} SET Sospeso = @Sospeso, SospesoIncassare = @SospesoIncassare WHERE Id = {1}", TAB_NOLEGGI, id)
-
-            ' Crea il comando per la connessione corrente.
-            Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
-
-            cmdUpdate.Parameters.Add("@Sospeso", VALORE_ZERO)
-            cmdUpdate.Parameters.Add("@SospesoIncassare", VALORE_ZERO)
-
-            ' Esegue il comando.
-            Dim Record1 As Integer = cmdUpdate.ExecuteNonQuery()
-            ' Conferma transazione.
-            tr.Commit()
-
-            Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-            Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-            Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
-
-            ' Registra loperazione effettuata dall'operatore identificato.
-            Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - Ä " & Importo & ")"
-            g_frmMain.RegistraOperazione(TipoOperazione.AnnullaSospeso, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
-
-            If g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiSospesi()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiMese()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiAnno()
-               Exit Sub
-            ElseIf g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = True Then
-               ' Aggiorna la griglia dati.
-               AggiornaDatiPeriodo()
-               Exit Sub
-            Else
-               ' Aggiorna la griglia dati.
-               AggiornaDati()
-               Exit Sub
-            End If
-         End If
-
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
-
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-
-      End Try
-   End Sub
-
-   Public Sub ApriElencoBuoni()
-      Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
-
-         ConnStringAnagrafiche = CreaConnString(PercorsoDB)
-
-         Dim frm As New ElencoBuoni
-
-         ' Visualizza l'anagrafica clienti.
-         frm.Tag = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         frm.ShowDialog()
-
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.Default
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-      End Try
-   End Sub
-
-   Private Sub ElencoDoc_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
+   ' TODO_A: Modificare.
+   Private Sub ElencoNoleggi_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
@@ -2694,7 +2221,8 @@ Public Class ElencoNoleggi
 
    End Sub
 
-   Private Sub ElencoDoc_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+   ' TODO_A: Modificare.
+   Private Sub ElencoNoleggi_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
@@ -2704,24 +2232,28 @@ Public Class ElencoNoleggi
 
    End Sub
 
-   Private Sub ElencoDoc_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+   ' TODO_A: Modificare.
+   Private Sub ElencoNoleggi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
          ImpostaIcona(Me)
 
-         DatiConfig = New AppConfig
-         DatiConfig.ConfigType = ConfigFileType.AppConfig
-         ' Imposta le dimensioni del form.
-         LeggiDatiConfig()
-
          ' Crea le colonne della griglia dati.
          CreaColonne(TAB_NOLEGGI)
+         CreaColonneArticoli(TAB_DETTAGLI_NOLEGGI)
+
+         ' Imposta le dimensioni del form.
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+         LeggiDatiConfig()
 
          ' Carica l'elenco dei campi di ricerca.
          CaricaCampiRic()
 
          ' Imposta l'elenco dei campi di ricerca sul valore predefinito.
-         eui_cmbCampoRicerca.SelectedIndex = 0
+         If eui_cmbCampoRicerca.Items.Count <> 0 Then
+            eui_cmbCampoRicerca.SelectedIndex = 0
+         End If
 
          Select Case filtroDati
             Case "Tutti"
@@ -2731,6 +2263,7 @@ Public Class ElencoNoleggi
                g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
                g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
                g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
+
                ' Filtra i dati in base al testo digitato.
                FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
 
@@ -2741,6 +2274,7 @@ Public Class ElencoNoleggi
                g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
                g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
                g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
+
                ' Aggiorna la griglia dati.
                AggiornaDatiMese()
 
@@ -2751,6 +2285,7 @@ Public Class ElencoNoleggi
                g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = True
                g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
                g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
+
                ' Aggiorna la griglia dati.
                AggiornaDatiAnno()
 
@@ -2762,38 +2297,27 @@ Public Class ElencoNoleggi
                g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
                ' DA_FARE_A: Salvare stringa di ricerca date.
                g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
+
                ' Aggiorna la griglia dati.
                AggiornaDatiPeriodo()
 
-            Case "Sospesi"
-               g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
-               g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
-               g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
-               g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
-               g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = True
-               g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
-               ' Aggiorna la griglia dati.
-               AggiornaDatiSospesi()
          End Select
+
+         ' Visualizza i dati di dettaglio.
+         If numRecord <> 0 Then
+            FiltraDatiArticoli(Convert.ToInt32(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value))
+         Else
+            FiltraDatiArticoli(0)
+         End If
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
-         If g_frmMain.eui_Strumenti_Modifica.Enabled = True Then
-            ' Attiva/disattiva il pulsante per annullare un documento.
-            AttivaDisattivaAnnullaDoc()
+         'If g_frmMain.eui_Strumenti_Modifica.Enabled = True Then
+         '   ' Attiva/disattiva il pulsante per annullare un documento.
+         '   AttivaDisattivaAnnullaDoc()
 
-            ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
-            AttivaDisattivaEsportaFatturaElettronica()
-
-            ' Attiva/disattiva il pulsanti per i sospesi.
-            AttivaDisattivaSospeso()
-            AttivaDisattivaPassaSospeso()
-            AttivaDisattivaAnnullaSospeso()
-
-            ' Attiva/Disattiva il pulsante per i Buoni.
-            AttivaDisattivaBuoni()
-         End If
+         'End If
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -2802,7 +2326,7 @@ Public Class ElencoNoleggi
          AggTitoloFinestra(TITOLO_FINESTRA)
 
          ' Registra loperazione effettuata dall'operatore identificato.
-         g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
+         'g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2811,7 +2335,8 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Private Sub ElencoDoc_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+   ' TODO_A: Modificare.
+   Private Sub ElencoNoleggi_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       Try
          SalvaDatiConfig()
 
@@ -2844,6 +2369,7 @@ Public Class ElencoNoleggi
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub Nuovo()
       Try
          ' Modifica il cursore del mouse.
@@ -2859,39 +2385,25 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   ' TODO_A: Modificare.
    Public Sub Modifica()
-      Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
+      'Try
+      '   ' Modifica il cursore del mouse.
+      '   Cursor.Current = Cursors.AppStarting
 
-         ' Apre la finestra Documento per la modifica dei dati.
-         g_frmDocumento = New frmDocumento("ElencoDoc", DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                                        DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
-         g_frmDocumento.ShowDialog()
+      '   ' Apre la finestra Documento per la modifica dei dati.
+      '   g_frmDocumento = New frmDocumento("ElencoDoc", DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
+      '                                                  DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+      '   g_frmDocumento.ShowDialog()
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'End Try
    End Sub
 
-   Public Sub NuovaFatturaElettronica()
-      Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
-
-         g_frmFatturaElettronica = New frmFatturaElettronica(DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-                                                             DataGridView1.Item(COLONNA_ID_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString)
-         g_frmFatturaElettronica.ShowDialog()
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-   End Sub
-
+   ' TODO_A: Modificare.
    Public Function CreaFileScontrinoWPOS1(ByVal numeroDoc As String, ByVal dataDoc As Date) As Boolean
       Try
          Dim SR_DATI As String = "SR_DATI."
@@ -2936,6 +2448,7 @@ Public Class ElencoNoleggi
       End Try
    End Function
 
+   ' TODO_A: Modificare.
    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
       Try
          ' Imposta il colore per la cella in base al valore del campo Sospeso.
@@ -2975,22 +2488,29 @@ Public Class ElencoNoleggi
    End Sub
 
    Private Sub DataGridView1_CurrentCellChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellChanged
-      ' Visualizza un'intestazione per la griglia dati.
-      AggIntGriglia()
+      Try
 
-      ' Attiva/disattiva il pulsante per annullare un documento.
-      AttivaDisattivaAnnullaDoc()
+         ' Visualizza un'intestazione per la griglia dati.
+         AggIntGriglia()
 
-      ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
-      AttivaDisattivaEsportaFatturaElettronica()
+         ' Visualizza i dati di dettaglio.
+         If numRecord <> 0 Then
+            FiltraDatiArticoli(Convert.ToInt32(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value))
+         Else
+            FiltraDatiArticoli(0)
+         End If
 
-      ' Attiva/disattiva i pulsanti per i sospesi.
-      AttivaDisattivaSospeso()
-      AttivaDisattivaPassaSospeso()
-      AttivaDisattivaAnnullaSospeso()
+         ' Attiva/disattiva il pulsante per annullare un documento.
+         'AttivaDisattivaAnnullaDoc()
 
-      ' Attiva/Disattiva il pulsante per i Buoni.
-      AttivaDisattivaBuoni()
+      Catch ex As NullReferenceException
+         Exit Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
