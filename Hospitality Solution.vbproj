@@ -620,6 +620,9 @@
     <Compile Include="Codice\Form\Noleggio\ElencoNoleggi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Form\Noleggio\Noleggi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Ristorante\CodiceLotteriaPOS.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -1922,6 +1925,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Noleggio\ElencoNoleggi.resx">
       <DependentUpon>ElencoNoleggi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Noleggio\Noleggi.resx">
+      <DependentUpon>Noleggi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\CodiceLotteriaPOS.resx">
       <DependentUpon>CodiceLotteriaPOS.vb</DependentUpon>

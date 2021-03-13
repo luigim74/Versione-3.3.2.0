@@ -89,3 +89,26 @@ Nome parametro: index"
 "- NOME PROCEDURA:    in Hospitality_Solution.ElencoNoleggi.FiltraDatiArticoli(Int32 rif_noleggio) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 1999"
 "
 "
+"*** 13/03/2021 - 16:43:37 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @RagSociale."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.AziendaCliente.InserisciDati(String tabella)"
+"
+"
+"*** 13/03/2021 - 17:34:25 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.ConvalidaAllegati()"
+"
+"
+"*** 13/03/2021 - 17:39:27 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.ConvalidaAllegati()"
+"
+"

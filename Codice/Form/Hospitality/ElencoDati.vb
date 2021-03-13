@@ -6920,7 +6920,7 @@ Public Class frmElencoDati
 
    Public Sub Nuovo()
       Try
-         ' Registra loperazione efettuata dall'operatore identificato.
+         ' Registra loperazione effettuata dall'operatore identificato.
          g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
 
          ' Apre la finestra per l'inserimento di nuovi dati.

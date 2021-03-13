@@ -89,6 +89,10 @@ Module Dichiarazioni
    Public Const REPORTS_LARGHEZZA As Integer = 1000
    Public Const REPORTS_ALTEZZA As Integer = 700
 
+   ' Dimensioni della finesta Noleggi.
+   Public Const NOLEGGI_LARGHEZZA As Integer = 590
+   Public Const NOLEGGI_ALTEZZA As Integer = 444
+
    ' Dimensioni per la paginazione dei dati.
    Public Const DIM_PAGINA As Integer = 50
    ' Dimensioni per la paginazione utilizzata per non fornire la paginazione.

@@ -2369,14 +2369,44 @@ Public Class ElencoNoleggi
       FiltraDati(eui_txtTestoRicerca.Text, eui_cmbCampoRicerca.Text)
    End Sub
 
+   Private Sub ApriDati(ByVal val As String)
+      Try
+         ' Modifica il cursore del mouse. 6666
+         Cursor.Current = Cursors.AppStarting
+
+         ' Per la versione demo.
+         ' Se è un nuovo inserimento verifica il numero dei record.
+         If val = String.Empty Then
+            If g_VerDemo = True Then
+               ' Test per la versione demo.
+               If VerificaNumRecord(LeggiNumRecord(TAB_NOLEGGI)) = True Then
+                  Exit Sub
+               End If
+            End If
+         End If
+
+         Dim frm As New frmNoleggi
+         frm.Tag = val
+         frm.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    ' TODO_A: Modificare.
    Public Sub Nuovo()
       Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
 
-         g_frmDocumento = New frmDocumento("ElencoDoc", "Conto", String.Empty)
-         g_frmDocumento.ShowDialog()
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati("")
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2387,20 +2417,21 @@ Public Class ElencoNoleggi
 
    ' TODO_A: Modificare.
    Public Sub Modifica()
-      'Try
-      '   ' Modifica il cursore del mouse.
-      '   Cursor.Current = Cursors.AppStarting
+      Try
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'g_frmMain.RegistraOperazione(TipoOperazione.Nuovo, strDescrizione, strModulo)
 
-      '   ' Apre la finestra Documento per la modifica dei dati.
-      '   g_frmDocumento = New frmDocumento("ElencoDoc", DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString,
-      '                                                  DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString)
-      '   g_frmDocumento.ShowDialog()
+         ' Apre la finestra per l'inserimento di nuovi dati.
+         ApriDati(DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
 
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
 
-      'End Try
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
    ' TODO_A: Modificare.
