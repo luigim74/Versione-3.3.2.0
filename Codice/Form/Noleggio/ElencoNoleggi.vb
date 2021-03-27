@@ -1741,20 +1741,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleGiorniStyle)
 
-         ' 6 Stato
-         Dim statoStyle As New DataGridViewTextBoxColumn()
-         With statoStyle
-            .DataPropertyName = "Stato"
-            .HeaderText = "Stato noleggio"
-            .Name = "Stato"
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-            .CellTemplate = New DataGridViewTextBoxCell()
-            .CellTemplate.Style.NullValue = String.Empty
-         End With
-         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
-
-
-         ' 7 Totale
+         ' 6 Totale
          Dim totaleStyle As New DataGridViewTextBoxColumn()
          With totaleStyle
             .DataPropertyName = "Totale"
@@ -1769,7 +1756,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleStyle)
 
-         ' 8 Codice a barre
+         ' 7 Codice a barre
          Dim codBarreStyle As New DataGridViewTextBoxColumn()
          With codBarreStyle
             .DataPropertyName = "CodiceBarre"
@@ -1781,7 +1768,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codBarreStyle)
 
-         ' 9 Chiuso.
+         ' 8 Chiuso.
          Dim chiusoStyle As New DataGridViewTextBoxColumn()
          With chiusoStyle
             .DataPropertyName = "Chiuso"
@@ -1795,7 +1782,31 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, chiusoStyle)
 
-         ' 10 Id Cliente.
+         ' 9 Stato
+         Dim statoStyle As New DataGridViewTextBoxColumn()
+         With statoStyle
+            .DataPropertyName = "Stato"
+            .HeaderText = "Stato noleggio"
+            .Name = "Stato"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
+
+         ' Colore
+         Dim coloreStyle As New DataGridViewTextBoxColumn
+         With coloreStyle
+            .DataPropertyName = "Colore"
+            .HeaderText = "Colore"
+            .Name = "ColoreSfondo"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
+
+         ' 11 Id Cliente.
          Dim idClienteStyle As New DataGridViewTextBoxColumn()
          With idClienteStyle
             .DataPropertyName = "idCliente"
@@ -2482,32 +2493,16 @@ Public Class ElencoNoleggi
    ' TODO_A: Modificare.
    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
       Try
-         ' Imposta il colore per la cella in base al valore del campo Sospeso.
-         If DataGridView1.Columns(e.ColumnIndex).Name = "Sospeso" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+         ' Imposta il colore per la cella in base al valore del campo ColoreSfondo.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "ColoreSfondo" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+            ' Colore di sfondo.
+            e.CellStyle.BackColor = Color.FromArgb(e.Value)
 
-            Dim sospeso As Double = Convert.ToDouble(e.Value)
+            ' Colore testo.
+            e.CellStyle.ForeColor = Color.FromArgb(e.Value)
 
-            If sospeso > 0 Then
-               ' Colore testo.
-               e.CellStyle.ForeColor = Color.Red
-            Else
-               ' Colore testo.
-               e.CellStyle.ForeColor = Color.Black
-            End If
-         End If
-
-         ' Imposta il colore per la cella in base al valore del campo Buoni pasto.
-         If DataGridView1.Columns(e.ColumnIndex).Name = "BuoniPasto" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
-
-            Dim buoniPasto As Double = Convert.ToDouble(e.Value)
-
-            If buoniPasto > 0 Then
-               ' Colore testo.
-               e.CellStyle.ForeColor = Color.Green
-            Else
-               ' Colore testo.
-               e.CellStyle.ForeColor = Color.Black
-            End If
+            ' Non visualizza il valore del campo.
+            e.Value = String.Empty
          End If
 
       Catch ex As Exception

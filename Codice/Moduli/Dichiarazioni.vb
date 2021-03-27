@@ -1253,5 +1253,4 @@ Module Dichiarazioni
    ' Modulo Menu Builder - Formazione menu.
    Public Const PERCORSO_IMMAGINE_CODICE_QR As String = "\Immagini\CodiceQR_Menu"
 
-
 End Module
