@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/03/2021
-' Data ultima modifica: 13/03/2021
+' Data ultima modifica: 10/04/2021
 ' Descrizione:          Anagrafica Noleggi.
 ' Note:
 '
@@ -119,6 +119,7 @@ Public Class frmNoleggi
     Public WithEvents Label6 As Label
     Public WithEvents Label9 As Label
     Friend WithEvents eui_cmbTipoPeriodo As Elegant.Ui.ComboBox
+    Friend WithEvents eui_cmbIdCliente As Elegant.Ui.ComboBox
     Public WithEvents Label25 As Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
@@ -135,6 +136,7 @@ Public Class frmNoleggi
         Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
         Me.TabControl2 = New Elegant.Ui.TabControl()
         Me.tpDati = New Elegant.Ui.TabPage()
+        Me.eui_cmbIdCliente = New Elegant.Ui.ComboBox()
         Me.eui_cmbTipoPeriodo = New Elegant.Ui.ComboBox()
         Me.eui_dtpOraFine = New Elegant.Ui.DateTimePicker()
         Me.eui_dtpOraInizio = New Elegant.Ui.DateTimePicker()
@@ -214,7 +216,7 @@ Public Class frmNoleggi
         Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
         Me.ToolBar1.Name = "ToolBar1"
         Me.ToolBar1.ShowToolTips = True
-        Me.ToolBar1.Size = New System.Drawing.Size(610, 26)
+        Me.ToolBar1.Size = New System.Drawing.Size(630, 26)
         Me.ToolBar1.TabIndex = 0
         Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
         '
@@ -257,7 +259,7 @@ Public Class frmNoleggi
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 26)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(610, 28)
+        Me.Panel1.Size = New System.Drawing.Size(630, 28)
         Me.Panel1.TabIndex = 0
         '
         'lblIntestazione
@@ -293,6 +295,7 @@ Public Class frmNoleggi
         'tpDati
         '
         Me.tpDati.ActiveControl = Nothing
+        Me.tpDati.Controls.Add(Me.eui_cmbIdCliente)
         Me.tpDati.Controls.Add(Me.eui_cmbTipoPeriodo)
         Me.tpDati.Controls.Add(Me.eui_dtpOraFine)
         Me.tpDati.Controls.Add(Me.eui_dtpOraInizio)
@@ -333,6 +336,19 @@ Public Class frmNoleggi
         Me.tpDati.Size = New System.Drawing.Size(575, 332)
         Me.tpDati.TabIndex = 0
         Me.tpDati.Text = "Dati principali"
+        '
+        'eui_cmbIdCliente
+        '
+        Me.eui_cmbIdCliente.Editable = False
+        Me.eui_cmbIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmbIdCliente.FormattingEnabled = False
+        Me.eui_cmbIdCliente.Id = "c64a8f1a-28e8-4c60-91d8-7bfb1cc3fc2c"
+        Me.eui_cmbIdCliente.Location = New System.Drawing.Point(121, 43)
+        Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
+        Me.eui_cmbIdCliente.Size = New System.Drawing.Size(33, 21)
+        Me.eui_cmbIdCliente.TabIndex = 55729
+        Me.eui_cmbIdCliente.TextEditorWidth = 14
+        Me.eui_cmbIdCliente.Visible = False
         '
         'eui_cmbTipoPeriodo
         '
@@ -628,6 +644,7 @@ Public Class frmNoleggi
         '
         'eui_cmbCliente
         '
+        Me.eui_cmbCliente.Editable = False
         Me.eui_cmbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eui_cmbCliente.FormattingEnabled = False
         Me.eui_cmbCliente.Id = "afadeb17-01f4-4309-938a-da3222121b47"
@@ -947,7 +964,7 @@ Public Class frmNoleggi
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(610, 441)
+        Me.ClientSize = New System.Drawing.Size(630, 461)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolBar1)
@@ -984,11 +1001,9 @@ Public Class frmNoleggi
     Private CFormatta As New ClsFormatta
 
     ' TODO_A: Modificare.
-    Const TAB_CAP As String = "CAP"
-    Const TAB_NAZIONI As String = "Nazioni"
-    Const TAB_ELENCO_CAMERIERI As String = "Camerieri"
-    Const TAB_ALLEGATI As String = "Agenzie_Allegati"
-    Const NOME_TABELLA As String = "Noleggi"
+    Const TAB_NOLEGGI As String = "Noleggi"
+    Const TAB_CLIENTI As String = "Clienti"
+    Const TAB_ALLEGATI As String = "Noleggi_Allegati"
 
     ' Dichiara un oggetto connessione.
     Dim cn As New OleDbConnection(ConnString)
@@ -1011,73 +1026,63 @@ Public Class frmNoleggi
     ' TODO_A: Modificare.
     Private Function SalvaDati() As Boolean
         Try
-            ' Salva eventuali nuovi valori nelle rispettive tabelle dati.
-            'AggiornaTabella(cmbNazione, TAB_NAZIONI)
+            ' Se la data di Inizio Ë pi˘ grande della data di Fine o viceversa lo segnala all'utente.
+            Dim dataInizio As DateTime = eui_dtpDataInizio.Value
+            Dim dataFine As DateTime = eui_dtpDataFine.Value
+
+            If dataInizio.Date > dataFine.Date Then
+                MessageBox.Show("Specificare un'intervallo di date corretto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                eui_dtpDataInizio.Focus()
+
+                Exit Function
+            End If
 
             ' Assegna i dati dei campi della classe alle caselle di testo.
-            With CAgenzieCamerieri
+            With CNoleggi
 
-                '.RagSociale = txtRagSoc.Text
-                '.Indirizzo1 = txtIndirizzo1.Text
-                '.Cap = txtCap.Text
-                '.Citt‡ = cmbCitt‡.Text
-                '.Provincia = txtProv.Text
-                '.Regione = txtRegione.Text
-                '.Nazione = cmbNazione.Text
-                '.Contatto = txtContatto.Text
-                '.PIva = txtPIva.Text
-                '.TelCasa = txtTelCasa.Text
-                '.TelUfficio = txtTelUfficio.Text
-                '.Cell = txtCell.Text
-                '.Fax = txtFax.Text
-                '.Email = txtEmail.Text
-                '.PEC = txtPec.Text
-                '.Internet = txtInternet.Text
-                '.Note = txtNote.Text
+                .CodiceBarre = eui_txtCodiceBarre.Text
+                .IdCliente = eui_cmbIdCliente.Text
+                .Cliente = eui_cmbCliente.Text
+                .Indirizzo = String.Empty
+                .Cap = String.Empty
+                .Citt‡ = String.Empty
+                .Provincia = String.Empty
+                .PIva = String.Empty
+                .CodFiscale = String.Empty
+                .CodAzienda = String.Empty
+                .IdCausale = String.Empty
+                .Causale = eui_cmbCausale.Text
 
-                If .Immagine = Nothing Then
-                    .Immagine = String.Empty
+                .TipoPeriodo = eui_cmbTipoPeriodo.Text
+                .Periodo = eui_cmbPeriodo.Text
+
+                .DataInizio = eui_dtpDataInizio.Value
+                .DataFine = eui_dtpDataFine.Value
+                .TotaleGiorni = eui_txtTotaleOreGiorni.Text
+
+                .CostoGiorno = eui_txtCostoGiorno.Text
+                .Sconto = eui_txtSconto.Text
+                .TipoSconto = String.Empty
+                .CostoMora = eui_txtCostoMora.Text
+                .CostoAssicurazione = eui_txtCostoAssicurazione.Text
+                .Totale = eui_txtTotaleImporto.Text
+                .Stato = eui_cmbStato.Text
+                .Chiuso = "No"
+                .Note = eui_txtNote.Text
+
+                If .Colore = 0 Then
+                    .Colore = Convert.ToInt32(Color.White.ToArgb)
                 End If
 
-                ' Campi non utilizzati.
-                .Attivit‡ = String.Empty
-                .Sconto = VALORE_ZERO
-                .Iva = VALORE_ZERO
-                .NoteDoc = String.Empty
-                .CodAzienda = String.Empty
-                .CodFisc = String.Empty
-                .RagSocialeDest = String.Empty
-                .IndirizzoDest = String.Empty
-                .CapDest = String.Empty
-                .Citt‡Dest = String.Empty
-                .ProvDest = String.Empty
-                .NazioneDest = String.Empty
-                .TelDest = String.Empty
-                .FaxDest = String.Empty
-                .TipoPagamento = String.Empty
-                .Banca = String.Empty
-                .Cin = String.Empty
-                .Abi = String.Empty
-                .Cab = String.Empty
-                .Cc = String.Empty
-                .Iban = String.Empty
-                .Listino = String.Empty
-                .IvaInFatt = String.Empty
-                .CodIva = String.Empty
-                .Aliquota = String.Empty
-                .DescrizioneIva = String.Empty
-                .Puntualit‡ = String.Empty
-                .Privacy = String.Empty
-                .Titolo = String.Empty
             End With
-
 
             ' Se la propriet‡ 'Tag' contiene un valore viene richiamata la procedura
             ' di modifica dati, altrimenti viene richiamata la procedura di inserimento dati.
-            If Me.Tag <> "" Then
-                Return CAgenzieCamerieri.ModificaDati(NOME_TABELLA, Me.Tag)
+            If Me.Tag <> String.Empty Then
+                Return CNoleggi.ModificaDati(TAB_NOLEGGI, Me.Tag)
             Else
-                Return CAgenzieCamerieri.InserisciDati(NOME_TABELLA)
+                Return CNoleggi.InserisciDati(TAB_NOLEGGI)
             End If
 
         Catch ex As Exception
@@ -1169,16 +1174,17 @@ Public Class frmNoleggi
         End Try
     End Sub
 
+    ' TODO_A: Modificare.
     Private Sub ConvalidaAllegati()
         Try
-            ' Carica la lista dei componenti aggiuntivi.
-            If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, CAgenzieCamerieri.Codice) = True Then
-                cmdModifica.Enabled = True
-                cmdRimuovi.Enabled = True
-            Else
-                cmdModifica.Enabled = False
-                cmdRimuovi.Enabled = False
-            End If
+            '' Carica la lista dei componenti aggiuntivi.
+            'If IAllegati.LeggiDati(lvwAllegati, TAB_ALLEGATI, CAgenzieCamerieri.Codice) = True Then
+            '    cmdModifica.Enabled = True
+            '    cmdRimuovi.Enabled = True
+            'Else
+            '    cmdModifica.Enabled = False
+            '    cmdRimuovi.Enabled = False
+            'End If
 
         Catch ex As Exception
             ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1275,19 +1281,19 @@ Public Class frmNoleggi
             ' Imposta le dimensioni del form.
             FormResize(NOLEGGI_LARGHEZZA, NOLEGGI_ALTEZZA)
 
-            '' Carica le liste.
-            'CaricaLista(cmbCitt‡, TAB_CAP)
-            'CaricaLista(cmbNazione, TAB_NAZIONI)
+            ' Carica le liste.
+            CaricaListaClienti(eui_cmbCliente, eui_cmbIdCliente, TAB_CLIENTI)
 
-            If Me.Tag <> "" Then
+            If Me.Tag <> String.Empty Then
                 With CNoleggi
 
                     ' Visualizza i dati nei rispettivi campi.
-                    .LeggiDati(NOME_TABELLA, Me.Tag)
+                    .LeggiDati(TAB_NOLEGGI, Me.Tag)
 
                     ' Assegna i dati dei campi della classe alle caselle di testo.
                     eui_txtCodice.Text = .Codice
                     eui_txtCodiceBarre.Text = .CodiceBarre
+                    eui_cmbIdCliente.Text = .IdCliente
                     eui_cmbCliente.Text = .Cliente
                     eui_cmbCausale.Text = .Causale
 
@@ -1567,23 +1573,18 @@ Public Class frmNoleggi
             eui_dtpDataInizio.Enabled = False
             eui_dtpDataFine.Enabled = False
 
-            ' Disattiva i controlli ora.
-            'eui_dtpOraInizio.Enabled = False
-            'eui_dtpOraFine.Enabled = False
-
             Select Case eui_cmbTipoPeriodo.Text
                 Case "Ore"
                     ' Elimina tutti gli elementi dalla lista.
                     eui_cmbPeriodo.Items.Clear()
-
-                    ' Selezione del periodo manuale.
-                    'eui_cmbPeriodo.Items.Add("Selezione manuale")
 
                     ' Ore.
                     eui_cmbPeriodo.Items.Add("1 Ora")
                     eui_cmbPeriodo.Items.Add("2 Ore")
                     eui_cmbPeriodo.Items.Add("3 Ore")
                     eui_cmbPeriodo.Items.Add("4 Ore")
+                    eui_cmbPeriodo.Items.Add("5 Ore")
+                    eui_cmbPeriodo.Items.Add("6 Ore")
 
                 Case "Giorni"
                     ' Elimina tutti gli elementi dalla lista.
@@ -1651,24 +1652,8 @@ Public Class frmNoleggi
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
 
-                    ' Disattiva i controlli data.
-                    'eui_dtpDataInizio.Enabled = False
-                    'eui_dtpDataFine.Enabled = False
-
-                    ' Disattiva i controlli ora.
-                    'eui_dtpOraInizio.Enabled = False
-                    'eui_dtpOraFine.Enabled = False
-
-                    'If eui_cmbTipoPeriodo.Text = "Ore" Then
-                    '    'Attiva i controlli ora.
-                    '    eui_dtpOraInizio.Enabled = True
-                    '    eui_dtpOraFine.Enabled = True
-
-                    'ElseIf eui_cmbTipoPeriodo.Text = "Giorni" Then
-                    ' Attiva i controlli data.
                     eui_dtpDataInizio.Enabled = True
                     eui_dtpDataFine.Enabled = True
-                    'End If
 
                 Case "1 Ora"
                     ' Imposta il tempo in ore.
@@ -1709,6 +1694,30 @@ Public Class frmNoleggi
                 Case "4 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 4
+                    lblTotaleOreGiorni.Text = TOTALE_ORE
+                    eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
+
+                    ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    eui_dtpDataInizio.Value = Now
+                    eui_dtpDataFine.Value = Now
+                    eui_dtpOraInizio.Value = Now
+                    eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
+
+                Case "5 Ore"
+                    ' Imposta il tempo in ore.
+                    tempoOreGiorni = 5
+                    lblTotaleOreGiorni.Text = TOTALE_ORE
+                    eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
+
+                    ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    eui_dtpDataInizio.Value = Now
+                    eui_dtpDataFine.Value = Now
+                    eui_dtpOraInizio.Value = Now
+                    eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
+
+                Case "6 Ore"
+                    ' Imposta il tempo in ore.
+                    tempoOreGiorni = 6
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
@@ -1945,26 +1954,10 @@ Public Class frmNoleggi
 
     Private Sub eui_dtpDataInizio_ValueChanged(sender As Object, e As EventArgs) Handles eui_dtpDataInizio.ValueChanged
         Try
-            'eui_dtpOraInizio.Value = eui_dtpDataInizio.Value
-
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
-
-        End Try
-
-    End Sub
-
-    Private Sub eui_dtpDataFine_ValueChanged(sender As Object, e As EventArgs) Handles eui_dtpDataFine.ValueChanged
-        Try
             Dim dataInizio As DateTime = eui_dtpDataInizio.Value
             Dim dataFine As DateTime = eui_dtpDataFine.Value
 
-            dataFine.AddHours(dataInizio.Hour)
-
-            'eui_dtpOraFine.Value = eui_dtpDataFine.Value
-
-            Dim oreGiorni As TimeSpan = dataFine - dataInizio
+            Dim oreGiorni As TimeSpan = dataFine.Date - dataInizio.Date
 
             eui_txtTotaleOreGiorni.Text = oreGiorni.Days.ToString
 
@@ -1975,14 +1968,14 @@ Public Class frmNoleggi
         End Try
     End Sub
 
-    Private Sub eui_dtpOraFine_ValueChanged(sender As Object, e As EventArgs) Handles eui_dtpOraFine.ValueChanged
+    Private Sub eui_dtpDataFine_ValueChanged(sender As Object, e As EventArgs) Handles eui_dtpDataFine.ValueChanged
         Try
-            Dim oreInizio As DateTime = eui_dtpOraInizio.Value
-            Dim oreFine As DateTime = eui_dtpOraFine.Value
+            Dim dataInizio As DateTime = eui_dtpDataInizio.Value
+            Dim dataFine As DateTime = eui_dtpDataFine.Value
 
-            Dim oreGiorni As TimeSpan = oreFine - oreInizio
+            Dim oreGiorni As TimeSpan = dataFine.Date - dataInizio.Date
 
-            eui_txtTotaleOreGiorni.Text = oreGiorni.Hours.ToString
+            eui_txtTotaleOreGiorni.Text = oreGiorni.Days.ToString
 
         Catch ex As Exception
             ' Visualizza un messaggio di errore e lo registra nell'apposito file.

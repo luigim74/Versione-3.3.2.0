@@ -474,37 +474,62 @@ Module Procedure
       End Try
    End Sub
 
-   Public Sub CaricaListaClienti(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal cmb2 As ComboBox, ByVal tabella As String)
-      ' Dichiara un oggetto connessione.
-      Dim cn As New OleDbConnection(ConnString)
+    Public Sub CaricaListaClienti(ByVal cmb As ComboBox, ByVal cmb1 As ComboBox, ByVal cmb2 As ComboBox, ByVal tabella As String)
+        ' Dichiara un oggetto connessione.
+        Dim cn As New OleDbConnection(ConnString)
 
-      Try
-         cn.Open()
+        Try
+            cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
-         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+            Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
+            Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         cmb.Items.Clear()
-         cmb1.Items.Clear()
-         cmb2.Items.Clear()
+            cmb.Items.Clear()
+            cmb1.Items.Clear()
+            cmb2.Items.Clear()
 
-         Do While dr.Read
-            cmb.Items.Add(dr.Item("Cognome"))
-            cmb1.Items.Add(dr.Item("Nome"))
-            cmb2.Items.Add(dr.Item("Id"))
-         Loop
+            Do While dr.Read
+                cmb.Items.Add(dr.Item("Cognome"))
+                cmb1.Items.Add(dr.Item("Nome"))
+                cmb2.Items.Add(dr.Item("Id"))
+            Loop
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      Finally
-         cn.Close()
+        Finally
+            cn.Close()
 
-      End Try
-   End Sub
+        End Try
+    End Sub
 
-   Public Sub CaricaListaFornitori(ByVal cmb As ComboBox, ByVal tabella As String)
+    Public Sub CaricaListaClienti(ByVal cmb As Elegant.Ui.ComboBox, ByVal cmb1 As Elegant.Ui.ComboBox, ByVal tabella As String)
+        ' Dichiara un oggetto connessione.
+        Dim cn As New OleDbConnection(ConnString)
+
+        Try
+            cn.Open()
+
+            Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
+            Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+            Do While dr.Read
+                cmb.Items.Add(dr.Item("Cognome").ToString & " " & dr.Item("Nome").ToString)
+                cmb1.Items.Add(dr.Item("Id"))
+            Loop
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+        Finally
+            cn.Close()
+
+        End Try
+    End Sub
+
+    Public Sub CaricaListaFornitori(ByVal cmb As ComboBox, ByVal tabella As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
 
