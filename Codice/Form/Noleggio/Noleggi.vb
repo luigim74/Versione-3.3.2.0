@@ -72,8 +72,8 @@ Public Class frmNoleggi
     Friend WithEvents eui_cmbCliente As Elegant.Ui.ComboBox
     Friend WithEvents Label7 As Label
     Public WithEvents Label8 As Label
-    Public WithEvents Label12 As Label
-    Public WithEvents Label17 As Label
+    Public WithEvents lblCostoOreGiorni As Label
+    Public WithEvents lblCostoMoraOreGiorni As Label
     Public WithEvents Label18 As Label
     Public WithEvents Label19 As Label
     Public WithEvents Label20 As Label
@@ -165,8 +165,8 @@ Public Class frmNoleggi
         Me.eui_cmbCliente = New Elegant.Ui.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lblCostoOreGiorni = New System.Windows.Forms.Label()
+        Me.lblCostoMoraOreGiorni = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -216,7 +216,7 @@ Public Class frmNoleggi
         Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
         Me.ToolBar1.Name = "ToolBar1"
         Me.ToolBar1.ShowToolTips = True
-        Me.ToolBar1.Size = New System.Drawing.Size(630, 26)
+        Me.ToolBar1.Size = New System.Drawing.Size(632, 26)
         Me.ToolBar1.TabIndex = 0
         Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
         '
@@ -259,7 +259,7 @@ Public Class frmNoleggi
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 26)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(630, 28)
+        Me.Panel1.Size = New System.Drawing.Size(632, 28)
         Me.Panel1.TabIndex = 0
         '
         'lblIntestazione
@@ -324,8 +324,8 @@ Public Class frmNoleggi
         Me.tpDati.Controls.Add(Me.eui_cmbCliente)
         Me.tpDati.Controls.Add(Me.Label7)
         Me.tpDati.Controls.Add(Me.Label8)
-        Me.tpDati.Controls.Add(Me.Label12)
-        Me.tpDati.Controls.Add(Me.Label17)
+        Me.tpDati.Controls.Add(Me.lblCostoOreGiorni)
+        Me.tpDati.Controls.Add(Me.lblCostoMoraOreGiorni)
         Me.tpDati.Controls.Add(Me.Label18)
         Me.tpDati.Controls.Add(Me.Label19)
         Me.tpDati.Controls.Add(Me.Label20)
@@ -518,6 +518,7 @@ Public Class frmNoleggi
         Me.eui_txtTotaleImporto.Id = "c2318864-8dc9-4fa5-8871-e1675b39c457"
         Me.eui_txtTotaleImporto.Location = New System.Drawing.Point(156, 280)
         Me.eui_txtTotaleImporto.Name = "eui_txtTotaleImporto"
+        Me.eui_txtTotaleImporto.ReadOnly = True
         Me.eui_txtTotaleImporto.Size = New System.Drawing.Size(174, 21)
         Me.eui_txtTotaleImporto.TabIndex = 55716
         Me.eui_txtTotaleImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -678,31 +679,31 @@ Public Class frmNoleggi
         Me.Label8.TabIndex = 55702
         Me.Label8.Text = "Costo assicurazione:"
         '
-        'Label12
+        'lblCostoOreGiorni
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(21, 184)
-        Me.Label12.Name = "Label12"
-        Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label12.Size = New System.Drawing.Size(88, 13)
-        Me.Label12.TabIndex = 55701
-        Me.Label12.Text = "Costo giornaliero:"
+        Me.lblCostoOreGiorni.AutoSize = True
+        Me.lblCostoOreGiorni.BackColor = System.Drawing.Color.Transparent
+        Me.lblCostoOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblCostoOreGiorni.ForeColor = System.Drawing.Color.Black
+        Me.lblCostoOreGiorni.Location = New System.Drawing.Point(21, 184)
+        Me.lblCostoOreGiorni.Name = "lblCostoOreGiorni"
+        Me.lblCostoOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblCostoOreGiorni.Size = New System.Drawing.Size(88, 13)
+        Me.lblCostoOreGiorni.TabIndex = 55701
+        Me.lblCostoOreGiorni.Text = "Costo giornaliero:"
         '
-        'Label17
+        'lblCostoMoraOreGiorni
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(21, 234)
-        Me.Label17.Name = "Label17"
-        Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label17.Size = New System.Drawing.Size(63, 13)
-        Me.Label17.TabIndex = 55700
-        Me.Label17.Text = "Costo mora:"
+        Me.lblCostoMoraOreGiorni.AutoSize = True
+        Me.lblCostoMoraOreGiorni.BackColor = System.Drawing.Color.Transparent
+        Me.lblCostoMoraOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblCostoMoraOreGiorni.ForeColor = System.Drawing.Color.Black
+        Me.lblCostoMoraOreGiorni.Location = New System.Drawing.Point(21, 234)
+        Me.lblCostoMoraOreGiorni.Name = "lblCostoMoraOreGiorni"
+        Me.lblCostoMoraOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblCostoMoraOreGiorni.Size = New System.Drawing.Size(114, 13)
+        Me.lblCostoMoraOreGiorni.TabIndex = 55700
+        Me.lblCostoMoraOreGiorni.Text = "Costo mora giornaliera:"
         '
         'Label18
         '
@@ -964,7 +965,7 @@ Public Class frmNoleggi
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(630, 461)
+        Me.ClientSize = New System.Drawing.Size(632, 462)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolBar1)
@@ -1057,22 +1058,49 @@ Public Class frmNoleggi
                 .TipoPeriodo = eui_cmbTipoPeriodo.Text
                 .Periodo = eui_cmbPeriodo.Text
 
-                .DataInizio = eui_dtpDataInizio.Value
-                .DataFine = eui_dtpDataFine.Value
+                .DataInizio = Convert.ToDateTime(eui_dtpDataInizio.Value).Date
+                .DataFine = Convert.ToDateTime(eui_dtpDataFine.Value).Date
                 .TotaleGiorni = eui_txtTotaleOreGiorni.Text
 
-                .CostoGiorno = eui_txtCostoGiorno.Text
-                .Sconto = eui_txtSconto.Text
+                If IsNumeric(eui_txtCostoGiorno.Text) = True Then
+                    .CostoGiorno = Convert.ToDouble(eui_txtCostoGiorno.Text)
+                Else
+                    .CostoGiorno = 0.0
+                End If
+
+                If IsNumeric(eui_txtSconto.Text) = True Then
+                    .Sconto = Convert.ToDouble(eui_txtSconto.Text)
+                Else
+                    .Sconto = 0.0
+                End If
+
+                If IsNumeric(eui_txtCostoMora.Text) = True Then
+                    .CostoMora = Convert.ToDouble(eui_txtCostoMora.Text)
+                Else
+                    .CostoMora = 0.0
+                End If
+
+                If IsNumeric(eui_txtCostoAssicurazione.Text) = True Then
+                    .CostoAssicurazione = Convert.ToDouble(eui_txtCostoAssicurazione.Text)
+                Else
+                    .CostoAssicurazione = 0.0
+                End If
+
+                If IsNumeric(eui_txtTotaleImporto.Text) = True Then
+                    .Totale = Convert.ToDouble(eui_txtTotaleImporto.Text)
+                Else
+                    .Totale = 0.0
+                End If
+
                 .TipoSconto = String.Empty
-                .CostoMora = eui_txtCostoMora.Text
-                .CostoAssicurazione = eui_txtCostoAssicurazione.Text
-                .Totale = eui_txtTotaleImporto.Text
                 .Stato = eui_cmbStato.Text
                 .Chiuso = "No"
                 .Note = eui_txtNote.Text
 
                 If .Colore = 0 Then
-                    .Colore = Convert.ToInt32(Color.White.ToArgb)
+                    .Colore = Color.White.ToArgb
+                Else
+                    .Colore = eui_cmdColore.BackColor.ToArgb
                 End If
 
             End With
@@ -1306,11 +1334,11 @@ Public Class frmNoleggi
                     eui_dtpOraFine.Text = .DataFine
                     eui_txtTotaleOreGiorni.Text = .TotaleGiorni
 
-                    eui_txtCostoGiorno.Text = .CostoGiorno
-                    eui_txtSconto.Text = .Sconto
-                    eui_txtCostoMora.Text = .CostoMora
-                    eui_txtCostoAssicurazione.Text = .CostoAssicurazione
-                    eui_txtTotaleImporto.Text = .Totale
+                    eui_txtCostoGiorno.Text = CFormatta.FormattaNumeroDouble(.CostoGiorno)
+                    eui_txtSconto.Text = CFormatta.FormattaNumeroDouble(.Sconto)
+                    eui_txtCostoMora.Text = CFormatta.FormattaNumeroDouble(.CostoMora)
+                    eui_txtCostoAssicurazione.Text = CFormatta.FormattaNumeroDouble(.CostoAssicurazione)
+                    eui_txtTotaleImporto.Text = CFormatta.FormattaNumeroDouble(.Totale)
                     eui_cmbStato.Text = .Stato
                     eui_txtNote.Text = .Note
 
@@ -1331,7 +1359,6 @@ Public Class frmNoleggi
             Else
                 ' In caso di nuovo inserimento dati imposta i valori di default.
 
-                ' TODO_A: Creare nuovo campo TipoPeriodo per gestire i dati per Nuovo inserimento o Modifica.
                 eui_cmbTipoPeriodo.SelectedIndex = 0
                 eui_cmbPeriodo.SelectedIndex = 1
 
@@ -1372,9 +1399,9 @@ Public Class frmNoleggi
                 ' Salva i dati nel database.
                 If SalvaDati() = True Then
 
-                    If IsNothing(g_frmAgenzieCamerieri) = False Then
+                    If IsNothing(g_frmNoleggi) = False Then
                         ' Aggiorna la griglia dati.
-                        g_frmAgenzieCamerieri.AggiornaDati()
+                        g_frmNoleggi.AggiornaDati()
                     End If
 
                     ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
@@ -1632,6 +1659,11 @@ Public Class frmNoleggi
         Try
             Const TOTALE_ORE As String = "Totale ore:"
             Const TOTALE_GIORNI As String = "Totale giorni:"
+            Const COSTO_GIORNI As String = "Costo giornaliero:"
+            Const COSTO_ORE As String = "Costo orario:"
+            Const COSTO_MORA_GIORNI As String = "Costo Mora giornaliera:"
+            Const COSTO_MORA_ORE As String = "Costo Mora oraria:"
+
             Dim tempoOreGiorni As Double
 
             ' Disattiva i controlli data.
@@ -1644,6 +1676,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo.
                     tempoOreGiorni = 0
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1656,81 +1690,95 @@ Public Class frmNoleggi
                     eui_dtpDataFine.Enabled = True
 
                 Case "1 Ora"
+                    ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    eui_dtpDataInizio.Value = Now
+                    eui_dtpDataFine.Value = Now
+                    eui_dtpOraInizio.Value = Now
+                    eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
+
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 1
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
+                Case "2 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
-                Case "2 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 2
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
+                Case "3 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
-                Case "3 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 3
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
+                Case "4 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
-                Case "4 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 4
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
+                Case "5 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
-                Case "5 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 5
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
+                Case "6 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
-                Case "6 Ore"
                     ' Imposta il tempo in ore.
                     tempoOreGiorni = 6
                     lblTotaleOreGiorni.Text = TOTALE_ORE
+                    lblCostoOreGiorni.Text = COSTO_ORE
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
-
-                    ' Imposta la data e l'ora correnti di inizio e fine noleggio.
-                    eui_dtpDataInizio.Value = Now
-                    eui_dtpDataFine.Value = Now
-                    eui_dtpOraInizio.Value = Now
-                    eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                 Case "1 Giorno"
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 1
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1743,6 +1791,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 2
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1755,6 +1805,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 3
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1767,6 +1819,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 4
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1779,6 +1833,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 5
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1791,6 +1847,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 6
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1803,6 +1861,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 7
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1815,6 +1875,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 30
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1827,6 +1889,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 60
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1839,6 +1903,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 90
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1851,6 +1917,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 120
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1863,6 +1931,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 150
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1875,6 +1945,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 180
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1887,6 +1959,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 365
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1899,6 +1973,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 730
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1911,6 +1987,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 1095
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1923,6 +2001,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 1460
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1935,6 +2015,8 @@ Public Class frmNoleggi
                     ' Imposta il tempo in giorni.
                     tempoOreGiorni = 1825
                     lblTotaleOreGiorni.Text = TOTALE_GIORNI
+                    lblCostoOreGiorni.Text = COSTO_GIORNI
+                    lblCostoMoraOreGiorni.Text = COSTO_MORA_GIORNI
                     eui_txtTotaleOreGiorni.Text = tempoOreGiorni.ToString
 
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
@@ -1984,4 +2066,169 @@ Public Class frmNoleggi
         End Try
     End Sub
 
+    Private Function CalcolaCostoTotaleNoleggio(ByVal numGiorni As String, ByVal costo As String, ByVal sconto As String, ByVal assicurazione As String, ByVal mora As String) As String
+        Try
+            Dim numGiorniNoleggio As Integer
+            Dim costoNoleggio As Double
+            Dim scontoNoleggio As Double
+            Dim assicurazioneNoleggio As Double
+            Dim moraNoleggio As Double
+            Dim totaleNoleggio As Double
+
+            ' Conversione di tutti i valori stringa in numerici.
+            If IsNumeric(numGiorni) = True Then
+                numGiorniNoleggio = Convert.ToInt32(numGiorni)
+            Else
+                numGiorniNoleggio = 0
+            End If
+
+            If IsNumeric(costo) = True Then
+                costoNoleggio = Convert.ToDouble(costo)
+            Else
+                costoNoleggio = 0.0
+            End If
+
+            If IsNumeric(assicurazione) = True Then
+                assicurazioneNoleggio = Convert.ToDouble(assicurazione)
+            Else
+                assicurazioneNoleggio = 0.0
+            End If
+
+            If IsNumeric(mora) = True Then
+                moraNoleggio = Convert.ToDouble(mora)
+            Else
+                moraNoleggio = 0.0
+            End If
+
+            ' Calcola lo sconto a valore o percentuale.
+            If sconto.Contains("%") = True Then
+                ' Sconto a percentuale.
+                scontoNoleggio = Convert.ToDouble(sconto.Remove(sconto.Length - 1, 1))
+                scontoNoleggio = CalcolaPercentuale(costoNoleggio * numGiorniNoleggio, scontoNoleggio)
+            Else
+                If IsNumeric(sconto) = True Then
+                    ' Sconto a valore.
+                    scontoNoleggio = Convert.ToDouble(sconto)
+                Else
+                    scontoNoleggio = 0.0
+                End If
+            End If
+
+            ' Calcola l'eventuale costo giornaliero della Mora aggiuntiva.
+            Dim numGiorniMora As TimeSpan = (Now.Date - eui_dtpDataFine.Value)
+            Dim moraNoleggioTotale As Double
+
+            If numGiorniMora.Days > 0 Then
+                moraNoleggioTotale = (moraNoleggio * numGiorniMora.Days)
+            Else
+                moraNoleggioTotale = 0.0
+            End If
+
+            ' TODO_A: Calcola l'eventuale costo orario della Mora aggiuntiva.
+
+            ' Calcola il costo totale del Noleggio. 
+            totaleNoleggio = ((costoNoleggio * numGiorniNoleggio) - scontoNoleggio) + assicurazioneNoleggio + moraNoleggioTotale
+
+            Return CFormatta.FormattaNumeroDouble(totaleNoleggio)
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+            Return VALORE_ZERO
+        End Try
+
+    End Function
+
+    Private Sub eui_txtCostoGiorno_LostFocus(sender As Object, e As EventArgs) Handles eui_txtCostoGiorno.LostFocus
+        Try
+            eui_txtTotaleImporto.Text = CalcolaCostoTotaleNoleggio(eui_txtTotaleOreGiorni.Text,
+                                                                   eui_txtCostoGiorno.Text,
+                                                                   eui_txtSconto.Text,
+                                                                   eui_txtCostoAssicurazione.Text,
+                                                                   eui_txtCostoMora.Text)
+
+            If IsNumeric(sender.Text) Then
+                sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+            End If
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub eui_txtSconto_LostFocus(sender As Object, e As EventArgs) Handles eui_txtSconto.LostFocus
+        Try
+            eui_txtTotaleImporto.Text = CalcolaCostoTotaleNoleggio(eui_txtTotaleOreGiorni.Text,
+                                                                   eui_txtCostoGiorno.Text,
+                                                                   eui_txtSconto.Text,
+                                                                   eui_txtCostoAssicurazione.Text,
+                                                                   eui_txtCostoMora.Text)
+
+            If IsNumeric(sender.Text) Then
+                sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+            End If
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub eui_txtCostoMora_LostFocus(sender As Object, e As EventArgs) Handles eui_txtCostoMora.LostFocus
+        Try
+            eui_txtTotaleImporto.Text = CalcolaCostoTotaleNoleggio(eui_txtTotaleOreGiorni.Text,
+                                                                   eui_txtCostoGiorno.Text,
+                                                                   eui_txtSconto.Text,
+                                                                   eui_txtCostoAssicurazione.Text,
+                                                                   eui_txtCostoMora.Text)
+
+            If IsNumeric(sender.Text) Then
+                sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+            End If
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub eui_txtCostoAssicurazione_LostFocus(sender As Object, e As EventArgs) Handles eui_txtCostoAssicurazione.LostFocus
+        Try
+            eui_txtTotaleImporto.Text = CalcolaCostoTotaleNoleggio(eui_txtTotaleOreGiorni.Text,
+                                                                   eui_txtCostoGiorno.Text,
+                                                                   eui_txtSconto.Text,
+                                                                   eui_txtCostoAssicurazione.Text,
+                                                                   eui_txtCostoMora.Text)
+
+            If IsNumeric(sender.Text) Then
+                sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+            End If
+
+        Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub eui_txtCostoGiorno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCostoGiorno.KeyPress
+        e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+    End Sub
+
+    Private Sub eui_txtSconto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtSconto.KeyPress
+        e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+    End Sub
+
+    Private Sub eui_txtCostoMora_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCostoMora.KeyPress
+        e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+    End Sub
+
+    Private Sub eui_txtCostoAssicurazione_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCostoAssicurazione.KeyPress
+        e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+    End Sub
 End Class
