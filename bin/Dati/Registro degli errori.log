@@ -145,3 +145,58 @@ Nome parametro: count"
    in Hospitality_Solution.frmNoleggi.CalcolaCostoTotaleNoleggio(String numGiorni, String costo, String sconto, String assicurazione, String mora)"
 "
 "
+"*** 20/06/2021 - 15:37:26 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
+"
+"
+"*** 20/06/2021 - 15:49:00 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
+"
+"
+"*** 20/06/2021 - 15:52:24 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
+"
+"
+"*** 20/06/2021 - 15:53:30 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
+"
+"
+"*** 20/06/2021 - 15:55:44 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
+"
+"

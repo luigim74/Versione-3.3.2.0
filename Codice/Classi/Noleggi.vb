@@ -30,9 +30,9 @@ Public Class Noleggi
    Public Causale As String
    Public TipoPeriodo As String
    Public Periodo As String
-   Public DataInizio As Date
-   Public DataFine As Date
-   Public TotaleGiorni As String
+    Public DataInizio As Date
+    Public DataFine As Date
+    Public TotaleGiorni As String
    Public CostoGiorno As Double
    Public CostoMora As Double
    Public CostoAssicurazione As Double
@@ -363,8 +363,8 @@ Public Class Noleggi
          cmdUpdate.Parameters.AddWithValue("@Causale", Me.Causale)
          cmdUpdate.Parameters.AddWithValue("@TipoPeriodo", Me.TipoPeriodo)
          cmdUpdate.Parameters.AddWithValue("@Periodo", Me.Periodo)
-         cmdUpdate.Parameters.AddWithValue("@DataInizio", Me.DataInizio)
-         cmdUpdate.Parameters.AddWithValue("@DataFine", Me.DataFine)
+            cmdUpdate.Parameters.AddWithValue("@DataInizio", Me.DataInizio)
+            cmdUpdate.Parameters.AddWithValue("@DataFine", Me.DataFine)
          cmdUpdate.Parameters.AddWithValue("@TotaleGiorni", Me.TotaleGiorni)
          cmdUpdate.Parameters.AddWithValue("@CostoGiorno", Me.CostoGiorno)
          cmdUpdate.Parameters.AddWithValue("@CostoMora", Me.CostoMora)

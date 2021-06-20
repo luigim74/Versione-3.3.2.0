@@ -1058,8 +1058,16 @@ Public Class frmNoleggi
                 .TipoPeriodo = eui_cmbTipoPeriodo.Text
                 .Periodo = eui_cmbPeriodo.Text
 
-                .DataInizio = Convert.ToDateTime(eui_dtpDataInizio.Value).Date
-                .DataFine = Convert.ToDateTime(eui_dtpDataFine.Value).Date
+                Select Case eui_cmbTipoPeriodo.Text
+                    Case "Ore"
+                        .DataInizio = Convert.ToDateTime(eui_dtpOraInizio.Value.ToString)
+                        .DataFine = Convert.ToDateTime(eui_dtpOraFine.Value.ToString)
+
+                    Case "Giorni"
+                        .DataInizio = Convert.ToDateTime(eui_dtpDataInizio.Value.ToString)
+                        .DataFine = Convert.ToDateTime(eui_dtpDataFine.Value.ToString)
+                End Select
+
                 .TotaleGiorni = eui_txtTotaleOreGiorni.Text
 
                 If IsNumeric(eui_txtCostoGiorno.Text) = True Then
@@ -1691,13 +1699,13 @@ Public Class frmNoleggi
 
                 Case "1 Ora"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 1
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 1
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -1705,13 +1713,13 @@ Public Class frmNoleggi
 
                 Case "2 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 2
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 2
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -1719,13 +1727,13 @@ Public Class frmNoleggi
 
                 Case "3 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 3
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 3
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -1733,13 +1741,13 @@ Public Class frmNoleggi
 
                 Case "4 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 4
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 4
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -1747,13 +1755,13 @@ Public Class frmNoleggi
 
                 Case "5 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 5
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 5
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -1761,13 +1769,13 @@ Public Class frmNoleggi
 
                 Case "6 Ore"
                     ' Imposta la data e l'ora correnti di inizio e fine noleggio.
+                    tempoOreGiorni = 6
                     eui_dtpDataInizio.Value = Now
                     eui_dtpDataFine.Value = Now
                     eui_dtpOraInizio.Value = Now
                     eui_dtpOraFine.Value = Now.AddHours(tempoOreGiorni)
 
                     ' Imposta il tempo in ore.
-                    tempoOreGiorni = 6
                     lblTotaleOreGiorni.Text = TOTALE_ORE
                     lblCostoOreGiorni.Text = COSTO_ORE
                     lblCostoMoraOreGiorni.Text = COSTO_MORA_ORE
@@ -2114,17 +2122,31 @@ Public Class frmNoleggi
                 End If
             End If
 
-            ' Calcola l'eventuale costo giornaliero della Mora aggiuntiva.
-            Dim numGiorniMora As TimeSpan = (Now.Date - eui_dtpDataFine.Value)
+            ' Calcolo del costo della Mora.
             Dim moraNoleggioTotale As Double
 
-            If numGiorniMora.Days > 0 Then
-                moraNoleggioTotale = (moraNoleggio * numGiorniMora.Days)
-            Else
-                moraNoleggioTotale = 0.0
-            End If
+            Select Case eui_cmbTipoPeriodo.Text
+                Case "Ore"
+                    ' Calcola l'eventuale costo orario della Mora aggiuntiva.
+                    Dim numOreMora As TimeSpan = (Now - eui_dtpOraFine.Value)
 
-            ' TODO_A: Calcola l'eventuale costo orario della Mora aggiuntiva.
+                    If numOreMora.Hours > 0 Then
+                        moraNoleggioTotale = (moraNoleggio * numOreMora.Hours)
+                    Else
+                        moraNoleggioTotale = 0.0
+                    End If
+
+                Case "Giorni"
+                    ' Calcola l'eventuale costo giornaliero della Mora aggiuntiva.
+                    Dim numGiorniMora As TimeSpan = (Now.Date - eui_dtpDataFine.Value)
+
+                    If numGiorniMora.Days > 0 Then
+                        moraNoleggioTotale = (moraNoleggio * numGiorniMora.Days)
+                    Else
+                        moraNoleggioTotale = 0.0
+                    End If
+
+            End Select
 
             ' Calcola il costo totale del Noleggio. 
             totaleNoleggio = ((costoNoleggio * numGiorniNoleggio) - scontoNoleggio) + assicurazioneNoleggio + moraNoleggioTotale
