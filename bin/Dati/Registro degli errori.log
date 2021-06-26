@@ -200,3 +200,43 @@ Nome parametro: count"
    in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Noleggi.vb:riga 382"
 "
 "
+"*** 26/06/2021 - 16:42:34 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmElencoDati.LeggiDatiConfig()"
+"
+"
+"*** 26/06/2021 - 16:42:36 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 26/06/2021 - 16:42:38 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '1' non valido per 'SelectedIndex'.
+Nome parametro: SelectedIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   in Elegant.Ui.ComboBox.set_SelectedIndex(Int32 value)
+   in Hospitality_Solution.frmElencoDati.frmElencoDati_Load(Object sender, EventArgs e)"
+"
+"
+"*** 26/06/2021 - 16:42:46 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"

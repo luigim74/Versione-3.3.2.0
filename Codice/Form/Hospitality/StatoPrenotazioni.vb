@@ -1,8 +1,8 @@
-' Nome form:            frmPiatti
+' Nome form:            frmStatoPrenotazioni
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       23/04/2006
 ' Data ultima modifica: 23/04/2006
-' Descrizione:          Anagrafica Piatti.
+' Descrizione:          Anagrafica Stato Prenotazioni.
 
 Option Strict Off
 Option Explicit On 

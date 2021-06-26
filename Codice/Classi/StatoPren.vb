@@ -107,50 +107,51 @@ Public Class StatoPren
       End Try
    End Function
 
-   Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
-      Dim sql As String
+    Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
+        Dim sql As String
 
-      Try
-         ' Apre la connessione.
-         cn.Open()
+        Try
+            ' Apre la connessione.
+            cn.Open()
 
-         ' Avvia una transazione.
-         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+            ' Avvia una transazione.
+            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
-         ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET Descrizione = @Descrizione, " & _
-                             "Colore = @Colore " & _
-                             "WHERE Id = {1}", _
-                             tabella, _
-                             codice)
+            ' Crea la stringa di eliminazione.
+            sql = String.Format("UPDATE {0} " &
+                                "SET Descrizione = @Descrizione, " &
+                                "Colore = @Colore " &
+                                "WHERE Id = {1}",
+                                tabella,
+                                codice)
 
-         ' Crea il comando per la connessione corrente.
-         Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+            ' Crea il comando per la connessione corrente.
+            Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
-         cmdUpdate.Parameters.Add("@Descrizione", Me.Descrizione)
-         cmdUpdate.Parameters.Add("@Colore", Me.Colore)
+            cmdUpdate.Parameters.Add("@Descrizione", Me.Descrizione)
+            cmdUpdate.Parameters.Add("@Colore", Me.Colore)
 
-         ' Esegue il comando.
-         Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
+            ' Esegue il comando.
+            Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
 
-         ' Conferma transazione.
-         tr.Commit()
+            ' Conferma transazione.
+            tr.Commit()
 
-         Return True
+            Return True
 
-      Catch ex As Exception
-         ' Annulla transazione.
-         tr.Rollback()
+        Catch ex As Exception
+            ' Annulla transazione.
+            tr.Rollback()
 
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Return False
+            Return False
 
-      Finally
-         ' Chiude la connessione.
-         cn.Close()
-      End Try
-   End Function
+        Finally
+            ' Chiude la connessione.
+            cn.Close()
+        End Try
+    End Function
+
 End Class

@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 13/02/2021
+' Data ultima modifica: 26/06/2021
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -35,9 +35,10 @@ Public Class frmElencoDati
    Public Const TAB_SALE = "Sale"
    Public Const TAB_TAVOLI = "Tavoli"
    Public Const TAB_CAMERE = "Camere"
-   Public Const TAB_STATO_PREN = "StatoPren"
-   Public Const TAB_OPERATORI = "Operatori"
-   Public Const TAB_GRUPPI = "Gruppi"
+    Public Const TAB_STATO_PREN = "StatoPren"
+    Public Const TAB_STATO_NOLEGGI = "StatoNoleggi"
+    Public Const TAB_OPERATORI = "Operatori"
+    Public Const TAB_GRUPPI = "Gruppi"
    Public Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
    Public Const TAB_SCONTI_MAGGIORAZIONI = "ScontiMaggiorazioni"
 
@@ -147,6 +148,11 @@ Public Class frmElencoDati
             TipoElenco = Elenco.StatoPren
             NomeTabella = "StatoPren"
             TitoloFinestra = "Elenco Stato prenotazione"
+
+         Case Elenco.StatoNoleggi
+            TipoElenco = Elenco.StatoNoleggi
+            NomeTabella = "StatoNoleggi"
+            TitoloFinestra = "Elenco Stato noleggi"
 
          Case Elenco.Operatori
             TipoElenco = Elenco.Operatori
@@ -742,6 +748,37 @@ Public Class frmElencoDati
                   Exit Sub
                End If
 
+            Case Elenco.StatoNoleggi
+               If DatiConfig.GetValue("WSStatoNoleggi") = CStr(FormWindowState.Maximized) Then
+                  Me.WindowState = FormWindowState.Maximized
+                  Exit Sub
+               ElseIf DatiConfig.GetValue("WSStatoNoleggi") = CStr(FormWindowState.Minimized) Then
+                  Me.WindowState = FormWindowState.Minimized
+                  Exit Sub
+               Else
+                  If DatiConfig.GetValue("AStatoNoleggi") <> "" Then
+                     Me.Height = CInt(DatiConfig.GetValue("AStatoNoleggi"))
+                  Else
+                     Me.Height = FORM_ALTEZZA
+                  End If
+
+                  If DatiConfig.GetValue("LStatoNoleggi") <> "" Then
+                     Me.Width = CInt(DatiConfig.GetValue("LStatoNoleggi"))
+                  Else
+                     Me.Width = FORM_LARGHEZZA
+                  End If
+
+                  If DatiConfig.GetValue("StatoNoleggiX") <> "" Then
+                     Me.Location = New Point(CInt(DatiConfig.GetValue("StatoNoleggiX")), Me.Location.Y)
+                  End If
+
+                  If DatiConfig.GetValue("StatoNoleggiY") <> "" Then
+                     Me.Location = New Point(Me.Location.X, CInt(DatiConfig.GetValue("StatoNoleggiY")))
+                  End If
+
+                  Exit Sub
+               End If
+
             Case Elenco.Articoli
                If DatiConfig.GetValue("WSArticoli") = CStr(FormWindowState.Maximized) Then
                   Me.WindowState = FormWindowState.Maximized
@@ -996,6 +1033,13 @@ Public Class frmElencoDati
                DatiConfig.SetValue("AStatoPren", Me.Height)
                DatiConfig.SetValue("LStatoPren", Me.Width)
 
+            Case Elenco.StatoNoleggi
+               DatiConfig.SetValue("WSStatoNoleggi", Me.WindowState)
+               DatiConfig.SetValue("StatoNoleggiX", Me.Location.X)
+               DatiConfig.SetValue("StatoNoleggiY", Me.Location.Y)
+               DatiConfig.SetValue("AStatoNoleggi", Me.Height)
+               DatiConfig.SetValue("LStatoNoleggi", Me.Width)
+
             Case Elenco.Articoli
                DatiConfig.SetValue("WSArticoli", Me.WindowState)
                DatiConfig.SetValue("ArticoliX", Me.Location.X)
@@ -1216,6 +1260,19 @@ Public Class frmElencoDati
                   g_frmMain.eui_Strumenti_Duplica.Enabled = True
                End If
 
+            Case Finestra.StatoNoleggi
+               If operatore.TabStatoNoleggi = VALORE_LETTURA Then
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = False
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = False
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = False
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = False
+               Else
+                  g_frmMain.eui_Strumenti_Nuovo.Enabled = True
+                  g_frmMain.eui_Strumenti_Modifica.Enabled = True
+                  g_frmMain.eui_Strumenti_Elimina.Enabled = True
+                  g_frmMain.eui_Strumenti_Duplica.Enabled = True
+               End If
+
             Case Finestra.Articoli
                If operatore.MagArticoli = VALORE_LETTURA Then
                   g_frmMain.eui_Strumenti_Nuovo.Enabled = False
@@ -1361,6 +1418,11 @@ Public Class frmElencoDati
                Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
                strDescrizione = "(" & descrizione & ")"
 
+            Case Elenco.StatoNoleggi
+               ' Registra l'operazione.
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               strDescrizione = "(" & descrizione & ")"
+
             Case Elenco.Articoli
                ' Registra l'operazione.
                Dim codice As String = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -1449,6 +1511,11 @@ Public Class frmElencoDati
                '   strDescrizione = "(" & numero & " - " & descrizione & ")"
 
                'Case Elenco.StatoPren
+               '   ' Registra l'operazione.
+               '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+               '   strDescrizione = "(" & descrizione & ")"
+
+               'Case Elenco.StatoNoleggi
                '   ' Registra l'operazione.
                '   Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
                '   strDescrizione = "(" & descrizione & ")"
@@ -1708,6 +1775,16 @@ Public Class frmElencoDati
                Risposta = MsgBox("Si desidera eliminare lo stato prenotazione """ & descrizione &
                                  """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
 
+            Case Elenco.StatoNoleggi
+               Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+               ' Registra l'operazione.
+               strDescrizione = "(" & descrizione & ")"
+
+               ' Chiede conferma per l'eliminazione.
+               Risposta = MsgBox("Si desidera eliminare lo stato noleggio """ & descrizione &
+                                 """?" & vbCrLf & vbCrLf & "Non sarà più possibile recuperare i dati.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma eliminazione")
+
             Case Elenco.Articoli
                Dim descrizione As String = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
@@ -1937,6 +2014,11 @@ Public Class frmElencoDati
                ImpostaComandi()
             End If
 
+         Case Elenco.StatoNoleggi
+            If ImpostaFunzioniOperatore(Finestra.StatoNoleggi) = True Then
+               ImpostaComandi()
+            End If
+
          Case Elenco.Operatori
             If ImpostaFunzioniOperatore(Finestra.Operatori) = True Then
                ImpostaComandi()
@@ -2157,6 +2239,22 @@ Public Class frmElencoDati
                frm.Tag = val
                frm.ShowDialog()
 
+            Case Elenco.StatoNoleggi
+               ' Per la versione demo.
+               ' Se è un nuovo inserimento verifica il numero dei record.
+               If val = String.Empty Then
+                  If g_VerDemo = True Then
+                     ' Test per la versione demo.
+                     If VerificaNumRecord(LeggiNumRecord(TAB_STATO_NOLEGGI)) = True Then
+                        Exit Sub
+                     End If
+                  End If
+               End If
+
+               Dim frm As New frmStatoNoleggi
+               frm.Tag = val
+               frm.ShowDialog()
+
             Case Elenco.Prenotazioni
                ' Per la versione demo.
                ' Se è un nuovo inserimento verifica il numero dei record.
@@ -2307,7 +2405,7 @@ Public Class frmElencoDati
                                                        " " & DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value)
 
                Case Elenco.Fornitori, Elenco.CatPiatti, Elenco.Camerieri, Elenco.AgenzieCamerieri, Elenco.Sale,
-                    Elenco.Tavoli, Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.CaratteristicheRisorse,
+                    Elenco.Tavoli, Elenco.Operatori, Elenco.Gruppi, Elenco.StatoPren, Elenco.StatoNoleggi, Elenco.CaratteristicheRisorse,
                     Elenco.ScontiMaggiorazioni
                   lblIntestazione.Text = Strings.UCase(DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value)
 
@@ -2400,7 +2498,7 @@ Public Class frmElencoDati
             Case Elenco.Camere
                CreaColonneCamere(NomeTabella)
 
-            Case Elenco.StatoPren
+            Case Elenco.StatoPren, Elenco.StatoNoleggi
                CreaColonneStatoPren(NomeTabella)
 
             Case Elenco.Articoli
@@ -5693,7 +5791,7 @@ Public Class frmElencoDati
             ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
             g_frmMain.rtgGestionaleAmica.Visible = False
 
-         Case Elenco.StatoPren
+         Case Elenco.StatoPren, Elenco.StatoNoleggi
             ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
             g_frmMain.rtgGestionaleAmica.Visible = False
 
@@ -6155,7 +6253,7 @@ Public Class frmElencoDati
 
 #End Region
 
-         Case Elenco.StatoPren
+         Case Elenco.StatoPren, Elenco.StatoNoleggi
 
 #Region "Modifica - (Condivisa) "
             ' TabPage.
@@ -6624,6 +6722,12 @@ Public Class frmElencoDati
                strDescrizione = STR_TABELLA_STATO_PREN
                strModulo = MODULO_TABELLA_STATO_PREN
 
+            Case Elenco.StatoNoleggi
+               eui_cmbCampoRicerca.SelectedIndex = 1
+
+               strDescrizione = STR_TABELLA_STATO_NOLEGGI
+               strModulo = MODULO_TABELLA_STATO_NOLEGGI
+
             Case Elenco.Operatori
                eui_cmbCampoRicerca.SelectedIndex = 1
 
@@ -6788,6 +6892,14 @@ Public Class frmElencoDati
                ' Distrugge l'oggetto e libera le risorse.
                g_frmStatoPren.Dispose()
                g_frmStatoPren = Nothing
+
+            Case Elenco.StatoNoleggi
+               ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
+               g_frmMain.RimuoviFormMenuSeleziona(g_frmStatoNoleggi)
+
+               ' Distrugge l'oggetto e libera le risorse.
+               g_frmStatoNoleggi.Dispose()
+               g_frmStatoNoleggi = Nothing
 
             Case Elenco.Prenotazioni
                ' Rimuove la finestra aperta dal menu Finestra/Seleziona.
@@ -7392,6 +7504,47 @@ Public Class frmElencoDati
 
       End Try
    End Sub
+
+   Public Sub DuplicaDatiStatoNoleggi()
+      Try
+         Dim Risposta As Short
+         Dim descrizione As String = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim ultimoCodice As Integer = LeggiUltimoRecord(TAB_STATO_NOLEGGI)
+
+         ' Chiede conferma per la duplicazione.
+         Risposta = MsgBox("Si desidera duplicare lo Stato noleggio '" & descrizione & "' e tutti i suoi dati?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Conferma duplicazione")
+
+         If Risposta = MsgBoxResult.Yes Then
+
+            ' Registra loperazione effettuata dall'operatore identificato.
+            RegistraDuplica()
+
+            Dim CStatoNoleggi As New StatoNoleggi()
+
+            With CStatoNoleggi
+               ' Legge i dati del record selezionato nella lista.
+               .LeggiDati(TAB_STATO_NOLEGGI, DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.ToString)
+
+               ' Modifica il campo Descrizione per consentire l'inserimento di un nuovo record.
+               .Descrizione = .Descrizione & " - Copia " & (ultimoCodice + 1).ToString
+
+               ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
+               .InserisciDati(TAB_STATO_NOLEGGI)
+            End With
+
+            ' Aggiorna l'elenco dati con il record nuovo.
+            AggiornaDati()
+
+            MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 
    Public Sub DuplicaDatiOperatori()
       Try

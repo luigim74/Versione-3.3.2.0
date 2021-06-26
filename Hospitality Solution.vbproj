@@ -391,6 +391,7 @@
     <Compile Include="Codice\Classi\FormazioneMenu.vb" />
     <Compile Include="Codice\Classi\Noleggi.vb" />
     <Compile Include="Codice\Classi\StampaReports.vb" />
+    <Compile Include="Codice\Classi\StatoNoleggi.vb" />
     <Compile Include="Codice\DataSet\AccessoriServiziDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -621,6 +622,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Noleggio\Noleggi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\Form\Noleggio\StatoNoleggi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Form\Ristorante\CodiceLotteriaPOS.vb">
@@ -1928,6 +1932,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Noleggio\Noleggi.resx">
       <DependentUpon>Noleggi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Noleggio\StatoNoleggi.resx">
+      <DependentUpon>StatoNoleggi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Ristorante\CodiceLotteriaPOS.resx">
       <DependentUpon>CodiceLotteriaPOS.vb</DependentUpon>

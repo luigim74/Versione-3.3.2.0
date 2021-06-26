@@ -404,6 +404,7 @@ Module Dichiarazioni
    Public Const CAR_ANAG_OPERATORI As String = "Attendere prego. Caricamento dell'elenco Operatori in corso..."
    Public Const CAR_ANAG_GRUPPI As String = "Attendere prego. Caricamento dell'elenco Gruppi in corso..."
    Public Const CAR_TAB_STATO_PREN As String = "Attendere prego. Caricamento dell'elenco Stato prenotazioni in corso..."
+   Public Const CAR_TAB_STATO_NOLEGGI As String = "Attendere prego. Caricamento dell'elenco Stato noleggi in corso..."
    Public Const CAR_TAB_LISTINI_CAMERE As String = "Attendere prego. Caricamento dell'elenco Listini camere in corso..."
    Public Const CAR_TAB_STAGIONI As String = "Attendere prego. Caricamento delle Stagioni in corso..."
    Public Const DB_NON_COMPATIBILE As String = "Il file archivio selezionato non risulta compatibile con la versione in uso del programma."
@@ -527,6 +528,7 @@ Module Dichiarazioni
    Public Const MODULO_TABELLA_UBICAZIONI_CAMERE As String = "TABELLA UBICAZIONI CAMERE"
    Public Const MODULO_TABELLA_POSIZIONI_CAMERE As String = "TABELLA POSIZIONI CAMERE"
    Public Const MODULO_TABELLA_STATO_PREN As String = "TABELLA STATO PRENOTAZIONI"
+   Public Const MODULO_TABELLA_STATO_NOLEGGI As String = "TABELLA STATO NOLEGGI"
    Public Const MODULO_TABELLA_SCONTI_MAGGIORAZIONI As String = "TABELLA SCONTI E MAGGIORAZIONI"
    Public Const MODULO_TABELLA_DOC_IDENTITA As String = "TABELLA DOCUMENTI IDENTITA"
    Public Const MODULO_TABELLA_GRUPPI_OSPITI As String = "TABELLA GRUPPI"
@@ -605,6 +607,7 @@ Module Dichiarazioni
    Public Const STR_TABELLA_UBICAZIONI_CAMERE As String = "la tabella Ubicazioni camere."
    Public Const STR_TABELLA_POSIZIONI_CAMERE As String = "la tabella Documenti d'identità."
    Public Const STR_TABELLA_STATO_PREN As String = "la tabella Stato prenotazioni."
+   Public Const STR_TABELLA_STATO_NOLEGGI As String = "la tabella Stato noleggi."
    Public Const STR_TABELLA_SCONTI_MAGGIORAZIONI As String = "la tabella Sconti e Maggiorazioni."
    Public Const STR_TABELLA_DOC_IDENTITA As String = "la tabella Stato prenotazioni."
    Public Const STR_TABELLA_GRUPPI As String = "la tabella Gruppi."
@@ -681,9 +684,10 @@ Module Dichiarazioni
    Public g_frmCamere As frmElencoDati
    Public g_frmPrenCamere As ElencoPrenCamere
    Public g_frmPrenCamera As frmPrenCamera
-   Public g_frmStatoPren As frmElencoDati
-   Public g_frmScontiMaggiorazioni As frmElencoDati
-   Public g_frmSchedinePS As ElencoSchedinePS
+    Public g_frmStatoPren As frmElencoDati
+    Public g_frmStatoNoleggi As frmElencoDati
+    Public g_frmScontiMaggiorazioni As frmElencoDati
+    Public g_frmSchedinePS As ElencoSchedinePS
    Public g_frmSchedinaPS As frmSchedinaPS
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
@@ -733,6 +737,7 @@ Module Dichiarazioni
       Public TabUbicazioniCamere As String
       Public TabPosizioniCamere As String
       Public TabStatoPren As String
+      Public TabStatoNoleggi As String
       Public TabDocIdentità As String
       Public ContChiusura As String
       Public ContCorrispettivi As String
@@ -973,7 +978,8 @@ Module Dichiarazioni
       CaratteristicheRisorse = 17
       ScontiMaggiorazioni = 18
       AgenzieCamerieri = 19
-   End Enum
+      StatoNoleggi = 20
+    End Enum
 
    Public Const NUMERO_TOT_ENUM_FINESTRA As Integer = 64
 
@@ -1067,6 +1073,9 @@ Module Dichiarazioni
       CanaliVendita = 67
       TipoAlloggiato = 68
       Comuni = 69
+
+      ' Noleggi
+      StatoNoleggi = 70
    End Enum
 
    Public Enum TipoOperazione

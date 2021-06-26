@@ -1705,8 +1705,8 @@ Public Class ElencoNoleggi
          Dim dataInizioStyle As New DataGridViewTextBoxColumn()
          With dataInizioStyle
             .DataPropertyName = "DataInizio"
-            .HeaderText = "Data inizio"
-            .Name = "DataInizio"
+                .HeaderText = "Data/Ore inizio"
+                .Name = "DataInizio"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Green
@@ -1718,8 +1718,8 @@ Public Class ElencoNoleggi
          Dim dataFineStyle As New DataGridViewTextBoxColumn()
          With dataFineStyle
             .DataPropertyName = "DataFine"
-            .HeaderText = "Data fine"
-            .Name = "DataFine"
+                .HeaderText = "Data/Ore fine"
+                .Name = "DataFine"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Green
@@ -1731,8 +1731,8 @@ Public Class ElencoNoleggi
          Dim totaleGiorniStyle As New DataGridViewTextBoxColumn()
          With totaleGiorniStyle
             .DataPropertyName = "TotaleGiorni"
-            .HeaderText = "Totale giorni"
-            .Name = "TotaleGiorni"
+                .HeaderText = "Totale ore/giorni"
+                .Name = "TotaleGiorni"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Red
@@ -1906,9 +1906,8 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-
-   ' TODO_A: Modificare.
-   Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
+    ' TODO_A: Modificare.
+    Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
 
