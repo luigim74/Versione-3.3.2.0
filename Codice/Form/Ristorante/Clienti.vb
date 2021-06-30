@@ -1761,7 +1761,7 @@ Public Class frmClienti
 
 #Region "Dichiarazioni "
 
-   Private AClienti As New Anagrafiche.Cliente(ConnStringAnagrafiche)
+   Private AClienti As New Anagrafiche.Cliente(ConnString)
    Private IAllegati As New Allegati
    Private CConvalida As New ConvalidaKeyPress
    Private CFormatta As New ClsFormatta

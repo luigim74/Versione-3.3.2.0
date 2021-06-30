@@ -431,6 +431,9 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
+         cmb.Items.Clear()
+         cmb1.Items.Clear()
+
          Do While dr.Read
             cmb.Items.Add(dr.Item("Cognome") & " " & dr.Item("Nome"))
             cmb1.Items.Add(dr.Item("Id"))
@@ -505,29 +508,32 @@ Module Procedure
     End Sub
 
     Public Sub CaricaListaClienti(ByVal cmb As Elegant.Ui.ComboBox, ByVal cmb1 As Elegant.Ui.ComboBox, ByVal tabella As String)
-        ' Dichiara un oggetto connessione.
-        Dim cn As New OleDbConnection(ConnString)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
 
-        Try
-            cn.Open()
+      Try
+         cn.Open()
 
-            Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
-            Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Cognome ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-            Do While dr.Read
-                cmb.Items.Add(dr.Item("Cognome").ToString & " " & dr.Item("Nome").ToString)
-                cmb1.Items.Add(dr.Item("Id"))
-            Loop
+         cmb.Items.Clear()
+         cmb1.Items.Clear()
 
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+         Do While dr.Read
+            cmb.Items.Add(dr.Item("Cognome").ToString & " " & dr.Item("Nome").ToString)
+            cmb1.Items.Add(dr.Item("Id"))
+         Loop
 
-        Finally
-            cn.Close()
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-        End Try
-    End Sub
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
 
     Public Sub CaricaListaFornitori(ByVal cmb As ComboBox, ByVal tabella As String)
       ' Dichiara un oggetto connessione.

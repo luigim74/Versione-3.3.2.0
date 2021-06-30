@@ -2395,9 +2395,9 @@ Public Class ElencoNoleggi
             End If
          End If
 
-         Dim frm As New frmNoleggi
-         frm.Tag = val
-         frm.ShowDialog()
+         g_frmSchedaNoleggi = New frmNoleggi
+         g_frmSchedaNoleggi.Tag = val
+         g_frmSchedaNoleggi.ShowDialog()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

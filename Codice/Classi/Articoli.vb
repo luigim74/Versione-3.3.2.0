@@ -12,6 +12,7 @@ Public Class Articoli
    Public Ubicazione As String
    Public Scaffale As String
    Public PrezzoAcquisto As String
+   Public PrezzoVendita As String
    Public Giacenza As Double
    Public Carico As Double
    Public Scarico As Double
@@ -111,6 +112,11 @@ Public Class Articoli
             Me.PrezzoAcquisto = ds.Tables(tabella).Rows(0)("PrezzoAcquisto").ToString
          Else
             Me.PrezzoAcquisto = VALORE_ZERO
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("PrezzoVendita")) = False Then
+            Me.PrezzoVendita = ds.Tables(tabella).Rows(0)("PrezzoVendita").ToString
+         Else
+            Me.PrezzoVendita = VALORE_ZERO
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Giacenza")) = False Then
             Me.Giacenza = ds.Tables(tabella).Rows(0)("Giacenza")
@@ -215,15 +221,15 @@ Public Class Articoli
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (Codice, CodBarre, Descrizione, Fornitore, Unit‡Misura, " & _
-                                              "Categoria, Magazzino, Ubicazione, Scaffale, PrezzoAcquisto, " & _
-                                              "Giacenza, Carico, Scarico, ScortaMin, SituazioneScorta, ValCarico, ValScarico, " & _
-                                              "ValAttuale, ProduttoreVino, RegioneVino, ZonaVino, AnnoVino, " & _
-                                              "FormatoVino, ScansiaVino, Immagine, [Note]) " & _
-                                       "VALUES(@Codice, @CodBarre, @Descrizione, @Fornitore, @Unit‡Misura, " & _
-                                              "@Categoria, @Magazzino, @Ubicazione, @Scaffale, @PrezzoAcquisto, " & _
-                                              "@Giacenza, @Carico, @Scarico, @ScortaMin, @SituazioneScorta, @ValCarico, @ValScarico, " & _
-                                              "@ValAttuale, @ProduttoreVino, @RegioneVino, @ZonaVino, @AnnoVino, " & _
+         sql = String.Format("INSERT INTO {0} (Codice, CodBarre, Descrizione, Fornitore, Unit‡Misura, " &
+                                              "Categoria, Magazzino, Ubicazione, Scaffale, PrezzoAcquisto, PrezzoVendita, " &
+                                              "Giacenza, Carico, Scarico, ScortaMin, SituazioneScorta, ValCarico, ValScarico, " &
+                                              "ValAttuale, ProduttoreVino, RegioneVino, ZonaVino, AnnoVino, " &
+                                              "FormatoVino, ScansiaVino, Immagine, [Note]) " &
+                                       "VALUES(@Codice, @CodBarre, @Descrizione, @Fornitore, @Unit‡Misura, " &
+                                              "@Categoria, @Magazzino, @Ubicazione, @Scaffale, @PrezzoAcquisto, @PrezzoVendita, " &
+                                              "@Giacenza, @Carico, @Scarico, @ScortaMin, @SituazioneScorta, @ValCarico, @ValScarico, " &
+                                              "@ValAttuale, @ProduttoreVino, @RegioneVino, @ZonaVino, @AnnoVino, " &
                                               "@FormatoVino, @ScansiaVino, @Immagine, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
@@ -239,6 +245,7 @@ Public Class Articoli
          cmdInsert.Parameters.AddWithValue("@Ubicazione", Me.Ubicazione)
          cmdInsert.Parameters.AddWithValue("@Scaffale", Me.Scaffale)
          cmdInsert.Parameters.AddWithValue("@PrezzoAcquisto", Me.PrezzoAcquisto)
+         cmdInsert.Parameters.AddWithValue("@PrezzoVendita", Me.PrezzoVendita)
          cmdInsert.Parameters.AddWithValue("@Giacenza", Me.Giacenza)
          cmdInsert.Parameters.AddWithValue("@Carico", Me.Carico)
          cmdInsert.Parameters.AddWithValue("@Scarico", Me.Scarico)
@@ -291,35 +298,36 @@ Public Class Articoli
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} " & _
-                             "SET Codice = @Codice, " & _
-                             "CodBarre = @CodBarre, " & _
-                             "Descrizione = @Descrizione, " & _
-                             "Fornitore = @Fornitore, " & _
-                             "Unit‡Misura = @Unit‡Misura, " & _
-                             "Categoria = @Categoria, " & _
-                             "Magazzino = @Magazzino, " & _
-                             "Ubicazione = @Ubicazione, " & _
-                             "Scaffale = @Scaffale, " & _
-                             "PrezzoAcquisto = @PrezzoAcquisto, " & _
-                             "Giacenza = @Giacenza, " & _
-                             "Carico = @Carico, " & _
-                             "Scarico = @Scarico, " & _
-                             "ScortaMin = @ScortaMin, " & _
-                             "SituazioneScorta = @SituazioneScorta, " & _
-                             "ValCarico = @ValCarico, " & _
-                             "ValScarico = @ValScarico, " & _
-                             "ValAttuale = @ValAttuale, " & _
-                             "ProduttoreVino = @ProduttoreVino, " & _
-                             "RegioneVino = @RegioneVino, " & _
-                             "ZonaVino = @ZonaVino, " & _
-                             "AnnoVino = @AnnoVino, " & _
-                             "FormatoVino = @FormatoVino, " & _
-                             "ScansiaVino = @ScansiaVino, " & _
-                             "Immagine = @Immagine, " & _
-                             "[Note] = @Note " & _
-                             "WHERE Id = {1}", _
-                              tabella, _
+         sql = String.Format("UPDATE {0} " &
+                             "SET Codice = @Codice, " &
+                             "CodBarre = @CodBarre, " &
+                             "Descrizione = @Descrizione, " &
+                             "Fornitore = @Fornitore, " &
+                             "Unit‡Misura = @Unit‡Misura, " &
+                             "Categoria = @Categoria, " &
+                             "Magazzino = @Magazzino, " &
+                             "Ubicazione = @Ubicazione, " &
+                             "Scaffale = @Scaffale, " &
+                             "PrezzoAcquisto = @PrezzoAcquisto, " &
+                             "PrezzoVendita = @PrezzoVendita, " &
+                             "Giacenza = @Giacenza, " &
+                             "Carico = @Carico, " &
+                             "Scarico = @Scarico, " &
+                             "ScortaMin = @ScortaMin, " &
+                             "SituazioneScorta = @SituazioneScorta, " &
+                             "ValCarico = @ValCarico, " &
+                             "ValScarico = @ValScarico, " &
+                             "ValAttuale = @ValAttuale, " &
+                             "ProduttoreVino = @ProduttoreVino, " &
+                             "RegioneVino = @RegioneVino, " &
+                             "ZonaVino = @ZonaVino, " &
+                             "AnnoVino = @AnnoVino, " &
+                             "FormatoVino = @FormatoVino, " &
+                             "ScansiaVino = @ScansiaVino, " &
+                             "Immagine = @Immagine, " &
+                             "[Note] = @Note " &
+                             "WHERE Id = {1}",
+                              tabella,
                               codice)
 
          ' Crea il comando per la connessione corrente.
@@ -335,6 +343,7 @@ Public Class Articoli
          cmdUpdate.Parameters.AddWithValue("@Ubicazione", Me.Ubicazione)
          cmdUpdate.Parameters.AddWithValue("@Scaffale", Me.Scaffale)
          cmdUpdate.Parameters.AddWithValue("@PrezzoAcquisto", Me.PrezzoAcquisto)
+         cmdUpdate.Parameters.AddWithValue("@PrezzoVendita", Me.PrezzoVendita)
          cmdUpdate.Parameters.AddWithValue("@Giacenza", Me.Giacenza)
          cmdUpdate.Parameters.AddWithValue("@Carico", Me.Carico)
          cmdUpdate.Parameters.AddWithValue("@Scarico", Me.Scarico)

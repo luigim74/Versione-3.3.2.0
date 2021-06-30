@@ -240,3 +240,362 @@ Nome parametro: SelectedIndex"
    in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
 "
 "
+"*** 28/06/2021 - 08:38:05 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '1' non valido per 'SelectedIndex'.
+Nome parametro: SelectedIndex"
+"- NOME PROCEDURA:    in System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   in Elegant.Ui.ComboBox.set_SelectedIndex(Int32 value)
+   in Hospitality_Solution.frmElencoDati.frmElencoDati_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 08:38:22 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"
+"*** 28/06/2021 - 08:41:25 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Modulo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Operazioni.InserisciDati(String tabella)"
+"
+"
+"*** 28/06/2021 - 10:22:14 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 10:22:18 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 10:23:03 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.InserisciDati(String tabella)
+   in Hospitality_Solution.frmClienti.SalvaDati()"
+"
+"
+"*** 28/06/2021 - 10:23:34 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.InserisciDati(String tabella)
+   in Hospitality_Solution.frmClienti.SalvaDati()"
+"
+"
+"*** 28/06/2021 - 10:23:51 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 10:23:55 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:05:44 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\AnagTab.vb:riga 868"
+"
+"
+"*** 28/06/2021 - 11:06:25 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\AnagTab.vb:riga 1186
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Ristorante\Clienti.vb:riga 2403"
+"
+"
+"*** 28/06/2021 - 11:17:05 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 11:17:12 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:17:40 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.InserisciDati(String tabella)
+   in Hospitality_Solution.frmClienti.SalvaDati()"
+"
+"
+"*** 28/06/2021 - 11:18:15 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 11:18:17 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:28:10 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Colombo Giulio"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:28:23 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Alighieri Dante"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:28:41 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Montana Luigi"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:29:43 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Colombo Giulio"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:29:51 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Alighieri Dante"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:29:54 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa ""Colombo Giulio"" al tipo 'Integer'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   in Hospitality_Solution.frmNoleggi.eui_cmbCliente_SelectedIndexChanged(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:50:42 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 11:50:44 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 11:51:10 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 11:51:19 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 12:07:43 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 12:07:50 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 12:18:26 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 12:18:33 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 12:19:04 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 12:19:14 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 28/06/2021 - 12:20:17 ***"
+"- DESCRIZIONE ERRORE: La proprietà ConnectionString non è stata inizializzata."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnection.PermissionDemand()
+   in System.Data.OleDb.OleDbConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
+   in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 28/06/2021 - 12:20:20 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.Anagrafiche.Cliente.LeggiDati(String tabella, String codice)
+   in Hospitality_Solution.frmClienti.frmClienti_Load(Object sender, EventArgs e)"
+"
+"
+"*** 29/06/2021 - 12:04:50 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmNoleggi.EliminaArticolo()"
+"
+"
+"*** 29/06/2021 - 12:10:54 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ListaArticoli.eui_cmdInserisci_Click(Object sender, EventArgs e)"
+"
+"
+"*** 29/06/2021 - 12:31:59 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ListaArticoli.eui_cmdPiùQuantità_Click(Object sender, EventArgs e)"
+"
+"
+"*** 30/06/2021 - 09:39:22 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.DettagliNoleggi.InserisciDati(String tabella)"
+"
+"
+"*** 30/06/2021 - 09:39:25 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.DettagliNoleggi.InserisciDati(String tabella)"
+"
+"
+"*** 30/06/2021 - 09:43:54 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.DettagliNoleggi.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\DettagliNoleggi.vb:riga 229"
+"
+"
+"*** 30/06/2021 - 09:46:32 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.frmNoleggi.SalvaArticoli(String id)"
+"
+"
+"*** 30/06/2021 - 09:50:26 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ListaArticoli.eui_cmdInserisci_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ListaArticoli.vb:riga 55"
+"
+"
+"*** 30/06/2021 - 11:41:52 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ListaArticoli.eui_cmdPiùQuantità_Click(Object sender, EventArgs e)"
+"
+"
+"*** 30/06/2021 - 12:09:55 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql)"
+"
+"

@@ -7,7 +7,7 @@ Public Class DettagliNoleggi
    Public CodiceArticolo As String
    Public Descrizione As String
    Public Unit‡Misura As String
-   Public Quantit‡ As Integer
+   Public Quantit‡ As Double
    Public ValoreUnitario As String
    Public ImportoNetto As String
    Public AliquotaIva As String
@@ -70,7 +70,7 @@ Public Class DettagliNoleggi
          If IsDBNull(ds.Tables(tabella).Rows(0)("Quantit‡")) = False Then
             Me.Quantit‡ = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Quantit‡"))
          Else
-            Me.Quantit‡ = 0
+            Me.Quantit‡ = 0.0
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("ValoreUnitario")) = False Then
             Me.ValoreUnitario = ds.Tables(tabella).Rows(0)("ValoreUnitario").ToString

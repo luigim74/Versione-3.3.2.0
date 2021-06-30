@@ -1941,7 +1941,7 @@ Public Class frmPrenCamera
 
 #End Region
 
-    Public IPren As New PrenCamere
+   Public IPren As New PrenCamere
    Public IPrenOccupanti As New PrenCamereOccupanti
    Public IPrenAddebiti As New PrenCamereAddebiti
    Public IPrenStorico As New StoricoPresenzeCamere
@@ -2110,7 +2110,7 @@ Public Class frmPrenCamera
    End Function
 
    Private Function SalvaOccupantiPren(ByVal id As String) As Boolean
-      ' Salva i dati per il Tavolo selezionato.
+      ' Salva i dati degli occupanti.
       Try
          Dim idPren As Integer
 

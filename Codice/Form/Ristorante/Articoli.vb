@@ -45,6 +45,8 @@ Public Class frmArticoli
    Friend WithEvents txtValoreAttuale As System.Windows.Forms.TextBox
    Friend WithEvents Label52 As System.Windows.Forms.Label
    Friend WithEvents txtValoreCarichi As TextBox
+   Friend WithEvents txtPrezzoVendita As TextBox
+   Friend WithEvents Label54 As Label
    Dim situazioneScorta As Double = 0
 
 #End Region
@@ -207,6 +209,8 @@ Public Class frmArticoli
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArticoli))
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.DatiPrincipale = New System.Windows.Forms.TabPage()
+      Me.txtPrezzoVendita = New System.Windows.Forms.TextBox()
+      Me.Label54 = New System.Windows.Forms.Label()
       Me.cmdCalcolaPrezzo = New System.Windows.Forms.Button()
       Me.cmbScaffale = New System.Windows.Forms.ComboBox()
       Me.Label35 = New System.Windows.Forms.Label()
@@ -368,6 +372,8 @@ Public Class frmArticoli
       'DatiPrincipale
       '
       Me.DatiPrincipale.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.DatiPrincipale.Controls.Add(Me.txtPrezzoVendita)
+      Me.DatiPrincipale.Controls.Add(Me.Label54)
       Me.DatiPrincipale.Controls.Add(Me.cmdCalcolaPrezzo)
       Me.DatiPrincipale.Controls.Add(Me.cmbScaffale)
       Me.DatiPrincipale.Controls.Add(Me.Label35)
@@ -400,29 +406,49 @@ Public Class frmArticoli
       Me.DatiPrincipale.Text = " Dati principali"
       Me.DatiPrincipale.Visible = False
       '
+      'txtPrezzoVendita
+      '
+      Me.txtPrezzoVendita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.txtPrezzoVendita.Location = New System.Drawing.Point(360, 121)
+      Me.txtPrezzoVendita.Name = "txtPrezzoVendita"
+      Me.txtPrezzoVendita.Size = New System.Drawing.Size(152, 20)
+      Me.txtPrezzoVendita.TabIndex = 10
+      Me.txtPrezzoVendita.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.ToolTip1.SetToolTip(Me.txtPrezzoVendita, "Prezzo di vendita IVA inclusa.")
+      '
+      'Label54
+      '
+      Me.Label54.AutoSize = True
+      Me.Label54.ForeColor = System.Drawing.Color.Black
+      Me.Label54.Location = New System.Drawing.Point(264, 122)
+      Me.Label54.Name = "Label54"
+      Me.Label54.Size = New System.Drawing.Size(80, 13)
+      Me.Label54.TabIndex = 55788
+      Me.Label54.Text = "Prezzo vendita:"
+      '
       'cmdCalcolaPrezzo
       '
       Me.cmdCalcolaPrezzo.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdCalcolaPrezzo.Location = New System.Drawing.Point(492, 88)
+      Me.cmdCalcolaPrezzo.Location = New System.Drawing.Point(360, 88)
       Me.cmdCalcolaPrezzo.Name = "cmdCalcolaPrezzo"
-      Me.cmdCalcolaPrezzo.Size = New System.Drawing.Size(20, 20)
-      Me.cmdCalcolaPrezzo.TabIndex = 55786
-      Me.cmdCalcolaPrezzo.Text = "..."
+      Me.cmdCalcolaPrezzo.Size = New System.Drawing.Size(152, 27)
+      Me.cmdCalcolaPrezzo.TabIndex = 11
+      Me.cmdCalcolaPrezzo.Text = "Calcola prezzo di vendita"
       Me.ToolTip1.SetToolTip(Me.cmdCalcolaPrezzo, "Apri la calcolatrice")
       '
       'cmbScaffale
       '
-      Me.cmbScaffale.Location = New System.Drawing.Point(112, 248)
+      Me.cmbScaffale.Location = New System.Drawing.Point(360, 249)
       Me.cmbScaffale.MaxLength = 32767
       Me.cmbScaffale.Name = "cmbScaffale"
-      Me.cmbScaffale.Size = New System.Drawing.Size(248, 21)
-      Me.cmbScaffale.TabIndex = 9
+      Me.cmbScaffale.Size = New System.Drawing.Size(152, 21)
+      Me.cmbScaffale.TabIndex = 8
       '
       'Label35
       '
       Me.Label35.AutoSize = True
       Me.Label35.ForeColor = System.Drawing.Color.Black
-      Me.Label35.Location = New System.Drawing.Point(24, 248)
+      Me.Label35.Location = New System.Drawing.Point(264, 249)
       Me.Label35.Name = "Label35"
       Me.Label35.Size = New System.Drawing.Size(49, 13)
       Me.Label35.TabIndex = 55785
@@ -431,42 +457,43 @@ Public Class frmArticoli
       'txtPrezzoAcquisto
       '
       Me.txtPrezzoAcquisto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtPrezzoAcquisto.Location = New System.Drawing.Point(360, 88)
+      Me.txtPrezzoAcquisto.Location = New System.Drawing.Point(112, 120)
       Me.txtPrezzoAcquisto.Name = "txtPrezzoAcquisto"
-      Me.txtPrezzoAcquisto.Size = New System.Drawing.Size(132, 20)
-      Me.txtPrezzoAcquisto.TabIndex = 4
+      Me.txtPrezzoAcquisto.Size = New System.Drawing.Size(144, 20)
+      Me.txtPrezzoAcquisto.TabIndex = 9
       Me.txtPrezzoAcquisto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+      Me.ToolTip1.SetToolTip(Me.txtPrezzoAcquisto, "Prezzo di acquisto IVA inclusa.")
       '
       'txtAliquotaIVA
       '
       Me.txtAliquotaIVA.Location = New System.Drawing.Point(112, 280)
       Me.txtAliquotaIVA.Name = "txtAliquotaIVA"
       Me.txtAliquotaIVA.Size = New System.Drawing.Size(152, 21)
-      Me.txtAliquotaIVA.TabIndex = 9
+      Me.txtAliquotaIVA.TabIndex = 12
       Me.txtAliquotaIVA.Visible = False
       '
       'cmbUbicazione
       '
-      Me.cmbUbicazione.Location = New System.Drawing.Point(112, 216)
+      Me.cmbUbicazione.Location = New System.Drawing.Point(112, 249)
       Me.cmbUbicazione.MaxLength = 32767
       Me.cmbUbicazione.Name = "cmbUbicazione"
-      Me.cmbUbicazione.Size = New System.Drawing.Size(248, 21)
-      Me.cmbUbicazione.TabIndex = 8
+      Me.cmbUbicazione.Size = New System.Drawing.Size(144, 21)
+      Me.cmbUbicazione.TabIndex = 7
       '
       'cmbMagazzino
       '
-      Me.cmbMagazzino.Location = New System.Drawing.Point(112, 184)
+      Me.cmbMagazzino.Location = New System.Drawing.Point(112, 217)
       Me.cmbMagazzino.MaxLength = 32767
       Me.cmbMagazzino.Name = "cmbMagazzino"
-      Me.cmbMagazzino.Size = New System.Drawing.Size(248, 21)
-      Me.cmbMagazzino.TabIndex = 7
+      Me.cmbMagazzino.Size = New System.Drawing.Size(400, 21)
+      Me.cmbMagazzino.TabIndex = 6
       '
       'cmbSottocategoria
       '
       Me.cmbSottocategoria.Location = New System.Drawing.Point(360, 280)
       Me.cmbSottocategoria.Name = "cmbSottocategoria"
       Me.cmbSottocategoria.Size = New System.Drawing.Size(152, 21)
-      Me.cmbSottocategoria.TabIndex = 55780
+      Me.cmbSottocategoria.TabIndex = 13
       Me.cmbSottocategoria.Visible = False
       '
       'Label36
@@ -505,29 +532,29 @@ Public Class frmArticoli
       '
       'cmbCategoria
       '
-      Me.cmbCategoria.Location = New System.Drawing.Point(112, 152)
+      Me.cmbCategoria.Location = New System.Drawing.Point(112, 185)
       Me.cmbCategoria.MaxLength = 32767
       Me.cmbCategoria.Name = "cmbCategoria"
-      Me.cmbCategoria.Size = New System.Drawing.Size(248, 21)
-      Me.cmbCategoria.TabIndex = 6
+      Me.cmbCategoria.Size = New System.Drawing.Size(400, 21)
+      Me.cmbCategoria.TabIndex = 5
       '
       'cmbFornitore
       '
-      Me.cmbFornitore.Location = New System.Drawing.Point(112, 120)
+      Me.cmbFornitore.Location = New System.Drawing.Point(112, 153)
       Me.cmbFornitore.MaxLength = 32767
       Me.cmbFornitore.Name = "cmbFornitore"
       Me.cmbFornitore.Size = New System.Drawing.Size(400, 21)
-      Me.cmbFornitore.TabIndex = 5
+      Me.cmbFornitore.TabIndex = 4
       '
       'Label39
       '
       Me.Label39.AutoSize = True
       Me.Label39.ForeColor = System.Drawing.Color.Black
-      Me.Label39.Location = New System.Drawing.Point(264, 88)
+      Me.Label39.Location = New System.Drawing.Point(16, 121)
       Me.Label39.Name = "Label39"
-      Me.Label39.Size = New System.Drawing.Size(96, 13)
+      Me.Label39.Size = New System.Drawing.Size(85, 13)
       Me.Label39.TabIndex = 55771
-      Me.Label39.Text = "Prezzo di acquisto:"
+      Me.Label39.Text = "Prezzo acquisto:"
       '
       'Label40
       '
@@ -544,7 +571,7 @@ Public Class frmArticoli
       '
       Me.Label41.AutoSize = True
       Me.Label41.ForeColor = System.Drawing.Color.Black
-      Me.Label41.Location = New System.Drawing.Point(24, 216)
+      Me.Label41.Location = New System.Drawing.Point(16, 249)
       Me.Label41.Name = "Label41"
       Me.Label41.Size = New System.Drawing.Size(63, 13)
       Me.Label41.TabIndex = 55769
@@ -554,7 +581,7 @@ Public Class frmArticoli
       '
       Me.Label42.AutoSize = True
       Me.Label42.ForeColor = System.Drawing.Color.Black
-      Me.Label42.Location = New System.Drawing.Point(24, 184)
+      Me.Label42.Location = New System.Drawing.Point(16, 217)
       Me.Label42.Name = "Label42"
       Me.Label42.Size = New System.Drawing.Size(61, 13)
       Me.Label42.TabIndex = 55768
@@ -564,7 +591,7 @@ Public Class frmArticoli
       '
       Me.Label43.AutoSize = True
       Me.Label43.ForeColor = System.Drawing.Color.Black
-      Me.Label43.Location = New System.Drawing.Point(24, 152)
+      Me.Label43.Location = New System.Drawing.Point(16, 185)
       Me.Label43.Name = "Label43"
       Me.Label43.Size = New System.Drawing.Size(55, 13)
       Me.Label43.TabIndex = 55767
@@ -574,7 +601,7 @@ Public Class frmArticoli
       '
       Me.Label44.AutoSize = True
       Me.Label44.ForeColor = System.Drawing.Color.Black
-      Me.Label44.Location = New System.Drawing.Point(24, 120)
+      Me.Label44.Location = New System.Drawing.Point(16, 153)
       Me.Label44.Name = "Label44"
       Me.Label44.Size = New System.Drawing.Size(51, 13)
       Me.Label44.TabIndex = 55766
@@ -593,7 +620,7 @@ Public Class frmArticoli
       '
       Me.Label45.AutoSize = True
       Me.Label45.ForeColor = System.Drawing.Color.Black
-      Me.Label45.Location = New System.Drawing.Point(24, 56)
+      Me.Label45.Location = New System.Drawing.Point(16, 56)
       Me.Label45.Name = "Label45"
       Me.Label45.Size = New System.Drawing.Size(65, 13)
       Me.Label45.TabIndex = 55764
@@ -603,7 +630,7 @@ Public Class frmArticoli
       '
       Me.Label46.AutoSize = True
       Me.Label46.ForeColor = System.Drawing.Color.Black
-      Me.Label46.Location = New System.Drawing.Point(24, 24)
+      Me.Label46.Location = New System.Drawing.Point(16, 24)
       Me.Label46.Name = "Label46"
       Me.Label46.Size = New System.Drawing.Size(43, 13)
       Me.Label46.TabIndex = 55763
@@ -613,7 +640,7 @@ Public Class frmArticoli
       '
       Me.Label37.AutoSize = True
       Me.Label37.ForeColor = System.Drawing.Color.Black
-      Me.Label37.Location = New System.Drawing.Point(24, 88)
+      Me.Label37.Location = New System.Drawing.Point(16, 88)
       Me.Label37.Name = "Label37"
       Me.Label37.Size = New System.Drawing.Size(79, 13)
       Me.Label37.TabIndex = 55778
@@ -1119,7 +1146,7 @@ Public Class frmArticoli
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(552, 20)
+      Me.Panel1.Size = New System.Drawing.Size(551, 20)
       Me.Panel1.TabIndex = 10
       '
       'lblIntestazione
@@ -1144,7 +1171,7 @@ Public Class frmArticoli
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(552, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(551, 26)
       Me.ToolBar1.TabIndex = 9
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -1722,7 +1749,7 @@ Public Class frmArticoli
       Me.AcceptButton = Me.cmdApri
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(552, 376)
+      Me.ClientSize = New System.Drawing.Size(551, 377)
       Me.Controls.Add(Me.Label49)
       Me.Controls.Add(Me.Label50)
       Me.Controls.Add(Me.Label48)
@@ -1972,6 +1999,11 @@ Public Class frmArticoli
             Else
                .PrezzoAcquisto = VALORE_ZERO
             End If
+            If IsNumeric(txtPrezzoVendita.Text) Then
+               .PrezzoVendita = CFormatta.FormattaEuro(txtPrezzoVendita.Text)
+            Else
+               .PrezzoVendita = VALORE_ZERO
+            End If
             If IsNumeric(txtGiacenza.Text) Then
                .Giacenza = CFormatta.FormattaQuantità(txtGiacenza.Text, 3)
             Else
@@ -2058,7 +2090,16 @@ Public Class frmArticoli
                cmbMagazzino.Text = .Magazzino
                cmbUbicazione.Text = .Ubicazione
                cmbScaffale.Text = .Scaffale
-               txtPrezzoAcquisto.Text = CFormatta.FormattaEuro(.PrezzoAcquisto)
+               If IsNumeric(.PrezzoAcquisto) = True Then
+                  txtPrezzoAcquisto.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.PrezzoAcquisto))
+               Else
+                  txtPrezzoAcquisto.Text = VALORE_ZERO
+               End If
+               If IsNumeric(.PrezzoVendita) = True Then
+                  txtPrezzoVendita.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.PrezzoVendita))
+               Else
+                  txtPrezzoVendita.Text = VALORE_ZERO
+               End If
                txtGiacenza.Text = CFormatta.FormattaQuantità(.Giacenza, 3)
                txtTotCarichi.Text = CFormatta.FormattaQuantità(.Carico, 3)
                txtTotScarichi.Text = CFormatta.FormattaQuantità(.Scarico, 3)
@@ -2205,7 +2246,13 @@ Public Class frmArticoli
 
    Private Sub txtPrezzoAcquisto_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtPrezzoAcquisto.LostFocus
       If IsNumeric(sender.Text) Then
-         sender.Text = CFormatta.FormattaEuro(sender.Text)
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
+      End If
+   End Sub
+
+   Private Sub txtPrezzoVendita_LostFocus(sender As Object, e As EventArgs) Handles txtPrezzoVendita.LostFocus
+      If IsNumeric(sender.Text) Then
+         sender.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(sender.Text))
       End If
    End Sub
 
@@ -2228,6 +2275,10 @@ Public Class frmArticoli
       e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
    End Sub
 
+   Private Sub txtPrezzoVendita_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrezzoVendita.KeyPress
+      e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+   End Sub
+
    Private Sub txtScortaMinima_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtScortaMinima.KeyPress
       e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
    End Sub
@@ -2239,4 +2290,5 @@ Public Class frmArticoli
    Private Sub cmdCalcolaPrezzo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCalcolaPrezzo.Click
       AvviaWinCalc(Me.Handle)
    End Sub
+
 End Class

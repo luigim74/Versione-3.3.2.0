@@ -44,7 +44,7 @@ Public Class CaricoScarico
       txtQuantità.Text = "1,00"
       scortaMinima = scortaMin
       cmbFornitore.Text = fornitore
-      txtPrezzo.Text = CFormatta.FormattaEuro(prezzo)
+      txtPrezzo.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(prezzo))
       txtCausale.Text = titolo & " manuale"
       nomeMagazzino = magazzino
       codArticolo = codice
@@ -111,211 +111,211 @@ Public Class CaricoScarico
       Me.Label45 = New System.Windows.Forms.Label()
       Me.Label46 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.SuspendLayout()
-      '
-      'Label1
-      '
-      Me.Label1.AutoSize = True
-      Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(16, 72)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(33, 13)
-      Me.Label1.TabIndex = 55634
-      Me.Label1.Text = "Data:"
-      '
-      'lblPrezzo
-      '
-      Me.lblPrezzo.AutoSize = True
-      Me.lblPrezzo.ForeColor = System.Drawing.Color.Black
-      Me.lblPrezzo.Location = New System.Drawing.Point(176, 104)
-      Me.lblPrezzo.Name = "lblPrezzo"
-      Me.lblPrezzo.Size = New System.Drawing.Size(96, 13)
-      Me.lblPrezzo.TabIndex = 55635
-      Me.lblPrezzo.Text = "Prezzo di acquisto:"
-      '
-      'txtPrezzo
-      '
-      Me.txtPrezzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtPrezzo.Location = New System.Drawing.Point(272, 104)
-      Me.txtPrezzo.MaxLength = 255
-      Me.txtPrezzo.Name = "txtPrezzo"
-      Me.txtPrezzo.Size = New System.Drawing.Size(96, 20)
-      Me.txtPrezzo.TabIndex = 2
-      Me.txtPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label3
-      '
-      Me.Label3.AutoSize = True
-      Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(16, 168)
-      Me.Label3.Name = "Label3"
-      Me.Label3.Size = New System.Drawing.Size(48, 13)
-      Me.Label3.TabIndex = 55637
-      Me.Label3.Text = "Causale:"
-      '
-      'txtCausale
-      '
-      Me.txtCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCausale.Location = New System.Drawing.Point(88, 168)
-      Me.txtCausale.MaxLength = 255
-      Me.txtCausale.Name = "txtCausale"
-      Me.txtCausale.Size = New System.Drawing.Size(280, 20)
-      Me.txtCausale.TabIndex = 4
-      '
-      'cmdOk
-      '
-      Me.cmdOk.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdOk.Location = New System.Drawing.Point(192, 208)
-      Me.cmdOk.Name = "cmdOk"
-      Me.cmdOk.Size = New System.Drawing.Size(80, 24)
-      Me.cmdOk.TabIndex = 5
-      Me.cmdOk.Text = "&OK"
-      '
-      'cmdAnnulla
-      '
-      Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdAnnulla.Location = New System.Drawing.Point(280, 208)
-      Me.cmdAnnulla.Name = "cmdAnnulla"
-      Me.cmdAnnulla.Size = New System.Drawing.Size(80, 24)
-      Me.cmdAnnulla.TabIndex = 6
-      Me.cmdAnnulla.Text = "&Annulla"
-      '
-      'dtpData
-      '
-      Me.dtpData.Location = New System.Drawing.Point(88, 72)
-      Me.dtpData.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
-      Me.dtpData.Name = "dtpData"
-      Me.dtpData.Size = New System.Drawing.Size(184, 20)
-      Me.dtpData.TabIndex = 0
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'txtQuantità
-      '
-      Me.txtQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtQuantità.Location = New System.Drawing.Point(88, 104)
-      Me.txtQuantità.MaxLength = 255
-      Me.txtQuantità.Name = "txtQuantità"
-      Me.txtQuantità.Size = New System.Drawing.Size(80, 20)
-      Me.txtQuantità.TabIndex = 1
-      Me.txtQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'Label4
-      '
-      Me.Label4.AutoSize = True
-      Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(16, 104)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(50, 13)
-      Me.Label4.TabIndex = 55665
-      Me.Label4.Text = "Quantità:"
-      '
-      'txtDescrizione
-      '
-      Me.txtDescrizione.BackColor = System.Drawing.SystemColors.Control
-      Me.txtDescrizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtDescrizione.Location = New System.Drawing.Point(88, 40)
-      Me.txtDescrizione.Name = "txtDescrizione"
-      Me.txtDescrizione.ReadOnly = True
-      Me.txtDescrizione.Size = New System.Drawing.Size(280, 20)
-      Me.txtDescrizione.TabIndex = 8
-      Me.txtDescrizione.TabStop = False
-      '
-      'cmbFornitore
-      '
-      Me.cmbFornitore.Location = New System.Drawing.Point(88, 136)
-      Me.cmbFornitore.MaxLength = 32767
-      Me.cmbFornitore.Name = "cmbFornitore"
-      Me.cmbFornitore.Size = New System.Drawing.Size(280, 21)
-      Me.cmbFornitore.TabIndex = 3
-      '
-      'lblFornitore
-      '
-      Me.lblFornitore.AutoSize = True
-      Me.lblFornitore.ForeColor = System.Drawing.Color.Black
-      Me.lblFornitore.Location = New System.Drawing.Point(16, 136)
-      Me.lblFornitore.Name = "lblFornitore"
-      Me.lblFornitore.Size = New System.Drawing.Size(51, 13)
-      Me.lblFornitore.TabIndex = 55772
-      Me.lblFornitore.Text = "Fornitore:"
-      '
-      'txtCodice
-      '
-      Me.txtCodice.BackColor = System.Drawing.SystemColors.Control
-      Me.txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.txtCodice.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.txtCodice.Location = New System.Drawing.Point(88, 16)
-      Me.txtCodice.Name = "txtCodice"
-      Me.txtCodice.ReadOnly = True
-      Me.txtCodice.Size = New System.Drawing.Size(184, 20)
-      Me.txtCodice.TabIndex = 7
-      Me.txtCodice.TabStop = False
-      '
-      'Label45
-      '
-      Me.Label45.AutoSize = True
-      Me.Label45.ForeColor = System.Drawing.Color.Black
-      Me.Label45.Location = New System.Drawing.Point(16, 40)
-      Me.Label45.Name = "Label45"
-      Me.Label45.Size = New System.Drawing.Size(65, 13)
-      Me.Label45.TabIndex = 55771
-      Me.Label45.Text = "Descrizione:"
-      '
-      'Label46
-      '
-      Me.Label46.AutoSize = True
-      Me.Label46.ForeColor = System.Drawing.Color.Black
-      Me.Label46.Location = New System.Drawing.Point(16, 16)
-      Me.Label46.Name = "Label46"
-      Me.Label46.Size = New System.Drawing.Size(43, 13)
-      Me.Label46.TabIndex = 55770
-      Me.Label46.Text = "Codice:"
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'CaricoScarico
-      '
-      Me.AcceptButton = Me.cmdOk
-      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(379, 239)
-      Me.Controls.Add(Me.txtDescrizione)
-      Me.Controls.Add(Me.cmbFornitore)
-      Me.Controls.Add(Me.lblFornitore)
-      Me.Controls.Add(Me.txtCodice)
-      Me.Controls.Add(Me.Label45)
-      Me.Controls.Add(Me.Label46)
-      Me.Controls.Add(Me.txtQuantità)
-      Me.Controls.Add(Me.Label4)
-      Me.Controls.Add(Me.dtpData)
-      Me.Controls.Add(Me.cmdAnnulla)
-      Me.Controls.Add(Me.cmdOk)
-      Me.Controls.Add(Me.txtCausale)
-      Me.Controls.Add(Me.Label3)
-      Me.Controls.Add(Me.txtPrezzo)
-      Me.Controls.Add(Me.lblPrezzo)
-      Me.Controls.Add(Me.Label1)
-      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.MaximizeBox = False
-      Me.MinimizeBox = False
-      Me.Name = "CaricoScarico"
-      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.ResumeLayout(False)
-      Me.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(16, 72)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(33, 13)
+        Me.Label1.TabIndex = 55634
+        Me.Label1.Text = "Data:"
+        '
+        'lblPrezzo
+        '
+        Me.lblPrezzo.AutoSize = True
+        Me.lblPrezzo.ForeColor = System.Drawing.Color.Black
+        Me.lblPrezzo.Location = New System.Drawing.Point(176, 104)
+        Me.lblPrezzo.Name = "lblPrezzo"
+        Me.lblPrezzo.Size = New System.Drawing.Size(85, 13)
+        Me.lblPrezzo.TabIndex = 55635
+        Me.lblPrezzo.Text = "Prezzo acquisto:"
+        '
+        'txtPrezzo
+        '
+        Me.txtPrezzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrezzo.Location = New System.Drawing.Point(272, 104)
+        Me.txtPrezzo.MaxLength = 255
+        Me.txtPrezzo.Name = "txtPrezzo"
+        Me.txtPrezzo.Size = New System.Drawing.Size(96, 20)
+        Me.txtPrezzo.TabIndex = 2
+        Me.txtPrezzo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(16, 168)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.TabIndex = 55637
+        Me.Label3.Text = "Causale:"
+        '
+        'txtCausale
+        '
+        Me.txtCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCausale.Location = New System.Drawing.Point(88, 168)
+        Me.txtCausale.MaxLength = 255
+        Me.txtCausale.Name = "txtCausale"
+        Me.txtCausale.Size = New System.Drawing.Size(280, 20)
+        Me.txtCausale.TabIndex = 4
+        '
+        'cmdOk
+        '
+        Me.cmdOk.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmdOk.Location = New System.Drawing.Point(192, 208)
+        Me.cmdOk.Name = "cmdOk"
+        Me.cmdOk.Size = New System.Drawing.Size(80, 24)
+        Me.cmdOk.TabIndex = 5
+        Me.cmdOk.Text = "&OK"
+        '
+        'cmdAnnulla
+        '
+        Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmdAnnulla.Location = New System.Drawing.Point(280, 208)
+        Me.cmdAnnulla.Name = "cmdAnnulla"
+        Me.cmdAnnulla.Size = New System.Drawing.Size(80, 24)
+        Me.cmdAnnulla.TabIndex = 6
+        Me.cmdAnnulla.Text = "&Annulla"
+        '
+        'dtpData
+        '
+        Me.dtpData.Location = New System.Drawing.Point(88, 72)
+        Me.dtpData.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
+        Me.dtpData.Name = "dtpData"
+        Me.dtpData.Size = New System.Drawing.Size(184, 20)
+        Me.dtpData.TabIndex = 0
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'txtQuantità
+        '
+        Me.txtQuantità.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantità.Location = New System.Drawing.Point(88, 104)
+        Me.txtQuantità.MaxLength = 255
+        Me.txtQuantità.Name = "txtQuantità"
+        Me.txtQuantità.Size = New System.Drawing.Size(80, 20)
+        Me.txtQuantità.TabIndex = 1
+        Me.txtQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(16, 104)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 13)
+        Me.Label4.TabIndex = 55665
+        Me.Label4.Text = "Quantità:"
+        '
+        'txtDescrizione
+        '
+        Me.txtDescrizione.BackColor = System.Drawing.SystemColors.Control
+        Me.txtDescrizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescrizione.Location = New System.Drawing.Point(88, 40)
+        Me.txtDescrizione.Name = "txtDescrizione"
+        Me.txtDescrizione.ReadOnly = True
+        Me.txtDescrizione.Size = New System.Drawing.Size(280, 20)
+        Me.txtDescrizione.TabIndex = 8
+        Me.txtDescrizione.TabStop = False
+        '
+        'cmbFornitore
+        '
+        Me.cmbFornitore.Location = New System.Drawing.Point(88, 136)
+        Me.cmbFornitore.MaxLength = 32767
+        Me.cmbFornitore.Name = "cmbFornitore"
+        Me.cmbFornitore.Size = New System.Drawing.Size(280, 21)
+        Me.cmbFornitore.TabIndex = 3
+        '
+        'lblFornitore
+        '
+        Me.lblFornitore.AutoSize = True
+        Me.lblFornitore.ForeColor = System.Drawing.Color.Black
+        Me.lblFornitore.Location = New System.Drawing.Point(16, 136)
+        Me.lblFornitore.Name = "lblFornitore"
+        Me.lblFornitore.Size = New System.Drawing.Size(51, 13)
+        Me.lblFornitore.TabIndex = 55772
+        Me.lblFornitore.Text = "Fornitore:"
+        '
+        'txtCodice
+        '
+        Me.txtCodice.BackColor = System.Drawing.SystemColors.Control
+        Me.txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodice.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtCodice.Location = New System.Drawing.Point(88, 16)
+        Me.txtCodice.Name = "txtCodice"
+        Me.txtCodice.ReadOnly = True
+        Me.txtCodice.Size = New System.Drawing.Size(184, 20)
+        Me.txtCodice.TabIndex = 7
+        Me.txtCodice.TabStop = False
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.ForeColor = System.Drawing.Color.Black
+        Me.Label45.Location = New System.Drawing.Point(16, 40)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(65, 13)
+        Me.Label45.TabIndex = 55771
+        Me.Label45.Text = "Descrizione:"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.ForeColor = System.Drawing.Color.Black
+        Me.Label46.Location = New System.Drawing.Point(16, 16)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(43, 13)
+        Me.Label46.TabIndex = 55770
+        Me.Label46.Text = "Codice:"
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'CaricoScarico
+        '
+        Me.AcceptButton = Me.cmdOk
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ClientSize = New System.Drawing.Size(389, 249)
+        Me.Controls.Add(Me.txtDescrizione)
+        Me.Controls.Add(Me.cmbFornitore)
+        Me.Controls.Add(Me.lblFornitore)
+        Me.Controls.Add(Me.txtCodice)
+        Me.Controls.Add(Me.Label45)
+        Me.Controls.Add(Me.Label46)
+        Me.Controls.Add(Me.txtQuantità)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.dtpData)
+        Me.Controls.Add(Me.cmdAnnulla)
+        Me.Controls.Add(Me.cmdOk)
+        Me.Controls.Add(Me.txtCausale)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtPrezzo)
+        Me.Controls.Add(Me.lblPrezzo)
+        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "CaricoScarico"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-   End Sub
+    End Sub
 
 #End Region
 
-   Private Function SalvaDati(ByVal tabella As String, ByVal id As Integer, ByVal giacenza As Double, _
+    Private Function SalvaDati(ByVal tabella As String, ByVal id As Integer, ByVal giacenza As Double, _
                               ByVal carico As Double, ByVal scarico As Double, _
                               ByVal situazione As Double, ByVal prezzo As String, _
                               ByVal valCarico As Double, ByVal valScarico As Double, ByVal valAttuale As Double) As Boolean

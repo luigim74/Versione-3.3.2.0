@@ -3,7 +3,7 @@
 ' **************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 26/06/2021
+' Data ultima modifica: 28/06/2021
 ' Descrizione:          Elenco dati riutilizzabile per tutte le anagrafiche.
 ' Note:
 '
@@ -35,10 +35,10 @@ Public Class frmElencoDati
    Public Const TAB_SALE = "Sale"
    Public Const TAB_TAVOLI = "Tavoli"
    Public Const TAB_CAMERE = "Camere"
-    Public Const TAB_STATO_PREN = "StatoPren"
-    Public Const TAB_STATO_NOLEGGI = "StatoNoleggi"
-    Public Const TAB_OPERATORI = "Operatori"
-    Public Const TAB_GRUPPI = "Gruppi"
+   Public Const TAB_STATO_PREN = "StatoPren"
+   Public Const TAB_STATO_NOLEGGI = "StatoNoleggi"
+   Public Const TAB_OPERATORI = "Operatori"
+   Public Const TAB_GRUPPI = "Gruppi"
    Public Const TAB_CARATT_RISORSE = "CaratteristicheRisorse"
    Public Const TAB_SCONTI_MAGGIORAZIONI = "ScontiMaggiorazioni"
 
@@ -152,7 +152,7 @@ Public Class frmElencoDati
          Case Elenco.StatoNoleggi
             TipoElenco = Elenco.StatoNoleggi
             NomeTabella = "StatoNoleggi"
-            TitoloFinestra = "Elenco Stato noleggi"
+            TitoloFinestra = "Elenco Stato noleggio"
 
          Case Elenco.Operatori
             TipoElenco = Elenco.Operatori
@@ -2061,7 +2061,7 @@ Public Class frmElencoDati
 
    Private Sub ApriDati(ByVal val As String)
       Try
-         ' Modifica il cursore del mouse. 6666
+         ' Modifica il cursore del mouse. 
          Cursor.Current = Cursors.AppStarting
 
          Select Case TipoElenco
@@ -4301,6 +4301,20 @@ Public Class frmElencoDati
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, pAcquistoStyle)
 
+         ' Prezzo Vendita
+         Dim pVenditaStyle As New DataGridViewTextBoxColumn()
+         With pVenditaStyle
+            .DataPropertyName = "PrezzoVendita"
+            .HeaderText = "Prezzo di vendita"
+            .Name = "PrezzoVendita"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, pVenditaStyle)
+
          ' Categoria
          Dim categoriaStyle As New DataGridViewTextBoxColumn()
          With categoriaStyle
@@ -4638,6 +4652,8 @@ Public Class frmElencoDati
                campoRicerca = "Unit‡Misura"
             Case "Prezzo di acquisto"
                campoRicerca = "PrezzoAcquisto"
+            Case "Prezzo di vendita"
+               campoRicerca = "PrezzoVendita"
             Case "Nome utente"
                campoRicerca = "NomeUtente"
             Case "Nome gruppo"
@@ -4751,6 +4767,7 @@ Public Class frmElencoDati
                eui_cmbCampoRicerca.Items.Add("Carico")
                eui_cmbCampoRicerca.Items.Add("Scarico")
                eui_cmbCampoRicerca.Items.Add("Prezzo di acquisto")
+               eui_cmbCampoRicerca.Items.Add("Prezzo di vendita")
                eui_cmbCampoRicerca.Items.Add("Categoria")
                eui_cmbCampoRicerca.Items.Add("Fornitore")
                eui_cmbCampoRicerca.Items.Add("Magazzino")
@@ -4838,7 +4855,7 @@ Public Class frmElencoDati
                eui_cmbCampoRicerca.Items.Add("Evidenzia Planning")
                eui_cmbCampoRicerca.Items.Add("Listino")
 
-            Case Elenco.StatoPren
+            Case Elenco.StatoPren, Elenco.StatoNoleggi
                eui_cmbCampoRicerca.Items.Add("Codice")
                eui_cmbCampoRicerca.Items.Add("Descrizione")
 
@@ -7092,8 +7109,8 @@ Public Class frmElencoDati
                                                    DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value,
                                                    DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value,
                                                    DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value,
-                                                   DataGridView1.Item(10, DataGridView1.CurrentCell.RowIndex).Value,
-                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value)
+                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(12, DataGridView1.CurrentCell.RowIndex).Value)
          frm.ShowDialog()
 
       Catch ex As Exception
@@ -7113,8 +7130,8 @@ Public Class frmElencoDati
                                                    DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value,
                                                    DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value,
                                                    DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value,
-                                                   DataGridView1.Item(10, DataGridView1.CurrentCell.RowIndex).Value,
-                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value)
+                                                   DataGridView1.Item(11, DataGridView1.CurrentCell.RowIndex).Value,
+                                                   DataGridView1.Item(12, DataGridView1.CurrentCell.RowIndex).Value)
          frm.ShowDialog()
 
       Catch ex As Exception

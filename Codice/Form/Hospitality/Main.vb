@@ -507,6 +507,10 @@ Friend Class frmMain
    Friend WithEvents eui_cmdGestioneStatisticheRisorse As Button
    Friend WithEvents Separator25 As Separator
    Friend WithEvents eui_cmdArchiviTabelleStatoNoleggi As Button
+   Friend WithEvents eui_cmdNoleggio_Noleggia As Button
+   Friend WithEvents eui_cmdArchiviAnagraficheNoleggi As Button
+   Friend WithEvents eui_cmdArchiviAnagraficheCausaliNoleggio As Button
+   Friend WithEvents sepNoleggi As Separator
    Friend WithEvents eui_cmdGestionePrenRisorse As Elegant.Ui.Button
 
    <System.Diagnostics.DebuggerStepThrough()>
@@ -514,35 +518,35 @@ Friend Class frmMain
       Me.components = New System.ComponentModel.Container()
       Dim themeSelector As Elegant.Ui.ThemeSelector
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-      Dim ListViewGroup11 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Hospitality Solution", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup12 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup13 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup14 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Hotel", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup15 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Campeggio", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup16 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro balneare", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup17 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro benessere", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup18 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro sportivo", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup19 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Vendita al dettaglio", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewGroup20 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Moduli aggiuntivi", System.Windows.Forms.HorizontalAlignment.Left)
-      Dim ListViewItem20 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOSPITALITY SOLUTION SUITE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture turistiche.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 15)
-      Dim ListViewItem21 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BAR SOLUTION", System.Drawing.Color.Green, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per bar e gelaterie.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 17)
-      Dim ListViewItem22 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CHEF SOLUTION", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ristorative.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 16)
-      Dim ListViewItem23 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PALMARI", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei palmari.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem24 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NIGHT CLUB", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei tavoli e del personale di un locale notturno.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
-      Dim ListViewItem25 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PRENOTAZIONI ON-LINE", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per le prenotazioni da Internet.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem26 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOTEL SOLUTION", System.Drawing.Color.Brown, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ricettive.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 21)
-      Dim ListViewItem27 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CAMPING SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per campeggi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 22)
-      Dim ListViewItem28 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEACH SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri balneari e piscine.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 19)
-      Dim ListViewItem29 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEAUTY SOLUTION", System.Drawing.Color.Purple, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri benessere.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 18)
-      Dim ListViewItem30 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "SPORTING CLUB SOLUTION", System.Drawing.Color.DarkCyan, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri sportivi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 20)
-      Dim ListViewItem31 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "RETAIL SOLUTION", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per la vendita al dettaglio.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 23)
-      Dim ListViewItem32 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "TAGLIE E COLORI", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione delle Taglie e Colori.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem33 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "MAGAZZINO", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione del magazzino.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem34 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "ETICHETTE E CODICI A BARRE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione di etichette e codici a barre.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem35 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE PORTABLE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per l'installazione del software su memoria esterna.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem36 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE RECOVERY", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il salvataggio e recupero automatico dei dati del software.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem37 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "REGISTRATORI DI CASSA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il collegamento ai registratori di cassa e stampanti fiscali.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
-      Dim ListViewItem38 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "FATTURAZIONE ELETTRONICA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la Fatturazione Elettronica.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
+      Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Hospitality Solution", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Bar", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Ristorante", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Hotel", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Campeggio", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro balneare", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup7 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro benessere", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup8 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Centro sportivo", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup9 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Vendita al dettaglio", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewGroup10 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Moduli aggiuntivi", System.Windows.Forms.HorizontalAlignment.Left)
+      Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOSPITALITY SOLUTION SUITE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture turistiche.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 15)
+      Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BAR SOLUTION", System.Drawing.Color.Green, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per bar e gelaterie.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 17)
+      Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CHEF SOLUTION", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ristorative.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 16)
+      Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PALMARI", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei palmari.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NIGHT CLUB", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione dei tavoli e del personale di un locale notturno.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
+      Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PRENOTAZIONI ON-LINE", System.Drawing.Color.DarkGreen, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per le prenotazioni da Internet.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "HOTEL SOLUTION", System.Drawing.Color.Brown, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per strutture ricettive.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 21)
+      Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "CAMPING SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per campeggi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 22)
+      Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEACH SOLUTION", System.Drawing.Color.Crimson, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri balneari e piscine.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 19)
+      Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "BEAUTY SOLUTION", System.Drawing.Color.Purple, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri benessere.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 18)
+      Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "SPORTING CLUB SOLUTION", System.Drawing.Color.DarkCyan, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per centri sportivi.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 20)
+      Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "RETAIL SOLUTION", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Software per la vendita al dettaglio.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, 23)
+      Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "TAGLIE E COLORI", System.Drawing.Color.DarkOrange, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione delle Taglie e Colori.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "MAGAZZINO", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione del magazzino.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "ETICHETTE E CODICI A BARRE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la gestione di etichette e codici a barre.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE PORTABLE", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per l'installazione del software su memoria esterna.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "PEN DRIVE RECOVERY", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il salvataggio e recupero automatico dei dati del software.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "REGISTRATORI DI CASSA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per il collegamento ai registratori di cassa e stampanti fiscali.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!)), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!))}, -1)
+      Dim ListViewItem19 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New System.Windows.Forms.ListViewItem.ListViewSubItem() {New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "FATTURAZIONE ELETTRONICA", System.Drawing.Color.MidnightBlue, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "Modulo per la Fatturazione Elettronica.", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))), New System.Windows.Forms.ListViewItem.ListViewSubItem(Nothing, "NON ATTIVO", System.Drawing.Color.Gray, System.Drawing.SystemColors.Window, New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)))}, -1)
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.picProg = New System.Windows.Forms.PictureBox()
       Me.txtPercorso = New Elegant.Ui.TextBox()
@@ -759,6 +763,7 @@ Friend Class frmMain
       Me.rtgNoleggio = New Elegant.Ui.RibbonContextualTabGroup(Me.components)
       Me.RibbonTabPage6 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonGroup2 = New Elegant.Ui.RibbonGroup()
+      Me.eui_cmdNoleggio_Noleggia = New Elegant.Ui.Button()
       Me.eui_cmdNoleggio_Rientra = New Elegant.Ui.Button()
       Me.RibbonGroup31 = New Elegant.Ui.RibbonGroup()
       Me.eui_cmdNoleggio_VisTutti = New Elegant.Ui.ToggleButton()
@@ -772,6 +777,76 @@ Friend Class frmMain
       Me.eui_cmdNoleggio_ScadAnno = New Elegant.Ui.ToggleButton()
       Me.eui_cmdNoleggio_ScadMese = New Elegant.Ui.ToggleButton()
       Me.eui_cmdNoleggio_ScadDalAl = New Elegant.Ui.ToggleButton()
+      Me.eui_Archivi = New Elegant.Ui.RibbonTabPage()
+      Me.RibbonGroup17 = New Elegant.Ui.RibbonGroup()
+      Me.DropDown3 = New Elegant.Ui.DropDown()
+      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdArchiviAnagraficheClienti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheFornitori = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheCamerieri = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheAziende = New Elegant.Ui.Button()
+      Me.Separator1 = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagraficheCamere = New Elegant.Ui.Button()
+      Me.sepCamere = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagraficheSale = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheTavoli = New Elegant.Ui.Button()
+      Me.sepRistorante = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagrafichePiatti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti = New Elegant.Ui.Button()
+      Me.sepBar = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagraficheRisorse = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheAccServ = New Elegant.Ui.Button()
+      Me.sepRisorse = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagraficheNoleggi = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio = New Elegant.Ui.Button()
+      Me.sepNoleggi = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviAnagraficheDatiAzienda = New Elegant.Ui.Button()
+      Me.RibbonGroup5 = New Elegant.Ui.RibbonGroup()
+      Me.DropDown1 = New Elegant.Ui.DropDown()
+      Me.PopupMenu3 = New Elegant.Ui.PopupMenu(Me.components)
+      Me.eui_cmdArchiviTabelleTitoli = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleCategorieCliente = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleAttivit‡ = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleComuni = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleNazioni = New Elegant.Ui.Button()
+      Me.Separator4 = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleUM = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleCategorieMerce = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleMagazzini = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleUbicazioni = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleScaffali = New Elegant.Ui.Button()
+      Me.sepMagazzino = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleReparti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleMsgReparti = New Elegant.Ui.Button()
+      Me.sepReparti = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleCausaliDoc = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabellePagamenti = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleSconti = New Elegant.Ui.Button()
+      Me.Separator8 = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleListini = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleStagioni = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleTipologieCamere = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleUbicazioniCamere = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabellePosizioniCamere = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleTipoAlloggiati = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleGruppi = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleAgenzie = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviTabelleCanali = New Elegant.Ui.Button()
+      Me.sepListini = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleStatoPren = New Elegant.Ui.Button()
+      Me.sepStatoPren = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleDocIdentit‡ = New Elegant.Ui.Button()
+      Me.Separator24 = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleTipoRisorse = New Elegant.Ui.Button()
+      Me.Separator25 = New Elegant.Ui.Separator()
+      Me.eui_cmdArchiviTabelleStatoNoleggi = New Elegant.Ui.Button()
+      Me.RibbonGroup1 = New Elegant.Ui.RibbonGroup()
+      Me.eui_cmdArchiviImporta = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviBackup = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviPulizia = New Elegant.Ui.Button()
+      Me.eui_cmdArchiviCompatta = New Elegant.Ui.Button()
       Me.eui_Gestione = New Elegant.Ui.RibbonTabPage()
       Me.RibbonGroup35 = New Elegant.Ui.RibbonGroup()
       Me.eui_cmdGestioneClienti = New Elegant.Ui.Button()
@@ -819,71 +894,6 @@ Friend Class frmMain
       Me.eui_cmdGestioneCambiaOp = New Elegant.Ui.Button()
       Me.RibbonGroup30 = New Elegant.Ui.RibbonGroup()
       Me.eui_cmdGestioneOpzioni = New Elegant.Ui.Button()
-      Me.eui_Archivi = New Elegant.Ui.RibbonTabPage()
-      Me.RibbonGroup17 = New Elegant.Ui.RibbonGroup()
-      Me.DropDown3 = New Elegant.Ui.DropDown()
-      Me.PopupMenu1 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.eui_cmdArchiviAnagraficheClienti = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheFornitori = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheCamerieri = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheAziende = New Elegant.Ui.Button()
-      Me.Separator1 = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviAnagraficheCamere = New Elegant.Ui.Button()
-      Me.sepCamere = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviAnagraficheSale = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheTavoli = New Elegant.Ui.Button()
-      Me.sepRistorante = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviAnagrafichePiatti = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti = New Elegant.Ui.Button()
-      Me.sepBar = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviAnagraficheRisorse = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviAnagraficheAccServ = New Elegant.Ui.Button()
-      Me.sepRisorse = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviAnagraficheDatiAzienda = New Elegant.Ui.Button()
-      Me.RibbonGroup5 = New Elegant.Ui.RibbonGroup()
-      Me.DropDown1 = New Elegant.Ui.DropDown()
-      Me.PopupMenu3 = New Elegant.Ui.PopupMenu(Me.components)
-      Me.eui_cmdArchiviTabelleTitoli = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleCategorieCliente = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleAttivit‡ = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleComuni = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleNazioni = New Elegant.Ui.Button()
-      Me.Separator4 = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleUM = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleCategorieMerce = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleMagazzini = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleUbicazioni = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleScaffali = New Elegant.Ui.Button()
-      Me.sepMagazzino = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleReparti = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleMsgReparti = New Elegant.Ui.Button()
-      Me.sepReparti = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleCausaliDoc = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabellePagamenti = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleSconti = New Elegant.Ui.Button()
-      Me.Separator8 = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleListini = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleStagioni = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleTipologieCamere = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleUbicazioniCamere = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabellePosizioniCamere = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleTipoAlloggiati = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleGruppi = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleAgenzie = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviTabelleCanali = New Elegant.Ui.Button()
-      Me.sepListini = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleStatoPren = New Elegant.Ui.Button()
-      Me.sepStatoPren = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleDocIdentit‡ = New Elegant.Ui.Button()
-      Me.Separator24 = New Elegant.Ui.Separator()
-      Me.eui_cmdArchiviTabelleTipoRisorse = New Elegant.Ui.Button()
-      Me.RibbonGroup1 = New Elegant.Ui.RibbonGroup()
-      Me.eui_cmdArchiviImporta = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviBackup = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviPulizia = New Elegant.Ui.Button()
-      Me.eui_cmdArchiviCompatta = New Elegant.Ui.Button()
       Me.eui_Contabilit‡ = New Elegant.Ui.RibbonTabPage()
       Me.RibbonGroup6 = New Elegant.Ui.RibbonGroup()
       Me.eui_Contabilit‡Chiusura = New Elegant.Ui.Button()
@@ -984,181 +994,179 @@ Friend Class frmMain
       Me.RibbonTabPage5 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage7 = New Elegant.Ui.RibbonTabPage()
       Me.RibbonTabPage8 = New Elegant.Ui.RibbonTabPage()
-      Me.eui_cmdArchiviTabelleStatoNoleggi = New Elegant.Ui.Button()
-      Me.Separator25 = New Elegant.Ui.Separator()
       themeSelector = New Elegant.Ui.ThemeSelector(Me.components)
-      CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GestioneModuli.SuspendLayout
-      Me.eui_Info.SuspendLayout
-      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Guida.SuspendLayout
-      Me.BackstageViewPage1.SuspendLayout
-      CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_lstProdottiAttivati, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_StrumentiModifica.SuspendLayout
-      CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup21.SuspendLayout
-      CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_Strumenti_Magazzino, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Strumenti_Magazzino.SuspendLayout
-      CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup18.SuspendLayout
-      CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_StrumentiPeriodo.SuspendLayout
-      CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup26.SuspendLayout
-      CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_rib_Visualizza.SuspendLayout
-      CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_StrumentiDocumenti.SuspendLayout
-      CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup29.SuspendLayout
-      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup27.SuspendLayout
-      CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_StrumentiSospesiBuoni.SuspendLayout
-      CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup20.SuspendLayout
-      CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup25.SuspendLayout
-      CType(Me.RibbonTabPage9, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonTabPage9.SuspendLayout
-      CType(Me.RibbonGroup33, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup33.SuspendLayout
-      CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_PCamere_Prenotazioni.SuspendLayout
-      CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup13.SuspendLayout
-      CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup3.SuspendLayout
-      CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup4.SuspendLayout
-      CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_PCamere_Visualizza.SuspendLayout
-      CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup23.SuspendLayout
-      CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup24.SuspendLayout
-      CType(Me.RibbonTabPage6, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonTabPage6.SuspendLayout
-      CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup2.SuspendLayout
-      CType(Me.RibbonGroup31, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup31.SuspendLayout
-      CType(Me.RibbonGroup32, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup32.SuspendLayout
-      CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Gestione.SuspendLayout
-      CType(Me.RibbonGroup35, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup35.SuspendLayout
-      CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoPos.SuspendLayout
-      CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoPrenotazioni.SuspendLayout
-      CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonGroup34, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup34.SuspendLayout
-      CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup16.SuspendLayout
-      CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup30.SuspendLayout
-      CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Archivi.SuspendLayout
-      CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup17.SuspendLayout
-      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup5.SuspendLayout
-      CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup1.SuspendLayout
-      CType(Me.eui_Contabilit‡, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Contabilit‡.SuspendLayout
-      CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup6.SuspendLayout
-      CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup7.SuspendLayout
-      CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Magazzino.SuspendLayout
-      CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup8.SuspendLayout
-      CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup9.SuspendLayout
-      CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup11.SuspendLayout
-      CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup12.SuspendLayout
-      CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Visualizza.SuspendLayout
-      CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup10.SuspendLayout
-      CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Strumenti.SuspendLayout
-      CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup28.SuspendLayout
-      CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoReparti.SuspendLayout
-      CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoEtichette.SuspendLayout
-      CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup19.SuspendLayout
-      CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoTavoli.SuspendLayout
-      CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_GruppoMenu.SuspendLayout
-      CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup22.SuspendLayout
-      CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_Finestra.SuspendLayout
-      CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.RibbonGroup14.SuspendLayout
-      CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.eui_sbrMain.SuspendLayout
-      Me.StatusBarNotificationsArea1.SuspendLayout
-      Me.StatusBarPane5.SuspendLayout
-      Me.StatusBarPane8.SuspendLayout
-      Me.StatusBarControlsArea1.SuspendLayout
-      Me.StatusBarPane1.SuspendLayout
-      Me.StatusBarPane3.SuspendLayout
-      Me.StatusBarPane4.SuspendLayout
-      Me.StatusBarPane6.SuspendLayout
-      Me.StatusBarPane2.SuspendLayout
-      Me.StatusBarPane7.SuspendLayout
-      CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage3, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage7, System.ComponentModel.ISupportInitialize).BeginInit
-      CType(Me.RibbonTabPage8, System.ComponentModel.ISupportInitialize).BeginInit
-      Me.SuspendLayout
+      CType(Me.picProg, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_File, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GestioneModuli.SuspendLayout()
+      Me.eui_Info.SuspendLayout()
+      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Guida.SuspendLayout()
+      Me.BackstageViewPage1.SuspendLayout()
+      CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_lstProdottiAttivati, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_StrumentiModifica.SuspendLayout()
+      CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup21.SuspendLayout()
+      CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_Strumenti_Magazzino, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Strumenti_Magazzino.SuspendLayout()
+      CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup18.SuspendLayout()
+      CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_StrumentiPeriodo.SuspendLayout()
+      CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup26.SuspendLayout()
+      CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_rib_Visualizza.SuspendLayout()
+      CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_StrumentiDocumenti.SuspendLayout()
+      CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup29.SuspendLayout()
+      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup27.SuspendLayout()
+      CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_StrumentiSospesiBuoni.SuspendLayout()
+      CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup20.SuspendLayout()
+      CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup25.SuspendLayout()
+      CType(Me.RibbonTabPage9, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonTabPage9.SuspendLayout()
+      CType(Me.RibbonGroup33, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup33.SuspendLayout()
+      CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_PCamere_Prenotazioni.SuspendLayout()
+      CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup13.SuspendLayout()
+      CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup3.SuspendLayout()
+      CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup4.SuspendLayout()
+      CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_PCamere_Visualizza.SuspendLayout()
+      CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup23.SuspendLayout()
+      CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup24.SuspendLayout()
+      CType(Me.RibbonTabPage6, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonTabPage6.SuspendLayout()
+      CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup2.SuspendLayout()
+      CType(Me.RibbonGroup31, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup31.SuspendLayout()
+      CType(Me.RibbonGroup32, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup32.SuspendLayout()
+      CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Archivi.SuspendLayout()
+      CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup17.SuspendLayout()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup5.SuspendLayout()
+      CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup1.SuspendLayout()
+      CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Gestione.SuspendLayout()
+      CType(Me.RibbonGroup35, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup35.SuspendLayout()
+      CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoPos.SuspendLayout()
+      CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoPrenotazioni.SuspendLayout()
+      CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonGroup34, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup34.SuspendLayout()
+      CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup16.SuspendLayout()
+      CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup30.SuspendLayout()
+      CType(Me.eui_Contabilit‡, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Contabilit‡.SuspendLayout()
+      CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup6.SuspendLayout()
+      CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup7.SuspendLayout()
+      CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Magazzino.SuspendLayout()
+      CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup8.SuspendLayout()
+      CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup9.SuspendLayout()
+      CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup11.SuspendLayout()
+      CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup12.SuspendLayout()
+      CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Visualizza.SuspendLayout()
+      CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup10.SuspendLayout()
+      CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Strumenti.SuspendLayout()
+      CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup28.SuspendLayout()
+      CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoReparti.SuspendLayout()
+      CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoEtichette.SuspendLayout()
+      CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup19.SuspendLayout()
+      CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoTavoli.SuspendLayout()
+      CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_GruppoMenu.SuspendLayout()
+      CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup22.SuspendLayout()
+      CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_Finestra.SuspendLayout()
+      CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.RibbonGroup14.SuspendLayout()
+      CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_sbrMain.SuspendLayout()
+      Me.StatusBarNotificationsArea1.SuspendLayout()
+      Me.StatusBarPane5.SuspendLayout()
+      Me.StatusBarPane8.SuspendLayout()
+      Me.StatusBarControlsArea1.SuspendLayout()
+      Me.StatusBarPane1.SuspendLayout()
+      Me.StatusBarPane3.SuspendLayout()
+      Me.StatusBarPane4.SuspendLayout()
+      Me.StatusBarPane6.SuspendLayout()
+      Me.StatusBarPane2.SuspendLayout()
+      Me.StatusBarPane7.SuspendLayout()
+      CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage3, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage7, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.RibbonTabPage8, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.SuspendLayout()
       '
       'picProg
       '
@@ -1194,86 +1202,86 @@ Friend Class frmMain
       Me.lvwGestioneModuli.CheckBoxes = True
       Me.lvwGestioneModuli.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
       Me.lvwGestioneModuli.FullRowSelect = True
-      ListViewGroup11.Header = "Hospitality Solution"
-      ListViewGroup11.Name = "ListViewGroup1"
-      ListViewGroup12.Header = "Bar"
-      ListViewGroup12.Name = "ListViewGroup4"
-      ListViewGroup13.Header = "Ristorante"
-      ListViewGroup13.Name = "ListViewGroup3"
-      ListViewGroup14.Header = "Hotel"
-      ListViewGroup14.Name = "ListViewGroup5"
-      ListViewGroup15.Header = "Campeggio"
-      ListViewGroup15.Name = "ListViewGroup6"
-      ListViewGroup16.Header = "Centro balneare"
-      ListViewGroup16.Name = "ListViewGroup10"
-      ListViewGroup17.Header = "Centro benessere"
-      ListViewGroup17.Name = "ListViewGroup7"
-      ListViewGroup18.Header = "Centro sportivo"
-      ListViewGroup18.Name = "ListViewGroup8"
-      ListViewGroup19.Header = "Vendita al dettaglio"
-      ListViewGroup19.Name = "ListViewGroup9"
-      ListViewGroup20.Header = "Moduli aggiuntivi"
-      ListViewGroup20.Name = "ListViewGroup2"
-      Me.lvwGestioneModuli.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup11, ListViewGroup12, ListViewGroup13, ListViewGroup14, ListViewGroup15, ListViewGroup16, ListViewGroup17, ListViewGroup18, ListViewGroup19, ListViewGroup20})
+      ListViewGroup1.Header = "Hospitality Solution"
+      ListViewGroup1.Name = "ListViewGroup1"
+      ListViewGroup2.Header = "Bar"
+      ListViewGroup2.Name = "ListViewGroup4"
+      ListViewGroup3.Header = "Ristorante"
+      ListViewGroup3.Name = "ListViewGroup3"
+      ListViewGroup4.Header = "Hotel"
+      ListViewGroup4.Name = "ListViewGroup5"
+      ListViewGroup5.Header = "Campeggio"
+      ListViewGroup5.Name = "ListViewGroup6"
+      ListViewGroup6.Header = "Centro balneare"
+      ListViewGroup6.Name = "ListViewGroup10"
+      ListViewGroup7.Header = "Centro benessere"
+      ListViewGroup7.Name = "ListViewGroup7"
+      ListViewGroup8.Header = "Centro sportivo"
+      ListViewGroup8.Name = "ListViewGroup8"
+      ListViewGroup9.Header = "Vendita al dettaglio"
+      ListViewGroup9.Name = "ListViewGroup9"
+      ListViewGroup10.Header = "Moduli aggiuntivi"
+      ListViewGroup10.Name = "ListViewGroup2"
+      Me.lvwGestioneModuli.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4, ListViewGroup5, ListViewGroup6, ListViewGroup7, ListViewGroup8, ListViewGroup9, ListViewGroup10})
       Me.lvwGestioneModuli.HideSelection = False
-      ListViewItem20.Group = ListViewGroup11
-      ListViewItem20.StateImageIndex = 0
-      ListViewItem20.UseItemStyleForSubItems = False
-      ListViewItem21.Group = ListViewGroup12
-      ListViewItem21.StateImageIndex = 0
-      ListViewItem21.UseItemStyleForSubItems = False
-      ListViewItem22.Group = ListViewGroup13
-      ListViewItem22.StateImageIndex = 0
-      ListViewItem22.UseItemStyleForSubItems = False
-      ListViewItem23.Group = ListViewGroup13
-      ListViewItem23.StateImageIndex = 0
-      ListViewItem23.UseItemStyleForSubItems = False
-      ListViewItem24.Group = ListViewGroup13
-      ListViewItem24.StateImageIndex = 0
-      ListViewItem24.UseItemStyleForSubItems = False
-      ListViewItem25.Group = ListViewGroup13
-      ListViewItem25.StateImageIndex = 0
-      ListViewItem25.UseItemStyleForSubItems = False
-      ListViewItem26.Group = ListViewGroup14
-      ListViewItem26.StateImageIndex = 0
-      ListViewItem26.UseItemStyleForSubItems = False
-      ListViewItem27.Group = ListViewGroup15
-      ListViewItem27.StateImageIndex = 0
-      ListViewItem27.UseItemStyleForSubItems = False
-      ListViewItem28.Group = ListViewGroup16
-      ListViewItem28.StateImageIndex = 0
-      ListViewItem28.UseItemStyleForSubItems = False
-      ListViewItem29.Group = ListViewGroup17
-      ListViewItem29.StateImageIndex = 0
-      ListViewItem29.UseItemStyleForSubItems = False
-      ListViewItem30.Group = ListViewGroup18
-      ListViewItem30.StateImageIndex = 0
-      ListViewItem30.UseItemStyleForSubItems = False
-      ListViewItem31.Group = ListViewGroup19
-      ListViewItem31.StateImageIndex = 0
-      ListViewItem31.UseItemStyleForSubItems = False
-      ListViewItem32.Group = ListViewGroup19
-      ListViewItem32.StateImageIndex = 0
-      ListViewItem32.UseItemStyleForSubItems = False
-      ListViewItem33.Group = ListViewGroup20
-      ListViewItem33.StateImageIndex = 0
-      ListViewItem33.UseItemStyleForSubItems = False
-      ListViewItem34.Group = ListViewGroup20
-      ListViewItem34.StateImageIndex = 0
-      ListViewItem34.UseItemStyleForSubItems = False
-      ListViewItem35.Group = ListViewGroup20
-      ListViewItem35.StateImageIndex = 0
-      ListViewItem35.UseItemStyleForSubItems = False
-      ListViewItem36.Group = ListViewGroup20
-      ListViewItem36.StateImageIndex = 0
-      ListViewItem36.UseItemStyleForSubItems = False
-      ListViewItem37.Group = ListViewGroup20
-      ListViewItem37.StateImageIndex = 0
-      ListViewItem37.UseItemStyleForSubItems = False
-      ListViewItem38.Group = ListViewGroup20
-      ListViewItem38.StateImageIndex = 0
-      ListViewItem38.UseItemStyleForSubItems = False
-      Me.lvwGestioneModuli.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem20, ListViewItem21, ListViewItem22, ListViewItem23, ListViewItem24, ListViewItem25, ListViewItem26, ListViewItem27, ListViewItem28, ListViewItem29, ListViewItem30, ListViewItem31, ListViewItem32, ListViewItem33, ListViewItem34, ListViewItem35, ListViewItem36, ListViewItem37, ListViewItem38})
+      ListViewItem1.Group = ListViewGroup1
+      ListViewItem1.StateImageIndex = 0
+      ListViewItem1.UseItemStyleForSubItems = False
+      ListViewItem2.Group = ListViewGroup2
+      ListViewItem2.StateImageIndex = 0
+      ListViewItem2.UseItemStyleForSubItems = False
+      ListViewItem3.Group = ListViewGroup3
+      ListViewItem3.StateImageIndex = 0
+      ListViewItem3.UseItemStyleForSubItems = False
+      ListViewItem4.Group = ListViewGroup3
+      ListViewItem4.StateImageIndex = 0
+      ListViewItem4.UseItemStyleForSubItems = False
+      ListViewItem5.Group = ListViewGroup3
+      ListViewItem5.StateImageIndex = 0
+      ListViewItem5.UseItemStyleForSubItems = False
+      ListViewItem6.Group = ListViewGroup3
+      ListViewItem6.StateImageIndex = 0
+      ListViewItem6.UseItemStyleForSubItems = False
+      ListViewItem7.Group = ListViewGroup4
+      ListViewItem7.StateImageIndex = 0
+      ListViewItem7.UseItemStyleForSubItems = False
+      ListViewItem8.Group = ListViewGroup5
+      ListViewItem8.StateImageIndex = 0
+      ListViewItem8.UseItemStyleForSubItems = False
+      ListViewItem9.Group = ListViewGroup6
+      ListViewItem9.StateImageIndex = 0
+      ListViewItem9.UseItemStyleForSubItems = False
+      ListViewItem10.Group = ListViewGroup7
+      ListViewItem10.StateImageIndex = 0
+      ListViewItem10.UseItemStyleForSubItems = False
+      ListViewItem11.Group = ListViewGroup8
+      ListViewItem11.StateImageIndex = 0
+      ListViewItem11.UseItemStyleForSubItems = False
+      ListViewItem12.Group = ListViewGroup9
+      ListViewItem12.StateImageIndex = 0
+      ListViewItem12.UseItemStyleForSubItems = False
+      ListViewItem13.Group = ListViewGroup9
+      ListViewItem13.StateImageIndex = 0
+      ListViewItem13.UseItemStyleForSubItems = False
+      ListViewItem14.Group = ListViewGroup10
+      ListViewItem14.StateImageIndex = 0
+      ListViewItem14.UseItemStyleForSubItems = False
+      ListViewItem15.Group = ListViewGroup10
+      ListViewItem15.StateImageIndex = 0
+      ListViewItem15.UseItemStyleForSubItems = False
+      ListViewItem16.Group = ListViewGroup10
+      ListViewItem16.StateImageIndex = 0
+      ListViewItem16.UseItemStyleForSubItems = False
+      ListViewItem17.Group = ListViewGroup10
+      ListViewItem17.StateImageIndex = 0
+      ListViewItem17.UseItemStyleForSubItems = False
+      ListViewItem18.Group = ListViewGroup10
+      ListViewItem18.StateImageIndex = 0
+      ListViewItem18.UseItemStyleForSubItems = False
+      ListViewItem19.Group = ListViewGroup10
+      ListViewItem19.StateImageIndex = 0
+      ListViewItem19.UseItemStyleForSubItems = False
+      Me.lvwGestioneModuli.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10, ListViewItem11, ListViewItem12, ListViewItem13, ListViewItem14, ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18, ListViewItem19})
       Me.lvwGestioneModuli.Location = New System.Drawing.Point(0, 1)
       Me.lvwGestioneModuli.MultiSelect = False
       Me.lvwGestioneModuli.Name = "lvwGestioneModuli"
@@ -1369,7 +1377,7 @@ Friend Class frmMain
       Me.eui_File.ApplicationButtonText = "File"
       Me.eui_File.BackstageView = Me.eui_BackstageView1
       Me.eui_File.ContextualTabGroups.AddRange(New Elegant.Ui.RibbonContextualTabGroup() {Me.rtgStrumentiModifica, Me.rtgGestionaleAmica, Me.rtgPlanningCamere, Me.rtgNoleggio})
-      Me.eui_File.CurrentTabPage = Me.eui_Archivi
+      Me.eui_File.CurrentTabPage = Me.eui_Gestione
       Me.eui_File.Dock = System.Windows.Forms.DockStyle.Top
       Me.eui_File.HelpButtonImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.HelpButtonImages.Images"), System.Drawing.Image))})
       Me.eui_File.HelpButtonVisible = True
@@ -1378,7 +1386,7 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1191, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1215, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilit‡, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
@@ -3859,30 +3867,45 @@ Friend Class frmMain
       Me.RibbonTabPage6.KeyTip = Nothing
       Me.RibbonTabPage6.Location = New System.Drawing.Point(0, 0)
       Me.RibbonTabPage6.Name = "RibbonTabPage6"
-      Me.RibbonTabPage6.Size = New System.Drawing.Size(1143, 99)
+      Me.RibbonTabPage6.Size = New System.Drawing.Size(1199, 99)
       Me.RibbonTabPage6.TabIndex = 0
       Me.RibbonTabPage6.Text = "Noleggio"
       '
       'RibbonGroup2
       '
+      Me.RibbonGroup2.Controls.Add(Me.eui_cmdNoleggio_Noleggia)
       Me.RibbonGroup2.Controls.Add(Me.eui_cmdNoleggio_Rientra)
       Me.RibbonGroup2.DialogLauncherButtonVisible = False
       Me.RibbonGroup2.Dock = System.Windows.Forms.DockStyle.Fill
       Me.RibbonGroup2.Location = New System.Drawing.Point(5, 1)
       Me.RibbonGroup2.Name = "RibbonGroup2"
-      Me.RibbonGroup2.Size = New System.Drawing.Size(69, 94)
+      Me.RibbonGroup2.Size = New System.Drawing.Size(105, 94)
       Me.RibbonGroup2.TabIndex = 0
       Me.RibbonGroup2.Text = "Noleggio"
+      '
+      'eui_cmdNoleggio_Noleggia
+      '
+      Me.eui_cmdNoleggio_Noleggia.Id = "40111d48-8e02-415c-baaa-d5b2c4da77ab"
+      Me.eui_cmdNoleggio_Noleggia.KeyTip = "N"
+      Me.eui_cmdNoleggio_Noleggia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNoleggio_Noleggia.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdNoleggio_Noleggia.Location = New System.Drawing.Point(26, 2)
+      Me.eui_cmdNoleggio_Noleggia.Name = "eui_cmdNoleggio_Noleggia"
+      Me.eui_cmdNoleggio_Noleggia.ScreenTip.Caption = "Noleggia"
+      Me.eui_cmdNoleggio_Noleggia.ScreenTip.Text = "Effettua il noleggio dell'elemento selezionato nel'elenco Noleggi."
+      Me.eui_cmdNoleggio_Noleggia.Size = New System.Drawing.Size(51, 0)
+      Me.eui_cmdNoleggio_Noleggia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNoleggio_Noleggia.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdNoleggio_Noleggia.TabIndex = 9
+      Me.eui_cmdNoleggio_Noleggia.Text = "Noleggia"
       '
       'eui_cmdNoleggio_Rientra
       '
       Me.eui_cmdNoleggio_Rientra.Id = "00b6e05c-57f7-47f4-816f-6e6e8ec21728"
       Me.eui_cmdNoleggio_Rientra.KeyTip = "R"
       Me.eui_cmdNoleggio_Rientra.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNoleggio_Rientra.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdNoleggio_Rientra.Location = New System.Drawing.Point(12, 2)
+      Me.eui_cmdNoleggio_Rientra.Location = New System.Drawing.Point(26, 2)
       Me.eui_cmdNoleggio_Rientra.Name = "eui_cmdNoleggio_Rientra"
       Me.eui_cmdNoleggio_Rientra.ScreenTip.Caption = "Rientra"
-      Me.eui_cmdNoleggio_Rientra.ScreenTip.Text = "Effettua il rientro dell'articolo noleggiato."
+      Me.eui_cmdNoleggio_Rientra.ScreenTip.Text = "Effettua il rientro dell'elemento selezionato nell'elenco Noleggi."
       Me.eui_cmdNoleggio_Rientra.Size = New System.Drawing.Size(43, 0)
       Me.eui_cmdNoleggio_Rientra.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNoleggio_Rientra.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdNoleggio_Rientra.TabIndex = 8
@@ -3897,7 +3920,7 @@ Friend Class frmMain
       Me.RibbonGroup31.Controls.Add(Me.eui_cmdNoleggio_VisTerminati)
       Me.RibbonGroup31.DialogLauncherButtonVisible = False
       Me.RibbonGroup31.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.RibbonGroup31.Location = New System.Drawing.Point(74, 1)
+      Me.RibbonGroup31.Location = New System.Drawing.Point(110, 1)
       Me.RibbonGroup31.Name = "RibbonGroup31"
       Me.RibbonGroup31.Size = New System.Drawing.Size(202, 94)
       Me.RibbonGroup31.TabIndex = 1
@@ -3978,7 +4001,7 @@ Friend Class frmMain
       Me.RibbonGroup32.Controls.Add(Me.eui_cmdNoleggio_ScadDalAl)
       Me.RibbonGroup32.DialogLauncherButtonVisible = False
       Me.RibbonGroup32.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.RibbonGroup32.Location = New System.Drawing.Point(276, 1)
+      Me.RibbonGroup32.Location = New System.Drawing.Point(312, 1)
       Me.RibbonGroup32.Name = "RibbonGroup32"
       Me.RibbonGroup32.Size = New System.Drawing.Size(190, 94)
       Me.RibbonGroup32.TabIndex = 2
@@ -4050,6 +4073,846 @@ Friend Class frmMain
       Me.eui_cmdNoleggio_ScadDalAl.TabIndex = 15
       Me.eui_cmdNoleggio_ScadDalAl.Text = "Dal... Al..."
       '
+      'eui_Archivi
+      '
+      Me.eui_Archivi.Controls.Add(Me.RibbonGroup17)
+      Me.eui_Archivi.Controls.Add(Me.RibbonGroup5)
+      Me.eui_Archivi.Controls.Add(Me.RibbonGroup1)
+      Me.eui_Archivi.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.eui_Archivi.KeyTip = "A"
+      Me.eui_Archivi.Location = New System.Drawing.Point(0, 0)
+      Me.eui_Archivi.Name = "eui_Archivi"
+      Me.eui_Archivi.Size = New System.Drawing.Size(1215, 99)
+      Me.eui_Archivi.TabIndex = 0
+      Me.eui_Archivi.Text = "Archivi"
+      '
+      'RibbonGroup17
+      '
+      Me.RibbonGroup17.Controls.Add(Me.DropDown3)
+      Me.RibbonGroup17.DialogLauncherButtonVisible = False
+      Me.RibbonGroup17.Location = New System.Drawing.Point(5, 1)
+      Me.RibbonGroup17.Name = "RibbonGroup17"
+      Me.RibbonGroup17.Size = New System.Drawing.Size(85, 94)
+      Me.RibbonGroup17.TabIndex = 0
+      Me.RibbonGroup17.Text = "Anagrafiche"
+      '
+      'DropDown3
+      '
+      Me.DropDown3.Id = "de7387a9-00fc-4dc9-b492-b909b5b8eb2b"
+      Me.DropDown3.KeyTip = "A"
+      Me.DropDown3.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown3.LargeImages.Images"), System.Drawing.Image))})
+      Me.DropDown3.Location = New System.Drawing.Point(4, 2)
+      Me.DropDown3.Name = "DropDown3"
+      Me.DropDown3.Popup = Me.PopupMenu1
+      Me.DropDown3.ScreenTip.Caption = "Seleziona anagrafiche"
+      Me.DropDown3.ScreenTip.Text = "Consente di selezionare le anagrafiche, ad esempio i clienti o i piatti."
+      Me.DropDown3.Size = New System.Drawing.Size(76, 72)
+      Me.DropDown3.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown3.SmallImages.Images"), System.Drawing.Image))})
+      Me.DropDown3.TabIndex = 0
+      Me.DropDown3.Text = "Seleziona anagrafiche"
+      '
+      'PopupMenu1
+      '
+      Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviAnagraficheClienti, Me.eui_cmdArchiviAnagraficheFornitori, Me.eui_cmdArchiviAnagraficheCamerieri, Me.eui_cmdArchiviAnagraficheAgenzieCamerieri, Me.eui_cmdArchiviAnagraficheAziende, Me.Separator1, Me.eui_cmdArchiviAnagraficheCamere, Me.sepCamere, Me.eui_cmdArchiviAnagraficheSale, Me.eui_cmdArchiviAnagraficheTavoli, Me.sepRistorante, Me.eui_cmdArchiviAnagrafichePiatti, Me.eui_cmdArchiviAnagraficheCategoriePiatti, Me.sepBar, Me.eui_cmdArchiviAnagraficheRisorse, Me.eui_cmdArchiviAnagraficheUtilizzoRisorse, Me.eui_cmdArchiviAnagraficheAccServ, Me.sepRisorse, Me.eui_cmdArchiviAnagraficheNoleggi, Me.eui_cmdArchiviAnagraficheCausaliNoleggio, Me.sepNoleggi, Me.eui_cmdArchiviAnagraficheDatiAzienda})
+      Me.PopupMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu1.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdArchiviAnagraficheClienti
+      '
+      Me.eui_cmdArchiviAnagraficheClienti.Id = "ff38ea5c-ebcb-49d7-a76b-ba53731b89b5"
+      Me.eui_cmdArchiviAnagraficheClienti.KeyTip = "C"
+      Me.eui_cmdArchiviAnagraficheClienti.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdArchiviAnagraficheClienti.Name = "eui_cmdArchiviAnagraficheClienti"
+      Me.eui_cmdArchiviAnagraficheClienti.ScreenTip.Caption = "Clienti (F7)"
+      Me.eui_cmdArchiviAnagraficheClienti.ScreenTip.Text = "Apre l'anagrafica clienti."
+      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheClienti, "F7")
+      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheClienti, System.Windows.Forms.Keys.F7)
+      Me.eui_cmdArchiviAnagraficheClienti.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheClienti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheClienti.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviAnagraficheClienti.TabIndex = 7
+      Me.eui_cmdArchiviAnagraficheClienti.Text = "Clienti"
+      '
+      'eui_cmdArchiviAnagraficheFornitori
+      '
+      Me.eui_cmdArchiviAnagraficheFornitori.Id = "6237fc13-8f83-4df1-a458-d21627406548"
+      Me.eui_cmdArchiviAnagraficheFornitori.KeyTip = "F"
+      Me.eui_cmdArchiviAnagraficheFornitori.Location = New System.Drawing.Point(2, 25)
+      Me.eui_cmdArchiviAnagraficheFornitori.Name = "eui_cmdArchiviAnagraficheFornitori"
+      Me.eui_cmdArchiviAnagraficheFornitori.ScreenTip.Caption = "Fornitori (F8)"
+      Me.eui_cmdArchiviAnagraficheFornitori.ScreenTip.Text = "Apre l'anagrafica fornitori."
+      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheFornitori, "F8")
+      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheFornitori, System.Windows.Forms.Keys.F8)
+      Me.eui_cmdArchiviAnagraficheFornitori.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheFornitori.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheFornitori.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviAnagraficheFornitori.TabIndex = 8
+      Me.eui_cmdArchiviAnagraficheFornitori.Text = "Fornitori"
+      '
+      'eui_cmdArchiviAnagraficheCamerieri
+      '
+      Me.eui_cmdArchiviAnagraficheCamerieri.Id = "660d45f9-e9a2-4e1c-8eae-f95f9fead737"
+      Me.eui_cmdArchiviAnagraficheCamerieri.KeyTip = "M"
+      Me.eui_cmdArchiviAnagraficheCamerieri.Location = New System.Drawing.Point(2, 48)
+      Me.eui_cmdArchiviAnagraficheCamerieri.Name = "eui_cmdArchiviAnagraficheCamerieri"
+      Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Caption = "Camerieri"
+      Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Text = "Apre l'anagrafica camerieri."
+      Me.eui_cmdArchiviAnagraficheCamerieri.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviAnagraficheCamerieri.TabIndex = 9
+      Me.eui_cmdArchiviAnagraficheCamerieri.Text = "Camerieri"
+      '
+      'eui_cmdArchiviAnagraficheAgenzieCamerieri
+      '
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Id = "5023a6ac-3d20-4916-9b7c-43f82a18ca7a"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.KeyTip = "AC"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Name = "eui_cmdArchiviAnagraficheAgenzieCamerieri"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Caption = "Agenzie Camerieri"
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Text = "Apre l'anagrafica agenzie camerieri."
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.TabIndex = 30
+      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Text = "Agenzie camerieri"
+      '
+      'eui_cmdArchiviAnagraficheAziende
+      '
+      Me.eui_cmdArchiviAnagraficheAziende.Id = "d627c2b0-5c0b-4fbe-847b-2c76918e6099"
+      Me.eui_cmdArchiviAnagraficheAziende.KeyTip = "A"
+      Me.eui_cmdArchiviAnagraficheAziende.Location = New System.Drawing.Point(2, 94)
+      Me.eui_cmdArchiviAnagraficheAziende.Name = "eui_cmdArchiviAnagraficheAziende"
+      Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Caption = "Aziende (F9)"
+      Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Text = "Apre l'anagrafica aziende."
+      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheAziende, "F9")
+      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheAziende, System.Windows.Forms.Keys.F9)
+      Me.eui_cmdArchiviAnagraficheAziende.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheAziende.TabIndex = 10
+      Me.eui_cmdArchiviAnagraficheAziende.Text = "Aziende"
+      '
+      'Separator1
+      '
+      Me.Separator1.Id = "ae1faf3f-271d-42bb-a5f7-a585aa02d3e4"
+      Me.Separator1.Location = New System.Drawing.Point(2, 117)
+      Me.Separator1.Name = "Separator1"
+      Me.Separator1.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator1.Size = New System.Drawing.Size(246, 5)
+      Me.Separator1.TabIndex = 11
+      Me.Separator1.Text = "Separator1"
+      '
+      'eui_cmdArchiviAnagraficheCamere
+      '
+      Me.eui_cmdArchiviAnagraficheCamere.Id = "2285335a-10a4-41b1-8c88-dd45f2c538b7"
+      Me.eui_cmdArchiviAnagraficheCamere.KeyTip = "R"
+      Me.eui_cmdArchiviAnagraficheCamere.Location = New System.Drawing.Point(2, 122)
+      Me.eui_cmdArchiviAnagraficheCamere.Name = "eui_cmdArchiviAnagraficheCamere"
+      Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Caption = "Camere"
+      Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Text = "Apre l'anagrafica camere."
+      Me.eui_cmdArchiviAnagraficheCamere.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheCamere.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamere.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviAnagraficheCamere.TabIndex = 25
+      Me.eui_cmdArchiviAnagraficheCamere.Text = "Camere"
+      '
+      'sepCamere
+      '
+      Me.sepCamere.Id = "d1d7164d-8a39-4dca-8dc1-5152d362dd07"
+      Me.sepCamere.Location = New System.Drawing.Point(2, 145)
+      Me.sepCamere.Name = "sepCamere"
+      Me.sepCamere.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepCamere.Size = New System.Drawing.Size(246, 5)
+      Me.sepCamere.TabIndex = 26
+      Me.sepCamere.Text = "Separator2"
+      '
+      'eui_cmdArchiviAnagraficheSale
+      '
+      Me.eui_cmdArchiviAnagraficheSale.Id = "c51d3ced-326d-4a9e-bcc1-2ff2e4b39f32"
+      Me.eui_cmdArchiviAnagraficheSale.KeyTip = "S"
+      Me.eui_cmdArchiviAnagraficheSale.Location = New System.Drawing.Point(2, 150)
+      Me.eui_cmdArchiviAnagraficheSale.Name = "eui_cmdArchiviAnagraficheSale"
+      Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Caption = "Sale"
+      Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Text = "Apre l'anagrafica sale."
+      Me.eui_cmdArchiviAnagraficheSale.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheSale.TabIndex = 12
+      Me.eui_cmdArchiviAnagraficheSale.Text = "Sale"
+      '
+      'eui_cmdArchiviAnagraficheTavoli
+      '
+      Me.eui_cmdArchiviAnagraficheTavoli.Id = "bf3ffa0f-88e5-4346-82eb-8ee7ffae3059"
+      Me.eui_cmdArchiviAnagraficheTavoli.KeyTip = "T"
+      Me.eui_cmdArchiviAnagraficheTavoli.Location = New System.Drawing.Point(2, 173)
+      Me.eui_cmdArchiviAnagraficheTavoli.Name = "eui_cmdArchiviAnagraficheTavoli"
+      Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Caption = "Tavoli"
+      Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Text = "Apre l'anagrafica tavoli."
+      Me.eui_cmdArchiviAnagraficheTavoli.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheTavoli.TabIndex = 13
+      Me.eui_cmdArchiviAnagraficheTavoli.Text = "Tavoli"
+      '
+      'sepRistorante
+      '
+      Me.sepRistorante.Id = "f61803d6-e6a6-4be0-9028-0cfb5f804bac"
+      Me.sepRistorante.Location = New System.Drawing.Point(2, 196)
+      Me.sepRistorante.Name = "sepRistorante"
+      Me.sepRistorante.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepRistorante.Size = New System.Drawing.Size(246, 5)
+      Me.sepRistorante.TabIndex = 14
+      Me.sepRistorante.Text = "Separator2"
+      '
+      'eui_cmdArchiviAnagrafichePiatti
+      '
+      Me.eui_cmdArchiviAnagrafichePiatti.Id = "236f82b9-b53d-46a1-97cc-af70aa9927d8"
+      Me.eui_cmdArchiviAnagrafichePiatti.KeyTip = "P"
+      Me.eui_cmdArchiviAnagrafichePiatti.Location = New System.Drawing.Point(2, 201)
+      Me.eui_cmdArchiviAnagrafichePiatti.Name = "eui_cmdArchiviAnagrafichePiatti"
+      Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Caption = "Piatti (F10)"
+      Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Text = "Apre l'anagrafica piatti."
+      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagrafichePiatti, "F10")
+      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagrafichePiatti, System.Windows.Forms.Keys.F10)
+      Me.eui_cmdArchiviAnagrafichePiatti.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagrafichePiatti.TabIndex = 15
+      Me.eui_cmdArchiviAnagrafichePiatti.Text = "Piatti"
+      '
+      'eui_cmdArchiviAnagraficheCategoriePiatti
+      '
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Id = "73b8f15e-bf89-43b5-9664-fa35b7cd6174"
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.KeyTip = "G"
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Location = New System.Drawing.Point(2, 224)
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Name = "eui_cmdArchiviAnagraficheCategoriePiatti"
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Caption = "Categorie piatti"
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Text = "Apre l'anagrafica categorie piatti."
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.TabIndex = 16
+      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Text = "Categorie piatti"
+      '
+      'sepBar
+      '
+      Me.sepBar.Id = "8eefe9cb-b04f-472c-97cd-066be078c7e1"
+      Me.sepBar.Location = New System.Drawing.Point(2, 247)
+      Me.sepBar.Name = "sepBar"
+      Me.sepBar.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepBar.Size = New System.Drawing.Size(246, 5)
+      Me.sepBar.TabIndex = 17
+      Me.sepBar.Text = "Separator3"
+      '
+      'eui_cmdArchiviAnagraficheRisorse
+      '
+      Me.eui_cmdArchiviAnagraficheRisorse.Id = "f4afaa9e-522d-4019-a285-029c6ecb50ca"
+      Me.eui_cmdArchiviAnagraficheRisorse.KeyTip = "O"
+      Me.eui_cmdArchiviAnagraficheRisorse.Location = New System.Drawing.Point(2, 252)
+      Me.eui_cmdArchiviAnagraficheRisorse.Name = "eui_cmdArchiviAnagraficheRisorse"
+      Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Caption = "Risorse"
+      Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Text = "Apre l'anagrafica risorse."
+      Me.eui_cmdArchiviAnagraficheRisorse.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheRisorse.TabIndex = 20
+      Me.eui_cmdArchiviAnagraficheRisorse.Text = "Risorse sportive"
+      '
+      'eui_cmdArchiviAnagraficheUtilizzoRisorse
+      '
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Id = "d0ff87ef-a533-4552-b5c3-56466108fb2d"
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.KeyTip = "U"
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Location = New System.Drawing.Point(2, 275)
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Name = "eui_cmdArchiviAnagraficheUtilizzoRisorse"
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Caption = "Tipologie di utilizzo Risorse"
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Text = "Apre l'anagrafica tipologie di utilizzo risorse."
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.TabIndex = 28
+      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Text = "Tipologie di utilizzo Risorse sportive"
+      '
+      'eui_cmdArchiviAnagraficheAccServ
+      '
+      Me.eui_cmdArchiviAnagraficheAccServ.Id = "8b4cd28c-31bb-4633-a134-990bf805937e"
+      Me.eui_cmdArchiviAnagraficheAccServ.KeyTip = "E"
+      Me.eui_cmdArchiviAnagraficheAccServ.Location = New System.Drawing.Point(2, 298)
+      Me.eui_cmdArchiviAnagraficheAccServ.Name = "eui_cmdArchiviAnagraficheAccServ"
+      Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Caption = "Accessori e Servizi"
+      Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Text = "Apre l'anagrafica accessori e servizi."
+      Me.eui_cmdArchiviAnagraficheAccServ.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheAccServ.TabIndex = 23
+      Me.eui_cmdArchiviAnagraficheAccServ.Text = "Accessori e Servizi"
+      '
+      'sepRisorse
+      '
+      Me.sepRisorse.Id = "62d476ca-61d8-43e2-bb9f-94c1dd1afe65"
+      Me.sepRisorse.Location = New System.Drawing.Point(2, 321)
+      Me.sepRisorse.Name = "sepRisorse"
+      Me.sepRisorse.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepRisorse.Size = New System.Drawing.Size(246, 5)
+      Me.sepRisorse.TabIndex = 21
+      Me.sepRisorse.Text = "Separator7"
+      '
+      'eui_cmdArchiviAnagraficheNoleggi
+      '
+      Me.eui_cmdArchiviAnagraficheNoleggi.Id = "f1de1bd2-7fd4-4005-a63a-1ce3820ba49e"
+      Me.eui_cmdArchiviAnagraficheNoleggi.KeyTip = "N"
+      Me.eui_cmdArchiviAnagraficheNoleggi.Location = New System.Drawing.Point(2, 326)
+      Me.eui_cmdArchiviAnagraficheNoleggi.Name = "eui_cmdArchiviAnagraficheNoleggi"
+      Me.eui_cmdArchiviAnagraficheNoleggi.ScreenTip.Caption = "Noleggi"
+      Me.eui_cmdArchiviAnagraficheNoleggi.ScreenTip.Text = "Apre l'anagrafica noleggi."
+      Me.eui_cmdArchiviAnagraficheNoleggi.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheNoleggi.TabIndex = 32
+      Me.eui_cmdArchiviAnagraficheNoleggi.Text = "Noleggi"
+      '
+      'eui_cmdArchiviAnagraficheCausaliNoleggio
+      '
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.Id = "2ed023a3-378d-4015-9e4a-4b7dc6f27db3"
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.KeyTip = "CN"
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.Location = New System.Drawing.Point(2, 349)
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.Name = "eui_cmdArchiviAnagraficheCausaliNoleggio"
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.ScreenTip.Caption = "Causali noleggio"
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.ScreenTip.Text = "Apre l'anagrafica Causali noleggio"
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.TabIndex = 33
+      Me.eui_cmdArchiviAnagraficheCausaliNoleggio.Text = "Causali noleggio"
+      '
+      'sepNoleggi
+      '
+      Me.sepNoleggi.Id = "23d6ede3-7b51-4254-bcb6-e23e5e44845f"
+      Me.sepNoleggi.Location = New System.Drawing.Point(2, 372)
+      Me.sepNoleggi.Name = "sepNoleggi"
+      Me.sepNoleggi.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepNoleggi.Size = New System.Drawing.Size(246, 5)
+      Me.sepNoleggi.TabIndex = 34
+      Me.sepNoleggi.Text = "Separator26"
+      '
+      'eui_cmdArchiviAnagraficheDatiAzienda
+      '
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Id = "bb85a2af-cff1-4ee8-aa72-90a4caeedcef"
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.KeyTip = "D"
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Location = New System.Drawing.Point(2, 377)
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Name = "eui_cmdArchiviAnagraficheDatiAzienda"
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Caption = "Dati generali azienda"
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Text = "Apre l'anagrafica dati generali azienda."
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Size = New System.Drawing.Size(246, 23)
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.TabIndex = 18
+      Me.eui_cmdArchiviAnagraficheDatiAzienda.Text = "Dati generali azienda"
+      '
+      'RibbonGroup5
+      '
+      Me.RibbonGroup5.Controls.Add(Me.DropDown1)
+      Me.RibbonGroup5.DialogLauncherButtonVisible = False
+      Me.RibbonGroup5.Location = New System.Drawing.Point(90, 1)
+      Me.RibbonGroup5.Name = "RibbonGroup5"
+      Me.RibbonGroup5.Size = New System.Drawing.Size(64, 94)
+      Me.RibbonGroup5.TabIndex = 1
+      Me.RibbonGroup5.Text = "Tabelle"
+      '
+      'DropDown1
+      '
+      Me.DropDown1.Id = "05af90bd-5a7e-446a-822f-c18821da6945"
+      Me.DropDown1.KeyTip = "T"
+      Me.DropDown1.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown1.LargeImages.Images"), System.Drawing.Image))})
+      Me.DropDown1.Location = New System.Drawing.Point(4, 2)
+      Me.DropDown1.Name = "DropDown1"
+      Me.DropDown1.Popup = Me.PopupMenu3
+      Me.DropDown1.ScreenTip.Caption = "Seleziona tabelle"
+      Me.DropDown1.ScreenTip.Text = "Consente di selezionare le tabelle dati, ad esempio nazioni o reparti."
+      Me.DropDown1.Size = New System.Drawing.Size(55, 72)
+      Me.DropDown1.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown1.SmallImages.Images"), System.Drawing.Image))})
+      Me.DropDown1.TabIndex = 0
+      Me.DropDown1.Text = "Seleziona tabelle"
+      '
+      'PopupMenu3
+      '
+      Me.PopupMenu3.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviTabelleTitoli, Me.eui_cmdArchiviTabelleCategorieCliente, Me.eui_cmdArchiviTabelleAttivit‡, Me.eui_cmdArchiviTabelleComuni, Me.eui_cmdArchiviTabelleNazioni, Me.Separator4, Me.eui_cmdArchiviTabelleUM, Me.eui_cmdArchiviTabelleCategorieMerce, Me.eui_cmdArchiviTabelleMagazzini, Me.eui_cmdArchiviTabelleUbicazioni, Me.eui_cmdArchiviTabelleScaffali, Me.sepMagazzino, Me.eui_cmdArchiviTabelleReparti, Me.eui_cmdArchiviTabelleMsgReparti, Me.sepReparti, Me.eui_cmdArchiviTabelleCausaliDoc, Me.eui_cmdArchiviTabellePagamenti, Me.eui_cmdArchiviTabelleSconti, Me.Separator8, Me.eui_cmdArchiviTabelleListini, Me.eui_cmdArchiviTabelleStagioni, Me.eui_cmdArchiviTabelleTipologieCamere, Me.eui_cmdArchiviTabelleUbicazioniCamere, Me.eui_cmdArchiviTabellePosizioniCamere, Me.eui_cmdArchiviTabelleTipoAlloggiati, Me.eui_cmdArchiviTabelleGruppi, Me.eui_cmdArchiviTabelleAgenzie, Me.eui_cmdArchiviTabelleCanali, Me.sepListini, Me.eui_cmdArchiviTabelleStatoPren, Me.sepStatoPren, Me.eui_cmdArchiviTabelleDocIdentit‡, Me.Separator24, Me.eui_cmdArchiviTabelleTipoRisorse, Me.Separator25, Me.eui_cmdArchiviTabelleStatoNoleggi})
+      Me.PopupMenu3.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
+      Me.PopupMenu3.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
+      Me.PopupMenu3.Size = New System.Drawing.Size(100, 100)
+      '
+      'eui_cmdArchiviTabelleTitoli
+      '
+      Me.eui_cmdArchiviTabelleTitoli.Id = "38f80de3-a8fd-4772-abfd-320a5fa0c961"
+      Me.eui_cmdArchiviTabelleTitoli.KeyTip = "F"
+      Me.eui_cmdArchiviTabelleTitoli.Location = New System.Drawing.Point(2, 2)
+      Me.eui_cmdArchiviTabelleTitoli.Name = "eui_cmdArchiviTabelleTitoli"
+      Me.eui_cmdArchiviTabelleTitoli.ScreenTip.Caption = "Forme di cortesia"
+      Me.eui_cmdArchiviTabelleTitoli.ScreenTip.Text = "Apre la tabella dati forme di cortesia."
+      Me.eui_cmdArchiviTabelleTitoli.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleTitoli.TabIndex = 3
+      Me.eui_cmdArchiviTabelleTitoli.Text = "Forme di cortesia"
+      '
+      'eui_cmdArchiviTabelleCategorieCliente
+      '
+      Me.eui_cmdArchiviTabelleCategorieCliente.Id = "47a5ad0d-c307-428b-9a0f-dc234eb2d0d2"
+      Me.eui_cmdArchiviTabelleCategorieCliente.KeyTip = "C"
+      Me.eui_cmdArchiviTabelleCategorieCliente.Location = New System.Drawing.Point(2, 25)
+      Me.eui_cmdArchiviTabelleCategorieCliente.Name = "eui_cmdArchiviTabelleCategorieCliente"
+      Me.eui_cmdArchiviTabelleCategorieCliente.ScreenTip.Caption = "Categorie cliente"
+      Me.eui_cmdArchiviTabelleCategorieCliente.ScreenTip.Text = "Apre la tabella dati categorie cliente."
+      Me.eui_cmdArchiviTabelleCategorieCliente.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleCategorieCliente.TabIndex = 4
+      Me.eui_cmdArchiviTabelleCategorieCliente.Text = "Categorie cliente"
+      '
+      'eui_cmdArchiviTabelleAttivit‡
+      '
+      Me.eui_cmdArchiviTabelleAttivit‡.Id = "a2261b9a-082e-4bc5-aac3-60a8e9ca639c"
+      Me.eui_cmdArchiviTabelleAttivit‡.KeyTip = "A"
+      Me.eui_cmdArchiviTabelleAttivit‡.Location = New System.Drawing.Point(2, 48)
+      Me.eui_cmdArchiviTabelleAttivit‡.Name = "eui_cmdArchiviTabelleAttivit‡"
+      Me.eui_cmdArchiviTabelleAttivit‡.ScreenTip.Caption = "Attivit‡"
+      Me.eui_cmdArchiviTabelleAttivit‡.ScreenTip.Text = "Apre la tabella dati attivit‡."
+      Me.eui_cmdArchiviTabelleAttivit‡.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleAttivit‡.TabIndex = 5
+      Me.eui_cmdArchiviTabelleAttivit‡.Text = "Attivit‡"
+      '
+      'eui_cmdArchiviTabelleComuni
+      '
+      Me.eui_cmdArchiviTabelleComuni.Id = "674157ba-aa23-416c-a12e-e4a402798575"
+      Me.eui_cmdArchiviTabelleComuni.KeyTip = "CO"
+      Me.eui_cmdArchiviTabelleComuni.Location = New System.Drawing.Point(2, 71)
+      Me.eui_cmdArchiviTabelleComuni.Name = "eui_cmdArchiviTabelleComuni"
+      Me.eui_cmdArchiviTabelleComuni.ScreenTip.Caption = "Comuni"
+      Me.eui_cmdArchiviTabelleComuni.ScreenTip.Text = "Apre la tabella Comuni."
+      Me.eui_cmdArchiviTabelleComuni.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleComuni.TabIndex = 41
+      Me.eui_cmdArchiviTabelleComuni.Text = "Comuni"
+      '
+      'eui_cmdArchiviTabelleNazioni
+      '
+      Me.eui_cmdArchiviTabelleNazioni.Id = "3a17d453-8b19-44f3-a820-5ead94841c40"
+      Me.eui_cmdArchiviTabelleNazioni.KeyTip = "N"
+      Me.eui_cmdArchiviTabelleNazioni.Location = New System.Drawing.Point(2, 94)
+      Me.eui_cmdArchiviTabelleNazioni.Name = "eui_cmdArchiviTabelleNazioni"
+      Me.eui_cmdArchiviTabelleNazioni.ScreenTip.Caption = "Nazioni"
+      Me.eui_cmdArchiviTabelleNazioni.ScreenTip.Text = "Apre la tabella dati nazioni."
+      Me.eui_cmdArchiviTabelleNazioni.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleNazioni.TabIndex = 6
+      Me.eui_cmdArchiviTabelleNazioni.Text = "Nazioni"
+      '
+      'Separator4
+      '
+      Me.Separator4.Id = "50c0a4f8-5ba9-4550-b480-adfc21e028b1"
+      Me.Separator4.Location = New System.Drawing.Point(2, 117)
+      Me.Separator4.Name = "Separator4"
+      Me.Separator4.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator4.Size = New System.Drawing.Size(193, 5)
+      Me.Separator4.TabIndex = 7
+      Me.Separator4.Text = "Separator4"
+      '
+      'eui_cmdArchiviTabelleUM
+      '
+      Me.eui_cmdArchiviTabelleUM.Id = "faf6839f-7052-4676-9417-f1ed8d41244e"
+      Me.eui_cmdArchiviTabelleUM.KeyTip = "U"
+      Me.eui_cmdArchiviTabelleUM.Location = New System.Drawing.Point(2, 122)
+      Me.eui_cmdArchiviTabelleUM.Name = "eui_cmdArchiviTabelleUM"
+      Me.eui_cmdArchiviTabelleUM.ScreenTip.Caption = "Unit‡ di misura"
+      Me.eui_cmdArchiviTabelleUM.ScreenTip.Text = "Apre la tabella dati unit‡ di misura."
+      Me.eui_cmdArchiviTabelleUM.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleUM.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleUM.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleUM.TabIndex = 8
+      Me.eui_cmdArchiviTabelleUM.Text = "Unit‡ di misura"
+      '
+      'eui_cmdArchiviTabelleCategorieMerce
+      '
+      Me.eui_cmdArchiviTabelleCategorieMerce.Id = "dee981ce-d5a3-4325-b5a2-2c71f3400c81"
+      Me.eui_cmdArchiviTabelleCategorieMerce.KeyTip = "H"
+      Me.eui_cmdArchiviTabelleCategorieMerce.Location = New System.Drawing.Point(2, 145)
+      Me.eui_cmdArchiviTabelleCategorieMerce.Name = "eui_cmdArchiviTabelleCategorieMerce"
+      Me.eui_cmdArchiviTabelleCategorieMerce.ScreenTip.Caption = "Categorie merceologiche"
+      Me.eui_cmdArchiviTabelleCategorieMerce.ScreenTip.Text = "Apre la tabella dati categorie merceologiche."
+      Me.eui_cmdArchiviTabelleCategorieMerce.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleCategorieMerce.TabIndex = 9
+      Me.eui_cmdArchiviTabelleCategorieMerce.Text = "Categorie merceologiche"
+      '
+      'eui_cmdArchiviTabelleMagazzini
+      '
+      Me.eui_cmdArchiviTabelleMagazzini.Id = "be55d212-cf16-43fe-ad96-a9f72bc9f0b5"
+      Me.eui_cmdArchiviTabelleMagazzini.KeyTip = "M"
+      Me.eui_cmdArchiviTabelleMagazzini.Location = New System.Drawing.Point(2, 168)
+      Me.eui_cmdArchiviTabelleMagazzini.Name = "eui_cmdArchiviTabelleMagazzini"
+      Me.eui_cmdArchiviTabelleMagazzini.ScreenTip.Caption = "Magazzini"
+      Me.eui_cmdArchiviTabelleMagazzini.ScreenTip.Text = "Apre la tabella dati magazzini."
+      Me.eui_cmdArchiviTabelleMagazzini.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleMagazzini.TabIndex = 10
+      Me.eui_cmdArchiviTabelleMagazzini.Text = "Magazzini"
+      '
+      'eui_cmdArchiviTabelleUbicazioni
+      '
+      Me.eui_cmdArchiviTabelleUbicazioni.Id = "5955513e-0173-4c91-b60e-7a47a40272d6"
+      Me.eui_cmdArchiviTabelleUbicazioni.KeyTip = "B"
+      Me.eui_cmdArchiviTabelleUbicazioni.Location = New System.Drawing.Point(2, 191)
+      Me.eui_cmdArchiviTabelleUbicazioni.Name = "eui_cmdArchiviTabelleUbicazioni"
+      Me.eui_cmdArchiviTabelleUbicazioni.ScreenTip.Caption = "Ubicazioni"
+      Me.eui_cmdArchiviTabelleUbicazioni.ScreenTip.Text = "Apre la tabella dati ubicazioni."
+      Me.eui_cmdArchiviTabelleUbicazioni.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleUbicazioni.TabIndex = 11
+      Me.eui_cmdArchiviTabelleUbicazioni.Text = "Ubicazioni articoli"
+      '
+      'eui_cmdArchiviTabelleScaffali
+      '
+      Me.eui_cmdArchiviTabelleScaffali.Id = "73e60a2d-350f-47d3-9545-20effbe781de"
+      Me.eui_cmdArchiviTabelleScaffali.KeyTip = "L"
+      Me.eui_cmdArchiviTabelleScaffali.Location = New System.Drawing.Point(2, 214)
+      Me.eui_cmdArchiviTabelleScaffali.Name = "eui_cmdArchiviTabelleScaffali"
+      Me.eui_cmdArchiviTabelleScaffali.ScreenTip.Caption = "Scaffali"
+      Me.eui_cmdArchiviTabelleScaffali.ScreenTip.Text = "Apre la tabella dati scaffali."
+      Me.eui_cmdArchiviTabelleScaffali.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleScaffali.TabIndex = 12
+      Me.eui_cmdArchiviTabelleScaffali.Text = "Scaffali"
+      '
+      'sepMagazzino
+      '
+      Me.sepMagazzino.Id = "da0fb479-de4c-4436-8880-d242264fc739"
+      Me.sepMagazzino.Location = New System.Drawing.Point(2, 237)
+      Me.sepMagazzino.Name = "sepMagazzino"
+      Me.sepMagazzino.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepMagazzino.Size = New System.Drawing.Size(193, 5)
+      Me.sepMagazzino.TabIndex = 13
+      Me.sepMagazzino.Text = "Separator5"
+      '
+      'eui_cmdArchiviTabelleReparti
+      '
+      Me.eui_cmdArchiviTabelleReparti.Id = "60ec5086-cb08-429e-8b0d-3941f2b81dd1"
+      Me.eui_cmdArchiviTabelleReparti.KeyTip = "R"
+      Me.eui_cmdArchiviTabelleReparti.Location = New System.Drawing.Point(2, 242)
+      Me.eui_cmdArchiviTabelleReparti.Name = "eui_cmdArchiviTabelleReparti"
+      Me.eui_cmdArchiviTabelleReparti.ScreenTip.Caption = "Reparti"
+      Me.eui_cmdArchiviTabelleReparti.ScreenTip.Text = "Apre la tabella dati reparti."
+      Me.eui_cmdArchiviTabelleReparti.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleReparti.TabIndex = 14
+      Me.eui_cmdArchiviTabelleReparti.Text = "Reparti"
+      '
+      'eui_cmdArchiviTabelleMsgReparti
+      '
+      Me.eui_cmdArchiviTabelleMsgReparti.Id = "89281fba-2e57-43ce-8d7e-4b937fdb9a48"
+      Me.eui_cmdArchiviTabelleMsgReparti.KeyTip = "MR"
+      Me.eui_cmdArchiviTabelleMsgReparti.Location = New System.Drawing.Point(2, 265)
+      Me.eui_cmdArchiviTabelleMsgReparti.Name = "eui_cmdArchiviTabelleMsgReparti"
+      Me.eui_cmdArchiviTabelleMsgReparti.ScreenTip.Caption = "Messaggi ai reparti"
+      Me.eui_cmdArchiviTabelleMsgReparti.ScreenTip.Text = "Apre la tabella dati messaggi ai reparti."
+      Me.eui_cmdArchiviTabelleMsgReparti.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleMsgReparti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleMsgReparti.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleMsgReparti.TabIndex = 15
+      Me.eui_cmdArchiviTabelleMsgReparti.Text = "Messaggi ai reparti"
+      '
+      'sepReparti
+      '
+      Me.sepReparti.Id = "e3bfc13a-0c16-4a6c-ac04-accd7559386a"
+      Me.sepReparti.Location = New System.Drawing.Point(2, 288)
+      Me.sepReparti.Name = "sepReparti"
+      Me.sepReparti.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepReparti.Size = New System.Drawing.Size(193, 5)
+      Me.sepReparti.TabIndex = 16
+      Me.sepReparti.Text = "Separator6"
+      '
+      'eui_cmdArchiviTabelleCausaliDoc
+      '
+      Me.eui_cmdArchiviTabelleCausaliDoc.Id = "72822677-055c-45d1-bd50-bebe2b75f7db"
+      Me.eui_cmdArchiviTabelleCausaliDoc.KeyTip = "D"
+      Me.eui_cmdArchiviTabelleCausaliDoc.Location = New System.Drawing.Point(2, 293)
+      Me.eui_cmdArchiviTabelleCausaliDoc.Name = "eui_cmdArchiviTabelleCausaliDoc"
+      Me.eui_cmdArchiviTabelleCausaliDoc.ScreenTip.Caption = "Causali documento"
+      Me.eui_cmdArchiviTabelleCausaliDoc.ScreenTip.Text = "Apre la tabella Causali documento."
+      Me.eui_cmdArchiviTabelleCausaliDoc.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleCausaliDoc.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleCausaliDoc.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleCausaliDoc.TabIndex = 17
+      Me.eui_cmdArchiviTabelleCausaliDoc.Text = "Causali documento"
+      '
+      'eui_cmdArchiviTabellePagamenti
+      '
+      Me.eui_cmdArchiviTabellePagamenti.Id = "7ed2cf63-f122-444c-8872-1d03eb7f0424"
+      Me.eui_cmdArchiviTabellePagamenti.KeyTip = "P"
+      Me.eui_cmdArchiviTabellePagamenti.Location = New System.Drawing.Point(2, 316)
+      Me.eui_cmdArchiviTabellePagamenti.Name = "eui_cmdArchiviTabellePagamenti"
+      Me.eui_cmdArchiviTabellePagamenti.ScreenTip.Caption = "Modalit‡ di pagamento"
+      Me.eui_cmdArchiviTabellePagamenti.ScreenTip.Text = "Apre la tabella dati Modalit‡ di pagamento"
+      Me.eui_cmdArchiviTabellePagamenti.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabellePagamenti.TabIndex = 18
+      Me.eui_cmdArchiviTabellePagamenti.Text = "Modalit‡ di pagamento"
+      '
+      'eui_cmdArchiviTabelleSconti
+      '
+      Me.eui_cmdArchiviTabelleSconti.Id = "082703c0-7ed2-449b-bc0e-bf61a9fddc0b"
+      Me.eui_cmdArchiviTabelleSconti.KeyTip = "SM"
+      Me.eui_cmdArchiviTabelleSconti.Location = New System.Drawing.Point(2, 339)
+      Me.eui_cmdArchiviTabelleSconti.Name = "eui_cmdArchiviTabelleSconti"
+      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Caption = "Sconti e Maggiorazioni"
+      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Text = "Apre la tabella dati Sconti e Maggiorazioni"
+      Me.eui_cmdArchiviTabelleSconti.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleSconti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleSconti.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleSconti.TabIndex = 44
+      Me.eui_cmdArchiviTabelleSconti.Text = "Sconti e Maggiorazioni"
+      '
+      'Separator8
+      '
+      Me.Separator8.Id = "0ad3c5b2-6ac0-450d-a422-ae9a2232b901"
+      Me.Separator8.Location = New System.Drawing.Point(2, 362)
+      Me.Separator8.Name = "Separator8"
+      Me.Separator8.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator8.Size = New System.Drawing.Size(193, 5)
+      Me.Separator8.TabIndex = 20
+      Me.Separator8.Text = "Separator8"
+      '
+      'eui_cmdArchiviTabelleListini
+      '
+      Me.eui_cmdArchiviTabelleListini.Id = "bb29d2d5-c941-4a8f-90de-3c51cff7c3da"
+      Me.eui_cmdArchiviTabelleListini.KeyTip = "L"
+      Me.eui_cmdArchiviTabelleListini.Location = New System.Drawing.Point(2, 367)
+      Me.eui_cmdArchiviTabelleListini.Name = "eui_cmdArchiviTabelleListini"
+      Me.eui_cmdArchiviTabelleListini.ScreenTip.Caption = "Listini camere"
+      Me.eui_cmdArchiviTabelleListini.ScreenTip.Text = "Apre la tabella dati listini."
+      Me.PopupMenu3.SetShortcutKeyDisplayString(Me.eui_cmdArchiviTabelleListini, "CTRL+L")
+      Me.PopupMenu3.SetShortcutKeys(Me.eui_cmdArchiviTabelleListini, CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys))
+      Me.eui_cmdArchiviTabelleListini.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleListini.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleListini.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleListini.TabIndex = 24
+      Me.eui_cmdArchiviTabelleListini.Text = "Listini camere"
+      '
+      'eui_cmdArchiviTabelleStagioni
+      '
+      Me.eui_cmdArchiviTabelleStagioni.Id = "86931de7-ac3b-4630-852a-5026d1dcd891"
+      Me.eui_cmdArchiviTabelleStagioni.KeyTip = "ST"
+      Me.eui_cmdArchiviTabelleStagioni.Location = New System.Drawing.Point(2, 390)
+      Me.eui_cmdArchiviTabelleStagioni.Name = "eui_cmdArchiviTabelleStagioni"
+      Me.eui_cmdArchiviTabelleStagioni.ScreenTip.Caption = "Stagioni"
+      Me.eui_cmdArchiviTabelleStagioni.ScreenTip.Text = "Apre la tabella dati stagioni."
+      Me.eui_cmdArchiviTabelleStagioni.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleStagioni.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStagioni.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleStagioni.TabIndex = 29
+      Me.eui_cmdArchiviTabelleStagioni.Text = "Stagioni"
+      '
+      'eui_cmdArchiviTabelleTipologieCamere
+      '
+      Me.eui_cmdArchiviTabelleTipologieCamere.Id = "94bbf9a2-ad92-402a-b2da-3b4c3355a3de"
+      Me.eui_cmdArchiviTabelleTipologieCamere.KeyTip = "G"
+      Me.eui_cmdArchiviTabelleTipologieCamere.Location = New System.Drawing.Point(2, 413)
+      Me.eui_cmdArchiviTabelleTipologieCamere.Name = "eui_cmdArchiviTabelleTipologieCamere"
+      Me.eui_cmdArchiviTabelleTipologieCamere.ScreenTip.Caption = "Tipologie camere"
+      Me.eui_cmdArchiviTabelleTipologieCamere.ScreenTip.Text = "Apre la tabella dati tipologie camere."
+      Me.eui_cmdArchiviTabelleTipologieCamere.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleTipologieCamere.TabIndex = 25
+      Me.eui_cmdArchiviTabelleTipologieCamere.Text = "Tipologie camere"
+      '
+      'eui_cmdArchiviTabelleUbicazioniCamere
+      '
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.Id = "45736403-b4de-4c69-adcd-dc49b47ec18e"
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.KeyTip = "Z"
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.Location = New System.Drawing.Point(2, 436)
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.Name = "eui_cmdArchiviTabelleUbicazioniCamere"
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.ScreenTip.Caption = "Ubicazioni camere"
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.ScreenTip.Text = "Apre la tabella dati ubicazioni camere."
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.TabIndex = 26
+      Me.eui_cmdArchiviTabelleUbicazioniCamere.Text = "Ubicazioni camere"
+      '
+      'eui_cmdArchiviTabellePosizioniCamere
+      '
+      Me.eui_cmdArchiviTabellePosizioniCamere.Id = "9602ab25-955b-4d8d-96cf-9f7f4b6db982"
+      Me.eui_cmdArchiviTabellePosizioniCamere.KeyTip = "I"
+      Me.eui_cmdArchiviTabellePosizioniCamere.Location = New System.Drawing.Point(2, 459)
+      Me.eui_cmdArchiviTabellePosizioniCamere.Name = "eui_cmdArchiviTabellePosizioniCamere"
+      Me.eui_cmdArchiviTabellePosizioniCamere.ScreenTip.Caption = "Posizioni camere"
+      Me.eui_cmdArchiviTabellePosizioniCamere.ScreenTip.Text = "Apre la tabella dati posizioni camere."
+      Me.eui_cmdArchiviTabellePosizioniCamere.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabellePosizioniCamere.TabIndex = 27
+      Me.eui_cmdArchiviTabellePosizioniCamere.Text = "Posizioni camere"
+      '
+      'eui_cmdArchiviTabelleTipoAlloggiati
+      '
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.Id = "a5654816-8048-4a0d-b133-0fd94c2b77ab"
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.KeyTip = "TA"
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.Location = New System.Drawing.Point(2, 482)
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.Name = "eui_cmdArchiviTabelleTipoAlloggiati"
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.ScreenTip.Caption = "Tipo alloggiati"
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.ScreenTip.Text = "Apre la tabella Tipo alloggiati."
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.TabIndex = 42
+      Me.eui_cmdArchiviTabelleTipoAlloggiati.Text = "Tipo alloggiati"
+      '
+      'eui_cmdArchiviTabelleGruppi
+      '
+      Me.eui_cmdArchiviTabelleGruppi.Id = "c048b182-38c3-4574-bc4f-42833221ceb9"
+      Me.eui_cmdArchiviTabelleGruppi.KeyTip = "G"
+      Me.eui_cmdArchiviTabelleGruppi.Location = New System.Drawing.Point(2, 505)
+      Me.eui_cmdArchiviTabelleGruppi.Name = "eui_cmdArchiviTabelleGruppi"
+      Me.eui_cmdArchiviTabelleGruppi.ScreenTip.Caption = "Gruppi"
+      Me.eui_cmdArchiviTabelleGruppi.ScreenTip.Text = "Apre la tabella dati Gruppi"
+      Me.eui_cmdArchiviTabelleGruppi.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleGruppi.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleGruppi.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleGruppi.TabIndex = 37
+      Me.eui_cmdArchiviTabelleGruppi.Text = "Gruppi"
+      '
+      'eui_cmdArchiviTabelleAgenzie
+      '
+      Me.eui_cmdArchiviTabelleAgenzie.Id = "c7458d91-16e5-44c1-a946-3291b5917663"
+      Me.eui_cmdArchiviTabelleAgenzie.KeyTip = "AG"
+      Me.eui_cmdArchiviTabelleAgenzie.Location = New System.Drawing.Point(2, 528)
+      Me.eui_cmdArchiviTabelleAgenzie.Name = "eui_cmdArchiviTabelleAgenzie"
+      Me.eui_cmdArchiviTabelleAgenzie.ScreenTip.Caption = "Agenzie"
+      Me.eui_cmdArchiviTabelleAgenzie.ScreenTip.Text = "Apre la tabella dati Agenzie"
+      Me.eui_cmdArchiviTabelleAgenzie.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleAgenzie.TabIndex = 38
+      Me.eui_cmdArchiviTabelleAgenzie.Text = "Agenzie di viaggio"
+      '
+      'eui_cmdArchiviTabelleCanali
+      '
+      Me.eui_cmdArchiviTabelleCanali.Id = "78505507-1a73-4ea0-9e94-3fb8965c9f5c"
+      Me.eui_cmdArchiviTabelleCanali.KeyTip = "CP"
+      Me.eui_cmdArchiviTabelleCanali.Location = New System.Drawing.Point(2, 551)
+      Me.eui_cmdArchiviTabelleCanali.Name = "eui_cmdArchiviTabelleCanali"
+      Me.eui_cmdArchiviTabelleCanali.ScreenTip.Caption = "Canali di provenienza"
+      Me.eui_cmdArchiviTabelleCanali.ScreenTip.Text = "Apre la tabella dati Canali di provenienza"
+      Me.eui_cmdArchiviTabelleCanali.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleCanali.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleCanali.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleCanali.TabIndex = 39
+      Me.eui_cmdArchiviTabelleCanali.Text = "Canali di provenienza"
+      '
+      'sepListini
+      '
+      Me.sepListini.Id = "6b100059-3282-4af3-85d4-eb04fc0260f5"
+      Me.sepListini.Location = New System.Drawing.Point(2, 574)
+      Me.sepListini.Name = "sepListini"
+      Me.sepListini.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepListini.Size = New System.Drawing.Size(193, 5)
+      Me.sepListini.TabIndex = 23
+      Me.sepListini.Text = "Separator3"
+      '
+      'eui_cmdArchiviTabelleStatoPren
+      '
+      Me.eui_cmdArchiviTabelleStatoPren.Id = "a703ba35-3307-49a0-a495-226bdda2dab7"
+      Me.eui_cmdArchiviTabelleStatoPren.KeyTip = "SP"
+      Me.eui_cmdArchiviTabelleStatoPren.Location = New System.Drawing.Point(2, 579)
+      Me.eui_cmdArchiviTabelleStatoPren.Name = "eui_cmdArchiviTabelleStatoPren"
+      Me.eui_cmdArchiviTabelleStatoPren.ScreenTip.Caption = "Stato prenotazioni"
+      Me.eui_cmdArchiviTabelleStatoPren.ScreenTip.Text = "Apre la tabella dati stato prenotazioni."
+      Me.eui_cmdArchiviTabelleStatoPren.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleStatoPren.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStatoPren.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleStatoPren.TabIndex = 31
+      Me.eui_cmdArchiviTabelleStatoPren.Text = "Stato prenotazioni"
+      '
+      'sepStatoPren
+      '
+      Me.sepStatoPren.Id = "eaf278bb-56aa-4571-9f61-237861ac389b"
+      Me.sepStatoPren.Location = New System.Drawing.Point(2, 602)
+      Me.sepStatoPren.Name = "sepStatoPren"
+      Me.sepStatoPren.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.sepStatoPren.Size = New System.Drawing.Size(193, 5)
+      Me.sepStatoPren.TabIndex = 32
+      Me.sepStatoPren.Text = "Separator22"
+      '
+      'eui_cmdArchiviTabelleDocIdentit‡
+      '
+      Me.eui_cmdArchiviTabelleDocIdentit‡.Id = "4c1a5984-0b55-444d-9f0a-e7fed8fb2d7f"
+      Me.eui_cmdArchiviTabelleDocIdentit‡.KeyTip = "DI"
+      Me.eui_cmdArchiviTabelleDocIdentit‡.Location = New System.Drawing.Point(2, 607)
+      Me.eui_cmdArchiviTabelleDocIdentit‡.Name = "eui_cmdArchiviTabelleDocIdentit‡"
+      Me.eui_cmdArchiviTabelleDocIdentit‡.ScreenTip.Caption = "Documenti d'identit‡"
+      Me.eui_cmdArchiviTabelleDocIdentit‡.ScreenTip.Text = "Apre la tabella dati documenti d'identit‡."
+      Me.eui_cmdArchiviTabelleDocIdentit‡.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleDocIdentit‡.TabIndex = 34
+      Me.eui_cmdArchiviTabelleDocIdentit‡.Text = "Documenti d'identit‡"
+      '
+      'Separator24
+      '
+      Me.Separator24.Id = "7537d85d-aceb-4ee4-a412-c7c19e20f6d8"
+      Me.Separator24.Location = New System.Drawing.Point(2, 630)
+      Me.Separator24.Name = "Separator24"
+      Me.Separator24.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator24.Size = New System.Drawing.Size(193, 5)
+      Me.Separator24.TabIndex = 35
+      Me.Separator24.Text = "Separator24"
+      '
+      'eui_cmdArchiviTabelleTipoRisorse
+      '
+      Me.eui_cmdArchiviTabelleTipoRisorse.Id = "56b63c25-3179-48dc-80e3-7136b9fb3c01"
+      Me.eui_cmdArchiviTabelleTipoRisorse.KeyTip = "O"
+      Me.eui_cmdArchiviTabelleTipoRisorse.Location = New System.Drawing.Point(2, 635)
+      Me.eui_cmdArchiviTabelleTipoRisorse.Name = "eui_cmdArchiviTabelleTipoRisorse"
+      Me.eui_cmdArchiviTabelleTipoRisorse.ScreenTip.Caption = "Tipologie risorse"
+      Me.eui_cmdArchiviTabelleTipoRisorse.ScreenTip.Text = "Apre la tabella dati tipologie risorse."
+      Me.eui_cmdArchiviTabelleTipoRisorse.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleTipoRisorse.TabIndex = 21
+      Me.eui_cmdArchiviTabelleTipoRisorse.Text = "Tipologie risorse"
+      '
+      'Separator25
+      '
+      Me.Separator25.Id = "490d4507-28d8-4544-9f57-fcbfbace54db"
+      Me.Separator25.Location = New System.Drawing.Point(2, 658)
+      Me.Separator25.Name = "Separator25"
+      Me.Separator25.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
+      Me.Separator25.Size = New System.Drawing.Size(193, 5)
+      Me.Separator25.TabIndex = 47
+      Me.Separator25.Text = "Separator25"
+      '
+      'eui_cmdArchiviTabelleStatoNoleggi
+      '
+      Me.eui_cmdArchiviTabelleStatoNoleggi.Id = "35c9428f-943f-40bc-afa4-c165fbb5d337"
+      Me.eui_cmdArchiviTabelleStatoNoleggi.KeyTip = "SN"
+      Me.eui_cmdArchiviTabelleStatoNoleggi.Location = New System.Drawing.Point(2, 663)
+      Me.eui_cmdArchiviTabelleStatoNoleggi.Name = "eui_cmdArchiviTabelleStatoNoleggi"
+      Me.eui_cmdArchiviTabelleStatoNoleggi.ScreenTip.Caption = "Stato noleggi"
+      Me.eui_cmdArchiviTabelleStatoNoleggi.ScreenTip.Text = "Apre la tabella dati stato noleggi."
+      Me.eui_cmdArchiviTabelleStatoNoleggi.Size = New System.Drawing.Size(193, 23)
+      Me.eui_cmdArchiviTabelleStatoNoleggi.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStatoNoleggi.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviTabelleStatoNoleggi.TabIndex = 46
+      Me.eui_cmdArchiviTabelleStatoNoleggi.Text = "Stato noleggi"
+      '
+      'RibbonGroup1
+      '
+      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviImporta)
+      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviBackup)
+      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviPulizia)
+      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviCompatta)
+      Me.RibbonGroup1.DialogLauncherButtonVisible = False
+      Me.RibbonGroup1.Location = New System.Drawing.Point(154, 1)
+      Me.RibbonGroup1.Name = "RibbonGroup1"
+      Me.RibbonGroup1.Size = New System.Drawing.Size(259, 94)
+      Me.RibbonGroup1.TabIndex = 2
+      Me.RibbonGroup1.Text = "Strumenti"
+      '
+      'eui_cmdArchiviImporta
+      '
+      Me.eui_cmdArchiviImporta.Id = "c178a5ef-e947-46ac-8dfc-abc23a9e4f34"
+      Me.eui_cmdArchiviImporta.KeyTip = "I"
+      Me.eui_cmdArchiviImporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviImporta.Location = New System.Drawing.Point(4, 2)
+      Me.eui_cmdArchiviImporta.Name = "eui_cmdArchiviImporta"
+      Me.eui_cmdArchiviImporta.ScreenTip.Caption = "Importa dati"
+      Me.eui_cmdArchiviImporta.ScreenTip.Text = "Consente di importare dati da altri archivi di backup."
+      Me.eui_cmdArchiviImporta.Size = New System.Drawing.Size(46, 72)
+      Me.eui_cmdArchiviImporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviImporta.TabIndex = 0
+      Me.eui_cmdArchiviImporta.Text = "Importa dati"
+      '
+      'eui_cmdArchiviBackup
+      '
+      Me.eui_cmdArchiviBackup.Id = "e8fb8df1-ef53-4d07-b79c-07bdd519fb5f"
+      Me.eui_cmdArchiviBackup.KeyTip = "B"
+      Me.eui_cmdArchiviBackup.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviBackup.Location = New System.Drawing.Point(52, 2)
+      Me.eui_cmdArchiviBackup.Name = "eui_cmdArchiviBackup"
+      Me.eui_cmdArchiviBackup.ScreenTip.Caption = "Backup dei dati"
+      Me.eui_cmdArchiviBackup.ScreenTip.Text = "Consente di effettuare copie di sicurezza degli archivi."
+      Me.eui_cmdArchiviBackup.Size = New System.Drawing.Size(43, 72)
+      Me.eui_cmdArchiviBackup.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviBackup.TabIndex = 1
+      Me.eui_cmdArchiviBackup.Text = "Backup dei dati"
+      '
+      'eui_cmdArchiviPulizia
+      '
+      Me.eui_cmdArchiviPulizia.Id = "2f3faba2-356f-4602-a694-0de53831137b"
+      Me.eui_cmdArchiviPulizia.KeyTip = "P"
+      Me.eui_cmdArchiviPulizia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviPulizia.Location = New System.Drawing.Point(97, 2)
+      Me.eui_cmdArchiviPulizia.Name = "eui_cmdArchiviPulizia"
+      Me.eui_cmdArchiviPulizia.ScreenTip.Caption = "Pulizia degli archivi"
+      Me.eui_cmdArchiviPulizia.ScreenTip.Text = "Consente di effettuare l'eliminazione dei dati per singola tabella presenti negli" &
+    " archivi."
+      Me.eui_cmdArchiviPulizia.Size = New System.Drawing.Size(67, 72)
+      Me.eui_cmdArchiviPulizia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviPulizia.TabIndex = 2
+      Me.eui_cmdArchiviPulizia.Text = "Pulizia degli archivi"
+      '
+      'eui_cmdArchiviCompatta
+      '
+      Me.eui_cmdArchiviCompatta.Id = "e849859a-d3f9-484a-a494-6ecad6c05a46"
+      Me.eui_cmdArchiviCompatta.KeyTip = "C"
+      Me.eui_cmdArchiviCompatta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.LargeImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviCompatta.Location = New System.Drawing.Point(166, 2)
+      Me.eui_cmdArchiviCompatta.Name = "eui_cmdArchiviCompatta"
+      Me.eui_cmdArchiviCompatta.ScreenTip.Caption = "Compatta e ripristina archivi"
+      Me.eui_cmdArchiviCompatta.ScreenTip.Text = "Consente di effettuare la compattazione e il ripristino degli archivi."
+      Me.eui_cmdArchiviCompatta.Size = New System.Drawing.Size(88, 72)
+      Me.eui_cmdArchiviCompatta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdArchiviCompatta.TabIndex = 3
+      Me.eui_cmdArchiviCompatta.Text = "Compatta e ripristina archivi"
+      '
       'eui_Gestione
       '
       Me.eui_Gestione.Controls.Add(Me.RibbonGroup35)
@@ -4062,7 +4925,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1191, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1215, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -4584,789 +5447,6 @@ Friend Class frmMain
       Me.eui_cmdGestioneOpzioni.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdGestioneOpzioni.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_cmdGestioneOpzioni.TabIndex = 0
       Me.eui_cmdGestioneOpzioni.Text = "Opzioni di configurazione"
-      '
-      'eui_Archivi
-      '
-      Me.eui_Archivi.Controls.Add(Me.RibbonGroup17)
-      Me.eui_Archivi.Controls.Add(Me.RibbonGroup5)
-      Me.eui_Archivi.Controls.Add(Me.RibbonGroup1)
-      Me.eui_Archivi.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.eui_Archivi.KeyTip = "A"
-      Me.eui_Archivi.Location = New System.Drawing.Point(0, 0)
-      Me.eui_Archivi.Name = "eui_Archivi"
-      Me.eui_Archivi.Size = New System.Drawing.Size(1191, 99)
-      Me.eui_Archivi.TabIndex = 0
-      Me.eui_Archivi.Text = "Archivi"
-      '
-      'RibbonGroup17
-      '
-      Me.RibbonGroup17.Controls.Add(Me.DropDown3)
-      Me.RibbonGroup17.DialogLauncherButtonVisible = False
-      Me.RibbonGroup17.Location = New System.Drawing.Point(5, 1)
-      Me.RibbonGroup17.Name = "RibbonGroup17"
-      Me.RibbonGroup17.Size = New System.Drawing.Size(85, 94)
-      Me.RibbonGroup17.TabIndex = 0
-      Me.RibbonGroup17.Text = "Anagrafiche"
-      '
-      'DropDown3
-      '
-      Me.DropDown3.Id = "de7387a9-00fc-4dc9-b492-b909b5b8eb2b"
-      Me.DropDown3.KeyTip = "A"
-      Me.DropDown3.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown3.LargeImages.Images"), System.Drawing.Image))})
-      Me.DropDown3.Location = New System.Drawing.Point(4, 2)
-      Me.DropDown3.Name = "DropDown3"
-      Me.DropDown3.Popup = Me.PopupMenu1
-      Me.DropDown3.ScreenTip.Caption = "Seleziona anagrafiche"
-      Me.DropDown3.ScreenTip.Text = "Consente di selezionare le anagrafiche, ad esempio i clienti o i piatti."
-      Me.DropDown3.Size = New System.Drawing.Size(76, 72)
-      Me.DropDown3.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown3.SmallImages.Images"), System.Drawing.Image))})
-      Me.DropDown3.TabIndex = 0
-      Me.DropDown3.Text = "Seleziona anagrafiche"
-      '
-      'PopupMenu1
-      '
-      Me.PopupMenu1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviAnagraficheClienti, Me.eui_cmdArchiviAnagraficheFornitori, Me.eui_cmdArchiviAnagraficheCamerieri, Me.eui_cmdArchiviAnagraficheAgenzieCamerieri, Me.eui_cmdArchiviAnagraficheAziende, Me.Separator1, Me.eui_cmdArchiviAnagraficheCamere, Me.sepCamere, Me.eui_cmdArchiviAnagraficheSale, Me.eui_cmdArchiviAnagraficheTavoli, Me.sepRistorante, Me.eui_cmdArchiviAnagrafichePiatti, Me.eui_cmdArchiviAnagraficheCategoriePiatti, Me.sepBar, Me.eui_cmdArchiviAnagraficheRisorse, Me.eui_cmdArchiviAnagraficheUtilizzoRisorse, Me.eui_cmdArchiviAnagraficheAccServ, Me.sepRisorse, Me.eui_cmdArchiviAnagraficheDatiAzienda})
-      Me.PopupMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-      Me.PopupMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-      Me.PopupMenu1.Size = New System.Drawing.Size(100, 100)
-      '
-      'eui_cmdArchiviAnagraficheClienti
-      '
-      Me.eui_cmdArchiviAnagraficheClienti.Id = "ff38ea5c-ebcb-49d7-a76b-ba53731b89b5"
-      Me.eui_cmdArchiviAnagraficheClienti.KeyTip = "C"
-      Me.eui_cmdArchiviAnagraficheClienti.Location = New System.Drawing.Point(2, 2)
-      Me.eui_cmdArchiviAnagraficheClienti.Name = "eui_cmdArchiviAnagraficheClienti"
-      Me.eui_cmdArchiviAnagraficheClienti.ScreenTip.Caption = "Clienti (F7)"
-      Me.eui_cmdArchiviAnagraficheClienti.ScreenTip.Text = "Apre l'anagrafica clienti."
-      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheClienti, "F7")
-      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheClienti, System.Windows.Forms.Keys.F7)
-      Me.eui_cmdArchiviAnagraficheClienti.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheClienti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheClienti.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviAnagraficheClienti.TabIndex = 7
-      Me.eui_cmdArchiviAnagraficheClienti.Text = "Clienti"
-      '
-      'eui_cmdArchiviAnagraficheFornitori
-      '
-      Me.eui_cmdArchiviAnagraficheFornitori.Id = "6237fc13-8f83-4df1-a458-d21627406548"
-      Me.eui_cmdArchiviAnagraficheFornitori.KeyTip = "F"
-      Me.eui_cmdArchiviAnagraficheFornitori.Location = New System.Drawing.Point(2, 25)
-      Me.eui_cmdArchiviAnagraficheFornitori.Name = "eui_cmdArchiviAnagraficheFornitori"
-      Me.eui_cmdArchiviAnagraficheFornitori.ScreenTip.Caption = "Fornitori (F8)"
-      Me.eui_cmdArchiviAnagraficheFornitori.ScreenTip.Text = "Apre l'anagrafica fornitori."
-      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheFornitori, "F8")
-      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheFornitori, System.Windows.Forms.Keys.F8)
-      Me.eui_cmdArchiviAnagraficheFornitori.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheFornitori.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheFornitori.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviAnagraficheFornitori.TabIndex = 8
-      Me.eui_cmdArchiviAnagraficheFornitori.Text = "Fornitori"
-      '
-      'eui_cmdArchiviAnagraficheCamerieri
-      '
-      Me.eui_cmdArchiviAnagraficheCamerieri.Id = "660d45f9-e9a2-4e1c-8eae-f95f9fead737"
-      Me.eui_cmdArchiviAnagraficheCamerieri.KeyTip = "M"
-      Me.eui_cmdArchiviAnagraficheCamerieri.Location = New System.Drawing.Point(2, 48)
-      Me.eui_cmdArchiviAnagraficheCamerieri.Name = "eui_cmdArchiviAnagraficheCamerieri"
-      Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Caption = "Camerieri"
-      Me.eui_cmdArchiviAnagraficheCamerieri.ScreenTip.Text = "Apre l'anagrafica camerieri."
-      Me.eui_cmdArchiviAnagraficheCamerieri.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamerieri.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviAnagraficheCamerieri.TabIndex = 9
-      Me.eui_cmdArchiviAnagraficheCamerieri.Text = "Camerieri"
-      '
-      'eui_cmdArchiviAnagraficheAgenzieCamerieri
-      '
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Id = "5023a6ac-3d20-4916-9b7c-43f82a18ca7a"
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.KeyTip = "AC"
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Location = New System.Drawing.Point(2, 71)
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Name = "eui_cmdArchiviAnagraficheAgenzieCamerieri"
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Caption = "Agenzie Camerieri"
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.ScreenTip.Text = "Apre l'anagrafica agenzie camerieri."
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.TabIndex = 30
-      Me.eui_cmdArchiviAnagraficheAgenzieCamerieri.Text = "Agenzie camerieri"
-      '
-      'eui_cmdArchiviAnagraficheAziende
-      '
-      Me.eui_cmdArchiviAnagraficheAziende.Id = "d627c2b0-5c0b-4fbe-847b-2c76918e6099"
-      Me.eui_cmdArchiviAnagraficheAziende.KeyTip = "A"
-      Me.eui_cmdArchiviAnagraficheAziende.Location = New System.Drawing.Point(2, 94)
-      Me.eui_cmdArchiviAnagraficheAziende.Name = "eui_cmdArchiviAnagraficheAziende"
-      Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Caption = "Aziende (F9)"
-      Me.eui_cmdArchiviAnagraficheAziende.ScreenTip.Text = "Apre l'anagrafica aziende."
-      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagraficheAziende, "F9")
-      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagraficheAziende, System.Windows.Forms.Keys.F9)
-      Me.eui_cmdArchiviAnagraficheAziende.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheAziende.TabIndex = 10
-      Me.eui_cmdArchiviAnagraficheAziende.Text = "Aziende"
-      '
-      'Separator1
-      '
-      Me.Separator1.Id = "ae1faf3f-271d-42bb-a5f7-a585aa02d3e4"
-      Me.Separator1.Location = New System.Drawing.Point(2, 117)
-      Me.Separator1.Name = "Separator1"
-      Me.Separator1.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator1.Size = New System.Drawing.Size(246, 5)
-      Me.Separator1.TabIndex = 11
-      Me.Separator1.Text = "Separator1"
-      '
-      'eui_cmdArchiviAnagraficheCamere
-      '
-      Me.eui_cmdArchiviAnagraficheCamere.Id = "2285335a-10a4-41b1-8c88-dd45f2c538b7"
-      Me.eui_cmdArchiviAnagraficheCamere.KeyTip = "R"
-      Me.eui_cmdArchiviAnagraficheCamere.Location = New System.Drawing.Point(2, 122)
-      Me.eui_cmdArchiviAnagraficheCamere.Name = "eui_cmdArchiviAnagraficheCamere"
-      Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Caption = "Camere"
-      Me.eui_cmdArchiviAnagraficheCamere.ScreenTip.Text = "Apre l'anagrafica camere."
-      Me.eui_cmdArchiviAnagraficheCamere.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheCamere.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheCamere.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviAnagraficheCamere.TabIndex = 25
-      Me.eui_cmdArchiviAnagraficheCamere.Text = "Camere"
-      '
-      'sepCamere
-      '
-      Me.sepCamere.Id = "d1d7164d-8a39-4dca-8dc1-5152d362dd07"
-      Me.sepCamere.Location = New System.Drawing.Point(2, 145)
-      Me.sepCamere.Name = "sepCamere"
-      Me.sepCamere.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepCamere.Size = New System.Drawing.Size(246, 5)
-      Me.sepCamere.TabIndex = 26
-      Me.sepCamere.Text = "Separator2"
-      '
-      'eui_cmdArchiviAnagraficheSale
-      '
-      Me.eui_cmdArchiviAnagraficheSale.Id = "c51d3ced-326d-4a9e-bcc1-2ff2e4b39f32"
-      Me.eui_cmdArchiviAnagraficheSale.KeyTip = "S"
-      Me.eui_cmdArchiviAnagraficheSale.Location = New System.Drawing.Point(2, 150)
-      Me.eui_cmdArchiviAnagraficheSale.Name = "eui_cmdArchiviAnagraficheSale"
-      Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Caption = "Sale"
-      Me.eui_cmdArchiviAnagraficheSale.ScreenTip.Text = "Apre l'anagrafica sale."
-      Me.eui_cmdArchiviAnagraficheSale.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheSale.TabIndex = 12
-      Me.eui_cmdArchiviAnagraficheSale.Text = "Sale"
-      '
-      'eui_cmdArchiviAnagraficheTavoli
-      '
-      Me.eui_cmdArchiviAnagraficheTavoli.Id = "bf3ffa0f-88e5-4346-82eb-8ee7ffae3059"
-      Me.eui_cmdArchiviAnagraficheTavoli.KeyTip = "T"
-      Me.eui_cmdArchiviAnagraficheTavoli.Location = New System.Drawing.Point(2, 173)
-      Me.eui_cmdArchiviAnagraficheTavoli.Name = "eui_cmdArchiviAnagraficheTavoli"
-      Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Caption = "Tavoli"
-      Me.eui_cmdArchiviAnagraficheTavoli.ScreenTip.Text = "Apre l'anagrafica tavoli."
-      Me.eui_cmdArchiviAnagraficheTavoli.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheTavoli.TabIndex = 13
-      Me.eui_cmdArchiviAnagraficheTavoli.Text = "Tavoli"
-      '
-      'sepRistorante
-      '
-      Me.sepRistorante.Id = "f61803d6-e6a6-4be0-9028-0cfb5f804bac"
-      Me.sepRistorante.Location = New System.Drawing.Point(2, 196)
-      Me.sepRistorante.Name = "sepRistorante"
-      Me.sepRistorante.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepRistorante.Size = New System.Drawing.Size(246, 5)
-      Me.sepRistorante.TabIndex = 14
-      Me.sepRistorante.Text = "Separator2"
-      '
-      'eui_cmdArchiviAnagrafichePiatti
-      '
-      Me.eui_cmdArchiviAnagrafichePiatti.Id = "236f82b9-b53d-46a1-97cc-af70aa9927d8"
-      Me.eui_cmdArchiviAnagrafichePiatti.KeyTip = "P"
-      Me.eui_cmdArchiviAnagrafichePiatti.Location = New System.Drawing.Point(2, 201)
-      Me.eui_cmdArchiviAnagrafichePiatti.Name = "eui_cmdArchiviAnagrafichePiatti"
-      Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Caption = "Piatti (F10)"
-      Me.eui_cmdArchiviAnagrafichePiatti.ScreenTip.Text = "Apre l'anagrafica piatti."
-      Me.PopupMenu1.SetShortcutKeyDisplayString(Me.eui_cmdArchiviAnagrafichePiatti, "F10")
-      Me.PopupMenu1.SetShortcutKeys(Me.eui_cmdArchiviAnagrafichePiatti, System.Windows.Forms.Keys.F10)
-      Me.eui_cmdArchiviAnagrafichePiatti.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagrafichePiatti.TabIndex = 15
-      Me.eui_cmdArchiviAnagrafichePiatti.Text = "Piatti"
-      '
-      'eui_cmdArchiviAnagraficheCategoriePiatti
-      '
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Id = "73b8f15e-bf89-43b5-9664-fa35b7cd6174"
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.KeyTip = "G"
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Location = New System.Drawing.Point(2, 224)
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Name = "eui_cmdArchiviAnagraficheCategoriePiatti"
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Caption = "Categorie piatti"
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.ScreenTip.Text = "Apre l'anagrafica categorie piatti."
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.TabIndex = 16
-      Me.eui_cmdArchiviAnagraficheCategoriePiatti.Text = "Categorie piatti"
-      '
-      'sepBar
-      '
-      Me.sepBar.Id = "8eefe9cb-b04f-472c-97cd-066be078c7e1"
-      Me.sepBar.Location = New System.Drawing.Point(2, 247)
-      Me.sepBar.Name = "sepBar"
-      Me.sepBar.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepBar.Size = New System.Drawing.Size(246, 5)
-      Me.sepBar.TabIndex = 17
-      Me.sepBar.Text = "Separator3"
-      '
-      'eui_cmdArchiviAnagraficheRisorse
-      '
-      Me.eui_cmdArchiviAnagraficheRisorse.Id = "f4afaa9e-522d-4019-a285-029c6ecb50ca"
-      Me.eui_cmdArchiviAnagraficheRisorse.KeyTip = "O"
-      Me.eui_cmdArchiviAnagraficheRisorse.Location = New System.Drawing.Point(2, 252)
-      Me.eui_cmdArchiviAnagraficheRisorse.Name = "eui_cmdArchiviAnagraficheRisorse"
-      Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Caption = "Risorse"
-      Me.eui_cmdArchiviAnagraficheRisorse.ScreenTip.Text = "Apre l'anagrafica risorse."
-      Me.eui_cmdArchiviAnagraficheRisorse.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheRisorse.TabIndex = 20
-      Me.eui_cmdArchiviAnagraficheRisorse.Text = "Risorse sportive"
-      '
-      'eui_cmdArchiviAnagraficheUtilizzoRisorse
-      '
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Id = "d0ff87ef-a533-4552-b5c3-56466108fb2d"
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.KeyTip = "U"
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Location = New System.Drawing.Point(2, 275)
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Name = "eui_cmdArchiviAnagraficheUtilizzoRisorse"
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Caption = "Tipologie di utilizzo Risorse"
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.ScreenTip.Text = "Apre l'anagrafica tipologie di utilizzo risorse."
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.TabIndex = 28
-      Me.eui_cmdArchiviAnagraficheUtilizzoRisorse.Text = "Tipologie di utilizzo Risorse sportive"
-      '
-      'eui_cmdArchiviAnagraficheAccServ
-      '
-      Me.eui_cmdArchiviAnagraficheAccServ.Id = "8b4cd28c-31bb-4633-a134-990bf805937e"
-      Me.eui_cmdArchiviAnagraficheAccServ.KeyTip = "E"
-      Me.eui_cmdArchiviAnagraficheAccServ.Location = New System.Drawing.Point(2, 298)
-      Me.eui_cmdArchiviAnagraficheAccServ.Name = "eui_cmdArchiviAnagraficheAccServ"
-      Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Caption = "Accessori e Servizi"
-      Me.eui_cmdArchiviAnagraficheAccServ.ScreenTip.Text = "Apre l'anagrafica accessori e servizi."
-      Me.eui_cmdArchiviAnagraficheAccServ.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheAccServ.TabIndex = 23
-      Me.eui_cmdArchiviAnagraficheAccServ.Text = "Accessori e Servizi"
-      '
-      'sepRisorse
-      '
-      Me.sepRisorse.Id = "62d476ca-61d8-43e2-bb9f-94c1dd1afe65"
-      Me.sepRisorse.Location = New System.Drawing.Point(2, 321)
-      Me.sepRisorse.Name = "sepRisorse"
-      Me.sepRisorse.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepRisorse.Size = New System.Drawing.Size(246, 5)
-      Me.sepRisorse.TabIndex = 21
-      Me.sepRisorse.Text = "Separator7"
-      '
-      'eui_cmdArchiviAnagraficheDatiAzienda
-      '
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Id = "bb85a2af-cff1-4ee8-aa72-90a4caeedcef"
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.KeyTip = "D"
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Location = New System.Drawing.Point(2, 326)
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Name = "eui_cmdArchiviAnagraficheDatiAzienda"
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Caption = "Dati generali azienda"
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.ScreenTip.Text = "Apre l'anagrafica dati generali azienda."
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Size = New System.Drawing.Size(246, 23)
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviAnagraficheDatiAzienda.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.TabIndex = 18
-      Me.eui_cmdArchiviAnagraficheDatiAzienda.Text = "Dati generali azienda"
-      '
-      'RibbonGroup5
-      '
-      Me.RibbonGroup5.Controls.Add(Me.DropDown1)
-      Me.RibbonGroup5.DialogLauncherButtonVisible = False
-      Me.RibbonGroup5.Location = New System.Drawing.Point(90, 1)
-      Me.RibbonGroup5.Name = "RibbonGroup5"
-      Me.RibbonGroup5.Size = New System.Drawing.Size(64, 94)
-      Me.RibbonGroup5.TabIndex = 1
-      Me.RibbonGroup5.Text = "Tabelle"
-      '
-      'DropDown1
-      '
-      Me.DropDown1.Id = "05af90bd-5a7e-446a-822f-c18821da6945"
-      Me.DropDown1.KeyTip = "T"
-      Me.DropDown1.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown1.LargeImages.Images"), System.Drawing.Image))})
-      Me.DropDown1.Location = New System.Drawing.Point(4, 2)
-      Me.DropDown1.Name = "DropDown1"
-      Me.DropDown1.Popup = Me.PopupMenu3
-      Me.DropDown1.ScreenTip.Caption = "Seleziona tabelle"
-      Me.DropDown1.ScreenTip.Text = "Consente di selezionare le tabelle dati, ad esempio nazioni o reparti."
-      Me.DropDown1.Size = New System.Drawing.Size(55, 72)
-      Me.DropDown1.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("DropDown1.SmallImages.Images"), System.Drawing.Image))})
-      Me.DropDown1.TabIndex = 0
-      Me.DropDown1.Text = "Seleziona tabelle"
-      '
-      'PopupMenu3
-      '
-      Me.PopupMenu3.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_cmdArchiviTabelleTitoli, Me.eui_cmdArchiviTabelleCategorieCliente, Me.eui_cmdArchiviTabelleAttivit‡, Me.eui_cmdArchiviTabelleComuni, Me.eui_cmdArchiviTabelleNazioni, Me.Separator4, Me.eui_cmdArchiviTabelleUM, Me.eui_cmdArchiviTabelleCategorieMerce, Me.eui_cmdArchiviTabelleMagazzini, Me.eui_cmdArchiviTabelleUbicazioni, Me.eui_cmdArchiviTabelleScaffali, Me.sepMagazzino, Me.eui_cmdArchiviTabelleReparti, Me.eui_cmdArchiviTabelleMsgReparti, Me.sepReparti, Me.eui_cmdArchiviTabelleCausaliDoc, Me.eui_cmdArchiviTabellePagamenti, Me.eui_cmdArchiviTabelleSconti, Me.Separator8, Me.eui_cmdArchiviTabelleListini, Me.eui_cmdArchiviTabelleStagioni, Me.eui_cmdArchiviTabelleTipologieCamere, Me.eui_cmdArchiviTabelleUbicazioniCamere, Me.eui_cmdArchiviTabellePosizioniCamere, Me.eui_cmdArchiviTabelleTipoAlloggiati, Me.eui_cmdArchiviTabelleGruppi, Me.eui_cmdArchiviTabelleAgenzie, Me.eui_cmdArchiviTabelleCanali, Me.sepListini, Me.eui_cmdArchiviTabelleStatoPren, Me.sepStatoPren, Me.eui_cmdArchiviTabelleDocIdentit‡, Me.Separator24, Me.eui_cmdArchiviTabelleTipoRisorse, Me.Separator25, Me.eui_cmdArchiviTabelleStatoNoleggi})
-      Me.PopupMenu3.KeepPopupsWithOffsetPlacementWithinPlacementArea = False
-      Me.PopupMenu3.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom
-      Me.PopupMenu3.Size = New System.Drawing.Size(100, 100)
-      '
-      'eui_cmdArchiviTabelleTitoli
-      '
-      Me.eui_cmdArchiviTabelleTitoli.Id = "38f80de3-a8fd-4772-abfd-320a5fa0c961"
-      Me.eui_cmdArchiviTabelleTitoli.KeyTip = "F"
-      Me.eui_cmdArchiviTabelleTitoli.Location = New System.Drawing.Point(2, 2)
-      Me.eui_cmdArchiviTabelleTitoli.Name = "eui_cmdArchiviTabelleTitoli"
-      Me.eui_cmdArchiviTabelleTitoli.ScreenTip.Caption = "Forme di cortesia"
-      Me.eui_cmdArchiviTabelleTitoli.ScreenTip.Text = "Apre la tabella dati forme di cortesia."
-      Me.eui_cmdArchiviTabelleTitoli.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleTitoli.TabIndex = 3
-      Me.eui_cmdArchiviTabelleTitoli.Text = "Forme di cortesia"
-      '
-      'eui_cmdArchiviTabelleCategorieCliente
-      '
-      Me.eui_cmdArchiviTabelleCategorieCliente.Id = "47a5ad0d-c307-428b-9a0f-dc234eb2d0d2"
-      Me.eui_cmdArchiviTabelleCategorieCliente.KeyTip = "C"
-      Me.eui_cmdArchiviTabelleCategorieCliente.Location = New System.Drawing.Point(2, 25)
-      Me.eui_cmdArchiviTabelleCategorieCliente.Name = "eui_cmdArchiviTabelleCategorieCliente"
-      Me.eui_cmdArchiviTabelleCategorieCliente.ScreenTip.Caption = "Categorie cliente"
-      Me.eui_cmdArchiviTabelleCategorieCliente.ScreenTip.Text = "Apre la tabella dati categorie cliente."
-      Me.eui_cmdArchiviTabelleCategorieCliente.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleCategorieCliente.TabIndex = 4
-      Me.eui_cmdArchiviTabelleCategorieCliente.Text = "Categorie cliente"
-      '
-      'eui_cmdArchiviTabelleAttivit‡
-      '
-      Me.eui_cmdArchiviTabelleAttivit‡.Id = "a2261b9a-082e-4bc5-aac3-60a8e9ca639c"
-      Me.eui_cmdArchiviTabelleAttivit‡.KeyTip = "A"
-      Me.eui_cmdArchiviTabelleAttivit‡.Location = New System.Drawing.Point(2, 48)
-      Me.eui_cmdArchiviTabelleAttivit‡.Name = "eui_cmdArchiviTabelleAttivit‡"
-      Me.eui_cmdArchiviTabelleAttivit‡.ScreenTip.Caption = "Attivit‡"
-      Me.eui_cmdArchiviTabelleAttivit‡.ScreenTip.Text = "Apre la tabella dati attivit‡."
-      Me.eui_cmdArchiviTabelleAttivit‡.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleAttivit‡.TabIndex = 5
-      Me.eui_cmdArchiviTabelleAttivit‡.Text = "Attivit‡"
-      '
-      'eui_cmdArchiviTabelleComuni
-      '
-      Me.eui_cmdArchiviTabelleComuni.Id = "674157ba-aa23-416c-a12e-e4a402798575"
-      Me.eui_cmdArchiviTabelleComuni.KeyTip = "CO"
-      Me.eui_cmdArchiviTabelleComuni.Location = New System.Drawing.Point(2, 71)
-      Me.eui_cmdArchiviTabelleComuni.Name = "eui_cmdArchiviTabelleComuni"
-      Me.eui_cmdArchiviTabelleComuni.ScreenTip.Caption = "Comuni"
-      Me.eui_cmdArchiviTabelleComuni.ScreenTip.Text = "Apre la tabella Comuni."
-      Me.eui_cmdArchiviTabelleComuni.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleComuni.TabIndex = 41
-      Me.eui_cmdArchiviTabelleComuni.Text = "Comuni"
-      '
-      'eui_cmdArchiviTabelleNazioni
-      '
-      Me.eui_cmdArchiviTabelleNazioni.Id = "3a17d453-8b19-44f3-a820-5ead94841c40"
-      Me.eui_cmdArchiviTabelleNazioni.KeyTip = "N"
-      Me.eui_cmdArchiviTabelleNazioni.Location = New System.Drawing.Point(2, 94)
-      Me.eui_cmdArchiviTabelleNazioni.Name = "eui_cmdArchiviTabelleNazioni"
-      Me.eui_cmdArchiviTabelleNazioni.ScreenTip.Caption = "Nazioni"
-      Me.eui_cmdArchiviTabelleNazioni.ScreenTip.Text = "Apre la tabella dati nazioni."
-      Me.eui_cmdArchiviTabelleNazioni.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleNazioni.TabIndex = 6
-      Me.eui_cmdArchiviTabelleNazioni.Text = "Nazioni"
-      '
-      'Separator4
-      '
-      Me.Separator4.Id = "50c0a4f8-5ba9-4550-b480-adfc21e028b1"
-      Me.Separator4.Location = New System.Drawing.Point(2, 117)
-      Me.Separator4.Name = "Separator4"
-      Me.Separator4.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator4.Size = New System.Drawing.Size(193, 5)
-      Me.Separator4.TabIndex = 7
-      Me.Separator4.Text = "Separator4"
-      '
-      'eui_cmdArchiviTabelleUM
-      '
-      Me.eui_cmdArchiviTabelleUM.Id = "faf6839f-7052-4676-9417-f1ed8d41244e"
-      Me.eui_cmdArchiviTabelleUM.KeyTip = "U"
-      Me.eui_cmdArchiviTabelleUM.Location = New System.Drawing.Point(2, 122)
-      Me.eui_cmdArchiviTabelleUM.Name = "eui_cmdArchiviTabelleUM"
-      Me.eui_cmdArchiviTabelleUM.ScreenTip.Caption = "Unit‡ di misura"
-      Me.eui_cmdArchiviTabelleUM.ScreenTip.Text = "Apre la tabella dati unit‡ di misura."
-      Me.eui_cmdArchiviTabelleUM.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleUM.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleUM.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleUM.TabIndex = 8
-      Me.eui_cmdArchiviTabelleUM.Text = "Unit‡ di misura"
-      '
-      'eui_cmdArchiviTabelleCategorieMerce
-      '
-      Me.eui_cmdArchiviTabelleCategorieMerce.Id = "dee981ce-d5a3-4325-b5a2-2c71f3400c81"
-      Me.eui_cmdArchiviTabelleCategorieMerce.KeyTip = "H"
-      Me.eui_cmdArchiviTabelleCategorieMerce.Location = New System.Drawing.Point(2, 145)
-      Me.eui_cmdArchiviTabelleCategorieMerce.Name = "eui_cmdArchiviTabelleCategorieMerce"
-      Me.eui_cmdArchiviTabelleCategorieMerce.ScreenTip.Caption = "Categorie merceologiche"
-      Me.eui_cmdArchiviTabelleCategorieMerce.ScreenTip.Text = "Apre la tabella dati categorie merceologiche."
-      Me.eui_cmdArchiviTabelleCategorieMerce.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleCategorieMerce.TabIndex = 9
-      Me.eui_cmdArchiviTabelleCategorieMerce.Text = "Categorie merceologiche"
-      '
-      'eui_cmdArchiviTabelleMagazzini
-      '
-      Me.eui_cmdArchiviTabelleMagazzini.Id = "be55d212-cf16-43fe-ad96-a9f72bc9f0b5"
-      Me.eui_cmdArchiviTabelleMagazzini.KeyTip = "M"
-      Me.eui_cmdArchiviTabelleMagazzini.Location = New System.Drawing.Point(2, 168)
-      Me.eui_cmdArchiviTabelleMagazzini.Name = "eui_cmdArchiviTabelleMagazzini"
-      Me.eui_cmdArchiviTabelleMagazzini.ScreenTip.Caption = "Magazzini"
-      Me.eui_cmdArchiviTabelleMagazzini.ScreenTip.Text = "Apre la tabella dati magazzini."
-      Me.eui_cmdArchiviTabelleMagazzini.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleMagazzini.TabIndex = 10
-      Me.eui_cmdArchiviTabelleMagazzini.Text = "Magazzini"
-      '
-      'eui_cmdArchiviTabelleUbicazioni
-      '
-      Me.eui_cmdArchiviTabelleUbicazioni.Id = "5955513e-0173-4c91-b60e-7a47a40272d6"
-      Me.eui_cmdArchiviTabelleUbicazioni.KeyTip = "B"
-      Me.eui_cmdArchiviTabelleUbicazioni.Location = New System.Drawing.Point(2, 191)
-      Me.eui_cmdArchiviTabelleUbicazioni.Name = "eui_cmdArchiviTabelleUbicazioni"
-      Me.eui_cmdArchiviTabelleUbicazioni.ScreenTip.Caption = "Ubicazioni"
-      Me.eui_cmdArchiviTabelleUbicazioni.ScreenTip.Text = "Apre la tabella dati ubicazioni."
-      Me.eui_cmdArchiviTabelleUbicazioni.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleUbicazioni.TabIndex = 11
-      Me.eui_cmdArchiviTabelleUbicazioni.Text = "Ubicazioni articoli"
-      '
-      'eui_cmdArchiviTabelleScaffali
-      '
-      Me.eui_cmdArchiviTabelleScaffali.Id = "73e60a2d-350f-47d3-9545-20effbe781de"
-      Me.eui_cmdArchiviTabelleScaffali.KeyTip = "L"
-      Me.eui_cmdArchiviTabelleScaffali.Location = New System.Drawing.Point(2, 214)
-      Me.eui_cmdArchiviTabelleScaffali.Name = "eui_cmdArchiviTabelleScaffali"
-      Me.eui_cmdArchiviTabelleScaffali.ScreenTip.Caption = "Scaffali"
-      Me.eui_cmdArchiviTabelleScaffali.ScreenTip.Text = "Apre la tabella dati scaffali."
-      Me.eui_cmdArchiviTabelleScaffali.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleScaffali.TabIndex = 12
-      Me.eui_cmdArchiviTabelleScaffali.Text = "Scaffali"
-      '
-      'sepMagazzino
-      '
-      Me.sepMagazzino.Id = "da0fb479-de4c-4436-8880-d242264fc739"
-      Me.sepMagazzino.Location = New System.Drawing.Point(2, 237)
-      Me.sepMagazzino.Name = "sepMagazzino"
-      Me.sepMagazzino.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepMagazzino.Size = New System.Drawing.Size(193, 5)
-      Me.sepMagazzino.TabIndex = 13
-      Me.sepMagazzino.Text = "Separator5"
-      '
-      'eui_cmdArchiviTabelleReparti
-      '
-      Me.eui_cmdArchiviTabelleReparti.Id = "60ec5086-cb08-429e-8b0d-3941f2b81dd1"
-      Me.eui_cmdArchiviTabelleReparti.KeyTip = "R"
-      Me.eui_cmdArchiviTabelleReparti.Location = New System.Drawing.Point(2, 242)
-      Me.eui_cmdArchiviTabelleReparti.Name = "eui_cmdArchiviTabelleReparti"
-      Me.eui_cmdArchiviTabelleReparti.ScreenTip.Caption = "Reparti"
-      Me.eui_cmdArchiviTabelleReparti.ScreenTip.Text = "Apre la tabella dati reparti."
-      Me.eui_cmdArchiviTabelleReparti.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleReparti.TabIndex = 14
-      Me.eui_cmdArchiviTabelleReparti.Text = "Reparti"
-      '
-      'eui_cmdArchiviTabelleMsgReparti
-      '
-      Me.eui_cmdArchiviTabelleMsgReparti.Id = "89281fba-2e57-43ce-8d7e-4b937fdb9a48"
-      Me.eui_cmdArchiviTabelleMsgReparti.KeyTip = "MR"
-      Me.eui_cmdArchiviTabelleMsgReparti.Location = New System.Drawing.Point(2, 265)
-      Me.eui_cmdArchiviTabelleMsgReparti.Name = "eui_cmdArchiviTabelleMsgReparti"
-      Me.eui_cmdArchiviTabelleMsgReparti.ScreenTip.Caption = "Messaggi ai reparti"
-      Me.eui_cmdArchiviTabelleMsgReparti.ScreenTip.Text = "Apre la tabella dati messaggi ai reparti."
-      Me.eui_cmdArchiviTabelleMsgReparti.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleMsgReparti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleMsgReparti.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleMsgReparti.TabIndex = 15
-      Me.eui_cmdArchiviTabelleMsgReparti.Text = "Messaggi ai reparti"
-      '
-      'sepReparti
-      '
-      Me.sepReparti.Id = "e3bfc13a-0c16-4a6c-ac04-accd7559386a"
-      Me.sepReparti.Location = New System.Drawing.Point(2, 288)
-      Me.sepReparti.Name = "sepReparti"
-      Me.sepReparti.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepReparti.Size = New System.Drawing.Size(193, 5)
-      Me.sepReparti.TabIndex = 16
-      Me.sepReparti.Text = "Separator6"
-      '
-      'eui_cmdArchiviTabelleCausaliDoc
-      '
-      Me.eui_cmdArchiviTabelleCausaliDoc.Id = "72822677-055c-45d1-bd50-bebe2b75f7db"
-      Me.eui_cmdArchiviTabelleCausaliDoc.KeyTip = "D"
-      Me.eui_cmdArchiviTabelleCausaliDoc.Location = New System.Drawing.Point(2, 293)
-      Me.eui_cmdArchiviTabelleCausaliDoc.Name = "eui_cmdArchiviTabelleCausaliDoc"
-      Me.eui_cmdArchiviTabelleCausaliDoc.ScreenTip.Caption = "Causali documento"
-      Me.eui_cmdArchiviTabelleCausaliDoc.ScreenTip.Text = "Apre la tabella Causali documento."
-      Me.eui_cmdArchiviTabelleCausaliDoc.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleCausaliDoc.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleCausaliDoc.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleCausaliDoc.TabIndex = 17
-      Me.eui_cmdArchiviTabelleCausaliDoc.Text = "Causali documento"
-      '
-      'eui_cmdArchiviTabellePagamenti
-      '
-      Me.eui_cmdArchiviTabellePagamenti.Id = "7ed2cf63-f122-444c-8872-1d03eb7f0424"
-      Me.eui_cmdArchiviTabellePagamenti.KeyTip = "P"
-      Me.eui_cmdArchiviTabellePagamenti.Location = New System.Drawing.Point(2, 316)
-      Me.eui_cmdArchiviTabellePagamenti.Name = "eui_cmdArchiviTabellePagamenti"
-      Me.eui_cmdArchiviTabellePagamenti.ScreenTip.Caption = "Modalit‡ di pagamento"
-      Me.eui_cmdArchiviTabellePagamenti.ScreenTip.Text = "Apre la tabella dati Modalit‡ di pagamento"
-      Me.eui_cmdArchiviTabellePagamenti.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabellePagamenti.TabIndex = 18
-      Me.eui_cmdArchiviTabellePagamenti.Text = "Modalit‡ di pagamento"
-      '
-      'eui_cmdArchiviTabelleSconti
-      '
-      Me.eui_cmdArchiviTabelleSconti.Id = "082703c0-7ed2-449b-bc0e-bf61a9fddc0b"
-      Me.eui_cmdArchiviTabelleSconti.KeyTip = "SM"
-      Me.eui_cmdArchiviTabelleSconti.Location = New System.Drawing.Point(2, 339)
-      Me.eui_cmdArchiviTabelleSconti.Name = "eui_cmdArchiviTabelleSconti"
-      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Caption = "Sconti e Maggiorazioni"
-      Me.eui_cmdArchiviTabelleSconti.ScreenTip.Text = "Apre la tabella dati Sconti e Maggiorazioni"
-      Me.eui_cmdArchiviTabelleSconti.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleSconti.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleSconti.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleSconti.TabIndex = 44
-      Me.eui_cmdArchiviTabelleSconti.Text = "Sconti e Maggiorazioni"
-      '
-      'Separator8
-      '
-      Me.Separator8.Id = "0ad3c5b2-6ac0-450d-a422-ae9a2232b901"
-      Me.Separator8.Location = New System.Drawing.Point(2, 362)
-      Me.Separator8.Name = "Separator8"
-      Me.Separator8.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator8.Size = New System.Drawing.Size(193, 5)
-      Me.Separator8.TabIndex = 20
-      Me.Separator8.Text = "Separator8"
-      '
-      'eui_cmdArchiviTabelleListini
-      '
-      Me.eui_cmdArchiviTabelleListini.Id = "bb29d2d5-c941-4a8f-90de-3c51cff7c3da"
-      Me.eui_cmdArchiviTabelleListini.KeyTip = "L"
-      Me.eui_cmdArchiviTabelleListini.Location = New System.Drawing.Point(2, 367)
-      Me.eui_cmdArchiviTabelleListini.Name = "eui_cmdArchiviTabelleListini"
-      Me.eui_cmdArchiviTabelleListini.ScreenTip.Caption = "Listini camere"
-      Me.eui_cmdArchiviTabelleListini.ScreenTip.Text = "Apre la tabella dati listini."
-      Me.PopupMenu3.SetShortcutKeyDisplayString(Me.eui_cmdArchiviTabelleListini, "CTRL+L")
-      Me.PopupMenu3.SetShortcutKeys(Me.eui_cmdArchiviTabelleListini, CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys))
-      Me.eui_cmdArchiviTabelleListini.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleListini.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleListini.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleListini.TabIndex = 24
-      Me.eui_cmdArchiviTabelleListini.Text = "Listini camere"
-      '
-      'eui_cmdArchiviTabelleStagioni
-      '
-      Me.eui_cmdArchiviTabelleStagioni.Id = "86931de7-ac3b-4630-852a-5026d1dcd891"
-      Me.eui_cmdArchiviTabelleStagioni.KeyTip = "ST"
-      Me.eui_cmdArchiviTabelleStagioni.Location = New System.Drawing.Point(2, 390)
-      Me.eui_cmdArchiviTabelleStagioni.Name = "eui_cmdArchiviTabelleStagioni"
-      Me.eui_cmdArchiviTabelleStagioni.ScreenTip.Caption = "Stagioni"
-      Me.eui_cmdArchiviTabelleStagioni.ScreenTip.Text = "Apre la tabella dati stagioni."
-      Me.eui_cmdArchiviTabelleStagioni.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleStagioni.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStagioni.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleStagioni.TabIndex = 29
-      Me.eui_cmdArchiviTabelleStagioni.Text = "Stagioni"
-      '
-      'eui_cmdArchiviTabelleTipologieCamere
-      '
-      Me.eui_cmdArchiviTabelleTipologieCamere.Id = "94bbf9a2-ad92-402a-b2da-3b4c3355a3de"
-      Me.eui_cmdArchiviTabelleTipologieCamere.KeyTip = "G"
-      Me.eui_cmdArchiviTabelleTipologieCamere.Location = New System.Drawing.Point(2, 413)
-      Me.eui_cmdArchiviTabelleTipologieCamere.Name = "eui_cmdArchiviTabelleTipologieCamere"
-      Me.eui_cmdArchiviTabelleTipologieCamere.ScreenTip.Caption = "Tipologie camere"
-      Me.eui_cmdArchiviTabelleTipologieCamere.ScreenTip.Text = "Apre la tabella dati tipologie camere."
-      Me.eui_cmdArchiviTabelleTipologieCamere.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleTipologieCamere.TabIndex = 25
-      Me.eui_cmdArchiviTabelleTipologieCamere.Text = "Tipologie camere"
-      '
-      'eui_cmdArchiviTabelleUbicazioniCamere
-      '
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.Id = "45736403-b4de-4c69-adcd-dc49b47ec18e"
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.KeyTip = "Z"
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.Location = New System.Drawing.Point(2, 436)
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.Name = "eui_cmdArchiviTabelleUbicazioniCamere"
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.ScreenTip.Caption = "Ubicazioni camere"
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.ScreenTip.Text = "Apre la tabella dati ubicazioni camere."
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.TabIndex = 26
-      Me.eui_cmdArchiviTabelleUbicazioniCamere.Text = "Ubicazioni camere"
-      '
-      'eui_cmdArchiviTabellePosizioniCamere
-      '
-      Me.eui_cmdArchiviTabellePosizioniCamere.Id = "9602ab25-955b-4d8d-96cf-9f7f4b6db982"
-      Me.eui_cmdArchiviTabellePosizioniCamere.KeyTip = "I"
-      Me.eui_cmdArchiviTabellePosizioniCamere.Location = New System.Drawing.Point(2, 459)
-      Me.eui_cmdArchiviTabellePosizioniCamere.Name = "eui_cmdArchiviTabellePosizioniCamere"
-      Me.eui_cmdArchiviTabellePosizioniCamere.ScreenTip.Caption = "Posizioni camere"
-      Me.eui_cmdArchiviTabellePosizioniCamere.ScreenTip.Text = "Apre la tabella dati posizioni camere."
-      Me.eui_cmdArchiviTabellePosizioniCamere.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabellePosizioniCamere.TabIndex = 27
-      Me.eui_cmdArchiviTabellePosizioniCamere.Text = "Posizioni camere"
-      '
-      'eui_cmdArchiviTabelleTipoAlloggiati
-      '
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.Id = "a5654816-8048-4a0d-b133-0fd94c2b77ab"
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.KeyTip = "TA"
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.Location = New System.Drawing.Point(2, 482)
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.Name = "eui_cmdArchiviTabelleTipoAlloggiati"
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.ScreenTip.Caption = "Tipo alloggiati"
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.ScreenTip.Text = "Apre la tabella Tipo alloggiati."
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.TabIndex = 42
-      Me.eui_cmdArchiviTabelleTipoAlloggiati.Text = "Tipo alloggiati"
-      '
-      'eui_cmdArchiviTabelleGruppi
-      '
-      Me.eui_cmdArchiviTabelleGruppi.Id = "c048b182-38c3-4574-bc4f-42833221ceb9"
-      Me.eui_cmdArchiviTabelleGruppi.KeyTip = "G"
-      Me.eui_cmdArchiviTabelleGruppi.Location = New System.Drawing.Point(2, 505)
-      Me.eui_cmdArchiviTabelleGruppi.Name = "eui_cmdArchiviTabelleGruppi"
-      Me.eui_cmdArchiviTabelleGruppi.ScreenTip.Caption = "Gruppi"
-      Me.eui_cmdArchiviTabelleGruppi.ScreenTip.Text = "Apre la tabella dati Gruppi"
-      Me.eui_cmdArchiviTabelleGruppi.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleGruppi.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleGruppi.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleGruppi.TabIndex = 37
-      Me.eui_cmdArchiviTabelleGruppi.Text = "Gruppi"
-      '
-      'eui_cmdArchiviTabelleAgenzie
-      '
-      Me.eui_cmdArchiviTabelleAgenzie.Id = "c7458d91-16e5-44c1-a946-3291b5917663"
-      Me.eui_cmdArchiviTabelleAgenzie.KeyTip = "AG"
-      Me.eui_cmdArchiviTabelleAgenzie.Location = New System.Drawing.Point(2, 528)
-      Me.eui_cmdArchiviTabelleAgenzie.Name = "eui_cmdArchiviTabelleAgenzie"
-      Me.eui_cmdArchiviTabelleAgenzie.ScreenTip.Caption = "Agenzie"
-      Me.eui_cmdArchiviTabelleAgenzie.ScreenTip.Text = "Apre la tabella dati Agenzie"
-      Me.eui_cmdArchiviTabelleAgenzie.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleAgenzie.TabIndex = 38
-      Me.eui_cmdArchiviTabelleAgenzie.Text = "Agenzie di viaggio"
-      '
-      'eui_cmdArchiviTabelleCanali
-      '
-      Me.eui_cmdArchiviTabelleCanali.Id = "78505507-1a73-4ea0-9e94-3fb8965c9f5c"
-      Me.eui_cmdArchiviTabelleCanali.KeyTip = "CP"
-      Me.eui_cmdArchiviTabelleCanali.Location = New System.Drawing.Point(2, 551)
-      Me.eui_cmdArchiviTabelleCanali.Name = "eui_cmdArchiviTabelleCanali"
-      Me.eui_cmdArchiviTabelleCanali.ScreenTip.Caption = "Canali di provenienza"
-      Me.eui_cmdArchiviTabelleCanali.ScreenTip.Text = "Apre la tabella dati Canali di provenienza"
-      Me.eui_cmdArchiviTabelleCanali.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleCanali.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleCanali.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleCanali.TabIndex = 39
-      Me.eui_cmdArchiviTabelleCanali.Text = "Canali di provenienza"
-      '
-      'sepListini
-      '
-      Me.sepListini.Id = "6b100059-3282-4af3-85d4-eb04fc0260f5"
-      Me.sepListini.Location = New System.Drawing.Point(2, 574)
-      Me.sepListini.Name = "sepListini"
-      Me.sepListini.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepListini.Size = New System.Drawing.Size(193, 5)
-      Me.sepListini.TabIndex = 23
-      Me.sepListini.Text = "Separator3"
-      '
-      'eui_cmdArchiviTabelleStatoPren
-      '
-      Me.eui_cmdArchiviTabelleStatoPren.Id = "a703ba35-3307-49a0-a495-226bdda2dab7"
-      Me.eui_cmdArchiviTabelleStatoPren.KeyTip = "SP"
-      Me.eui_cmdArchiviTabelleStatoPren.Location = New System.Drawing.Point(2, 579)
-      Me.eui_cmdArchiviTabelleStatoPren.Name = "eui_cmdArchiviTabelleStatoPren"
-      Me.eui_cmdArchiviTabelleStatoPren.ScreenTip.Caption = "Stato prenotazioni"
-      Me.eui_cmdArchiviTabelleStatoPren.ScreenTip.Text = "Apre la tabella dati stato prenotazioni."
-      Me.eui_cmdArchiviTabelleStatoPren.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleStatoPren.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStatoPren.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleStatoPren.TabIndex = 31
-      Me.eui_cmdArchiviTabelleStatoPren.Text = "Stato prenotazioni"
-      '
-      'sepStatoPren
-      '
-      Me.sepStatoPren.Id = "eaf278bb-56aa-4571-9f61-237861ac389b"
-      Me.sepStatoPren.Location = New System.Drawing.Point(2, 602)
-      Me.sepStatoPren.Name = "sepStatoPren"
-      Me.sepStatoPren.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.sepStatoPren.Size = New System.Drawing.Size(193, 5)
-      Me.sepStatoPren.TabIndex = 32
-      Me.sepStatoPren.Text = "Separator22"
-      '
-      'eui_cmdArchiviTabelleDocIdentit‡
-      '
-      Me.eui_cmdArchiviTabelleDocIdentit‡.Id = "4c1a5984-0b55-444d-9f0a-e7fed8fb2d7f"
-      Me.eui_cmdArchiviTabelleDocIdentit‡.KeyTip = "DI"
-      Me.eui_cmdArchiviTabelleDocIdentit‡.Location = New System.Drawing.Point(2, 607)
-      Me.eui_cmdArchiviTabelleDocIdentit‡.Name = "eui_cmdArchiviTabelleDocIdentit‡"
-      Me.eui_cmdArchiviTabelleDocIdentit‡.ScreenTip.Caption = "Documenti d'identit‡"
-      Me.eui_cmdArchiviTabelleDocIdentit‡.ScreenTip.Text = "Apre la tabella dati documenti d'identit‡."
-      Me.eui_cmdArchiviTabelleDocIdentit‡.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleDocIdentit‡.TabIndex = 34
-      Me.eui_cmdArchiviTabelleDocIdentit‡.Text = "Documenti d'identit‡"
-      '
-      'Separator24
-      '
-      Me.Separator24.Id = "7537d85d-aceb-4ee4-a412-c7c19e20f6d8"
-      Me.Separator24.Location = New System.Drawing.Point(2, 630)
-      Me.Separator24.Name = "Separator24"
-      Me.Separator24.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator24.Size = New System.Drawing.Size(193, 5)
-      Me.Separator24.TabIndex = 35
-      Me.Separator24.Text = "Separator24"
-      '
-      'eui_cmdArchiviTabelleTipoRisorse
-      '
-      Me.eui_cmdArchiviTabelleTipoRisorse.Id = "56b63c25-3179-48dc-80e3-7136b9fb3c01"
-      Me.eui_cmdArchiviTabelleTipoRisorse.KeyTip = "O"
-      Me.eui_cmdArchiviTabelleTipoRisorse.Location = New System.Drawing.Point(2, 635)
-      Me.eui_cmdArchiviTabelleTipoRisorse.Name = "eui_cmdArchiviTabelleTipoRisorse"
-      Me.eui_cmdArchiviTabelleTipoRisorse.ScreenTip.Caption = "Tipologie risorse"
-      Me.eui_cmdArchiviTabelleTipoRisorse.ScreenTip.Text = "Apre la tabella dati tipologie risorse."
-      Me.eui_cmdArchiviTabelleTipoRisorse.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleTipoRisorse.TabIndex = 21
-      Me.eui_cmdArchiviTabelleTipoRisorse.Text = "Tipologie risorse"
-      '
-      'RibbonGroup1
-      '
-      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviImporta)
-      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviBackup)
-      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviPulizia)
-      Me.RibbonGroup1.Controls.Add(Me.eui_cmdArchiviCompatta)
-      Me.RibbonGroup1.DialogLauncherButtonVisible = False
-      Me.RibbonGroup1.Location = New System.Drawing.Point(154, 1)
-      Me.RibbonGroup1.Name = "RibbonGroup1"
-      Me.RibbonGroup1.Size = New System.Drawing.Size(259, 94)
-      Me.RibbonGroup1.TabIndex = 2
-      Me.RibbonGroup1.Text = "Strumenti"
-      '
-      'eui_cmdArchiviImporta
-      '
-      Me.eui_cmdArchiviImporta.Id = "c178a5ef-e947-46ac-8dfc-abc23a9e4f34"
-      Me.eui_cmdArchiviImporta.KeyTip = "I"
-      Me.eui_cmdArchiviImporta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviImporta.Location = New System.Drawing.Point(4, 2)
-      Me.eui_cmdArchiviImporta.Name = "eui_cmdArchiviImporta"
-      Me.eui_cmdArchiviImporta.ScreenTip.Caption = "Importa dati"
-      Me.eui_cmdArchiviImporta.ScreenTip.Text = "Consente di importare dati da altri archivi di backup."
-      Me.eui_cmdArchiviImporta.Size = New System.Drawing.Size(46, 72)
-      Me.eui_cmdArchiviImporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviImporta.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviImporta.TabIndex = 0
-      Me.eui_cmdArchiviImporta.Text = "Importa dati"
-      '
-      'eui_cmdArchiviBackup
-      '
-      Me.eui_cmdArchiviBackup.Id = "e8fb8df1-ef53-4d07-b79c-07bdd519fb5f"
-      Me.eui_cmdArchiviBackup.KeyTip = "B"
-      Me.eui_cmdArchiviBackup.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviBackup.Location = New System.Drawing.Point(52, 2)
-      Me.eui_cmdArchiviBackup.Name = "eui_cmdArchiviBackup"
-      Me.eui_cmdArchiviBackup.ScreenTip.Caption = "Backup dei dati"
-      Me.eui_cmdArchiviBackup.ScreenTip.Text = "Consente di effettuare copie di sicurezza degli archivi."
-      Me.eui_cmdArchiviBackup.Size = New System.Drawing.Size(43, 72)
-      Me.eui_cmdArchiviBackup.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviBackup.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviBackup.TabIndex = 1
-      Me.eui_cmdArchiviBackup.Text = "Backup dei dati"
-      '
-      'eui_cmdArchiviPulizia
-      '
-      Me.eui_cmdArchiviPulizia.Id = "2f3faba2-356f-4602-a694-0de53831137b"
-      Me.eui_cmdArchiviPulizia.KeyTip = "P"
-      Me.eui_cmdArchiviPulizia.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviPulizia.Location = New System.Drawing.Point(97, 2)
-      Me.eui_cmdArchiviPulizia.Name = "eui_cmdArchiviPulizia"
-      Me.eui_cmdArchiviPulizia.ScreenTip.Caption = "Pulizia degli archivi"
-      Me.eui_cmdArchiviPulizia.ScreenTip.Text = "Consente di effettuare l'eliminazione dei dati per singola tabella presenti negli" &
-    " archivi."
-      Me.eui_cmdArchiviPulizia.Size = New System.Drawing.Size(67, 72)
-      Me.eui_cmdArchiviPulizia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviPulizia.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviPulizia.TabIndex = 2
-      Me.eui_cmdArchiviPulizia.Text = "Pulizia degli archivi"
-      '
-      'eui_cmdArchiviCompatta
-      '
-      Me.eui_cmdArchiviCompatta.Id = "e849859a-d3f9-484a-a494-6ecad6c05a46"
-      Me.eui_cmdArchiviCompatta.KeyTip = "C"
-      Me.eui_cmdArchiviCompatta.LargeImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.LargeImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviCompatta.Location = New System.Drawing.Point(166, 2)
-      Me.eui_cmdArchiviCompatta.Name = "eui_cmdArchiviCompatta"
-      Me.eui_cmdArchiviCompatta.ScreenTip.Caption = "Compatta e ripristina archivi"
-      Me.eui_cmdArchiviCompatta.ScreenTip.Text = "Consente di effettuare la compattazione e il ripristino degli archivi."
-      Me.eui_cmdArchiviCompatta.Size = New System.Drawing.Size(88, 72)
-      Me.eui_cmdArchiviCompatta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviCompatta.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviCompatta.TabIndex = 3
-      Me.eui_cmdArchiviCompatta.Text = "Compatta e ripristina archivi"
       '
       'eui_Contabilit‡
       '
@@ -6108,10 +6188,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 429)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 438)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1191, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1215, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -6123,7 +6203,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(594, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(618, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -6200,7 +6280,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(594, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(618, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -6522,34 +6602,11 @@ Friend Class frmMain
       Me.RibbonTabPage8.TabIndex = 0
       Me.RibbonTabPage8.Text = "RibbonTabPage8"
       '
-      'eui_cmdArchiviTabelleStatoNoleggi
-      '
-      Me.eui_cmdArchiviTabelleStatoNoleggi.Id = "35c9428f-943f-40bc-afa4-c165fbb5d337"
-      Me.eui_cmdArchiviTabelleStatoNoleggi.KeyTip = "SN"
-      Me.eui_cmdArchiviTabelleStatoNoleggi.Location = New System.Drawing.Point(2, 663)
-      Me.eui_cmdArchiviTabelleStatoNoleggi.Name = "eui_cmdArchiviTabelleStatoNoleggi"
-      Me.eui_cmdArchiviTabelleStatoNoleggi.ScreenTip.Caption = "Stato noleggi"
-      Me.eui_cmdArchiviTabelleStatoNoleggi.ScreenTip.Text = "Apre la tabella dati stato noleggi."
-      Me.eui_cmdArchiviTabelleStatoNoleggi.Size = New System.Drawing.Size(193, 23)
-      Me.eui_cmdArchiviTabelleStatoNoleggi.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdArchiviTabelleStatoNoleggi.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdArchiviTabelleStatoNoleggi.TabIndex = 46
-      Me.eui_cmdArchiviTabelleStatoNoleggi.Text = "Stato noleggi"
-      '
-      'Separator25
-      '
-      Me.Separator25.Id = "490d4507-28d8-4544-9f57-fcbfbace54db"
-      Me.Separator25.Location = New System.Drawing.Point(2, 658)
-      Me.Separator25.Name = "Separator25"
-      Me.Separator25.Orientation = Elegant.Ui.SeparatorOrientation.Horizontal
-      Me.Separator25.Size = New System.Drawing.Size(193, 5)
-      Me.Separator25.TabIndex = 47
-      Me.Separator25.Text = "Separator25"
-      '
       'frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1191, 451)
+      Me.ClientSize = New System.Drawing.Size(1215, 460)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -6560,249 +6617,249 @@ Friend Class frmMain
       Me.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = " "
-      CType(Me.picProg, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_File, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).EndInit
+      CType(Me.picProg, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_File, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_BackstageView1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GestioneModuli.ResumeLayout(False)
       Me.eui_Info.ResumeLayout(False)
-      Me.eui_Info.PerformLayout
-      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Info.PerformLayout()
+      CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Guida.ResumeLayout(False)
       Me.BackstageViewPage1.ResumeLayout(False)
-      Me.BackstageViewPage1.PerformLayout
-      CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_lstProdottiAttivati, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).EndInit
+      Me.BackstageViewPage1.PerformLayout()
+      CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_lstProdottiAttivati, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_StrumentiModifica, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiModifica.ResumeLayout(False)
-      Me.eui_StrumentiModifica.PerformLayout
-      CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_StrumentiModifica.PerformLayout()
+      CType(Me.RibbonGroup21, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup21.ResumeLayout(False)
-      Me.RibbonGroup21.PerformLayout
-      CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_Strumenti_Magazzino, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup21.PerformLayout()
+      CType(Me.PopupMenu16, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_Strumenti_Magazzino, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Strumenti_Magazzino.ResumeLayout(False)
-      Me.eui_Strumenti_Magazzino.PerformLayout
-      CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Strumenti_Magazzino.PerformLayout()
+      CType(Me.RibbonGroup18, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup18.ResumeLayout(False)
-      Me.RibbonGroup18.PerformLayout
-      CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup18.PerformLayout()
+      CType(Me.eui_StrumentiPeriodo, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiPeriodo.ResumeLayout(False)
-      Me.eui_StrumentiPeriodo.PerformLayout
-      CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_StrumentiPeriodo.PerformLayout()
+      CType(Me.RibbonGroup26, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup26.ResumeLayout(False)
-      Me.RibbonGroup26.PerformLayout
-      CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup26.PerformLayout()
+      CType(Me.eui_rib_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_rib_Visualizza.ResumeLayout(False)
-      Me.eui_rib_Visualizza.PerformLayout
-      CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_rib_Visualizza.PerformLayout()
+      CType(Me.eui_StrumentiDocumenti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiDocumenti.ResumeLayout(False)
-      Me.eui_StrumentiDocumenti.PerformLayout
-      CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_StrumentiDocumenti.PerformLayout()
+      CType(Me.RibbonGroup29, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup29.ResumeLayout(False)
-      Me.RibbonGroup29.PerformLayout
-      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup29.PerformLayout()
+      CType(Me.RibbonGroup27, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup27.ResumeLayout(False)
-      Me.RibbonGroup27.PerformLayout
-      CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup27.PerformLayout()
+      CType(Me.PopupMenu14, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu13, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu15, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_StrumentiSospesiBuoni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_StrumentiSospesiBuoni.ResumeLayout(False)
-      Me.eui_StrumentiSospesiBuoni.PerformLayout
-      CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_StrumentiSospesiBuoni.PerformLayout()
+      CType(Me.RibbonGroup20, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup20.ResumeLayout(False)
-      Me.RibbonGroup20.PerformLayout
-      CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup20.PerformLayout()
+      CType(Me.RibbonGroup25, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup25.ResumeLayout(False)
-      Me.RibbonGroup25.PerformLayout
-      CType(Me.RibbonTabPage9, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup25.PerformLayout()
+      CType(Me.RibbonTabPage9, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonTabPage9.ResumeLayout(False)
-      Me.RibbonTabPage9.PerformLayout
-      CType(Me.RibbonGroup33, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonTabPage9.PerformLayout()
+      CType(Me.RibbonGroup33, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup33.ResumeLayout(False)
-      Me.RibbonGroup33.PerformLayout
-      CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup33.PerformLayout()
+      CType(Me.eui_PCamere_Prenotazioni, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_PCamere_Prenotazioni.ResumeLayout(False)
-      Me.eui_PCamere_Prenotazioni.PerformLayout
-      CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_PCamere_Prenotazioni.PerformLayout()
+      CType(Me.RibbonGroup13, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup13.ResumeLayout(False)
-      Me.RibbonGroup13.PerformLayout
-      CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup13.PerformLayout()
+      CType(Me.RibbonGroup3, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup3.ResumeLayout(False)
-      Me.RibbonGroup3.PerformLayout
-      CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup3.PerformLayout()
+      CType(Me.RibbonGroup4, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup4.ResumeLayout(False)
-      Me.RibbonGroup4.PerformLayout
-      CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup4.PerformLayout()
+      CType(Me.eui_PCamere_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_PCamere_Visualizza.ResumeLayout(False)
-      Me.eui_PCamere_Visualizza.PerformLayout
-      CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_PCamere_Visualizza.PerformLayout()
+      CType(Me.RibbonGroup23, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup23.ResumeLayout(False)
-      Me.RibbonGroup23.PerformLayout
-      CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup23.PerformLayout()
+      CType(Me.RibbonGroup24, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup24.ResumeLayout(False)
-      Me.RibbonGroup24.PerformLayout
-      CType(Me.RibbonTabPage6, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup24.PerformLayout()
+      CType(Me.RibbonTabPage6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonTabPage6.ResumeLayout(False)
-      Me.RibbonTabPage6.PerformLayout
-      CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonTabPage6.PerformLayout()
+      CType(Me.RibbonGroup2, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup2.ResumeLayout(False)
-      Me.RibbonGroup2.PerformLayout
-      CType(Me.RibbonGroup31, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup2.PerformLayout()
+      CType(Me.RibbonGroup31, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup31.ResumeLayout(False)
-      Me.RibbonGroup31.PerformLayout
-      CType(Me.RibbonGroup32, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup31.PerformLayout()
+      CType(Me.RibbonGroup32, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup32.ResumeLayout(False)
-      Me.RibbonGroup32.PerformLayout
-      CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).EndInit
-      Me.eui_Gestione.ResumeLayout(False)
-      Me.eui_Gestione.PerformLayout
-      CType(Me.RibbonGroup35, System.ComponentModel.ISupportInitialize).EndInit
-      Me.RibbonGroup35.ResumeLayout(False)
-      Me.RibbonGroup35.PerformLayout
-      CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).EndInit
-      Me.eui_GruppoPos.ResumeLayout(False)
-      Me.eui_GruppoPos.PerformLayout
-      CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).EndInit
-      Me.eui_GruppoPrenotazioni.ResumeLayout(False)
-      Me.eui_GruppoPrenotazioni.PerformLayout
-      CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonGroup34, System.ComponentModel.ISupportInitialize).EndInit
-      Me.RibbonGroup34.ResumeLayout(False)
-      Me.RibbonGroup34.PerformLayout
-      CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).EndInit
-      Me.RibbonGroup16.ResumeLayout(False)
-      Me.RibbonGroup16.PerformLayout
-      CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).EndInit
-      Me.RibbonGroup30.ResumeLayout(False)
-      Me.RibbonGroup30.PerformLayout
-      CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup32.PerformLayout()
+      CType(Me.eui_Archivi, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Archivi.ResumeLayout(False)
-      Me.eui_Archivi.PerformLayout
-      CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Archivi.PerformLayout()
+      CType(Me.RibbonGroup17, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup17.ResumeLayout(False)
-      Me.RibbonGroup17.PerformLayout
-      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup17.PerformLayout()
+      CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonGroup5, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup5.ResumeLayout(False)
-      Me.RibbonGroup5.PerformLayout
-      CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup5.PerformLayout()
+      CType(Me.PopupMenu3, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonGroup1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup1.ResumeLayout(False)
-      Me.RibbonGroup1.PerformLayout
-      CType(Me.eui_Contabilit‡, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup1.PerformLayout()
+      CType(Me.eui_Gestione, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_Gestione.ResumeLayout(False)
+      Me.eui_Gestione.PerformLayout()
+      CType(Me.RibbonGroup35, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.RibbonGroup35.ResumeLayout(False)
+      Me.RibbonGroup35.PerformLayout()
+      CType(Me.PopupMenu6, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.eui_GruppoPos, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_GruppoPos.ResumeLayout(False)
+      Me.eui_GruppoPos.PerformLayout()
+      CType(Me.eui_GruppoPrenotazioni, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_GruppoPrenotazioni.ResumeLayout(False)
+      Me.eui_GruppoPrenotazioni.PerformLayout()
+      CType(Me.PopupMenu10, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu12, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu11, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonGroup34, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.RibbonGroup34.ResumeLayout(False)
+      Me.RibbonGroup34.PerformLayout()
+      CType(Me.RibbonGroup16, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.RibbonGroup16.ResumeLayout(False)
+      Me.RibbonGroup16.PerformLayout()
+      CType(Me.RibbonGroup30, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.RibbonGroup30.ResumeLayout(False)
+      Me.RibbonGroup30.PerformLayout()
+      CType(Me.eui_Contabilit‡, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Contabilit‡.ResumeLayout(False)
-      Me.eui_Contabilit‡.PerformLayout
-      CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Contabilit‡.PerformLayout()
+      CType(Me.RibbonGroup6, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup6.ResumeLayout(False)
-      Me.RibbonGroup6.PerformLayout
-      CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup6.PerformLayout()
+      CType(Me.RibbonGroup7, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup7.ResumeLayout(False)
-      Me.RibbonGroup7.PerformLayout
-      CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup7.PerformLayout()
+      CType(Me.eui_Magazzino, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Magazzino.ResumeLayout(False)
-      Me.eui_Magazzino.PerformLayout
-      CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Magazzino.PerformLayout()
+      CType(Me.RibbonGroup8, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup8.ResumeLayout(False)
-      Me.RibbonGroup8.PerformLayout
-      CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup8.PerformLayout()
+      CType(Me.RibbonGroup9, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup9.ResumeLayout(False)
-      Me.RibbonGroup9.PerformLayout
-      CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup9.PerformLayout()
+      CType(Me.RibbonGroup11, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup11.ResumeLayout(False)
-      Me.RibbonGroup11.PerformLayout
-      CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup11.PerformLayout()
+      CType(Me.RibbonGroup12, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup12.ResumeLayout(False)
-      Me.RibbonGroup12.PerformLayout
-      CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup12.PerformLayout()
+      CType(Me.eui_Visualizza, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Visualizza.ResumeLayout(False)
-      Me.eui_Visualizza.PerformLayout
-      CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Visualizza.PerformLayout()
+      CType(Me.RibbonGroup10, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup10.ResumeLayout(False)
-      Me.RibbonGroup10.PerformLayout
-      CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup10.PerformLayout()
+      CType(Me.eui_Strumenti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Strumenti.ResumeLayout(False)
-      Me.eui_Strumenti.PerformLayout
-      CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Strumenti.PerformLayout()
+      CType(Me.RibbonGroup28, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup28.ResumeLayout(False)
-      Me.RibbonGroup28.PerformLayout
-      CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup28.PerformLayout()
+      CType(Me.eui_GruppoReparti, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoReparti.ResumeLayout(False)
-      Me.eui_GruppoReparti.PerformLayout
-      CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_GruppoReparti.PerformLayout()
+      CType(Me.eui_GruppoEtichette, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoEtichette.ResumeLayout(False)
-      Me.eui_GruppoEtichette.PerformLayout
-      CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_GruppoEtichette.PerformLayout()
+      CType(Me.RibbonGroup19, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup19.ResumeLayout(False)
-      Me.RibbonGroup19.PerformLayout
-      CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup19.PerformLayout()
+      CType(Me.eui_GruppoTavoli, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoTavoli.ResumeLayout(False)
-      Me.eui_GruppoTavoli.PerformLayout
-      CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_GruppoTavoli.PerformLayout()
+      CType(Me.eui_GruppoMenu, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_GruppoMenu.ResumeLayout(False)
-      Me.eui_GruppoMenu.PerformLayout
-      CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_GruppoMenu.PerformLayout()
+      CType(Me.RibbonGroup22, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup22.ResumeLayout(False)
-      Me.RibbonGroup22.PerformLayout
-      CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup22.PerformLayout()
+      CType(Me.eui_Finestra, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_Finestra.ResumeLayout(False)
-      Me.eui_Finestra.PerformLayout
-      CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).EndInit
+      Me.eui_Finestra.PerformLayout()
+      CType(Me.RibbonGroup14, System.ComponentModel.ISupportInitialize).EndInit()
       Me.RibbonGroup14.ResumeLayout(False)
-      Me.RibbonGroup14.PerformLayout
-      CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).EndInit
+      Me.RibbonGroup14.PerformLayout()
+      CType(Me.PopupMenu4, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.FinestreMDI, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu5, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_sbrMain.ResumeLayout(False)
-      Me.eui_sbrMain.PerformLayout
+      Me.eui_sbrMain.PerformLayout()
       Me.StatusBarNotificationsArea1.ResumeLayout(False)
-      Me.StatusBarNotificationsArea1.PerformLayout
+      Me.StatusBarNotificationsArea1.PerformLayout()
       Me.StatusBarPane5.ResumeLayout(False)
-      Me.StatusBarPane5.PerformLayout
+      Me.StatusBarPane5.PerformLayout()
       Me.StatusBarPane8.ResumeLayout(False)
-      Me.StatusBarPane8.PerformLayout
+      Me.StatusBarPane8.PerformLayout()
       Me.StatusBarControlsArea1.ResumeLayout(False)
-      Me.StatusBarControlsArea1.PerformLayout
+      Me.StatusBarControlsArea1.PerformLayout()
       Me.StatusBarPane1.ResumeLayout(False)
-      Me.StatusBarPane1.PerformLayout
+      Me.StatusBarPane1.PerformLayout()
       Me.StatusBarPane3.ResumeLayout(False)
-      Me.StatusBarPane3.PerformLayout
+      Me.StatusBarPane3.PerformLayout()
       Me.StatusBarPane4.ResumeLayout(False)
-      Me.StatusBarPane4.PerformLayout
+      Me.StatusBarPane4.PerformLayout()
       Me.StatusBarPane6.ResumeLayout(False)
-      Me.StatusBarPane6.PerformLayout
+      Me.StatusBarPane6.PerformLayout()
       Me.StatusBarPane2.ResumeLayout(False)
-      Me.StatusBarPane2.PerformLayout
+      Me.StatusBarPane2.PerformLayout()
       Me.StatusBarPane7.ResumeLayout(False)
-      Me.StatusBarPane7.PerformLayout
-      CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage3, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage7, System.ComponentModel.ISupportInitialize).EndInit
-      CType(Me.RibbonTabPage8, System.ComponentModel.ISupportInitialize).EndInit
+      Me.StatusBarPane7.PerformLayout()
+      CType(Me.PopupMenu7, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu8, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.PopupMenu9, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage3, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage2, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage1, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage4, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage5, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage7, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.RibbonTabPage8, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
-      Me.PerformLayout
+      Me.PerformLayout()
 
    End Sub
 #End Region
@@ -11034,7 +11091,6 @@ Friend Class frmMain
       End Try
    End Sub
 
-
    Public Sub ApriTabelle(ByVal tabella As String)
       Try
          Dim frm As New TabelleDati
@@ -11489,6 +11545,12 @@ Friend Class frmMain
          Dim tb As ToggleButton = New ToggleButton()
          Dim titoloFinestra As String = EstraiNomeFinestra(ActiveMdiChild.Text)
 
+         For Each button As ToggleButton In FinestreMDI.Items
+            If button.Text = titoloFinestra Then
+               Exit Sub
+            End If
+         Next button
+
          tb.Text = titoloFinestra
          tb.Tag = ActiveMdiChild
          tb.KeyTip = FinestreMDI.Items.Count + 1
@@ -11668,6 +11730,7 @@ Friend Class frmMain
       AggiungiFormMenuSeleziona()
    End Sub
 
+   ' TODO_A: Modificare.
    Private Sub eui_cmdGestioneCausaliNoleggi_Click(sender As Object, e As EventArgs) Handles eui_cmdGestioneCausaliNoleggi.Click
       ' Apre l'elenco Causali Noleggi.
       ApriNoleggi()
@@ -11889,6 +11952,23 @@ Friend Class frmMain
    Private Sub eui_cmdArchiviAnagraficheAccServ_Click(sender As System.Object, e As System.EventArgs) Handles eui_cmdArchiviAnagraficheAccServ.Click
       ' Apre l'anagrafica Accessori e Servizi per il centro sportivo.
       ApriAccessoriServizi()
+
+      ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
+      AggiungiFormMenuSeleziona()
+   End Sub
+
+   Private Sub eui_cmdArchiviAnagraficheNoleggi_Click(sender As Object, e As EventArgs) Handles eui_cmdArchiviAnagraficheNoleggi.Click
+      ' Apre l'elenco Noleggi.
+      ApriNoleggi()
+
+      ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
+      AggiungiFormMenuSeleziona()
+   End Sub
+
+   ' TODO_A: Modificare.
+   Private Sub eui_cmdArchiviAnagraficheCausaliNoleggio_Click(sender As Object, e As EventArgs) Handles eui_cmdArchiviAnagraficheCausaliNoleggio.Click
+      ' Apre l'elenco Noleggi.
+      ApriNoleggi()
 
       ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
       AggiungiFormMenuSeleziona()
@@ -12857,6 +12937,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
                g_frmStatoPren.Nuovo()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
+               g_frmStatoNoleggi.Nuovo()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.Nuovo()
 
@@ -12937,6 +13020,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
                g_frmStatoPren.Modifica()
+
+            Case TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
+               g_frmStatoNoleggi.Modifica()
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                ' Modifica il cursore del mouse.
@@ -13021,6 +13107,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
                g_frmStatoPren.DuplicaDatiStatoPren()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
+               g_frmStatoNoleggi.DuplicaDatiStatoNoleggi()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.DuplicaDocumento()
 
@@ -13102,6 +13191,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
                g_frmStatoPren.EliminaDati(frmElencoDati.TAB_STATO_PREN, g_frmStatoPren.DataGridView1.Item(0, g_frmStatoPren.DataGridView1.CurrentCell.RowIndex).Value)
+
+            Case TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
+               g_frmStatoNoleggi.EliminaDati(frmElencoDati.TAB_STATO_NOLEGGI, g_frmStatoNoleggi.DataGridView1.Item(0, g_frmStatoNoleggi.DataGridView1.CurrentCell.RowIndex).Value)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.EliminaDatiDocumento()
@@ -13210,6 +13302,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
                g_frmStatoPren.AggiornaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
+               g_frmStatoNoleggi.AggiornaDati()
+
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.AggiornaDati()
 
@@ -13290,7 +13385,7 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
-            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN, TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
@@ -13422,7 +13517,7 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
                g_frmListiniCamere.AnteprimaDiStampa(PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.TAB_LISTINI, g_frmListiniCamere.repSql)
 
-            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN, TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
@@ -13530,7 +13625,7 @@ Friend Class frmMain
                   g_frmListiniCamere.StampaElenco(g_frmListiniCamere.repSql, PERCORSO_REP_LISTINI_CAMERE_A4, g_frmListiniCamere.PrintDialog1.PrinterSettings.PrinterName, g_frmListiniCamere.PrintDialog1.PrinterSettings.Copies)
                End If
 
-            Case TITOLO_FINESTRA_ELENCO_STATO_PREN
+            Case TITOLO_FINESTRA_ELENCO_STATO_PREN, TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI

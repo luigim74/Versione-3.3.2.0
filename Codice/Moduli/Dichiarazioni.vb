@@ -427,6 +427,7 @@ Module Dichiarazioni
    Public Const TITOLO_FINESTRA_ELENCO_TAVOLI As String = "Elenco Tavoli"
    Public Const TITOLO_FINESTRA_ELENCO_CAMERE As String = "Elenco Camere"
    Public Const TITOLO_FINESTRA_ELENCO_STATO_PREN As String = "Elenco Stato prenotazione"
+   Public Const TITOLO_FINESTRA_ELENCO_STATO_NOLEGGIO As String = "Elenco Stato noleggio"
    Public Const TITOLO_FINESTRA_ELENCO_OPERATORI As String = "Elenco Operatori"
    Public Const TITOLO_FINESTRA_ELENCO_GRUPPI As String = "Elenco Gruppi operatori"
    Public Const TITOLO_FINESTRA_ELENCO_CARATTERISTICHE_RISORSE As String = "Elenco Tipologie di utilizzo Risorse"
@@ -684,15 +685,16 @@ Module Dichiarazioni
    Public g_frmCamere As frmElencoDati
    Public g_frmPrenCamere As ElencoPrenCamere
    Public g_frmPrenCamera As frmPrenCamera
-    Public g_frmStatoPren As frmElencoDati
-    Public g_frmStatoNoleggi As frmElencoDati
-    Public g_frmScontiMaggiorazioni As frmElencoDati
-    Public g_frmSchedinePS As ElencoSchedinePS
+   Public g_frmStatoPren As frmElencoDati
+   Public g_frmStatoNoleggi As frmElencoDati
+   Public g_frmScontiMaggiorazioni As frmElencoDati
+   Public g_frmSchedinePS As ElencoSchedinePS
    Public g_frmSchedinaPS As frmSchedinaPS
    Public g_frmListiniCamere As ElencoListiniCamere
    Public g_frmStagioni As frmStagioni
    Public g_frmEmail As ElencoEmail
    Public g_frmNoleggi As ElencoNoleggi
+   Public g_frmSchedaNoleggi As frmNoleggi
 
    ' Dati di accesso dell'operatore.
    Public Structure strOperatore
