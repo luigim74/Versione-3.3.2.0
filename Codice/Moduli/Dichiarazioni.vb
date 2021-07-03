@@ -413,6 +413,7 @@ Module Dichiarazioni
    Public Const CAR_OPZIONI As String = "Attendere prego. Caricamento della finestra Opzioni di configurazione in corso..."
    Public Const CAR_TAB_SCONTI_MAGGIORAZIONI As String = "Attendere prego. Caricamento dell'elenco Sconti e Maggiorazioni in corso..."
    Public Const CAR_NOLEGGI As String = "Attendere prego. Caricamento dell'elenco Noleggi in corso..."
+   Public Const CAR_CAUSALI_NOLEGGIO As String = "Attendere prego. Caricamento dell'elenco Causali noleggio in corso..."
 
    ' Nomi utilizzati per i titoli delle finestre - INSERIRE ANCHE LE ALTRE!
 
@@ -695,6 +696,7 @@ Module Dichiarazioni
    Public g_frmEmail As ElencoEmail
    Public g_frmNoleggi As ElencoNoleggi
    Public g_frmSchedaNoleggi As frmNoleggi
+   Public g_frmCausaliNoleggio As ElencoCausaliNoleggio
 
    ' Dati di accesso dell'operatore.
    Public Structure strOperatore

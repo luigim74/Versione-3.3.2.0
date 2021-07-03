@@ -3,7 +3,7 @@
 ' Nome form:            ElencoNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 06/03/2021
+' Data ultima modifica: 03/07/2021
 ' Descrizione:          Elenco Noleggi.
 ' Note:
 
@@ -954,7 +954,7 @@ Public Class ElencoNoleggi
    End Sub
 
    ' TODO_A: Modificare.
-   Public Sub EliminaDatiDocumento()
+   Public Sub EliminaDati()
       'Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
       'Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
       'Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -984,7 +984,7 @@ Public Class ElencoNoleggi
    End Sub
 
    ' TODO_A: Modificare.
-   Public Sub DuplicaDocumento()
+   Public Sub DuplicaNoleggio()
       Try
          Dim Risposta As Short
          Dim id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -2023,7 +2023,6 @@ Public Class ElencoNoleggi
 
       End Try
    End Sub
-
 
    Private Sub CaricaCampiRic()
       Try

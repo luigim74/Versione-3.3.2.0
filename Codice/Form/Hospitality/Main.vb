@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2005
-' Data ultima modifica: 13/02/2021
+' Data ultima modifica: 01/07/2021
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -11091,6 +11091,38 @@ Friend Class frmMain
       End Try
    End Sub
 
+   Public Sub ApriCausaliNoleggio()
+      Try
+         ' Se il form non è aperto lo apre.
+         If IsNothing(g_frmCausaliNoleggio) = True Then
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = CAR_CAUSALI_NOLEGGIO
+
+            g_frmCausaliNoleggio = New ElencoCausaliNoleggio
+            g_frmCausaliNoleggio.MdiParent = Me
+
+            ' Visualizza l'anagrafica clienti.
+            g_frmCausaliNoleggio.Show()
+
+            ' Visualizza un messaggio nella barra di stato.
+            Me.eui_Informazioni.Text = LeggiDatiRivenditore()
+
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.Default
+         Else
+            ' Altrimenti lo attiva.
+            g_frmCausaliNoleggio.Activate()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
    Public Sub ApriTabelle(ByVal tabella As String)
       Try
          Dim frm As New TabelleDati
@@ -11730,10 +11762,9 @@ Friend Class frmMain
       AggiungiFormMenuSeleziona()
    End Sub
 
-   ' TODO_A: Modificare.
    Private Sub eui_cmdGestioneCausaliNoleggi_Click(sender As Object, e As EventArgs) Handles eui_cmdGestioneCausaliNoleggi.Click
       ' Apre l'elenco Causali Noleggi.
-      ApriNoleggi()
+      ApriCausaliNoleggio()
 
       ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
       AggiungiFormMenuSeleziona()
@@ -11965,10 +11996,9 @@ Friend Class frmMain
       AggiungiFormMenuSeleziona()
    End Sub
 
-   ' TODO_A: Modificare.
    Private Sub eui_cmdArchiviAnagraficheCausaliNoleggio_Click(sender As Object, e As EventArgs) Handles eui_cmdArchiviAnagraficheCausaliNoleggio.Click
       ' Apre l'elenco Noleggi.
-      ApriNoleggi()
+      ApriCausaliNoleggio()
 
       ' Aggiunge la finestra aperta al menu Finestra/Seleziona.
       AggiungiFormMenuSeleziona()
@@ -12887,6 +12917,7 @@ Friend Class frmMain
 
 #End Region
 
+   ' TODO_A: Modificare per Elenco Noleggi.
 #Region "Ribbon Strumenti di Modifica "
 
 #Region "Modifica "
@@ -12963,6 +12994,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               g_frmNoleggi.Nuovo()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13053,6 +13087,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.Modifica()
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               g_frmNoleggi.Modifica()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13130,6 +13167,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.DuplicaDatiArticoli()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               g_frmNoleggi.DuplicaNoleggio()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13220,6 +13260,10 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.EliminaDati(frmElencoDati.TAB_ARTICOLI, g_frmArticoli.DataGridView1.Item(0, g_frmArticoli.DataGridView1.CurrentCell.RowIndex).Value)
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'g_frmNoleggi.EliminaDati(frmElencoDati.TAB_ARTICOLI, g_frmArticoli.DataGridView1.Item(0, g_frmArticoli.DataGridView1.CurrentCell.RowIndex).Value)
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13243,6 +13287,8 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
                g_frmDocumenti.AnnullaDocumento()
+
+               ' TODO_A: Valutare per Elenco Noleggi.
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13328,6 +13374,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.AggiornaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               g_frmNoleggi.AggiornaDati()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13415,6 +13464,10 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13548,6 +13601,10 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_ARTICOLI
                g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13669,6 +13726,12 @@ Friend Class frmMain
                If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
                   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
                End If
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
+               '   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
+               'End If
 
                ' Inserire qui il codice per gestire le altre finestre.
 

@@ -372,6 +372,32 @@ Module Procedure
       End Try
    End Sub
 
+   Public Sub CaricaLista(ByVal cmb As Elegant.Ui.ComboBox, ByVal cmb1 As Elegant.Ui.ComboBox, ByVal tabella As String)
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            cmb.Items.Add(dr.Item("Descrizione"))
+            cmb1.Items.Add(dr.Item("Id"))
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+
    Public Sub CaricaListaTaglie(ByVal cmb As ComboBox, ByVal tabella As String)
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)

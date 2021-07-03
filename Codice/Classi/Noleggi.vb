@@ -247,7 +247,7 @@ Public Class Noleggi
          sql = String.Format("INSERT INTO {0} (IdCliente, Cliente, Indirizzo, Cap, Città, Provincia, Piva, CodFiscale, CodAzienda, IdCausale, Causale, TipoPeriodo, Periodo, DataInizio, DataFine, TotaleGiorni, " &
                                               "CostoGiorno, CostoMora, CostoAssicurazione, Sconto, TipoSconto, Totale, Stato, Chiuso, CodiceBarre, Colore, [Note]) " &
                                        "VALUES(@IdCliente, @Cliente, @Indirizzo, @Cap, @Città, @Provincia, @Piva, @CodFiscale, @CodAzienda, @IdCausale, @Causale, @TipoPeriodo, @Periodo, @DataInizio, @DataFine, @TotaleGiorni, " &
-                                              "@CostoGiorno, @CostoMora, @CostoAssicurazione, @Sconto, @TipoSconto, @Totale, @Stato, @Chiuso, @CodiceBarre, @Colore @Note)", tabella)
+                                              "@CostoGiorno, @CostoMora, @CostoAssicurazione, @Sconto, @TipoSconto, @Totale, @Stato, @Chiuso, @CodiceBarre, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)

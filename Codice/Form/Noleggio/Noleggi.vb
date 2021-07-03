@@ -8,6 +8,8 @@
 '
 ' Elenco Attivita:
 '
+' TODO_A: Caricare i dati della tabella Causali Noleggi.
+'
 ' ***********************************************************************************************
 #End Region
 
@@ -126,6 +128,9 @@ Public Class frmNoleggi
    Friend WithEvents eui_cmdRimuoviAllegato As Elegant.Ui.Button
    Friend WithEvents eui_cmdModificaAllegato As Elegant.Ui.Button
    Friend WithEvents eui_cmdApriDocAllegato As Elegant.Ui.Button
+   Friend WithEvents eui_cmdNuovaCausale As Elegant.Ui.Button
+   Friend WithEvents eui_cmdModificaCausale As Elegant.Ui.Button
+   Friend WithEvents eui_cmbIdCausale As Elegant.Ui.ComboBox
    Public WithEvents Label25 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -141,17 +146,6 @@ Public Class frmNoleggi
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.TabControl2 = New Elegant.Ui.TabControl()
-      Me.tpAllegati = New Elegant.Ui.TabPage()
-      Me.eui_cmdInserisciAllegato = New Elegant.Ui.Button()
-      Me.eui_cmdRimuoviAllegato = New Elegant.Ui.Button()
-      Me.eui_cmdModificaAllegato = New Elegant.Ui.Button()
-      Me.lvwAllegati = New System.Windows.Forms.ListView()
-      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.tpDati = New Elegant.Ui.TabPage()
       Me.eui_cmdNuovoCliente = New Elegant.Ui.Button()
       Me.eui_cmdModificaCliente = New Elegant.Ui.Button()
@@ -205,15 +199,29 @@ Public Class frmNoleggi
       Me.clnCategoria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.clnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.clnRifNoleggio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.tpAllegati = New Elegant.Ui.TabPage()
+      Me.eui_cmdApriDocAllegato = New Elegant.Ui.Button()
+      Me.eui_cmdInserisciAllegato = New Elegant.Ui.Button()
+      Me.eui_cmdRimuoviAllegato = New Elegant.Ui.Button()
+      Me.eui_cmdModificaAllegato = New Elegant.Ui.Button()
+      Me.lvwAllegati = New System.Windows.Forms.ListView()
+      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+      Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.tpNote = New Elegant.Ui.TabPage()
       Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.eui_cmdApriDocAllegato = New Elegant.Ui.Button()
+      Me.eui_cmdNuovaCausale = New Elegant.Ui.Button()
+      Me.eui_cmdModificaCausale = New Elegant.Ui.Button()
+      Me.eui_cmbIdCausale = New Elegant.Ui.ComboBox()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.tpAllegati.SuspendLayout()
       Me.tpDati.SuspendLayout()
       Me.tpArticoli.SuspendLayout()
+      Me.tpAllegati.SuspendLayout()
       Me.tpNote.SuspendLayout()
       Me.SuspendLayout()
       '
@@ -228,7 +236,7 @@ Public Class frmNoleggi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(591, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(581, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -272,7 +280,7 @@ Public Class frmNoleggi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(591, 28)
+      Me.Panel1.Size = New System.Drawing.Size(581, 28)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -305,95 +313,12 @@ Public Class frmNoleggi
       Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpDati, Me.tpArticoli, Me.tpAllegati, Me.tpNote})
       Me.TabControl2.Text = "TabControl2"
       '
-      'tpAllegati
-      '
-      Me.tpAllegati.ActiveControl = Nothing
-      Me.tpAllegati.Controls.Add(Me.eui_cmdApriDocAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdInserisciAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdRimuoviAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdModificaAllegato)
-      Me.tpAllegati.Controls.Add(Me.lvwAllegati)
-      Me.tpAllegati.KeyTip = Nothing
-      Me.tpAllegati.Name = "tpAllegati"
-      Me.tpAllegati.Size = New System.Drawing.Size(575, 332)
-      Me.tpAllegati.TabIndex = 2
-      Me.tpAllegati.Text = "Documenti allegati"
-      '
-      'eui_cmdInserisciAllegato
-      '
-      Me.eui_cmdInserisciAllegato.Id = "4f490082-3d2e-4073-b7fe-7240f0d40e28"
-      Me.eui_cmdInserisciAllegato.Location = New System.Drawing.Point(331, 295)
-      Me.eui_cmdInserisciAllegato.Name = "eui_cmdInserisciAllegato"
-      Me.eui_cmdInserisciAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdInserisciAllegato.TabIndex = 2
-      Me.eui_cmdInserisciAllegato.Text = "&Inserisci"
-      '
-      'eui_cmdRimuoviAllegato
-      '
-      Me.eui_cmdRimuoviAllegato.Id = "50b6def9-b6c9-4513-afc4-d03f9c51d9a1"
-      Me.eui_cmdRimuoviAllegato.Location = New System.Drawing.Point(491, 295)
-      Me.eui_cmdRimuoviAllegato.Name = "eui_cmdRimuoviAllegato"
-      Me.eui_cmdRimuoviAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdRimuoviAllegato.TabIndex = 4
-      Me.eui_cmdRimuoviAllegato.Text = "&Rimuovi"
-      '
-      'eui_cmdModificaAllegato
-      '
-      Me.eui_cmdModificaAllegato.Id = "4e1a42a7-fbbb-4825-9b25-3b03c18d7efc"
-      Me.eui_cmdModificaAllegato.Location = New System.Drawing.Point(411, 295)
-      Me.eui_cmdModificaAllegato.Name = "eui_cmdModificaAllegato"
-      Me.eui_cmdModificaAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdModificaAllegato.TabIndex = 3
-      Me.eui_cmdModificaAllegato.Text = "&Modifica"
-      '
-      'lvwAllegati
-      '
-      Me.lvwAllegati.AllowColumnReorder = True
-      Me.lvwAllegati.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-      Me.lvwAllegati.FullRowSelect = True
-      Me.lvwAllegati.HideSelection = False
-      Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
-      Me.lvwAllegati.MultiSelect = False
-      Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(574, 287)
-      Me.lvwAllegati.StateImageList = Me.ImageList1
-      Me.lvwAllegati.TabIndex = 0
-      Me.lvwAllegati.UseCompatibleStateImageBehavior = False
-      Me.lvwAllegati.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader1
-      '
-      Me.ColumnHeader1.Text = "Documento"
-      Me.ColumnHeader1.Width = 200
-      '
-      'ColumnHeader2
-      '
-      Me.ColumnHeader2.Text = "Data"
-      Me.ColumnHeader2.Width = 75
-      '
-      'ColumnHeader3
-      '
-      Me.ColumnHeader3.Text = "Ora"
-      Me.ColumnHeader3.Width = 75
-      '
-      'ColumnHeader4
-      '
-      Me.ColumnHeader4.Text = "Note"
-      Me.ColumnHeader4.Width = 500
-      '
-      'ColumnHeader5
-      '
-      Me.ColumnHeader5.Text = "Percorso"
-      Me.ColumnHeader5.Width = 500
-      '
-      'ColumnHeader6
-      '
-      Me.ColumnHeader6.Text = "Codice"
-      Me.ColumnHeader6.Width = 0
-      '
       'tpDati
       '
       Me.tpDati.ActiveControl = Nothing
+      Me.tpDati.Controls.Add(Me.eui_cmbIdCausale)
+      Me.tpDati.Controls.Add(Me.eui_cmdNuovaCausale)
+      Me.tpDati.Controls.Add(Me.eui_cmdModificaCausale)
       Me.tpDati.Controls.Add(Me.eui_cmdNuovoCliente)
       Me.tpDati.Controls.Add(Me.eui_cmdModificaCliente)
       Me.tpDati.Controls.Add(Me.eui_cmbIdCliente)
@@ -444,6 +369,7 @@ Public Class frmNoleggi
       Me.eui_cmdNuovoCliente.Id = "9ba731e5-a140-44cd-bb32-b105682f9d19"
       Me.eui_cmdNuovoCliente.Location = New System.Drawing.Point(491, 43)
       Me.eui_cmdNuovoCliente.Name = "eui_cmdNuovoCliente"
+      Me.eui_cmdNuovoCliente.ScreenTip.Text = "Nuovo cliente"
       Me.eui_cmdNuovoCliente.Size = New System.Drawing.Size(25, 21)
       Me.eui_cmdNuovoCliente.TabIndex = 4
       Me.eui_cmdNuovoCliente.Text = "+"
@@ -454,6 +380,7 @@ Public Class frmNoleggi
       Me.eui_cmdModificaCliente.Id = "4fd5f5b4-027f-43a7-ad6f-f54f66391234"
       Me.eui_cmdModificaCliente.Location = New System.Drawing.Point(465, 43)
       Me.eui_cmdModificaCliente.Name = "eui_cmdModificaCliente"
+      Me.eui_cmdModificaCliente.ScreenTip.Text = "Modifica cliente"
       Me.eui_cmdModificaCliente.Size = New System.Drawing.Size(25, 21)
       Me.eui_cmdModificaCliente.TabIndex = 3
       Me.eui_cmdModificaCliente.Text = "..."
@@ -464,11 +391,11 @@ Public Class frmNoleggi
       Me.eui_cmbIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_cmbIdCliente.FormattingEnabled = False
       Me.eui_cmbIdCliente.Id = "c64a8f1a-28e8-4c60-91d8-7bfb1cc3fc2c"
-      Me.eui_cmbIdCliente.Location = New System.Drawing.Point(113, 43)
+      Me.eui_cmbIdCliente.Location = New System.Drawing.Point(128, 43)
       Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
-      Me.eui_cmbIdCliente.Size = New System.Drawing.Size(41, 21)
+      Me.eui_cmbIdCliente.Size = New System.Drawing.Size(26, 21)
       Me.eui_cmbIdCliente.TabIndex = 55729
-      Me.eui_cmbIdCliente.TextEditorWidth = 22
+      Me.eui_cmbIdCliente.TextEditorWidth = 7
       Me.eui_cmbIdCliente.Visible = False
       '
       'eui_cmbTipoPeriodo
@@ -751,9 +678,9 @@ Public Class frmNoleggi
       Me.eui_cmbCausale.Id = "9a095b6c-0aaf-4879-b604-cd6a91beab70"
       Me.eui_cmbCausale.Location = New System.Drawing.Point(156, 68)
       Me.eui_cmbCausale.Name = "eui_cmbCausale"
-      Me.eui_cmbCausale.Size = New System.Drawing.Size(360, 21)
+      Me.eui_cmbCausale.Size = New System.Drawing.Size(307, 21)
       Me.eui_cmbCausale.TabIndex = 5
-      Me.eui_cmbCausale.TextEditorWidth = 341
+      Me.eui_cmbCausale.TextEditorWidth = 288
       '
       'eui_txtCodice
       '
@@ -996,6 +923,101 @@ Public Class frmNoleggi
       Me.clnRifNoleggio.Text = "RifNoleggio"
       Me.clnRifNoleggio.Width = 0
       '
+      'tpAllegati
+      '
+      Me.tpAllegati.ActiveControl = Nothing
+      Me.tpAllegati.Controls.Add(Me.eui_cmdApriDocAllegato)
+      Me.tpAllegati.Controls.Add(Me.eui_cmdInserisciAllegato)
+      Me.tpAllegati.Controls.Add(Me.eui_cmdRimuoviAllegato)
+      Me.tpAllegati.Controls.Add(Me.eui_cmdModificaAllegato)
+      Me.tpAllegati.Controls.Add(Me.lvwAllegati)
+      Me.tpAllegati.KeyTip = Nothing
+      Me.tpAllegati.Name = "tpAllegati"
+      Me.tpAllegati.Size = New System.Drawing.Size(575, 332)
+      Me.tpAllegati.TabIndex = 2
+      Me.tpAllegati.Text = "Documenti allegati"
+      '
+      'eui_cmdApriDocAllegato
+      '
+      Me.eui_cmdApriDocAllegato.Id = "296f15c6-df68-43f8-89f0-471b855f6902"
+      Me.eui_cmdApriDocAllegato.Location = New System.Drawing.Point(7, 296)
+      Me.eui_cmdApriDocAllegato.Name = "eui_cmdApriDocAllegato"
+      Me.eui_cmdApriDocAllegato.Size = New System.Drawing.Size(104, 30)
+      Me.eui_cmdApriDocAllegato.TabIndex = 1
+      Me.eui_cmdApriDocAllegato.Text = "&Apri documento"
+      '
+      'eui_cmdInserisciAllegato
+      '
+      Me.eui_cmdInserisciAllegato.Id = "4f490082-3d2e-4073-b7fe-7240f0d40e28"
+      Me.eui_cmdInserisciAllegato.Location = New System.Drawing.Point(331, 295)
+      Me.eui_cmdInserisciAllegato.Name = "eui_cmdInserisciAllegato"
+      Me.eui_cmdInserisciAllegato.Size = New System.Drawing.Size(75, 30)
+      Me.eui_cmdInserisciAllegato.TabIndex = 2
+      Me.eui_cmdInserisciAllegato.Text = "&Inserisci"
+      '
+      'eui_cmdRimuoviAllegato
+      '
+      Me.eui_cmdRimuoviAllegato.Id = "50b6def9-b6c9-4513-afc4-d03f9c51d9a1"
+      Me.eui_cmdRimuoviAllegato.Location = New System.Drawing.Point(491, 295)
+      Me.eui_cmdRimuoviAllegato.Name = "eui_cmdRimuoviAllegato"
+      Me.eui_cmdRimuoviAllegato.Size = New System.Drawing.Size(75, 30)
+      Me.eui_cmdRimuoviAllegato.TabIndex = 4
+      Me.eui_cmdRimuoviAllegato.Text = "&Rimuovi"
+      '
+      'eui_cmdModificaAllegato
+      '
+      Me.eui_cmdModificaAllegato.Id = "4e1a42a7-fbbb-4825-9b25-3b03c18d7efc"
+      Me.eui_cmdModificaAllegato.Location = New System.Drawing.Point(411, 295)
+      Me.eui_cmdModificaAllegato.Name = "eui_cmdModificaAllegato"
+      Me.eui_cmdModificaAllegato.Size = New System.Drawing.Size(75, 30)
+      Me.eui_cmdModificaAllegato.TabIndex = 3
+      Me.eui_cmdModificaAllegato.Text = "&Modifica"
+      '
+      'lvwAllegati
+      '
+      Me.lvwAllegati.AllowColumnReorder = True
+      Me.lvwAllegati.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+      Me.lvwAllegati.FullRowSelect = True
+      Me.lvwAllegati.HideSelection = False
+      Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
+      Me.lvwAllegati.MultiSelect = False
+      Me.lvwAllegati.Name = "lvwAllegati"
+      Me.lvwAllegati.Size = New System.Drawing.Size(574, 287)
+      Me.lvwAllegati.StateImageList = Me.ImageList1
+      Me.lvwAllegati.TabIndex = 0
+      Me.lvwAllegati.UseCompatibleStateImageBehavior = False
+      Me.lvwAllegati.View = System.Windows.Forms.View.Details
+      '
+      'ColumnHeader1
+      '
+      Me.ColumnHeader1.Text = "Documento"
+      Me.ColumnHeader1.Width = 200
+      '
+      'ColumnHeader2
+      '
+      Me.ColumnHeader2.Text = "Data"
+      Me.ColumnHeader2.Width = 75
+      '
+      'ColumnHeader3
+      '
+      Me.ColumnHeader3.Text = "Ora"
+      Me.ColumnHeader3.Width = 75
+      '
+      'ColumnHeader4
+      '
+      Me.ColumnHeader4.Text = "Note"
+      Me.ColumnHeader4.Width = 500
+      '
+      'ColumnHeader5
+      '
+      Me.ColumnHeader5.Text = "Percorso"
+      Me.ColumnHeader5.Width = 500
+      '
+      'ColumnHeader6
+      '
+      Me.ColumnHeader6.Text = "Codice"
+      Me.ColumnHeader6.Width = 0
+      '
       'tpNote
       '
       Me.tpNote.ActiveControl = Nothing
@@ -1016,20 +1038,46 @@ Public Class frmNoleggi
       Me.eui_txtNote.TabIndex = 0
       Me.eui_txtNote.TextEditorWidth = 567
       '
-      'eui_cmdApriDocAllegato
+      'eui_cmdNuovaCausale
       '
-      Me.eui_cmdApriDocAllegato.Id = "296f15c6-df68-43f8-89f0-471b855f6902"
-      Me.eui_cmdApriDocAllegato.Location = New System.Drawing.Point(7, 296)
-      Me.eui_cmdApriDocAllegato.Name = "eui_cmdApriDocAllegato"
-      Me.eui_cmdApriDocAllegato.Size = New System.Drawing.Size(104, 30)
-      Me.eui_cmdApriDocAllegato.TabIndex = 1
-      Me.eui_cmdApriDocAllegato.Text = "&Apri documento"
+      Me.eui_cmdNuovaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmdNuovaCausale.Id = "feea2993-c912-42db-9d14-a833f1aa4e5e"
+      Me.eui_cmdNuovaCausale.Location = New System.Drawing.Point(491, 68)
+      Me.eui_cmdNuovaCausale.Name = "eui_cmdNuovaCausale"
+      Me.eui_cmdNuovaCausale.ScreenTip.Text = "Nuova causale noleggio"
+      Me.eui_cmdNuovaCausale.Size = New System.Drawing.Size(25, 21)
+      Me.eui_cmdNuovaCausale.TabIndex = 55731
+      Me.eui_cmdNuovaCausale.Text = "+"
+      '
+      'eui_cmdModificaCausale
+      '
+      Me.eui_cmdModificaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmdModificaCausale.Id = "5e2724a2-36f6-414c-86b0-7ed3812c363a"
+      Me.eui_cmdModificaCausale.Location = New System.Drawing.Point(465, 68)
+      Me.eui_cmdModificaCausale.Name = "eui_cmdModificaCausale"
+      Me.eui_cmdModificaCausale.ScreenTip.Text = "Modifica causale noleggio"
+      Me.eui_cmdModificaCausale.Size = New System.Drawing.Size(25, 21)
+      Me.eui_cmdModificaCausale.TabIndex = 55730
+      Me.eui_cmdModificaCausale.Text = "..."
+      '
+      'eui_cmbIdCausale
+      '
+      Me.eui_cmbIdCausale.Editable = False
+      Me.eui_cmbIdCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmbIdCausale.FormattingEnabled = False
+      Me.eui_cmbIdCausale.Id = "0f6f9782-8068-40e3-83f2-86881638be1a"
+      Me.eui_cmbIdCausale.Location = New System.Drawing.Point(128, 68)
+      Me.eui_cmbIdCausale.Name = "eui_cmbIdCausale"
+      Me.eui_cmbIdCausale.Size = New System.Drawing.Size(26, 21)
+      Me.eui_cmbIdCausale.TabIndex = 55732
+      Me.eui_cmbIdCausale.TextEditorWidth = 7
+      Me.eui_cmbIdCausale.Visible = False
       '
       'frmNoleggi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(591, 422)
+      Me.ClientSize = New System.Drawing.Size(581, 413)
       Me.Controls.Add(Me.TabControl2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1045,10 +1093,10 @@ Public Class frmNoleggi
       Me.Panel1.PerformLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.tpAllegati.ResumeLayout(False)
       Me.tpDati.ResumeLayout(False)
       Me.tpDati.PerformLayout()
       Me.tpArticoli.ResumeLayout(False)
+      Me.tpAllegati.ResumeLayout(False)
       Me.tpNote.ResumeLayout(False)
       Me.tpNote.PerformLayout()
       Me.ResumeLayout(False)
@@ -1066,6 +1114,7 @@ Public Class frmNoleggi
 
    Const TAB_NOLEGGI As String = "Noleggi"
    Const TAB_CLIENTI As String = "Clienti"
+   Const TAB_CAUSALI_NOLEGGIO As String = "CausaliNoleggio"
    Const TAB_STATO_NOLEGGI As String = "StatoNoleggi"
    Const TAB_DETTAGLI_NOLEGGI As String = "DettagliNoleggi"
    Const TAB_ALLEGATI As String = "Noleggi_Allegati"
@@ -1109,6 +1158,7 @@ Public Class frmNoleggi
             .CodiceBarre = eui_txtCodiceBarre.Text
             .IdCliente = eui_cmbIdCliente.Text
             .Cliente = eui_cmbCliente.Text
+            ' TODO_N: Dati cliente non utilizzati. Valutare se rimuovere!
             .Indirizzo = String.Empty
             .Cap = String.Empty
             .Città = String.Empty
@@ -1510,7 +1560,7 @@ Public Class frmNoleggi
          End If
 
          If IsNumeric(assicurazione) = True Then
-            assicurazioneNoleggio = Convert.ToDouble(assicurazione)
+            assicurazioneNoleggio = Convert.ToDouble(assicurazione * numGiorniNoleggio)
          Else
             assicurazioneNoleggio = 0.0
          End If
@@ -1648,6 +1698,7 @@ Public Class frmNoleggi
 
          ' Carica le liste.
          CaricaListaClienti(eui_cmbCliente, eui_cmbIdCliente, TAB_CLIENTI)
+         CaricaLista(eui_cmbCausale, eui_cmbIdCausale, TAB_CAUSALI_NOLEGGIO)
          CaricaLista(eui_cmbStato, TAB_STATO_NOLEGGI)
 
          If Me.Tag <> String.Empty Then
@@ -1723,7 +1774,7 @@ Public Class frmNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_B: Modificare.
    Private Sub Noleggi_Closed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Closed
       If Me.Tag <> "0" Then
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -1756,7 +1807,7 @@ Public Class frmNoleggi
                ' Registra loperazione effettuata dall'operatore identificato.
                Dim strDescrizione As String = " (" & CNoleggi.Cliente & ")"
 
-               ' TODO_A: Modificare.
+               ' TODO_B: Modificare.
                g_frmMain.RegistraOperazione(TipoOperazione.Salva, strDescrizione, MODULO_ANAGRAFICA_FORNITORI)
             End If
 
@@ -2643,4 +2694,5 @@ Public Class frmNoleggi
    Private Sub eui_cmdApriDocAllegato_Click(sender As Object, e As EventArgs) Handles eui_cmdApriDocAllegato.Click
       ApriDocumentoAllegato()
    End Sub
+
 End Class
