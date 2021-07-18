@@ -14,7 +14,7 @@
 
 Imports System.Data.OleDb
 
-Public Class CausaliNoleggi
+Public Class CausaliNoleggio
 
    Public Codice As String
    Public Descrizione As String

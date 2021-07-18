@@ -3,12 +3,14 @@
 ' Nome form:            ElencoNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 03/07/2021
+' Data ultima modifica: 18/07/2021
 ' Descrizione:          Elenco Noleggi.
 ' Note:
-
+'
 ' Elenco Attivita:
-
+'
+' TODO_A: Sviluppare comando Annulla noleggio.
+'
 ' ******************************************************************
 #End Region
 
@@ -37,7 +39,7 @@ Public Class ElencoNoleggi
    Const COLONNA_CONTABILIZZATO As Short = 9
    Const COLONNA_ID_CLIENTE As Short = 10
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Const STATO_DOC_EMESSO As String = "Emesso"
    Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
    Const STATO_DOC_ANNULLATO As String = "Annullato"
@@ -67,7 +69,7 @@ Public Class ElencoNoleggi
    Private DatiConfig As AppConfig
    Private CFormatta As New ClsFormatta
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private AArticoli As New Articoli
 
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
@@ -396,7 +398,7 @@ Public Class ElencoNoleggi
 
 #End Region
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
 #Region "Scarico articoli"
 
    Private Function SalvaDati(ByVal tabella As String, ByVal id As Integer, ByVal giacenza As Double,
@@ -764,7 +766,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Function ImpostaFunzioniOperatore(ByVal wnd As String) As Boolean
       Try
          Select Case wnd
@@ -820,7 +822,7 @@ Public Class ElencoNoleggi
 
    End Function
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub RipristinaStatistiche()
       Try
          Dim sql As String
@@ -872,13 +874,12 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
-   Private Sub EliminaDettagliDocumento()
+   Private Sub EliminaDettagliNoleggio()
       Try
-         Dim rifDoc As Integer
+         Dim rifNoleggio As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
+         rifNoleggio = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
          cn.Open()
@@ -887,7 +888,7 @@ Public Class ElencoNoleggi
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE RifDoc = {1}", "DettagliDoc", rifDoc)
+         sql = String.Format("DELETE FROM {0} WHERE RifNoleggio = {1}", "DettagliNoleggi", rifNoleggio)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdDelete As New OleDbCommand(sql, cn, tr)
@@ -911,13 +912,12 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
-   Private Sub EliminaDocumento()
+   Private Sub EliminaNoleggio()
       Try
-         Dim rifDoc As Integer
+         Dim rifNoleggio As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
+         rifNoleggio = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          ' Apre la connessione.
          cn.Open()
@@ -926,7 +926,7 @@ Public Class ElencoNoleggi
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("DELETE FROM {0} WHERE Id = {1}", "Documenti", rifDoc)
+         sql = String.Format("DELETE FROM {0} WHERE Id = {1}", "Noleggi", rifNoleggio)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdDelete As New OleDbCommand(sql, cn, tr)
@@ -953,75 +953,73 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
    Public Sub EliminaDati()
-      'Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-      'Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-      'Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-      'Dim Importo As String = DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Numero As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim Cliente As String = DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim dataInizio As String = DataGridView1.Item(COLONNA_DATA_INIZIO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+      Dim dataFine As String = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-      '' Chiede conferma per l'eliminazione.
-      'Dim risposta As Integer
-      'risposta = MessageBox.Show("Si desidera eliminare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " &
-      '                           "Confermando l'operazione Non sarà più possibile recuperare i dati.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-      'If risposta = vbYes Then
-      '   EliminaDettagliDocumento()
-      '   EliminaDocumento()
 
-      '   ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-      '   AttivaDisattivaSospeso()
-      '   AttivaDisattivaPassaSospeso()
-      '   AttivaDisattivaAnnullaSospeso()
-      '   AttivaDisattivaBuoni()
-      '   AttivaDisattivaAnnullaDoc()
-      '   AttivaDisattivaEsportaFatturaElettronica()
+      ' Chiede conferma per l'eliminazione.
+      Dim risposta As Integer
+      risposta = MessageBox.Show("Si desidera eliminare il noleggio Numero " & Numero & " effettuato da """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & "? " & vbCrLf & vbCrLf &
+                                 "Confermando l'operazione non sarà più possibile recuperare i dati.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+      If risposta = vbYes Then
+         EliminaDettagliNoleggio()
+         EliminaNoleggio()
 
-      '   ' Registra loperazione effettuata dall'operatore identificato.
-      '   Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
-      '   g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaDoc()
 
-      'End If
+         ' TODO_B: Modificare RegistraOperazione
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
+         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+
+      End If
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub DuplicaNoleggio()
       Try
-         Dim Risposta As Short
-         Dim id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-         'Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Cliente As String = DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataInizio As String = DataGridView1.Item(COLONNA_DATA_INIZIO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataFine As String = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-         '' Chiede conferma per l'eliminazione.
-         'Risposta = MessageBox.Show("Si desidera duplicare il documento """ & tipoDoc & " N. " & numero & " del " & data & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-         If Risposta = MsgBoxResult.Yes Then
+         ' Chiede conferma per la duplicaazione.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Si desidera duplicare il noleggio Numero " & Id & " effettuato da """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & "? ",
+                                    NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            ' Dati documento.
-            Dim Doc As New Documenti
-            With Doc
+         If risposta = MsgBoxResult.Yes Then
+
+            ' Dati noleggio.
+            Dim Noleggio As New Noleggi
+            With Noleggio
                ' Legge i dati del record selezionato nella lista.
-               .LeggiDati(TAB_NOLEGGI, id)
+               .LeggiDati(TAB_NOLEGGI, Id)
 
-               .Ora = TimeOfDay.Hour.ToString & ":" & FormattaMinuti(TimeOfDay.Minute.ToString)
                .Stato = "Bozza"
+               .Colore = Color.White.ToArgb
                .Chiuso = "No"
 
                ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
                .InserisciDati(TAB_NOLEGGI)
             End With
 
-            ' Leggo l'ultimo id del documento duplicato.
+            ' Leggo l'ultimo id del noleggio duplicato.
             Dim ultimoId As Integer = LeggiUltimoRecord(TAB_NOLEGGI)
 
-            ' Dati dettagli documento.
-            Dim DettagliDoc As New DettagliNoleggi
-            With DettagliDoc
+            ' Dati dettagli noleggio.
+            Dim DettagliNoleggio As New DettagliNoleggi
+            With DettagliNoleggio
                ' Dichiara un oggetto connessione.
                Dim cn As New OleDbConnection(ConnString)
                cn.Open()
 
-               Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_DETTAGLI_NOLEGGI & " WHERE RifDoc = " & id & " ORDER BY Id ASC", cn)
+               Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_DETTAGLI_NOLEGGI & " WHERE RifNoleggio = " & Id & " ORDER BY Id ASC", cn)
                Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
                ' Legge i dati del record selezionato nella lista.
@@ -1094,6 +1092,7 @@ Public Class ElencoNoleggi
 
             MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            ' TODO_B: Modificare RegistraOperazione.
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
          End If
@@ -1198,7 +1197,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AggiornaDati()
       Try
          If eui_txtTestoRicerca.Text <> "" Then
@@ -1243,7 +1242,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1282,7 +1281,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AggiornaDatiMese()
       Try
          ' Crea la stringa di selezione dei dati.
@@ -1318,7 +1317,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AggiornaDatiAnno()
       Try
          ' Crea la stringa di selezione dei dati.
@@ -1365,7 +1364,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
          ' Disattiva i pulsanti appropriati.
@@ -1406,14 +1405,14 @@ Public Class ElencoNoleggi
       End If
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub ConvalidaDati()
       If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
          ImpostaComandi()
       End If
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AggIntGriglia()
       Try
          If numRecord <> 0 Then
@@ -1433,7 +1432,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AttivaDisattivaAnnullaDoc()
       'Try
       '   ' Attiva/disattiva il pulsante per annullare un documento.
@@ -1470,7 +1469,7 @@ Public Class ElencoNoleggi
       'End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub AnnullaDocumento()
       Try
          Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -1510,8 +1509,8 @@ Public Class ElencoNoleggi
          'risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ è stato annullato! " & vbCrLf & vbCrLf &
          '                     "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
          If risposta = vbNo Then
-            EliminaDettagliDocumento()
-            EliminaDocumento()
+            EliminaDettagliNoleggio()
+            EliminaNoleggio()
 
          Else
             ModificaStatoDocumento(TAB_NOLEGGI, Id, STATO_DOC_ANNULLATO)
@@ -1538,7 +1537,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Function ModificaStatoDocumento(ByVal tabella As String, ByVal codice As String, ByVal stato As String) As Boolean
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
@@ -1584,7 +1583,7 @@ Public Class ElencoNoleggi
 
    End Function
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub RipristinaNumeroDocFiscaleConfig(ByVal tabella As String, ByVal tipoDoc As String, ByVal numDoc As Integer)
       Try
          Dim DatiConfig As AppConfig
@@ -1610,7 +1609,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Function LeggiNumeroMax(ByVal tabella As String, ByVal tipoDoc As String) As Integer
       Dim closeOnExit As Boolean
       Dim numRec As Integer
@@ -1705,8 +1704,8 @@ Public Class ElencoNoleggi
          Dim dataInizioStyle As New DataGridViewTextBoxColumn()
          With dataInizioStyle
             .DataPropertyName = "DataInizio"
-                .HeaderText = "Data/Ore inizio"
-                .Name = "DataInizio"
+            .HeaderText = "Data/Ore inizio"
+            .Name = "DataInizio"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Green
@@ -1718,8 +1717,8 @@ Public Class ElencoNoleggi
          Dim dataFineStyle As New DataGridViewTextBoxColumn()
          With dataFineStyle
             .DataPropertyName = "DataFine"
-                .HeaderText = "Data/Ore fine"
-                .Name = "DataFine"
+            .HeaderText = "Data/Ore fine"
+            .Name = "DataFine"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Green
@@ -1731,8 +1730,8 @@ Public Class ElencoNoleggi
          Dim totaleGiorniStyle As New DataGridViewTextBoxColumn()
          With totaleGiorniStyle
             .DataPropertyName = "TotaleGiorni"
-                .HeaderText = "Totale ore/giorni"
-                .Name = "TotaleGiorni"
+            .HeaderText = "Totale ore/giorni"
+            .Name = "TotaleGiorni"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Red
@@ -1906,8 +1905,8 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-    ' TODO_A: Modificare.
-    Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
+   ' TODO_N: Modificare.
+   Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
 
@@ -2155,8 +2154,13 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub ElencoNoleggi_Activated(sender As Object, e As System.EventArgs) Handles Me.Activated
+#Region "Noleggio "
+      ' Visualizza i comandi Strumenti di modifica sul Ribbon.
+      g_frmMain.rtgNoleggio.Visible = True
+
+#End Region
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
@@ -2213,13 +2217,13 @@ Public Class ElencoNoleggi
 
 #Region "Documenti "
       ' TabPage.
-      g_frmMain.eui_StrumentiDocumenti.Visible = False
+      g_frmMain.eui_StrumentiDocumenti.Visible = True
 
 #End Region
 
 #Region "Sospesi / Buoni pasto "
       ' TabPage.
-      g_frmMain.eui_StrumentiSospesiBuoni.Visible = True
+      g_frmMain.eui_StrumentiSospesiBuoni.Visible = False
 
 #End Region
 
@@ -2230,8 +2234,13 @@ Public Class ElencoNoleggi
 
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub ElencoNoleggi_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+#Region "Noleggio "
+      ' Visualizza i comandi Strumenti di modifica sul Ribbon.
+      g_frmMain.rtgNoleggio.Visible = False
+
+#End Region
 
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Chiude i comandi sul Ribbon per l'importazione/esportazione dati del Gestionale Amica.
@@ -2241,7 +2250,7 @@ Public Class ElencoNoleggi
 
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub ElencoNoleggi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
@@ -2344,7 +2353,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub ElencoNoleggi_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
       Try
          SalvaDatiConfig()
@@ -2405,7 +2414,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub Nuovo()
       Try
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -2424,7 +2433,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Sub Modifica()
       Try
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -2443,7 +2452,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Public Function CreaFileScontrinoWPOS1(ByVal numeroDoc As String, ByVal dataDoc As Date) As Boolean
       Try
          Dim SR_DATI As String = "SR_DATI."
@@ -2488,7 +2497,7 @@ Public Class ElencoNoleggi
       End Try
    End Function
 
-   ' TODO_A: Modificare.
+   ' TODO_N: Modificare.
    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
       Try
          ' Imposta il colore per la cella in base al valore del campo ColoreSfondo.

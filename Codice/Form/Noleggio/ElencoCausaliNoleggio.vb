@@ -1,9 +1,9 @@
 #Region " DATI FILE.VB "
 ' ******************************************************************
-' Nome form:            ElencoNoleggi
+' Nome form:            ElencoCausaliNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 03/07/2021
+' Data ultima modifica: 18/07/2021
 ' Descrizione:          Elenco Causai Noleggio.
 ' Note:
 

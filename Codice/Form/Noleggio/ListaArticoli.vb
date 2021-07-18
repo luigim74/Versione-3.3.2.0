@@ -298,7 +298,11 @@ Public Class ListaArticoli
          g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).SubItems.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(8).Text)
 
          ' RifNoleggio.
-         g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).SubItems.Add(g_frmSchedaNoleggi.eui_txtCodice.Text)
+         If g_frmSchedaNoleggi.Tag <> String.Empty Then
+            g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).SubItems.Add(g_frmSchedaNoleggi.eui_txtCodice.Text)
+         Else
+            g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).SubItems.Add(LeggiUltimoRecord(g_frmSchedaNoleggi.TAB_NOLEGGI))
+         End If
 
          ' Imposta l'immagine.
          g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).StateImageIndex = 11

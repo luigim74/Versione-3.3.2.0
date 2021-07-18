@@ -147,6 +147,9 @@ Public Class frmNoleggi
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.TabControl2 = New Elegant.Ui.TabControl()
       Me.tpDati = New Elegant.Ui.TabPage()
+      Me.eui_cmbIdCausale = New Elegant.Ui.ComboBox()
+      Me.eui_cmdNuovaCausale = New Elegant.Ui.Button()
+      Me.eui_cmdModificaCausale = New Elegant.Ui.Button()
       Me.eui_cmdNuovoCliente = New Elegant.Ui.Button()
       Me.eui_cmdModificaCliente = New Elegant.Ui.Button()
       Me.eui_cmbIdCliente = New Elegant.Ui.ComboBox()
@@ -213,9 +216,6 @@ Public Class frmNoleggi
       Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.tpNote = New Elegant.Ui.TabPage()
       Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.eui_cmdNuovaCausale = New Elegant.Ui.Button()
-      Me.eui_cmdModificaCausale = New Elegant.Ui.Button()
-      Me.eui_cmbIdCausale = New Elegant.Ui.ComboBox()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -236,7 +236,7 @@ Public Class frmNoleggi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(581, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(591, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -280,7 +280,7 @@ Public Class frmNoleggi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(581, 28)
+      Me.Panel1.Size = New System.Drawing.Size(591, 28)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -362,6 +362,41 @@ Public Class frmNoleggi
       Me.tpDati.Size = New System.Drawing.Size(575, 332)
       Me.tpDati.TabIndex = 0
       Me.tpDati.Text = "Dati principali"
+      '
+      'eui_cmbIdCausale
+      '
+      Me.eui_cmbIdCausale.Editable = False
+      Me.eui_cmbIdCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmbIdCausale.FormattingEnabled = False
+      Me.eui_cmbIdCausale.Id = "0f6f9782-8068-40e3-83f2-86881638be1a"
+      Me.eui_cmbIdCausale.Location = New System.Drawing.Point(128, 68)
+      Me.eui_cmbIdCausale.Name = "eui_cmbIdCausale"
+      Me.eui_cmbIdCausale.Size = New System.Drawing.Size(26, 21)
+      Me.eui_cmbIdCausale.TabIndex = 55732
+      Me.eui_cmbIdCausale.TextEditorWidth = 7
+      Me.eui_cmbIdCausale.Visible = False
+      '
+      'eui_cmdNuovaCausale
+      '
+      Me.eui_cmdNuovaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmdNuovaCausale.Id = "feea2993-c912-42db-9d14-a833f1aa4e5e"
+      Me.eui_cmdNuovaCausale.Location = New System.Drawing.Point(491, 68)
+      Me.eui_cmdNuovaCausale.Name = "eui_cmdNuovaCausale"
+      Me.eui_cmdNuovaCausale.ScreenTip.Text = "Nuova causale noleggio"
+      Me.eui_cmdNuovaCausale.Size = New System.Drawing.Size(25, 21)
+      Me.eui_cmdNuovaCausale.TabIndex = 55731
+      Me.eui_cmdNuovaCausale.Text = "+"
+      '
+      'eui_cmdModificaCausale
+      '
+      Me.eui_cmdModificaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_cmdModificaCausale.Id = "5e2724a2-36f6-414c-86b0-7ed3812c363a"
+      Me.eui_cmdModificaCausale.Location = New System.Drawing.Point(465, 68)
+      Me.eui_cmdModificaCausale.Name = "eui_cmdModificaCausale"
+      Me.eui_cmdModificaCausale.ScreenTip.Text = "Modifica causale noleggio"
+      Me.eui_cmdModificaCausale.Size = New System.Drawing.Size(25, 21)
+      Me.eui_cmdModificaCausale.TabIndex = 55730
+      Me.eui_cmdModificaCausale.Text = "..."
       '
       'eui_cmdNuovoCliente
       '
@@ -1038,46 +1073,11 @@ Public Class frmNoleggi
       Me.eui_txtNote.TabIndex = 0
       Me.eui_txtNote.TextEditorWidth = 567
       '
-      'eui_cmdNuovaCausale
-      '
-      Me.eui_cmdNuovaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdNuovaCausale.Id = "feea2993-c912-42db-9d14-a833f1aa4e5e"
-      Me.eui_cmdNuovaCausale.Location = New System.Drawing.Point(491, 68)
-      Me.eui_cmdNuovaCausale.Name = "eui_cmdNuovaCausale"
-      Me.eui_cmdNuovaCausale.ScreenTip.Text = "Nuova causale noleggio"
-      Me.eui_cmdNuovaCausale.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdNuovaCausale.TabIndex = 55731
-      Me.eui_cmdNuovaCausale.Text = "+"
-      '
-      'eui_cmdModificaCausale
-      '
-      Me.eui_cmdModificaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdModificaCausale.Id = "5e2724a2-36f6-414c-86b0-7ed3812c363a"
-      Me.eui_cmdModificaCausale.Location = New System.Drawing.Point(465, 68)
-      Me.eui_cmdModificaCausale.Name = "eui_cmdModificaCausale"
-      Me.eui_cmdModificaCausale.ScreenTip.Text = "Modifica causale noleggio"
-      Me.eui_cmdModificaCausale.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdModificaCausale.TabIndex = 55730
-      Me.eui_cmdModificaCausale.Text = "..."
-      '
-      'eui_cmbIdCausale
-      '
-      Me.eui_cmbIdCausale.Editable = False
-      Me.eui_cmbIdCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmbIdCausale.FormattingEnabled = False
-      Me.eui_cmbIdCausale.Id = "0f6f9782-8068-40e3-83f2-86881638be1a"
-      Me.eui_cmbIdCausale.Location = New System.Drawing.Point(128, 68)
-      Me.eui_cmbIdCausale.Name = "eui_cmbIdCausale"
-      Me.eui_cmbIdCausale.Size = New System.Drawing.Size(26, 21)
-      Me.eui_cmbIdCausale.TabIndex = 55732
-      Me.eui_cmbIdCausale.TextEditorWidth = 7
-      Me.eui_cmbIdCausale.Visible = False
-      '
       'frmNoleggi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(581, 413)
+      Me.ClientSize = New System.Drawing.Size(591, 423)
       Me.Controls.Add(Me.TabControl2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1108,13 +1108,16 @@ Public Class frmNoleggi
 
    Private CNoleggi As New Noleggi
    Private CDettagliNoleggi As New DettagliNoleggi
+   Private CCausaliNoleggio As New CausaliNoleggio
+
    Private IAllegati As New Allegati
    Private CConvalida As New ConvalidaKeyPress
    Private CFormatta As New ClsFormatta
 
-   Const TAB_NOLEGGI As String = "Noleggi"
+   Public TAB_NOLEGGI As String = "Noleggi"
    Const TAB_CLIENTI As String = "Clienti"
    Const TAB_CAUSALI_NOLEGGIO As String = "CausaliNoleggio"
+   Const TAB_DETTAGLI_CAUSALI_NOLEGGIO As String = "DettagliCausaliNoleggio"
    Const TAB_STATO_NOLEGGI As String = "StatoNoleggi"
    Const TAB_DETTAGLI_NOLEGGI As String = "DettagliNoleggi"
    Const TAB_ALLEGATI As String = "Noleggi_Allegati"
@@ -1486,6 +1489,118 @@ Public Class frmNoleggi
                   lst.Items(i).SubItems.Add(dr.Item("RifNoleggio").ToString)
                Else
                   lst.Items(i).SubItems.Add(0.ToString)
+               End If
+
+               ' Imposta l'immagine.
+               lst.Items(i).StateImageIndex = 11
+
+               ' Contatore.
+               i += 1
+
+               Caricati = True
+            Loop
+
+            Return Caricati
+
+         Catch ex As Exception
+            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+            err.GestisciErrore(ex.StackTrace, ex.Message)
+
+            Return False
+
+         Finally
+            cn.Close()
+
+         End Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+   Private Function CaricaElencoArticoliCausali(ByVal lst As ListView, ByVal tabella As String, ByVal rifCausale As String) As Boolean
+      Try
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         Dim Caricati As Boolean = False
+
+         Try
+            cn.Open()
+
+            Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE RifCausale = " & rifCausale & " ORDER BY Descrizione ASC", cn)
+            Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+            Dim i As Integer
+
+            lst.Items.Clear()
+
+            Do While dr.Read
+               ' Codice.
+               lst.Items.Add(dr.Item("CodiceArticolo"))
+
+               ' Descrizione.
+               If IsDBNull(dr.Item("Descrizione")) = False Then
+                  lst.Items(i).SubItems.Add(dr.Item("Descrizione").ToString)
+               Else
+                  lst.Items(i).SubItems.Add(String.Empty)
+               End If
+
+               ' Unit‡ Misura.
+               If IsDBNull(dr.Item("Unit‡Misura")) = False Then
+                  lst.Items(i).SubItems.Add(dr.Item("Unit‡Misura").ToString)
+               Else
+                  lst.Items(i).SubItems.Add(String.Empty)
+               End If
+
+               ' Quantit‡.
+               If IsDBNull(dr.Item("Quantit‡")) = False Then
+                  lst.Items(i).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("Quantit‡"))))
+               Else
+                  lst.Items(i).SubItems.Add(VALORE_ZERO)
+               End If
+
+               ' Valore Unitario.
+               If IsDBNull(dr.Item("ValoreUnitario")) = False Then
+                  lst.Items(i).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("ValoreUnitario"))))
+               Else
+                  lst.Items(i).SubItems.Add(VALORE_ZERO)
+               End If
+
+               ' Importo Netto.
+               If IsDBNull(dr.Item("ImportoNetto")) = False Then
+                  lst.Items(i).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("ImportoNetto"))))
+               Else
+                  lst.Items(i).SubItems.Add(VALORE_ZERO)
+               End If
+
+               ' Aliquota Iva.
+               If IsDBNull(dr.Item("AliquotaIva")) = False Then
+                  lst.Items(i).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(dr.Item("AliquotaIva"))))
+               Else
+                  lst.Items(i).SubItems.Add(VALORE_ZERO)
+               End If
+
+               ' Categoria.
+               If IsDBNull(dr.Item("Categoria")) = False Then
+                  lst.Items(i).SubItems.Add(dr.Item("Categoria").ToString)
+               Else
+                  lst.Items(i).SubItems.Add(String.Empty)
+               End If
+
+               ' Id.
+               If IsDBNull(dr.Item("Id")) = False Then
+                  lst.Items(i).SubItems.Add(dr.Item("Id").ToString)
+               Else
+                  lst.Items(i).SubItems.Add(0.ToString)
+               End If
+
+               ' RifNoleggio.
+               If eui_txtCodice.Text <> String.Empty Then
+                  lst.Items(i).SubItems.Add(eui_txtCodice.Text)
+               Else
+                  lst.Items(i).SubItems.Add(LeggiUltimoRecord(TAB_NOLEGGI))
                End If
 
                ' Imposta l'immagine.
@@ -2693,6 +2808,37 @@ Public Class frmNoleggi
 
    Private Sub eui_cmdApriDocAllegato_Click(sender As Object, e As EventArgs) Handles eui_cmdApriDocAllegato.Click
       ApriDocumentoAllegato()
+   End Sub
+
+   Private Sub eui_cmbCausale_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eui_cmbCausale.SelectedIndexChanged
+      Try
+         eui_cmbIdCausale.SelectedIndex = eui_cmbCausale.SelectedIndex
+
+         With CCausaliNoleggio
+            .LeggiDati(TAB_CAUSALI_NOLEGGIO, eui_cmbIdCausale.Text)
+
+            ' Assegna i dati dei campi della classe alle caselle di testo.
+            eui_txtCostoGiorno.Text = CFormatta.FormattaNumeroDouble(.CostoGiorno)
+            eui_txtCostoMora.Text = CFormatta.FormattaNumeroDouble(.CostoMora)
+            eui_txtCostoAssicurazione.Text = CFormatta.FormattaNumeroDouble(.CostoAssicurazione)
+         End With
+
+         ' Carica la lista degli Articoli Noleggiati.
+         CaricaElencoArticoliCausali(lstvElencoArticoli, TAB_DETTAGLI_CAUSALI_NOLEGGIO, CCausaliNoleggio.Codice)
+
+
+         eui_txtTotaleImporto.Text = CalcolaCostoTotaleNoleggio(eui_txtTotaleOreGiorni.Text,
+                                                                   eui_txtCostoGiorno.Text,
+                                                                   eui_txtSconto.Text,
+                                                                   eui_txtCostoAssicurazione.Text,
+                                                                   eui_txtCostoMora.Text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
    End Sub
 
 End Class
