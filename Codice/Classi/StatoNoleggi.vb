@@ -10,104 +10,156 @@ Public Class StatoNoleggi
     Private cn As New OleDbConnection(ConnString)
     Private tr As OleDbTransaction
 
-    Public Sub LeggiDati(ByVal tabella As String, ByVal codice As String)
-        ' Dichiara un oggetto DataAdapter.
-        Dim da As OleDbDataAdapter
-        ' Dichiara un oggetto DataSet
-        Dim ds As DataSet
-        Dim sql As String
+   Public Sub LeggiDati(ByVal tabella As String, ByVal codice As String)
+      ' Dichiara un oggetto DataAdapter.
+      Dim da As OleDbDataAdapter
+      ' Dichiara un oggetto DataSet
+      Dim ds As DataSet
+      Dim sql As String
 
-        Try
-            ' Apre la connessione.
-            cn.Open()
+      Try
+         ' Apre la connessione.
+         cn.Open()
 
-            ' Crea la stringa.
-            sql = String.Format("SELECT * FROM {0} WHERE Id = {1}", tabella, codice)
+         ' Crea la stringa.
+         sql = String.Format("SELECT * FROM {0} WHERE Id = {1}", tabella, codice)
 
-            ' Dichiara un oggetto DataAdapter.
-            da = New OleDbDataAdapter(sql, cn)
+         ' Dichiara un oggetto DataAdapter.
+         da = New OleDbDataAdapter(sql, cn)
 
-            ' Dichiara un oggetto DataSet
-            ds = New DataSet
+         ' Dichiara un oggetto DataSet
+         ds = New DataSet
 
-            ' Riempe il DataSet con i dati della tabella.
-            da.Fill(ds, tabella)
+         ' Riempe il DataSet con i dati della tabella.
+         da.Fill(ds, tabella)
 
-            ' Assegna i valori dei campi del DataSet ai campi della classe.
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Id")) = False Then
-                Me.Codice = ds.Tables(tabella).Rows(0)("Id").ToString
-            Else
-                Me.Codice = ""
-            End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Descrizione")) = False Then
-                Me.Descrizione = ds.Tables(tabella).Rows(0)("Descrizione").ToString
-            Else
-                Me.Descrizione = ""
-            End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
-                Me.Colore = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Colore"))
-            Else
-                Me.Colore = 0
-            End If
+         ' Assegna i valori dei campi del DataSet ai campi della classe.
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Id")) = False Then
+            Me.Codice = ds.Tables(tabella).Rows(0)("Id").ToString
+         Else
+            Me.Codice = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Descrizione")) = False Then
+            Me.Descrizione = ds.Tables(tabella).Rows(0)("Descrizione").ToString
+         Else
+            Me.Descrizione = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
+            Me.Colore = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Colore"))
+         Else
+            Me.Colore = 0
+         End If
 
-        Catch ex As Exception
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-        Finally
-            da.Dispose()
-            ds.Dispose()
-            ' Chiude la connessione.
-            cn.Close()
-        End Try
-    End Sub
+      Finally
+         da.Dispose()
+         ds.Dispose()
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Sub
 
-    Public Function InserisciDati(ByVal tabella As String) As Boolean
-        Dim sql As String
+   Public Sub LeggiDatiDescrizione(ByVal tabella As String, ByVal descrizione As String)
+      ' Dichiara un oggetto DataAdapter.
+      Dim da As OleDbDataAdapter
+      ' Dichiara un oggetto DataSet
+      Dim ds As DataSet
+      Dim sql As String
 
-        Try
-            ' Apre la connessione.
-            cn.Open()
+      Try
+         ' Apre la connessione.
+         cn.Open()
 
-            ' Avvia una transazione.
-            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-            ' Crea la stringa di eliminazione.
-            sql = String.Format("INSERT INTO {0} (Descrizione, Colore) " &
+         ' Crea la stringa.
+         sql = String.Format("SELECT * FROM {0} WHERE Descrizione = '{1}'", tabella, descrizione)
+
+         ' Dichiara un oggetto DataAdapter.
+         da = New OleDbDataAdapter(sql, cn)
+
+         ' Dichiara un oggetto DataSet
+         ds = New DataSet
+
+         ' Riempe il DataSet con i dati della tabella.
+         da.Fill(ds, tabella)
+
+         ' Assegna i valori dei campi del DataSet ai campi della classe.
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Id")) = False Then
+            Me.Codice = ds.Tables(tabella).Rows(0)("Id").ToString
+         Else
+            Me.Codice = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Descrizione")) = False Then
+            Me.Descrizione = ds.Tables(tabella).Rows(0)("Descrizione").ToString
+         Else
+            Me.Descrizione = ""
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("Colore")) = False Then
+            Me.Colore = Convert.ToInt32(ds.Tables(tabella).Rows(0)("Colore"))
+         Else
+            Me.Colore = 0
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         da.Dispose()
+         ds.Dispose()
+         ' Chiude la connessione.
+         cn.Close()
+      End Try
+   End Sub
+
+   Public Function InserisciDati(ByVal tabella As String) As Boolean
+      Dim sql As String
+
+      Try
+         ' Apre la connessione.
+         cn.Open()
+
+         ' Avvia una transazione.
+         tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         ' Crea la stringa di eliminazione.
+         sql = String.Format("INSERT INTO {0} (Descrizione, Colore) " &
                                        "VALUES(@Descrizione, @Colore)", tabella,
                                               Me.Descrizione,
                                               Me.Colore)
 
-            ' Crea il comando per la connessione corrente.
-            Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+         ' Crea il comando per la connessione corrente.
+         Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-            cmdInsert.Parameters.Add("@Descrizione", Me.Descrizione)
-            cmdInsert.Parameters.Add("@Colore", Me.Colore)
+         cmdInsert.Parameters.Add("@Descrizione", Me.Descrizione)
+         cmdInsert.Parameters.Add("@Colore", Me.Colore)
 
-            ' Esegue il comando.
-            Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+         ' Esegue il comando.
+         Dim Record As Integer = cmdInsert.ExecuteNonQuery()
 
-            ' Conferma transazione.
-            tr.Commit()
+         ' Conferma transazione.
+         tr.Commit()
 
-            Return True
+         Return True
 
-        Catch ex As Exception
-            ' Annulla transazione.
-            tr.Rollback()
+      Catch ex As Exception
+         ' Annulla transazione.
+         tr.Rollback()
 
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
-            Return False
+         Return False
 
-        Finally
-            ' Chiude la connessione.
-            cn.Close()
+      Finally
+         ' Chiude la connessione.
+         cn.Close()
 
-        End Try
-    End Function
+      End Try
+   End Function
 
-    Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
+   Public Function ModificaDati(ByVal tabella As String, ByVal codice As String) As Boolean
         Dim sql As String
 
         Try

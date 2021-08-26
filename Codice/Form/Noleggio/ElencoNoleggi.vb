@@ -3,13 +3,13 @@
 ' Nome form:            ElencoNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 18/07/2021
+' Data ultima modifica: 20/08/2021
 ' Descrizione:          Elenco Noleggi.
 ' Note:
 '
 ' Elenco Attivita:
 '
-' TODO_A: Sviluppare comando Annulla noleggio.
+' TODO_A: SVILUPPARE L'INSERIMENTO DEL TOTALE MORA dal Rientro.
 '
 ' ******************************************************************
 #End Region
@@ -25,6 +25,7 @@ Public Class ElencoNoleggi
 
    Public Const TAB_NOLEGGI As String = "Noleggi"
    Const TAB_DETTAGLI_NOLEGGI As String = "DettagliNoleggi"
+   Const TAB_STATO_NOLEGGI As String = "StatoNoleggi"
    Const TITOLO_FINESTRA As String = "Elenco Noleggi"
 
    Public Const COLONNA_ID_DOC As Short = 0
@@ -33,17 +34,18 @@ Public Class ElencoNoleggi
    Const COLONNA_DATA_INIZIO As Short = 3
    Const COLONNA_DATA_FINE As Short = 4
    Const COLONNA_TOTALE_GIORNI As Short = 5
-   Const COLONNA_STATO As Short = 6
-   Const COLONNA_TOTALE As Short = 7
+   Const COLONNA_TOTALE As Short = 6
+   Const COLONNA_TOTALE_MORA As Short = 7
    Const COLONNA_CODICE_BARRE As Short = 8
    Const COLONNA_CONTABILIZZATO As Short = 9
-   Const COLONNA_ID_CLIENTE As Short = 10
+   Const COLONNA_STATO As Short = 10
+   Const COLONNA_ID_CLIENTE As Short = 12
 
-   ' TODO_N: Modificare.
-   Const STATO_DOC_EMESSO As String = "Emesso"
-   Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
-   Const STATO_DOC_ANNULLATO As String = "Annullato"
-   Public Const STATO_DOC_EMESSO_XML As String = "Emesso in XML"
+   Const STATO_BOZZA As String = "Bozza"
+   Const STATO_NOLEGGIATO As String = "Noleggiato"
+   Const STATO_ANNULLATO As String = "Annullato"
+   Const STATO_TERMINATO As String = "Terminato"
+   Const STATO_RIENTRATO As String = "Rientrato"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -185,7 +187,7 @@ Public Class ElencoNoleggi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(714, 63)
+      Me.Panel1.Size = New System.Drawing.Size(722, 63)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -205,7 +207,7 @@ Public Class ElencoNoleggi
       Me.eui_cmbCampoRicerca.Editable = False
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(570, 7)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(578, 7)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -218,7 +220,7 @@ Public Class ElencoNoleggi
       Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(353, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(361, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 529
       '
@@ -228,7 +230,7 @@ Public Class ElencoNoleggi
       Me.lblCampo.AutoSize = True
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(481, 8)
+      Me.lblCampo.Location = New System.Drawing.Point(489, 8)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -259,9 +261,9 @@ Public Class ElencoNoleggi
       Me.Panel2.Controls.Add(Me.eui_txtTotale)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 422)
+      Me.Panel2.Location = New System.Drawing.Point(0, 430)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(714, 40)
+      Me.Panel2.Size = New System.Drawing.Size(722, 40)
       Me.Panel2.TabIndex = 13
       '
       'eui_txtTotale
@@ -269,7 +271,7 @@ Public Class ElencoNoleggi
       Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(570, 10)
+      Me.eui_txtTotale.Location = New System.Drawing.Point(578, 10)
       Me.eui_txtTotale.Name = "eui_txtTotale"
       Me.eui_txtTotale.ReadOnly = True
       Me.eui_txtTotale.Size = New System.Drawing.Size(134, 21)
@@ -284,7 +286,7 @@ Public Class ElencoNoleggi
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(410, 12)
+      Me.Label6.Location = New System.Drawing.Point(418, 12)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(156, 15)
       Me.Label6.TabIndex = 16
@@ -374,7 +376,7 @@ Public Class ElencoNoleggi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(714, 462)
+      Me.ClientSize = New System.Drawing.Size(722, 470)
       Me.Controls.Add(Me.Panel3)
       Me.Controls.Add(Me.DataGridView2)
       Me.Controls.Add(Me.DataGridView1)
@@ -874,6 +876,59 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   Public Sub Noleggia()
+      Try
+         Dim Numero As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Cliente As String = DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataInizio As String = DataGridView1.Item(COLONNA_DATA_INIZIO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataFine As String = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per effettuare il Noleggio.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Procedendo con l'operazione verrà effettuato il noleggio numero " & Numero & " per il cliente """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & ".",
+                                    NOME_PRODOTTO, MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+
+         If risposta = vbOK Then
+            Dim statoNoleggio As New StatoNoleggi
+
+            With statoNoleggio
+               .LeggiDatiDescrizione(TAB_STATO_NOLEGGI, STATO_NOLEGGIATO)
+
+               ModificaStatoNoleggio(TAB_NOLEGGI, Numero, .Descrizione, .Colore)
+            End With
+
+            ' Aggiorna la lista dei documenti.
+            AggiornaDati()
+
+            ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+            AttivaDisattivaAnnullaNoleggio()
+
+            ' Attiva/disattiva il pulsante per effetuare un noleggio.
+            AttivaDisattivaNoleggio()
+
+            ' Attiva/disattiva il pulsante per fare rientrare un noleggio.
+            AttivaDisattivaRientra()
+         Else
+            Exit Sub
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub Rientra()
+      Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub EliminaDettagliNoleggio()
       Try
          Dim rifNoleggio As Integer
@@ -969,7 +1024,13 @@ Public Class ElencoNoleggi
          EliminaNoleggio()
 
          ' Attiva/disattiva il pulsante annulla.
-         AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Attiva/disattiva il pulsante per effetuare un noleggio.
+         AttivaDisattivaNoleggio()
+
+         ' Attiva/disattiva il pulsante per fare rientrare un noleggio.
+         AttivaDisattivaRientra()
 
          ' TODO_B: Modificare RegistraOperazione
          ' Registra loperazione effettuata dall'operatore identificato.
@@ -979,7 +1040,6 @@ Public Class ElencoNoleggi
       End If
    End Sub
 
-   ' TODO_N: Modificare.
    Public Sub DuplicaNoleggio()
       Try
          Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -1103,6 +1163,67 @@ Public Class ElencoNoleggi
 
       Finally
          cn.Close()
+
+      End Try
+   End Sub
+
+   Public Sub AnnullaNoleggio()
+      Try
+         Dim Numero As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Cliente As String = DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataInizio As String = DataGridView1.Item(COLONNA_DATA_INIZIO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataFine As String = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per l'annullamento.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Si desidera annullare il noleggio Numero " & Numero & " effettuato da """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & "?" & vbCrLf & vbCrLf &
+                                    "Confermando l'operazione il noleggio selezionato verrà segnato come 'Annullato'. " &
+                                    "Per ripristinare le giacenze di magazzino degli articoli noleggiati ed eventuali dati statistici è necessario annullare anche il documento emesso.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+         If risposta = vbYes Then
+            Dim statoNoleggio As New StatoNoleggi
+
+            With statoNoleggio
+               .LeggiDatiDescrizione(TAB_STATO_NOLEGGI, STATO_ANNULLATO)
+
+               ModificaStatoNoleggio(TAB_NOLEGGI, Numero, .Descrizione, .Colore)
+            End With
+
+            ' Aggiorna la lista dei documenti.
+            AggiornaDati()
+
+         Else
+            Exit Sub
+         End If
+
+         ' Chiede conferma per l'eliminazione.
+         risposta = MessageBox.Show("Il noleggio numero " & Numero & " effettuato da " & Cliente & " in data " & dataInizio & " con scadenza il " & dataFine & " è stato annullato!" & vbCrLf & vbCrLf &
+                              "Si desidera mantenere il documento nell'elenco noleggi per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         If risposta = vbNo Then
+            EliminaDettagliNoleggio()
+            EliminaNoleggio()
+         End If
+
+         ' Aggiorna la lista dei documenti.
+         AggiornaDati()
+
+         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Attiva/disattiva il pulsante per effetuare un noleggio.
+         AttivaDisattivaNoleggio()
+
+         ' Attiva/disattiva il pulsante per fare rientrare un noleggio.
+         AttivaDisattivaRientra()
+
+         ' TODO_B: Modificare RegistraOperazione.
+         ' Registra loperazione effettuata dall'operatore identificato.
+         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
+         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
    End Sub
@@ -1432,103 +1553,25 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
-   Public Sub AttivaDisattivaAnnullaDoc()
-      'Try
-      '   ' Attiva/disattiva il pulsante per annullare un documento.
-      '   If numRecord <> 0 Then
-
-      '      Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-      '      Dim statoDoc As String = DataGridView1.Item(COLONNA_STATO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-
-      '      Select Case tipoDoc
-      '         Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
-
-      '            Select Case statoDoc
-      '               Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_EMESSO_XML
-      '                  g_frmMain.eui_Strumenti_Annulla.Enabled = True
-
-      '               Case Else
-      '                  g_frmMain.eui_Strumenti_Annulla.Enabled = False
-
-      '            End Select
-
-      '         Case Else
-      '            g_frmMain.eui_Strumenti_Annulla.Enabled = False
-
-      '      End Select
-      '   End If
-
-      'Catch ex As NullReferenceException
-      '   Exit Try
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
-   End Sub
-
-   ' TODO_N: Modificare.
-   Public Sub AnnullaDocumento()
+   Public Sub AttivaDisattivaAnnullaNoleggio()
       Try
-         Dim Id As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim Data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-         'Dim Documento As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim Numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim Importo As String = CFormatta.FormattaEuro(DataGridView1.Item(COLONNA_IMPORTO_TOTALE, DataGridView1.CurrentCell.RowIndex).Value)
+         ' Attiva/disattiva il pulsante per annullare un documento.
+         If numRecord <> 0 Then
 
+            Dim stato As String = DataGridView1.Item(COLONNA_STATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-         ' Chiede conferma per l'annullamento.
-         Dim risposta As Integer
-         'risposta = MessageBox.Show("Si desidera annullare il documento """ & Documento & " n. " & Numero & " del " & Data & """? " & vbCrLf & vbCrLf &
-         '                           "Confermando l'operazione verranno ripristinati i valori per le " &
-         '                           "giacenze di magazzino degli Articoli e le Statistiche di vendita. Eventuali Buoni pasto contenuti " &
-         '                           "nel documento non ancora fatturati verranno annullati. Procedere?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-         If risposta = vbYes Then
-            RipristinaIngredientiScaricati()
-            RipristinaStatistiche()
+            Select Case stato
+               Case STATO_NOLEGGIATO
+                  g_frmMain.eui_Strumenti_Annulla.Enabled = True
 
-            ' Attiva/disattiva il pulsante per visualizzare l'elenco dei Buoni pasto.
-            'If DataGridView1.Item(COLONNA_IMPORTO_BUONI_INC, DataGridView1.CurrentCell.RowIndex).Value <> 0 Then
-            '   If RipristinaBuoniPasto() = True Then
-            '      EliminaBuoniPasto()
-            '   End If
-            'End If
+               Case Else
+                  g_frmMain.eui_Strumenti_Annulla.Enabled = False
 
-            ' TODO_B: Se il documento da annullare è uno scontrino.
-            'If Documento = TIPO_DOC_SF Then
-            '   CreaFileScontrinoWPOS1(Numero, Convert.ToDateTime(Data))
-            'End If
-
-         Else
-            Exit Sub
+            End Select
          End If
 
-         ' Chiede conferma per l'eliminazione.
-         'risposta = MessageBox.Show("Il documento """ & Documento & " n. " & Numero & " del " & Data & """ è stato annullato! " & vbCrLf & vbCrLf &
-         '                     "Si desidera mantenere il documento nell'elenco documenti per eventuali consultazioni? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-         If risposta = vbNo Then
-            EliminaDettagliNoleggio()
-            EliminaNoleggio()
-
-         Else
-            ModificaStatoDocumento(TAB_NOLEGGI, Id, STATO_DOC_ANNULLATO)
-         End If
-
-         ' QUESTA PROCEDURA NON E' PIU' NECESSARIA. 
-         ' Salva il Numero del documento annullato come prossimo numero da stampare rendendolo nuovamente disponibile.
-         'RipristinaNumeroDocFiscaleConfig(TAB_DOCUMENTI, Documento, Numero)
-
-         ' Aggiorna la lista dei documenti.
-         g_frmDocumenti.AggiornaDati()
-
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         AttivaDisattivaAnnullaDoc()
-
-         ' Registra loperazione effettuata dall'operatore identificato.
-         'Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
-         'g_frmMain.RegistraOperazione(TipoOperazione.AnnullaDoc, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
+      Catch ex As NullReferenceException
+         Exit Try
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1537,8 +1580,61 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
-   Public Function ModificaStatoDocumento(ByVal tabella As String, ByVal codice As String, ByVal stato As String) As Boolean
+   Public Sub AttivaDisattivaNoleggio()
+      Try
+         ' Attiva/disattiva il pulsante per effettuare il Noleggio.
+         If numRecord <> 0 Then
+
+            Dim contabilizzato As String = DataGridView1.Item(COLONNA_CONTABILIZZATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim stato As String = DataGridView1.Item(COLONNA_STATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            If stato = STATO_BOZZA And contabilizzato = "No" Then
+               g_frmMain.eui_cmdNoleggio_Noleggia.Enabled = True
+            Else
+               g_frmMain.eui_cmdNoleggio_Noleggia.Enabled = False
+            End If
+
+         End If
+
+      Catch ex As NullReferenceException
+         Exit Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AttivaDisattivaRientra()
+      Try
+         ' Attiva/disattiva il pulsante per effettuare il Noleggio.
+         If numRecord <> 0 Then
+
+            Dim contabilizzato As String = DataGridView1.Item(COLONNA_CONTABILIZZATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+            Dim stato As String = DataGridView1.Item(COLONNA_STATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            If stato = STATO_NOLEGGIATO And contabilizzato = "Sì" Then
+               g_frmMain.eui_cmdNoleggio_Rientra.Enabled = True
+            Else
+               g_frmMain.eui_cmdNoleggio_Rientra.Enabled = False
+            End If
+
+         End If
+
+      Catch ex As NullReferenceException
+         Exit Try
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
+
+   Public Function ModificaStatoNoleggio(ByVal tabella As String, ByVal codice As String, ByVal stato As String, ByVal colore As Integer) As Boolean
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim tr As OleDbTransaction
@@ -1552,12 +1648,18 @@ Public Class ElencoNoleggi
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
          ' Crea la stringa di eliminazione.
-         sql = String.Format("UPDATE {0} SET StatoDoc = @StatoDoc WHERE Id = {1}", tabella, codice)
+         sql = String.Format("UPDATE {0} 
+                              SET Stato = @Stato, 
+                              Colore = @Colore 
+                              WHERE Id = {1}",
+                              tabella,
+                              codice)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
-         cmdUpdate.Parameters.AddWithValue("@StatoDoc", stato)
+         cmdUpdate.Parameters.AddWithValue("@Stato", stato)
+         cmdUpdate.Parameters.AddWithValue("@Colore", colore)
 
          ' Esegue il comando.
          Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
@@ -1734,7 +1836,7 @@ Public Class ElencoNoleggi
             .Name = "TotaleGiorni"
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
-            .CellTemplate.Style.ForeColor = Color.Red
+            .CellTemplate.Style.ForeColor = Color.Black
             .CellTemplate.Style.NullValue = String.Empty
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
@@ -1755,7 +1857,23 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleStyle)
 
-         ' 7 Codice a barre
+         ' TODO_A: SVILUPPARE L'INSERIMENTO DEL TOTALE MORA dal Rientro.
+         ' 7 Totale mora
+         Dim totaleMoraStyle As New DataGridViewTextBoxColumn()
+         With totaleMoraStyle
+            .DataPropertyName = "TotaleMora"
+            .HeaderText = "Totale mora"
+            .Name = "TotaleMora"
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleMoraStyle)
+
+         ' 8 Codice a barre
          Dim codBarreStyle As New DataGridViewTextBoxColumn()
          With codBarreStyle
             .DataPropertyName = "CodiceBarre"
@@ -1767,7 +1885,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, codBarreStyle)
 
-         ' 8 Chiuso.
+         ' 9 Chiuso.
          Dim chiusoStyle As New DataGridViewTextBoxColumn()
          With chiusoStyle
             .DataPropertyName = "Chiuso"
@@ -1781,7 +1899,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, chiusoStyle)
 
-         ' 9 Stato
+         ' 10 Stato
          Dim statoStyle As New DataGridViewTextBoxColumn()
          With statoStyle
             .DataPropertyName = "Stato"
@@ -1793,7 +1911,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, statoStyle)
 
-         ' Colore
+         ' 11 Colore
          Dim coloreStyle As New DataGridViewTextBoxColumn
          With coloreStyle
             .DataPropertyName = "Colore"
@@ -1805,7 +1923,7 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, coloreStyle)
 
-         ' 11 Id Cliente.
+         ' 12 Id Cliente.
          Dim idClienteStyle As New DataGridViewTextBoxColumn()
          With idClienteStyle
             .DataPropertyName = "idCliente"
@@ -2512,12 +2630,47 @@ Public Class ElencoNoleggi
             e.Value = String.Empty
          End If
 
+         ' Imposta il colore della data di fine noleggio se scaduta.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "DataFine" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+            Dim dataFineNoleggio As DateTime
+
+            If IsDate(e.Value) = True Then
+               dataFineNoleggio = Convert.ToDateTime(e.Value)
+
+               If dataFineNoleggio < Now Then
+                  ' Colore testo.
+                  e.CellStyle.ForeColor = Color.Red
+               Else
+                  ' Colore testo.
+                  e.CellStyle.ForeColor = Color.Green
+               End If
+            End If
+
+         End If
+
+         ' Imposta il colore del Totale Mora se diverso da zero.
+         If DataGridView1.Columns(e.ColumnIndex).Name = "TotaleMora" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
+            Dim totaleMora As Double
+
+            If IsNumeric(e.Value) = True Then
+               totaleMora = Convert.ToDouble(e.Value)
+
+               If totaleMora > 0.0 Then
+                  ' Colore testo.
+                  e.CellStyle.ForeColor = Color.Red
+               Else
+                  ' Colore testo.
+                  e.CellStyle.ForeColor = Color.Black
+               End If
+            End If
+
+         End If
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-
    End Sub
 
    Private Sub DataGridView1_CurrentCellChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellChanged
@@ -2533,8 +2686,14 @@ Public Class ElencoNoleggi
             FiltraDatiArticoli(0)
          End If
 
-         ' Attiva/disattiva il pulsante per annullare un documento.
-         'AttivaDisattivaAnnullaDoc()
+         ' Attiva/disattiva il pulsante per annullare un noleggio.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Attiva/disattiva il pulsante per effetuare un noleggio.
+         AttivaDisattivaNoleggio()
+
+         ' Attiva/disattiva il pulsante per fare rientrare un noleggio.
+         AttivaDisattivaRientra()
 
       Catch ex As NullReferenceException
          Exit Try

@@ -3,7 +3,7 @@
 ' Nome form:            Noleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/03/2021
-' Data ultima modifica: 27/03/2021
+' Data ultima modifica: 26/08/2021
 ' Descrizione:          Classe noleggi.
 ' Note:
 
@@ -30,15 +30,16 @@ Public Class Noleggi
    Public Causale As String
    Public TipoPeriodo As String
    Public Periodo As String
-    Public DataInizio As Date
-    Public DataFine As Date
-    Public TotaleGiorni As String
+   Public DataInizio As Date
+   Public DataFine As Date
+   Public TotaleGiorni As String
    Public CostoGiorno As Double
    Public CostoMora As Double
    Public CostoAssicurazione As Double
    Public Sconto As Double
    Public TipoSconto As String
    Public Totale As Double
+   Public TotaleMora As Double
    Public Stato As String
    Public Chiuso As String
    Public CodiceBarre As String
@@ -195,6 +196,11 @@ Public Class Noleggi
          Else
             Me.Totale = 0.0
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("TotaleMora")) = False Then
+            Me.TotaleMora = ds.Tables(tabella).Rows(0)("TotaleMora").ToString
+         Else
+            Me.TotaleMora = 0.0
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Stato")) = False Then
             Me.Stato = ds.Tables(tabella).Rows(0)("Stato").ToString
          Else
@@ -245,9 +251,9 @@ Public Class Noleggi
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (IdCliente, Cliente, Indirizzo, Cap, Città, Provincia, Piva, CodFiscale, CodAzienda, IdCausale, Causale, TipoPeriodo, Periodo, DataInizio, DataFine, TotaleGiorni, " &
-                                              "CostoGiorno, CostoMora, CostoAssicurazione, Sconto, TipoSconto, Totale, Stato, Chiuso, CodiceBarre, Colore, [Note]) " &
+                                              "CostoGiorno, CostoMora, CostoAssicurazione, Sconto, TipoSconto, Totale, TotaleMora, Stato, Chiuso, CodiceBarre, Colore, [Note]) " &
                                        "VALUES(@IdCliente, @Cliente, @Indirizzo, @Cap, @Città, @Provincia, @Piva, @CodFiscale, @CodAzienda, @IdCausale, @Causale, @TipoPeriodo, @Periodo, @DataInizio, @DataFine, @TotaleGiorni, " &
-                                              "@CostoGiorno, @CostoMora, @CostoAssicurazione, @Sconto, @TipoSconto, @Totale, @Stato, @Chiuso, @CodiceBarre, @Colore, @Note)", tabella)
+                                              "@CostoGiorno, @CostoMora, @CostoAssicurazione, @Sconto, @TipoSconto, @Totale, @TotaleMora, @Stato, @Chiuso, @CodiceBarre, @Colore, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -274,6 +280,7 @@ Public Class Noleggi
          cmdInsert.Parameters.AddWithValue("@Sconto", Me.Sconto)
          cmdInsert.Parameters.AddWithValue("@TipoSconto", Me.TipoSconto)
          cmdInsert.Parameters.AddWithValue("@Totale", Me.Totale)
+         cmdInsert.Parameters.AddWithValue("@TotaleMora", Me.TotaleMora)
          cmdInsert.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdInsert.Parameters.AddWithValue("@Chiuso", Me.Chiuso)
          cmdInsert.Parameters.AddWithValue("@CodiceBarre", Me.CodiceBarre)
@@ -338,6 +345,7 @@ Public Class Noleggi
                              "Sconto = @Sconto, " &
                              "TipoSconto = @TipoSconto, " &
                              "Totale = @Totale, " &
+                             "TotaleMora = @TotaleMora, " &
                              "Stato = @Stato, " &
                              "Chiuso = @Chiuso, " &
                              "CodiceBarre = @CodiceBarre, " &
@@ -363,8 +371,8 @@ Public Class Noleggi
          cmdUpdate.Parameters.AddWithValue("@Causale", Me.Causale)
          cmdUpdate.Parameters.AddWithValue("@TipoPeriodo", Me.TipoPeriodo)
          cmdUpdate.Parameters.AddWithValue("@Periodo", Me.Periodo)
-            cmdUpdate.Parameters.AddWithValue("@DataInizio", Me.DataInizio)
-            cmdUpdate.Parameters.AddWithValue("@DataFine", Me.DataFine)
+         cmdUpdate.Parameters.AddWithValue("@DataInizio", Me.DataInizio)
+         cmdUpdate.Parameters.AddWithValue("@DataFine", Me.DataFine)
          cmdUpdate.Parameters.AddWithValue("@TotaleGiorni", Me.TotaleGiorni)
          cmdUpdate.Parameters.AddWithValue("@CostoGiorno", Me.CostoGiorno)
          cmdUpdate.Parameters.AddWithValue("@CostoMora", Me.CostoMora)
@@ -372,6 +380,7 @@ Public Class Noleggi
          cmdUpdate.Parameters.AddWithValue("@Sconto", Me.Sconto)
          cmdUpdate.Parameters.AddWithValue("@TipoSconto", Me.TipoSconto)
          cmdUpdate.Parameters.AddWithValue("@Totale", Me.Totale)
+         cmdUpdate.Parameters.AddWithValue("@TotaleMora", Me.TotaleMora)
          cmdUpdate.Parameters.AddWithValue("@Stato", Me.Stato)
          cmdUpdate.Parameters.AddWithValue("@Chiuso", Me.Chiuso)
          cmdUpdate.Parameters.AddWithValue("@CodiceBarre", Me.CodiceBarre)
