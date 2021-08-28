@@ -1904,19 +1904,19 @@ Public Class frmArticoli
             If IsNumeric(txtPrezzoAcquisto.Text) = True Then
 
                If txtTotCarichi.Text <> String.Empty Then
-                  txtValoreCarichi.Text = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtTotCarichi.Text)))
+                  txtValoreCarichi.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtTotCarichi.Text))))
                Else
                   txtValoreCarichi.Text = VALORE_ZERO
                End If
 
                If txtTotScarichi.Text <> String.Empty Then
-                  txtValoreScarichi.Text = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtTotScarichi.Text)))
+                  txtValoreScarichi.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtTotScarichi.Text))))
                Else
                   txtValoreScarichi.Text = VALORE_ZERO
                End If
 
                If txtGiacenza.Text <> String.Empty Then
-                  txtValoreAttuale.Text = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtGiacenza.Text)))
+                  txtValoreAttuale.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(CalcolaValore(Convert.ToDecimal(txtPrezzoAcquisto.Text), Convert.ToDecimal(txtGiacenza.Text))))
                Else
                   txtValoreAttuale.Text = VALORE_ZERO
                End If
@@ -2104,9 +2104,9 @@ Public Class frmArticoli
                txtTotCarichi.Text = CFormatta.FormattaQuantità(.Carico, 3)
                txtTotScarichi.Text = CFormatta.FormattaQuantità(.Scarico, 3)
                txtScortaMinima.Text = CFormatta.FormattaQuantità(.ScortaMin, 3)
-               txtValoreCarichi.Text = CFormatta.FormattaEuro(.ValCarico)
-               txtValoreScarichi.Text = CFormatta.FormattaEuro(.ValScarico)
-               txtValoreAttuale.Text = CFormatta.FormattaEuro(.ValAttuale)
+               txtValoreCarichi.Text = CFormatta.FormattaNumeroDouble(.ValCarico)
+               txtValoreScarichi.Text = CFormatta.FormattaNumeroDouble(.ValScarico)
+               txtValoreAttuale.Text = CFormatta.FormattaNumeroDouble(.ValAttuale)
                txtProduttoreVino.Text = .ProduttoreVino
                txtRegioneVino.Text = .RegioneVino
                txtZonaVino.Text = .ZonaVino
@@ -2124,11 +2124,11 @@ Public Class frmArticoli
             End With
 
          Else
-            AArticoli.Immagine = ""
-            txtGiacenza.Text = "0"
-            txtTotCarichi.Text = "0"
-            txtTotScarichi.Text = "0"
-            txtScortaMinima.Text = "0"
+            AArticoli.Immagine = String.Empty
+            txtGiacenza.Text = VALORE_ZERO
+            txtTotCarichi.Text = VALORE_ZERO
+            txtTotScarichi.Text = VALORE_ZERO
+            txtScortaMinima.Text = VALORE_ZERO
          End If
 
          ' Carica le liste.

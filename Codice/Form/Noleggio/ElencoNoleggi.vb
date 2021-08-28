@@ -526,6 +526,38 @@ Public Class ElencoNoleggi
       End Try
    End Function
 
+   Private Function CalcolaGiacenza(ByVal descrizione As String, ByVal giacenza As Double, ByVal scortaMin As Double, ByVal quantit‡ As Double) As Double
+      Try
+         If scortaMin > 0 Then
+            If (giacenza - quantit‡) < scortaMin Then
+               ' Messaggio sottoscorta.
+               MessageBox.Show("L'articolo '" & descrizione & "' risulter‡ essere sottoscorta!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+            Return (giacenza - quantit‡)
+
+         ElseIf scortaMin = 0 Then
+            If quantit‡ = giacenza Then
+               ' Messaggio giacenza pari a zero.
+               MessageBox.Show("L'articolo '" & descrizione & "' risulter‡ essere con giacenza pari a zero!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               Return 0
+
+            ElseIf quantit‡ > giacenza Then
+               ' Messaggio quantit‡ maggiore della giacenza.
+               MessageBox.Show("Per l'articolo '" & descrizione & "' si sta scaricando una quantit‡ maggiore della giacenza! " &
+                               "La quantit‡ presente in giacenza assumer‡ un valore negativo.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               Return (giacenza - quantit‡)
+            Else
+               Return (giacenza - quantit‡)
+            End If
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
    Private Function CalcolaScarico(ByVal scarico As Double, ByVal nuovoScarico As Double) As Double
       Try
          Return (scarico - nuovoScarico)
@@ -536,6 +568,132 @@ Public Class ElencoNoleggi
 
       End Try
    End Function
+
+   Private Sub ScaricaArticoli()
+      Try
+         Const TAB_ARTICOLI As String = "Articoli"
+         Const TAB_MOV_MAGAZZINO As String = "MovMagazzino"
+         Const CAUSALE_MOV_MAG As String = "Noleggio"
+         Dim Articoli As New Articoli
+         Dim idArticolo As Integer
+         Dim qt‡Scarico As Double
+         Dim rifNoleggio As Integer
+
+         ' Legge il numero dell'ultimo documento creato.
+         rifNoleggio = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
+
+         cn.Open()
+
+         ' Legge i dati degli Articoli del Noleggio.
+         Dim cmd As New OleDbCommand("SELECT * FROM DettagliNoleggi WHERE RifNoleggio = " & rifNoleggio & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
+            ' TODO_A: Inserire Id Articolo nella tabella DettagliNoleggi.
+
+            idArticolo = Convert.ToInt32(dr.Item("CodiceArticolo")) ' Da errore!!!
+            qt‡Scarico = Convert.ToDouble(dr.Item("Quantit‡"))
+
+            AArticoli.LeggiDati(TAB_ARTICOLI, dr.Item("CodiceArticolo").ToString)
+
+            Dim nuovaGiacenza As Double = CalcolaGiacenza(AArticoli.Descrizione, AArticoli.Giacenza, AArticoli.ScortaMin, qt‡Scarico)
+            Dim Carico As Double = 0.0
+            Dim Scarico As Double = 0.0
+            Dim situazioneScorta As Double = 0.0
+            Dim valCarico As Double = 0.0
+            Dim valScarico As Double = 0.0
+            Dim valAttuale As Double = 0.0
+
+            Scarico = CalcolaScarico(AArticoli.Scarico, qt‡Scarico)
+            Carico = AArticoli.Carico
+
+            If AArticoli.ScortaMin > 0.0 Then
+               situazioneScorta = (nuovaGiacenza - AArticoli.ScortaMin)
+            Else
+               situazioneScorta = 0.0
+            End If
+
+            ' Calcola i progressivi.
+            If AArticoli.PrezzoAcquisto <> String.Empty Then
+               If IsNumeric(AArticoli.PrezzoAcquisto) = True Then
+                  If Carico <> 0.0 Then
+                     valCarico = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Carico))
+                  Else
+                     valCarico = 0.0
+                  End If
+
+                  If Scarico <> 0.0 Then
+                     valScarico = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Scarico))
+                  Else
+                     valScarico = 0.0
+                  End If
+
+                  If nuovaGiacenza <> 0.0 Then
+                     valAttuale = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), nuovaGiacenza))
+                  Else
+                     valAttuale = 0.0
+                  End If
+               Else
+                  valCarico = 0.0
+                  valScarico = 0.0
+                  valAttuale = 0.0
+               End If
+            Else
+               valCarico = 0.0
+               valScarico = 0.0
+               valAttuale = 0.0
+            End If
+
+            ' Aggiorna i dati della tabella Articoli.
+            SalvaDati(TAB_ARTICOLI, idArticolo, nuovaGiacenza,
+                      Carico, Scarico, situazioneScorta, AArticoli.PrezzoAcquisto,
+                      valCarico, valScarico, valAttuale)
+
+            ' Verifica se Ë un carico o scarico.
+            Dim qt‡Caricata As Double = 0.0
+            Dim qt‡Scaricata As Double = 0.0
+            qt‡Scaricata = qt‡Scarico
+            qt‡Caricata = 0.0
+
+            Dim data As Date = Today.ToShortDateString
+
+            ' Salva i dati per i movimenti di magazzino.
+            SalvaMovimentiMag(TAB_MOV_MAGAZZINO, idArticolo, data.ToShortDateString, AArticoli.Codice, AArticoli.Descrizione,
+                              qt‡Caricata, qt‡Scaricata, CAUSALE_MOV_MAG, AArticoli.PrezzoAcquisto,
+                              AArticoli.Fornitore, AArticoli.Magazzino)
+
+            If IsNothing(g_frmArticoli) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmArticoli.AggiornaDati()
+            End If
+
+            If IsNothing(g_frmScorte) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmScorte.AggiornaDati()
+            End If
+
+            If IsNothing(g_frmInventario) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmInventario.AggiornaDati()
+            End If
+
+            If IsNothing(g_frmMovMag) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmMovMag.AggiornaDati()
+            End If
+         Loop
+
+         cmd.Dispose()
+         dr.Close()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+      End Try
+   End Sub
 
    Private Sub RipristinaIngredientiScaricati()
       Try
@@ -889,6 +1047,12 @@ Public Class ElencoNoleggi
                                     NOME_PRODOTTO, MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
 
          If risposta = vbOK Then
+            ' Scarica le quantit‡ degli articoli dal magazzino.
+            ScaricaArticoli()
+
+            '  Salva i dati per le statistiche - Da sviluppare!
+            'SalvaStatistiche(True)
+
             Dim statoNoleggio As New StatoNoleggi
 
             With statoNoleggio

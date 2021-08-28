@@ -141,3 +141,92 @@
    in Hospitality_Solution.frmNoleggi.CaricaElencoArticoli(ListView lst, String tabella, String rifNoleggio)"
 "
 "
+"*** 28/08/2021 - 16:07:19 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1616"
+"
+"
+"*** 28/08/2021 - 16:08:04 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1616"
+"
+"
+"*** 28/08/2021 - 16:18:20 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1616"
+"
+"
+"*** 28/08/2021 - 16:26:01 ***"
+"- DESCRIZIONE ERRORE: Testo del comando non impostato per l'oggetto comando."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.frmElencoDati.VisualizzaPagina(Int32 n, String sql) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Hospitality\ElencoDati.vb:riga 1616"
+"
+"
+"*** 28/08/2021 - 16:48:47 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader()
+   in Hospitality_Solution.ElencoNoleggi.ScaricaArticoli() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 589"
+"
+"
+"*** 28/08/2021 - 16:55:37 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   in System.Convert.ToInt32(Object value)
+   in Hospitality_Solution.ElencoNoleggi.ScaricaArticoli() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 592"
+"
+"
+"*** 28/08/2021 - 17:00:01 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   in System.Convert.ToInt32(String value)
+   in Hospitality_Solution.ElencoNoleggi.ScaricaArticoli() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 592"
+"
+"

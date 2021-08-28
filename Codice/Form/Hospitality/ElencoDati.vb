@@ -4252,7 +4252,7 @@ Public Class frmElencoDati
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Blue
             .CellTemplate.Style.NullValue = String.Empty
-            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Format = "##,##0.000"
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, giacenzaStyle)
@@ -4267,7 +4267,7 @@ Public Class frmElencoDati
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Black
             .CellTemplate.Style.NullValue = String.Empty
-            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Format = "##,##0.000"
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, caricatoStyle)
@@ -4282,7 +4282,7 @@ Public Class frmElencoDati
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.ForeColor = Color.Red
             .CellTemplate.Style.NullValue = String.Empty
-            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Format = "##,##0.000"
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, scaricatoStyle)
