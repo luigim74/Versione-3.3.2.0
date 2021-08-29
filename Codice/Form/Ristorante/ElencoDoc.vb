@@ -664,6 +664,7 @@ Public Class ElencoDoc
                Dim valScarico As Double = 0
                Dim valAttuale As Double = 0
 
+               ' TODO_A: Verificare!!!!
                Scarico = CalcolaScarico(AArticoli.Scarico, qt‡Carico)
                Carico = AArticoli.Carico
 

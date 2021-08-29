@@ -569,11 +569,23 @@ Public Class ElencoNoleggi
       End Try
    End Function
 
+   Private Function CalcolaCarico(ByVal carico As Double, ByVal nuovoCarico As Double) As Double
+      Try
+         Return (carico + nuovoCarico)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Function
+
+
    Private Sub ScaricaArticoli()
       Try
          Const TAB_ARTICOLI As String = "Articoli"
          Const TAB_MOV_MAGAZZINO As String = "MovMagazzino"
-         Const CAUSALE_MOV_MAG As String = "Noleggio"
+         Const CAUSALE_MOV_MAG As String = "Scarico noleggio"
          Dim Articoli As New Articoli
          Dim idArticolo As Integer
          Dim qt‡Scarico As Double
@@ -589,12 +601,10 @@ Public Class ElencoNoleggi
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read
-            ' TODO_A: Inserire Id Articolo nella tabella DettagliNoleggi.
-
-            idArticolo = Convert.ToInt32(dr.Item("CodiceArticolo")) ' Da errore!!!
+            idArticolo = Convert.ToInt32(dr.Item("IdArticolo"))
             qt‡Scarico = Convert.ToDouble(dr.Item("Quantit‡"))
 
-            AArticoli.LeggiDati(TAB_ARTICOLI, dr.Item("CodiceArticolo").ToString)
+            AArticoli.LeggiDati(TAB_ARTICOLI, dr.Item("IdArticolo").ToString)
 
             Dim nuovaGiacenza As Double = CalcolaGiacenza(AArticoli.Descrizione, AArticoli.Giacenza, AArticoli.ScortaMin, qt‡Scarico)
             Dim Carico As Double = 0.0
@@ -617,19 +627,19 @@ Public Class ElencoNoleggi
             If AArticoli.PrezzoAcquisto <> String.Empty Then
                If IsNumeric(AArticoli.PrezzoAcquisto) = True Then
                   If Carico <> 0.0 Then
-                     valCarico = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Carico))
+                     valCarico = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Carico))
                   Else
                      valCarico = 0.0
                   End If
 
                   If Scarico <> 0.0 Then
-                     valScarico = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Scarico))
+                     valScarico = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Scarico))
                   Else
                      valScarico = 0.0
                   End If
 
                   If nuovaGiacenza <> 0.0 Then
-                     valAttuale = CFormatta.FormattaEuro(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), nuovaGiacenza))
+                     valAttuale = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), nuovaGiacenza))
                   Else
                      valAttuale = 0.0
                   End If
@@ -695,159 +705,121 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Private Sub RipristinaIngredientiScaricati()
+   Private Sub RipristinaArticoliScaricati()
       Try
+         Const TAB_ARTICOLI As String = "Articoli"
+         Const TAB_MOV_MAGAZZINO As String = "MovMagazzino"
+         Const CAUSALE_MOV_MAG As String = "Carico noleggio"
+         Dim Articoli As New Articoli
          Dim idArticolo As Integer
          Dim qt‡Carico As Double
-         Dim IdPiatto As Integer = 0
-         Dim qt‡Piatto As Integer = 0
-         Dim descrizione As String
-         Dim rifDoc As Integer
-         Dim CausaleMovMag As String = "Documento annullato"
-
-         Dim listaPiatti As New ListBox
-         Dim listaIdPiatti As New ListBox
-         Dim listaIngredienti As New ListBox
+         Dim rifNoleggio As Integer
 
          ' Legge il numero dell'ultimo documento creato.
-         rifDoc = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
+         rifNoleggio = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value
 
          cn.Open()
 
-         ' Legge i dati di dettaglio (comande).
-         Dim cmdComande As New OleDbCommand("SELECT * FROM DettagliDoc WHERE RifDoc = " & rifDoc & " ORDER BY Id ASC", cn)
-         Dim drComande As OleDbDataReader = cmdComande.ExecuteReader()
-         Do While drComande.Read
+         ' Legge i dati degli Articoli del Noleggio.
+         Dim cmd As New OleDbCommand("SELECT * FROM DettagliNoleggi WHERE RifNoleggio = " & rifNoleggio & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read
             ' Ottiene la quantit‡ del piatto.
-            qt‡Piatto = Convert.ToInt32(drComande.Item("Quantit‡"))
-            descrizione = drComande.Item("Descrizione")
-            listaPiatti.Items.Add(qt‡Piatto & "/" & descrizione)
-         Loop
+            idArticolo = Convert.ToInt32(dr.Item("IdArticolo"))
+            qt‡Carico = Convert.ToDouble(dr.Item("Quantit‡"))
 
-         cmdComande.Dispose()
-         drComande.Close()
+            AArticoli.LeggiDati(TAB_ARTICOLI, dr.Item("IdArticolo").ToString)
 
-         Dim i As Integer
-         For i = 0 To listaPiatti.Items.Count - 1
-            Dim piatto As String = listaPiatti.Items.Item(i)
-            Dim datiPiatto As String()
-            datiPiatto = piatto.Split("/")
+            Dim nuovaGiacenza As Double = (AArticoli.Giacenza + qt‡Carico)
+            Dim Carico As Double = 0.0
+            Dim Scarico As Double = 0.0
+            Dim situazioneScorta As Double = 0.0
+            Dim valCarico As Double = 0.0
+            Dim valScarico As Double = 0.0
+            Dim valAttuale As Double = 0.0
 
-            ' Legge i dati di dettaglio (comande).
-            Dim cmdIdPiatto As New OleDbCommand("SELECT * FROM Piatti WHERE Descrizione = '" & datiPiatto(1) & "'", cn)
-            Dim drIdPiatto As OleDbDataReader = cmdIdPiatto.ExecuteReader()
-            Do While drIdPiatto.Read
-               ' Ottiene l'Id del piatto.
-               listaIdPiatti.Items.Add(drIdPiatto.Item("Id"))
-            Loop
+            Scarico = AArticoli.Scarico
+            Carico = CalcolaCarico(AArticoli.Carico, qt‡Carico)
 
-            cmdIdPiatto.Dispose()
-            drIdPiatto.Close()
-         Next
+            If AArticoli.ScortaMin > 0.0 Then
+               situazioneScorta = (nuovaGiacenza - AArticoli.ScortaMin)
+            Else
+               situazioneScorta = 0.0
+            End If
 
-         Dim y As Integer
-         For y = 0 To listaIdPiatti.Items.Count - 1
-            ' Legge i dati di dettaglio (comande).
-            Dim cmdIngrediente As New OleDbCommand("SELECT * FROM Ingredienti WHERE Id_Piatto = " & listaIdPiatti.Items.Item(y), cn)
-            Dim drIngrediente As OleDbDataReader = cmdIngrediente.ExecuteReader()
-
-            Do While drIngrediente.Read
-               ' Ottiene la quantit‡ del piatto.
-               idArticolo = Convert.ToInt32(drIngrediente.Item("Id_Articolo"))
-               qt‡Carico = drIngrediente.Item("Quantit‡")
-               listaIngredienti.Items.Add(idArticolo & "/" & qt‡Carico)
-
-               AArticoli.LeggiDati("Articoli", idArticolo)
-               Dim nuovaGiacenza As Double = (AArticoli.Giacenza + qt‡Carico)
-               Dim Carico As Double = 0
-               Dim Scarico As Double = 0
-               Dim situazioneScorta As Double = 0
-               Dim valCarico As Double = 0
-               Dim valScarico As Double = 0
-               Dim valAttuale As Double = 0
-
-               Scarico = CalcolaScarico(AArticoli.Scarico, qt‡Carico)
-               Carico = AArticoli.Carico
-
-               If AArticoli.ScortaMin > 0 Then
-                  situazioneScorta = (nuovaGiacenza - AArticoli.ScortaMin)
-               Else
-                  situazioneScorta = 0
-               End If
-
-               ' Calcola i progressivi.
-               If AArticoli.PrezzoAcquisto <> "" Then
-                  If IsNumeric(AArticoli.PrezzoAcquisto) = True Then
-                     If Carico <> 0 Then
-                        valCarico = CFormatta.FormattaEuro(CalcolaValore(CDec(AArticoli.PrezzoAcquisto), Carico))
-                     Else
-                        valCarico = 0
-                     End If
-
-                     If Scarico <> 0 Then
-                        valScarico = CFormatta.FormattaEuro(CalcolaValore(CDec(AArticoli.PrezzoAcquisto), Scarico))
-                     Else
-                        valScarico = 0
-                     End If
-
-                     If nuovaGiacenza <> 0 Then
-                        valAttuale = CFormatta.FormattaEuro(CalcolaValore(CDec(AArticoli.PrezzoAcquisto), nuovaGiacenza))
-                     Else
-                        valAttuale = 0
-                     End If
+            ' Calcola i progressivi.
+            If AArticoli.PrezzoAcquisto <> String.Empty Then
+               If IsNumeric(AArticoli.PrezzoAcquisto) = True Then
+                  If Carico <> 0.0 Then
+                     valCarico = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Carico))
                   Else
-                     valCarico = 0
-                     valScarico = 0
-                     valAttuale = 0
+                     valCarico = 0.0
+                  End If
+
+                  If Scarico <> 0.0 Then
+                     valScarico = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), Scarico))
+                  Else
+                     valScarico = 0.0
+                  End If
+
+                  If nuovaGiacenza <> 0.0 Then
+                     valAttuale = CFormatta.FormattaNumeroDouble(CalcolaValore(Convert.ToDecimal(AArticoli.PrezzoAcquisto), nuovaGiacenza))
+                  Else
+                     valAttuale = 0.0
                   End If
                Else
-                  valCarico = 0
-                  valScarico = 0
-                  valAttuale = 0
+                  valCarico = 0.0
+                  valScarico = 0.0
+                  valAttuale = 0.0
                End If
+            Else
+               valCarico = 0.0
+               valScarico = 0.0
+               valAttuale = 0.0
+            End If
 
-               ' Aggiorna i dati della tabella Articoli.
-               SalvaDati("Articoli", idArticolo, nuovaGiacenza,
+            ' Aggiorna i dati della tabella Articoli.
+            SalvaDati(TAB_ARTICOLI, idArticolo, nuovaGiacenza,
                           Carico, Scarico, situazioneScorta, AArticoli.PrezzoAcquisto,
                           valCarico, valScarico, valAttuale)
 
-               ' Verifica se Ë un carico o scarico.
-               Dim qt‡Caricata As Double = 0
-               Dim qt‡Scaricata As Double = 0
-               qt‡Scaricata = 0
-               qt‡Caricata = qt‡Carico
+            ' Verifica se Ë un carico o scarico.
+            Dim qt‡Caricata As Double = 0.0
+            Dim qt‡Scaricata As Double = 0.0
+            qt‡Scaricata = 0.0
+            qt‡Caricata = qt‡Carico
 
-               Dim data As Date = Now.Today
+            Dim data As Date = Today.ToShortDateString
 
-               ' Salva i dati per i movimenti di magazzino.
-               SalvaMovimentiMag("MovMagazzino", idArticolo, data.ToShortDateString, AArticoli.Codice, AArticoli.Descrizione,
-                                  qt‡Caricata, qt‡Scaricata, CausaleMovMag, AArticoli.PrezzoAcquisto,
+            ' Salva i dati per i movimenti di magazzino.
+            SalvaMovimentiMag(TAB_MOV_MAGAZZINO, idArticolo, data.ToShortDateString, AArticoli.Codice, AArticoli.Descrizione,
+                                  qt‡Caricata, qt‡Scaricata, CAUSALE_MOV_MAG, AArticoli.PrezzoAcquisto,
                                   AArticoli.Fornitore, AArticoli.Magazzino)
 
-               If IsNothing(g_frmArticoli) = False Then
-                  ' Aggiorna la griglia dati.
-                  g_frmArticoli.AggiornaDati()
-               End If
+            If IsNothing(g_frmArticoli) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmArticoli.AggiornaDati()
+            End If
 
-               If IsNothing(g_frmScorte) = False Then
-                  ' Aggiorna la griglia dati.
-                  g_frmScorte.AggiornaDati()
-               End If
+            If IsNothing(g_frmScorte) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmScorte.AggiornaDati()
+            End If
 
-               If IsNothing(g_frmInventario) = False Then
-                  ' Aggiorna la griglia dati.
-                  g_frmInventario.AggiornaDati()
-               End If
+            If IsNothing(g_frmInventario) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmInventario.AggiornaDati()
+            End If
 
-               If IsNothing(g_frmMovMag) = False Then
-                  ' Aggiorna la griglia dati.
-                  g_frmMovMag.AggiornaDati()
-               End If
-            Loop
+            If IsNothing(g_frmMovMag) = False Then
+               ' Aggiorna la griglia dati.
+               g_frmMovMag.AggiornaDati()
+            End If
+         Loop
 
-            cmdIngrediente.Dispose()
-            drIngrediente.Close()
-         Next
+         cmd.Dispose()
+         dr.Close()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1050,7 +1022,7 @@ Public Class ElencoNoleggi
             ' Scarica le quantit‡ degli articoli dal magazzino.
             ScaricaArticoli()
 
-            '  Salva i dati per le statistiche - Da sviluppare!
+            ' TODO_B: Salva i dati per le statistiche - Da sviluppare!
             'SalvaStatistiche(True)
 
             Dim statoNoleggio As New StatoNoleggi
@@ -1085,6 +1057,45 @@ Public Class ElencoNoleggi
 
    Public Sub Rientra()
       Try
+         Dim Numero As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim Cliente As String = DataGridView1.Item(COLONNA_CLIENTE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataInizio As String = DataGridView1.Item(COLONNA_DATA_INIZIO, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataFine As String = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Chiede conferma per effettuare il Noleggio.
+         Dim risposta As Integer
+         risposta = MessageBox.Show("Procedendo con l'operazione verr‡ effettuata l'operazione di rientro per il noleggio numero " & Numero & " per il cliente """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & ".",
+                                    NOME_PRODOTTO, MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+
+         If risposta = vbOK Then
+            ' Scarica le quantit‡ degli articoli dal magazzino.
+            RipristinaArticoliScaricati()
+
+            ' TODO_B: Salva i dati per le statistiche - Da sviluppare!
+            'SalvaStatistiche(True)
+
+            Dim statoNoleggio As New StatoNoleggi
+
+            With statoNoleggio
+               .LeggiDatiDescrizione(TAB_STATO_NOLEGGI, STATO_RIENTRATO)
+
+               ModificaStatoNoleggio(TAB_NOLEGGI, Numero, .Descrizione, .Colore)
+            End With
+
+            ' Aggiorna la lista dei documenti.
+            AggiornaDati()
+
+            ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
+            AttivaDisattivaAnnullaNoleggio()
+
+            ' Attiva/disattiva il pulsante per effetuare un noleggio.
+            AttivaDisattivaNoleggio()
+
+            ' Attiva/disattiva il pulsante per fare rientrare un noleggio.
+            AttivaDisattivaRientra()
+         Else
+            Exit Sub
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1306,6 +1317,13 @@ Public Class ElencoNoleggi
                      .Categoria = String.Empty
                   End If
 
+                  ' Id Articolo.
+                  If IsDBNull(dr.Item("IdArticolo")) = False Then
+                     .IdArticolo = dr.Item("IdArticolo")
+                  Else
+                     .IdArticolo = String.Empty
+                  End If
+
                   ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
                   .InserisciDati(TAB_DETTAGLI_NOLEGGI)
                Loop
@@ -1345,6 +1363,8 @@ Public Class ElencoNoleggi
                                     "Per ripristinare le giacenze di magazzino degli articoli noleggiati ed eventuali dati statistici Ë necessario annullare anche il documento emesso.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
          If risposta = vbYes Then
+            ' TODO_A: Inserire la procedure per il ripristino delle quantit‡ di magazzino.
+
             Dim statoNoleggio As New StatoNoleggi
 
             With statoNoleggio
@@ -1754,6 +1774,10 @@ Public Class ElencoNoleggi
 
             If stato = STATO_BOZZA And contabilizzato = "No" Then
                g_frmMain.eui_cmdNoleggio_Noleggia.Enabled = True
+
+            ElseIf stato = STATO_ANNULLATO And contabilizzato = "No" Then
+               g_frmMain.eui_cmdNoleggio_Noleggia.Enabled = True
+
             Else
                g_frmMain.eui_cmdNoleggio_Noleggia.Enabled = False
             End If
@@ -1775,10 +1799,9 @@ Public Class ElencoNoleggi
          ' Attiva/disattiva il pulsante per effettuare il Noleggio.
          If numRecord <> 0 Then
 
-            Dim contabilizzato As String = DataGridView1.Item(COLONNA_CONTABILIZZATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
             Dim stato As String = DataGridView1.Item(COLONNA_STATO, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-            If stato = STATO_NOLEGGIATO And contabilizzato = "SÏ" Then
+            If stato = STATO_NOLEGGIATO Then
                g_frmMain.eui_cmdNoleggio_Rientra.Enabled = True
             Else
                g_frmMain.eui_cmdNoleggio_Rientra.Enabled = False
@@ -1795,8 +1818,6 @@ Public Class ElencoNoleggi
 
       End Try
    End Sub
-
-
 
    Public Function ModificaStatoNoleggio(ByVal tabella As String, ByVal codice As String, ByVal stato As String, ByVal colore As Integer) As Boolean
       ' Dichiara un oggetto connessione.
@@ -2178,7 +2199,20 @@ Public Class ElencoNoleggi
             .CellTemplate = New DataGridViewTextBoxCell()
             .CellTemplate.Style.NullValue = String.Empty
          End With
-         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, rifNoleggioStyle)
+
+         ' 5 Id Articolo
+         Dim idArticoloStyle As New DataGridViewTextBoxColumn()
+         With idArticoloStyle
+            .DataPropertyName = "IdArticolo"
+            .HeaderText = "IdArticolo"
+            .Name = "IdArticolo"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+         End With
+
+         DataGridView2.Columns.Insert(DataGridView2.ColumnCount, idArticoloStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

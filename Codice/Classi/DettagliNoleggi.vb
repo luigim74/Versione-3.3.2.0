@@ -4,6 +4,7 @@ Public Class DettagliNoleggi
 
    Public Codice As String
    Public RifNoleggio As String
+   Public IdArticolo As String
    Public CodiceArticolo As String
    Public Descrizione As String
    Public Unit‡Misura As String
@@ -51,6 +52,11 @@ Public Class DettagliNoleggi
             Me.RifNoleggio = ds.Tables(tabella).Rows(0)("RifNoleggio").ToString
          Else
             Me.RifNoleggio = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("IdArticolo")) = False Then
+            Me.IdArticolo = ds.Tables(tabella).Rows(0)("IdArticolo").ToString
+         Else
+            Me.IdArticolo = String.Empty
          End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("CodiceArticolo")) = False Then
             Me.CodiceArticolo = ds.Tables(tabella).Rows(0)("CodiceArticolo").ToString
@@ -209,13 +215,14 @@ Public Class DettagliNoleggi
          ' Avvia una transazione.
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
-         sql = String.Format("INSERT INTO {0} (RifNoleggio, CodiceArticolo, Descrizione, Unit‡Misura, Quantit‡, ValoreUnitario, ImportoNetto, AliquotaIva, Categoria) " &
-                                       "VALUES(@RifNoleggio, @CodiceArticolo, @Descrizione, @Unit‡Misura, @Quantit‡, @ValoreUnitario, @ImportoNetto, @AliquotaIva, @Categoria)", tabella)
+         sql = String.Format("INSERT INTO {0} (RifNoleggio, IdArticolo, CodiceArticolo, Descrizione, Unit‡Misura, Quantit‡, ValoreUnitario, ImportoNetto, AliquotaIva, Categoria) " &
+                                       "VALUES(@RifNoleggio, @IdArticolo, @CodiceArticolo, @Descrizione, @Unit‡Misura, @Quantit‡, @ValoreUnitario, @ImportoNetto, @AliquotaIva, @Categoria)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-         cmdInsert.Parameters.AddWithValue("@RifDoc", Me.RifNoleggio)
+         cmdInsert.Parameters.AddWithValue("@RifNoleggio", Me.RifNoleggio)
+         cmdInsert.Parameters.AddWithValue("@IdArticolo", Me.IdArticolo)
          cmdInsert.Parameters.AddWithValue("@CodiceArticolo", Me.CodiceArticolo)
          cmdInsert.Parameters.AddWithValue("@Descrizione", Me.Descrizione)
          cmdInsert.Parameters.AddWithValue("@Unit‡Misura", Me.Unit‡Misura)
@@ -302,6 +309,7 @@ Public Class DettagliNoleggi
          ' Crea la stringa di eliminazione.
          sql = String.Format("UPDATE {0} " &
                              "SET RifNoleggio = @RifNoleggio, " &
+                             "IdArticolo = @IdArticolo, " &
                              "CodiceArticolo = @CodiceArticolo, " &
                              "Descrizione = @Descrizione, " &
                              "Unit‡Misura = @Unit‡Misura, " &
@@ -318,6 +326,7 @@ Public Class DettagliNoleggi
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
          cmdUpdate.Parameters.AddWithValue("@RifNoleggio", Me.RifNoleggio)
+         cmdUpdate.Parameters.AddWithValue("@IdArticolo", Me.IdArticolo)
          cmdUpdate.Parameters.AddWithValue("@CodiceArticolo", Me.CodiceArticolo)
          cmdUpdate.Parameters.AddWithValue("@Descrizione", Me.Descrizione)
          cmdUpdate.Parameters.AddWithValue("@Unit‡Misura", Me.Unit‡Misura)

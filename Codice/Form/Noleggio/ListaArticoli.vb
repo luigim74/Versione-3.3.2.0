@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/06/2021
-' Data ultima modifica: 30/06/2021
+' Data ultima modifica: 28/08/2021
 ' Descrizione:          Anagrafica Noleggi.
 ' Note:
 '

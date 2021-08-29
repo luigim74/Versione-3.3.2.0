@@ -1245,7 +1245,7 @@ Public Class frmNoleggi
    End Function
 
    Private Function SalvaArticoli(ByVal id As String) As Boolean
-      ' Salva i dati degli occupanti.
+      ' Salva i dati degli Articoli.
       Try
          Dim idNoleggio As Integer
 
@@ -1269,6 +1269,7 @@ Public Class frmNoleggi
                .ImportoNetto = lstvElencoArticoli.Items(i).SubItems(5).Text
                .AliquotaIva = lstvElencoArticoli.Items(i).SubItems(6).Text
                .Categoria = lstvElencoArticoli.Items(i).SubItems(7).Text
+               .IdArticolo = lstvElencoArticoli.Items(i).SubItems(8).Text
 
                .InserisciDati(TAB_DETTAGLI_NOLEGGI)
             Next
