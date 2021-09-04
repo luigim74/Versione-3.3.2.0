@@ -236,7 +236,7 @@ Public Class frmNoleggi
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(591, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(601, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -280,7 +280,7 @@ Public Class frmNoleggi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(591, 28)
+      Me.Panel1.Size = New System.Drawing.Size(601, 28)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -307,7 +307,7 @@ Public Class frmNoleggi
       '
       Me.TabControl2.Location = New System.Drawing.Point(2, 57)
       Me.TabControl2.Name = "TabControl2"
-      Me.TabControl2.SelectedTabPage = Me.tpDati
+      Me.TabControl2.SelectedTabPage = Me.tpArticoli
       Me.TabControl2.Size = New System.Drawing.Size(577, 353)
       Me.TabControl2.TabIndex = 1
       Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpDati, Me.tpArticoli, Me.tpAllegati, Me.tpNote})
@@ -929,26 +929,22 @@ Public Class frmNoleggi
       '
       'clnCostoTotale
       '
-      Me.clnCostoTotale.DisplayIndex = 6
       Me.clnCostoTotale.Text = "Costo totale"
       Me.clnCostoTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
       Me.clnCostoTotale.Width = 90
       '
       'clnIva
       '
-      Me.clnIva.DisplayIndex = 8
       Me.clnIva.Text = "Aliquota Iva"
       Me.clnIva.Width = 0
       '
       'clnCategoria
       '
-      Me.clnCategoria.DisplayIndex = 9
       Me.clnCategoria.Text = "Categoria"
       Me.clnCategoria.Width = 0
       '
       'clnId
       '
-      Me.clnId.DisplayIndex = 5
       Me.clnId.Text = "Id"
       Me.clnId.Width = 0
       '
@@ -1077,7 +1073,7 @@ Public Class frmNoleggi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(591, 423)
+      Me.ClientSize = New System.Drawing.Size(601, 433)
       Me.Controls.Add(Me.TabControl2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

@@ -2150,11 +2150,11 @@ Public Class ElencoPrenCamere
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Documenti_Scontrino.Visible = True
-      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = True
-      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Sep.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Visible = False
 
       ' Documento.
@@ -2166,6 +2166,8 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_cmdEsportaPdf.Enabled = True
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
       g_frmMain.eui_cmdEsportaTxt.Visible = False
+
+      g_frmMain.eui_Strumenti_Documenti_GruppoDoc.Visible = True
 
 #End Region
 

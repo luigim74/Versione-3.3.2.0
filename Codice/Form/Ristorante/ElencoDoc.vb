@@ -584,7 +584,7 @@ Public Class ElencoDoc
 
    Private Function CalcolaScarico(ByVal scarico As Double, ByVal nuovoScarico As Double) As Double
       Try
-         Return (scarico - nuovoScarico)
+         Return (scarico + nuovoScarico)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

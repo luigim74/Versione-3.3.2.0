@@ -3,13 +3,11 @@
 ' Nome form:            ElencoNoleggi
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 20/08/2021
+' Data ultima modifica: 04/09/2021
 ' Descrizione:          Elenco Noleggi.
 ' Note:
 '
 ' Elenco Attivita:
-'
-' TODO_A: SVILUPPARE L'INSERIMENTO DEL TOTALE MORA dal Rientro.
 '
 ' ******************************************************************
 #End Region
@@ -40,6 +38,7 @@ Public Class ElencoNoleggi
    Const COLONNA_CONTABILIZZATO As Short = 9
    Const COLONNA_STATO As Short = 10
    Const COLONNA_ID_CLIENTE As Short = 12
+   Const COLONNA_COSTO_MORA As Short = 13
 
    Const STATO_BOZZA As String = "Bozza"
    Const STATO_NOLEGGIATO As String = "Noleggiato"
@@ -560,7 +559,7 @@ Public Class ElencoNoleggi
 
    Private Function CalcolaScarico(ByVal scarico As Double, ByVal nuovoScarico As Double) As Double
       Try
-         Return (scarico - nuovoScarico)
+         Return (scarico + nuovoScarico)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -579,7 +578,6 @@ Public Class ElencoNoleggi
 
       End Try
    End Function
-
 
    Private Sub ScaricaArticoli()
       Try
@@ -1006,6 +1004,97 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
+   Private Function CalcolaMora() As Double
+      Try
+         Dim dataFineNoleggio As DateTime = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value
+         Dim costoMora As Double = DataGridView1.Item(COLONNA_COSTO_MORA, DataGridView1.CurrentCell.RowIndex).Value
+         Dim CostoTotaleMora As Double
+
+         ' TODO_A: Inserire il tipo periodo nella lista dati per poterlo leggere.
+         Dim tipoPeriodo As String = "Ore"
+
+         ' Verifica se esiste un valore per il Costo della mora. in caso contrario non esegue nessun calcolo.
+         If IsNumeric(costoMora) = True Then
+            If costoMora <> 0.0 Then
+
+               Dim dataOraAttuale As DateTime = Now
+               If dataFineNoleggio < dataOraAttuale Then
+
+                  Select Case tipoPeriodo
+                     Case "Ore"
+
+                        Dim tsOre As TimeSpan = dataOraAttuale - dataFineNoleggio
+                        Dim ore As Integer = tsOre.Hours
+                        Dim minuti As Integer = tsOre.Minutes
+
+                        If ore >= 1 Then
+                           Dim risposta As DialogResult = MessageBox.Show("Il rientro è stato effettuato con un ritardo di " & ore.ToString & " ore e " & minuti.ToString & " minuti." & vbNewLine & vbNewLine &
+                                                                          "Si desidera applicare il costo aggiuntivo della mora? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+                           If risposta = vbYes Then
+                              ' Calcola la Mora sulle ore.
+                              CostoTotaleMora = costoMora * ore
+
+                              risposta = MessageBox.Show("Si desidera applicare il costo della mora anche sui minuti? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+                              If risposta = vbYes Then
+                                 ' Calcola la Mora nel caso ci siano 30 minuti.
+                                 If minuti >= 30 Then
+                                    CostoTotaleMora = CostoTotaleMora + (costoMora / 2)
+                                 End If
+                              End If
+
+                           Else
+                              Return 0.0
+                           End If
+                        End If
+
+                     Case "Giorni"
+
+                        Dim tsGiorni As TimeSpan = dataOraAttuale - dataFineNoleggio
+                        Dim giorni As Integer = tsGiorni.Days
+                        Dim ore As Integer = tsGiorni.Hours
+
+                        If giorni >= 1 Then
+                           Dim risposta As DialogResult = MessageBox.Show("Il rientro è stato effettuato con un ritardo di " & giorni.ToString & " giorni e " & ore.ToString & " ore." & vbNewLine & vbNewLine &
+                                                                          "Si desidera applicare il costo aggiuntivo della mora? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+                           If risposta = vbYes Then
+                              ' Calcola la Mora sui giorni.
+                              CostoTotaleMora = costoMora * giorni
+
+                              risposta = MessageBox.Show("Si desidera applicare il costo della mora anche sulle ore? ", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+                              If risposta = vbYes Then
+                                 ' Calcola la Mora nel caso ci siano 12 ore.
+                                 If ore >= 12 Then
+                                    CostoTotaleMora = CostoTotaleMora + (costoMora / 2)
+                                 End If
+                              End If
+                           Else
+                              Return 0.0
+                           End If
+                        End If
+
+                  End Select
+               End If
+            Else
+               Return 0.0
+            End If
+         End If
+
+         Return CostoTotaleMora
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0.0
+
+      End Try
+
+   End Function
+
    Public Sub Noleggia()
       Try
          Dim Numero As String = DataGridView1.Item(COLONNA_ID_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
@@ -1074,12 +1163,13 @@ Public Class ElencoNoleggi
             ' TODO_B: Salva i dati per le statistiche - Da sviluppare!
             'SalvaStatistiche(True)
 
+            ' Modifica lo stato del noleggio e calcola l'eventuale Mora per il ritardo nella consegna.
             Dim statoNoleggio As New StatoNoleggi
 
             With statoNoleggio
                .LeggiDatiDescrizione(TAB_STATO_NOLEGGI, STATO_RIENTRATO)
 
-               ModificaStatoNoleggio(TAB_NOLEGGI, Numero, .Descrizione, .Colore)
+               ModificaStatoNoleggio(TAB_NOLEGGI, Numero, .Descrizione, .Colore, CalcolaMora)
             End With
 
             ' Aggiorna la lista dei documenti.
@@ -1819,7 +1909,7 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   Public Function ModificaStatoNoleggio(ByVal tabella As String, ByVal codice As String, ByVal stato As String, ByVal colore As Integer) As Boolean
+   Public Function ModificaStatoNoleggio(ByVal tabella As String, ByVal codice As String, ByVal stato As String, ByVal colore As Integer, Optional ByVal totaleMora As Double = 0.0) As Boolean
       ' Dichiara un oggetto connessione.
       Dim cn As New OleDbConnection(ConnString)
       Dim tr As OleDbTransaction
@@ -1834,7 +1924,8 @@ Public Class ElencoNoleggi
 
          ' Crea la stringa di eliminazione.
          sql = String.Format("UPDATE {0} 
-                              SET Stato = @Stato, 
+                              SET TotaleMora = @TotaleMora,
+                              Stato = @Stato, 
                               Colore = @Colore 
                               WHERE Id = {1}",
                               tabella,
@@ -1843,6 +1934,7 @@ Public Class ElencoNoleggi
          ' Crea il comando per la connessione corrente.
          Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
 
+         cmdUpdate.Parameters.AddWithValue("@TotaleMora", totaleMora)
          cmdUpdate.Parameters.AddWithValue("@Stato", stato)
          cmdUpdate.Parameters.AddWithValue("@Colore", colore)
 
@@ -2042,7 +2134,6 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, totaleStyle)
 
-         ' TODO_A: SVILUPPARE L'INSERIMENTO DEL TOTALE MORA dal Rientro.
          ' 7 Totale mora
          Dim totaleMoraStyle As New DataGridViewTextBoxColumn()
          With totaleMoraStyle
@@ -2121,6 +2212,22 @@ Public Class ElencoNoleggi
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, idClienteStyle)
+
+         ' 13 Costo mora.
+         Dim costoMoraStyle As New DataGridViewTextBoxColumn()
+         With costoMoraStyle
+            .DataPropertyName = "CostoMora"
+            .HeaderText = "Costo mora"
+            .Name = "CostoMora"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoMoraStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2414,7 +2521,6 @@ Public Class ElencoNoleggi
       End Try
    End Function
 
-
    Public Sub AnteprimaDiStampa(ByVal nomeDoc As String, ByVal tabella As String, ByVal sqlRep As String)
       Try
          Dim cn As New OleDbConnection(ConnString)
@@ -2534,6 +2640,27 @@ Public Class ElencoNoleggi
 #Region "Documenti "
       ' TabPage.
       g_frmMain.eui_StrumentiDocumenti.Visible = True
+
+      ' Stampa.
+      g_frmMain.eui_Strumenti_Documenti_Scontrino.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Visible = False
+
+      ' Documento.
+      g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_IstatC59.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Invia.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = False
+      g_frmMain.eui_cmdEsportaPdf.Enabled = False
+      g_frmMain.eui_cmdEsportaHtml.Enabled = False
+      g_frmMain.eui_cmdEsportaTxt.Visible = False
+
+      g_frmMain.eui_Strumenti_Documenti_GruppoDoc.Visible = False
 
 #End Region
 

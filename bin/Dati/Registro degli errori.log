@@ -252,3 +252,137 @@
    in Hospitality_Solution.DettagliNoleggi.InserisciDati(String tabella)"
 "
 "
+"*** 04/09/2021 - 13:55:19 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in Hospitality_Solution.Articoli.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 04/09/2021 - 13:55:42 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Prezzo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaDati(String tabella, Int32 id, Double giacenza, Double carico, Double scarico, Double situazione, String prezzo, Double valCarico, Double valScarico, Double valAttuale)"
+"
+"
+"*** 04/09/2021 - 13:55:48 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Codice."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaMovimentiMag(String tabella, Int32 id_Articolo, String data, String codice, String descrizione, Double carico, Double scarico, String causale, String prezzo, String fornitore, String magazzino)"
+"
+"
+"*** 04/09/2021 - 14:01:01 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.ListaArticoli.eui_cmdInserisci_Click(Object sender, EventArgs e)"
+"
+"
+"*** 04/09/2021 - 14:08:51 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.Articoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Articoli.vb:riga 61"
+"
+"
+"*** 04/09/2021 - 14:10:11 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Prezzo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaDati(String tabella, Int32 id, Double giacenza, Double carico, Double scarico, Double situazione, String prezzo, Double valCarico, Double valScarico, Double valAttuale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 448"
+"
+"
+"*** 04/09/2021 - 14:10:13 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Codice."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaMovimentiMag(String tabella, Int32 id_Articolo, String data, String codice, String descrizione, Double carico, Double scarico, String causale, String prezzo, String fornitore, String magazzino) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 507"
+"
+"
+"*** 04/09/2021 - 14:11:12 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in System.Data.DataRowCollection.get_Item(Int32 index)
+   in Hospitality_Solution.Articoli.LeggiDati(String tabella, String codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Classi\Articoli.vb:riga 61"
+"
+"
+"*** 04/09/2021 - 14:12:12 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Prezzo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaDati(String tabella, Int32 id, Double giacenza, Double carico, Double scarico, Double situazione, String prezzo, Double valCarico, Double valScarico, Double valAttuale) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 448"
+"
+"
+"*** 04/09/2021 - 14:12:16 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Codice."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaMovimentiMag(String tabella, Int32 id_Articolo, String data, String codice, String descrizione, Double carico, Double scarico, String causale, String prezzo, String fornitore, String magazzino) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\ElencoNoleggi.vb:riga 507"
+"
+"
+"*** 04/09/2021 - 14:27:24 ***"
+"- DESCRIZIONE ERRORE: InvalidArgument=Valore di '10' non valido per 'index'.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.Windows.Forms.ListViewItem.ListViewSubItemCollection.get_Item(Int32 index)
+   in Hospitality_Solution.frmNoleggi.SalvaArticoli(String id) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.5.2.0\Codice\Form\Noleggio\Noleggi.vb:riga 1279"
+"
+"
+"*** 04/09/2021 - 14:59:03 ***"
+"- DESCRIZIONE ERRORE: IdArticolo"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmNoleggi.CaricaElencoArticoliCausali(ListView lst, String tabella, String rifCausale)"
+"
+"
+"*** 04/09/2021 - 18:01:03 ***"
+"- DESCRIZIONE ERRORE: Nessuna riga alla posizione 0."
+"- NOME PROCEDURA:    in System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   in Hospitality_Solution.Articoli.LeggiDati(String tabella, String codice)"
+"
+"
+"*** 04/09/2021 - 18:01:09 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Prezzo."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaDati(String tabella, Int32 id, Double giacenza, Double carico, Double scarico, Double situazione, String prezzo, Double valCarico, Double valScarico, Double valAttuale)"
+"
+"
+"*** 04/09/2021 - 18:01:17 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @Codice."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.ElencoNoleggi.SalvaMovimentiMag(String tabella, Int32 id_Articolo, String data, String codice, String descrizione, Double carico, Double scarico, String causale, String prezzo, String fornitore, String magazzino)"
+"
+"

@@ -1194,11 +1194,11 @@ Public Class ElencoSchedinePS
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Documenti_Scontrino.Visible = False
-      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = False
-      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Sep.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Proforma.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Ricevuta.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Fattura.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_Sep2.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Stampa_Schedina.Visible = True
 
       ' Documento.
@@ -1210,6 +1210,8 @@ Public Class ElencoSchedinePS
       g_frmMain.eui_cmdEsportaPdf.Enabled = False
       g_frmMain.eui_cmdEsportaHtml.Enabled = False
       g_frmMain.eui_cmdEsportaTxt.Visible = True
+
+      g_frmMain.eui_Strumenti_Documenti_GruppoDoc.Visible = True
 
 #End Region
 
