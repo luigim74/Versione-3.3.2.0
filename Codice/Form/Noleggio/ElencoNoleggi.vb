@@ -39,6 +39,7 @@ Public Class ElencoNoleggi
    Const COLONNA_STATO As Short = 10
    Const COLONNA_ID_CLIENTE As Short = 12
    Const COLONNA_COSTO_MORA As Short = 13
+   Const COLONNA_TIPO_PERIODO As Short = 14
 
    Const STATO_BOZZA As String = "Bozza"
    Const STATO_NOLEGGIATO As String = "Noleggiato"
@@ -1006,12 +1007,14 @@ Public Class ElencoNoleggi
 
    Private Function CalcolaMora() As Double
       Try
+         Const TIPO_PERIODO_ORE As String = "ORE"
+         Const TIPO_PERIODO_GIORNI As String = "GIORNI"
+
          Dim dataFineNoleggio As DateTime = DataGridView1.Item(COLONNA_DATA_FINE, DataGridView1.CurrentCell.RowIndex).Value
          Dim costoMora As Double = DataGridView1.Item(COLONNA_COSTO_MORA, DataGridView1.CurrentCell.RowIndex).Value
-         Dim CostoTotaleMora As Double
+         Dim tipoPeriodo As Double = DataGridView1.Item(COLONNA_TIPO_PERIODO, DataGridView1.CurrentCell.RowIndex).Value
 
-         ' TODO_A: Inserire il tipo periodo nella lista dati per poterlo leggere.
-         Dim tipoPeriodo As String = "Ore"
+         Dim CostoTotaleMora As Double
 
          ' Verifica se esiste un valore per il Costo della mora. in caso contrario non esegue nessun calcolo.
          If IsNumeric(costoMora) = True Then
@@ -1020,8 +1023,8 @@ Public Class ElencoNoleggi
                Dim dataOraAttuale As DateTime = Now
                If dataFineNoleggio < dataOraAttuale Then
 
-                  Select Case tipoPeriodo
-                     Case "Ore"
+                  Select Case tipoPeriodo.ToString.ToUpper
+                     Case TIPO_PERIODO_ORE
 
                         Dim tsOre As TimeSpan = dataOraAttuale - dataFineNoleggio
                         Dim ore As Integer = tsOre.Hours
@@ -1049,7 +1052,7 @@ Public Class ElencoNoleggi
                            End If
                         End If
 
-                     Case "Giorni"
+                     Case TIPO_PERIODO_GIORNI
 
                         Dim tsGiorni As TimeSpan = dataOraAttuale - dataFineNoleggio
                         Dim giorni As Integer = tsGiorni.Days
@@ -1449,11 +1452,14 @@ Public Class ElencoNoleggi
          ' Chiede conferma per l'annullamento.
          Dim risposta As Integer
          risposta = MessageBox.Show("Si desidera annullare il noleggio Numero " & Numero & " effettuato da """ & Cliente & """ in data " & dataInizio & " con scadenza il " & dataFine & "?" & vbCrLf & vbCrLf &
-                                    "Confermando l'operazione il noleggio selezionato verrà segnato come 'Annullato'. " &
-                                    "Per ripristinare le giacenze di magazzino degli articoli noleggiati ed eventuali dati statistici è necessario annullare anche il documento emesso.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                    "Confermando l'operazione verranno ripristinati i valori per le giacenze di magazzino degli Articoli noleggiati.", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
          If risposta = vbYes Then
-            ' TODO_A: Inserire la procedure per il ripristino delle quantità di magazzino.
+            ' Scarica le quantità degli articoli dal magazzino.
+            RipristinaArticoliScaricati()
+
+            ' TODO_B: Salva i dati per le statistiche - Da sviluppare!
+            'RipristinaStatistiche(True)
 
             Dim statoNoleggio As New StatoNoleggi
 
@@ -1592,7 +1598,6 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
    Public Sub AggiornaDati()
       Try
          If eui_txtTestoRicerca.Text <> "" Then
@@ -1624,9 +1629,42 @@ Public Class ElencoNoleggi
                   ' Aggiorna la griglia dati.
                   AggiornaDatiPeriodo()
 
-               Case "Sospesi"
+               Case "MeseScadenza"
                   ' Aggiorna la griglia dati.
-                  'AggiornaDatiSospesi()
+                  AggiornaDatiMeseScadenza()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_ScadMese.Pressed = True
+
+               Case "AnnoScadenza"
+                  ' Aggiorna la griglia dati.
+                  AggiornaDatiAnnoScadenza()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_ScadAnno.Pressed = True
+
+               Case "PeriodoScadenza"
+                  ' Aggiorna la griglia dati.
+                  AggiornaDatiPeriodoScadenza()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_ScadDalAl.Pressed = True
+
+               Case "InCorso"
+                  ' Aggiorna la griglia dati.
+                  AggiornaDatiInCorso()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_VisInCorso.Pressed = True
+
+               Case "Scaduti"
+                  ' Aggiorna la griglia dati.
+                  AggiornaDatiScaduti()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_VisScaduti.Pressed = True
+
+               Case "Terminati"
+                  ' Aggiorna la griglia dati.
+                  AggiornaDatiTerminati()
+                  g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
+                  g_frmMain.eui_cmdNoleggio_VisTerminati.Pressed = True
+
             End Select
          End If
 
@@ -1637,7 +1675,6 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
    Public Sub AggiornaDatiPeriodo()
       Try
          ' Rimuove i dati di un'eventuale ricerca.
@@ -1656,8 +1693,8 @@ Public Class ElencoNoleggi
             ' Se nella tabella non ci sono record disattiva i pulsanti.
             ConvalidaDati()
 
-            ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-            'AttivaDisattivaAnnullaDoc()
+            ' Attiva/disattiva il pulsante annulla.
+            AttivaDisattivaAnnullaNoleggio()
 
             ' Aggiorna l'intestazione della griglia dati.
             AggIntGriglia()
@@ -1676,7 +1713,44 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
+   Public Sub AggiornaDatiPeriodoScadenza()
+      Try
+         ' Rimuove i dati di un'eventuale ricerca.
+         eui_txtTestoRicerca.Text = String.Empty
+
+         Dim frmFiltroPerido As New FiltroPeriodo()
+         If frmFiltroPerido.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            ' Crea la stringa di selezione dei dati.
+            Dim dataDal As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataDal.Value.GetValueOrDefault.ToShortDateString)
+            Dim dataAl As String = CFormatta.FormattaData(frmFiltroPerido.eui_dtpDataAl.Value.GetValueOrDefault.ToShortDateString)
+            sql = String.Format("Select TOP {0} * FROM {1} WHERE DataFine BETWEEN #{2}# And #{3}# ORDER BY DataFine ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, dataDal, dataAl)
+            repSql = sql
+            LeggiDati("(" & sql & ")", sql)
+
+            ' Se nella tabella non ci sono record disattiva i pulsanti.
+            ConvalidaDati()
+
+            ' Attiva/disattiva il pulsante annulla.
+            AttivaDisattivaAnnullaNoleggio()
+
+            ' Aggiorna l'intestazione della griglia dati.
+            AggIntGriglia()
+
+            ' Aggiorna il titolo della finestra.
+            AggTitoloFinestra(TITOLO_FINESTRA)
+
+            ' Somma i valori della colonna Importo.
+            SommaImporti()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Public Sub AggiornaDatiMese()
       Try
          ' Crea la stringa di selezione dei dati.
@@ -1693,8 +1767,8 @@ Public Class ElencoNoleggi
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         'AttivaDisattivaAnnullaDoc()
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1712,7 +1786,41 @@ Public Class ElencoNoleggi
       End Try
    End Sub
 
-   ' TODO_N: Modificare.
+   Public Sub AggiornaDatiMeseScadenza()
+      Try
+         ' Crea la stringa di selezione dei dati.
+         Dim Anno As String = Year(Now)
+         Dim Mese As String = Month(Now)
+         Dim InizioMese As String = CFormatta.FormattaData("01/" & Mese & "/" & Anno)
+         Dim UltimoGiornoMese As String = DateTime.DaysInMonth(Anno, Mese)
+         Dim FineMese As String = CFormatta.FormattaData(UltimoGiornoMese & "/" & Mese & "/" & Anno)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataFine BETWEEN #{2}# And #{3}# ORDER BY DataFine ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, InizioMese, FineMese)
+
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA)
+
+         ' Somma i valori della colonna Importo.
+         SommaImporti()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Public Sub AggiornaDatiAnno()
       Try
          ' Crea la stringa di selezione dei dati.
@@ -1728,8 +1836,134 @@ Public Class ElencoNoleggi
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
 
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         'AttivaDisattivaAnnullaDoc()
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA)
+
+         ' Somma i valori della colonna Importo.
+         SommaImporti()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiAnnoScadenza()
+      Try
+         ' Crea la stringa di selezione dei dati.
+         Dim Anno As String = Year(Now)
+         Dim InizioAnno As String = CFormatta.FormattaData("01/01/" & Anno)
+         Dim UltimoGiornoAnno As String = DateTime.DaysInMonth(Anno, 12)
+         Dim FineAnno As String = CFormatta.FormattaData(UltimoGiornoAnno & "/12/" & Anno)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataFine BETWEEN #{2}# And #{3}# ORDER BY DataFine ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, InizioAnno, FineAnno)
+
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA)
+
+         ' Somma i valori della colonna Importo.
+         SommaImporti()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiInCorso()
+      Try
+         ' Crea la stringa di selezione dei dati.
+         Dim dataCorrente As String = CFormatta.FormattaData(Now)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataFine > #{2}# ORDER BY DataFine ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, dataCorrente)
+
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA)
+
+         ' Somma i valori della colonna Importo.
+         SommaImporti()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiScaduti()
+      Try
+         ' Crea la stringa di selezione dei dati.
+         Dim dataCorrente As String = CFormatta.FormattaData(Now)
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE DataFine < #{2}# ORDER BY DataFine ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI, dataCorrente)
+
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
+
+         ' Aggiorna l'intestazione della griglia dati.
+         AggIntGriglia()
+
+         ' Aggiorna il titolo della finestra.
+         AggTitoloFinestra(TITOLO_FINESTRA)
+
+         ' Somma i valori della colonna Importo.
+         SommaImporti()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub AggiornaDatiTerminati()
+      Try
+         ' Crea la stringa di selezione dei dati.
+         sql = String.Format("Select TOP {0} * FROM {1} WHERE Stato = 'Terminato' ORDER BY Id ASC", DIM_PAGINA_GRANDE, TAB_NOLEGGI)
+
+         repSql = sql
+         LeggiDati("(" & sql & ")", sql)
+
+         ' Se nella tabella non ci sono record disattiva i pulsanti.
+         ConvalidaDati()
+
+         ' Attiva/disattiva il pulsante annulla.
+         AttivaDisattivaAnnullaNoleggio()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -2202,9 +2436,9 @@ Public Class ElencoNoleggi
          ' 12 Id Cliente.
          Dim idClienteStyle As New DataGridViewTextBoxColumn()
          With idClienteStyle
-            .DataPropertyName = "idCliente"
-            .HeaderText = "idCliente"
-            .Name = "idCliente"
+            .DataPropertyName = "IdCliente"
+            .HeaderText = "IdCliente"
+            .Name = "IdCliente"
             .Visible = False
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
             .CellTemplate = New DataGridViewTextBoxCell()
@@ -2228,6 +2462,20 @@ Public Class ElencoNoleggi
             .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoMoraStyle)
+
+         ' 14 Tipo Periodo.
+         Dim tipoPeriodoStyle As New DataGridViewTextBoxColumn()
+         With tipoPeriodoStyle
+            .DataPropertyName = "TipoPeriodo"
+            .HeaderText = "TipoPeriodo"
+            .Name = "TipoPeriodo"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipoPeriodoStyle)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2394,12 +2642,7 @@ Public Class ElencoNoleggi
          ConvalidaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         'AttivaDisattivaSospeso()
-         'AttivaDisattivaPassaSospeso()
-         'AttivaDisattivaAnnullaSospeso()
-         'AttivaDisattivaBuoni()
-         'AttivaDisattivaAnnullaDoc()
-         'AttivaDisattivaEsportaFatturaElettronica()
+         AttivaDisattivaAnnullaNoleggio()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()

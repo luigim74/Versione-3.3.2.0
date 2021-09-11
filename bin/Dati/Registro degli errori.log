@@ -386,3 +386,25 @@ Nome parametro: index"
    in Hospitality_Solution.ElencoNoleggi.SalvaMovimentiMag(String tabella, Int32 id_Articolo, String data, String codice, String descrizione, Double carico, Double scarico, String causale, String prezzo, String fornitore, String magazzino)"
 "
 "
+"*** 11/09/2021 - 17:00:27 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.InserisciDati(String tabella)"
+"
+"
+"*** 11/09/2021 - 17:05:48 ***"
+"- DESCRIZIONE ERRORE: Tipi di dati non corrispondenti nell'espressione criterio."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Noleggi.ModificaDati(String tabella, String codice)"
+"
+"

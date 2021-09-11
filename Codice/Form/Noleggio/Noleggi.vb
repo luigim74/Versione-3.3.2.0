@@ -1171,6 +1171,7 @@ Public Class frmNoleggi
             .TipoPeriodo = eui_cmbTipoPeriodo.Text
             .Periodo = eui_cmbPeriodo.Text
 
+            ' TODO_A: Correggere errore sul salvataggio delle date. Non sempre salva l'ora.
             Select Case eui_cmbTipoPeriodo.Text
                Case "Ore"
                   .DataInizio = Convert.ToDateTime(eui_dtpOraInizio.Value.ToString)
