@@ -436,6 +436,7 @@ Module Dichiarazioni
    Public Const TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE As String = "Elenco prenotazioni Sale"
    Public Const TITOLO_FINESTRA_ELENCO_ARTICOLI As String = "Elenco Articoli e Ingredienti"
    Public Const TITOLO_FINESTRA_ELENCO_NOLEGGI As String = "Elenco Noleggi"
+   Public Const TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO As String = "Elenco Causali noleggio"
 
    ' HOTEL.
    Public Const TITOLO_FINESTRA_ELENCO_PREN_CAMERE As String = "Elenco prenotazioni camere"
@@ -697,6 +698,7 @@ Module Dichiarazioni
    Public g_frmNoleggi As ElencoNoleggi
    Public g_frmSchedaNoleggi As frmNoleggi
    Public g_frmCausaliNoleggio As ElencoCausaliNoleggio
+   Public g_frmSchedaCausaliNoleggio As frmCausaliNoleggio
 
    ' Dati di accesso dell'operatore.
    Public Structure strOperatore

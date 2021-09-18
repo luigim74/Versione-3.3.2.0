@@ -118,7 +118,7 @@ Public Class CausaliNoleggio
          tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
          ' Crea la stringa di eliminazione.
          sql = String.Format("INSERT INTO {0} (Descrizione, CostoGiorno, CostoMora, CostoAssicurazione, Totale, [Note]) " &
-                                       "VALUES(@Descrizione, @CostoGiorno, @CostoMora, @CostoAssicurazione, @Totale, @Stato, @Note)", tabella)
+                                       "VALUES(@Descrizione, @CostoGiorno, @CostoMora, @CostoAssicurazione, @Totale, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -166,7 +166,7 @@ Public Class CausaliNoleggio
 
          ' Crea la stringa di eliminazione.
          sql = String.Format("UPDATE {0} " &
-                             "SET Causale = @Causale, " &
+                             "SET Descrizione = @Descrizione, " &
                              "CostoGiorno = @CostoGiorno, " &
                              "CostoMora = @CostoMora, " &
                              "CostoAssicurazione = @CostoAssicurazione, " &

@@ -131,6 +131,8 @@ Public Class frmNoleggi
    Friend WithEvents eui_cmdNuovaCausale As Elegant.Ui.Button
    Friend WithEvents eui_cmdModificaCausale As Elegant.Ui.Button
    Friend WithEvents eui_cmbIdCausale As Elegant.Ui.ComboBox
+   Friend WithEvents eui_txtTotaleImportoMora As Elegant.Ui.TextBox
+   Public WithEvents Label5 As Label
    Public WithEvents Label25 As Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -146,963 +148,991 @@ Public Class frmNoleggi
       Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.TabControl2 = New Elegant.Ui.TabControl()
-      Me.tpDati = New Elegant.Ui.TabPage()
-      Me.eui_cmbIdCausale = New Elegant.Ui.ComboBox()
-      Me.eui_cmdNuovaCausale = New Elegant.Ui.Button()
-      Me.eui_cmdModificaCausale = New Elegant.Ui.Button()
-      Me.eui_cmdNuovoCliente = New Elegant.Ui.Button()
-      Me.eui_cmdModificaCliente = New Elegant.Ui.Button()
-      Me.eui_cmbIdCliente = New Elegant.Ui.ComboBox()
-      Me.eui_cmbTipoPeriodo = New Elegant.Ui.ComboBox()
-      Me.eui_dtpOraFine = New Elegant.Ui.DateTimePicker()
-      Me.eui_dtpOraInizio = New Elegant.Ui.DateTimePicker()
-      Me.Label6 = New System.Windows.Forms.Label()
-      Me.Label9 = New System.Windows.Forms.Label()
-      Me.eui_txtTotaleOreGiorni = New Elegant.Ui.TextBox()
-      Me.lblTotaleOreGiorni = New System.Windows.Forms.Label()
-      Me.eui_cmdColore = New System.Windows.Forms.Button()
-      Me.eui_cmbStato = New Elegant.Ui.ComboBox()
-      Me.Label4 = New System.Windows.Forms.Label()
-      Me.Label3 = New System.Windows.Forms.Label()
-      Me.eui_txtCodiceBarre = New Elegant.Ui.TextBox()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.eui_txtTotaleImporto = New Elegant.Ui.TextBox()
-      Me.Label1 = New System.Windows.Forms.Label()
-      Me.eui_cmbPeriodo = New Elegant.Ui.ComboBox()
-      Me.Label25 = New System.Windows.Forms.Label()
-      Me.eui_txtSconto = New Elegant.Ui.TextBox()
-      Me.eui_txtCostoAssicurazione = New Elegant.Ui.TextBox()
-      Me.eui_txtCostoMora = New Elegant.Ui.TextBox()
-      Me.eui_txtCostoGiorno = New Elegant.Ui.TextBox()
-      Me.eui_dtpDataFine = New Elegant.Ui.DateTimePicker()
-      Me.eui_dtpDataInizio = New Elegant.Ui.DateTimePicker()
-      Me.eui_cmbCausale = New Elegant.Ui.ComboBox()
-      Me.eui_txtCodice = New Elegant.Ui.TextBox()
-      Me.eui_cmbCliente = New Elegant.Ui.ComboBox()
-      Me.Label7 = New System.Windows.Forms.Label()
-      Me.Label8 = New System.Windows.Forms.Label()
-      Me.lblCostoOreGiorni = New System.Windows.Forms.Label()
-      Me.lblCostoMoraOreGiorni = New System.Windows.Forms.Label()
-      Me.Label18 = New System.Windows.Forms.Label()
-      Me.Label19 = New System.Windows.Forms.Label()
-      Me.Label20 = New System.Windows.Forms.Label()
-      Me.Label23 = New System.Windows.Forms.Label()
-      Me.Label24 = New System.Windows.Forms.Label()
-      Me.tpArticoli = New Elegant.Ui.TabPage()
-      Me.eui_cmdElimina = New Elegant.Ui.Button()
-      Me.eui_cmdInserisci = New Elegant.Ui.Button()
-      Me.lstvElencoArticoli = New System.Windows.Forms.ListView()
-      Me.clnCodice = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnUM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnQuantità = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnCostoUnitario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnCostoTotale = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnIva = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnCategoria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.clnRifNoleggio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.tpAllegati = New Elegant.Ui.TabPage()
-      Me.eui_cmdApriDocAllegato = New Elegant.Ui.Button()
-      Me.eui_cmdInserisciAllegato = New Elegant.Ui.Button()
-      Me.eui_cmdRimuoviAllegato = New Elegant.Ui.Button()
-      Me.eui_cmdModificaAllegato = New Elegant.Ui.Button()
-      Me.lvwAllegati = New System.Windows.Forms.ListView()
-      Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-      Me.tpNote = New Elegant.Ui.TabPage()
-      Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.Panel1.SuspendLayout()
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-      CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.tpDati.SuspendLayout()
-      Me.tpArticoli.SuspendLayout()
-      Me.tpAllegati.SuspendLayout()
-      Me.tpNote.SuspendLayout()
-      Me.SuspendLayout()
-      '
-      'ToolBar1
-      '
-      Me.ToolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
-      Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.Salva, Me.Annulla})
-      Me.ToolBar1.ButtonSize = New System.Drawing.Size(22, 22)
-      Me.ToolBar1.Divider = False
-      Me.ToolBar1.DropDownArrows = True
-      Me.ToolBar1.ImageList = Me.ImageList1
-      Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
-      Me.ToolBar1.Name = "ToolBar1"
-      Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(601, 26)
-      Me.ToolBar1.TabIndex = 0
-      Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
-      '
-      'Salva
-      '
-      Me.Salva.ImageIndex = 9
-      Me.Salva.Name = "Salva"
-      Me.Salva.Tag = "Salva"
-      Me.Salva.Text = "Salva"
-      Me.Salva.ToolTipText = "Salva"
-      '
-      'Annulla
-      '
-      Me.Annulla.ImageIndex = 10
-      Me.Annulla.Name = "Annulla"
-      Me.Annulla.Tag = "Annulla"
-      Me.Annulla.Text = "Annulla"
-      Me.Annulla.ToolTipText = "Annulla"
-      '
-      'ImageList1
-      '
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-      Me.ImageList1.Images.SetKeyName(0, "")
-      Me.ImageList1.Images.SetKeyName(1, "")
-      Me.ImageList1.Images.SetKeyName(2, "")
-      Me.ImageList1.Images.SetKeyName(3, "")
-      Me.ImageList1.Images.SetKeyName(4, "")
-      Me.ImageList1.Images.SetKeyName(5, "")
-      Me.ImageList1.Images.SetKeyName(6, "")
-      Me.ImageList1.Images.SetKeyName(7, "")
-      Me.ImageList1.Images.SetKeyName(8, "")
-      Me.ImageList1.Images.SetKeyName(9, "")
-      Me.ImageList1.Images.SetKeyName(10, "")
-      Me.ImageList1.Images.SetKeyName(11, "id_insert_shapes_large.png")
-      '
-      'Panel1
-      '
-      Me.Panel1.BackColor = System.Drawing.Color.Gray
-      Me.Panel1.Controls.Add(Me.lblIntestazione)
-      Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-      Me.Panel1.Location = New System.Drawing.Point(0, 26)
-      Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(601, 28)
-      Me.Panel1.TabIndex = 0
-      '
-      'lblIntestazione
-      '
-      Me.lblIntestazione.AutoSize = True
-      Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
-      Me.lblIntestazione.Location = New System.Drawing.Point(3, 5)
-      Me.lblIntestazione.Name = "lblIntestazione"
-      Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
-      Me.lblIntestazione.TabIndex = 0
-      Me.lblIntestazione.Text = "#"
-      '
-      'ErrorProvider1
-      '
-      Me.ErrorProvider1.ContainerControl = Me
-      '
-      'formFrameSkinner
-      '
-      Me.formFrameSkinner.AllowGlass = False
-      Me.formFrameSkinner.Form = Me
-      '
-      'TabControl2
-      '
-      Me.TabControl2.Location = New System.Drawing.Point(2, 57)
-      Me.TabControl2.Name = "TabControl2"
-      Me.TabControl2.SelectedTabPage = Me.tpArticoli
-      Me.TabControl2.Size = New System.Drawing.Size(577, 353)
-      Me.TabControl2.TabIndex = 1
-      Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpDati, Me.tpArticoli, Me.tpAllegati, Me.tpNote})
-      Me.TabControl2.Text = "TabControl2"
-      '
-      'tpDati
-      '
-      Me.tpDati.ActiveControl = Nothing
-      Me.tpDati.Controls.Add(Me.eui_cmbIdCausale)
-      Me.tpDati.Controls.Add(Me.eui_cmdNuovaCausale)
-      Me.tpDati.Controls.Add(Me.eui_cmdModificaCausale)
-      Me.tpDati.Controls.Add(Me.eui_cmdNuovoCliente)
-      Me.tpDati.Controls.Add(Me.eui_cmdModificaCliente)
-      Me.tpDati.Controls.Add(Me.eui_cmbIdCliente)
-      Me.tpDati.Controls.Add(Me.eui_cmbTipoPeriodo)
-      Me.tpDati.Controls.Add(Me.eui_dtpOraFine)
-      Me.tpDati.Controls.Add(Me.eui_dtpOraInizio)
-      Me.tpDati.Controls.Add(Me.Label6)
-      Me.tpDati.Controls.Add(Me.Label9)
-      Me.tpDati.Controls.Add(Me.eui_txtTotaleOreGiorni)
-      Me.tpDati.Controls.Add(Me.lblTotaleOreGiorni)
-      Me.tpDati.Controls.Add(Me.eui_cmdColore)
-      Me.tpDati.Controls.Add(Me.eui_cmbStato)
-      Me.tpDati.Controls.Add(Me.Label4)
-      Me.tpDati.Controls.Add(Me.Label3)
-      Me.tpDati.Controls.Add(Me.eui_txtCodiceBarre)
-      Me.tpDati.Controls.Add(Me.Label2)
-      Me.tpDati.Controls.Add(Me.eui_txtTotaleImporto)
-      Me.tpDati.Controls.Add(Me.Label1)
-      Me.tpDati.Controls.Add(Me.eui_cmbPeriodo)
-      Me.tpDati.Controls.Add(Me.Label25)
-      Me.tpDati.Controls.Add(Me.eui_txtSconto)
-      Me.tpDati.Controls.Add(Me.eui_txtCostoAssicurazione)
-      Me.tpDati.Controls.Add(Me.eui_txtCostoMora)
-      Me.tpDati.Controls.Add(Me.eui_txtCostoGiorno)
-      Me.tpDati.Controls.Add(Me.eui_dtpDataFine)
-      Me.tpDati.Controls.Add(Me.eui_dtpDataInizio)
-      Me.tpDati.Controls.Add(Me.eui_cmbCausale)
-      Me.tpDati.Controls.Add(Me.eui_txtCodice)
-      Me.tpDati.Controls.Add(Me.eui_cmbCliente)
-      Me.tpDati.Controls.Add(Me.Label7)
-      Me.tpDati.Controls.Add(Me.Label8)
-      Me.tpDati.Controls.Add(Me.lblCostoOreGiorni)
-      Me.tpDati.Controls.Add(Me.lblCostoMoraOreGiorni)
-      Me.tpDati.Controls.Add(Me.Label18)
-      Me.tpDati.Controls.Add(Me.Label19)
-      Me.tpDati.Controls.Add(Me.Label20)
-      Me.tpDati.Controls.Add(Me.Label23)
-      Me.tpDati.Controls.Add(Me.Label24)
-      Me.tpDati.KeyTip = Nothing
-      Me.tpDati.Name = "tpDati"
-      Me.tpDati.Size = New System.Drawing.Size(575, 332)
-      Me.tpDati.TabIndex = 0
-      Me.tpDati.Text = "Dati principali"
-      '
-      'eui_cmbIdCausale
-      '
-      Me.eui_cmbIdCausale.Editable = False
-      Me.eui_cmbIdCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmbIdCausale.FormattingEnabled = False
-      Me.eui_cmbIdCausale.Id = "0f6f9782-8068-40e3-83f2-86881638be1a"
-      Me.eui_cmbIdCausale.Location = New System.Drawing.Point(128, 68)
-      Me.eui_cmbIdCausale.Name = "eui_cmbIdCausale"
-      Me.eui_cmbIdCausale.Size = New System.Drawing.Size(26, 21)
-      Me.eui_cmbIdCausale.TabIndex = 55732
-      Me.eui_cmbIdCausale.TextEditorWidth = 7
-      Me.eui_cmbIdCausale.Visible = False
-      '
-      'eui_cmdNuovaCausale
-      '
-      Me.eui_cmdNuovaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdNuovaCausale.Id = "feea2993-c912-42db-9d14-a833f1aa4e5e"
-      Me.eui_cmdNuovaCausale.Location = New System.Drawing.Point(491, 68)
-      Me.eui_cmdNuovaCausale.Name = "eui_cmdNuovaCausale"
-      Me.eui_cmdNuovaCausale.ScreenTip.Text = "Nuova causale noleggio"
-      Me.eui_cmdNuovaCausale.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdNuovaCausale.TabIndex = 55731
-      Me.eui_cmdNuovaCausale.Text = "+"
-      '
-      'eui_cmdModificaCausale
-      '
-      Me.eui_cmdModificaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdModificaCausale.Id = "5e2724a2-36f6-414c-86b0-7ed3812c363a"
-      Me.eui_cmdModificaCausale.Location = New System.Drawing.Point(465, 68)
-      Me.eui_cmdModificaCausale.Name = "eui_cmdModificaCausale"
-      Me.eui_cmdModificaCausale.ScreenTip.Text = "Modifica causale noleggio"
-      Me.eui_cmdModificaCausale.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdModificaCausale.TabIndex = 55730
-      Me.eui_cmdModificaCausale.Text = "..."
-      '
-      'eui_cmdNuovoCliente
-      '
-      Me.eui_cmdNuovoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdNuovoCliente.Id = "9ba731e5-a140-44cd-bb32-b105682f9d19"
-      Me.eui_cmdNuovoCliente.Location = New System.Drawing.Point(491, 43)
-      Me.eui_cmdNuovoCliente.Name = "eui_cmdNuovoCliente"
-      Me.eui_cmdNuovoCliente.ScreenTip.Text = "Nuovo cliente"
-      Me.eui_cmdNuovoCliente.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdNuovoCliente.TabIndex = 4
-      Me.eui_cmdNuovoCliente.Text = "+"
-      '
-      'eui_cmdModificaCliente
-      '
-      Me.eui_cmdModificaCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmdModificaCliente.Id = "4fd5f5b4-027f-43a7-ad6f-f54f66391234"
-      Me.eui_cmdModificaCliente.Location = New System.Drawing.Point(465, 43)
-      Me.eui_cmdModificaCliente.Name = "eui_cmdModificaCliente"
-      Me.eui_cmdModificaCliente.ScreenTip.Text = "Modifica cliente"
-      Me.eui_cmdModificaCliente.Size = New System.Drawing.Size(25, 21)
-      Me.eui_cmdModificaCliente.TabIndex = 3
-      Me.eui_cmdModificaCliente.Text = "..."
-      '
-      'eui_cmbIdCliente
-      '
-      Me.eui_cmbIdCliente.Editable = False
-      Me.eui_cmbIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmbIdCliente.FormattingEnabled = False
-      Me.eui_cmbIdCliente.Id = "c64a8f1a-28e8-4c60-91d8-7bfb1cc3fc2c"
-      Me.eui_cmbIdCliente.Location = New System.Drawing.Point(128, 43)
-      Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
-      Me.eui_cmbIdCliente.Size = New System.Drawing.Size(26, 21)
-      Me.eui_cmbIdCliente.TabIndex = 55729
-      Me.eui_cmbIdCliente.TextEditorWidth = 7
-      Me.eui_cmbIdCliente.Visible = False
-      '
-      'eui_cmbTipoPeriodo
-      '
-      Me.eui_cmbTipoPeriodo.Editable = False
-      Me.eui_cmbTipoPeriodo.FormattingEnabled = False
-      Me.eui_cmbTipoPeriodo.Id = "1da73c3c-40fd-47ab-b726-5ed15bb70a1b"
-      Me.eui_cmbTipoPeriodo.Items.AddRange(New Object() {"Ore", "Giorni"})
-      Me.eui_cmbTipoPeriodo.Location = New System.Drawing.Point(156, 98)
-      Me.eui_cmbTipoPeriodo.Name = "eui_cmbTipoPeriodo"
-      Me.eui_cmbTipoPeriodo.Size = New System.Drawing.Size(60, 21)
-      Me.eui_cmbTipoPeriodo.TabIndex = 6
-      Me.eui_cmbTipoPeriodo.TextEditorWidth = 41
-      '
-      'eui_dtpOraFine
-      '
-      Me.eui_dtpOraFine.CalendarDropDownVisible = False
-      Me.eui_dtpOraFine.Enabled = False
-      Me.eui_dtpOraFine.Format = Elegant.Ui.DateTimePickerFormat.ShortTime
-      Me.eui_dtpOraFine.Id = "09bb06cb-bbd6-4fc2-83ab-52b829781fd4"
-      Me.eui_dtpOraFine.IncrementOrDecrementWholeDate = True
-      Me.eui_dtpOraFine.Location = New System.Drawing.Point(427, 149)
-      Me.eui_dtpOraFine.Name = "eui_dtpOraFine"
-      Me.eui_dtpOraFine.Size = New System.Drawing.Size(89, 21)
-      Me.eui_dtpOraFine.TabIndex = 11
-      Me.eui_dtpOraFine.TextEditorWidth = 70
-      Me.eui_dtpOraFine.UpDownButtonsVisible = True
-      '
-      'eui_dtpOraInizio
-      '
-      Me.eui_dtpOraInizio.CalendarDropDownVisible = False
-      Me.eui_dtpOraInizio.Enabled = False
-      Me.eui_dtpOraInizio.Format = Elegant.Ui.DateTimePickerFormat.ShortTime
-      Me.eui_dtpOraInizio.Id = "7c88e5b1-85d5-4c1a-8fec-b8b0a217b352"
-      Me.eui_dtpOraInizio.IncrementOrDecrementWholeDate = True
-      Me.eui_dtpOraInizio.Location = New System.Drawing.Point(427, 124)
-      Me.eui_dtpOraInizio.Name = "eui_dtpOraInizio"
-      Me.eui_dtpOraInizio.Size = New System.Drawing.Size(89, 21)
-      Me.eui_dtpOraInizio.TabIndex = 10
-      Me.eui_dtpOraInizio.TextEditorWidth = 70
-      Me.eui_dtpOraInizio.UpDownButtonsVisible = True
-      '
-      'Label6
-      '
-      Me.Label6.AutoSize = True
-      Me.Label6.BackColor = System.Drawing.Color.Transparent
-      Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(355, 153)
-      Me.Label6.Name = "Label6"
-      Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label6.Size = New System.Drawing.Size(47, 13)
-      Me.Label6.TabIndex = 55725
-      Me.Label6.Text = "Ora fine:"
-      '
-      'Label9
-      '
-      Me.Label9.AutoSize = True
-      Me.Label9.BackColor = System.Drawing.Color.Transparent
-      Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label9.ForeColor = System.Drawing.Color.Black
-      Me.Label9.Location = New System.Drawing.Point(355, 128)
-      Me.Label9.Name = "Label9"
-      Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label9.Size = New System.Drawing.Size(53, 13)
-      Me.Label9.TabIndex = 55724
-      Me.Label9.Text = "Ora inizio:"
-      '
-      'eui_txtTotaleOreGiorni
-      '
-      Me.eui_txtTotaleOreGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtTotaleOreGiorni.Id = "ca4e1ab9-ec7c-4919-b3a1-9044b6a26c49"
-      Me.eui_txtTotaleOreGiorni.Location = New System.Drawing.Point(427, 98)
-      Me.eui_txtTotaleOreGiorni.Name = "eui_txtTotaleOreGiorni"
-      Me.eui_txtTotaleOreGiorni.ReadOnly = True
-      Me.eui_txtTotaleOreGiorni.Size = New System.Drawing.Size(89, 21)
-      Me.eui_txtTotaleOreGiorni.TabIndex = 55723
-      Me.eui_txtTotaleOreGiorni.Text = "30"
-      Me.eui_txtTotaleOreGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtTotaleOreGiorni.TextEditorWidth = 83
-      '
-      'lblTotaleOreGiorni
-      '
-      Me.lblTotaleOreGiorni.AutoSize = True
-      Me.lblTotaleOreGiorni.BackColor = System.Drawing.Color.Transparent
-      Me.lblTotaleOreGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.lblTotaleOreGiorni.ForeColor = System.Drawing.Color.Black
-      Me.lblTotaleOreGiorni.Location = New System.Drawing.Point(355, 102)
-      Me.lblTotaleOreGiorni.Name = "lblTotaleOreGiorni"
-      Me.lblTotaleOreGiorni.Size = New System.Drawing.Size(68, 13)
-      Me.lblTotaleOreGiorni.TabIndex = 55722
-      Me.lblTotaleOreGiorni.Text = "Totale giorni:"
-      Me.lblTotaleOreGiorni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      '
-      'eui_cmdColore
-      '
-      Me.eui_cmdColore.BackColor = System.Drawing.Color.LightSalmon
-      Me.eui_cmdColore.FlatAppearance.BorderColor = System.Drawing.Color.Gray
-      Me.eui_cmdColore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-      Me.eui_cmdColore.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_cmdColore.Location = New System.Drawing.Point(401, 279)
-      Me.eui_cmdColore.Name = "eui_cmdColore"
-      Me.eui_cmdColore.Size = New System.Drawing.Size(115, 21)
-      Me.eui_cmdColore.TabIndex = 18
-      Me.eui_cmdColore.UseVisualStyleBackColor = False
-      '
-      'eui_cmbStato
-      '
-      Me.eui_cmbStato.Editable = False
-      Me.eui_cmbStato.FormattingEnabled = False
-      Me.eui_cmbStato.Id = "eb5cdda5-eda0-4dcb-8a13-d77eb500267d"
-      Me.eui_cmbStato.Location = New System.Drawing.Point(401, 255)
-      Me.eui_cmbStato.Name = "eui_cmbStato"
-      Me.eui_cmbStato.Size = New System.Drawing.Size(115, 21)
-      Me.eui_cmbStato.TabIndex = 17
-      Me.eui_cmbStato.TextEditorWidth = 96
-      '
-      'Label4
-      '
-      Me.Label4.AutoSize = True
-      Me.Label4.BackColor = System.Drawing.Color.Transparent
-      Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(355, 259)
-      Me.Label4.Name = "Label4"
-      Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label4.Size = New System.Drawing.Size(35, 13)
-      Me.Label4.TabIndex = 55720
-      Me.Label4.Text = "Stato:"
-      '
-      'Label3
-      '
-      Me.Label3.AutoSize = True
-      Me.Label3.BackColor = System.Drawing.Color.Transparent
-      Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(355, 283)
-      Me.Label3.Name = "Label3"
-      Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label3.Size = New System.Drawing.Size(40, 13)
-      Me.Label3.TabIndex = 55719
-      Me.Label3.Text = "Colore:"
-      '
-      'eui_txtCodiceBarre
-      '
-      Me.eui_txtCodiceBarre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtCodiceBarre.Id = "81ed89d4-46fb-45f1-a44a-3d1dc55f8942"
-      Me.eui_txtCodiceBarre.Location = New System.Drawing.Point(385, 18)
-      Me.eui_txtCodiceBarre.Name = "eui_txtCodiceBarre"
-      Me.eui_txtCodiceBarre.Size = New System.Drawing.Size(131, 21)
-      Me.eui_txtCodiceBarre.TabIndex = 1
-      Me.eui_txtCodiceBarre.TextEditorWidth = 125
-      '
-      'Label2
-      '
-      Me.Label2.AutoSize = True
-      Me.Label2.BackColor = System.Drawing.Color.Transparent
-      Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(300, 22)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(79, 13)
-      Me.Label2.TabIndex = 55717
-      Me.Label2.Text = "Codice a barre:"
-      '
-      'eui_txtTotaleImporto
-      '
-      Me.eui_txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtTotaleImporto.Id = "c2318864-8dc9-4fa5-8871-e1675b39c457"
-      Me.eui_txtTotaleImporto.Location = New System.Drawing.Point(156, 280)
-      Me.eui_txtTotaleImporto.Name = "eui_txtTotaleImporto"
-      Me.eui_txtTotaleImporto.ReadOnly = True
-      Me.eui_txtTotaleImporto.Size = New System.Drawing.Size(174, 21)
-      Me.eui_txtTotaleImporto.TabIndex = 16
-      Me.eui_txtTotaleImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtTotaleImporto.TextEditorWidth = 168
-      '
-      'Label1
-      '
-      Me.Label1.AutoSize = True
-      Me.Label1.BackColor = System.Drawing.Color.Transparent
-      Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label1.ForeColor = System.Drawing.Color.Black
-      Me.Label1.Location = New System.Drawing.Point(21, 284)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(120, 13)
-      Me.Label1.TabIndex = 55715
-      Me.Label1.Text = "Totale importo noleggio:"
-      Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-      '
-      'eui_cmbPeriodo
-      '
-      Me.eui_cmbPeriodo.Editable = False
-      Me.eui_cmbPeriodo.FormattingEnabled = False
-      Me.eui_cmbPeriodo.Id = "2f9cd914-1baf-40d1-aa0c-b709734c5e6f"
-      Me.eui_cmbPeriodo.Items.AddRange(New Object() {"Selezione manuale", "1 Ora", "2 Ore", "3 Ore", "4 Ore", "1 Giorno", "2 Giorni", "3 Giorni", "4 Giorni", "5 Giorni", "6 Giorni", "7 Giorni", "1 Mese", "2 Mesi", "3 Mesi", "4 Mesi", "5 Mesi", "6 Mesi", "1 Anno", "2 Anni", "3 Anni", "4 Anni", "5 Anni"})
-      Me.eui_cmbPeriodo.Location = New System.Drawing.Point(218, 98)
-      Me.eui_cmbPeriodo.Name = "eui_cmbPeriodo"
-      Me.eui_cmbPeriodo.Size = New System.Drawing.Size(112, 21)
-      Me.eui_cmbPeriodo.TabIndex = 7
-      Me.eui_cmbPeriodo.TextEditorWidth = 93
-      '
-      'Label25
-      '
-      Me.Label25.AutoSize = True
-      Me.Label25.BackColor = System.Drawing.Color.Transparent
-      Me.Label25.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label25.ForeColor = System.Drawing.Color.Black
-      Me.Label25.Location = New System.Drawing.Point(21, 102)
-      Me.Label25.Name = "Label25"
-      Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label25.Size = New System.Drawing.Size(46, 13)
-      Me.Label25.TabIndex = 55713
-      Me.Label25.Text = "Periodo:"
-      '
-      'eui_txtSconto
-      '
-      Me.eui_txtSconto.Id = "5b063bf5-811f-496a-854d-663860336292"
-      Me.eui_txtSconto.Location = New System.Drawing.Point(156, 205)
-      Me.eui_txtSconto.Name = "eui_txtSconto"
-      Me.eui_txtSconto.Size = New System.Drawing.Size(174, 21)
-      Me.eui_txtSconto.TabIndex = 13
-      Me.eui_txtSconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtSconto.TextEditorWidth = 168
-      '
-      'eui_txtCostoAssicurazione
-      '
-      Me.eui_txtCostoAssicurazione.Id = "3b9be2ff-bc66-4911-963b-40f5f2a889bc"
-      Me.eui_txtCostoAssicurazione.Location = New System.Drawing.Point(156, 255)
-      Me.eui_txtCostoAssicurazione.Name = "eui_txtCostoAssicurazione"
-      Me.eui_txtCostoAssicurazione.Size = New System.Drawing.Size(174, 21)
-      Me.eui_txtCostoAssicurazione.TabIndex = 15
-      Me.eui_txtCostoAssicurazione.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtCostoAssicurazione.TextEditorWidth = 168
-      '
-      'eui_txtCostoMora
-      '
-      Me.eui_txtCostoMora.Id = "9bc8022a-1a8b-4644-8c93-827bc55b820c"
-      Me.eui_txtCostoMora.Location = New System.Drawing.Point(156, 230)
-      Me.eui_txtCostoMora.Name = "eui_txtCostoMora"
-      Me.eui_txtCostoMora.Size = New System.Drawing.Size(174, 21)
-      Me.eui_txtCostoMora.TabIndex = 14
-      Me.eui_txtCostoMora.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtCostoMora.TextEditorWidth = 168
-      '
-      'eui_txtCostoGiorno
-      '
-      Me.eui_txtCostoGiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtCostoGiorno.Id = "69a16ebe-88f3-46cd-ba2d-2b6b1abdefb5"
-      Me.eui_txtCostoGiorno.Location = New System.Drawing.Point(156, 180)
-      Me.eui_txtCostoGiorno.Name = "eui_txtCostoGiorno"
-      Me.eui_txtCostoGiorno.ReadOnly = True
-      Me.eui_txtCostoGiorno.Size = New System.Drawing.Size(174, 21)
-      Me.eui_txtCostoGiorno.TabIndex = 12
-      Me.eui_txtCostoGiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtCostoGiorno.TextEditorWidth = 168
-      '
-      'eui_dtpDataFine
-      '
-      Me.eui_dtpDataFine.Id = "8be6323f-c3ff-4c10-9f7a-7b4abec7f5f0"
-      Me.eui_dtpDataFine.Location = New System.Drawing.Point(156, 149)
-      Me.eui_dtpDataFine.Name = "eui_dtpDataFine"
-      Me.eui_dtpDataFine.Size = New System.Drawing.Size(174, 21)
-      Me.eui_dtpDataFine.TabIndex = 9
-      Me.eui_dtpDataFine.TextEditorWidth = 155
-      '
-      'eui_dtpDataInizio
-      '
-      Me.eui_dtpDataInizio.Id = "9b71e287-44f5-43fa-a84e-0311ed08ad52"
-      Me.eui_dtpDataInizio.Location = New System.Drawing.Point(156, 124)
-      Me.eui_dtpDataInizio.Name = "eui_dtpDataInizio"
-      Me.eui_dtpDataInizio.Size = New System.Drawing.Size(174, 21)
-      Me.eui_dtpDataInizio.TabIndex = 8
-      Me.eui_dtpDataInizio.TextEditorWidth = 155
-      '
-      'eui_cmbCausale
-      '
-      Me.eui_cmbCausale.Editable = False
-      Me.eui_cmbCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmbCausale.FormattingEnabled = False
-      Me.eui_cmbCausale.Id = "9a095b6c-0aaf-4879-b604-cd6a91beab70"
-      Me.eui_cmbCausale.Location = New System.Drawing.Point(156, 68)
-      Me.eui_cmbCausale.Name = "eui_cmbCausale"
-      Me.eui_cmbCausale.Size = New System.Drawing.Size(307, 21)
-      Me.eui_cmbCausale.TabIndex = 5
-      Me.eui_cmbCausale.TextEditorWidth = 288
-      '
-      'eui_txtCodice
-      '
-      Me.eui_txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtCodice.Id = "b3b14f14-c9d0-43cb-ba84-405bc8faaf49"
-      Me.eui_txtCodice.Location = New System.Drawing.Point(156, 18)
-      Me.eui_txtCodice.Name = "eui_txtCodice"
-      Me.eui_txtCodice.ReadOnly = True
-      Me.eui_txtCodice.Size = New System.Drawing.Size(131, 21)
-      Me.eui_txtCodice.TabIndex = 0
-      Me.eui_txtCodice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtCodice.TextEditorWidth = 125
-      '
-      'eui_cmbCliente
-      '
-      Me.eui_cmbCliente.Editable = False
-      Me.eui_cmbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_cmbCliente.FormattingEnabled = False
-      Me.eui_cmbCliente.Id = "afadeb17-01f4-4309-938a-da3222121b47"
-      Me.eui_cmbCliente.Location = New System.Drawing.Point(156, 43)
-      Me.eui_cmbCliente.Name = "eui_cmbCliente"
-      Me.eui_cmbCliente.Size = New System.Drawing.Size(307, 21)
-      Me.eui_cmbCliente.TabIndex = 2
-      Me.eui_cmbCliente.TextEditorWidth = 288
-      '
-      'Label7
-      '
-      Me.Label7.AutoSize = True
-      Me.Label7.BackColor = System.Drawing.Color.Transparent
-      Me.Label7.ForeColor = System.Drawing.Color.Black
-      Me.Label7.Location = New System.Drawing.Point(21, 22)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(40, 13)
-      Me.Label7.TabIndex = 55703
-      Me.Label7.Text = "Codice"
-      '
-      'Label8
-      '
-      Me.Label8.AutoSize = True
-      Me.Label8.BackColor = System.Drawing.Color.Transparent
-      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label8.ForeColor = System.Drawing.Color.Black
-      Me.Label8.Location = New System.Drawing.Point(21, 259)
-      Me.Label8.Name = "Label8"
-      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label8.Size = New System.Drawing.Size(104, 13)
-      Me.Label8.TabIndex = 55702
-      Me.Label8.Text = "Costo assicurazione:"
-      '
-      'lblCostoOreGiorni
-      '
-      Me.lblCostoOreGiorni.AutoSize = True
-      Me.lblCostoOreGiorni.BackColor = System.Drawing.Color.Transparent
-      Me.lblCostoOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
-      Me.lblCostoOreGiorni.ForeColor = System.Drawing.Color.Black
-      Me.lblCostoOreGiorni.Location = New System.Drawing.Point(21, 184)
-      Me.lblCostoOreGiorni.Name = "lblCostoOreGiorni"
-      Me.lblCostoOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lblCostoOreGiorni.Size = New System.Drawing.Size(88, 13)
-      Me.lblCostoOreGiorni.TabIndex = 55701
-      Me.lblCostoOreGiorni.Text = "Costo giornaliero:"
-      '
-      'lblCostoMoraOreGiorni
-      '
-      Me.lblCostoMoraOreGiorni.AutoSize = True
-      Me.lblCostoMoraOreGiorni.BackColor = System.Drawing.Color.Transparent
-      Me.lblCostoMoraOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
-      Me.lblCostoMoraOreGiorni.ForeColor = System.Drawing.Color.Black
-      Me.lblCostoMoraOreGiorni.Location = New System.Drawing.Point(21, 234)
-      Me.lblCostoMoraOreGiorni.Name = "lblCostoMoraOreGiorni"
-      Me.lblCostoMoraOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.lblCostoMoraOreGiorni.Size = New System.Drawing.Size(114, 13)
-      Me.lblCostoMoraOreGiorni.TabIndex = 55700
-      Me.lblCostoMoraOreGiorni.Text = "Costo mora giornaliera:"
-      '
-      'Label18
-      '
-      Me.Label18.AutoSize = True
-      Me.Label18.BackColor = System.Drawing.Color.Transparent
-      Me.Label18.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label18.ForeColor = System.Drawing.Color.Black
-      Me.Label18.Location = New System.Drawing.Point(21, 209)
-      Me.Label18.Name = "Label18"
-      Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label18.Size = New System.Drawing.Size(44, 13)
-      Me.Label18.TabIndex = 55699
-      Me.Label18.Text = "Sconto:"
-      '
-      'Label19
-      '
-      Me.Label19.AutoSize = True
-      Me.Label19.BackColor = System.Drawing.Color.Transparent
-      Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label19.ForeColor = System.Drawing.Color.Black
-      Me.Label19.Location = New System.Drawing.Point(21, 153)
-      Me.Label19.Name = "Label19"
-      Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label19.Size = New System.Drawing.Size(53, 13)
-      Me.Label19.TabIndex = 55698
-      Me.Label19.Text = "Data fine:"
-      '
-      'Label20
-      '
-      Me.Label20.AutoSize = True
-      Me.Label20.BackColor = System.Drawing.Color.Transparent
-      Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label20.ForeColor = System.Drawing.Color.Black
-      Me.Label20.Location = New System.Drawing.Point(21, 128)
-      Me.Label20.Name = "Label20"
-      Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label20.Size = New System.Drawing.Size(59, 13)
-      Me.Label20.TabIndex = 55697
-      Me.Label20.Text = "Data inizio:"
-      '
-      'Label23
-      '
-      Me.Label23.AutoSize = True
-      Me.Label23.BackColor = System.Drawing.Color.Transparent
-      Me.Label23.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label23.ForeColor = System.Drawing.Color.Black
-      Me.Label23.Location = New System.Drawing.Point(21, 72)
-      Me.Label23.Name = "Label23"
-      Me.Label23.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label23.Size = New System.Drawing.Size(91, 13)
-      Me.Label23.TabIndex = 55696
-      Me.Label23.Text = "Causale noleggio:"
-      '
-      'Label24
-      '
-      Me.Label24.AutoSize = True
-      Me.Label24.BackColor = System.Drawing.Color.Transparent
-      Me.Label24.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label24.ForeColor = System.Drawing.Color.Black
-      Me.Label24.Location = New System.Drawing.Point(21, 47)
-      Me.Label24.Name = "Label24"
-      Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label24.Size = New System.Drawing.Size(42, 13)
-      Me.Label24.TabIndex = 55695
-      Me.Label24.Text = "Cliente:"
-      '
-      'tpArticoli
-      '
-      Me.tpArticoli.ActiveControl = Nothing
-      Me.tpArticoli.Controls.Add(Me.eui_cmdElimina)
-      Me.tpArticoli.Controls.Add(Me.eui_cmdInserisci)
-      Me.tpArticoli.Controls.Add(Me.lstvElencoArticoli)
-      Me.tpArticoli.KeyTip = Nothing
-      Me.tpArticoli.Name = "tpArticoli"
-      Me.tpArticoli.Size = New System.Drawing.Size(575, 332)
-      Me.tpArticoli.TabIndex = 1
-      Me.tpArticoli.Text = "Articoli noleggiati"
-      '
-      'eui_cmdElimina
-      '
-      Me.eui_cmdElimina.Id = "194ff039-f822-43ad-af26-63ee4a6d8ad1"
-      Me.eui_cmdElimina.Location = New System.Drawing.Point(491, 295)
-      Me.eui_cmdElimina.Name = "eui_cmdElimina"
-      Me.eui_cmdElimina.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdElimina.TabIndex = 2
-      Me.eui_cmdElimina.Text = "&Elimina"
-      '
-      'eui_cmdInserisci
-      '
-      Me.eui_cmdInserisci.Id = "53c7e9e3-00ac-4b69-b43c-5f17efd9d3ba"
-      Me.eui_cmdInserisci.Location = New System.Drawing.Point(410, 295)
-      Me.eui_cmdInserisci.Name = "eui_cmdInserisci"
-      Me.eui_cmdInserisci.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdInserisci.TabIndex = 1
-      Me.eui_cmdInserisci.Text = "&Inserisci"
-      '
-      'lstvElencoArticoli
-      '
-      Me.lstvElencoArticoli.AllowColumnReorder = True
-      Me.lstvElencoArticoli.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnCodice, Me.clnDescrizione, Me.clnUM, Me.clnQuantità, Me.clnCostoUnitario, Me.clnCostoTotale, Me.clnIva, Me.clnCategoria, Me.clnId, Me.clnRifNoleggio})
-      Me.lstvElencoArticoli.FullRowSelect = True
-      Me.lstvElencoArticoli.HideSelection = False
-      Me.lstvElencoArticoli.Location = New System.Drawing.Point(0, 0)
-      Me.lstvElencoArticoli.MultiSelect = False
-      Me.lstvElencoArticoli.Name = "lstvElencoArticoli"
-      Me.lstvElencoArticoli.Size = New System.Drawing.Size(574, 287)
-      Me.lstvElencoArticoli.StateImageList = Me.ImageList1
-      Me.lstvElencoArticoli.TabIndex = 0
-      Me.lstvElencoArticoli.UseCompatibleStateImageBehavior = False
-      Me.lstvElencoArticoli.View = System.Windows.Forms.View.Details
-      '
-      'clnCodice
-      '
-      Me.clnCodice.Text = "Codice"
-      Me.clnCodice.Width = 100
-      '
-      'clnDescrizione
-      '
-      Me.clnDescrizione.Text = "Descrizione"
-      Me.clnDescrizione.Width = 150
-      '
-      'clnUM
-      '
-      Me.clnUM.Text = "U.M."
-      Me.clnUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-      '
-      'clnQuantità
-      '
-      Me.clnQuantità.Text = "Quantità"
-      Me.clnQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      '
-      'clnCostoUnitario
-      '
-      Me.clnCostoUnitario.Text = "Costo unitario"
-      Me.clnCostoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.clnCostoUnitario.Width = 90
-      '
-      'clnCostoTotale
-      '
-      Me.clnCostoTotale.Text = "Costo totale"
-      Me.clnCostoTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.clnCostoTotale.Width = 90
-      '
-      'clnIva
-      '
-      Me.clnIva.Text = "Aliquota Iva"
-      Me.clnIva.Width = 0
-      '
-      'clnCategoria
-      '
-      Me.clnCategoria.Text = "Categoria"
-      Me.clnCategoria.Width = 0
-      '
-      'clnId
-      '
-      Me.clnId.Text = "Id"
-      Me.clnId.Width = 0
-      '
-      'clnRifNoleggio
-      '
-      Me.clnRifNoleggio.DisplayIndex = 7
-      Me.clnRifNoleggio.Text = "RifNoleggio"
-      Me.clnRifNoleggio.Width = 0
-      '
-      'tpAllegati
-      '
-      Me.tpAllegati.ActiveControl = Nothing
-      Me.tpAllegati.Controls.Add(Me.eui_cmdApriDocAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdInserisciAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdRimuoviAllegato)
-      Me.tpAllegati.Controls.Add(Me.eui_cmdModificaAllegato)
-      Me.tpAllegati.Controls.Add(Me.lvwAllegati)
-      Me.tpAllegati.KeyTip = Nothing
-      Me.tpAllegati.Name = "tpAllegati"
-      Me.tpAllegati.Size = New System.Drawing.Size(575, 332)
-      Me.tpAllegati.TabIndex = 2
-      Me.tpAllegati.Text = "Documenti allegati"
-      '
-      'eui_cmdApriDocAllegato
-      '
-      Me.eui_cmdApriDocAllegato.Id = "296f15c6-df68-43f8-89f0-471b855f6902"
-      Me.eui_cmdApriDocAllegato.Location = New System.Drawing.Point(7, 296)
-      Me.eui_cmdApriDocAllegato.Name = "eui_cmdApriDocAllegato"
-      Me.eui_cmdApriDocAllegato.Size = New System.Drawing.Size(104, 30)
-      Me.eui_cmdApriDocAllegato.TabIndex = 1
-      Me.eui_cmdApriDocAllegato.Text = "&Apri documento"
-      '
-      'eui_cmdInserisciAllegato
-      '
-      Me.eui_cmdInserisciAllegato.Id = "4f490082-3d2e-4073-b7fe-7240f0d40e28"
-      Me.eui_cmdInserisciAllegato.Location = New System.Drawing.Point(331, 295)
-      Me.eui_cmdInserisciAllegato.Name = "eui_cmdInserisciAllegato"
-      Me.eui_cmdInserisciAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdInserisciAllegato.TabIndex = 2
-      Me.eui_cmdInserisciAllegato.Text = "&Inserisci"
-      '
-      'eui_cmdRimuoviAllegato
-      '
-      Me.eui_cmdRimuoviAllegato.Id = "50b6def9-b6c9-4513-afc4-d03f9c51d9a1"
-      Me.eui_cmdRimuoviAllegato.Location = New System.Drawing.Point(491, 295)
-      Me.eui_cmdRimuoviAllegato.Name = "eui_cmdRimuoviAllegato"
-      Me.eui_cmdRimuoviAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdRimuoviAllegato.TabIndex = 4
-      Me.eui_cmdRimuoviAllegato.Text = "&Rimuovi"
-      '
-      'eui_cmdModificaAllegato
-      '
-      Me.eui_cmdModificaAllegato.Id = "4e1a42a7-fbbb-4825-9b25-3b03c18d7efc"
-      Me.eui_cmdModificaAllegato.Location = New System.Drawing.Point(411, 295)
-      Me.eui_cmdModificaAllegato.Name = "eui_cmdModificaAllegato"
-      Me.eui_cmdModificaAllegato.Size = New System.Drawing.Size(75, 30)
-      Me.eui_cmdModificaAllegato.TabIndex = 3
-      Me.eui_cmdModificaAllegato.Text = "&Modifica"
-      '
-      'lvwAllegati
-      '
-      Me.lvwAllegati.AllowColumnReorder = True
-      Me.lvwAllegati.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-      Me.lvwAllegati.FullRowSelect = True
-      Me.lvwAllegati.HideSelection = False
-      Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
-      Me.lvwAllegati.MultiSelect = False
-      Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(574, 287)
-      Me.lvwAllegati.StateImageList = Me.ImageList1
-      Me.lvwAllegati.TabIndex = 0
-      Me.lvwAllegati.UseCompatibleStateImageBehavior = False
-      Me.lvwAllegati.View = System.Windows.Forms.View.Details
-      '
-      'ColumnHeader1
-      '
-      Me.ColumnHeader1.Text = "Documento"
-      Me.ColumnHeader1.Width = 200
-      '
-      'ColumnHeader2
-      '
-      Me.ColumnHeader2.Text = "Data"
-      Me.ColumnHeader2.Width = 75
-      '
-      'ColumnHeader3
-      '
-      Me.ColumnHeader3.Text = "Ora"
-      Me.ColumnHeader3.Width = 75
-      '
-      'ColumnHeader4
-      '
-      Me.ColumnHeader4.Text = "Note"
-      Me.ColumnHeader4.Width = 500
-      '
-      'ColumnHeader5
-      '
-      Me.ColumnHeader5.Text = "Percorso"
-      Me.ColumnHeader5.Width = 500
-      '
-      'ColumnHeader6
-      '
-      Me.ColumnHeader6.Text = "Codice"
-      Me.ColumnHeader6.Width = 0
-      '
-      'tpNote
-      '
-      Me.tpNote.ActiveControl = Nothing
-      Me.tpNote.Controls.Add(Me.eui_txtNote)
-      Me.tpNote.KeyTip = Nothing
-      Me.tpNote.Name = "tpNote"
-      Me.tpNote.Size = New System.Drawing.Size(575, 332)
-      Me.tpNote.TabIndex = 3
-      Me.tpNote.Text = "Note"
-      '
-      'eui_txtNote
-      '
-      Me.eui_txtNote.Id = "e5c9cad8-2145-43be-9f3c-f29d123bd56b"
-      Me.eui_txtNote.Location = New System.Drawing.Point(1, 0)
-      Me.eui_txtNote.Multiline = True
-      Me.eui_txtNote.Name = "eui_txtNote"
-      Me.eui_txtNote.Size = New System.Drawing.Size(573, 331)
-      Me.eui_txtNote.TabIndex = 0
-      Me.eui_txtNote.TextEditorWidth = 567
-      '
-      'frmNoleggi
-      '
-      Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-      Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(601, 433)
-      Me.Controls.Add(Me.TabControl2)
-      Me.Controls.Add(Me.Panel1)
-      Me.Controls.Add(Me.ToolBar1)
-      Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-      Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-      Me.MaximizeBox = False
-      Me.MinimizeBox = False
-      Me.Name = "frmNoleggi"
-      Me.ShowInTaskbar = False
-      Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-      Me.Text = "Noleggi"
-      Me.Panel1.ResumeLayout(False)
-      Me.Panel1.PerformLayout()
-      CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-      CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.tpDati.ResumeLayout(False)
-      Me.tpDati.PerformLayout()
-      Me.tpArticoli.ResumeLayout(False)
-      Me.tpAllegati.ResumeLayout(False)
-      Me.tpNote.ResumeLayout(False)
-      Me.tpNote.PerformLayout()
-      Me.ResumeLayout(False)
-      Me.PerformLayout()
+        Me.tpDati = New Elegant.Ui.TabPage()
+        Me.eui_txtTotaleImportoMora = New Elegant.Ui.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.eui_cmbIdCausale = New Elegant.Ui.ComboBox()
+        Me.eui_cmdNuovaCausale = New Elegant.Ui.Button()
+        Me.eui_cmdModificaCausale = New Elegant.Ui.Button()
+        Me.eui_cmdNuovoCliente = New Elegant.Ui.Button()
+        Me.eui_cmdModificaCliente = New Elegant.Ui.Button()
+        Me.eui_cmbIdCliente = New Elegant.Ui.ComboBox()
+        Me.eui_cmbTipoPeriodo = New Elegant.Ui.ComboBox()
+        Me.eui_dtpOraFine = New Elegant.Ui.DateTimePicker()
+        Me.eui_dtpOraInizio = New Elegant.Ui.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.eui_txtTotaleOreGiorni = New Elegant.Ui.TextBox()
+        Me.lblTotaleOreGiorni = New System.Windows.Forms.Label()
+        Me.eui_cmdColore = New System.Windows.Forms.Button()
+        Me.eui_cmbStato = New Elegant.Ui.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.eui_txtCodiceBarre = New Elegant.Ui.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.eui_txtTotaleImporto = New Elegant.Ui.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.eui_cmbPeriodo = New Elegant.Ui.ComboBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.eui_txtSconto = New Elegant.Ui.TextBox()
+        Me.eui_txtCostoAssicurazione = New Elegant.Ui.TextBox()
+        Me.eui_txtCostoMora = New Elegant.Ui.TextBox()
+        Me.eui_txtCostoGiorno = New Elegant.Ui.TextBox()
+        Me.eui_dtpDataFine = New Elegant.Ui.DateTimePicker()
+        Me.eui_dtpDataInizio = New Elegant.Ui.DateTimePicker()
+        Me.eui_cmbCausale = New Elegant.Ui.ComboBox()
+        Me.eui_txtCodice = New Elegant.Ui.TextBox()
+        Me.eui_cmbCliente = New Elegant.Ui.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblCostoOreGiorni = New System.Windows.Forms.Label()
+        Me.lblCostoMoraOreGiorni = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.tpArticoli = New Elegant.Ui.TabPage()
+        Me.eui_cmdElimina = New Elegant.Ui.Button()
+        Me.eui_cmdInserisci = New Elegant.Ui.Button()
+        Me.lstvElencoArticoli = New System.Windows.Forms.ListView()
+        Me.clnCodice = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnDescrizione = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnUM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnQuantità = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnCostoUnitario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnCostoTotale = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnIva = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnCategoria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clnRifNoleggio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.tpAllegati = New Elegant.Ui.TabPage()
+        Me.eui_cmdApriDocAllegato = New Elegant.Ui.Button()
+        Me.eui_cmdInserisciAllegato = New Elegant.Ui.Button()
+        Me.eui_cmdRimuoviAllegato = New Elegant.Ui.Button()
+        Me.eui_cmdModificaAllegato = New Elegant.Ui.Button()
+        Me.lvwAllegati = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.tpNote = New Elegant.Ui.TabPage()
+        Me.eui_txtNote = New Elegant.Ui.TextBox()
+        Me.Panel1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpDati.SuspendLayout()
+        Me.tpArticoli.SuspendLayout()
+        Me.tpAllegati.SuspendLayout()
+        Me.tpNote.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'ToolBar1
+        '
+        Me.ToolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat
+        Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.Salva, Me.Annulla})
+        Me.ToolBar1.ButtonSize = New System.Drawing.Size(22, 22)
+        Me.ToolBar1.Divider = False
+        Me.ToolBar1.DropDownArrows = True
+        Me.ToolBar1.ImageList = Me.ImageList1
+        Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolBar1.Name = "ToolBar1"
+        Me.ToolBar1.ShowToolTips = True
+        Me.ToolBar1.Size = New System.Drawing.Size(582, 26)
+        Me.ToolBar1.TabIndex = 0
+        Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
+        '
+        'Salva
+        '
+        Me.Salva.ImageIndex = 9
+        Me.Salva.Name = "Salva"
+        Me.Salva.Tag = "Salva"
+        Me.Salva.Text = "Salva"
+        Me.Salva.ToolTipText = "Salva"
+        '
+        'Annulla
+        '
+        Me.Annulla.ImageIndex = 10
+        Me.Annulla.Name = "Annulla"
+        Me.Annulla.Tag = "Annulla"
+        Me.Annulla.Text = "Annulla"
+        Me.Annulla.ToolTipText = "Annulla"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "")
+        Me.ImageList1.Images.SetKeyName(1, "")
+        Me.ImageList1.Images.SetKeyName(2, "")
+        Me.ImageList1.Images.SetKeyName(3, "")
+        Me.ImageList1.Images.SetKeyName(4, "")
+        Me.ImageList1.Images.SetKeyName(5, "")
+        Me.ImageList1.Images.SetKeyName(6, "")
+        Me.ImageList1.Images.SetKeyName(7, "")
+        Me.ImageList1.Images.SetKeyName(8, "")
+        Me.ImageList1.Images.SetKeyName(9, "")
+        Me.ImageList1.Images.SetKeyName(10, "")
+        Me.ImageList1.Images.SetKeyName(11, "id_insert_shapes_large.png")
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.lblIntestazione)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 26)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(582, 28)
+        Me.Panel1.TabIndex = 0
+        '
+        'lblIntestazione
+        '
+        Me.lblIntestazione.AutoSize = True
+        Me.lblIntestazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntestazione.ForeColor = System.Drawing.SystemColors.Window
+        Me.lblIntestazione.Location = New System.Drawing.Point(3, 5)
+        Me.lblIntestazione.Name = "lblIntestazione"
+        Me.lblIntestazione.Size = New System.Drawing.Size(16, 16)
+        Me.lblIntestazione.TabIndex = 0
+        Me.lblIntestazione.Text = "#"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'formFrameSkinner
+        '
+        Me.formFrameSkinner.AllowGlass = False
+        Me.formFrameSkinner.Form = Me
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Location = New System.Drawing.Point(2, 57)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedTabPage = Me.tpDati
+        Me.TabControl2.Size = New System.Drawing.Size(577, 354)
+        Me.TabControl2.TabIndex = 1
+        Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.tpDati, Me.tpArticoli, Me.tpAllegati, Me.tpNote})
+        Me.TabControl2.Text = "TabControl2"
+        '
+        'tpDati
+        '
+        Me.tpDati.ActiveControl = Nothing
+        Me.tpDati.Controls.Add(Me.eui_txtTotaleImportoMora)
+        Me.tpDati.Controls.Add(Me.Label5)
+        Me.tpDati.Controls.Add(Me.eui_cmbIdCausale)
+        Me.tpDati.Controls.Add(Me.eui_cmdNuovaCausale)
+        Me.tpDati.Controls.Add(Me.eui_cmdModificaCausale)
+        Me.tpDati.Controls.Add(Me.eui_cmdNuovoCliente)
+        Me.tpDati.Controls.Add(Me.eui_cmdModificaCliente)
+        Me.tpDati.Controls.Add(Me.eui_cmbIdCliente)
+        Me.tpDati.Controls.Add(Me.eui_cmbTipoPeriodo)
+        Me.tpDati.Controls.Add(Me.eui_dtpOraFine)
+        Me.tpDati.Controls.Add(Me.eui_dtpOraInizio)
+        Me.tpDati.Controls.Add(Me.Label6)
+        Me.tpDati.Controls.Add(Me.Label9)
+        Me.tpDati.Controls.Add(Me.eui_txtTotaleOreGiorni)
+        Me.tpDati.Controls.Add(Me.lblTotaleOreGiorni)
+        Me.tpDati.Controls.Add(Me.eui_cmdColore)
+        Me.tpDati.Controls.Add(Me.eui_cmbStato)
+        Me.tpDati.Controls.Add(Me.Label4)
+        Me.tpDati.Controls.Add(Me.Label3)
+        Me.tpDati.Controls.Add(Me.eui_txtCodiceBarre)
+        Me.tpDati.Controls.Add(Me.Label2)
+        Me.tpDati.Controls.Add(Me.eui_txtTotaleImporto)
+        Me.tpDati.Controls.Add(Me.Label1)
+        Me.tpDati.Controls.Add(Me.eui_cmbPeriodo)
+        Me.tpDati.Controls.Add(Me.Label25)
+        Me.tpDati.Controls.Add(Me.eui_txtSconto)
+        Me.tpDati.Controls.Add(Me.eui_txtCostoAssicurazione)
+        Me.tpDati.Controls.Add(Me.eui_txtCostoMora)
+        Me.tpDati.Controls.Add(Me.eui_txtCostoGiorno)
+        Me.tpDati.Controls.Add(Me.eui_dtpDataFine)
+        Me.tpDati.Controls.Add(Me.eui_dtpDataInizio)
+        Me.tpDati.Controls.Add(Me.eui_cmbCausale)
+        Me.tpDati.Controls.Add(Me.eui_txtCodice)
+        Me.tpDati.Controls.Add(Me.eui_cmbCliente)
+        Me.tpDati.Controls.Add(Me.Label7)
+        Me.tpDati.Controls.Add(Me.Label8)
+        Me.tpDati.Controls.Add(Me.lblCostoOreGiorni)
+        Me.tpDati.Controls.Add(Me.lblCostoMoraOreGiorni)
+        Me.tpDati.Controls.Add(Me.Label18)
+        Me.tpDati.Controls.Add(Me.Label19)
+        Me.tpDati.Controls.Add(Me.Label20)
+        Me.tpDati.Controls.Add(Me.Label23)
+        Me.tpDati.Controls.Add(Me.Label24)
+        Me.tpDati.KeyTip = Nothing
+        Me.tpDati.Name = "tpDati"
+        Me.tpDati.Size = New System.Drawing.Size(575, 333)
+        Me.tpDati.TabIndex = 0
+        Me.tpDati.Text = "Dati principali"
+        '
+        'eui_txtTotaleImportoMora
+        '
+        Me.eui_txtTotaleImportoMora.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtTotaleImportoMora.Id = "341282a7-2541-4367-a3e8-8a167dbda1e3"
+        Me.eui_txtTotaleImportoMora.Location = New System.Drawing.Point(156, 291)
+        Me.eui_txtTotaleImportoMora.Name = "eui_txtTotaleImportoMora"
+        Me.eui_txtTotaleImportoMora.ReadOnly = True
+        Me.eui_txtTotaleImportoMora.Size = New System.Drawing.Size(174, 21)
+        Me.eui_txtTotaleImportoMora.TabIndex = 21
+        Me.eui_txtTotaleImportoMora.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtTotaleImportoMora.TextEditorWidth = 168
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(21, 296)
+        Me.Label5.Name = "Label5"
+        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label5.Size = New System.Drawing.Size(103, 13)
+        Me.Label5.TabIndex = 55733
+        Me.Label5.Text = "Totale importo mora:"
+        '
+        'eui_cmbIdCausale
+        '
+        Me.eui_cmbIdCausale.Editable = False
+        Me.eui_cmbIdCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmbIdCausale.FormattingEnabled = False
+        Me.eui_cmbIdCausale.Id = "5b53a9ed-d49f-4655-bdcc-b3dc499517d5"
+        Me.eui_cmbIdCausale.Location = New System.Drawing.Point(128, 68)
+        Me.eui_cmbIdCausale.Name = "eui_cmbIdCausale"
+        Me.eui_cmbIdCausale.Size = New System.Drawing.Size(26, 21)
+        Me.eui_cmbIdCausale.TabIndex = 55732
+        Me.eui_cmbIdCausale.TextEditorWidth = 7
+        Me.eui_cmbIdCausale.Visible = False
+        '
+        'eui_cmdNuovaCausale
+        '
+        Me.eui_cmdNuovaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdNuovaCausale.Id = "d8f7bee1-91c4-46e1-b6cc-775943198621"
+        Me.eui_cmdNuovaCausale.Location = New System.Drawing.Point(491, 68)
+        Me.eui_cmdNuovaCausale.Name = "eui_cmdNuovaCausale"
+        Me.eui_cmdNuovaCausale.ScreenTip.Text = "Nuova causale noleggio"
+        Me.eui_cmdNuovaCausale.Size = New System.Drawing.Size(25, 21)
+        Me.eui_cmdNuovaCausale.TabIndex = 8
+        Me.eui_cmdNuovaCausale.Text = "+"
+        '
+        'eui_cmdModificaCausale
+        '
+        Me.eui_cmdModificaCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdModificaCausale.Id = "ed6f9468-20ce-4c86-9334-335be7d54128"
+        Me.eui_cmdModificaCausale.Location = New System.Drawing.Point(465, 68)
+        Me.eui_cmdModificaCausale.Name = "eui_cmdModificaCausale"
+        Me.eui_cmdModificaCausale.ScreenTip.Text = "Modifica causale noleggio"
+        Me.eui_cmdModificaCausale.Size = New System.Drawing.Size(25, 21)
+        Me.eui_cmdModificaCausale.TabIndex = 7
+        Me.eui_cmdModificaCausale.Text = "..."
+        '
+        'eui_cmdNuovoCliente
+        '
+        Me.eui_cmdNuovoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdNuovoCliente.Id = "4933020e-75d8-45bd-a1eb-c77ad1f9ca90"
+        Me.eui_cmdNuovoCliente.Location = New System.Drawing.Point(491, 43)
+        Me.eui_cmdNuovoCliente.Name = "eui_cmdNuovoCliente"
+        Me.eui_cmdNuovoCliente.ScreenTip.Text = "Nuovo cliente"
+        Me.eui_cmdNuovoCliente.Size = New System.Drawing.Size(25, 21)
+        Me.eui_cmdNuovoCliente.TabIndex = 5
+        Me.eui_cmdNuovoCliente.Text = "+"
+        '
+        'eui_cmdModificaCliente
+        '
+        Me.eui_cmdModificaCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmdModificaCliente.Id = "872953f8-e14e-4548-a799-465113a41716"
+        Me.eui_cmdModificaCliente.Location = New System.Drawing.Point(465, 43)
+        Me.eui_cmdModificaCliente.Name = "eui_cmdModificaCliente"
+        Me.eui_cmdModificaCliente.ScreenTip.Text = "Modifica cliente"
+        Me.eui_cmdModificaCliente.Size = New System.Drawing.Size(25, 21)
+        Me.eui_cmdModificaCliente.TabIndex = 4
+        Me.eui_cmdModificaCliente.Text = "..."
+        '
+        'eui_cmbIdCliente
+        '
+        Me.eui_cmbIdCliente.Editable = False
+        Me.eui_cmbIdCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmbIdCliente.FormattingEnabled = False
+        Me.eui_cmbIdCliente.Id = "c0e89010-f368-471a-a3e5-6826e2725147"
+        Me.eui_cmbIdCliente.Location = New System.Drawing.Point(128, 43)
+        Me.eui_cmbIdCliente.Name = "eui_cmbIdCliente"
+        Me.eui_cmbIdCliente.Size = New System.Drawing.Size(26, 21)
+        Me.eui_cmbIdCliente.TabIndex = 55729
+        Me.eui_cmbIdCliente.TextEditorWidth = 7
+        Me.eui_cmbIdCliente.Visible = False
+        '
+        'eui_cmbTipoPeriodo
+        '
+        Me.eui_cmbTipoPeriodo.Editable = False
+        Me.eui_cmbTipoPeriodo.FormattingEnabled = False
+        Me.eui_cmbTipoPeriodo.Id = "96b39477-02cb-4c2a-b4b6-34c9f043afd3"
+        Me.eui_cmbTipoPeriodo.Items.AddRange(New Object() {"Ore", "Giorni"})
+        Me.eui_cmbTipoPeriodo.Location = New System.Drawing.Point(156, 98)
+        Me.eui_cmbTipoPeriodo.Name = "eui_cmbTipoPeriodo"
+        Me.eui_cmbTipoPeriodo.Size = New System.Drawing.Size(60, 21)
+        Me.eui_cmbTipoPeriodo.TabIndex = 9
+        Me.eui_cmbTipoPeriodo.TextEditorWidth = 41
+        '
+        'eui_dtpOraFine
+        '
+        Me.eui_dtpOraFine.CalendarDropDownVisible = False
+        Me.eui_dtpOraFine.Enabled = False
+        Me.eui_dtpOraFine.Format = Elegant.Ui.DateTimePickerFormat.ShortTime
+        Me.eui_dtpOraFine.Id = "08be0cbc-b1a5-4a30-a99e-0fb6086c8104"
+        Me.eui_dtpOraFine.IncrementOrDecrementWholeDate = True
+        Me.eui_dtpOraFine.Location = New System.Drawing.Point(427, 149)
+        Me.eui_dtpOraFine.Name = "eui_dtpOraFine"
+        Me.eui_dtpOraFine.Size = New System.Drawing.Size(89, 21)
+        Me.eui_dtpOraFine.TabIndex = 15
+        Me.eui_dtpOraFine.TextEditorWidth = 70
+        Me.eui_dtpOraFine.UpDownButtonsVisible = True
+        '
+        'eui_dtpOraInizio
+        '
+        Me.eui_dtpOraInizio.CalendarDropDownVisible = False
+        Me.eui_dtpOraInizio.Enabled = False
+        Me.eui_dtpOraInizio.Format = Elegant.Ui.DateTimePickerFormat.ShortTime
+        Me.eui_dtpOraInizio.Id = "26f95a8f-e301-44ca-836b-53cd08c401ae"
+        Me.eui_dtpOraInizio.IncrementOrDecrementWholeDate = True
+        Me.eui_dtpOraInizio.Location = New System.Drawing.Point(427, 124)
+        Me.eui_dtpOraInizio.Name = "eui_dtpOraInizio"
+        Me.eui_dtpOraInizio.Size = New System.Drawing.Size(89, 21)
+        Me.eui_dtpOraInizio.TabIndex = 13
+        Me.eui_dtpOraInizio.TextEditorWidth = 70
+        Me.eui_dtpOraInizio.UpDownButtonsVisible = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(355, 153)
+        Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.TabIndex = 55725
+        Me.Label6.Text = "Ora fine:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(355, 128)
+        Me.Label9.Name = "Label9"
+        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label9.Size = New System.Drawing.Size(53, 13)
+        Me.Label9.TabIndex = 55724
+        Me.Label9.Text = "Ora inizio:"
+        '
+        'eui_txtTotaleOreGiorni
+        '
+        Me.eui_txtTotaleOreGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtTotaleOreGiorni.Id = "2d2ed7ef-3519-4447-9b58-a85a848998d3"
+        Me.eui_txtTotaleOreGiorni.Location = New System.Drawing.Point(427, 98)
+        Me.eui_txtTotaleOreGiorni.Name = "eui_txtTotaleOreGiorni"
+        Me.eui_txtTotaleOreGiorni.ReadOnly = True
+        Me.eui_txtTotaleOreGiorni.Size = New System.Drawing.Size(89, 21)
+        Me.eui_txtTotaleOreGiorni.TabIndex = 11
+        Me.eui_txtTotaleOreGiorni.Text = "30"
+        Me.eui_txtTotaleOreGiorni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtTotaleOreGiorni.TextEditorWidth = 83
+        '
+        'lblTotaleOreGiorni
+        '
+        Me.lblTotaleOreGiorni.AutoSize = True
+        Me.lblTotaleOreGiorni.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotaleOreGiorni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotaleOreGiorni.ForeColor = System.Drawing.Color.Black
+        Me.lblTotaleOreGiorni.Location = New System.Drawing.Point(355, 102)
+        Me.lblTotaleOreGiorni.Name = "lblTotaleOreGiorni"
+        Me.lblTotaleOreGiorni.Size = New System.Drawing.Size(68, 13)
+        Me.lblTotaleOreGiorni.TabIndex = 55722
+        Me.lblTotaleOreGiorni.Text = "Totale giorni:"
+        Me.lblTotaleOreGiorni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'eui_cmdColore
+        '
+        Me.eui_cmdColore.BackColor = System.Drawing.Color.LightSalmon
+        Me.eui_cmdColore.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.eui_cmdColore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.eui_cmdColore.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.eui_cmdColore.Location = New System.Drawing.Point(403, 291)
+        Me.eui_cmdColore.Name = "eui_cmdColore"
+        Me.eui_cmdColore.Size = New System.Drawing.Size(113, 21)
+        Me.eui_cmdColore.TabIndex = 23
+        Me.eui_cmdColore.UseVisualStyleBackColor = False
+        '
+        'eui_cmbStato
+        '
+        Me.eui_cmbStato.Editable = False
+        Me.eui_cmbStato.FormattingEnabled = False
+        Me.eui_cmbStato.Id = "51bde51c-28c7-4488-a741-dd477cbc6f5e"
+        Me.eui_cmbStato.Location = New System.Drawing.Point(403, 266)
+        Me.eui_cmbStato.Name = "eui_cmbStato"
+        Me.eui_cmbStato.Size = New System.Drawing.Size(113, 21)
+        Me.eui_cmbStato.TabIndex = 22
+        Me.eui_cmbStato.TextEditorWidth = 94
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(355, 270)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.TabIndex = 55720
+        Me.Label4.Text = "Stato:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(355, 293)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(40, 13)
+        Me.Label3.TabIndex = 55719
+        Me.Label3.Text = "Colore:"
+        '
+        'eui_txtCodiceBarre
+        '
+        Me.eui_txtCodiceBarre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtCodiceBarre.Id = "0a6b6b6c-7d48-4823-bea2-ed35b65c778a"
+        Me.eui_txtCodiceBarre.Location = New System.Drawing.Point(385, 18)
+        Me.eui_txtCodiceBarre.Name = "eui_txtCodiceBarre"
+        Me.eui_txtCodiceBarre.Size = New System.Drawing.Size(131, 21)
+        Me.eui_txtCodiceBarre.TabIndex = 1
+        Me.eui_txtCodiceBarre.TextEditorWidth = 125
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(300, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
+        Me.Label2.TabIndex = 55717
+        Me.Label2.Text = "Codice a barre:"
+        '
+        'eui_txtTotaleImporto
+        '
+        Me.eui_txtTotaleImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtTotaleImporto.Id = "a8369d9e-2c5a-4164-8ee7-fda2f3a77ffa"
+        Me.eui_txtTotaleImporto.Location = New System.Drawing.Point(156, 237)
+        Me.eui_txtTotaleImporto.Name = "eui_txtTotaleImporto"
+        Me.eui_txtTotaleImporto.ReadOnly = True
+        Me.eui_txtTotaleImporto.Size = New System.Drawing.Size(174, 21)
+        Me.eui_txtTotaleImporto.TabIndex = 19
+        Me.eui_txtTotaleImporto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtTotaleImporto.TextEditorWidth = 168
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(21, 241)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(120, 13)
+        Me.Label1.TabIndex = 55715
+        Me.Label1.Text = "Totale importo noleggio:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'eui_cmbPeriodo
+        '
+        Me.eui_cmbPeriodo.Editable = False
+        Me.eui_cmbPeriodo.FormattingEnabled = False
+        Me.eui_cmbPeriodo.Id = "483801e1-6c5a-46c0-8440-ee839abc78d8"
+        Me.eui_cmbPeriodo.Items.AddRange(New Object() {"Selezione manuale", "1 Ora", "2 Ore", "3 Ore", "4 Ore", "1 Giorno", "2 Giorni", "3 Giorni", "4 Giorni", "5 Giorni", "6 Giorni", "7 Giorni", "1 Mese", "2 Mesi", "3 Mesi", "4 Mesi", "5 Mesi", "6 Mesi", "1 Anno", "2 Anni", "3 Anni", "4 Anni", "5 Anni"})
+        Me.eui_cmbPeriodo.Location = New System.Drawing.Point(218, 98)
+        Me.eui_cmbPeriodo.Name = "eui_cmbPeriodo"
+        Me.eui_cmbPeriodo.Size = New System.Drawing.Size(112, 21)
+        Me.eui_cmbPeriodo.TabIndex = 10
+        Me.eui_cmbPeriodo.TextEditorWidth = 93
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.Color.Transparent
+        Me.Label25.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label25.ForeColor = System.Drawing.Color.Black
+        Me.Label25.Location = New System.Drawing.Point(21, 102)
+        Me.Label25.Name = "Label25"
+        Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label25.Size = New System.Drawing.Size(46, 13)
+        Me.Label25.TabIndex = 55713
+        Me.Label25.Text = "Periodo:"
+        '
+        'eui_txtSconto
+        '
+        Me.eui_txtSconto.Id = "2ba77e9b-95ea-4389-85ce-c05e76760807"
+        Me.eui_txtSconto.Location = New System.Drawing.Point(403, 186)
+        Me.eui_txtSconto.Name = "eui_txtSconto"
+        Me.eui_txtSconto.Size = New System.Drawing.Size(113, 21)
+        Me.eui_txtSconto.TabIndex = 17
+        Me.eui_txtSconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtSconto.TextEditorWidth = 107
+        '
+        'eui_txtCostoAssicurazione
+        '
+        Me.eui_txtCostoAssicurazione.Id = "5135e892-bd97-42b7-beb6-6d8f27d49076"
+        Me.eui_txtCostoAssicurazione.Location = New System.Drawing.Point(156, 212)
+        Me.eui_txtCostoAssicurazione.Name = "eui_txtCostoAssicurazione"
+        Me.eui_txtCostoAssicurazione.Size = New System.Drawing.Size(174, 21)
+        Me.eui_txtCostoAssicurazione.TabIndex = 18
+        Me.eui_txtCostoAssicurazione.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtCostoAssicurazione.TextEditorWidth = 168
+        '
+        'eui_txtCostoMora
+        '
+        Me.eui_txtCostoMora.Id = "75ae6710-9fec-441b-9f0c-a204d461f882"
+        Me.eui_txtCostoMora.Location = New System.Drawing.Point(156, 266)
+        Me.eui_txtCostoMora.Name = "eui_txtCostoMora"
+        Me.eui_txtCostoMora.Size = New System.Drawing.Size(174, 21)
+        Me.eui_txtCostoMora.TabIndex = 20
+        Me.eui_txtCostoMora.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtCostoMora.TextEditorWidth = 168
+        '
+        'eui_txtCostoGiorno
+        '
+        Me.eui_txtCostoGiorno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtCostoGiorno.Id = "4d6902d7-fd49-4afb-bcbb-e8d1826319aa"
+        Me.eui_txtCostoGiorno.Location = New System.Drawing.Point(156, 186)
+        Me.eui_txtCostoGiorno.Name = "eui_txtCostoGiorno"
+        Me.eui_txtCostoGiorno.ReadOnly = True
+        Me.eui_txtCostoGiorno.Size = New System.Drawing.Size(174, 21)
+        Me.eui_txtCostoGiorno.TabIndex = 16
+        Me.eui_txtCostoGiorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtCostoGiorno.TextEditorWidth = 168
+        '
+        'eui_dtpDataFine
+        '
+        Me.eui_dtpDataFine.Id = "914c3e64-8568-4c2c-ae7a-3abfe4d89cfb"
+        Me.eui_dtpDataFine.Location = New System.Drawing.Point(156, 149)
+        Me.eui_dtpDataFine.Name = "eui_dtpDataFine"
+        Me.eui_dtpDataFine.Size = New System.Drawing.Size(174, 21)
+        Me.eui_dtpDataFine.TabIndex = 14
+        Me.eui_dtpDataFine.TextEditorWidth = 155
+        '
+        'eui_dtpDataInizio
+        '
+        Me.eui_dtpDataInizio.Id = "a30935ae-8c68-499b-9473-cb257b9c1274"
+        Me.eui_dtpDataInizio.Location = New System.Drawing.Point(156, 124)
+        Me.eui_dtpDataInizio.Name = "eui_dtpDataInizio"
+        Me.eui_dtpDataInizio.Size = New System.Drawing.Size(174, 21)
+        Me.eui_dtpDataInizio.TabIndex = 12
+        Me.eui_dtpDataInizio.TextEditorWidth = 155
+        '
+        'eui_cmbCausale
+        '
+        Me.eui_cmbCausale.Editable = False
+        Me.eui_cmbCausale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmbCausale.FormattingEnabled = False
+        Me.eui_cmbCausale.Id = "c919c78c-978f-465f-a7b5-31fb5a781650"
+        Me.eui_cmbCausale.Location = New System.Drawing.Point(156, 68)
+        Me.eui_cmbCausale.Name = "eui_cmbCausale"
+        Me.eui_cmbCausale.Size = New System.Drawing.Size(307, 21)
+        Me.eui_cmbCausale.TabIndex = 6
+        Me.eui_cmbCausale.TextEditorWidth = 288
+        '
+        'eui_txtCodice
+        '
+        Me.eui_txtCodice.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_txtCodice.Id = "f736117e-85e3-4c70-8ac0-f31747159460"
+        Me.eui_txtCodice.Location = New System.Drawing.Point(156, 18)
+        Me.eui_txtCodice.Name = "eui_txtCodice"
+        Me.eui_txtCodice.ReadOnly = True
+        Me.eui_txtCodice.Size = New System.Drawing.Size(131, 21)
+        Me.eui_txtCodice.TabIndex = 0
+        Me.eui_txtCodice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.eui_txtCodice.TextEditorWidth = 125
+        '
+        'eui_cmbCliente
+        '
+        Me.eui_cmbCliente.Editable = False
+        Me.eui_cmbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.eui_cmbCliente.FormattingEnabled = False
+        Me.eui_cmbCliente.Id = "8c117dee-89ac-48d2-83dc-628c03034ee2"
+        Me.eui_cmbCliente.Location = New System.Drawing.Point(156, 43)
+        Me.eui_cmbCliente.Name = "eui_cmbCliente"
+        Me.eui_cmbCliente.Size = New System.Drawing.Size(307, 21)
+        Me.eui_cmbCliente.TabIndex = 3
+        Me.eui_cmbCliente.TextEditorWidth = 288
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(21, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.TabIndex = 55703
+        Me.Label7.Text = "Codice"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(21, 216)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(104, 13)
+        Me.Label8.TabIndex = 55702
+        Me.Label8.Text = "Costo assicurazione:"
+        '
+        'lblCostoOreGiorni
+        '
+        Me.lblCostoOreGiorni.AutoSize = True
+        Me.lblCostoOreGiorni.BackColor = System.Drawing.Color.Transparent
+        Me.lblCostoOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblCostoOreGiorni.ForeColor = System.Drawing.Color.Black
+        Me.lblCostoOreGiorni.Location = New System.Drawing.Point(21, 190)
+        Me.lblCostoOreGiorni.Name = "lblCostoOreGiorni"
+        Me.lblCostoOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblCostoOreGiorni.Size = New System.Drawing.Size(88, 13)
+        Me.lblCostoOreGiorni.TabIndex = 55701
+        Me.lblCostoOreGiorni.Text = "Costo giornaliero:"
+        '
+        'lblCostoMoraOreGiorni
+        '
+        Me.lblCostoMoraOreGiorni.AutoSize = True
+        Me.lblCostoMoraOreGiorni.BackColor = System.Drawing.Color.Transparent
+        Me.lblCostoMoraOreGiorni.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblCostoMoraOreGiorni.ForeColor = System.Drawing.Color.Black
+        Me.lblCostoMoraOreGiorni.Location = New System.Drawing.Point(21, 270)
+        Me.lblCostoMoraOreGiorni.Name = "lblCostoMoraOreGiorni"
+        Me.lblCostoMoraOreGiorni.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblCostoMoraOreGiorni.Size = New System.Drawing.Size(114, 13)
+        Me.lblCostoMoraOreGiorni.TabIndex = 55700
+        Me.lblCostoMoraOreGiorni.Text = "Costo mora giornaliera:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(355, 190)
+        Me.Label18.Name = "Label18"
+        Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label18.Size = New System.Drawing.Size(44, 13)
+        Me.Label18.TabIndex = 55699
+        Me.Label18.Text = "Sconto:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(21, 153)
+        Me.Label19.Name = "Label19"
+        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label19.Size = New System.Drawing.Size(53, 13)
+        Me.Label19.TabIndex = 55698
+        Me.Label19.Text = "Data fine:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(21, 128)
+        Me.Label20.Name = "Label20"
+        Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label20.Size = New System.Drawing.Size(59, 13)
+        Me.Label20.TabIndex = 55697
+        Me.Label20.Text = "Data inizio:"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label23.ForeColor = System.Drawing.Color.Black
+        Me.Label23.Location = New System.Drawing.Point(21, 72)
+        Me.Label23.Name = "Label23"
+        Me.Label23.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label23.Size = New System.Drawing.Size(91, 13)
+        Me.Label23.TabIndex = 55696
+        Me.Label23.Text = "Causale noleggio:"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.Color.Transparent
+        Me.Label24.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label24.ForeColor = System.Drawing.Color.Black
+        Me.Label24.Location = New System.Drawing.Point(21, 47)
+        Me.Label24.Name = "Label24"
+        Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label24.Size = New System.Drawing.Size(42, 13)
+        Me.Label24.TabIndex = 55695
+        Me.Label24.Text = "Cliente:"
+        '
+        'tpArticoli
+        '
+        Me.tpArticoli.ActiveControl = Nothing
+        Me.tpArticoli.Controls.Add(Me.eui_cmdElimina)
+        Me.tpArticoli.Controls.Add(Me.eui_cmdInserisci)
+        Me.tpArticoli.Controls.Add(Me.lstvElencoArticoli)
+        Me.tpArticoli.KeyTip = Nothing
+        Me.tpArticoli.Name = "tpArticoli"
+        Me.tpArticoli.Size = New System.Drawing.Size(575, 332)
+        Me.tpArticoli.TabIndex = 1
+        Me.tpArticoli.Text = "Articoli noleggiati"
+        '
+        'eui_cmdElimina
+        '
+        Me.eui_cmdElimina.Id = "801b6490-6201-413f-b383-7f9c6fc4d04c"
+        Me.eui_cmdElimina.Location = New System.Drawing.Point(491, 295)
+        Me.eui_cmdElimina.Name = "eui_cmdElimina"
+        Me.eui_cmdElimina.Size = New System.Drawing.Size(75, 30)
+        Me.eui_cmdElimina.TabIndex = 2
+        Me.eui_cmdElimina.Text = "&Elimina"
+        '
+        'eui_cmdInserisci
+        '
+        Me.eui_cmdInserisci.Id = "0279af95-e222-4aeb-b9ad-365fbdc9e8bd"
+        Me.eui_cmdInserisci.Location = New System.Drawing.Point(410, 295)
+        Me.eui_cmdInserisci.Name = "eui_cmdInserisci"
+        Me.eui_cmdInserisci.Size = New System.Drawing.Size(75, 30)
+        Me.eui_cmdInserisci.TabIndex = 1
+        Me.eui_cmdInserisci.Text = "&Inserisci"
+        '
+        'lstvElencoArticoli
+        '
+        Me.lstvElencoArticoli.AllowColumnReorder = True
+        Me.lstvElencoArticoli.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clnCodice, Me.clnDescrizione, Me.clnUM, Me.clnQuantità, Me.clnCostoUnitario, Me.clnCostoTotale, Me.clnIva, Me.clnCategoria, Me.clnId, Me.clnRifNoleggio})
+        Me.lstvElencoArticoli.FullRowSelect = True
+        Me.lstvElencoArticoli.HideSelection = False
+        Me.lstvElencoArticoli.Location = New System.Drawing.Point(0, 0)
+        Me.lstvElencoArticoli.MultiSelect = False
+        Me.lstvElencoArticoli.Name = "lstvElencoArticoli"
+        Me.lstvElencoArticoli.Size = New System.Drawing.Size(574, 287)
+        Me.lstvElencoArticoli.StateImageList = Me.ImageList1
+        Me.lstvElencoArticoli.TabIndex = 0
+        Me.lstvElencoArticoli.UseCompatibleStateImageBehavior = False
+        Me.lstvElencoArticoli.View = System.Windows.Forms.View.Details
+        '
+        'clnCodice
+        '
+        Me.clnCodice.Text = "Codice"
+        Me.clnCodice.Width = 100
+        '
+        'clnDescrizione
+        '
+        Me.clnDescrizione.Text = "Descrizione"
+        Me.clnDescrizione.Width = 150
+        '
+        'clnUM
+        '
+        Me.clnUM.Text = "U.M."
+        Me.clnUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'clnQuantità
+        '
+        Me.clnQuantità.Text = "Quantità"
+        Me.clnQuantità.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'clnCostoUnitario
+        '
+        Me.clnCostoUnitario.Text = "Costo unitario"
+        Me.clnCostoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.clnCostoUnitario.Width = 90
+        '
+        'clnCostoTotale
+        '
+        Me.clnCostoTotale.Text = "Costo totale"
+        Me.clnCostoTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.clnCostoTotale.Width = 90
+        '
+        'clnIva
+        '
+        Me.clnIva.Text = "Aliquota Iva"
+        Me.clnIva.Width = 0
+        '
+        'clnCategoria
+        '
+        Me.clnCategoria.Text = "Categoria"
+        Me.clnCategoria.Width = 0
+        '
+        'clnId
+        '
+        Me.clnId.Text = "Id"
+        Me.clnId.Width = 0
+        '
+        'clnRifNoleggio
+        '
+        Me.clnRifNoleggio.Text = "RifNoleggio"
+        Me.clnRifNoleggio.Width = 0
+        '
+        'tpAllegati
+        '
+        Me.tpAllegati.ActiveControl = Nothing
+        Me.tpAllegati.Controls.Add(Me.eui_cmdApriDocAllegato)
+        Me.tpAllegati.Controls.Add(Me.eui_cmdInserisciAllegato)
+        Me.tpAllegati.Controls.Add(Me.eui_cmdRimuoviAllegato)
+        Me.tpAllegati.Controls.Add(Me.eui_cmdModificaAllegato)
+        Me.tpAllegati.Controls.Add(Me.lvwAllegati)
+        Me.tpAllegati.KeyTip = Nothing
+        Me.tpAllegati.Name = "tpAllegati"
+        Me.tpAllegati.Size = New System.Drawing.Size(575, 332)
+        Me.tpAllegati.TabIndex = 2
+        Me.tpAllegati.Text = "Documenti allegati"
+        '
+        'eui_cmdApriDocAllegato
+        '
+        Me.eui_cmdApriDocAllegato.Id = "26995197-01e2-4d65-929f-cc06d8bf800b"
+        Me.eui_cmdApriDocAllegato.Location = New System.Drawing.Point(7, 296)
+        Me.eui_cmdApriDocAllegato.Name = "eui_cmdApriDocAllegato"
+        Me.eui_cmdApriDocAllegato.Size = New System.Drawing.Size(104, 30)
+        Me.eui_cmdApriDocAllegato.TabIndex = 0
+        Me.eui_cmdApriDocAllegato.Text = "&Apri documento"
+        '
+        'eui_cmdInserisciAllegato
+        '
+        Me.eui_cmdInserisciAllegato.Id = "121d60bd-f915-4ef0-b22f-21afa69cd38c"
+        Me.eui_cmdInserisciAllegato.Location = New System.Drawing.Point(331, 295)
+        Me.eui_cmdInserisciAllegato.Name = "eui_cmdInserisciAllegato"
+        Me.eui_cmdInserisciAllegato.Size = New System.Drawing.Size(75, 30)
+        Me.eui_cmdInserisciAllegato.TabIndex = 1
+        Me.eui_cmdInserisciAllegato.Text = "&Inserisci"
+        '
+        'eui_cmdRimuoviAllegato
+        '
+        Me.eui_cmdRimuoviAllegato.Id = "12ccac4f-6202-4f3d-88d7-12b06152f8f6"
+        Me.eui_cmdRimuoviAllegato.Location = New System.Drawing.Point(491, 295)
+        Me.eui_cmdRimuoviAllegato.Name = "eui_cmdRimuoviAllegato"
+        Me.eui_cmdRimuoviAllegato.Size = New System.Drawing.Size(75, 30)
+        Me.eui_cmdRimuoviAllegato.TabIndex = 3
+        Me.eui_cmdRimuoviAllegato.Text = "&Rimuovi"
+        '
+        'eui_cmdModificaAllegato
+        '
+        Me.eui_cmdModificaAllegato.Id = "bd71c9d2-8416-4973-80fd-63df0ec7d48a"
+        Me.eui_cmdModificaAllegato.Location = New System.Drawing.Point(411, 295)
+        Me.eui_cmdModificaAllegato.Name = "eui_cmdModificaAllegato"
+        Me.eui_cmdModificaAllegato.Size = New System.Drawing.Size(75, 30)
+        Me.eui_cmdModificaAllegato.TabIndex = 2
+        Me.eui_cmdModificaAllegato.Text = "&Modifica"
+        '
+        'lvwAllegati
+        '
+        Me.lvwAllegati.AllowColumnReorder = True
+        Me.lvwAllegati.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.lvwAllegati.FullRowSelect = True
+        Me.lvwAllegati.HideSelection = False
+        Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
+        Me.lvwAllegati.MultiSelect = False
+        Me.lvwAllegati.Name = "lvwAllegati"
+        Me.lvwAllegati.Size = New System.Drawing.Size(574, 287)
+        Me.lvwAllegati.StateImageList = Me.ImageList1
+        Me.lvwAllegati.TabIndex = 0
+        Me.lvwAllegati.UseCompatibleStateImageBehavior = False
+        Me.lvwAllegati.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Documento"
+        Me.ColumnHeader1.Width = 200
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Data"
+        Me.ColumnHeader2.Width = 75
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Ora"
+        Me.ColumnHeader3.Width = 75
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Note"
+        Me.ColumnHeader4.Width = 500
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Percorso"
+        Me.ColumnHeader5.Width = 500
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Codice"
+        Me.ColumnHeader6.Width = 0
+        '
+        'tpNote
+        '
+        Me.tpNote.ActiveControl = Nothing
+        Me.tpNote.Controls.Add(Me.eui_txtNote)
+        Me.tpNote.KeyTip = Nothing
+        Me.tpNote.Name = "tpNote"
+        Me.tpNote.Size = New System.Drawing.Size(575, 332)
+        Me.tpNote.TabIndex = 3
+        Me.tpNote.Text = "Note"
+        '
+        'eui_txtNote
+        '
+        Me.eui_txtNote.Id = "11c27a61-6b80-4af7-b089-186d1893e6a0"
+        Me.eui_txtNote.Location = New System.Drawing.Point(1, 0)
+        Me.eui_txtNote.Multiline = True
+        Me.eui_txtNote.Name = "eui_txtNote"
+        Me.eui_txtNote.Size = New System.Drawing.Size(573, 331)
+        Me.eui_txtNote.TabIndex = 0
+        Me.eui_txtNote.TextEditorWidth = 567
+        '
+        'frmNoleggi
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ClientSize = New System.Drawing.Size(582, 413)
+        Me.Controls.Add(Me.TabControl2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ToolBar1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "frmNoleggi"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Noleggio"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpDati.ResumeLayout(False)
+        Me.tpDati.PerformLayout()
+        Me.tpArticoli.ResumeLayout(False)
+        Me.tpAllegati.ResumeLayout(False)
+        Me.tpNote.ResumeLayout(False)
+        Me.tpNote.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-   End Sub
+    End Sub
 
 #End Region
 
-   Private CNoleggi As New Noleggi
+    Private CNoleggi As New Noleggi
    Private CDettagliNoleggi As New DettagliNoleggi
    Private CCausaliNoleggio As New CausaliNoleggio
 
@@ -1171,15 +1201,14 @@ Public Class frmNoleggi
             .TipoPeriodo = eui_cmbTipoPeriodo.Text
             .Periodo = eui_cmbPeriodo.Text
 
-            ' TODO_A: Correggere errore sul salvataggio delle date. Non sempre salva l'ora.
             Select Case eui_cmbTipoPeriodo.Text
                Case "Ore"
-                  .DataInizio = Convert.ToDateTime(eui_dtpOraInizio.Value.ToString)
-                  .DataFine = Convert.ToDateTime(eui_dtpOraFine.Value.ToString)
+                  .DataInizio = Convert.ToDateTime(eui_dtpOraInizio.Value.Value.ToShortDateString & " " & eui_dtpOraInizio.Value.Value.ToShortTimeString)
+                  .DataFine = Convert.ToDateTime(eui_dtpOraFine.Value.Value.ToShortDateString & " " & eui_dtpOraFine.Value.Value.ToShortTimeString)
 
                Case "Giorni"
-                  .DataInizio = Convert.ToDateTime(eui_dtpDataInizio.Value.ToString)
-                  .DataFine = Convert.ToDateTime(eui_dtpDataFine.Value.ToString)
+                  .DataInizio = Convert.ToDateTime(eui_dtpDataInizio.Value.Value.ToShortDateString & " " & eui_dtpDataInizio.Value.Value.ToShortTimeString)
+                  .DataFine = Convert.ToDateTime(eui_dtpDataFine.Value.Value.ToShortDateString & " " & eui_dtpDataFine.Value.Value.ToShortTimeString)
             End Select
 
             .TotaleGiorni = eui_txtTotaleOreGiorni.Text
@@ -1196,12 +1225,6 @@ Public Class frmNoleggi
                .Sconto = 0.0
             End If
 
-            If IsNumeric(eui_txtCostoMora.Text) = True Then
-               .CostoMora = Convert.ToDouble(eui_txtCostoMora.Text)
-            Else
-               .CostoMora = 0.0
-            End If
-
             If IsNumeric(eui_txtCostoAssicurazione.Text) = True Then
                .CostoAssicurazione = Convert.ToDouble(eui_txtCostoAssicurazione.Text)
             Else
@@ -1212,6 +1235,18 @@ Public Class frmNoleggi
                .Totale = Convert.ToDouble(eui_txtTotaleImporto.Text)
             Else
                .Totale = 0.0
+            End If
+
+            If IsNumeric(eui_txtCostoMora.Text) = True Then
+               .CostoMora = Convert.ToDouble(eui_txtCostoMora.Text)
+            Else
+               .CostoMora = 0.0
+            End If
+
+            If IsNumeric(eui_txtTotaleImportoMora.Text) = True Then
+               .TotaleMora = Convert.ToDouble(eui_txtTotaleImportoMora.Text)
+            Else
+               .TotaleMora = 0.0
             End If
 
             .TipoSconto = String.Empty
@@ -1666,18 +1701,21 @@ Public Class frmNoleggi
             numGiorniNoleggio = 0
          End If
 
+         ' Costo del Noleggio giornaliero.
          If IsNumeric(costo) = True Then
             costoNoleggio = Convert.ToDouble(costo)
          Else
             costoNoleggio = 0.0
          End If
 
+         ' Costo totale dell'assicurazione non calcolata a giorno.
          If IsNumeric(assicurazione) = True Then
-            assicurazioneNoleggio = Convert.ToDouble(assicurazione * numGiorniNoleggio)
+            assicurazioneNoleggio = Convert.ToDouble(assicurazione) ' * numGiorniNoleggio
          Else
             assicurazioneNoleggio = 0.0
          End If
 
+         ' Costo della Mora giornaliera.
          If IsNumeric(mora) = True Then
             moraNoleggio = Convert.ToDouble(mora)
          Else
@@ -1838,9 +1876,10 @@ Public Class frmNoleggi
 
                eui_txtCostoGiorno.Text = CFormatta.FormattaNumeroDouble(.CostoGiorno)
                eui_txtSconto.Text = CFormatta.FormattaNumeroDouble(.Sconto)
-               eui_txtCostoMora.Text = CFormatta.FormattaNumeroDouble(.CostoMora)
                eui_txtCostoAssicurazione.Text = CFormatta.FormattaNumeroDouble(.CostoAssicurazione)
                eui_txtTotaleImporto.Text = CFormatta.FormattaNumeroDouble(.Totale)
+               eui_txtCostoMora.Text = CFormatta.FormattaNumeroDouble(.CostoMora)
+               eui_txtTotaleImportoMora.Text = CFormatta.FormattaNumeroDouble(.TotaleMora)
                eui_cmbStato.Text = .Stato
                eui_txtNote.Text = .Note
 
@@ -2716,7 +2755,7 @@ Public Class frmNoleggi
 
    Private Sub eui_cmdInserisci_Click(sender As Object, e As EventArgs) Handles eui_cmdInserisci.Click
       Try
-         Dim frm As New ListaArticoli
+         Dim frm As New ListaArticoli(Me)
          frm.ShowDialog()
 
          eui_txtCostoGiorno.Text = CalcolaCostoTotaleArticoli()

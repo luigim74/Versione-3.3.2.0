@@ -12886,7 +12886,6 @@ Friend Class frmMain
 
 #End Region
 
-   ' TODO_A: Modificare per Elenco Noleggi.
 #Region "Ribbon Strumenti di Modifica "
 
 #Region "Modifica "
@@ -12966,6 +12965,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
                g_frmNoleggi.Nuovo()
+
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.Nuovo()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13059,6 +13061,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
                g_frmNoleggi.Modifica()
 
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.Modifica()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13139,6 +13144,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
                g_frmNoleggi.DuplicaNoleggio()
+
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.DuplicaCausaliNoleggio()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13231,6 +13239,9 @@ Friend Class frmMain
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
                g_frmNoleggi.EliminaDati()
+
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.EliminaDati()
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13347,6 +13358,9 @@ Friend Class frmMain
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
                g_frmNoleggi.AggiornaDati()
 
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.AggiornaDati()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13435,6 +13449,12 @@ Friend Class frmMain
                g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.Modifica()
+
                ' TODO_A: Modificare per Elenco Noleggi.
                'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
@@ -13574,6 +13594,12 @@ Friend Class frmMain
                ' TODO_A: Modificare per Elenco Noleggi.
                'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.Modifica()
+
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -13697,6 +13723,14 @@ Friend Class frmMain
                End If
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' TODO_A: Modificare per Elenco Noleggi.
+               'If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
+               '   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
+               'End If
+
+            Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
+               g_frmCausaliNoleggio.Modifica()
+
                ' TODO_A: Modificare per Elenco Noleggi.
                'If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
                '   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)

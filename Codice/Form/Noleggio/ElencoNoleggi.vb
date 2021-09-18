@@ -187,7 +187,7 @@ Public Class ElencoNoleggi
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(722, 63)
+      Me.Panel1.Size = New System.Drawing.Size(730, 63)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -207,7 +207,7 @@ Public Class ElencoNoleggi
       Me.eui_cmbCampoRicerca.Editable = False
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(578, 7)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(586, 7)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -220,7 +220,7 @@ Public Class ElencoNoleggi
       Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(361, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(369, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 529
       '
@@ -230,7 +230,7 @@ Public Class ElencoNoleggi
       Me.lblCampo.AutoSize = True
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(489, 8)
+      Me.lblCampo.Location = New System.Drawing.Point(497, 8)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -261,9 +261,9 @@ Public Class ElencoNoleggi
       Me.Panel2.Controls.Add(Me.eui_txtTotale)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 430)
+      Me.Panel2.Location = New System.Drawing.Point(0, 438)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(722, 40)
+      Me.Panel2.Size = New System.Drawing.Size(730, 40)
       Me.Panel2.TabIndex = 13
       '
       'eui_txtTotale
@@ -271,7 +271,7 @@ Public Class ElencoNoleggi
       Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(578, 10)
+      Me.eui_txtTotale.Location = New System.Drawing.Point(586, 10)
       Me.eui_txtTotale.Name = "eui_txtTotale"
       Me.eui_txtTotale.ReadOnly = True
       Me.eui_txtTotale.Size = New System.Drawing.Size(134, 21)
@@ -286,7 +286,7 @@ Public Class ElencoNoleggi
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(418, 12)
+      Me.Label6.Location = New System.Drawing.Point(426, 12)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(156, 15)
       Me.Label6.TabIndex = 16
@@ -347,7 +347,7 @@ Public Class ElencoNoleggi
       Me.DataGridView2.Location = New System.Drawing.Point(0, 255)
       Me.DataGridView2.Name = "DataGridView2"
       Me.DataGridView2.ReadOnly = True
-      Me.DataGridView2.Size = New System.Drawing.Size(714, 165)
+      Me.DataGridView2.Size = New System.Drawing.Size(730, 177)
       Me.DataGridView2.TabIndex = 15
       '
       'Panel3
@@ -358,7 +358,7 @@ Public Class ElencoNoleggi
       Me.Panel3.Controls.Add(Me.Label1)
       Me.Panel3.Location = New System.Drawing.Point(0, 227)
       Me.Panel3.Name = "Panel3"
-      Me.Panel3.Size = New System.Drawing.Size(714, 26)
+      Me.Panel3.Size = New System.Drawing.Size(730, 26)
       Me.Panel3.TabIndex = 16
       '
       'Label1
@@ -376,7 +376,7 @@ Public Class ElencoNoleggi
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(722, 470)
+      Me.ClientSize = New System.Drawing.Size(730, 478)
       Me.Controls.Add(Me.Panel3)
       Me.Controls.Add(Me.DataGridView2)
       Me.Controls.Add(Me.DataGridView1)

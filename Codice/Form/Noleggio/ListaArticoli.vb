@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/06/2021
-' Data ultima modifica: 28/08/2021
+' Data ultima modifica: 18/09/2021
 ' Descrizione:          Anagrafica Noleggi.
 ' Note:
 '
@@ -18,10 +18,13 @@ Public Class ListaArticoli
    Dim DatiConfig As AppConfig
    Dim CategoriaArticoliNoleggio As String
 
-   Public Sub New()
+   Public Sub New(ByVal frmDati As Form)
 
       ' Chiamata richiesta dalla finestra di progettazione.
       InitializeComponent()
+
+      ' Ottiene il nome del form che ha aperto l'elenco.
+      Me.Tag = frmDati.Name
 
       ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
 
@@ -112,8 +115,16 @@ Public Class ListaArticoli
          Dim valQuantità As Double = Convert.ToDouble(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(4).Text)
 
          If valQuantità > 0 Then
-            InserisciElementi(NOME_TABELLA, id)
-            g_frmSchedaNoleggi.lstvElencoArticoli.Focus()
+            Select Case Me.Tag
+               Case "frmNoleggi"
+                  InserisciElementiNoleggio(NOME_TABELLA, id)
+                  g_frmSchedaNoleggi.lstvElencoArticoli.Focus()
+
+               Case "frmCausaliNoleggio"
+                  InserisciElementiCausali(NOME_TABELLA, id)
+                  g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Focus()
+
+            End Select
 
             Me.Close()
          Else
@@ -267,7 +278,7 @@ Public Class ListaArticoli
       End Try
    End Function
 
-   Public Sub InserisciElementi(ByVal tabella As String, ByVal id As Integer)
+   Public Sub InserisciElementiNoleggio(ByVal tabella As String, ByVal id As Integer)
       Try
          ' Codice.
          g_frmSchedaNoleggi.lstvElencoArticoli.Items.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(0).Text)
@@ -306,6 +317,53 @@ Public Class ListaArticoli
 
          ' Imposta l'immagine.
          g_frmSchedaNoleggi.lstvElencoArticoli.Items(g_frmSchedaNoleggi.lstvElencoArticoli.Items.Count - 1).StateImageIndex = 11
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciElementiCausali(ByVal tabella As String, ByVal id As Integer)
+      Try
+         ' Codice.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(0).Text)
+
+         ' Descrizione.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(1).Text)
+
+         ' Unità Misura.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(2).Text)
+
+         ' Quantità.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(4).Text)))
+
+         ' Valore Unitario.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(5).Text)))
+
+         ' Importo Netto.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(CFormatta.FormattaNumeroDouble(Convert.ToDouble(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(6).Text)))
+
+         ' TODO_B: Impostare l'aliquota iva inserendo una variabile globale per il settore Noleggio.
+         ' Aliquota Iva.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add("22")
+
+         ' Categoria.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(7).Text)
+
+         ' Id.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(lvwArticoli.Items(lvwArticoli.FocusedItem.Index).SubItems(8).Text)
+
+         ' RifNoleggio.
+         If g_frmSchedaCausaliNoleggio.Tag <> String.Empty Then
+            g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(g_frmSchedaCausaliNoleggio.eui_txtCodice.Text)
+         Else
+            g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).SubItems.Add(LeggiUltimoRecord(g_frmSchedaCausaliNoleggio.TAB_CAUSALI_NOLEGGIO))
+         End If
+
+         ' Imposta l'immagine.
+         g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items(g_frmSchedaCausaliNoleggio.lstvElencoArticoli.Items.Count - 1).StateImageIndex = 11
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

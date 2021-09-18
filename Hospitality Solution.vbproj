@@ -620,6 +620,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\Classi\DettagliNoleggi.vb" />
+    <Compile Include="Codice\Form\Noleggio\CausaliNoleggio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Noleggio\ElencoCausaliNoleggio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -1937,6 +1940,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Centro sportivo\CaratteristicheRisorse.resx">
       <DependentUpon>CaratteristicheRisorse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Noleggio\CausaliNoleggio.resx">
+      <DependentUpon>CausaliNoleggio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Noleggio\ElencoCausaliNoleggio.resx">
       <DependentUpon>ElencoCausaliNoleggio.vb</DependentUpon>
