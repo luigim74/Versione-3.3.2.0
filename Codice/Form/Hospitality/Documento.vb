@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2017
-' Data ultima modifica: 08/04/2020
+' Data ultima modifica: 01/11/2021
 ' Descrizione:          Form per la compilazione dei documenti fiscali (Fatture, Ricevute ecc.)
 ' Note:
 '
@@ -1850,6 +1850,7 @@ Public Class frmDocumento
          With AClienti
             .LeggiDati(ANA_CLIENTI, eui_cmbIdCliente.Text)
 
+            eui_cmbClienteCognome.Text = .Cognome
             eui_txtClienteNome.Text = .Nome
             eui_txtIndirizzo.Text = .Indirizzo1
             eui_txtCittà.Text = .Città
@@ -2271,6 +2272,210 @@ Public Class frmDocumento
 
 #End Region
 
+#Region "Procedure per il Noleggio "
+
+   Private Sub CaricaDatiNoleggio()
+      Try
+         eui_cmbCausaleDocumento.Text = "Vendita da noleggio"
+
+         ' Legge tutti i dati anagrafici del cliente selezionato.
+         eui_cmbClienteCognome.Text = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_CLIENTE, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         CaricaDatiCliente()
+
+         eui_cmbTipoPagamento.Text = "Contanti"
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Public Sub InserisciDettagliRigaNoleggio()
+      Try
+         eui_cmdNuovaRiga.PerformClick()
+
+         ' Codice.
+         dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+         ' Descrizione.
+         Dim causale As String = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_CAUSALE, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataInizio As String = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_DATA_INIZIO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim dataFine As String = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_DATA_FINE, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim tipoPeriodo As String = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TIPO_PERIODO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim oreGiorni As String = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TOTALE_GIORNI, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = causale & " - (Noleggio dal " & dataInizio & " al " & dataFine & ")"
+
+         ' Unità di misura.
+         dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = tipoPeriodo
+
+         ' Quantità.
+         dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = oreGiorni
+
+         ' Valore Unitario.
+         dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_COSTO_GIORNO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         ' Sconto %.
+         If CFormatta.FormattaNumeroDouble(g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value) <> VALORE_ZERO And
+            g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TIPO_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString = "%" Then
+
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+         Else
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+         End If
+
+         ' Importo.
+         dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+
+         ' Aliquota Iva.
+         dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = AliquotaIvaNoleggio
+
+         ' Categoria.
+         dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = "Noleggio"
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaSconto()
+      Try
+         ' Se il campo sconto ha un valore lo inserisce nel documento.
+         If CFormatta.FormattaNumeroDouble(g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value) <> VALORE_ZERO And
+            g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TIPO_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString <> "%" Then
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "Sconto"
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = "1"
+
+            ' Valore Unitario.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_SCONTO, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Importo.
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = "0"
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = "Noleggio"
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaAssicurazione()
+      Try
+         ' Se il campo Tassa di soggiorno ha un valore lo inserisce nel documento.
+         If CFormatta.FormattaNumeroDouble(g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_COSTO_ASSICURAZIONE, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value) <> VALORE_ZERO Then
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "Assicurazione"
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = "1"
+
+            ' Valore Unitario.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_COSTO_ASSICURAZIONE, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Importo.
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = AliquotaIvaNoleggio
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = "Noleggio"
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub InserisciDettagliRigaMora()
+      Try
+         ' Se il campo Tassa di soggiorno ha un valore lo inserisce nel documento.
+         If CFormatta.FormattaNumeroDouble(g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TOTALE_MORA, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value) <> VALORE_ZERO Then
+
+            eui_cmdNuovaRiga.PerformClick()
+
+            ' Codice.
+            dgvDettagli.CurrentRow.Cells(clnCodice.Name).Value = String.Empty
+
+            ' Descrizione.
+            dgvDettagli.CurrentRow.Cells(clnDescrizione.Name).Value = "Mora"
+
+            ' Unità di misura.
+            dgvDettagli.CurrentRow.Cells(clnUm.Name).Value = String.Empty
+
+            ' Quantità.
+            dgvDettagli.CurrentRow.Cells(clnQta.Name).Value = "1"
+
+            ' Valore Unitario.
+            dgvDettagli.CurrentRow.Cells(clnPrezzo.Name).Value = g_frmNoleggi.DataGridView1.Item(g_frmNoleggi.COLONNA_TOTALE_MORA, g_frmNoleggi.DataGridView1.CurrentCell.RowIndex).Value.ToString
+
+            ' Sconto %.
+            dgvDettagli.CurrentRow.Cells(clnSconto.Name).Value = VALORE_ZERO
+
+            ' Importo.
+            dgvDettagli.CurrentRow.Cells(clnImporto.Name).Value = VALORE_ZERO
+
+            ' Aliquota Iva.
+            dgvDettagli.CurrentRow.Cells(clnIva.Name).Value = AliquotaIvaNoleggio
+
+            ' Categoria.
+            dgvDettagli.CurrentRow.Cells(clnCategoria.Name).Value = "Noleggio"
+
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+#End Region
+
    Private Sub frmDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
       Try
          ImpostaIcona(Me)
@@ -2327,6 +2532,33 @@ Public Class frmDocumento
 
                'Inserisce eventuali sconti.
                InserisciDettagliRigaSconto("PrenCamere", g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, g_frmPrenCamere.COLONNA_ID_DOC))
+
+            Case "ElencoNoleggi"
+               ' Carica la lista dei documenti. 
+               eui_cmbTipoDocumento.Items.Clear()
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_PF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_RF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_FF)
+               eui_cmbTipoDocumento.Items.Add(TIPO_DOC_SF)
+
+               ' Crea un nuovo documento con i dati della prenotazione.
+               NuovoDocumento()
+
+               ' Carica i dati del noleggio.
+               CaricaDatiNoleggio()
+
+               ' Inserisce la tipologia di noleggio nel dettaglio riga.
+               InserisciDettagliRigaNoleggio()
+
+               'Inserisce eventuali sconti nel dettaglio riga.
+               InserisciDettagliRigaSconto()
+
+               ' Inserisce l'eventuale costo dell'assicurazione nel dettaglio riga.
+               InserisciDettagliRigaAssicurazione()
+
+               ' Inserisce l'eventuale costo della mora nel dettaglio riga.
+               InserisciDettagliRigaMora()
+
          End Select
 
       Catch ex As Exception

@@ -568,6 +568,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MessaggiRepartiDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\NoleggiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoleggiDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\PiattiDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -815,6 +820,12 @@
       <DependentUpon>RepMovMagazzino.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepMovMagazzino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepNoleggi.Designer.vb">
+      <DependentUpon>RepNoleggi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepNoleggi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepOperazioni.Designer.vb">
@@ -1618,6 +1629,17 @@
     <None Include="Codice\DataSet\MessaggiRepartiDataSet.xss">
       <DependentUpon>MessaggiRepartiDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\NoleggiDataSet.xsc">
+      <DependentUpon>NoleggiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\NoleggiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NoleggiDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\NoleggiDataSet.xss">
+      <DependentUpon>NoleggiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\PiattiDataSet.xsc">
       <DependentUpon>PiattiDataSet.xsd</DependentUpon>
     </None>
@@ -1898,6 +1920,7 @@
     <EmbeddedResource Include="bin\Reports\MessaggiReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ModelloIstatC59 A4.rdlc" />
     <EmbeddedResource Include="bin\Reports\MovMagazzino.rdlc" />
+    <EmbeddedResource Include="bin\Reports\Noleggi.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operatori.rdlc" />
     <EmbeddedResource Include="bin\Reports\Operazioni.rdlc" />
     <EmbeddedResource Include="bin\Reports\Piatti.rdlc" />
@@ -2063,6 +2086,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepMovMagazzino.resx">
       <DependentUpon>RepMovMagazzino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepNoleggi.resx">
+      <DependentUpon>RepNoleggi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepOperazioni.resx">
       <DependentUpon>RepOperazioni.vb</DependentUpon>

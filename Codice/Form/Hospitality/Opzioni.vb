@@ -3,7 +3,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2005
-' Data ultima modifica: 25/04/2020
+' Data ultima modifica: 06/11/2021
 ' Descrizione:          Form per la configurazione di tutte le opzioni del programma.
 ' Note:
 '
@@ -264,8 +264,12 @@ Public Class frmOpzioni
    Friend WithEvents ckbGestioneTavoliATempo As CheckBox
    Friend WithEvents lblDenominazioneCamerieri As Label
    Friend WithEvents cmbDenominazioneCamerieri As ComboBox
-   Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
-   <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    Friend WithEvents tbpNoleggio As TabPage
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents cmbIvaNoleggio As ComboBox
+    Public WithEvents Label56 As Label
+    Friend WithEvents lblDataSalvataggio As System.Windows.Forms.Label
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOpzioni))
       Me.cmdAnnulla = New System.Windows.Forms.Button()
@@ -488,6 +492,10 @@ Public Class frmOpzioni
       Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.tbpNoleggio = New System.Windows.Forms.TabPage()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.cmbIvaNoleggio = New System.Windows.Forms.ComboBox()
+        Me.Label56 = New System.Windows.Forms.Label()
         Me.tabOpzioni.SuspendLayout()
         Me.tbpGenerali.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -512,15 +520,17 @@ Public Class frmOpzioni
         Me.grbSwing.SuspendLayout()
         Me.tbpRecovery.SuspendLayout()
         Me.tbpFidelity.SuspendLayout()
+        Me.tbpNoleggio.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmdAnnulla
         '
         Me.cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.cmdAnnulla.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmdAnnulla.Location = New System.Drawing.Point(694, 536)
+        Me.cmdAnnulla.Location = New System.Drawing.Point(737, 534)
         Me.cmdAnnulla.Name = "cmdAnnulla"
-        Me.cmdAnnulla.Size = New System.Drawing.Size(75, 23)
+        Me.cmdAnnulla.Size = New System.Drawing.Size(75, 27)
         Me.cmdAnnulla.TabIndex = 1
         Me.cmdAnnulla.Text = "&Annulla"
         '
@@ -528,9 +538,9 @@ Public Class frmOpzioni
         '
         Me.cmdOK.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.cmdOK.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmdOK.Location = New System.Drawing.Point(614, 536)
+        Me.cmdOK.Location = New System.Drawing.Point(657, 534)
         Me.cmdOK.Name = "cmdOK"
-        Me.cmdOK.Size = New System.Drawing.Size(75, 23)
+        Me.cmdOK.Size = New System.Drawing.Size(75, 27)
         Me.cmdOK.TabIndex = 0
         Me.cmdOK.Text = "&OK"
         '
@@ -540,15 +550,17 @@ Public Class frmOpzioni
         Me.tabOpzioni.Controls.Add(Me.tbpBarRist)
         Me.tabOpzioni.Controls.Add(Me.tbpCamere)
         Me.tabOpzioni.Controls.Add(Me.tbpCentroSportivo)
+        Me.tabOpzioni.Controls.Add(Me.tbpNoleggio)
         Me.tabOpzioni.Controls.Add(Me.tbpStampanti)
         Me.tabOpzioni.Controls.Add(Me.tbpPalmare)
         Me.tabOpzioni.Controls.Add(Me.tbpFiscali)
         Me.tabOpzioni.Controls.Add(Me.tbpRecovery)
         Me.tabOpzioni.Controls.Add(Me.tbpFidelity)
         Me.tabOpzioni.Location = New System.Drawing.Point(8, 8)
+        Me.tabOpzioni.Multiline = True
         Me.tabOpzioni.Name = "tabOpzioni"
         Me.tabOpzioni.SelectedIndex = 0
-        Me.tabOpzioni.Size = New System.Drawing.Size(765, 520)
+        Me.tabOpzioni.Size = New System.Drawing.Size(815, 520)
         Me.tabOpzioni.TabIndex = 2
         '
         'tbpGenerali
@@ -575,7 +587,7 @@ Public Class frmOpzioni
         Me.tbpGenerali.Controls.Add(Me.Label50)
         Me.tbpGenerali.Location = New System.Drawing.Point(4, 22)
         Me.tbpGenerali.Name = "tbpGenerali"
-        Me.tbpGenerali.Size = New System.Drawing.Size(757, 494)
+        Me.tbpGenerali.Size = New System.Drawing.Size(838, 494)
         Me.tbpGenerali.TabIndex = 0
         Me.tbpGenerali.Text = "Generali"
         '
@@ -1031,7 +1043,7 @@ Public Class frmOpzioni
         Me.tbpBarRist.Location = New System.Drawing.Point(4, 22)
         Me.tbpBarRist.Name = "tbpBarRist"
         Me.tbpBarRist.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpBarRist.Size = New System.Drawing.Size(757, 494)
+        Me.tbpBarRist.Size = New System.Drawing.Size(838, 494)
         Me.tbpBarRist.TabIndex = 6
         Me.tbpBarRist.Text = "Bar/Ristorante"
         '
@@ -1340,7 +1352,7 @@ Public Class frmOpzioni
         Me.tbpCamere.Location = New System.Drawing.Point(4, 22)
         Me.tbpCamere.Name = "tbpCamere"
         Me.tbpCamere.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpCamere.Size = New System.Drawing.Size(757, 494)
+        Me.tbpCamere.Size = New System.Drawing.Size(838, 494)
         Me.tbpCamere.TabIndex = 9
         Me.tbpCamere.Text = "Camere"
         '
@@ -1612,7 +1624,7 @@ Public Class frmOpzioni
         Me.tbpCentroSportivo.Location = New System.Drawing.Point(4, 22)
         Me.tbpCentroSportivo.Name = "tbpCentroSportivo"
         Me.tbpCentroSportivo.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpCentroSportivo.Size = New System.Drawing.Size(757, 494)
+        Me.tbpCentroSportivo.Size = New System.Drawing.Size(807, 494)
         Me.tbpCentroSportivo.TabIndex = 7
         Me.tbpCentroSportivo.Text = "Centro sportivo"
         '
@@ -1656,7 +1668,7 @@ Public Class frmOpzioni
         Me.tbpStampanti.Controls.Add(Me.GroupBox1)
         Me.tbpStampanti.Location = New System.Drawing.Point(4, 22)
         Me.tbpStampanti.Name = "tbpStampanti"
-        Me.tbpStampanti.Size = New System.Drawing.Size(757, 494)
+        Me.tbpStampanti.Size = New System.Drawing.Size(807, 494)
         Me.tbpStampanti.TabIndex = 2
         Me.tbpStampanti.Text = "Percorsi di stampa"
         '
@@ -2158,7 +2170,7 @@ Public Class frmOpzioni
         Me.tbpPalmare.Controls.Add(Me.Label14)
         Me.tbpPalmare.Location = New System.Drawing.Point(4, 22)
         Me.tbpPalmare.Name = "tbpPalmare"
-        Me.tbpPalmare.Size = New System.Drawing.Size(757, 494)
+        Me.tbpPalmare.Size = New System.Drawing.Size(838, 494)
         Me.tbpPalmare.TabIndex = 3
         Me.tbpPalmare.Text = "Dispositivo palmare"
         '
@@ -2271,7 +2283,7 @@ Public Class frmOpzioni
         Me.tbpFiscali.Controls.Add(Me.grbSwing)
         Me.tbpFiscali.Location = New System.Drawing.Point(4, 22)
         Me.tbpFiscali.Name = "tbpFiscali"
-        Me.tbpFiscali.Size = New System.Drawing.Size(757, 494)
+        Me.tbpFiscali.Size = New System.Drawing.Size(838, 494)
         Me.tbpFiscali.TabIndex = 4
         Me.tbpFiscali.Text = "Registratori di cassa"
         '
@@ -2632,7 +2644,7 @@ Public Class frmOpzioni
         Me.tbpRecovery.Location = New System.Drawing.Point(4, 22)
         Me.tbpRecovery.Name = "tbpRecovery"
         Me.tbpRecovery.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpRecovery.Size = New System.Drawing.Size(757, 494)
+        Me.tbpRecovery.Size = New System.Drawing.Size(838, 494)
         Me.tbpRecovery.TabIndex = 5
         Me.tbpRecovery.Text = "Pen Drive Recovery"
         '
@@ -2727,7 +2739,7 @@ Public Class frmOpzioni
         Me.tbpFidelity.Location = New System.Drawing.Point(4, 22)
         Me.tbpFidelity.Name = "tbpFidelity"
         Me.tbpFidelity.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpFidelity.Size = New System.Drawing.Size(757, 494)
+        Me.tbpFidelity.Size = New System.Drawing.Size(838, 494)
         Me.tbpFidelity.TabIndex = 8
         Me.tbpFidelity.Text = "Punti Fedeltà"
         '
@@ -2923,13 +2935,57 @@ Public Class frmOpzioni
         Me.formFrameSkinner.AllowGlass = False
         Me.formFrameSkinner.Form = Me
         '
+        'tbpNoleggio
+        '
+        Me.tbpNoleggio.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.tbpNoleggio.Controls.Add(Me.GroupBox10)
+        Me.tbpNoleggio.Location = New System.Drawing.Point(4, 22)
+        Me.tbpNoleggio.Name = "tbpNoleggio"
+        Me.tbpNoleggio.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpNoleggio.Size = New System.Drawing.Size(807, 494)
+        Me.tbpNoleggio.TabIndex = 10
+        Me.tbpNoleggio.Text = "Noleggio"
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.cmbIvaNoleggio)
+        Me.GroupBox10.Controls.Add(Me.Label56)
+        Me.GroupBox10.Location = New System.Drawing.Point(23, 24)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(713, 144)
+        Me.GroupBox10.TabIndex = 192
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Varie"
+        '
+        'cmbIvaNoleggio
+        '
+        Me.cmbIvaNoleggio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbIvaNoleggio.Items.AddRange(New Object() {"Reparto 1", "Reparto 2", "Reparto 3", "Reparto 4"})
+        Me.cmbIvaNoleggio.Location = New System.Drawing.Point(144, 32)
+        Me.cmbIvaNoleggio.Name = "cmbIvaNoleggio"
+        Me.cmbIvaNoleggio.Size = New System.Drawing.Size(112, 21)
+        Me.cmbIvaNoleggio.TabIndex = 189
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.BackColor = System.Drawing.Color.Transparent
+        Me.Label56.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label56.ForeColor = System.Drawing.Color.Black
+        Me.Label56.Location = New System.Drawing.Point(24, 32)
+        Me.Label56.Name = "Label56"
+        Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label56.Size = New System.Drawing.Size(112, 13)
+        Me.Label56.TabIndex = 188
+        Me.Label56.Text = "Aliquota IVA standard:"
+        '
         'frmOpzioni
         '
         Me.AcceptButton = Me.cmdOK
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.CancelButton = Me.cmdAnnulla
-        Me.ClientSize = New System.Drawing.Size(781, 563)
+        Me.ClientSize = New System.Drawing.Size(824, 566)
         Me.Controls.Add(Me.cmdOK)
         Me.Controls.Add(Me.cmdAnnulla)
         Me.Controls.Add(Me.tabOpzioni)
@@ -2982,6 +3038,9 @@ Public Class frmOpzioni
         Me.tbpRecovery.PerformLayout()
         Me.tbpFidelity.ResumeLayout(False)
         Me.tbpFidelity.PerformLayout()
+        Me.tbpNoleggio.ResumeLayout(False)
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3955,6 +4014,17 @@ Public Class frmOpzioni
 
 #End Region
 
+#Region "SCHEDA NOLEGGIO "
+
+         ' Aliquota IVA standard.
+         cmbIvaNoleggio.Text = DatiConfig.GetValue("RepartoAliquotaIvaNoleggio")
+         If cmbIvaNoleggio.Text.Length = 0 Then
+            cmbIvaNoleggio.SelectedIndex = 0
+         End If
+
+#End Region
+
+
 #Region "SCHEDA PERCORSI DI STAMPA "
 
          ' Comanda - Percorso 1.
@@ -4601,6 +4671,36 @@ Public Class frmOpzioni
             Case Else
                DatiConfig.SetValue("AliquotaIvaCentroSportivo", "")
                AliquotaIvaCentroSportivo = String.Empty
+
+         End Select
+
+#End Region
+
+#Region "SCHEDA NOLEGGIO "
+
+         ' Aliquota IVA standard.
+         DatiConfig.SetValue("RepartoAliquotaIvaNoleggio", cmbIvaNoleggio.Text)
+
+         Select Case cmbIvaNoleggio.Text
+            Case "Reparto 1"
+               DatiConfig.SetValue("AliquotaIvaNoleggio", txtAliquotaIva1.Text)
+               AliquotaIvaNoleggio = txtAliquotaIva1.Text
+
+            Case "Reparto 2"
+               DatiConfig.SetValue("AliquotaIvaNoleggio", txtAliquotaIva2.Text)
+               AliquotaIvaNoleggio = txtAliquotaIva2.Text
+
+            Case "Reparto 3"
+               DatiConfig.SetValue("AliquotaIvaNoleggio", txtAliquotaIva3.Text)
+               AliquotaIvaNoleggio = txtAliquotaIva3.Text
+
+            Case "Reparto 4"
+               DatiConfig.SetValue("AliquotaIvaNoleggio", txtAliquotaIva4.Text)
+               AliquotaIvaNoleggio = txtAliquotaIva4.Text
+
+            Case Else
+               DatiConfig.SetValue("AliquotaIvaNoleggio", "")
+               AliquotaIvaNoleggio = String.Empty
 
          End Select
 

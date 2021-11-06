@@ -2,7 +2,7 @@
 ' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       18/09/2021
-' Data ultima modifica: 18/09/2021
+' Data ultima modifica: 23/10/2021
 ' Descrizione:          Anagrafica Causale noleggio.
 ' Note:
 '
@@ -104,6 +104,7 @@ Public Class frmCausaliNoleggio
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.TabControl2 = New Elegant.Ui.TabControl()
       Me.tpDati = New Elegant.Ui.TabPage()
+      Me.eui_txtDescrizione = New Elegant.Ui.TextBox()
       Me.eui_txtCostoAssicurazione = New Elegant.Ui.TextBox()
       Me.eui_txtCostoMora = New Elegant.Ui.TextBox()
       Me.eui_txtCostoGiorno = New Elegant.Ui.TextBox()
@@ -129,7 +130,6 @@ Public Class frmCausaliNoleggio
       Me.clnRifNoleggio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
       Me.tpNote = New Elegant.Ui.TabPage()
       Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.eui_txtDescrizione = New Elegant.Ui.TextBox()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,6 +244,16 @@ Public Class frmCausaliNoleggio
       Me.tpDati.Size = New System.Drawing.Size(575, 333)
       Me.tpDati.TabIndex = 0
       Me.tpDati.Text = "Dati principali"
+      '
+      'eui_txtDescrizione
+      '
+      Me.eui_txtDescrizione.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.eui_txtDescrizione.Id = "899acbc0-d23d-4c7c-a475-f91c02f0d5df"
+      Me.eui_txtDescrizione.Location = New System.Drawing.Point(156, 48)
+      Me.eui_txtDescrizione.Name = "eui_txtDescrizione"
+      Me.eui_txtDescrizione.Size = New System.Drawing.Size(382, 21)
+      Me.eui_txtDescrizione.TabIndex = 1
+      Me.eui_txtDescrizione.TextEditorWidth = 376
       '
       'eui_txtCostoAssicurazione
       '
@@ -469,22 +479,11 @@ Public Class frmCausaliNoleggio
       Me.eui_txtNote.TabIndex = 0
       Me.eui_txtNote.TextEditorWidth = 567
       '
-      'eui_txtDescrizione
-      '
-      Me.eui_txtDescrizione.BannerTextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.eui_txtDescrizione.Id = "899acbc0-d23d-4c7c-a475-f91c02f0d5df"
-      Me.eui_txtDescrizione.Location = New System.Drawing.Point(156, 48)
-      Me.eui_txtDescrizione.Name = "eui_txtDescrizione"
-      Me.eui_txtDescrizione.Size = New System.Drawing.Size(382, 21)
-      Me.eui_txtDescrizione.TabIndex = 1
-      Me.eui_txtDescrizione.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-      Me.eui_txtDescrizione.TextEditorWidth = 376
-      '
       'frmCausaliNoleggio
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(581, 413)
+      Me.ClientSize = New System.Drawing.Size(581, 412)
       Me.Controls.Add(Me.TabControl2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -827,7 +826,6 @@ Public Class frmCausaliNoleggio
       End Try
    End Sub
 
-   ' TODO_B: Modificare.
    Private Sub CausaleNoleggio_Closed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Closed
       If Me.Tag <> "0" Then
          ' TODO_B: Sviluppare RegistraOperazione.
@@ -852,6 +850,8 @@ Public Class frmCausaliNoleggio
                   g_frmCausaliNoleggio.AggiornaDati()
                End If
 
+               Me.DialogResult = Windows.Forms.DialogResult.OK
+
                ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
                Me.Tag = "0"
 
@@ -866,6 +866,8 @@ Public Class frmCausaliNoleggio
             End If
 
          Case "Annulla"
+            Me.DialogResult = Windows.Forms.DialogResult.Cancel
+
             ' Serve a registrare l'operazione ANNULLA nell'evento Closed.
             Me.Tag = "0"
 

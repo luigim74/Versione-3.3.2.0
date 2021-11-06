@@ -7512,6 +7512,15 @@ Friend Class frmMain
             AliquotaIvaHotel = DatiConfig.GetValue("AliquotaIvaHotel")
          End If
 
+         ' SCHEDA NOLEGGIO.
+
+         ' Aliquota IVA standard.
+         If DatiConfig.GetValue("AliquotaIvaNoleggio") = String.Empty Then
+            AliquotaIvaNoleggio = String.Empty
+         Else
+            AliquotaIvaNoleggio = DatiConfig.GetValue("AliquotaIvaNoleggio")
+         End If
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -13449,8 +13458,7 @@ Friend Class frmMain
                g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+               g_frmNoleggi.AnteprimaDiStampa(PERCORSO_REP_NOLEGGI_A4, g_frmNoleggi.TAB_NOLEGGI, g_frmNoleggi.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
                g_frmCausaliNoleggio.Modifica()
@@ -13591,8 +13599,7 @@ Friend Class frmMain
                g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+               g_frmNoleggi.AnteprimaDiStampa(PERCORSO_REP_NOLEGGI_A4, g_frmNoleggi.TAB_NOLEGGI, g_frmNoleggi.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
                g_frmCausaliNoleggio.Modifica()
@@ -13723,10 +13730,9 @@ Friend Class frmMain
                End If
 
             Case TITOLO_FINESTRA_ELENCO_NOLEGGI
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
-               '   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
-               'End If
+               If g_frmNoleggi.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmNoleggi.StampaElenco(g_frmNoleggi.repSql, PERCORSO_REP_NOLEGGI_A4, g_frmNoleggi.PrintDialog1.PrinterSettings.PrinterName, g_frmNoleggi.PrintDialog1.PrinterSettings.Copies)
+               End If
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
                g_frmCausaliNoleggio.Modifica()
@@ -14311,6 +14317,13 @@ Friend Class frmMain
                g_frmDocumento = New frmDocumento("ElencoPrenCamere", TIPO_DOC_SF, String.Empty)
                g_frmDocumento.ShowDialog()
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.AppStarting
+
+               g_frmDocumento = New frmDocumento("ElencoNoleggi", TIPO_DOC_SF, String.Empty)
+               g_frmDocumento.ShowDialog()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -14334,6 +14347,13 @@ Friend Class frmMain
                Cursor.Current = Cursors.AppStarting
 
                g_frmDocumento = New frmDocumento("ElencoPrenCamere", TIPO_DOC_PF, String.Empty)
+               g_frmDocumento.ShowDialog()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.AppStarting
+
+               g_frmDocumento = New frmDocumento("ElencoNoleggi", TIPO_DOC_PF, String.Empty)
                g_frmDocumento.ShowDialog()
 
                ' Inserire qui il codice per gestire le altre finestre.
@@ -14361,6 +14381,13 @@ Friend Class frmMain
                g_frmDocumento = New frmDocumento("ElencoPrenCamere", TIPO_DOC_RF, String.Empty)
                g_frmDocumento.ShowDialog()
 
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.AppStarting
+
+               g_frmDocumento = New frmDocumento("ElencoNoleggi", TIPO_DOC_RF, String.Empty)
+               g_frmDocumento.ShowDialog()
+
                ' Inserire qui il codice per gestire le altre finestre.
 
          End Select
@@ -14384,6 +14411,13 @@ Friend Class frmMain
                Cursor.Current = Cursors.AppStarting
 
                g_frmDocumento = New frmDocumento("ElencoPrenCamere", TIPO_DOC_FF, String.Empty)
+               g_frmDocumento.ShowDialog()
+
+            Case TITOLO_FINESTRA_ELENCO_NOLEGGI
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.AppStarting
+
+               g_frmDocumento = New frmDocumento("ElencoNoleggi", TIPO_DOC_FF, String.Empty)
                g_frmDocumento.ShowDialog()
 
                ' Inserire qui il codice per gestire le altre finestre.

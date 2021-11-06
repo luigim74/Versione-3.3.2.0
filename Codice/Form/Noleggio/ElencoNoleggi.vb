@@ -27,19 +27,23 @@ Public Class ElencoNoleggi
    Const TITOLO_FINESTRA As String = "Elenco Noleggi"
 
    Public Const COLONNA_ID_DOC As Short = 0
-   Const COLONNA_CLIENTE As Short = 1
-   Const COLONNA_CAUSALE As Short = 2
-   Const COLONNA_DATA_INIZIO As Short = 3
-   Const COLONNA_DATA_FINE As Short = 4
-   Const COLONNA_TOTALE_GIORNI As Short = 5
+   Public Const COLONNA_CLIENTE As Short = 1
+   Public Const COLONNA_CAUSALE As Short = 2
+   Public Const COLONNA_DATA_INIZIO As Short = 3
+   Public Const COLONNA_DATA_FINE As Short = 4
+   Public Const COLONNA_TOTALE_GIORNI As Short = 5
    Const COLONNA_TOTALE As Short = 6
-   Const COLONNA_TOTALE_MORA As Short = 7
+   Public Const COLONNA_TOTALE_MORA As Short = 7
    Const COLONNA_CODICE_BARRE As Short = 8
    Const COLONNA_CONTABILIZZATO As Short = 9
    Const COLONNA_STATO As Short = 10
    Const COLONNA_ID_CLIENTE As Short = 12
-   Const COLONNA_COSTO_MORA As Short = 13
-   Const COLONNA_TIPO_PERIODO As Short = 14
+   Public Const COLONNA_COSTO_MORA As Short = 13
+   Public Const COLONNA_TIPO_PERIODO As Short = 14
+   Public Const COLONNA_COSTO_GIORNO As Short = 15
+   Public Const COLONNA_COSTO_ASSICURAZIONE As Short = 16
+   Public Const COLONNA_SCONTO As Short = 17
+   Public Const COLONNA_TIPO_SCONTO As Short = 18
 
    Const STATO_BOZZA As String = "Bozza"
    Const STATO_NOLEGGIATO As String = "Noleggiato"
@@ -2477,6 +2481,69 @@ Public Class ElencoNoleggi
          End With
          DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipoPeriodoStyle)
 
+         ' 15 Costo giorno.
+         Dim costoGiornoStyle As New DataGridViewTextBoxColumn()
+         With costoGiornoStyle
+            .DataPropertyName = "CostoGiorno"
+            .HeaderText = "Costo giorno"
+            .Name = "CostoGiorno"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoGiornoStyle)
+
+         ' 16 Costo assicurazione.
+         Dim costoAssicurazioneStyle As New DataGridViewTextBoxColumn()
+         With costoAssicurazioneStyle
+            .DataPropertyName = "CostoAssicurazione"
+            .HeaderText = "Costo assicurazione"
+            .Name = "CostoAssicurazione"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, costoAssicurazioneStyle)
+
+         ' 16 Sconto.
+         Dim scontoStyle As New DataGridViewTextBoxColumn()
+         With scontoStyle
+            .DataPropertyName = "Sconto"
+            .HeaderText = "Sconto"
+            .Name = "Sconto"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Format = "##,##0.00"
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, scontoStyle)
+
+         ' 17 Tipo Sconto.
+         Dim tipoScontoStyle As New DataGridViewTextBoxColumn()
+         With tipoScontoStyle
+            .DataPropertyName = "TipoSconto"
+            .HeaderText = "Tipo Sconto"
+            .Name = "TipoSconto"
+            .Visible = False
+            .AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            .CellTemplate = New DataGridViewTextBoxCell()
+            .CellTemplate.Style.ForeColor = Color.Black
+            .CellTemplate.Style.NullValue = String.Empty
+            .CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+         End With
+         DataGridView1.Columns.Insert(DataGridView1.ColumnCount, tipoScontoStyle)
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -2773,12 +2840,12 @@ Public Class ElencoNoleggi
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-         Dim ds As New DocumentiDataSet
+         Dim ds As New NoleggiDataSet
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New RepElencoDocumenti(ds, nomeDoc, String.Empty)
+         Dim frm As New RepNoleggi(ds, nomeDoc, String.Empty)
          frm.ShowDialog()
 
       Catch ex As Exception
@@ -2798,7 +2865,7 @@ Public Class ElencoNoleggi
 
          cn.Open()
 
-         Dim ds As New DocumentiDataSet
+         Dim ds As New NoleggiDataSet
          ds.Clear()
 
          ' Carica i dati della tabella in un DataAdapter.

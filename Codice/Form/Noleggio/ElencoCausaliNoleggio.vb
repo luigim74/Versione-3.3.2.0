@@ -3,7 +3,7 @@
 ' Nome form:            ElencoCausaliNoleggio
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       27/02/2021
-' Data ultima modifica: 18/09/2021
+' Data ultima modifica: 23/10/2021
 ' Descrizione:          Elenco Causai Noleggio.
 ' Note:
 
@@ -73,12 +73,12 @@ Public Class ElencoCausaliNoleggio
 #Region " Codice generato da Progettazione Windows Form "
 
     Public Sub New()
-        MyBase.New()
+      MyBase.New()
 
-        'Chiamata richiesta da Progettazione Windows Form.
-        InitializeComponent()
+      'Chiamata richiesta da Progettazione Windows Form.
+      InitializeComponent()
 
-        dt = ds.Tables.Add(TAB_CAUSALI_NOLEGGIO)
+      dt = ds.Tables.Add(TAB_CAUSALI_NOLEGGIO)
       dtArticoli = ds.Tables.Add(TAB_DETTAGLI_CAUSALI_NOLEGGIO)
 
    End Sub
@@ -552,29 +552,22 @@ Public Class ElencoCausaliNoleggio
       End If
    End Sub
 
-   ' TODO_A: Modificare DuplicaCausaliNoleggio.
    Public Sub DuplicaCausaliNoleggio()
       Try
          Dim Risposta As Short
          Dim id As String = DataGridView1.Item(COLONNA_ID, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim numero As String = DataGridView1.Item(COLONNA_NUMERO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
-         'Dim data As String = Convert.ToDateTime(DataGridView1.Item(COLONNA_DATA_DOC, DataGridView1.CurrentCell.RowIndex).Value).ToShortDateString
-         'Dim tipoDoc As String = DataGridView1.Item(COLONNA_TIPO_DOC, DataGridView1.CurrentCell.RowIndex).Value.ToString
+         Dim descrizione As String = DataGridView1.Item(COLONNA_DESCRIZIONE, DataGridView1.CurrentCell.RowIndex).Value.ToString
 
-         '' Chiede conferma per l'eliminazione.
-         'Risposta = MessageBox.Show("Si desidera duplicare il documento """ & tipoDoc & " N. " & numero & " del " & data & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         ' Chiede conferma per la duplicazione.
+         Risposta = MessageBox.Show("Si desidera duplicare la causale di noleggio """ & descrizione & """?", NOME_PRODOTTO, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
          If Risposta = MsgBoxResult.Yes Then
 
             ' Dati documento.
-            Dim Doc As New Documenti
-            With Doc
+            Dim CCausali As New CausaliNoleggio
+            With CCausali
                ' Legge i dati del record selezionato nella lista.
                .LeggiDati(TAB_CAUSALI_NOLEGGIO, id)
-
-               .Ora = TimeOfDay.Hour.ToString & ":" & FormattaMinuti(TimeOfDay.Minute.ToString)
-               .Stato = "Bozza"
-               .Chiuso = "No"
 
                ' Crea il nuovo record (duplicato) con i dati del record selezionato nella lista.
                .InserisciDati(TAB_CAUSALI_NOLEGGIO)
@@ -584,13 +577,13 @@ Public Class ElencoCausaliNoleggio
             Dim ultimoId As Integer = LeggiUltimoRecord(TAB_CAUSALI_NOLEGGIO)
 
             ' Dati dettagli documento.
-            Dim DettagliDoc As New DettagliNoleggi
-            With DettagliDoc
+            Dim CDettagliCausali As New DettagliCausaliNoleggio
+            With CDettagliCausali
                ' Dichiara un oggetto connessione.
                Dim cn As New OleDbConnection(ConnString)
                cn.Open()
 
-               Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_DETTAGLI_CAUSALI_NOLEGGIO & " WHERE RifDoc = " & id & " ORDER BY Id ASC", cn)
+               Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_DETTAGLI_CAUSALI_NOLEGGIO & " WHERE RifCausale = " & id & " ORDER BY Id ASC", cn)
                Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
                ' Legge i dati del record selezionato nella lista.
@@ -663,6 +656,7 @@ Public Class ElencoCausaliNoleggio
 
             MessageBox.Show("La duplicazione dei dati è avvenuta con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            ' TODO_B: Modificare RegistraOperazione.
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
          End If
@@ -793,52 +787,35 @@ Public Class ElencoCausaliNoleggio
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
    Public Sub ImpostaComandi()
       If numRecord = 0 Then
-         ' Disattiva i pulsanti appropriati.
-         ' Modifica.
+         ' Disattiva i pulsanti appropriati. Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = False
          g_frmMain.eui_Strumenti_Duplica.Enabled = False
          g_frmMain.eui_Strumenti_Elimina.Enabled = False
-         g_frmMain.eui_Strumenti_Annulla.Enabled = False
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = False
          g_frmMain.eui_Strumenti_Esporta.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = False
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = False
-
-         ' Sospesi.
-         g_frmMain.eui_Strumenti_Sospesi_Filtra.Enabled = False
-         g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = False
-         g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = False
-         g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = False
-         g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = False
       Else
-         ' Attiva i pulsanti appropriati.
-         ' Modifica.
+         ' Attiva i pulsanti appropriati. Modifica.
          g_frmMain.eui_Strumenti_Modifica.Enabled = True
          g_frmMain.eui_Strumenti_Duplica.Enabled = True
          g_frmMain.eui_Strumenti_Elimina.Enabled = True
-         'g_frmMain.eui_Strumenti_Annulla.Enabled = True
          g_frmMain.eui_Strumenti_Aggiorna.Enabled = True
          g_frmMain.eui_Strumenti_Esporta.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Anteprima.Enabled = True
          g_frmMain.eui_Strumenti_Stampa_Elenco.Enabled = True
-
-         ' Sospesi.
-         g_frmMain.eui_Strumenti_Sospesi_Filtra.Enabled = True
-         'g_frmMain.eui_Strumenti_Sospesi_Incassa.Enabled = True
-         'g_frmMain.eui_Strumenti_Sospesi_Annulla.Enabled = True
-         'g_frmMain.eui_Strumenti_Sospesi_Passa.Enabled = True
-         'g_frmMain.eui_Strumenti_Buoni_Pasto.Enabled = True
       End If
    End Sub
 
-   ' TODO_A: Modificare.
    Public Sub ConvalidaDati()
-      If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
-         ImpostaComandi()
-      End If
+      ' TODO_B: Modificare ImpostaFunzioniOperatore.
+      'If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
+      '   ImpostaComandi()
+      'End If
+
+      ImpostaComandi()
    End Sub
 
    Public Sub AggIntGriglia()
@@ -1043,7 +1020,6 @@ Public Class ElencoCausaliNoleggio
       End Try
    End Sub
 
-   ' TODO_A: Modificare.
    Public Sub FiltraDati(ByVal testoRicerca As String, ByVal campoRicerca As String)
       Try
          Dim sql As String
@@ -1058,13 +1034,6 @@ Public Class ElencoCausaliNoleggio
          End Select
 
          If testoRicerca <> String.Empty Then
-            g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
-            g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
-
             ' Crea la stringa sql.
             sql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_CAUSALI_NOLEGGIO, campoRicerca, campoRicerca)
             repSql = String.Format("SELECT * FROM {0} WHERE {1} LIKE '" & testoRicerca & "%' ORDER BY {2} ASC", TAB_CAUSALI_NOLEGGIO, campoRicerca, campoRicerca)
@@ -1072,13 +1041,6 @@ Public Class ElencoCausaliNoleggio
             ' Legge i dati e ottiene il numero totale dei record.
             LeggiDati("(" & sql & ")", sql)
          Else
-            g_frmMain.eui_Strumenti_Periodo_Tutte.Pressed = True
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Mese.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_Anno.Pressed = False
-            g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = False
-            g_frmMain.eui_Strumenti_Periodo_DalAl.Text = g_frmMain.TESTO_FILTRO_PERIODO
-
             sql = String.Format("SELECT TOP {0} * FROM {1} ORDER BY Id ASC", DIM_PAGINA_GRANDE, TAB_CAUSALI_NOLEGGIO)
             repSql = String.Format("SELECT * FROM {0} ORDER BY Id ASC", TAB_CAUSALI_NOLEGGIO)
 
@@ -1088,14 +1050,6 @@ Public Class ElencoCausaliNoleggio
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
-
-         ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
-         'AttivaDisattivaSospeso()
-         'AttivaDisattivaPassaSospeso()
-         'AttivaDisattivaAnnullaSospeso()
-         'AttivaDisattivaBuoni()
-         'AttivaDisattivaAnnullaDoc()
-         'AttivaDisattivaEsportaFatturaElettronica()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1348,7 +1302,6 @@ Public Class ElencoCausaliNoleggio
 
    End Sub
 
-   ' TODO_A: Modificare.
    Private Sub ElencoNoleggi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
       Try
          ' Imposta l'icona della finestra in base al prodotto installato.
@@ -1387,6 +1340,7 @@ Public Class ElencoCausaliNoleggio
          ' Aggiorna il titolo della finestra.
          AggTitoloFinestra(TITOLO_FINESTRA)
 
+         ' TODO_B: Modificare RegistraOperazione.
          ' Registra loperazione effettuata dall'operatore identificato.
          'g_frmMain.RegistraOperazione(TipoOperazione.Apri, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
 
@@ -1494,29 +1448,6 @@ Public Class ElencoCausaliNoleggio
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   ' TODO_A: Modificare.
-   Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
-      Try
-         ' Imposta il colore per la cella in base al valore del campo ColoreSfondo.
-         If DataGridView1.Columns(e.ColumnIndex).Name = "ColoreSfondo" AndAlso Not (TypeOf e.Value Is System.DBNull) Then
-            ' Colore di sfondo.
-            e.CellStyle.BackColor = Color.FromArgb(e.Value)
-
-            ' Colore testo.
-            e.CellStyle.ForeColor = Color.FromArgb(e.Value)
-
-            ' Non visualizza il valore del campo.
-            e.Value = String.Empty
-         End If
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
-
    End Sub
 
    Private Sub DataGridView1_CurrentCellChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellChanged

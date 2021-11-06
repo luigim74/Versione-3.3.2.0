@@ -357,6 +357,9 @@ Module Procedure
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
+         cmb.Items.Clear()
+         cmb1.Items.Clear()
+
          Do While dr.Read
             cmb.Items.Add(dr.Item("Descrizione"))
             cmb1.Items.Add(dr.Item("Id"))
@@ -381,6 +384,9 @@ Module Procedure
 
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " ORDER BY Descrizione ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         cmb.Items.Clear()
+         cmb1.Items.Clear()
 
          Do While dr.Read
             cmb.Items.Add(dr.Item("Descrizione"))

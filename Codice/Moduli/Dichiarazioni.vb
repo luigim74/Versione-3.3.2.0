@@ -234,6 +234,8 @@ Module Dichiarazioni
    Public Const PERCORSO_REP_STORICO_PRESENZE_CAMERE_A4 As String = "\Reports\StoricoPresenzeCamere.rdlc"
    Public Const PERCORSO_REP_MODELLO_ISTAT_59_A4 As String = "\Reports\ModelloIstatC59 A4.rdlc"
    Public Const PERCORSO_REP_SCONTI_MAGGIORAZIONI_A4 As String = "\Reports\ScontiMaggiorazioni.rdlc"
+   Public Const PERCORSO_REP_NOLEGGI_A4 As String = "\Reports\Noleggi.rdlc"
+   Public Const PERCORSO_REP_CAUSALI_NOLEGGIO_A4 As String = "\Reports\CausaliNoleggio.rdlc"
 
    ' Nomi per le tipologie di documenti fiscali e non fiscali.
    Public Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
@@ -945,6 +947,9 @@ Module Dichiarazioni
    ' Dati Centro Sportivo.
    Public AliquotaIvaCentroSportivo As String
    Public NumRepartoIvaCentroSportivo As String
+
+   ' Dati Noleggio.
+   Public AliquotaIvaNoleggio As String = "22" ' TODO_B: Modificare AliquotaIvaNoleggio.
 
    ' Dati Modulo prenotazioni on-line.
    Public PercorsoCartellaTavAgent As String
