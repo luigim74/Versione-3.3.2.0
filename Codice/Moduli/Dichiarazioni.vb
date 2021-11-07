@@ -16,19 +16,7 @@
 Imports System.Data.OleDb
 
 Module Dichiarazioni
-   ' Declare Function for Open Communication Port
-   'Public Declare Function VbCEFOpen Lib "CeFdll.dll" (ByVal intCom As Integer, ByVal dwBaudRate As Integer, ByVal byParity As Byte, ByVal byDataBit As Byte, ByVal byStopBit As Byte, ByVal byFlowControl As Byte, ByRef lpdwSysError As Integer) As Integer
-   ' Declare Function for Write Command on Communication Port
-   'Public Declare Function VbCEFWrite Lib "CeFdll.dll" (ByRef textcmd As String, ByRef lpdwSysError As Integer) As Integer
-   ' Declare Function for Read from Communication Port
-   'Public Declare Function VbCEFRead Lib "CeFdll.dll" (ByRef RetData() As Byte, ByRef pdwByteRead As Integer, ByRef lpdwSysError As Integer) As Integer
-   ' Declare Function for Read DLL Version
-   'Public Declare Function VbCEFGetVersion Lib "CeFdll.dll" (ByRef RetData() As Byte, ByRef lpdwSysError As Integer) As Integer
-   ' Declare Function for Close Communication Port
-   'Public Declare Function VbCEFClose Lib "CeFdll.dll" (ByRef lpdwSysError As Integer) As Integer
-
    ' Dimensioni per il form Main.
-
    Public Const FORM_MAIN_LARGHEZZA As Integer = 920
    Public Const FORM_MAIN_ALTEZZA As Integer = 600
 
@@ -125,6 +113,7 @@ Module Dichiarazioni
    Public Const NOME_PRODOTTO_BAR As String = "Hospitality Bar Solution 3"
    Public Const NOME_PRODOTTO_CHEF As String = "Hospitality Chef Solution 3"
    Public Const NOME_PRODOTTO_SPORTING As String = "Hospitality Sporting Club Solution 3"
+   Public Const NOME_PRODOTTO_RENTAL As String = "Rental Solution 3"
 
    ' Dati per il server SMTP Autenticato su Register.it
    Public Const NOME_MAIL_SERVER_SMTP As String = "authsmtp.montanasoftware.it"
@@ -900,7 +889,6 @@ Module Dichiarazioni
    Public giorniVerDemo As String
 
    ' Chiave per la generazione della licenza.
-   Public Const CHIAVE_ATTIVAZIONE As String = "C1DM0" ' Vecchia non utilizzata.
    Public Const CHIAVE_ATTIVAZIONE_HOSPITALITY As String = "HS3M0"
    Public Const CHIAVE_ATTIVAZIONE_HOTEL As String = "HM311"
    Public Const CHIAVE_ATTIVAZIONE_RISTORANTE As String = "CS3M1"
@@ -915,21 +903,21 @@ Module Dichiarazioni
    Public Const CHIAVE_ATTIVAZIONE_PREN_ONLINE As String = "PO310"
    Public Const CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA As String = "FE3PA"
    Public Const CHIAVE_ATTIVAZIONE_NIGHT_CLUB As String = "NC312"
+   Public Const CHIAVE_ATTIVAZIONE_NOLEGGIO As String = "RS313"
 
    ' Codice di accesso per attivare la versione dimostrativa del software. (NON PIU' UTILIZZATA)
-   Public Const CHIAVE_ACCESSO_DEMO As String = "0274M F30HS M1083 0ZY3I 90DH2"
+   'Public Const CHIAVE_ACCESSO_DEMO As String = "0274M F30HS M1083 0ZY3I 90DH2"
    ' Testo che compare nel titolo del programma.
    Public Const VER_DEMO As String = "VERSIONE DIMOSTRATIVA"
    ' Numero di serie del prodotto. (VERSIONE_FILE - VERSIONE_PRODOTTO - DATA_RILASCIO - ORA_RILASCIO)
-   Public Const NUMERO_SERIE As String = "03400-003-0305020-01520"
+   Public Const NUMERO_SERIE As String = "03600-003-1011021-01640"
    ' Numero di elementi inseribili per la versione demo.
    Public Const NUM_ELEMENTI_DEMO As Integer = 16
    ' File per la data di installazione.
    Public Const FILE_DATA_DEMO As String = "\Interop.HSS.dll"
 
-   ' Dati per la versione demo nel registro di sistema.
-   ' Non più utilizzata.
-   Public Const REG_CARTELLA_DEMO As String = "Hs"
+   ' Dati per la versione demo nel registro di sistema. Non più utilizzata.
+   'Public Const REG_CARTELLA_DEMO As String = "Hs"
 
    ' Dati Ristorante.
    Public AliquotaIvaRistorante As String
@@ -949,7 +937,7 @@ Module Dichiarazioni
    Public NumRepartoIvaCentroSportivo As String
 
    ' Dati Noleggio.
-   Public AliquotaIvaNoleggio As String = "22" ' TODO_B: Modificare AliquotaIvaNoleggio.
+   Public AliquotaIvaNoleggio As String
 
    ' Dati Modulo prenotazioni on-line.
    Public PercorsoCartellaTavAgent As String
@@ -992,7 +980,7 @@ Module Dichiarazioni
       StatoNoleggi = 20
     End Enum
 
-   Public Const NUMERO_TOT_ENUM_FINESTRA As Integer = 64
+   Public Const NUMERO_TOT_ENUM_FINESTRA As Integer = 70
 
    Public Enum Finestra
       ' Anagrafiche
@@ -1171,6 +1159,8 @@ Module Dichiarazioni
       Public Const NOME_RETAIL As String = "RETAIL SOLUTION"
       Public Const NOME_TAGLIE_COLORI As String = "TAGLIE E COLORI"
 
+      Public Const NOME_RENTAL As String = "RENTAL SOLUTION"
+
       ' Nome Moduli per la chiave del file .config
       Public Const NOME_HOSPITALITY_CONFIG As String = "KeyAccessHospitality"
       Public Const NOME_MAGAZZINO_CONFIG As String = "KeyAccessMagazzino"
@@ -1196,6 +1186,8 @@ Module Dichiarazioni
       Public Const NOME_RETAIL_CONFIG As String = "KeyAccessRetail"
       Public Const NOME_TAGLIE_COLORI_CONFIG As String = "KeyAccessTaglieColori"
 
+      Public Const NOME_RENTAL_CONFIG As String = "KeyAccessRental"
+
       ' Moduli attivi
       Public Hospitality As Boolean
       Public Magazzino As Boolean
@@ -1220,6 +1212,8 @@ Module Dichiarazioni
 
       Public VenditaDettaglio As Boolean
       Public TaglieColori As Boolean
+
+      Public Noleggio As Boolean
 
    End Structure
 

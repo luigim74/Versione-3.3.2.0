@@ -1172,12 +1172,12 @@ Public Class ElencoCausaliNoleggio
          Dim oleAdapter As New OleDbDataAdapter
          oleAdapter.SelectCommand = New OleDbCommand(sqlRep, cn)
 
-         Dim ds As New DocumentiDataSet
+         Dim ds As New CausaliNoleggioDataSet
          ds.Clear()
          oleAdapter.Fill(ds, tabella)
 
          ' ReportViewer - Apre la finestra di Anteprima di stampa per il documento.
-         Dim frm As New RepElencoDocumenti(ds, nomeDoc, String.Empty)
+         Dim frm As New RepCausaliNoleggio(ds, nomeDoc, String.Empty)
          frm.ShowDialog()
 
       Catch ex As Exception
@@ -1197,7 +1197,7 @@ Public Class ElencoCausaliNoleggio
 
          cn.Open()
 
-         Dim ds As New DocumentiDataSet
+         Dim ds As New CausaliNoleggioDataSet
          ds.Clear()
 
          ' Carica i dati della tabella in un DataAdapter.

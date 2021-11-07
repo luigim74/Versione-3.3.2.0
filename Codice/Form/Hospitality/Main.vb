@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2005
-' Data ultima modifica: 01/07/2021
+' Data ultima modifica: 07/11/2021
 ' Descrizione:          Form MDI principale.
 ' Note:
 '
@@ -7099,7 +7099,7 @@ Friend Class frmMain
             SalvaBKP = True
          End If
 
-         ' TODO_A: Modificare dimensioni pagina
+         ' TODO_N: Modificare dimensioni pagina
          dimPagina = DIM_PAGINA_GRANDE 'CInt(DatiConfig.GetValue("NumElememti"))
 
          If DatiConfig.GetValue("WindowState") = CStr(FormWindowState.Maximized) Then
@@ -7349,7 +7349,7 @@ Friend Class frmMain
             ModelloSF = ""
          End If
 
-         ' TODO: Eliminare! Vecchia procedura.
+         ' TODO_B: Eliminare! Vecchia procedura.
          ' RCH Swing ECR A/65
          'PortaSF = DatiConfig.GetValue("PortaSF")
          'If PortaSF.Length = 0 Then
@@ -11347,7 +11347,7 @@ Friend Class frmMain
             ' Visualizza le varie funzionalità in base ai moduli installati.
             ImpostaModuli()
 
-            ' TODO: NIGHT_CLUB x Namar Srl - DA RIMUOVERE!
+            ' TODO_B: NIGHT_CLUB x Namar Srl per attivare il modulo senza la gestione Moduli.
             moduloAttivo.NightClub = True
          End If
 
@@ -13204,15 +13204,15 @@ Friend Class frmMain
                g_frmCamere.EliminaDati(frmElencoDati.TAB_CAMERE, g_frmCamere.DataGridView1.Item(0, g_frmCamere.DataGridView1.CurrentCell.RowIndex).Value)
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenCamere.EliminaDati(ElencoPrenCamere.TAB_PRENOTAZIONI, g_frmPrenCamere.DataGrid1.Item(g_frmPrenCamere.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_SCHEDINE_PS
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmSchedinePS.EliminaDati(ElencoSchedinePS.TAB_SCHEDINE, g_frmSchedinePS.DataGrid1.Item(g_frmSchedinePS.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_LISTINI_CAMERE
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmListiniCamere.EliminaDati(ElencoListiniCamere.TAB_LISTINI, g_frmListiniCamere.DataGrid1.Item(g_frmListiniCamere.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_STATO_PREN
@@ -13225,7 +13225,7 @@ Friend Class frmMain
                g_frmDocumenti.EliminaDatiDocumento()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmEmail.EliminaDati(ElencoEmail.TAB_EMAIL, g_frmEmail.DataGrid1.Item(g_frmEmail.DataGrid1.CurrentCell.RowNumber, 0))
 
             Case TITOLO_FINESTRA_ELENCO_OPERATORI
@@ -13405,7 +13405,7 @@ Friend Class frmMain
                g_frmCamerieri.AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, g_frmCamerieri.TAB_CAMERIERI, g_frmCamerieri.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
-               ' TODO: Modificare per AgenzieCamerieri.
+               ' TODO_B: Modificare per AgenzieCamerieri.
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
@@ -13461,10 +13461,7 @@ Friend Class frmMain
                g_frmNoleggi.AnteprimaDiStampa(PERCORSO_REP_NOLEGGI_A4, g_frmNoleggi.TAB_NOLEGGI, g_frmNoleggi.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
-               g_frmCausaliNoleggio.Modifica()
-
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+               g_frmCausaliNoleggio.AnteprimaDiStampa(PERCORSO_REP_CAUSALI_NOLEGGIO_A4, g_frmCausaliNoleggio.TAB_CAUSALI_NOLEGGIO, g_frmCausaliNoleggio.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13546,7 +13543,7 @@ Friend Class frmMain
                g_frmCamerieri.AnteprimaDiStampaCamerieri(PERCORSO_REP_CAMERIERI_A4, g_frmCamerieri.TAB_CAMERIERI, g_frmCamerieri.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
-               ' TODO: Modificare per AgenzieCamerieri.
+               ' TODO_B: Modificare per AgenzieCamerieri.
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
@@ -13602,10 +13599,7 @@ Friend Class frmMain
                g_frmNoleggi.AnteprimaDiStampa(PERCORSO_REP_NOLEGGI_A4, g_frmNoleggi.TAB_NOLEGGI, g_frmNoleggi.repSql)
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
-               g_frmCausaliNoleggio.Modifica()
-
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'g_frmArticoli.AnteprimaDiStampaArticoli(PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.TAB_ARTICOLI, g_frmArticoli.repSql)
+               g_frmCausaliNoleggio.AnteprimaDiStampa(PERCORSO_REP_CAUSALI_NOLEGGIO_A4, g_frmCausaliNoleggio.TAB_CAUSALI_NOLEGGIO, g_frmCausaliNoleggio.repSql)
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13651,7 +13645,7 @@ Friend Class frmMain
                End If
 
             Case TITOLO_FINESTRA_ELENCO_AGENZIE_CAMERIERI
-               ' TODO: Modificare per AgenzieCamerieri.
+               ' TODO_B: Modificare per AgenzieCamerieri.
                MessageBox.Show(MESSAGGIO_REPORT_NON_DISPONIBILE, NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Case TITOLO_FINESTRA_ELENCO_SALE
@@ -13735,12 +13729,9 @@ Friend Class frmMain
                End If
 
             Case TITOLO_FINESTRA_ELENCO_CAUSALI_NOLEGGIO
-               g_frmCausaliNoleggio.Modifica()
-
-               ' TODO_A: Modificare per Elenco Noleggi.
-               'If g_frmArticoli.PrintDialog1.ShowDialog() = DialogResult.OK Then
-               '   g_frmArticoli.StampaElencoArticoli(g_frmArticoli.repSql, PERCORSO_REP_ARTICOLI_A4, g_frmArticoli.PrintDialog1.PrinterSettings.PrinterName, g_frmArticoli.PrintDialog1.PrinterSettings.Copies)
-               'End If
+               If g_frmCausaliNoleggio.PrintDialog1.ShowDialog() = DialogResult.OK Then
+                  g_frmCausaliNoleggio.StampaElenco(g_frmCausaliNoleggio.repSql, PERCORSO_REP_CAUSALI_NOLEGGIO_A4, g_frmCausaliNoleggio.PrintDialog1.PrinterSettings.PrinterName, g_frmCausaliNoleggio.PrintDialog1.PrinterSettings.Copies)
+               End If
 
                ' Inserire qui il codice per gestire le altre finestre.
 
@@ -13772,7 +13763,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPren.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
@@ -13783,7 +13774,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenSale.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
@@ -13874,7 +13865,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPren.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
@@ -13884,7 +13875,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenSale.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
@@ -13970,7 +13961,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPren.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
@@ -13980,7 +13971,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenSale.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
@@ -14065,7 +14056,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Anno.Pressed = False
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPren.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
@@ -14074,7 +14065,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Anno.Pressed = False
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_Terminate.Pressed = False
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenSale.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
@@ -14248,7 +14239,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPren.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PRENOTAZIONI_SALE
@@ -14258,7 +14249,7 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_DalAl.Pressed = False
                eui_Strumenti_Periodo_DalAl.Text = TESTO_FILTRO_PERIODO
-               ' TODO_A: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
+               ' TODO_N: MODIFICARE PER NUOVA IMPLEMENTAZIONE SUL RIBBON
                g_frmPrenSale.AggiornaDati()
 
             Case TITOLO_FINESTRA_ELENCO_PREN_CAMERE
@@ -14969,10 +14960,9 @@ Friend Class frmMain
 
 #End Region
 
-   ' TODO_A: Inserire i comandi appropriati.
-
 #End Region
 
+   ' TODO_A: Implementare Procedure per i Moduli per Rental Solution.
 #Region "Procedure per i Moduli "
 
    Public Function AttivaProdotto(ByVal chiaveAttivazione As String, ByVal codice1 As String, ByVal codice2 As String,
@@ -15107,7 +15097,7 @@ Friend Class frmMain
                moduloAttivo.Palmari = False
             End If
 
-            ' TODO: NIGHT_CLUB
+            ' TODO_B: NIGHT_CLUB
             If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB) Then
                moduloAttivo.NightClub = True
             Else
@@ -15184,7 +15174,7 @@ Friend Class frmMain
                moduloAttivo.Palmari = False
             End If
 
-            ' TODO: NIGHT_CLUB
+            ' TODO_B: NIGHT_CLUB
             If DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG) <> String.Empty And DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG).Length = 25 Then
                moduloAttivo.NightClub = True
             Else
@@ -15380,7 +15370,7 @@ Friend Class frmMain
             ImpostaDatiListaModuli(Modulo.NOME_PALMARI, CHIAVE_ATTIVAZIONE_PALMARI, Color.Green, True)
          End If
 
-         ' TODO: NIGHT_CLUB
+         ' TODO_B: NIGHT_CLUB
          ' MODULO NIGHT CLUB.
          If moduloAttivo.NightClub = True Then
             ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, CHIAVE_ATTIVAZIONE_NIGHT_CLUB, Color.Green, True)
@@ -15860,7 +15850,7 @@ Friend Class frmMain
          eui_lstProdottiAttivati.Items.Add(item)
       End If
 
-      ' TODO: NIGHT_CLUB
+      ' TODO_B: NIGHT_CLUB
       ' NIGHT CLUB.
       If moduloAttivo.NightClub = True Then
          Dim codice As String = CodAttivazioneInserisciTrattini(DatiConfig.GetValue(Modulo.NOME_NIGHT_CLUB_CONFIG))
@@ -15988,7 +15978,7 @@ Friend Class frmMain
          eui_txtDettagliProdotto.Text = "Modulo per la gestione dei palmari per la presa delle comande ai tavoli."
       End If
 
-      ' TODO: NIGHT_CLUB
+      ' TODO_B: NIGHT_CLUB
       ' NIGHT CLUB.
       If item.Contains(Modulo.NOME_NIGHT_CLUB) = True Then
          eui_txtDettagliProdotto.Text = "Modulo per la gestione del personale per i locali notturni."
@@ -16167,7 +16157,7 @@ Friend Class frmMain
                         e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_PALMARI, "-")
                         e.Item.SubItems(3).ForeColor = Color.Green
 
-                        ' TODO: NIGHT_CLUB
+                        ' TODO_B: NIGHT_CLUB
                      Case Modulo.NOME_NIGHT_CLUB
                         e.Item.SubItems(2).Text = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_NIGHT_CLUB, "-")
                         e.Item.SubItems(3).ForeColor = Color.Green
@@ -16258,7 +16248,7 @@ Friend Class frmMain
                            End If
                         End If
 
-                        ' TODO: NIGHT_CLUB
+                        ' TODO_B: NIGHT_CLUB
                         If moduloAttivo.NightClub = True Then
                            If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                               ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
@@ -16297,7 +16287,7 @@ Friend Class frmMain
                            ImpostaDatiListaModuli(Modulo.NOME_PALMARI, "", Color.Gray, False)
                         End If
 
-                        ' TODO: NIGHT_CLUB
+                        ' TODO_B: NIGHT_CLUB
                         If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                            ImpostaDatiListaModuli(Modulo.NOME_NIGHT_CLUB, "", Color.Gray, False)
                         End If
@@ -16319,7 +16309,7 @@ Friend Class frmMain
                         Exit Select
                      End If
 
-                     ' TODO: NIGHT_CLUB
+                     ' TODO_B: NIGHT_CLUB
                   Case Modulo.NOME_NIGHT_CLUB
                      If DisattivaProdotto(Modulo.NOME_NIGHT_CLUB_CONFIG) = True Then
                         Exit Select

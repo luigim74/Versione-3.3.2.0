@@ -538,6 +538,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Codice\DataSet\CausaliNoleggioDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CausaliNoleggioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Codice\DataSet\ClientiDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -784,6 +789,12 @@
       <DependentUpon>GruppiOp.vb</DependentUpon>
     </Compile>
     <Compile Include="Codice\ReportsViewer\GruppiOp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCausaliNoleggio.Designer.vb">
+      <DependentUpon>RepCausaliNoleggio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\ReportsViewer\RepCausaliNoleggio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Codice\ReportsViewer\RepCorrispettivi.Designer.vb">
@@ -1504,6 +1515,17 @@
     <None Include="Codice\DataSet\AnagraficheDataSet.xss">
       <DependentUpon>AnagraficheDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Codice\DataSet\CausaliNoleggioDataSet.xsc">
+      <DependentUpon>CausaliNoleggioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Codice\DataSet\CausaliNoleggioDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CausaliNoleggioDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Codice\DataSet\CausaliNoleggioDataSet.xss">
+      <DependentUpon>CausaliNoleggioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Codice\DataSet\ClientiDataSet.xsc">
       <DependentUpon>ClientiDataSet.xsd</DependentUpon>
     </None>
@@ -1896,6 +1918,7 @@
     <EmbeddedResource Include="bin\Reports\Aziende.rdlc" />
     <EmbeddedResource Include="bin\Reports\Camerieri.rdlc" />
     <EmbeddedResource Include="bin\Reports\CategoriePiatti.rdlc" />
+    <EmbeddedResource Include="bin\Reports\CausaliNoleggio.rdlc" />
     <EmbeddedResource Include="bin\Reports\ComandaClienti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\ComandaReparti 80mm.rdlc" />
     <EmbeddedResource Include="bin\Reports\Corrispettivi.rdlc" />
@@ -2068,6 +2091,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\GruppiOp.resx">
       <DependentUpon>GruppiOp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\ReportsViewer\RepCausaliNoleggio.resx">
+      <DependentUpon>RepCausaliNoleggio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\ReportsViewer\RepCorrispettivi.resx">
       <DependentUpon>RepCorrispettivi.vb</DependentUpon>
